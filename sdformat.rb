@@ -2,8 +2,8 @@ require 'formula'
 
 class Sdformat < Formula
   homepage 'http://gazebosim.org/sdf.html'
-  url 'http://gazebosim.org/assets/distributions/sdformat-1.4.0.tar.bz2'
-  sha1 '5e4a79ee29792b7be41b2db557dc6260fa2909e0'
+  url 'http://gazebosim.org/assets/distributions/sdformat-1.4.4.tar.bz2'
+  sha1 '090ea7cc3051f1f9bc4092c10a5b3097bddf0929'
 
   depends_on 'boost'
   depends_on 'cmake' => :build
