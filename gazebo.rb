@@ -20,7 +20,7 @@ class Gazebo < Formula
   depends_on 'sdformat'
 
   depends_on 'bullet' => [:optional, 'shared']
-  depends_on 'ronn' => [:optional, :ruby]
+  depends_on 'ronn' => :ruby, :optional
 
   def install
     ENV.m64
