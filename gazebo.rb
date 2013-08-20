@@ -20,7 +20,8 @@ class Gazebo < Formula
   depends_on 'sdformat'
 
   depends_on 'bullet' => [:optional, 'shared']
-  depends_on 'ronn' => [:ruby, :optional]
+  # can't figure out how to specify optional gem dependency
+  #depends_on 'ronn' => [:ruby, :optional]
 
   def install
     ENV.m64
