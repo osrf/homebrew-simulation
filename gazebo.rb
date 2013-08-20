@@ -15,12 +15,12 @@ class Gazebo < Formula
   depends_on 'protobuf'
   depends_on 'protobuf-c'
   depends_on 'qt'
-  depends_on 'ronn' => :ruby
   depends_on 'tbb'
   depends_on 'tinyxml'
   depends_on 'sdformat'
 
   depends_on 'bullet' => [:optional, 'shared']
+  depends_on 'ronn' => [:optional, :ruby]
 
   def install
     ENV.m64
