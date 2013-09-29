@@ -23,6 +23,8 @@ class Gazebo < Formula
   # can't figure out how to specify optional gem dependency
   #depends_on 'ronn' => [:ruby, :optional]
 
+  def patches; DATA; end
+
   def install
     ENV.m64
 
@@ -41,3 +43,17 @@ class Gazebo < Formula
     end
   end
 end
+
+__END__
+diff -r 032eec53d401 deps/opende/CMakeLists.txt
+--- a/deps/opende/CMakeLists.txt  Tue Aug 20 12:44:18 2013 -0700
++++ b/deps/opende/CMakeLists.txt  Sat Sep 28 22:18:43 2013 -0700
+@@ -3,7 +3,7 @@
+ include (CheckFunctionExists)
+ include (CheckLibraryExists)
+
+-include_directories(SYSTEM
++include_directories(
+   ${CMAKE_CURRENT_BINARY_DIR} 
+   ${CMAKE_SOURCE_DIR}/deps/opende/include
+   ${CMAKE_SOURCE_DIR}/deps/opende/ou/include
