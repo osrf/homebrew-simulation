@@ -2,9 +2,8 @@ require 'formula'
 
 class Simbody < Formula
   homepage 'https://simtk.org/home/simbody'
-  url 'https://github.com/simbody/simbody/archive/3252208.zip'
+  url 'https://github.com/simbody/simbody/archive/Simbody-3.3.zip'
   sha1 '872f7993338b22abb14b4950297503f2522ecf08'
-  version '3.3'
 
   depends_on 'cmake' => :build
 
