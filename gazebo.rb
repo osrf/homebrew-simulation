@@ -4,6 +4,7 @@ class Gazebo < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/assets/distributions/gazebo-1.9.1.tar.bz2'
   sha1 '265df282577ec99ea38bbdb1005910e5772e4d85'
+  head 'https://bitbucket.org/osrf/gazebo', :branch => 'default', :using => :hg
 
   depends_on 'boost'
   depends_on 'cmake'  => :build
@@ -32,7 +33,9 @@ class Gazebo < Formula
       "-DCMAKE_BUILD_TYPE='Release'",
       "-DCMAKE_INSTALL_PREFIX='#{prefix}'",
       "-DCMAKE_FIND_FRAMEWORK=LAST",
-      "-Wno-dev"
+      "-Wno-dev",
+      "-DENABLE_TESTS_COMPILATION:BOOL=False",
+      "-DFORCE_GRAPHIC_TESTS_COMPILATION:BOOL=True",
     ]
     #cmake_args.concat(std_cmake_args)
     cmake_args << ".."
