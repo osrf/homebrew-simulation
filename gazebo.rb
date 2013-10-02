@@ -19,7 +19,7 @@ class Gazebo < Formula
   depends_on 'tinyxml'
   depends_on 'sdformat'
 
-  depends_on 'bullet' => [:optional, 'shared']
+  depends_on 'bullet' => [:optional, 'shared', 'double-precision']
   # can't figure out how to specify optional gem dependency
   #depends_on 'ronn' => [:ruby, :optional]
 
