@@ -3,7 +3,7 @@ require 'formula'
 class Simbody < Formula
   homepage 'https://simtk.org/home/simbody'
   url 'https://github.com/simbody/simbody/archive/Simbody-3.3.zip'
-  sha1 '872f7993338b22abb14b4950297503f2522ecf08'
+  sha1 'a67ee802fb410a1c346718a48ac0ede2f7fa56ea'
 
   depends_on 'cmake' => :build
 
