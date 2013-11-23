@@ -4,6 +4,7 @@ class Simbody < Formula
   homepage 'https://simtk.org/home/simbody'
   url 'https://github.com/simbody/simbody/archive/Simbody-3.3.zip'
   sha1 'a67ee802fb410a1c346718a48ac0ede2f7fa56ea'
+  head 'https://github.com/simbody/simbody.git', :branch => 'master'
 
   depends_on 'cmake' => :build
 
