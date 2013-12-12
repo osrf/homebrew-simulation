@@ -9,7 +9,7 @@ class Simbody < Formula
   depends_on 'cmake' => :build
 
   # fix install location of cmake config files
-  def patches; DATA; end
+  def patches; DATA unless build.head?; end
 
   def install
     ENV.m64
@@ -22,6 +22,7 @@ class Simbody < Formula
 
     mkdir "build" do
       system "cmake", *cmake_args
+      system "make", "doxygen" if build.head?
       system "make", "install"
     end
   end
