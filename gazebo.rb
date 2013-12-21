@@ -6,21 +6,23 @@ class Gazebo < Formula
   sha1 '0db594c400ccb619ff1a3db6b6d02333d6d0e3a7'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'default', :using => :hg
 
-  depends_on 'boost'
   depends_on 'cmake'  => :build
+  depends_on 'pkg-config' => :build
+
+  depends_on 'boost'
   depends_on 'doxygen'
   depends_on 'freeimage'
   depends_on 'libtar'
   depends_on 'ogre'
-  depends_on 'pkg-config' => :build
   depends_on 'protobuf'
   depends_on 'protobuf-c'
   depends_on 'qt'
+  depends_on 'sdformat'
   depends_on 'tbb'
   depends_on 'tinyxml'
-  depends_on 'sdformat'
 
   depends_on 'bullet' => [:optional, 'shared', 'double-precision']
+  depends_on 'ffmpeg' => :optional
   depends_on 'simbody' => :optional
   # can't figure out how to specify optional gem dependency
   #depends_on 'ronn' => [:ruby, :optional]
