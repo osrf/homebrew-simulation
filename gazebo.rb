@@ -21,8 +21,10 @@ class Gazebo < Formula
   depends_on 'tbb'
   depends_on 'tinyxml'
 
+  option "with-dartsim", "Build with dartsim support"
+
   depends_on 'bullet' => [:optional, 'shared', 'double-precision']
-  depends_on 'dartsim/dart/dartsim' => [:optional, 'core-only']
+  depends_on 'dartsim/dart/dartsim' => 'core-only' if build.include? "with-dartsim"
   depends_on 'ffmpeg' => :optional
   depends_on 'simbody' => :optional
   # can't figure out how to specify optional gem dependency
