@@ -18,9 +18,7 @@ class Ogre < Formula
 
   def patches
     # https://gist.github.com/4237236
-    if build.head?
-      #DATA
-    else
+    if !build.head?
       [
         "https://gist.github.com/raw/4237236/e357f1b9fa8b26d02ed84f411d5b5eb7446c68c5/pkg_config_fix.patch",
         "https://gist.github.com/raw/4237236/57cb907304433cc0bb83fd332ff98a5789102b00/prevent_framework_apple.patch",
@@ -54,25 +52,3 @@ class Ogre < Formula
   end
 end
 
-__END__
-diff -r 9740b89647de RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
---- a/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm	Tue Dec 31 16:04:36 2013 -0600
-+++ b/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm	Tue Dec 31 16:52:10 2013 -0800
-@@ -126,7 +126,7 @@
-         NSString *windowTitle = [NSString stringWithCString:name.c_str() encoding:NSUTF8StringEncoding];
- 		int winx = 0, winy = 0;
- 		int depth = 32;
--        NameValuePairList::const_iterator opt{};
-+        NameValuePairList::const_iterator opt;
-         mIsFullScreen = fullScreen;
- 		
- 		if(miscParams)
-@@ -257,7 +257,7 @@
-         }
-         else
-         {
--            NameValuePairList::const_iterator param_useNSView_pair{};
-+            NameValuePairList::const_iterator param_useNSView_pair;
-             param_useNSView_pair = miscParams->find("macAPICocoaUseNSView");
- 
-             if(param_useNSView_pair != miscParams->end())
