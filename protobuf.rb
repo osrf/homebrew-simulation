@@ -56,49 +56,46 @@ EOS
 end
 
 __END__
-Index: src/google/protobuf/message.cc
-===================================================================
---- src/google/protobuf/message.cc (revision 490)
-+++ src/google/protobuf/message.cc (working copy)
-@@ -277,7 +277,8 @@
-void GeneratedMessageFactory::RegisterFile(
-const char* file, RegistrationFunc* registration_func) {
-if (!InsertIfNotPresent(&file_map_, file, registration_func)) {
-- GOOGLE_LOG(FATAL) << "File is already registered: " << file;
-+ registration_func(file);
-+ //GOOGLE_LOG(FATAL) << "File is already registered: " << file;
-}
-}
-
-@@ -292,7 +293,7 @@
-// the mutex.
-mutex_.AssertHeld();
-if (!InsertIfNotPresent(&type_map_, descriptor, prototype)) {
-- GOOGLE_LOG(DFATAL) << "Type is already registered: " << descriptor->full_name();
-+ //GOOGLE_LOG(DFATAL) << "Type is already registered: " << descriptor->full_name();
-}
-}
-
-Index: src/google/protobuf/descriptor_database.cc
-===================================================================
---- src/google/protobuf/descriptor_database.cc (revision 490)
-+++ src/google/protobuf/descriptor_database.cc (working copy)
-@@ -309,7 +309,18 @@
-const void* encoded_file_descriptor, int size) {
-FileDescriptorProto file;
-if (file.ParseFromArray(encoded_file_descriptor, size)) {
-+ std::pair<const void*, int> existing = index_.FindFile(file.name());
-+ if (existing.first) {
-+ if (existing.second == size && memcmp(existing.first, encoded_file_descriptor, size) == 0) {
-+ // Contents match
-+ return true;
-+ }
-+ else {
-+ GOOGLE_LOG(ERROR) << "File descriptor " << file.name() << " is already registered, but descriptor contents are different";
-+ }
-+ }
-return index_.AddFile(file, make_pair(encoded_file_descriptor, size));
-+
-} else {
-GOOGLE_LOG(ERROR) << "Invalid file descriptor data passed to "
-"EncodedDescriptorDatabase::Add().";
+diff --git a/src/google/protobuf/descriptor_database.cc b/src/google/protobuf/descriptor_database.cc
+index 35e459d..fe7bdff 100644
+--- a/src/google/protobuf/descriptor_database.cc
++++ b/src/google/protobuf/descriptor_database.cc
+@@ -309,6 +309,16 @@ bool EncodedDescriptorDatabase::Add(
+     const void* encoded_file_descriptor, int size) {
+   FileDescriptorProto file;
+   if (file.ParseFromArray(encoded_file_descriptor, size)) {
++    std::pair<const void*, int> existing = index_.FindFile(file.name());
++    if (existing.first) {
++      if (existing.second == size && memcmp(existing.first, encoded_file_descriptor, size) == 0) {
++        // Contents match
++        return true;
++      }
++      else {
++        GOOGLE_LOG(ERROR) << "File descriptor " << file.name() << " is already registered, but descriptor contents are different";
++      }
++   }
+     return index_.AddFile(file, make_pair(encoded_file_descriptor, size));
+   } else {
+     GOOGLE_LOG(ERROR) << "Invalid file descriptor data passed to "
+diff --git a/src/google/protobuf/message.cc b/src/google/protobuf/message.cc
+index ab7efa9..423c41b 100644
+--- a/src/google/protobuf/message.cc
++++ b/src/google/protobuf/message.cc
+@@ -277,7 +277,8 @@ GeneratedMessageFactory* GeneratedMessageFactory::singleton() {
+ void GeneratedMessageFactory::RegisterFile(
+     const char* file, RegistrationFunc* registration_func) {
+   if (!InsertIfNotPresent(&file_map_, file, registration_func)) {
+-    GOOGLE_LOG(FATAL) << "File is already registered: " << file;
++    registration_func(file);
++    //GOOGLE_LOG(FATAL) << "File is already registered: " << file;
+   }
+ }
+ 
+@@ -292,7 +293,7 @@ void GeneratedMessageFactory::RegisterType(const Descriptor* descriptor,
+   // the mutex.
+   mutex_.AssertHeld();
+   if (!InsertIfNotPresent(&type_map_, descriptor, prototype)) {
+-    GOOGLE_LOG(DFATAL) << "Type is already registered: " << descriptor->full_name();
++    // GOOGLE_LOG(DFATAL) << "Type is already registered: " << descriptor->full_name();
+   }
+ }
