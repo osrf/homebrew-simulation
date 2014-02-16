@@ -42,16 +42,9 @@ class Protobuf < Formula
       end
     end
   end
-
-	def patches
+  def patches
     # http://code.google.com/p/protobuf/issues/detail?id=128
     DATA
-	end
-
-  def caveats; <<-EOS.undent
-Editor support and examples have been installed to:
-#{doc}
-EOS
   end
 end
 
