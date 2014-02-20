@@ -26,6 +26,7 @@ class Gazebo < Formula
   depends_on 'bullet' => [:optional, 'shared', 'double-precision']
   depends_on 'dartsim/dart/dartsim' => 'core-only' if build.include? "with-dartsim"
   depends_on 'ffmpeg' => :optional
+  depends_on 'player' => :optional
   depends_on 'simbody' => :optional
   # can't figure out how to specify optional gem dependency
   #depends_on 'ronn' => [:ruby, :optional]
