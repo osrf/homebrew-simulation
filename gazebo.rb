@@ -33,7 +33,7 @@ class Gazebo < Formula
 
   def patches
     patches = [
-      'https://gist.githubusercontent.com/scpeters/9199370/raw/8e4a9a18c1dc9c8fc9f9b721793c83aacdde455b/brew_python_fix.patch',
+      'https://gist.githubusercontent.com/scpeters/9199370/raw/7bb0020af6edf96a168e1090993a8554c433938e/brew_python_fix.patch',
     ]
     if build.head?
       patches << 'https://gist.githubusercontent.com/scpeters/9199351/raw/1b7e869d61606be61dcb1f9f9536e0d47d3246a8/disable_gdal.patch'
