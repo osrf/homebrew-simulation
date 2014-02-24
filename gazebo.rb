@@ -67,31 +67,3 @@ diff -r 032eec53d401 deps/opende/CMakeLists.txt
    ${CMAKE_CURRENT_BINARY_DIR} 
    ${CMAKE_SOURCE_DIR}/deps/opende/include
    ${CMAKE_SOURCE_DIR}/deps/opende/ou/include
-diff -r d6781bae8772 cmake/SearchForStuff.cmake
---- a/cmake/SearchForStuff.cmake    Mon Feb 24 09:56:33 2014 -0800
-+++ b/cmake/SearchForStuff.cmake    Mon Feb 24 10:24:48 2014 -0800
-@@ -453,15 +453,15 @@
-
- ########################################
- # Find gdal
--include (FindGDAL)
--if (NOT GDAL_FOUND)
--  message (STATUS "Looking for libgdal - not found")
--  BUILD_WARNING ("GDAL not found, Digital elevation terrains support will be disabled.")
--  set (HAVE_GDAL OFF CACHE BOOL "HAVE GDAL" FORCE)
--else ()
--  message (STATUS "Looking for libgdal - found")
--  set (HAVE_GDAL ON CACHE BOOL "HAVE GDAL" FORCE)
--endif ()
-+#include (FindGDAL)
-+#if (NOT GDAL_FOUND)
-+#  message (STATUS "Looking for libgdal - not found")
-+#  BUILD_WARNING ("GDAL not found, Digital elevation terrains support will be disabled.")
-+#  set (HAVE_GDAL OFF CACHE BOOL "HAVE GDAL" FORCE)
-+#else ()
-+#  message (STATUS "Looking for libgdal - found")
-+#  set (HAVE_GDAL ON CACHE BOOL "HAVE GDAL" FORCE)
-+#endif ()
-
- ########################################
- # Include man pages stuff
