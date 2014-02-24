@@ -31,7 +31,14 @@ class Gazebo < Formula
   # can't figure out how to specify optional gem dependency
   #depends_on 'ronn' => [:ruby, :optional]
 
-  def patches; DATA; end
+  def patches
+    patches = [
+      'https://gist.githubusercontent.com/scpeters/9199370/raw/8e4a9a18c1dc9c8fc9f9b721793c83aacdde455b/brew_python_fix.patch',
+    ]
+    if build.head?
+      patches << 'https://gist.githubusercontent.com/scpeters/9199351/raw/1b7e869d61606be61dcb1f9f9536e0d47d3246a8/disable_gdal.patch'
+    end
+  end
 
   def install
     ENV.m64
@@ -53,17 +60,3 @@ class Gazebo < Formula
     end
   end
 end
-
-__END__
-diff -r 032eec53d401 deps/opende/CMakeLists.txt
---- a/deps/opende/CMakeLists.txt  Tue Aug 20 12:44:18 2013 -0700
-+++ b/deps/opende/CMakeLists.txt  Sat Sep 28 22:18:43 2013 -0700
-@@ -3,7 +3,7 @@
- include (CheckFunctionExists)
- include (CheckLibraryExists)
-
--include_directories(SYSTEM
-+include_directories(
-   ${CMAKE_CURRENT_BINARY_DIR} 
-   ${CMAKE_SOURCE_DIR}/deps/opende/include
-   ${CMAKE_SOURCE_DIR}/deps/opende/ou/include
