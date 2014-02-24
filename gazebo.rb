@@ -38,6 +38,7 @@ class Gazebo < Formula
     if build.head?
       patches << 'https://gist.githubusercontent.com/scpeters/9199351/raw/1b7e869d61606be61dcb1f9f9536e0d47d3246a8/disable_gdal.patch'
     end
+    patches
   end
 
   def install
