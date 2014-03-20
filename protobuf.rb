@@ -43,7 +43,9 @@ class Protobuf < Formula
     end
   end
   def patches
-    # http://code.google.com/p/protobuf/issues/detail?id=128
+		# Patch to deal with protobuf problems in MacOsX
+		# Details  : https://bitbucket.org/osrf/release-tools/issue/25
+    # Upstream : http://code.google.com/p/protobuf/issues/detail?id=128
     DATA
   end
 end
