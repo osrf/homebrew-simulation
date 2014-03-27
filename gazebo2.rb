@@ -29,10 +29,10 @@ class Gazebo2 < Formula
   # can't figure out how to specify optional gem dependency
   #depends_on 'ronn' => [:ruby, :optional]
 
-  def patches
-    [
-      'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch',
-    ]
+  patch do
+    # Fix build when homebrew python is installed
+    url 'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch'
+    sha1 'eaa6f843ab1264810c0c0a81ff3c52232fd49d12'
   end
 
   def install
