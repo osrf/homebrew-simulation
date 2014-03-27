@@ -3,9 +3,8 @@ require 'formula'
 class Gazebo2 < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/assets/distributions/gazebo-current-2.2.2.tar.bz2'
-  sha1 '1bf5d66a402f0b1e8e43a62e4f13e9b4f7d727b7'
+  sha1 'b709927c24c107ce21927b6244bec1fa88cd3e71'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo_2.2', :using => :hg
-  unstable 'https://bitbucket.org/osrf/gazebo', :branch => 'default', :using => :hg
 
   depends_on 'cmake'  => :build
   depends_on 'pkg-config' => :build
@@ -31,19 +30,16 @@ class Gazebo2 < Formula
   #depends_on 'ronn' => [:ruby, :optional]
 
   def patches
-    patches = [
+    [
       'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch',
     ]
-    if build.unstable?
-      patches << 'https://gist.githubusercontent.com/scpeters/9199351/raw/6c90b487def89bff54ad5ad0688110d806063aa0/disable_gdal.patch'
-    end
-    patches
   end
 
   def install
     ENV.m64
 
-    cmake_args = std_cmake_args
+    cmake_args = std_cmake_args.select { |arg| arg.match(/CMAKE_BUILD_TYPE/).nil? }
+    cmake_args << "-DCMAKE_BUILD_TYPE=Release"
     cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
     cmake_args << "-DFORCE_GRAPHIC_TESTS_COMPILATION:BOOL=True"
 
