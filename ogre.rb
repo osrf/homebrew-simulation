@@ -48,6 +48,7 @@ class Ogre < Formula
 
   def install
     ENV.m64
+    ENV.append "CMAKE_INCLUDE_PATH", ":/usr/local/include/freetype2"
 
     cmake_args = [
       "-DCMAKE_OSX_ARCHITECTURES='x86_64'",
