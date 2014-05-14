@@ -7,6 +7,11 @@ class ChronoEngine < Formula
   depends_on 'cmake' => :build
   depends_on 'irrlicht' => :optional
 
+  fails_with :clang do
+    build 503
+    cause 'HACD problem'
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << '-DENABLE_UNIT_IRRLICHT=True' if build.with? 'irrlicht'
