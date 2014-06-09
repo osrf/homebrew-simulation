@@ -7,6 +7,7 @@ class Simbody < Formula
   head 'https://github.com/simbody/simbody.git', :branch => 'master'
 
   depends_on 'cmake' => :build
+  depends_on 'doxygen' => :build
 
   def install
     ENV.m64
