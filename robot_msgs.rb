@@ -6,12 +6,14 @@ class RobotMsgs < Formula
   sha1 "09152d9890569faa435d48e50fa168458ae96e30"
 
   depends_on "cmake" => :build
-  depends_on "pkgconfig" => :build
+  depends_on "pkg-config" => :build
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args.select { |arg| arg.match(/CMAKE_BUILD_TYPE/).nil? }
+    cmake_args << "-DCMAKE_BUILD_TYPE=Release"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
