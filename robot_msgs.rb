@@ -10,7 +10,7 @@ class RobotMsgs < Formula
   depends_on "protobuf-c" => :build
 
   depends_on "boost"
-  depends_on "protobuf"
+  depends_on "osrf/simulation/protobuf"
 
   def install
     cmake_args = std_cmake_args.select { |arg| arg.match(/CMAKE_BUILD_TYPE/).nil? }
