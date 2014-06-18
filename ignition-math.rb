@@ -1,6 +1,6 @@
 require "formula"
 
-class IgnMath < Formula
+class IgnitionMath < Formula
   head "https://bitbucket.org/ignitionrobotics/ign_math", :branch => 'default', :using => :hg
 
   depends_on "cmake" => :build
