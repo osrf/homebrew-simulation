@@ -8,7 +8,7 @@ class IgnitionTransport < Formula
   depends_on "pkg-config" => :build
 
   depends_on "boost"
-  depends_on "osrf/simulation/protobuf"
+  depends_on "osrf/simulation/protobuf" => "c++11"
   depends_on "protobuf-c"
   depends_on "osrf/simulation/robot_msgs"
   depends_on "uuid"
