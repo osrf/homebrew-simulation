@@ -10,7 +10,7 @@ class IgnitionTransport < Formula
   depends_on "osrf/simulation/protobuf" => "c++11"
   depends_on "protobuf-c"
   depends_on "osrf/simulation/robot_msgs"
-  depends_on "uuid"
+  depends_on "ossp-uuid"
   depends_on "zeromq"
   depends_on "czmq"
   depends_on "bertjwregeer/compat/cppzmq"
