@@ -8,6 +8,8 @@ class Sdformat < Formula
 
   depends_on 'boost'
   depends_on 'cmake' => :build
+  depends_on 'ros/deps/urdfdom'
+  depends_on 'ros/deps/urdfdom_headers'
   depends_on 'doxygen'
   depends_on 'tinyxml'
 
@@ -15,6 +17,7 @@ class Sdformat < Formula
     ENV.m64
 
     cmake_args = [
+      "-DUSE_EXTERNAL_URDF:BOOL=True"
       "-DCMAKE_BUILD_TYPE='Release'",
       "-DCMAKE_INSTALL_PREFIX='#{prefix}'",
       "-Wno-dev"
