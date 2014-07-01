@@ -16,6 +16,8 @@ class Ogre < Formula
   depends_on 'tbb'
   depends_on :x11
 
+  option 'with-cg'
+
   # https://gist.github.com/4237236
   patch do
     url 'https://gist.github.com/raw/4237236/e357f1b9fa8b26d02ed84f411d5b5eb7446c68c5/pkg_config_fix.patch'
@@ -55,8 +57,8 @@ class Ogre < Formula
 
     cmake_args = [
       "-DCMAKE_OSX_ARCHITECTURES='x86_64'",
-      "-DOGRE_BUILD_PLUGIN_CG=OFF"
     ]
+    cmake_args << "-DOGRE_BUILD_PLUGIN_CG=OFF" unless build.include? "with-cg"
     cmake_args.concat(std_cmake_args)
     cmake_args << ".."
 
