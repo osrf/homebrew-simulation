@@ -17,7 +17,7 @@ class Sdformat < Formula
     ENV.m64
 
     cmake_args = [
-      "-DUSE_EXTERNAL_URDF:BOOL=True"
+      "-DUSE_EXTERNAL_URDF:BOOL=True",
       "-DCMAKE_BUILD_TYPE='Release'",
       "-DCMAKE_INSTALL_PREFIX='#{prefix}'",
       "-Wno-dev"
