@@ -15,7 +15,7 @@ class Simbody < Formula
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "doxygen"
-      system "make", "install"
+      system "make", "-j", "install"
     end
   end
 end
