@@ -12,7 +12,7 @@ class IgnitionTransport < Formula
   depends_on "osrf/simulation/ignition-msgs" => :build
   depends_on "ossp-uuid"
   depends_on "zeromq"
-  depends_on "czmq"
+  depends_on "czmq" => "HEAD"
   depends_on "bertjwregeer/compat/cppzmq"
 
   def install
