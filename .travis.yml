@@ -5,12 +5,12 @@ before_install:
   
 install:
   - mkdir -p $(brew --repo)/Library/Taps
-  - ln -s $PWD $(brew --repo)/Library/Taps/homebrew-simulation
+  - ln -s $PWD $(brew --repo)/Library/Taps/osrf/homebrew-simulation
   - brew tap --repair
   
 script:
-  - brew audit gazebo2.rb
-  - brew install gazebo2.rb
+  - brew audit gazebo2
+  - brew install gazebo2
   
 matrix:
   fast_finish: true
