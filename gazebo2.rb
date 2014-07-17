@@ -26,8 +26,6 @@ class Gazebo2 < Formula
   depends_on 'ffmpeg' => :optional
   depends_on 'player' => :optional
   depends_on 'simbody' => :optional
-  # can't figure out how to specify optional gem dependency
-  #depends_on 'ronn' => [:ruby, :optional]
 
   patch do
     # Fix build when homebrew python is installed

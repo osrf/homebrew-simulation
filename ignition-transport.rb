@@ -1,6 +1,7 @@
 require "formula"
 
 class IgnitionTransport < Formula
+  homepage "http://ignitionrobotics.org"
   head "https://bitbucket.org/ignitionrobotics/ign_transport", :branch => 'transport_0.3.0', :using => :hg
 
   depends_on "cmake" => :build
