@@ -3,13 +3,30 @@ require 'formula'
 class Ogre19 < Formula
   homepage 'http://www.ogre3d.org/'
 
-  url 'https://bitbucket.org/sinbad/ogre/get/v1-9-0.tar.gz'
-  version '1.9.0'
-  sha1 'dd1c0a27ff76a34d3c0daf7534ab9cd16e399f86'
+  stable do
+    url 'https://bitbucket.org/sinbad/ogre/get/v1-9-0.tar.gz'
+    version '1.9.0'
+    sha1 'dd1c0a27ff76a34d3c0daf7534ab9cd16e399f86'
 
-  head 'https://bitbucket.org/sinbad/ogre', :using => :hg
+    patch do
+      url 'https://gist.githubusercontent.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/3af6b11889a90d7e35bb90cdb34c46ea8334eaf3/fix-1.9.0-release.diff'
+      sha1 '9ad217fc33690f76fd857ba49c3840715d4f3527'
+    end
+  end
 
-  patch :DATA
+  devel do
+    url 'https://bitbucket.org/sinbad/ogre/get/v1-9.tar.bz2'
+    version '1.9.1-devel'
+    sha1 '4036621e8ce2af77f3ed77a61e1976de6d722d3b'
+
+    patch do
+      url 'https://gist.github.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/bf4a4d16020821218f73db0d56aa111ab2fde679/fix-1.9-HEAD.diff'
+      sha1 '90bef44c2a821bba3254c011b0aa0f5ecedeb788'
+    end
+  end
+
+  #head 'https://bitbucket.org/sinbad/ogre', :using => :hg
+  #patch :DATA
 
   depends_on 'boost'
   depends_on 'cmake' => :build
@@ -44,6 +61,10 @@ class Ogre19 < Formula
       system "make install"
     end
 
+    # Reference of where debian puts files:
+    # https://packages.debian.org/jessie/amd64/libogre-1.9-dev/filelist
+    # https://packages.debian.org/jessie/amd64/libogre-1.9.0/filelist
+
     # FIXME: for now we build with doc and samples OFF, so config files, media
     #        and docs are not present
 
@@ -72,82 +93,3 @@ class Ogre19 < Formula
 
   end
 end
-
-__END__
-diff -r dd30349ea667 CMake/Utils/OgreConfigTargets.cmake
---- a/CMake/Utils/OgreConfigTargets.cmake	Sun Dec 01 11:28:12 2013 -0600
-+++ b/CMake/Utils/OgreConfigTargets.cmake	Thu Jul 17 21:24:12 2014 +0200
-@@ -71,7 +71,7 @@
-     set(OGRE_LIB_RELEASE_PATH "/Release")
-   endif(APPLE AND OGRE_BUILD_PLATFORM_APPLE_IOS)
-   if (APPLE)
--    set(OGRE_PLUGIN_PATH "/")
-+    set(OGRE_PLUGIN_PATH "/OGRE")
-   else()
-     set(OGRE_PLUGIN_PATH "/OGRE")
-   endif(APPLE)
-@@ -103,11 +103,11 @@
-
- 	if(EXPORT)
- 	  install(TARGETS ${TARGETNAME} #EXPORT Ogre-exports
--		BUNDLE DESTINATION "bin${OGRE_RELEASE_PATH}" CONFIGURATIONS Release None ""
--		RUNTIME DESTINATION "bin${OGRE_RELEASE_PATH}" CONFIGURATIONS Release None ""
-+		BUNDLE DESTINATION "bin" CONFIGURATIONS Release None ""
-+		RUNTIME DESTINATION "bin" CONFIGURATIONS Release None ""
- 		LIBRARY DESTINATION "${OGRE_LIB_DIRECTORY}${OGRE_LIB_RELEASE_PATH}${SUFFIX}" CONFIGURATIONS Release None ""
- 		ARCHIVE DESTINATION "${OGRE_LIB_DIRECTORY}${OGRE_LIB_RELEASE_PATH}${SUFFIX}" CONFIGURATIONS Release None ""
--		FRAMEWORK DESTINATION "${OGRE_LIB_DIRECTORY}${OGRE_RELEASE_PATH}/Release" CONFIGURATIONS Release None ""
-+		FRAMEWORK DESTINATION "Frameworks" CONFIGURATIONS Release None ""
-       )
- 	  install(TARGETS ${TARGETNAME} #EXPORT Ogre-exports
- 		BUNDLE DESTINATION "bin${OGRE_RELWDBG_PATH}" CONFIGURATIONS RelWithDebInfo
-@@ -133,11 +133,11 @@
- 	  #install(EXPORT Ogre-exports DESTINATION ${OGRE_LIB_DIRECTORY})
- 	else()
- 	  install(TARGETS ${TARGETNAME}
--		BUNDLE DESTINATION "bin${OGRE_RELEASE_PATH}" CONFIGURATIONS Release None ""
--		RUNTIME DESTINATION "bin${OGRE_RELEASE_PATH}" CONFIGURATIONS Release None ""
-+		BUNDLE DESTINATION "bin" CONFIGURATIONS Release None ""
-+		RUNTIME DESTINATION "bin" CONFIGURATIONS Release None ""
- 		LIBRARY DESTINATION "${OGRE_LIB_DIRECTORY}${OGRE_LIB_RELEASE_PATH}${SUFFIX}" CONFIGURATIONS Release None ""
- 		ARCHIVE DESTINATION "${OGRE_LIB_DIRECTORY}${OGRE_LIB_RELEASE_PATH}${SUFFIX}" CONFIGURATIONS Release None ""
--		FRAMEWORK DESTINATION "${OGRE_LIB_DIRECTORY}${OGRE_RELEASE_PATH}/Release" CONFIGURATIONS Release None ""
-+		FRAMEWORK DESTINATION "Frameworks" CONFIGURATIONS Release None ""
-       )
- 	  install(TARGETS ${TARGETNAME}
- 		BUNDLE DESTINATION "bin${OGRE_RELWDBG_PATH}" CONFIGURATIONS RelWithDebInfo
-@@ -251,7 +251,7 @@
- endfunction(ogre_config_component)
-
- function(ogre_config_framework LIBNAME)
--  if (APPLE AND NOT OGRE_BUILD_PLATFORM_APPLE_IOS)
-+  if (OGRE_BUILD_LIBS_AS_FRAMEWORKS)
-       set_target_properties(${LIBNAME} PROPERTIES FRAMEWORK TRUE)
-
-       # Set the INSTALL_PATH so that frameworks can be installed in the application package
-diff -r dd30349ea667 CMakeLists.txt
---- a/CMakeLists.txt	Sun Dec 01 11:28:12 2013 -0600
-+++ b/CMakeLists.txt	Thu Jul 17 21:24:12 2014 +0200
-@@ -391,6 +391,7 @@
- cmake_dependent_option(OGRE_BUILD_XSIEXPORTER "Build the Softimage exporter" FALSE "Softimage_FOUND" FALSE)
- option(OGRE_BUILD_TESTS "Build the unit tests & PlayPen" FALSE)
- option(OGRE_CONFIG_DOUBLE "Use doubles instead of floats in Ogre" FALSE)
-+cmake_dependent_option(OGRE_BUILD_LIBS_AS_FRAMEWORKS "Build frameworks for libraries on OS X." TRUE "APPLE;NOT OGRE_BUILD_PLATFORM_APPLE_IOS" FALSE)
-
- if (OGRE_BUILD_PLATFORM_WINRT)
- # WinRT can only use the standard allocator
-diff -r dd30349ea667 OgreMain/CMakeLists.txt
---- a/OgreMain/CMakeLists.txt	Sun Dec 01 11:28:12 2013 -0600
-+++ b/OgreMain/CMakeLists.txt	Thu Jul 17 21:24:12 2014 +0200
-@@ -334,7 +334,9 @@
-   endif ()
-
-   # Framework is called 'Ogre'
--  set_target_properties(OgreMain PROPERTIES	OUTPUT_NAME Ogre)
-+  if (OGRE_BUILD_LIBS_AS_FRAMEWORKS)
-+    set_target_properties(OgreMain PROPERTIES	OUTPUT_NAME Ogre)
-+  endif ()
- endif ()
- target_link_libraries(OgreMain ${LIBRARIES})
- if (MINGW)
-
