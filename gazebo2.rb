@@ -13,7 +13,7 @@ class Gazebo2 < Formula
   depends_on 'doxygen'
   depends_on 'freeimage'
   depends_on 'libtar'
-  depends_on 'ogre'
+  depends_on 'ogre1.9'
   depends_on 'osrf/simulation/protobuf'
   depends_on 'protobuf-c'
   depends_on 'qt'
@@ -31,6 +31,11 @@ class Gazebo2 < Formula
     # Fix build when homebrew python is installed
     url 'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch'
     sha1 'eaa6f843ab1264810c0c0a81ff3c52232fd49d12'
+  end
+
+  patch do
+    url 'https://gist.githubusercontent.com/NikolausDemmel/291d2eb9ccc8bd0a4668/raw/ed7864fd1ee550dd0cf1998860b9f40233829cee/gazebo2-ogre-1.9.patch'
+    sha1 'a9b14f19cb9f96f3c8e2e6260ac6d37213e85aa4'
   end
 
   def install
