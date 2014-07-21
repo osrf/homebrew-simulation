@@ -1,8 +1,8 @@
 require "formula"
 
 class IgnitionMsgs < Formula
-  homepage "https://bitbucket.org/ignitionrobotics/ign_msgs"
-  head "https://bitbucket.org/ignitionrobotics/ign_msgs", :branch => 'default', :using => :hg
+  homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
+  head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => 'default', :using => :hg
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
