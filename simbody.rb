@@ -12,8 +12,11 @@ class Simbody < Formula
   def install
     ENV.m64
 
+    cmake_args = std_cmake_args.select { |arg| arg.match(/CMAKE_BUILD_TYPE/).nil? }
+    cmake_args << "-DCMAKE_BUILD_TYPE=Release"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "doxygen"
       system "make", "install"
     end
