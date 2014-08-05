@@ -2,8 +2,8 @@ require 'formula'
 
 class Gazebo2 < Formula
   homepage 'http://gazebosim.org'
-  url 'http://gazebosim.org/assets/distributions/gazebo-current-2.2.2.tar.bz2'
-  sha1 'b709927c24c107ce21927b6244bec1fa88cd3e71'
+  url 'http://gazebosim.org/assets/distributions/gazebo-2.2.3.tar.bz2'
+  sha1 'f7f867a840b389e49bdc6929729914ede05952fe'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo_2.2', :using => :hg
 
   depends_on 'cmake'  => :build
