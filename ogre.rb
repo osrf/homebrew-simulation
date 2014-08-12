@@ -2,7 +2,7 @@ require 'formula'
 
 class Ogre < Formula
   homepage 'http://www.ogre3d.org/'
-  url 'https://sourceforge.net/projects/ogre/files/ogre/1.7/ogre_src_v1-7-4.tar.bz2'
+  url 'https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2'
   version '1.7.4'
   sha1 'e989b96eacc2c66f8cf8a19dae6cfd962a165207'
   head 'https://bitbucket.org/sinbad/ogre', :branch => 'v1-9', :using => :hg
@@ -15,6 +15,8 @@ class Ogre < Formula
   depends_on 'libzzip'
   depends_on 'tbb'
   depends_on :x11
+
+  option 'with-cg'
 
   # https://gist.github.com/4237236
   patch do
@@ -55,8 +57,8 @@ class Ogre < Formula
 
     cmake_args = [
       "-DCMAKE_OSX_ARCHITECTURES='x86_64'",
-      "-DOGRE_BUILD_PLUGIN_CG=OFF"
     ]
+    cmake_args << "-DOGRE_BUILD_PLUGIN_CG=OFF" if build.without? "cg"
     cmake_args.concat(std_cmake_args)
     cmake_args << ".."
 

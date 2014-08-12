@@ -2,7 +2,7 @@ require 'formula'
 
 class Protobuf < Formula
   homepage 'http://code.google.com/p/protobuf/'
-  url 'http://protobuf.googlecode.com/files/protobuf-2.5.0.tar.bz2'
+  url 'https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.bz2'
   sha1 '62c10dcdac4b69cc8c6bb19f73db40c264cb2726'
 
   option :universal
@@ -42,12 +42,11 @@ class Protobuf < Formula
       end
     end
   end
-  def patches
-    # Patch to deal with protobuf problems in MacOsX
-    # Details  : https://bitbucket.org/osrf/release-tools/issue/25
-    # Upstream : http://code.google.com/p/protobuf/issues/detail?id=128
-    DATA
-  end
+
+  # Patch to deal with protobuf problems in MacOsX
+  # Details  : https://bitbucket.org/osrf/release-tools/issue/25
+  # Upstream : http://code.google.com/p/protobuf/issues/detail?id=128
+  patch :DATA
 end
 
 __END__

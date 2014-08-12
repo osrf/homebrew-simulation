@@ -1,7 +1,8 @@
 require "formula"
 
 class IgnitionTransport < Formula
-  head "https://bitbucket.org/ignitionrobotics/ign_transport", :branch => 'transport_0.3.0', :using => :hg
+  homepage "http://ignitionrobotics.org"
+  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => 'transport_0.3.0', :using => :hg
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
@@ -9,10 +10,10 @@ class IgnitionTransport < Formula
 
   depends_on "osrf/simulation/protobuf" => "c++11"
   depends_on "protobuf-c" => :build
-  depends_on "osrf/simulation/robot_msgs" => :build
+  depends_on "osrf/simulation/ignition-msgs" => :build
   depends_on "ossp-uuid"
   depends_on "zeromq"
-  depends_on "czmq"
+  depends_on "czmq" => "HEAD"
   depends_on "bertjwregeer/compat/cppzmq"
 
   def install
