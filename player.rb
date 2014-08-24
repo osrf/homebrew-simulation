@@ -45,3 +45,18 @@ diff -u a/server/drivers/mixed/rflex/rflex.cc b/server/drivers/mixed/rflex/rflex
  
  // help function to rotate sonar positions
  void SonarRotate(double heading, double x1, double y1, double t1, double *x2, double *y2, double *t2)
+diff --git a/client_libs/libplayerc++/CMakeLists.txt b/client_libs/libplayerc++/CMakeLists.txt
+index c7410ec..6c9737d 100644
+--- a/client_libs/libplayerc++/CMakeLists.txt
++++ b/client_libs/libplayerc++/CMakeLists.txt
+@@ -104,6 +104,10 @@ IF (BUILD_PLAYERCC)
+                              "PlayerC++ client library will be built with Boost::Thread support.")
+                         SET (boostThreadLib boost_thread${BOOST_LIB_SUFFIX})
+                         PLAYERCC_ADD_LINK_LIB (${boostThreadLib})
++                        IF (APPLE)
++                          SET (boostSystemLib boost_system${BOOST_LIB_SUFFIX})
++                          PLAYERCC_ADD_LINK_LIB (${boostSystemLib})
++                        ENDIF (APPLE)
+                         PLAYERCC_ADD_INCLUDE_DIR (${Boost_INCLUDE_DIR})
+                         PLAYERCC_ADD_LINK_DIR (${Boost_LIBRARY_DIRS})
+                         SET (boostIncludeDir ${Boost_INCLUDE_DIRS})
