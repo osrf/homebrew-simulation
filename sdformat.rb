@@ -8,6 +8,7 @@ class Sdformat < Formula
 
   depends_on 'boost'
   depends_on 'cmake' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'ros/deps/urdfdom'
   depends_on 'ros/deps/urdfdom_headers'
   depends_on 'doxygen'
