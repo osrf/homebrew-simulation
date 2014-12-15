@@ -14,7 +14,7 @@ class Gazebo3 < Formula
   depends_on 'freeimage'
   depends_on 'libtar'
   depends_on 'ogre'
-  depends_on 'osrf/simulation/protobuf'
+  depends_on 'protobuf'
   depends_on 'protobuf-c'
   depends_on 'qt'
   depends_on 'sdformat'
@@ -31,6 +31,12 @@ class Gazebo3 < Formula
     # Fix build when homebrew python is installed
     url 'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch'
     sha1 'eaa6f843ab1264810c0c0a81ff3c52232fd49d12'
+  end
+
+  patch do
+    # Fix build with protobuf 2.6 (gazebo #1289)
+    url 'https://bitbucket.org/osrf/gazebo/commits/4bb4390655af316b582f8e0fea23438426b4e681/raw/'
+    sha1 '4b149bdfb0a95c08d76c724f11f7a9780a3759fa'
   end
 
   patch do
