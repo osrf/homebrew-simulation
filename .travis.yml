@@ -9,8 +9,7 @@ install:
   - brew tap --repair
   
 script:
-  - brew audit gazebo2
-  - brew install gazebo2
+  - brew audit
   
 matrix:
   fast_finish: true
