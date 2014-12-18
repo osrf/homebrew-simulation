@@ -9,7 +9,7 @@ install:
   - brew tap --repair
   
 script:
-  - brew audit
+  - brew audit $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*
   
 matrix:
   fast_finish: true
