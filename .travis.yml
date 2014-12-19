@@ -9,7 +9,7 @@ install:
   - brew tap --repair
   
 script:
-  - brew audit $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb
+  - brew audit `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
   
 matrix:
   fast_finish: true
