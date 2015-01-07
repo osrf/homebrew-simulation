@@ -39,6 +39,12 @@ class Gazebo2 < Formula
     sha1 '4b149bdfb0a95c08d76c724f11f7a9780a3759fa'
   end
 
+  patch do
+    # Fix build with boost 1.57 (gazebo #1399)
+    url 'https://bitbucket.org/osrf/gazebo/commits/39f8398003ada7381dc03096f666627e84c738eb/raw/'
+    sha1 'd7439de6508149cfa1c11058f0e626037e6c1552'
+  end
+
   def install
     ENV.m64
 
