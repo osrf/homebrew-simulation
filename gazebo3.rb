@@ -45,6 +45,21 @@ class Gazebo3 < Formula
     sha1 'fc258137ab82d2a6b922f46f345366e72e96c1b8'
   end
 
+  patch do
+    # Fix build with boost 1.57 (gazebo #1399)
+    url 'https://bitbucket.org/osrf/gazebo/commits/39f8398003ada7381dc03096f666627e84c738eb/raw/'
+    sha1 'd7439de6508149cfa1c11058f0e626037e6c1552'
+  end
+
+  # Fix whitespace before next patch
+  patch :DATA
+
+  patch do
+    # Another fix with boost 1.57 (gazebo #1399)
+    url 'https://bitbucket.org/osrf/gazebo/commits/34e70706a56709a5c3a2a5ef4e79e271fcaa4e9c/raw/'
+    sha1 'bb5c42d593ad31f8c41c1fc99af7716bc5e8563f'
+  end
+
   def install
     ENV.m64
 
@@ -60,3 +75,18 @@ class Gazebo3 < Formula
     end
   end
 end
+
+__END__
+diff -r 890dd3dddb9e tools/CMakeLists.txt
+--- a/tools/CMakeLists.txt	Thu Nov 20 18:28:10 2014 +0100
++++ b/tools/CMakeLists.txt	Wed Jan 07 17:50:26 2015 -0800
+@@ -7,7 +7,7 @@
+   ${SDF_INCLUDE_DIRS}
+ )
+ 
+-link_directories( 
++link_directories(
+   ${SDF_LIBRARY_DIRS}
+   ${tinyxml_LIBRARY_DIRS}
+ )
+
