@@ -30,6 +30,11 @@ class Ogre19 < Formula
     sha1 'c520d0641183bb275a0b29ef6188353bc2ba6217'
   end
 
+  patch do
+    url 'https://gist.githubusercontent.com/hgaiser/ebc83769f2315a730359/raw/730694b6c58b31fc7a4a768e395c7f4a550f7e17/rviz_moc.diff'
+    sha1 '7a3a08b93211f27b3267f3115581282b6ea471e8'
+  end
+
   #head 'https://bitbucket.org/sinbad/ogre', :using => :hg
   #patch :DATA
 
