@@ -1,10 +1,11 @@
 require 'formula'
 
-class Gazebo5Beta < Formula
+class Gazebo5 < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/assets/distributions/gazebo5-beta2-5.0.0.tar.bz2'
   sha1 '90e820ad2d6f8be6700b6a88b3450c77e5fbb115'
-  head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo5', :using => :hg
+  version '5.0.0beta2'
+  head 'https://bitbucket.org/osrf/gazebo', :branch => 'default', :using => :hg
 
   depends_on 'cmake'  => :build
   depends_on 'pkg-config' => :build
