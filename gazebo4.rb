@@ -2,8 +2,8 @@ require 'formula'
 
 class Gazebo4 < Formula
   homepage 'http://gazebosim.org'
-  url 'http://gazebosim.org/assets/distributions/gazebo-4.1.0.tar.bz2'
-  sha1 'cf212df15b787c8b0082b32636512a3ac456c597'
+  url 'http://gazebosim.org/assets/distributions/gazebo-4.1.1.tar.bz2'
+  sha1 'b28c7e6c3ee9a2e6791f6099ea4e2ee0e7d881a4'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo_4.1', :using => :hg
 
   depends_on 'cmake'  => :build
@@ -34,30 +34,9 @@ class Gazebo4 < Formula
   end
 
   patch do
-    # Fix build with protobuf 2.6 (gazebo #1289)
-    url 'https://bitbucket.org/osrf/gazebo/commits/4bb4390655af316b582f8e0fea23438426b4e681/raw/'
-    sha1 '4b149bdfb0a95c08d76c724f11f7a9780a3759fa'
-  end
-
-  patch do
     # Disable gdal dependency for now (see gazebo issue #1063)
     url 'https://gist.githubusercontent.com/scpeters/9199351/raw/6c90b487def89bff54ad5ad0688110d806063aa0/disable_gdal.patch'
     sha1 'fc258137ab82d2a6b922f46f345366e72e96c1b8'
-  end
-
-  patch do
-    # Fix build with boost 1.57 (gazebo #1399)
-    url 'https://bitbucket.org/osrf/gazebo/commits/39f8398003ada7381dc03096f666627e84c738eb/raw/'
-    sha1 'd7439de6508149cfa1c11058f0e626037e6c1552'
-  end
-
-  # Fix whitespace before next patch
-  patch :DATA
-
-  patch do
-    # Another fix for boost 1.57 (gazebo #1399)
-    url 'https://bitbucket.org/osrf/gazebo/commits/3d00f50d53e5d9dd887afb3f54d24f2fd6a9c7a5/raw/'
-    sha1 '993239e9e45cc2929b0526d077eca45c8d0d31d7'
   end
 
   def install
@@ -74,18 +53,4 @@ class Gazebo4 < Formula
     end
   end
 end
-
-__END__
-diff -r 890dd3dddb9e tools/CMakeLists.txt
---- a/tools/CMakeLists.txt	Thu Nov 20 18:28:10 2014 +0100
-+++ b/tools/CMakeLists.txt	Wed Jan 07 17:50:26 2015 -0800
-@@ -7,7 +7,7 @@
-   ${SDF_INCLUDE_DIRS}
- )
- 
--link_directories( 
-+link_directories(
-   ${SDFormat_LIBRARY_DIRS}
-   ${tinyxml_LIBRARY_DIRS}
- )
 
