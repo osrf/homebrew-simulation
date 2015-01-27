@@ -24,6 +24,7 @@ class Gazebo5 < Formula
   depends_on 'bullet' => [:recommended, 'shared', 'double-precision']
   depends_on 'dartsim/dart/dartsim' => [:optional, 'core-only']
   depends_on 'ffmpeg' => :optional
+  depends_on 'gdal' => :optional
   depends_on 'player' => :optional
   depends_on 'simbody' => :recommended
 
@@ -34,9 +35,9 @@ class Gazebo5 < Formula
   end
 
   patch do
-    # Disable gdal dependency for now (see gazebo issue #1063)
-    url 'https://gist.githubusercontent.com/scpeters/9199351/raw/6c90b487def89bff54ad5ad0688110d806063aa0/disable_gdal.patch'
-    sha1 'fc258137ab82d2a6b922f46f345366e72e96c1b8'
+    # Fix gdal support (see gazebo issue #1063)
+    url 'https://bitbucket.org/osrf/gazebo/commits/bc1349163e8c2988769e8e54297e47506205f51b/raw/'
+    sha1 'a371ebb2e83cef433e6985ce7207eb561eb25fbd'
   end
 
   def install
