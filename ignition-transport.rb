@@ -2,7 +2,7 @@ require "formula"
 
 class IgnitionTransport < Formula
   homepage "http://ignitionrobotics.org"
-  url 'http://osrf-distributions.s3.amazonaws.com/ignition/releases/ignition-transport-0.4.4.tar.bz2'
+  url 'http://gazebosim.org/distributions/ignition/releases/ignition-transport-0.4.4.tar.bz2'
   sha1 '301fdd12b1901d3760ce570e920ae61e261fbd7b'
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => 'default', :using => :hg
 

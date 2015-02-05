@@ -2,7 +2,7 @@ require 'formula'
 
 class Gazebo4 < Formula
   homepage 'http://gazebosim.org'
-  url 'http://gazebosim.org/distributions/gazebo-4.1.1.tar.bz2'
+  url 'http://gazebosim.org/distributions/gazebo/releases/gazebo-4.1.1.tar.bz2'
   sha1 'b28c7e6c3ee9a2e6791f6099ea4e2ee0e7d881a4'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo_4.1', :using => :hg
 
