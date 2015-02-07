@@ -2,8 +2,8 @@ require 'formula'
 
 class Sdformat < Formula
   homepage 'http://gazebosim.org/sdf.html'
-  url 'http://gazebosim.org/distributions/sdformat/releases/sdformat-2.2.1.tar.bz2'
-  sha1 'f405e7752ca34e2b2c6c7a85df9ecf4da95ac536'
+  url 'http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.0.tar.bz2'
+  sha1 '604cb8a3a90d426abc7178dc90ba0cd884867473'
   head 'https://bitbucket.org/osrf/sdformat', :branch => 'sdf_2.0', :using => :hg
 
   depends_on 'boost'
