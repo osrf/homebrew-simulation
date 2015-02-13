@@ -25,6 +25,7 @@ class Gazebo5 < Formula
   depends_on 'dartsim/dart/dartsim' => [:optional, 'core-only']
   depends_on 'ffmpeg' => :optional
   depends_on 'gdal' => :optional
+  depends_on 'gts' => :optional
   depends_on 'player' => :optional
   depends_on 'simbody' => :recommended
 

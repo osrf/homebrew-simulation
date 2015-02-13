@@ -24,6 +24,7 @@ class Gazebo3 < Formula
   depends_on 'bullet' => [:optional, 'shared', 'double-precision']
   depends_on 'dartsim/dart/dartsim' => [:optional, 'core-only']
   depends_on 'ffmpeg' => :optional
+  depends_on 'gts' => :optional
   depends_on 'player' => :optional
   depends_on 'simbody' => :optional
 

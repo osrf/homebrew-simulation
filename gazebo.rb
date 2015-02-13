@@ -23,6 +23,7 @@ class Gazebo < Formula
 
   depends_on 'bullet' => [:optional, 'shared', 'double-precision']
   depends_on 'ffmpeg' => :optional
+  depends_on 'gts' => :optional
   depends_on 'player' => :optional
   depends_on 'simbody' => :optional
 
