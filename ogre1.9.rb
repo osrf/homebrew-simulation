@@ -25,6 +25,11 @@ class Ogre19 < Formula
     end
   end
 
+  patch do
+    url 'https://gist.githubusercontent.com/hgaiser/9ed14de3d776cd34100e/raw/38c7a88cab9067e88a21f1386fbb8ac1aaeed8ac/window.patch'
+    sha1 'c520d0641183bb275a0b29ef6188353bc2ba6217'
+  end
+
   #head 'https://bitbucket.org/sinbad/ogre', :using => :hg
   #patch :DATA
 
