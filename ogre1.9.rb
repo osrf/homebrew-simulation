@@ -12,22 +12,26 @@ class Ogre19 < Formula
       url 'https://gist.githubusercontent.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/3af6b11889a90d7e35bb90cdb34c46ea8334eaf3/fix-1.9.0-release.diff'
       sha1 '9ad217fc33690f76fd857ba49c3840715d4f3527'
     end
+
+    patch do
+      # COMMENT @NikolausDemmel 2015-02-15
+      # it seems that in the latest v1-9 branch there is a different fix for this:
+      # https://bitbucket.org/sinbad/ogre/src/f40744b1106a0ce3b2cd0eadfd05bcf344f28167/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm?at=v1-9#cl-285
+      # i.e. this patch is possibly obsolete
+      url 'https://gist.githubusercontent.com/hgaiser/9ed14de3d776cd34100e/raw/38c7a88cab9067e88a21f1386fbb8ac1aaeed8ac/window.patch'
+      sha1 'c520d0641183bb275a0b29ef6188353bc2ba6217'
+    end
   end
 
   devel do
     url 'https://bitbucket.org/sinbad/ogre/get/v1-9.tar.bz2'
     version '1.9.1-devel'
-    sha1 '4036621e8ce2af77f3ed77a61e1976de6d722d3b'
+    sha1 'aa9b0c6d371802e0535515758e88c4893045cd5f'
 
     patch do
       url 'https://gist.github.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/bf4a4d16020821218f73db0d56aa111ab2fde679/fix-1.9-HEAD.diff'
       sha1 '90bef44c2a821bba3254c011b0aa0f5ecedeb788'
     end
-  end
-
-  patch do
-    url 'https://gist.githubusercontent.com/hgaiser/9ed14de3d776cd34100e/raw/38c7a88cab9067e88a21f1386fbb8ac1aaeed8ac/window.patch'
-    sha1 'c520d0641183bb275a0b29ef6188353bc2ba6217'
   end
 
   #head 'https://bitbucket.org/sinbad/ogre', :using => :hg
