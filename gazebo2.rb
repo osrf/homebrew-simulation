@@ -35,12 +35,6 @@ class Gazebo2 < Formula
   end
 
   patch do
-    # Fix to use ogre 1.9
-    url 'https://gist.githubusercontent.com/NikolausDemmel/291d2eb9ccc8bd0a4668/raw/ed7864fd1ee550dd0cf1998860b9f40233829cee/gazebo2-ogre-1.9.patch'
-    sha1 'a9b14f19cb9f96f3c8e2e6260ac6d37213e85aa4'
-  end
-
-  patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
     url 'https://bitbucket.org/osrf/gazebo/commits/4bb4390655af316b582f8e0fea23438426b4e681/raw/'
     sha1 '4b149bdfb0a95c08d76c724f11f7a9780a3759fa'
