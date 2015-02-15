@@ -32,6 +32,11 @@ class Ogre19 < Formula
       url 'https://gist.github.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/bf4a4d16020821218f73db0d56aa111ab2fde679/fix-1.9-HEAD.diff'
       sha1 '90bef44c2a821bba3254c011b0aa0f5ecedeb788'
     end
+
+    patch do
+      url 'https://gist.githubusercontent.com/NikolausDemmel/927bd7bb3f14c1788599/raw/c9a5ba88b758e80d3f46511629c4e8026b92c462/ogre1.9.patch'
+      sha1 '44ef20d7a7124814bacade807a7d97bb8c1e6356'
+    end
   end
 
   #head 'https://bitbucket.org/sinbad/ogre', :using => :hg
