@@ -14,10 +14,6 @@ class Ogre19 < Formula
     end
 
     patch do
-      # COMMENT @NikolausDemmel 2015-02-15
-      # it seems that in the latest v1-9 branch there is a different fix for this:
-      # https://bitbucket.org/sinbad/ogre/src/f40744b1106a0ce3b2cd0eadfd05bcf344f28167/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm?at=v1-9#cl-285
-      # i.e. this patch is possibly obsolete
       url 'https://gist.githubusercontent.com/hgaiser/9ed14de3d776cd34100e/raw/38c7a88cab9067e88a21f1386fbb8ac1aaeed8ac/window.patch'
       sha1 'c520d0641183bb275a0b29ef6188353bc2ba6217'
     end
@@ -34,6 +30,7 @@ class Ogre19 < Formula
     end
 
     patch do
+      # this is the same patch as hgaiser's `window.patch` above, but applicable to the latest 1.9 version
       url 'https://gist.githubusercontent.com/NikolausDemmel/927bd7bb3f14c1788599/raw/c9a5ba88b758e80d3f46511629c4e8026b92c462/ogre1.9.patch'
       sha1 '44ef20d7a7124814bacade807a7d97bb8c1e6356'
     end
