@@ -2,12 +2,13 @@ require 'formula'
 
 class Sdformat < Formula
   homepage 'http://gazebosim.org/sdf.html'
-  url 'http://gazebosim.org/assets/distributions/sdformat2-prerelease-2.0.1.tar.bz2'
-  sha1 '3b61426e07661d42ef6e5938a80f382436013a8f'
+  url 'http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.0.tar.bz2'
+  sha1 '604cb8a3a90d426abc7178dc90ba0cd884867473'
   head 'https://bitbucket.org/osrf/sdformat', :branch => 'sdf_2.0', :using => :hg
 
   depends_on 'boost'
   depends_on 'cmake' => :build
+  depends_on 'pkg-config' => :build
   depends_on 'ros/deps/urdfdom'
   depends_on 'ros/deps/urdfdom_headers'
   depends_on 'doxygen'

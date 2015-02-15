@@ -9,8 +9,7 @@ install:
   - brew tap --repair
   
 script:
-  - brew audit gazebo2
-  - brew install gazebo2
+  - brew audit `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
   
 matrix:
   fast_finish: true

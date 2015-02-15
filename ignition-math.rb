@@ -2,7 +2,7 @@ require "formula"
 
 class IgnitionMath < Formula
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/assets/distributions/ignition-math-0.1.0.tar.bz2"
+  url "http://gazebosim.org/distributions/ignition/releases/ignition-math-0.1.0.tar.bz2"
   sha1 "6585d7124bcecb055058a9695c0f295af1b9046b"
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => 'default', :using => :hg
 
