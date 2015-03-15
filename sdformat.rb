@@ -1,7 +1,7 @@
 require 'formula'
 
 class Sdformat < Formula
-  homepage 'http://gazebosim.org/sdf.html'
+  homepage 'http://sdformat.org'
   url 'http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.1.tar.bz2'
   sha1 '18a7dca5fb406106e8fc644d45c4feee923ef5e1'
   head 'https://bitbucket.org/osrf/sdformat', :branch => 'sdf_2.3', :using => :hg
