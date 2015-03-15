@@ -2,8 +2,8 @@ require "formula"
 
 class IgnitionMath < Formula
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ignition/releases/ignition-math-0.1.0.tar.bz2"
-  sha1 "6585d7124bcecb055058a9695c0f295af1b9046b"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math-1.0.0.tar.bz2"
+  sha1 "43f63f57f9ae0d6d5e7855ac022375448ee41c6f"
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => 'default', :using => :hg
 
   depends_on "cmake" => :build
