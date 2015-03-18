@@ -4,7 +4,7 @@ class Gazebo5 < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/distributions/gazebo/releases/gazebo-5.0.1.tar.bz2'
   sha1 'f9102a34dd34c5c7ab1ceef09752d2316bfef25e'
-  head 'https://bitbucket.org/osrf/gazebo', :branch => 'default', :using => :hg
+  head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo5', :using => :hg
 
   depends_on 'cmake'  => :build
   depends_on 'pkg-config' => :build
