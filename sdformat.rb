@@ -11,8 +11,7 @@ class Sdformat < Formula
 
   depends_on 'boost'
   depends_on 'doxygen'
-  depends_on 'ros/deps/urdfdom'
-  depends_on 'ros/deps/urdfdom_headers'
+  depends_on 'ros/deps/urdfdom' => :optional
   depends_on 'tinyxml'
 
   def install
@@ -23,6 +22,7 @@ class Sdformat < Formula
       "-DCMAKE_INSTALL_PREFIX='#{prefix}'",
       "-Wno-dev"
     ]
+    cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? 'urdfdom'
     cmake_args << ".."
 
     mkdir "build" do
