@@ -2,14 +2,14 @@ class ChronoEngine < Formula
   homepage "http://www.projectchrono.org/chronoengine/"
   url "https://github.com/projectchrono/chrono/archive/2.0.0.tar.gz"
   sha256 "ef5d5831881bc2fc6f3f80106e6e763c904f57dc39b6db880968f00451ac936b"
-  head "https://github.com/projectchrono/chrono.git", :branch => 'develop'
+  head "https://github.com/projectchrono/chrono.git", :branch => "develop"
 
-  depends_on 'cmake' => :build
-  depends_on 'irrlicht' => :optional
+  depends_on "cmake" => :build
+  depends_on "irrlicht" => :optional
 
   fails_with :clang do
     build 503
-    cause 'HACD problem'
+    cause "HACD problem"
   end
 
   # Fix irrlicht demos: incorrect path to data folder
@@ -17,22 +17,22 @@ class ChronoEngine < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << '-DENABLE_UNIT_IRRLICHT=True' if build.with? 'irrlicht' and build.head?
+    cmake_args << "-DENABLE_UNIT_IRRLICHT=True" if build.with?("irrlicht") && build.head?
 
-    mkdir 'build' do
+    mkdir "build" do
       system "cmake", "../src", *cmake_args
       system "make", "install"
     end
   end
 
   def caveats
-    s = ''
+    s = ""
 
-    if build.with? 'irrlicht' and !build.head?
+    if build.with?("irrlicht") && !build.head?
       s += "The '--with-irrlicht' option requires '--HEAD'"
       s += ", irrlicht demos are disabled"
     end
-    return s.empty? ? nil : s
+    s.empty? ? nil : s
   end
 end
 __END__
