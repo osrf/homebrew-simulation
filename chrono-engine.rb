@@ -3,7 +3,7 @@ require "formula"
 class ChronoEngine < Formula
   homepage "http://www.projectchrono.org/chronoengine/"
   url "https://github.com/projectchrono/chrono/archive/2.0.0.tar.gz"
-  sha1 "bee6b3513e6b632cdac777d79e86da269d8a94cf"
+  sha256 "ef5d5831881bc2fc6f3f80106e6e763c904f57dc39b6db880968f00451ac936b"
   head "https://github.com/projectchrono/chrono.git", :branch => 'develop'
 
   depends_on 'cmake' => :build
