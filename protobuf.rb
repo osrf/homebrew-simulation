@@ -27,7 +27,7 @@ class Protobuf < Formula
     system "make", "install"
 
     # Install editor support and examples
-    doc.install %w( editors examples )
+    doc.install "editors", "examples"
 
     if build.with? "python"
       chdir "python" do
