@@ -10,6 +10,7 @@ install:
   
 script:
   - brew audit `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
+  - brew fetch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb`
   
 matrix:
   fast_finish: true
