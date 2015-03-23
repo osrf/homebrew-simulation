@@ -2,8 +2,8 @@ require "formula"
 
 class IgnitionTransport < Formula
   homepage "http://ignitionrobotics.org"
-  url 'http://gazebosim.org/distributions/ignition/releases/ignition-transport-0.7.0.tar.bz2'
-  sha1 '3a6e6a8f9edd60fd18fa4c4d3dcfe71acfd2d807'
+  url 'http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-0.7.0.tar.bz2'
+  sha1 '8053dbf59de974ea4d9287e82d847747e815bc4a'
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => 'default', :using => :hg
 
   depends_on "cmake" => :build
