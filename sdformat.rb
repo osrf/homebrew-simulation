@@ -18,7 +18,7 @@ class Sdformat < Formula
     cmake_args = [
       "-DCMAKE_BUILD_TYPE=Release",
       "-DCMAKE_INSTALL_PREFIX='#{prefix}'",
-      "-Wno-dev"
+      "-Wno-dev",
     ]
     cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
     cmake_args << ".."
@@ -30,6 +30,6 @@ class Sdformat < Formula
   end
 
   test do
-    system "pkg-config --modversion sdformat"
+    system "pkg-config", "--modversion", "sdformat"
   end
 end
