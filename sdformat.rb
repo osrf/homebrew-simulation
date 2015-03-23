@@ -3,7 +3,7 @@ require 'formula'
 class Sdformat < Formula
   homepage 'http://sdformat.org'
   url 'http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.2.tar.bz2'
-  sha1 '9f8d1996a61d40d618b532eff5c6d2c7f7b04ffa'
+  sha256 'f1e6e39f1240c6a1732ed3fd26fd70e2bf865aed15fc4b0a24c0f76562eac0ae'
   head 'https://bitbucket.org/osrf/sdformat', :branch => 'sdf_2.3', :using => :hg
 
   depends_on 'cmake' => :build

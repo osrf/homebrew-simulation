@@ -3,7 +3,7 @@ require "formula"
 class IgnitionMath < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math-1.0.0.tar.bz2"
-  sha1 "43f63f57f9ae0d6d5e7855ac022375448ee41c6f"
+  sha256 "5c15bbafdab35d1e0b2f9e43ea13fc665e29c19530c94c89b92a86491128b30a"
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => 'default', :using => :hg
 
   depends_on "cmake" => :build
