@@ -1,5 +1,3 @@
-require "formula"
-
 class Sofa < Formula
   homepage "http://www.sofa-framework.org"
   head "svn://scm.gforge.inria.fr/svn/sofa/trunk/Sofa"

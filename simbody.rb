@@ -1,5 +1,3 @@
-require 'formula'
-
 class Simbody < Formula
   homepage 'https://simtk.org/home/simbody'
   url 'https://github.com/simbody/simbody/archive/Simbody-3.5.1.tar.gz'

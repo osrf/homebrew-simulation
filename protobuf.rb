@@ -1,5 +1,3 @@
-require 'formula'
-
 class Protobuf < Formula
   homepage 'https://code.google.com/p/protobuf/'
   url 'https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.bz2'

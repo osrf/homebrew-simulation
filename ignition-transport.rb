@@ -1,5 +1,3 @@
-require "formula"
-
 class IgnitionTransport < Formula
   homepage "http://ignitionrobotics.org"
   url 'http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-0.7.0.tar.bz2'

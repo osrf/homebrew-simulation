@@ -1,5 +1,3 @@
-require 'formula'
-
 class Sdformat < Formula
   homepage 'http://sdformat.org'
   url 'http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.2.tar.bz2'

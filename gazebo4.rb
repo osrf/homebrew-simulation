@@ -1,5 +1,3 @@
-require 'formula'
-
 class Gazebo4 < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/distributions/gazebo/releases/gazebo-4.1.2.tar.bz2'

@@ -1,5 +1,3 @@
-require 'formula'
-
 class Gazebo6 < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/distributions/gazebo/releases/gazebo6-prerelease-6.0.2.tar.bz2'

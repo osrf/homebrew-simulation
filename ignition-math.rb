@@ -1,5 +1,3 @@
-require "formula"
-
 class IgnitionMath < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math-1.0.0.tar.bz2"

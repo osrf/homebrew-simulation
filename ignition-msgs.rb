@@ -1,5 +1,3 @@
-require "formula"
-
 class IgnitionMsgs < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
   url 'http://gazebosim.org/distributions/ignition/releases/ignition-msgs-0.1.0.tar.bz2'

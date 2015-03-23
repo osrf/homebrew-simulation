@@ -1,5 +1,3 @@
-require "formula"
-
 class ChronoEngine < Formula
   homepage "http://www.projectchrono.org/chronoengine/"
   url "https://github.com/projectchrono/chrono/archive/2.0.0.tar.gz"

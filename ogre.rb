@@ -1,5 +1,3 @@
-require 'formula'
-
 class Ogre < Formula
   homepage 'http://www.ogre3d.org/'
   url 'https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2'
