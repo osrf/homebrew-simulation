@@ -75,7 +75,7 @@ class Gazebo3 < Formula
   end
 
   test do
-    system "gzserver", "--help"
+    system "gzserver", "--iters", "1"
   end
 end
 
