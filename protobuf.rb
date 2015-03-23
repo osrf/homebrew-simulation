@@ -1,7 +1,7 @@
 class Protobuf < Formula
-  homepage 'https://code.google.com/p/protobuf/'
-  url 'https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.bz2'
-  sha256 '13bfc5ae543cf3aa180ac2485c0bc89495e3ae711fc6fab4f8ffe90dfb4bb677'
+  homepage "https://code.google.com/p/protobuf/"
+  url "https://protobuf.googlecode.com/files/protobuf-2.5.0.tar.bz2"
+  sha256 "13bfc5ae543cf3aa180ac2485c0bc89495e3ae711fc6fab4f8ffe90dfb4bb677"
 
   option :universal
   option :cxx11
@@ -16,7 +16,7 @@ class Protobuf < Formula
     # Don't build in debug mode. See:
     # https://github.com/Homebrew/homebrew/issues/9279
     # http://code.google.com/p/protobuf/source/browse/trunk/configure.ac#61
-    ENV.prepend 'CXXFLAGS', '-DNDEBUG'
+    ENV.prepend "CXXFLAGS", "-DNDEBUG"
     ENV.universal_binary if build.universal?
     ENV.cxx11 if build.cxx11?
 
@@ -29,14 +29,14 @@ class Protobuf < Formula
     # Install editor support and examples
     doc.install %w( editors examples )
 
-    if build.with? 'python'
-      chdir 'python' do
-        ENV['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'cpp'
+    if build.with? "python"
+      chdir "python" do
+        ENV["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "cpp"
         ENV.append_to_cflags "-I#{include}"
         ENV.append_to_cflags "-L#{lib}"
-        system 'python', 'setup.py', 'build'
-        system 'python', 'setup.py', 'install', "--prefix=#{prefix}",
-               '--single-version-externally-managed', '--record=installed.txt'
+        system "python", "setup.py", "build"
+        system "python", "setup.py", "install", "--prefix=#{prefix}",
+               "--single-version-externally-managed", "--record=installed.txt"
       end
     end
   end

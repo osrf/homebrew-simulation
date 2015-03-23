@@ -1,26 +1,26 @@
 class Sdformat < Formula
-  homepage 'http://sdformat.org'
-  url 'http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.2.tar.bz2'
-  sha256 'f1e6e39f1240c6a1732ed3fd26fd70e2bf865aed15fc4b0a24c0f76562eac0ae'
-  head 'https://bitbucket.org/osrf/sdformat', :branch => 'sdf_2.3', :using => :hg
+  homepage "http://sdformat.org"
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.2.tar.bz2"
+  sha256 "f1e6e39f1240c6a1732ed3fd26fd70e2bf865aed15fc4b0a24c0f76562eac0ae"
+  head "https://bitbucket.org/osrf/sdformat", :branch => "sdf_2.3", :using => :hg
 
-  depends_on 'cmake' => :build
-  depends_on 'pkg-config' => :build
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
 
-  depends_on 'boost'
-  depends_on 'doxygen'
-  depends_on 'ros/deps/urdfdom' => :optional
-  depends_on 'tinyxml'
+  depends_on "boost"
+  depends_on "doxygen"
+  depends_on "ros/deps/urdfdom" => :optional
+  depends_on "tinyxml"
 
   def install
     ENV.m64
 
     cmake_args = [
-      "-DCMAKE_BUILD_TYPE='Release'",
+      "-DCMAKE_BUILD_TYPE=Release",
       "-DCMAKE_INSTALL_PREFIX='#{prefix}'",
       "-Wno-dev"
     ]
-    cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? 'urdfdom'
+    cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
     cmake_args << ".."
 
     mkdir "build" do
