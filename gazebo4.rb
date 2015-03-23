@@ -48,7 +48,7 @@ class Gazebo4 < Formula
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
-      system "make install"
+      system "make", "install"
     end
   end
 end

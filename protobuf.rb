@@ -24,7 +24,7 @@ class Protobuf < Formula
                           "--prefix=#{prefix}",
                           "--with-zlib"
     system "make"
-    system "make install"
+    system "make", "install"
 
     # Install editor support and examples
     doc.install %w( editors examples )
