@@ -3,7 +3,7 @@ require 'formula'
 class Gazebo5 < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/distributions/gazebo/releases/gazebo-5.1.0.tar.bz2'
-  sha1 'ec4aa08fa88ea4610588b91d3ea33e2cbf740141'
+  sha256 '0f1308be8770efbc1ea925649e3e3099f2718f27ad0575858f790d5fcfc72724'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo5', :using => :hg
 
   depends_on 'cmake'  => :build
@@ -32,7 +32,7 @@ class Gazebo5 < Formula
   patch do
     # Fix build when homebrew python is installed
     url 'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch'
-    sha1 'eaa6f843ab1264810c0c0a81ff3c52232fd49d12'
+    sha256 'c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e'
   end
 
   def install

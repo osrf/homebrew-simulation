@@ -3,7 +3,7 @@ require 'formula'
 class Gazebo4 < Formula
   homepage 'http://gazebosim.org'
   url 'http://gazebosim.org/distributions/gazebo/releases/gazebo-4.1.2.tar.bz2'
-  sha1 '8bfc829acfe7a395f2316add3a6b194b32ceb903'
+  sha256 'd2ad414a1ed3e7cf834b8356d39fca83ff851191c17f66edf4d0fc74476d23df'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo_4.1', :using => :hg
 
   depends_on 'cmake'  => :build
@@ -31,13 +31,13 @@ class Gazebo4 < Formula
   patch do
     # Fix build when homebrew python is installed
     url 'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch'
-    sha1 'eaa6f843ab1264810c0c0a81ff3c52232fd49d12'
+    sha256 'c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e'
   end
 
   patch do
     # Disable gdal dependency for now (see gazebo issue #1063)
     url 'https://gist.githubusercontent.com/scpeters/9199351/raw/6c90b487def89bff54ad5ad0688110d806063aa0/disable_gdal.patch'
-    sha1 'fc258137ab82d2a6b922f46f345366e72e96c1b8'
+    sha256 '61f327b3373c5b5a12cec4de03c1111c74e03a03aee7b426ddd04b598901ddbf'
   end
 
   def install
