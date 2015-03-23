@@ -2,8 +2,8 @@ require 'formula'
 
 class Gazebo5 < Formula
   homepage 'http://gazebosim.org'
-  url 'http://gazebosim.org/distributions/gazebo/releases/gazebo-5.0.1.tar.bz2'
-  sha1 'f9102a34dd34c5c7ab1ceef09752d2316bfef25e'
+  url 'http://gazebosim.org/distributions/gazebo/releases/gazebo-5.1.0.tar.bz2'
+  sha1 'ec4aa08fa88ea4610588b91d3ea33e2cbf740141'
   head 'https://bitbucket.org/osrf/gazebo', :branch => 'gazebo5', :using => :hg
 
   depends_on 'cmake'  => :build
@@ -33,12 +33,6 @@ class Gazebo5 < Formula
     # Fix build when homebrew python is installed
     url 'https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch'
     sha1 'eaa6f843ab1264810c0c0a81ff3c52232fd49d12'
-  end
-
-  patch do
-    # Fix gdal support (see gazebo issue #1063)
-    url 'https://bitbucket.org/osrf/gazebo/commits/bc1349163e8c2988769e8e54297e47506205f51b/raw/'
-    sha1 'a371ebb2e83cef433e6985ce7207eb561eb25fbd'
   end
 
   def install
