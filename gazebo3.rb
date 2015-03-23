@@ -73,6 +73,10 @@ class Gazebo3 < Formula
       system "make", "install"
     end
   end
+
+  test do
+    system "gzserver", "--help"
+  end
 end
 
 __END__
