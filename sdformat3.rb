@@ -16,11 +16,7 @@ class Sdformat3 < Formula
   def install
     ENV.m64
 
-    cmake_args = [
-      "-DCMAKE_BUILD_TYPE=Release",
-      "-DCMAKE_INSTALL_PREFIX='#{prefix}'",
-      "-Wno-dev",
-    ]
+    cmake_args = std_cmake_args
     cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
     cmake_args << ".."
 

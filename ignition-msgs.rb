@@ -11,9 +11,7 @@ class IgnitionMsgs < Formula
   depends_on "protobuf-c" => :build
 
   def install
-    cmake_args = std_cmake_args.select { |arg| arg.match(/CMAKE_BUILD_TYPE/).nil? }
-    cmake_args << "-DCMAKE_BUILD_TYPE=Release"
-    system "cmake", ".", *cmake_args
+    system "cmake", ".", *std_cmake_args
     system "make", "install"
   end
 
