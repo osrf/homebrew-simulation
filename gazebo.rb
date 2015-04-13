@@ -19,7 +19,7 @@ class Gazebo < Formula
   depends_on "tbb"
   depends_on "tinyxml"
 
-  depends_on "bullet" => [:optional, "shared", "double-precision"]
+  depends_on "bullet" => [:optional, "with-shared", "with-double-precision"]
   depends_on "ffmpeg" => :optional
   depends_on "gts" => :optional
   depends_on "player" => :optional
