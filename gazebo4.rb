@@ -1,7 +1,7 @@
 class Gazebo4 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-4.1.3.tar.bz2"
-  sha256 "61f327b3373c5b5a12cec4de03c1111c74e03a03aee7b426ddd04b598901ddbf"
+  sha256 "5041b3f931f90c90b6163485b7074681f1a7a06dca9e3f271021a1d3b6777a53"
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo_4.1", :using => :hg
 
   depends_on "cmake"  => :build
