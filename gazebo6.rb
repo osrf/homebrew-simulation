@@ -1,8 +1,8 @@
 class Gazebo6 < Formula
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo6-prerelease-6.0.2.tar.bz2"
-  sha256 "64dd45b84b0ea6ed1ad5d1813d526314c3b5904093878a34e76216ce084d3c25"
-  version "6.0.2prerelease"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo6-prerelease-6.0.6.tar.bz2"
+  sha256 "60732fb75d988d2fc89af883315e9c98fe8c41622f3fc425764c524451c9a6ac"
+  version "6.0.6prerelease"
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   depends_on "cmake"  => :build
