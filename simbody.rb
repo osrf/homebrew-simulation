@@ -1,7 +1,7 @@
 class Simbody < Formula
   homepage "https://simtk.org/home/simbody"
-  url "https://github.com/simbody/simbody/archive/Simbody-3.5.2.tar.gz"
-  sha256 "f0b9ef0398b9d99a29e7ef8e08ac3470ebfa991788f450a19ceffe3673eb8306"
+  url "https://github.com/simbody/simbody/archive/Simbody-3.5.3.tar.gz"
+  sha256 "8005fbdb16c6475f98e13b8f1423b0e9951c193681c2b0d19ae5b711d7e24ec1"
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
   depends_on "cmake" => :build
