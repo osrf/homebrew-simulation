@@ -20,7 +20,7 @@ class Gazebo5 < Formula
   depends_on "tinyxml"
 
   depends_on "bullet" => [:recommended, "with-shared", "with-double-precision"]
-  depends_on "dartsim/dart/dartsim" => [:optional, "core-only"]
+  depends_on "dartsim/dart/dartsim4" => [:optional, "core-only"]
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
   depends_on "gts" => :optional
