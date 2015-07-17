@@ -1,6 +1,6 @@
 class Ogre < Formula
   homepage "http://www.ogre3d.org/"
-  url "https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2"
+  url "http://ufpr.dl.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2"
   version "1.7.4"
   sha256 "afa475803d9e6980ddf3641dceaa53fcfbd348506ed67893c306766c166a4882"
   head "https://bitbucket.org/sinbad/ogre", :branch => "v1-9", :using => :hg
