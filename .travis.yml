@@ -1,7 +1,7 @@
 language: objective-c
 
 before_install:
-  - brew update
+  - brew update > /dev/null
   
 install:
   - mkdir -p $(brew --repo)/Library/Taps/osrf
