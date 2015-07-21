@@ -1,4 +1,5 @@
 class IgnitionMath2 < Formula
+  desc "Math API for robotic applications"
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math2-2.1.1.tar.bz2"
   sha256 "629f5e65af960e6d6773062984b0c0c6c977c7d2245eba9979db17a9f17058fa"

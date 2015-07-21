@@ -1,4 +1,5 @@
 class Gazebo2 < Formula
+  desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-2.2.5.tar.bz2"
   sha256 "f83ae72418b492177ed1b7261bb4f1a54732e957d57b227d3473d873bad5293d"
