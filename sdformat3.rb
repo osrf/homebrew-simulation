@@ -1,8 +1,8 @@
 class Sdformat3 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-3.1.1.tar.bz2"
-  sha256 "ffeb64a05ffd3dd6de1f25bdfe716eb9f61cde6c96d5060fb6dd740c6b875657"
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-3.2.0.tar.bz2"
+  sha256 "4e0d4079d2f4240217b0f997cb27cc14d6ccb46d2b4bdc3bfa5287e32939ed8c"
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
