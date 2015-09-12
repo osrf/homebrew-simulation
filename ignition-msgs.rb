@@ -7,7 +7,7 @@ class IgnitionMsgs < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "osrf/simulation/protobuf" => "c++11"
+  depends_on "protobuf"
   depends_on "protobuf-c" => :build
 
   def install
