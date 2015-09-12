@@ -68,4 +68,3 @@ class Gazebo4 < Formula
     system "gzserver", "--iters", "1"
   end
 end
-
