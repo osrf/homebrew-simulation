@@ -13,7 +13,7 @@ class IgnitionTransport < Formula
   depends_on "protobuf-c" => :build
   depends_on "ossp-uuid"
   depends_on "zeromq"
-  depends_on "bertjwregeer/compat/cppzmq"
+  depends_on "cppzmq"
 
   def install
     system "cmake", ".", *std_cmake_args
