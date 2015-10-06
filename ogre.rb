@@ -1,4 +1,5 @@
 class Ogre < Formula
+  desc "Object-Oriented Graphics Rendering Engine"
   homepage "http://www.ogre3d.org/"
   url "https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2"
   version "1.7.4"
@@ -11,6 +12,8 @@ class Ogre < Formula
     sha256 "193c5c5eb56ed471fd5d9c73ed0dc2c6c41c17b75df2ae7174c7d66ff1cfba38" => :yosemite
   end
 
+  option "with-cg"
+
   depends_on "boost"
   depends_on "cmake" => :build
   depends_on "doxygen"
@@ -19,8 +22,6 @@ class Ogre < Formula
   depends_on "libzzip"
   depends_on "tbb"
   depends_on :x11
-
-  option "with-cg"
 
   # https://gist.github.com/4237236
   patch do
