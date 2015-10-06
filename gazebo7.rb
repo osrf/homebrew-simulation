@@ -13,7 +13,7 @@ class Gazebo7 < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "ignition-math2"
-  depends_on "ignition-transport"
+  #depends_on "ignition-transport"
   depends_on "libtar"
   depends_on "ogre"
   depends_on "protobuf"
