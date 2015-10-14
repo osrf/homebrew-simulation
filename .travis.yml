@@ -11,7 +11,7 @@ install:
 script:
   - brew audit `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
   - brew style `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb`
-  - brew fetch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
+  - brew fetch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb` | grep -v '%$'
   
 matrix:
   fast_finish: true
