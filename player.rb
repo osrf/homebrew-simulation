@@ -58,3 +58,59 @@ index c7410ec..6c9737d 100644
                          PLAYERCC_ADD_INCLUDE_DIR (${Boost_INCLUDE_DIR})
                          PLAYERCC_ADD_LINK_DIR (${Boost_LIBRARY_DIRS})
                          SET (boostIncludeDir ${Boost_INCLUDE_DIRS})
+diff --git a/libplayercore/message.cc b/libplayercore/message.cc
+index 29bb3be..c850c49 100644
+--- a/libplayercore/message.cc
++++ b/libplayercore/message.cc
+@@ -726,25 +726,25 @@ MessageQueue & QueuePointer::operator * ()
+ }
+ 
+ /// check if pointers are equal
+-bool QueuePointer::operator == (const QueuePointer & rhs)
++bool QueuePointer::operator == (const QueuePointer & rhs) const
+ {
+   return rhs.Queue == Queue;
+ }
+ 
+ /// check if pointers are equal
+-bool QueuePointer::operator == (void * pointer)
++bool QueuePointer::operator == (void * pointer) const
+ {
+   return Queue == pointer;
+ }
+ 
+ /// check if pointers are equal
+-bool QueuePointer::operator != (const QueuePointer & rhs)
++bool QueuePointer::operator != (const QueuePointer & rhs) const
+ {
+   return rhs.Queue != Queue;
+ }
+ 
+ /// check if pointers are equal
+-bool QueuePointer::operator != (void * pointer)
++bool QueuePointer::operator != (void * pointer) const
+ {
+   return Queue != pointer;
+ }
+diff --git a/libplayercore/message.h b/libplayercore/message.h
+index 89b91f4..04fba44 100644
+--- a/libplayercore/message.h
++++ b/libplayercore/message.h
+@@ -91,13 +91,13 @@ class PLAYERCORE_EXPORT QueuePointer
+ 	/// retrieve underlying object for use
+ 	MessageQueue & operator * ();
+ 	/// check if pointers are equal
+-	bool operator == (const QueuePointer & rhs);
++	bool operator == (const QueuePointer & rhs) const;
+ 	/// check if pointers are equal
+-	bool operator == (void * pointer);
++	bool operator == (void * pointer) const;
+ 	/// check if pointers are equal
+-	bool operator != (const QueuePointer & rhs);
++	bool operator != (const QueuePointer & rhs) const;
+ 	/// check if pointers are equal
+-	bool operator != (void * pointer);
++	bool operator != (void * pointer) const;
+ 	
+   private:
+     /// Decrement ref count
