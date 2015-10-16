@@ -34,18 +34,6 @@ class Gazebo2 < Formula
   end
 
   patch do
-    # Fix build with protobuf 2.6 (gazebo #1289)
-    url "https://bitbucket.org/osrf/gazebo/commits/4bb4390655af316b582f8e0fea23438426b4e681/raw/"
-    sha256 "70d39a547aa27a5357ddf0859d41515c945730ca1cef770be3c0cff2e29340d2"
-  end
-
-  patch do
-    # Fix build with boost 1.57 (gazebo #1399)
-    url "https://bitbucket.org/osrf/gazebo/commits/39f8398003ada7381dc03096f666627e84c738eb/raw/"
-    sha256 "6d38b6f01491f0419d70d72c067a69b75dfc3ac4520b4ceaeb7f0da9436b4a37"
-  end
-
-  patch do
     # Fix for compatibility with boost 1.58
     url "https://bitbucket.org/osrf/gazebo/commits/91f6f3c59f40af34855548c37857955d08fd1368/raw/"
     sha256 "1a8b232be58f36bf5fa0129169f4d4d40d72624b460735457c781ba3e02c7900"
