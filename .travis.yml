@@ -12,6 +12,7 @@ script:
   - brew audit `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
   - brew style `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb`
   - brew fetch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb` | grep -v '%$'
+  - brew unpack --patch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
   
 matrix:
   fast_finish: true
