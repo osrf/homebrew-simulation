@@ -1,14 +1,10 @@
-class Sdformat3 < Formula
+class Sdformat4 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-3.5.0.tar.bz2"
-  sha256 "548d1ab3e3dbc5c6ecf7ed7f5077bccda57139e2c738e8fd75ea80db0519fadb"
-  head "https://bitbucket.org/osrf/sdformat", :branch => "sdf3", :using => :hg
-
-  bottle do
-    root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "8cae50734ed54f9c8c3692acd4049f949cabcee211b14379a0a40caf4918a8cf" => :yosemite
-  end
+  url "https://bitbucket.org/osrf/sdformat/get/e74d26c.tar.bz2"
+  version "4.0.0-20151026-e74d26c"
+  sha256 "9e92c88ded1d1353376bc5e3fd614c370a76da0f8dbfe7a34b278bca3a56fc82"
+  head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
