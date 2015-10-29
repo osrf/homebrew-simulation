@@ -1,7 +1,7 @@
 class Gazebo6 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.5.0.tar.bz2"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.5.1.tar.bz2"
   sha256 "7498d65ff5c777c65fd710ae152db233674bb1cb56a4494c669bf31fe8a6f4b8"
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo6", :using => :hg
 
