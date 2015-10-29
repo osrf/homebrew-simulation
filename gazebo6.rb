@@ -1,13 +1,13 @@
 class Gazebo6 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.5.0.tar.bz2"
-  sha256 "7498d65ff5c777c65fd710ae152db233674bb1cb56a4494c669bf31fe8a6f4b8"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.5.1.tar.bz2"
+  sha256 "96260aa23f1a1f24bc116f8e359d31f3bc65011033977cb7fb2c64d574321908"
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo6", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "aa5374d78304b1de22f4bfef73d6be2c00e195cc8e2634e3955d29f77706bb27" => :yosemite
+    sha256 "5e212380f8d49ab4c1b22e2a92215258050b41c24b4fc3a7d62bb9ce58d20154" => :yosemite
   end
 
   depends_on "cmake" => :build
