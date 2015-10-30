@@ -27,6 +27,8 @@ script:
   - brew style `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb`
   - brew fetch --force-bottle `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb` | grep -v '%$'
   - brew unpack --patch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
-  
-matrix:
-  fast_finish: true
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
