@@ -25,7 +25,7 @@ install:
 script:
   - brew audit `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
   - brew style `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb`
-  - brew fetch --force-bottle `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb` | grep -v '%$'
+  - brew fetch --force-bottle `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
   - brew unpack --patch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
 
 notifications:
