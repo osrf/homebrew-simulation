@@ -15,7 +15,7 @@ matrix:
       rvm: system
 
 before_install:
-  - brew update > /dev/null
+  - brew update
   
 install:
   - mkdir -p $(brew --repo)/Library/Taps/osrf
