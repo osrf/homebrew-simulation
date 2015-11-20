@@ -1,8 +1,8 @@
 class Sdformat3 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-3.6.0.tar.bz2"
-  sha256 "c7ddf7958aaae2b143c713a44a4e83210f9753bce8f0dccbaf9cfc41293896cd"
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-3.7.0.tar.bz2"
+  sha256 "18251b133e4fde105f883518691f15fc9f1fc2af8b89ab6de4bc26b9df42761e"
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf3", :using => :hg
 
   bottle do
