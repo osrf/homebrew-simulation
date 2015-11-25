@@ -1,9 +1,9 @@
 class Sdformat4 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://bitbucket.org/osrf/sdformat/get/e74d26c.tar.bz2"
-  version "4.0.0-20151026-e74d26c"
-  sha256 "9e92c88ded1d1353376bc5e3fd614c370a76da0f8dbfe7a34b278bca3a56fc82"
+  url "https://bitbucket.org/osrf/sdformat/get/da854876f89f.tar.bz2"
+  version "4.0.0-20151124-da854876f89f"
+  sha256 "e98408fb86b26b31d2bf7acd29120d770e38ea9121ad2a72a857f6ce933e8e6b"
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
