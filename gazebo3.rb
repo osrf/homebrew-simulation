@@ -81,7 +81,7 @@ class Gazebo3 < Formula
   end
 
   test do
-    system "gazebo", "--help"
+    system "gz", "sdf"
   end
 end
 
