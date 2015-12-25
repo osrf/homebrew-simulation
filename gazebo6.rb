@@ -53,7 +53,6 @@ class Gazebo6 < Formula
   end
 
   test do
-    # temporarily disable test
-    system "echo", "gzserver", "--iters", "1"
+    system "gazebo", "--help"
   end
 end
