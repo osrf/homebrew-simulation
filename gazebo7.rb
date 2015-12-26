@@ -3,7 +3,7 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "https://bitbucket.org/osrf/gazebo/get/1969aea.tar.bz2"
   version "7.0.0-20150824-1969aea"
-  sha256 "d02cfa845781e0d1b0af8a013c6a47a42dd3002986574d5b0cebbbfbe94ce0e3"
+  sha256 "fc74d669372a5a24b5ba8a812ae7933dca8be1b1880c8e8e4d0431c6d08a1046"
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
