@@ -20,6 +20,21 @@ class IgnitionMath2 < Formula
   end
 
   test do
-    system "false"
+    (testpath/"test.cpp").write <<-EOS.undent
+      #include "ignition/math/SignalStats.hh"
+      int main() {
+        ignition::math::SignalMean mean;
+        mean.InsertData(1.0);
+        mean.InsertData(-1.0);
+        return static_cast<int>(mean.Value());
+      }
+    EOS
+    system ENV.cc, "test.cpp",
+                   "-I#{include}/ignition/math2",
+                   "-L#{lib}",
+                   "-lignition-math2",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
   end
 end
