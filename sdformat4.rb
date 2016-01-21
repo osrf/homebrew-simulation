@@ -6,7 +6,7 @@ class Sdformat4 < Formula
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config"
 
   depends_on "boost"
   depends_on "doxygen"
@@ -28,6 +28,31 @@ class Sdformat4 < Formula
   end
 
   test do
-    system "pkg-config", "--modversion", "sdformat"
+    (testpath/"test.cpp").write <<-EOS.undent
+      #include <iostream>
+      #include "sdf/sdf.hh"
+      const std::string sdfString(
+        "<sdf version='1.5'>"
+        "  <model name='example'>"
+        "    <link name='link'>"
+        "      <sensor type='gps' name='mysensor' />"
+        "    </link>"
+        "  </model>"
+        "</sdf>");
+      int main() {
+        sdf::SDF modelSDF;
+        modelSDF.SetFromString(sdfString);
+        std::cout << modelSDF.ToString() << std::endl;
+      }
+    EOS
+    system "pkg-config", "sdformat"
+    cflags = %x(pkg-config --cflags sdformat).split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lsdformat",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
   end
 end
