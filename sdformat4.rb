@@ -6,7 +6,7 @@ class Sdformat4 < Formula
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
-  depends_on "pkg-config"
+  depends_on "pkg-config" => :run
 
   depends_on "boost"
   depends_on "doxygen"
@@ -46,7 +46,7 @@ class Sdformat4 < Formula
       }
     EOS
     system "pkg-config", "sdformat"
-    cflags = %x(pkg-config --cflags sdformat).split(" ")
+    cflags = `pkg-config --cflags sdformat`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
