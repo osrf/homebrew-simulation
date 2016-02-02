@@ -52,10 +52,6 @@ class Ogre < Formula
     url "https://gist.github.com/hgaiser/7346167/raw/3167c2fde153618e55b37f857ef4a90cc54ed2a3/ogre.patch"
     sha256 "f81ddf3c6974857311816b2f2c2f974c6365d154f9273bf7c5b5fc37867bb292"
   end unless build.head?
-  patch do
-    url "https://gist.github.com/scpeters/568f5490a99aa9fc3eb7/raw/881b0f200ac218b7b976ade8f63e3792303c2a5e/ogre_find_freetype.diff"
-    sha256 "679312d66ae164d3efa59353a387979ba2b71268cdae81f7fdc7edaf29c5c2d6"
-  end unless build.head?
 
   def install
     ENV.m64
