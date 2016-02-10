@@ -8,13 +8,15 @@ class IgnitionTransport < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "858499fe14929299a5144f3fe4b0d5c3f697366f0cbd86dc90177c95db2ffa62" => :yosemite
+    revision 1
+    sha256 "cb31fbfa2fb080fa837ac40b8773e3011d2279f32fc340597a08af70e6b59c16" => :yosemite
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :build
 
+  depends_on "osrf/simulation/ignition-tools"
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
   depends_on "ossp-uuid"
