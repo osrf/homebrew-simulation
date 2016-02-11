@@ -23,6 +23,12 @@ class IgnitionTransport < Formula
   depends_on "zeromq"
   depends_on "cppzmq"
 
+  patch do
+    # Fix for ignition-tools library suffix
+    url "https://bitbucket.org/ignitionrobotics/ign-transport/commits/69e61049a4b15a93625a7dde4838a71354ed9551/raw/"
+    sha256 "7e3135aa4ef1f884c2c8ab476f40974b0c9b687896115140eab5d34d07c06125"
+  end
+
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
