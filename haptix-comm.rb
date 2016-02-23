@@ -1,8 +1,9 @@
 class HaptixComm < Formula
   desc "Haptix project communication API"
   homepage "http://gazebosim.org/haptix"
-  url "http://gazebosim.org/distributions/haptix-comm/releases/haptix-comm-0.8.3.tar.bz2"
-  sha256 "9970664a7c6686c6dc6f5e79d9d9a4f0cfbe0c6a9dbcf66237220b52ed0c6eb3"
+  url "http://gazebosim.org/distributions/haptix-comm/releases/haptix-comm-0.9.0~pre1.tar.bz2"
+  version "0.9.0~pre1"
+  sha256 "f89e232fc54b4bfa2b3c6c783e4ff5b3f4725e182c76f1a4648a1d2d7442247b"
   head "https://bitbucket.org/osrf/haptix-comm", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
