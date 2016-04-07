@@ -34,12 +34,6 @@ class Gazebo5 < Formula
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
 
-  patch do
-    # Fix build with ffmpeg3
-    url "https://bitbucket.org/osrf/gazebo/commits/4eec0dcdb821385ffbaa62a7f0e2bd8cec21fff4/raw"
-    sha256 "fc2b191453352b95c246a46303b8deb31703131dc2be300a3104512392a45a4e"
-  end
-
   def install
     ENV.m64
 
