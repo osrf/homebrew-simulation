@@ -12,7 +12,7 @@ class IgnitionMath2 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => [:build, :optional]
+  depends_on "doxygen" => :build
 
   def install
     system "cmake", ".", *std_cmake_args
