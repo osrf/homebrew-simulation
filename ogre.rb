@@ -25,23 +25,23 @@ class Ogre < Formula
 
   # https://gist.github.com/4237236
   patch do
-    url "https://gist.github.com/raw/4237236/e357f1b9fa8b26d02ed84f411d5b5eb7446c68c5/pkg_config_fix.patch"
+    url "https://gist.github.com/wjwwood/4237236/raw/e357f1b9fa8b26d02ed84f411d5b5eb7446c68c5/pkg_config_fix.patch"
     sha256 "a2296a0e505906a09add6534fcc6f60ce598bb56b7fd422953cf92dbfee3ac00"
   end unless build.head?
   patch do
-    url "https://gist.github.com/raw/4237236/57cb907304433cc0bb83fd332ff98a5789102b00/prevent_framework_apple.patch"
+    url "https://gist.github.com/wjwwood/4237236/raw/57cb907304433cc0bb83fd332ff98a5789102b00/prevent_framework_apple.patch"
     sha256 "1416fd5dc44f5e219bf7a675888aad53c5f9a4f0596ff35ccdb7ef2a7f7d60a9"
   end unless build.head?
   patch do
-    url "https://gist.github.com/raw/4237236/31ae53cefdb693cb2fb81333178163a29f8cf7ca/osx_isystem.patch"
+    url "https://gist.github.com/wjwwood/4237236/raw/31ae53cefdb693cb2fb81333178163a29f8cf7ca/osx_isystem.patch"
     sha256 "a9b010ac15a662a58e13e425d9dde64c2edb04f06650394e8c2b12e451120a4e"
   end unless build.head?
   patch do
-    url "https://gist.github.com/raw/4237236/9c7df6689da4e0b358429692f6615f2707469f45/osx_linking.patch"
+    url "https://gist.github.com/wjwwood/4237236/raw/9c7df6689da4e0b358429692f6615f2707469f45/osx_linking.patch"
     sha256 "3d971465cf251eaea6d39538b92e9f3a0fbaf7fe3f0e8add10aeadde9f12c338"
   end unless build.head?
   patch do
-    url "https://gist.github.com/raw/4237236/d667813d5ee1e712e0ea8cc99df9a85da6141b1e/replace_pbxcp_with_ditto.patch"
+    url "https://gist.github.com/wjwwood/4237236/raw/d667813d5ee1e712e0ea8cc99df9a85da6141b1e/replace_pbxcp_with_ditto.patch"
     sha256 "990abb97fd1a5410a8a557915c8f16d2507133973d6c073acc59b8d0696f8c4d"
   end unless build.head?
   patch do
