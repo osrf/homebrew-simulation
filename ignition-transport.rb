@@ -13,7 +13,7 @@ class IgnitionTransport < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => :run
 
   depends_on "osrf/simulation/ignition-tools"
   depends_on "protobuf"
@@ -28,6 +28,6 @@ class IgnitionTransport < Formula
   end
 
   test do
-    system "false"
+    system "pkg-config", "--modversion", "ignition-transport1"
   end
 end
