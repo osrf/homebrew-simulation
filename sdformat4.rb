@@ -5,6 +5,11 @@ class Sdformat4 < Formula
   sha256 "0f63e446a29073affed2427214aa04d23c1cb8331cdd1bd7d48768d7eee5862a"
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/sdformat/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
+  end
+
   depends_on "cmake" => :build
 
   depends_on "boost"
