@@ -5,6 +5,11 @@ class Gazebo7 < Formula
   sha256 "93f75ec601bdafd2d4715d7200d81f52123979b00d547635ae38738e6405d863"
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "0123456789ABCDE0123456789ABCDE0123456789ABCDEFFF0123456789ABCDEF" => :yosemite
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
