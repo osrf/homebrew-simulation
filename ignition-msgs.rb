@@ -10,8 +10,10 @@ class IgnitionMsgs < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
 
+  depends_on "ignition-math2"
+  depends_on "ignition-tools" => :recommended
+  depends_on "pkg-config" => :run
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
 
@@ -21,6 +23,6 @@ class IgnitionMsgs < Formula
   end
 
   test do
-    system "false"
+    system "pkg-config", "--modversion", "ignition-msgs0"
   end
 end
