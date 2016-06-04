@@ -6,10 +6,10 @@ class Sdformat < Formula
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf_2.3", :using => :hg
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
 
   depends_on "boost"
   depends_on "doxygen"
+  depends_on "pkg-config" => :run
   depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"
 
