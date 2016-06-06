@@ -6,7 +6,7 @@ class Gazebo6 < Formula
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo6", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/gazebo6/releases"
+    root_url "http://gazebosim.org/distributions/gazebo/releases"
     sha256 "ad5b5f3ea72e83d0650a3dcf3dfcad1b6a2aec5f121e8ce5fc8ec99e72563646" => :yosemite
   end
 
