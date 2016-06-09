@@ -1,4 +1,4 @@
-class IgnitionTransport1 < Formula
+class IgnitionTransport < Formula
   desc "Transport middleware for robotics"
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-1.2.0.tar.bz2"
