@@ -9,7 +9,7 @@ class IgnitionTransport2 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
+    sha256 "2eeed4b4c406088d9dafd57de13a4b48096d70afbf35d9aa86ca0c7dfc15d4ea" => :yosemite
   end
 
   depends_on "cmake" => :build
