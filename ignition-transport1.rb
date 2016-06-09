@@ -3,7 +3,7 @@ class IgnitionTransport1 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-1.2.0.tar.bz2"
   sha256 "80935b712aa175c7f72d66269a7c03c8db0082539fc2bea5f9e8d896754240cc"
-  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
+  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport1", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
