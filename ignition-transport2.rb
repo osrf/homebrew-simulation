@@ -16,8 +16,8 @@ class IgnitionTransport2 < Formula
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :run
 
-  depends_on "osrf/simulation/ignition-msgs"
-  depends_on "osrf/simulation/ignition-tools"
+  depends_on "ignition-msgs"
+  depends_on "ignition-tools"
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
   depends_on "ossp-uuid"
