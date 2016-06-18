@@ -38,6 +38,14 @@ class Gazebo8 < Formula
   depends_on "player" => :optional
   depends_on "simbody" => :recommended
 
+  conflicts_with "gazebo1", :because => "Differing version of the same formula"
+  conflicts_with "gazebo2", :because => "Differing version of the same formula"
+  conflicts_with "gazebo3", :because => "Differing version of the same formula"
+  conflicts_with "gazebo4", :because => "Differing version of the same formula"
+  conflicts_with "gazebo5", :because => "Differing version of the same formula"
+  conflicts_with "gazebo6", :because => "Differing version of the same formula"
+  conflicts_with "gazebo7", :because => "Differing version of the same formula"
+
   patch do
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
