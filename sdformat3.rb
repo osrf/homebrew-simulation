@@ -19,6 +19,9 @@ class Sdformat3 < Formula
   depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"
 
+  conflicts_with "sdformat", :because => "Differing version of the same formula"
+  conflicts_with "sdformat4", :because => "Differing version of the same formula"
+
   def install
     ENV.m64
 
