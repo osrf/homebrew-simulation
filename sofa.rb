@@ -1,6 +1,6 @@
 class Sofa < Formula
   homepage "http://www.sofa-framework.org"
-  head "svn://scm.gforge.inria.fr/svn/sofa/trunk/Sofa"
+  head "https://github.com/sofa-framework/sofa.git"
 
   depends_on "cmake" => :build
   depends_on :x11
