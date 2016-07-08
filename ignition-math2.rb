@@ -1,8 +1,8 @@
 class IgnitionMath2 < Formula
   desc "Math API for robotic applications"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math2-2.4.0.tar.bz2"
-  sha256 "65c293230bb0e76bd25f5593c446149147b2caedbcb5cf943d67993779558fac"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math2-2.4.1.tar.bz2"
+  sha256 "132085df3709d13f4fe1d0d6d5b0f02e43bbaaaa10a03d747d62516e4ea8133c"
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
