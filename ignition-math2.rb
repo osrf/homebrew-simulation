@@ -8,7 +8,7 @@ class IgnitionMath2 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "b4e684e05a5bfda836166cfa9f8a92c1cdab1b17311d6f06b38e4f797b42a481" => :yosemite
+    sha256 "74dd2a42b24119eb7579036afec822e8e2fccb32e3729c1917f7ab930186cdf0" => :yosemite
   end
 
   depends_on "cmake" => :build
