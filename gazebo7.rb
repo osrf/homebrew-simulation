@@ -1,8 +1,8 @@
 class Gazebo7 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.2.0.tar.bz2"
-  sha256 "3e10501379236146f5393fcf02be419ce343bfa76b0f6670d43cc5bc13cd6fb1"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.3.0.tar.bz2"
+  sha256 "4a3adca87545d4a6070bee54be402c55476a856ed612f99960f43052e4214aca"
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
