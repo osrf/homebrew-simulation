@@ -30,6 +30,9 @@ class Gazebo8 < Formula
   depends_on "tinyxml"
   depends_on "tinyxml2"
 
+  depends_on "ossp-uuid" => :linked
+  depends_on "zeromq" => :linked
+
   depends_on "bullet" => [:recommended, "with-shared", "with-double-precision"]
   depends_on "dartsim/dart/dartsim4" => [:optional, "core-only"]
   depends_on "ffmpeg" => :optional
