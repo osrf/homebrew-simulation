@@ -50,6 +50,12 @@ class Gazebo7 < Formula
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
 
+  patch do
+    # Fix for compatibility with tinyxml2 4.0
+    url "https://bitbucket.org/osrf/gazebo/commits/90b82ee6efe79d83dc9fa4f9706e050e658d1221/raw/"
+    sha256 "73f3724ce0123cd71968b8b03822d45a3b893ca40f746feed76870c9b29e7603"
+  end
+
   def install
     ENV.m64
 
