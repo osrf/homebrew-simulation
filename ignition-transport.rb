@@ -1,8 +1,8 @@
 class IgnitionTransport < Formula
   desc "Transport middleware for robotics"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-1.2.0.tar.bz2"
-  sha256 "80935b712aa175c7f72d66269a7c03c8db0082539fc2bea5f9e8d896754240cc"
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-1.3.0.tar.bz2"
+  sha256 "5fd2d54b6554bd61b10d66cf5e4d597b44a55e30e16c8ba3e1f4382efcdee006"
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport1", :using => :hg
 
   bottle do
