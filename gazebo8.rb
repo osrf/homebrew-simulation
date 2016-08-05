@@ -4,12 +4,9 @@ class Gazebo8 < Formula
   url "https://bitbucket.org/osrf/gazebo/get/17137a79cbe8.tar.gz"
   version "8.0.0-20160718-17137a79cbe8"
   sha256 "1831faca6d30d03c4584cbba107b214000767b8b2b1a9a91b67e122608f91871"
-  head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
+  revision 1
 
-  bottle do
-    root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "dfb5c2c1dd878d4742acd3e62c640890258fc9e856cbe1d9ea22e1499a3a9cf7" => :yosemite
-  end
+  head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
