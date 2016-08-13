@@ -2,7 +2,6 @@ class IgnitionTransport2 < Formula
   desc "Transport middleware for robotics"
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.0.0.tar.bz2"
-  version "2.0.0"
   sha256 "186c3ae57843607568c2b756a6980dcb93305adcf676029a138865e0111651ed"
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
