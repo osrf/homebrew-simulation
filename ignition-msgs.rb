@@ -6,7 +6,7 @@ class IgnitionMsgs < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
-    sha256 "2df7094b2078c7f6685d1bd92bafdfe2bf2651ea74f0d6b0e4b143aeb95abcdc" => :yosemite
+    sha256 "d35dbfa3ae63fb0e2d81fc403ba2d7c896c52bd6961e53707a8fba2ea4434204" => :yosemite
   end
 
   depends_on "cmake" => :build
