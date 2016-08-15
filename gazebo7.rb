@@ -7,6 +7,11 @@ class Gazebo7 < Formula
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef" => :yosemite
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
