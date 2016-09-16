@@ -3,6 +3,8 @@ class IgnitionTransport < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-1.3.0.tar.bz2"
   sha256 "5fd2d54b6554bd61b10d66cf5e4d597b44a55e30e16c8ba3e1f4382efcdee006"
+  revision 1
+
   head "https://bitbucket.org/ignitionrobotics/ign-transport", branch: "ign-transport1", using: :hg
 
   bottle do
@@ -21,6 +23,12 @@ class IgnitionTransport < Formula
   depends_on "ossp-uuid"
   depends_on "zeromq"
   depends_on "cppzmq"
+
+  patch do
+    # Fix for compatibility with protobuf 3
+    url "https://bitbucket.org/ignitionrobotics/ign-transport/commits/35c3b75e6e2e6ed36c9ec01705b6e5330c50b96a/raw/"
+    sha256 "c4e8b6e0c0cd7a523c1309d76d6abe3a5f17f42667db8c6354ba4cf7a38af299"
+  end
 
   def install
     system "cmake", ".", *std_cmake_args
