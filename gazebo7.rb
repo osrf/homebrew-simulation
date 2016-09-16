@@ -17,7 +17,7 @@ class Gazebo7 < Formula
 
   depends_on "boost"
   depends_on "doxygen"
-  depends_on "curl" => [:optional "with-ssh2"]
+  depends_on "curl" => [:optional, "with-ssh2"]
   depends_on "freeimage"
   depends_on "ignition-math2"
   depends_on "ignition-transport"
