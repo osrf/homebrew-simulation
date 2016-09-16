@@ -16,7 +16,7 @@ class IgnitionTransport < Formula
   depends_on "pkg-config" => :run
 
   depends_on "ignition-tools"
-  depends_on "protobuf"
+  depends_on "protobuf260"
   depends_on "protobuf-c" => :build
   depends_on "ossp-uuid"
   depends_on "zeromq"
