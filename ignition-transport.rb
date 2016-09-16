@@ -36,6 +36,22 @@ class IgnitionTransport < Formula
   end
 
   test do
-    system "pkg-config", "--modversion", "ignition-transport1"
+    (testpath/"test.cpp").write <<-EOS.undent
+      #include <iostream>
+      #include <ignition/transport.hh>
+      int main() {
+        ignition::transport::Node node;
+        return 0;
+      }
+    EOS
+    system "pkg-config", "ignition-transport1"
+    cflags = `pkg-config --cflags ignition-transport1`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lignition-transport1",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
   end
 end
