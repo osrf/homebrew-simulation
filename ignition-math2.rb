@@ -3,7 +3,7 @@ class IgnitionMath2 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math2-2.5.0.tar.bz2"
   sha256 "581066c6aaf8ec5b55d55777f951ea5036f69f403ae3b8344fcf0ebdcb2d4009"
-  head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
+  head "https://bitbucket.org/ignitionrobotics/ign-math", branch: "default", using: :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"

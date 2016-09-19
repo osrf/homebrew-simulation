@@ -3,7 +3,7 @@ class Gazebo2 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-2.2.6.tar.bz2"
   sha256 "c5e886a9d43a99865d3393dab643493c906c106781ea2ee50555bb8dcf03bd81"
-  head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo_2.2", :using => :hg
+  head "https://bitbucket.org/osrf/gazebo", branch: "gazebo_2.2", using: :hg
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -27,13 +27,13 @@ class Gazebo2 < Formula
   depends_on "player" => :optional
   depends_on "simbody" => :optional
 
-  conflicts_with "gazebo1", :because => "Differing version of the same formula"
-  conflicts_with "gazebo3", :because => "Differing version of the same formula"
-  conflicts_with "gazebo4", :because => "Differing version of the same formula"
-  conflicts_with "gazebo5", :because => "Differing version of the same formula"
-  conflicts_with "gazebo6", :because => "Differing version of the same formula"
-  conflicts_with "gazebo7", :because => "Differing version of the same formula"
-  conflicts_with "gazebo8", :because => "Differing version of the same formula"
+  conflicts_with "gazebo1", because: "Differing version of the same formula"
+  conflicts_with "gazebo3", because: "Differing version of the same formula"
+  conflicts_with "gazebo4", because: "Differing version of the same formula"
+  conflicts_with "gazebo5", because: "Differing version of the same formula"
+  conflicts_with "gazebo6", because: "Differing version of the same formula"
+  conflicts_with "gazebo7", because: "Differing version of the same formula"
+  conflicts_with "gazebo8", because: "Differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed
