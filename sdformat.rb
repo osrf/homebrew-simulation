@@ -3,7 +3,7 @@ class Sdformat < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.2.tar.bz2"
   sha256 "f1e6e39f1240c6a1732ed3fd26fd70e2bf865aed15fc4b0a24c0f76562eac0ae"
-  head "https://bitbucket.org/osrf/sdformat", :branch => "sdf_2.3", :using => :hg
+  head "https://bitbucket.org/osrf/sdformat", branch: "sdf_2.3", using: :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
@@ -18,8 +18,8 @@ class Sdformat < Formula
   depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"
 
-  conflicts_with "sdformat3", :because => "Differing version of the same formula"
-  conflicts_with "sdformat4", :because => "Differing version of the same formula"
+  conflicts_with "sdformat3", because: "Differing version of the same formula"
+  conflicts_with "sdformat4", because: "Differing version of the same formula"
 
   def install
     ENV.m64
