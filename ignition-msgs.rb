@@ -31,6 +31,21 @@ class IgnitionMsgs < Formula
   end
 
   test do
-    system "pkg-config", "--modversion", "ignition-msgs0"
+    (testpath/"test.cpp").write <<-EOS.undent
+      #include <ignition/msgs.hh>
+      int main() {
+        ignition::msgs::UInt32;
+        return 0;
+      }
+    EOS
+    system "pkg-config", "ignition-msgs0"
+    cflags = `pkg-config --cflags ignition-msgs0`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lignition-msgs0",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
   end
 end
