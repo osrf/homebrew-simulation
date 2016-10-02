@@ -1,8 +1,8 @@
 class Simbody < Formula
   desc "Multibody physics API"
   homepage "https://simtk.org/home/simbody"
-  url "https://github.com/simbody/simbody/archive/Simbody-3.5.3.tar.gz"
-  sha256 "8005fbdb16c6475f98e13b8f1423b0e9951c193681c2b0d19ae5b711d7e24ec1"
+  url "https://github.com/simbody/simbody/archive/Simbody-3.5.4.tar.gz"
+  sha256 "449c36e574d6f859d4fa8854ab6bc8e402e5ca5894bcce3e9fdce2f5658d64de"
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
   bottle do
