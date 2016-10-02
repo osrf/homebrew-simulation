@@ -5,7 +5,7 @@ class IgnitionTransport < Formula
   sha256 "5fd2d54b6554bd61b10d66cf5e4d597b44a55e30e16c8ba3e1f4382efcdee006"
   revision 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-transport", branch: "ign-transport1", using: :hg
+  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport1", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"

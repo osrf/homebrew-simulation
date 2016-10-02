@@ -6,7 +6,7 @@ class Gazebo8 < Formula
   sha256 "1831faca6d30d03c4584cbba107b214000767b8b2b1a9a91b67e122608f91871"
   revision 1
 
-  head "https://bitbucket.org/osrf/gazebo", branch: "default", using: :hg
+  head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -39,13 +39,13 @@ class Gazebo8 < Formula
   depends_on "player" => :optional
   depends_on "simbody" => :recommended
 
-  conflicts_with "gazebo1", because: "Differing version of the same formula"
-  conflicts_with "gazebo2", because: "Differing version of the same formula"
-  conflicts_with "gazebo3", because: "Differing version of the same formula"
-  conflicts_with "gazebo4", because: "Differing version of the same formula"
-  conflicts_with "gazebo5", because: "Differing version of the same formula"
-  conflicts_with "gazebo6", because: "Differing version of the same formula"
-  conflicts_with "gazebo7", because: "Differing version of the same formula"
+  conflicts_with "gazebo1", :because => "Differing version of the same formula"
+  conflicts_with "gazebo2", :because => "Differing version of the same formula"
+  conflicts_with "gazebo3", :because => "Differing version of the same formula"
+  conflicts_with "gazebo4", :because => "Differing version of the same formula"
+  conflicts_with "gazebo5", :because => "Differing version of the same formula"
+  conflicts_with "gazebo6", :because => "Differing version of the same formula"
+  conflicts_with "gazebo7", :because => "Differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed

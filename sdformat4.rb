@@ -5,7 +5,7 @@ class Sdformat4 < Formula
   sha256 "e2656984ea0411f5132363c2722b1016524195853b05fdd99e9b7dd3fa4031b1"
   revision 1
 
-  head "https://bitbucket.org/osrf/sdformat", branch: "default", using: :hg
+  head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
@@ -21,8 +21,8 @@ class Sdformat4 < Formula
   depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"
 
-  conflicts_with "sdformat", because: "Differing version of the same formula"
-  conflicts_with "sdformat3", because: "Differing version of the same formula"
+  conflicts_with "sdformat", :because => "Differing version of the same formula"
+  conflicts_with "sdformat3", :because => "Differing version of the same formula"
 
   def install
     ENV.m64

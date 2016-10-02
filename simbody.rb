@@ -3,7 +3,7 @@ class Simbody < Formula
   homepage "https://simtk.org/home/simbody"
   url "https://github.com/simbody/simbody/archive/Simbody-3.5.3.tar.gz"
   sha256 "8005fbdb16c6475f98e13b8f1423b0e9951c193681c2b0d19ae5b711d7e24ec1"
-  head "https://github.com/simbody/simbody.git", branch: "master"
+  head "https://github.com/simbody/simbody.git", :branch => "master"
 
   bottle do
     root_url "http://gazebosim.org/distributions/simbody/releases"
