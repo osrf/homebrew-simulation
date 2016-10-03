@@ -7,7 +7,7 @@ class Simbody < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/simbody/releases"
-    sha256 "69186db06f20a5dd3da38429cd96e3b5b8e900cb02bc1db6803f2d06435df09f" => :yosemite
+    sha256 "665a2e8b4acc8ecc6d375b89c8d31bec3d5a31681d6b947d44d45185f93e8d69" => :yosemite
   end
 
   depends_on "cmake" => :build
