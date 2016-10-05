@@ -24,12 +24,6 @@ class IgnitionTransport < Formula
   depends_on "zeromq"
   depends_on "cppzmq"
 
-  patch do
-    # Fix for compatibility with protobuf 3
-    url "https://bitbucket.org/ignitionrobotics/ign-transport/commits/35c3b75e6e2e6ed36c9ec01705b6e5330c50b96a/raw/"
-    sha256 "c4e8b6e0c0cd7a523c1309d76d6abe3a5f17f42667db8c6354ba4cf7a38af299"
-  end
-
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
