@@ -1,16 +1,15 @@
 class IgnitionTransport2 < Formula
   desc "Transport middleware for robotics"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.0.0.tar.bz2"
-  sha256 "186c3ae57843607568c2b756a6980dcb93305adcf676029a138865e0111651ed"
-  revision 2
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.1.0.tar.bz2"
+  sha256 "f1190ee6a880962b9083328efcaf4c8fe4e9f00504da4432cde69820edbc212e"
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "4343d166c1bc28623468362302ee6774ff69346122a99473800ea6d159924d50" => :yosemite
+    sha256 "3ebd085bf4164600af12b478e48279e37417c42ccdd86395ba4eb31c91dafc96" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -24,12 +23,6 @@ class IgnitionTransport2 < Formula
   depends_on "ossp-uuid"
   depends_on "zeromq"
   depends_on "cppzmq"
-
-  patch do
-    # Fix for pkg-config file
-    url "https://bitbucket.org/ignitionrobotics/ign-transport/commits/9fc8a2312ba92aa3a6cad22dcd2fe4e6084a465c/raw/"
-    sha256 "1bb1ee054798e13190d27e87c168d63053dde3ae20f7b99dddbe43beb811d7ca"
-  end
 
   def install
     system "cmake", ".", *std_cmake_args
