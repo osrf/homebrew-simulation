@@ -3,7 +3,6 @@ class IgnitionTransport2 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.1.0.tar.bz2"
   sha256 "f1190ee6a880962b9083328efcaf4c8fe4e9f00504da4432cde69820edbc212e"
-  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
@@ -24,12 +23,6 @@ class IgnitionTransport2 < Formula
   depends_on "ossp-uuid"
   depends_on "zeromq"
   depends_on "cppzmq"
-
-  patch do
-    # Fix for pkg-config file
-    url "https://bitbucket.org/ignitionrobotics/ign-transport/commits/9fc8a2312ba92aa3a6cad22dcd2fe4e6084a465c/raw/"
-    sha256 "1bb1ee054798e13190d27e87c168d63053dde3ae20f7b99dddbe43beb811d7ca"
-  end
 
   def install
     system "cmake", ".", *std_cmake_args
