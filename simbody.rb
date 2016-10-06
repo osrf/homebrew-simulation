@@ -3,6 +3,8 @@ class Simbody < Formula
   homepage "https://simtk.org/home/simbody"
   url "https://github.com/simbody/simbody/archive/Simbody-3.5.4.tar.gz"
   sha256 "449c36e574d6f859d4fa8854ab6bc8e402e5ca5894bcce3e9fdce2f5658d64de"
+  revision 1
+
   head "https://github.com/simbody/simbody.git", :branch => "master"
   revision 1
 
@@ -18,6 +20,9 @@ class Simbody < Formula
   depends_on "pkg-config" => :run
 
   def install
+    # Don't use 10.11 SDK frameworks on 10.10 with xcode7
+    ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+    ENV.delete("SDKROOT")
     ENV.m64
 
     mkdir "build" do
