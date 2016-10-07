@@ -3,7 +3,7 @@ class Gazebo8 < Formula
   homepage "http://gazebosim.org"
   url "https://bitbucket.org/osrf/gazebo/get/7af563d06884.tar.gz"
   version "8.0.0-20161007-7af563d06884"
-  sha256 ""
+  sha256 "a91da1b687ea62f69c8948ff88d9a43443a364c86e36e893c8219b2328df2256"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
