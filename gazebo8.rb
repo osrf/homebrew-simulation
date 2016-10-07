@@ -1,12 +1,16 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://bitbucket.org/osrf/gazebo/get/17137a79cbe8.tar.gz"
-  version "8.0.0-20160718-17137a79cbe8"
-  sha256 "1831faca6d30d03c4584cbba107b214000767b8b2b1a9a91b67e122608f91871"
-  revision 1
+  url "https://bitbucket.org/osrf/gazebo/get/7af563d06884.tar.gz"
+  version "8.0.0-20161007-7af563d06884"
+  sha256 ""
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
+
+  bottle do
+    root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -51,18 +55,6 @@ class Gazebo8 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Fix for compatibility with tinyxml2 4.0
-    url "https://bitbucket.org/osrf/gazebo/commits/90b82ee6efe79d83dc9fa4f9706e050e658d1221/raw/"
-    sha256 "73f3724ce0123cd71968b8b03822d45a3b893ca40f746feed76870c9b29e7603"
-  end unless build.head?
-
-  patch do
-    # Fix for compatibility with boost 1.62
-    url "https://bitbucket.org/osrf/gazebo/commits/f1ad6c032f87d9991cc2eb57830c6c14e07a73d8/raw/"
-    sha256 "17435adcc74d70685fcd88893bd9012fd15f80f78a35b7f17f12c22c399c4638"
   end
 
   def install

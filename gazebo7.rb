@@ -62,7 +62,7 @@ class Gazebo7 < Formula
     # Fix for compatibility with boost 1.62
     url "https://bitbucket.org/osrf/gazebo/commits/f1ad6c032f87d9991cc2eb57830c6c14e07a73d8/raw/"
     sha256 "17435adcc74d70685fcd88893bd9012fd15f80f78a35b7f17f12c22c399c4638"
-  end
+  end unless build.head?
 
   def install
     ENV.m64
