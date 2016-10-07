@@ -3,6 +3,8 @@ class Gazebo5 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-5.3.0.tar.bz2"
   sha256 "9355277ea3f20f411fcb664d891c2f409130cbb16fe844a86cd2f9a90c6428de"
+  revision 1
+
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo5", :using => :hg
 
   bottle do
