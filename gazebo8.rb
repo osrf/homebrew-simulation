@@ -59,6 +59,12 @@ class Gazebo8 < Formula
     sha256 "73f3724ce0123cd71968b8b03822d45a3b893ca40f746feed76870c9b29e7603"
   end unless build.head?
 
+  patch do
+    # Fix for compatibility with boost 1.62
+    url "https://bitbucket.org/osrf/gazebo/commits/f1ad6c032f87d9991cc2eb57830c6c14e07a73d8/raw/"
+    sha256 ""
+  end
+
   def install
     ENV.m64
 
