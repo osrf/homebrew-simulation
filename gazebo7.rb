@@ -3,13 +3,13 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.3.1.tar.bz2"
   sha256 "aeff031d9b1b72c94b06b2a87790e6b561f4cba0e1dce155269108b3237e5c62"
-  revision 5
+  revision 6
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "665a2e8b4acc8ecc6d375b89c8d31bec3d5a31681d6b947d44d45185f93e8d69" => :yosemite
+    sha256 "29febabf2cb612b2937b8d89e2ba25d0f9abb7b68dc67b3f488bd0c80305a53a" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -56,6 +56,12 @@ class Gazebo7 < Formula
     # Fix for compatibility with tinyxml2 4.0
     url "https://bitbucket.org/osrf/gazebo/commits/90b82ee6efe79d83dc9fa4f9706e050e658d1221/raw/"
     sha256 "73f3724ce0123cd71968b8b03822d45a3b893ca40f746feed76870c9b29e7603"
+  end unless build.head?
+
+  patch do
+    # Fix for compatibility with boost 1.62
+    url "https://bitbucket.org/osrf/gazebo/commits/f1ad6c032f87d9991cc2eb57830c6c14e07a73d8/raw/"
+    sha256 "17435adcc74d70685fcd88893bd9012fd15f80f78a35b7f17f12c22c399c4638"
   end unless build.head?
 
   def install

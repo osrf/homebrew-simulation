@@ -3,13 +3,13 @@ class Gazebo6 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.6.0.tar.bz2"
   sha256 "0097f694cbcaad8a4508da78472cdf9ccf4cdf7ab20f153beb151b48d7252e96"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo6", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "8977cfa65a0d4711aa390af43d5221ae78500bddb962e783180c0eb8d0f5c78d" => :yosemite
+    sha256 "c2bcf7150ad456e70b038f9e32536d96889d1793e87d104e3daa5e412ec8ad4d" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -49,6 +49,12 @@ class Gazebo6 < Formula
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
+
+  patch do
+    # Fix for compatibility with boost 1.62
+    url "https://bitbucket.org/osrf/gazebo/commits/9c5ce8a121904cf3373502320510ee74bc84b01d/raw/"
+    sha256 "0710a8ead0ff766fa395642d22d47b80b72e173a804a0ffc63385e500c88c271"
+  end unless build.head?
 
   def install
     ENV.m64
