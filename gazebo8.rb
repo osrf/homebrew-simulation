@@ -4,13 +4,9 @@ class Gazebo8 < Formula
   url "https://bitbucket.org/osrf/gazebo/get/7af563d06884.tar.gz"
   version "8.0.0-20161007-7af563d06884"
   sha256 "a91da1b687ea62f69c8948ff88d9a43443a364c86e36e893c8219b2328df2256"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
-
-  bottle do
-    root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "a707e47195fb86e90b46d70554d74e17ba31176fd8825982007ab5220a99ddbb" => :yosemite
-  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -26,7 +22,7 @@ class Gazebo8 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt"
-  depends_on "qwt"
+  depends_on "osrf/simulation/qwt-qt4"
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"
