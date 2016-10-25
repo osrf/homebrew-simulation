@@ -29,6 +29,28 @@ class IgnitionCommon < Formula
   end
 
   test do
-    system "pkg-config", "--modversion", "ignition-common"
+    (testpath/"test.cpp").write <<-EOS.undent
+      #include <iostream>
+      #include <ignition/common.hh>
+      int main() {
+        try {
+          ignthrow("An example exception that is caught.");
+        }
+        catch(const ignition::common::exception &_e) {
+          std::cerr << "Caught a runtime error " << _e.what() << std::endl;
+        }
+        ignassert(0 == 0);
+        return 0;
+      }
+    EOS
+    system "pkg-config", "ignition-common"
+    cflags = `pkg-config --cflags ignition-common`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lignition-common",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
   end
 end
