@@ -31,6 +31,16 @@ class IgnitionMsgs < Formula
         return 0;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS.undent
+      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      find_package(ignition-msgs0 QUIET REQUIRED)
+      set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IGNITION-MSGS_CXX_FLAGS}")
+      include_directories(${IGNITION-MSGS_INCLUDE_DIRS})
+      link_directories(${IGNITION-MSGS_LIBRARY_DIRS})
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ${IGNITION-MSGS_LIBRARIES})
+    EOS
+    # test building with pkg-config
     system "pkg-config", "ignition-msgs0"
     cflags = `pkg-config --cflags ignition-msgs0`.split(" ")
     system ENV.cc, "test.cpp",
@@ -40,5 +50,11 @@ class IgnitionMsgs < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
