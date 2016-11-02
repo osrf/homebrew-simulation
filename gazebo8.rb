@@ -66,6 +66,6 @@ class Gazebo8 < Formula
   end
 
   test do
-    system "gz", "sdf"
+    system "#{bin}/gz", "sdf"
   end
 end
