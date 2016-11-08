@@ -44,14 +44,14 @@ class IgnitionCommon < Formula
       }
     EOS
     system "pkg-config", "ignition-common"
-    cflags = `pkg-config --cflags ignition-common`.split(" ")
-    # test doesn't compile yet
-    #system ENV.cc, "test.cpp",
-    #               *cflags,
-    #               "-L#{lib}",
-    #               "-lignition-common",
-    #               "-lc++",
-    #               "-o", "test"
-    #system "./test"
+    # # test doesn't compile yet
+    # cflags = `pkg-config --cflags ignition-common`.split(" ")
+    # system ENV.cc, "test.cpp",
+    #                *cflags,
+    #                "-L#{lib}",
+    #                "-lignition-common",
+    #                "-lc++",
+    #                "-o", "test"
+    # system "./test"
   end
 end
