@@ -1,8 +1,8 @@
-class IgnitionTransport2 < Formula
+class IgnitionTransport3 < Formula
   desc "Transport middleware for robotics"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.1.0.tar.bz2"
-  sha256 "f1190ee6a880962b9083328efcaf4c8fe4e9f00504da4432cde69820edbc212e"
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport3-3.0.0.tar.bz2"
+  sha256 "fc1a1248218a41747b6f5ff0d84ffb98720d0be30158d45449165eed3b7c6bde"
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
@@ -38,12 +38,12 @@ class IgnitionTransport2 < Formula
         return 0;
       }
     EOS
-    system "pkg-config", "ignition-transport2"
-    cflags = `pkg-config --cflags ignition-transport2`.split(" ")
+    system "pkg-config", "ignition-transport3"
+    cflags = `pkg-config --cflags ignition-transport3`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-transport2",
+                   "-lignition-transport3",
                    "-lc++",
                    "-o", "test"
     system "./test"
