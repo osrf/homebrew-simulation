@@ -86,4 +86,36 @@ class Ogre19 < Formula
       symlink path, lib/"OGRE/lib#{filename}"
     end
   end
+
+  test do
+    (testpath/"test.mesh.xml").write <<-EOS.undent
+      <mesh>
+        <submeshes>
+          <submesh material="BaseWhite" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="1">
+              <face v1="0" v2="1" v3="2" />
+            </faces>
+            <geometry vertexcount="3">
+              <vertexbuffer positions="true" normals="false" texture_coords="0">
+                <vertex>
+                  <position x="-50" y="-50" z="50" />
+                </vertex>
+                <vertex>
+                  <position x="-50" y="-50" z="-50" />
+                </vertex>
+                <vertex>
+                  <position x="50" y="-50" z="-50" />
+                </vertex>
+              </vertexbuffer>
+            </geometry>
+          </submesh>
+        </submeshes>
+        <submeshnames>
+          <submeshname name="submesh0" index="0" />
+        </submeshnames>
+      </mesh>
+    EOS
+    system "#{bin}/OgreXMLConverter", "test.mesh.xml"
+    system "du", "-h", "./test.mesh"
+  end
 end
