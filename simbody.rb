@@ -7,6 +7,7 @@ class Simbody < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/simbody/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
     sha256 "8113447d4f3dd1d7ab7f847edbb8986008502c15f4475cb298e4749268c35c5a" => :yosemite
   end
 
