@@ -11,7 +11,7 @@ class IgnitionMath2 < Formula
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
     sha256 "da1097959a60f8d8c8cf83b392e597ab52c1969ec5fc70c6b42083df18f8d5af" => :el_capitan
-    sha256 "da1097959a60f8d8c8cf83b392e597ab52c1969ec5fc70c6b42083df18f8d5af" => :yosemite
+    sha256 "d18ff2dad5ecf0abb515ef8246ad21d9b21def2dc06ffb7a8f81112ea9f22fc2" => :yosemite
   end
 
   depends_on "cmake" => :build
