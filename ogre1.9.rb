@@ -5,6 +5,12 @@ class Ogre19 < Formula
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/ogre/releases"
+    sha256 "3960b3c177fa81d2b37f3784bceeafd4f10788d7fcbb228934056f4bb61f40ff" => :el_capitan
+    sha256 "f56d6421e44373fa77b4411e2c71fa04575f8e2bba3dd0e8c3226a9dd4c609e1" => :yosemite
+  end
+
   option "with-cg"
 
   depends_on "boost"
