@@ -17,6 +17,7 @@ class Gazebo8 < Formula
   depends_on "ignition-math2"
   depends_on "ignition-msgs"
   depends_on "ignition-transport2"
+  depends_on "ignition-transport3"
   depends_on "libtar"
   depends_on "ogre"
   depends_on "protobuf"
