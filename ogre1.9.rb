@@ -4,11 +4,12 @@ class Ogre19 < Formula
   url "https://bitbucket.org/sinbad/ogre/get/108ab0bcc69603dba32c0ffd4bbbc39051f421c9.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "3960b3c177fa81d2b37f3784bceeafd4f10788d7fcbb228934056f4bb61f40ff" => :el_capitan
-    sha256 "f56d6421e44373fa77b4411e2c71fa04575f8e2bba3dd0e8c3226a9dd4c609e1" => :yosemite
+    sha256 "1332aa5c8caf54464a3b53decb10edd8428ff8e425d59175d78add84fc75b990" => :el_capitan
+    sha256 "733bb1ddc00359f6a362b3e9ab3b63a2962cff5195caf4eb0595db9b5494f475" => :yosemite
   end
 
   option "with-cg"
