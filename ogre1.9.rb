@@ -29,7 +29,7 @@ class Ogre19 < Formula
   end
 
   patch do
-    # this is the same patch as hgaiser's `window.patch` above, but applicable to the latest 1.9 version
+    # retain osx cocoa window
     url "https://gist.githubusercontent.com/NikolausDemmel/927bd7bb3f14c1788599/raw/c9a5ba88b758e80d3f46511629c4e8026b92c462/ogre1.9.patch"
     sha256 "e82d842138f7f5ff4637ed313d1140c3b868c8425d4cdba7a71e0a9d7f7e0fd6"
   end
@@ -56,6 +56,12 @@ class Ogre19 < Formula
     # add libc++ flag
     url "https://gist.githubusercontent.com/iche033/e2b152d9df080b21f71ba3b65aa39922/raw/5397fa149c7570c17f2d78421d44b12dfa175387/ogre-1.9-cxx_flags.patch"
     sha256 "7dc77285029c34b4a6adb52b0d4b9c40578526a5e9764d0a7091c6a4cb63fa78"
+  end
+
+  patch do
+    # fix FindOGRE.cmake for non-framework builds
+    url "https://gist.githubusercontent.com/iche033/2b5e2ba31436881f1db29f9b60c7a5b2/raw/b6ab953ebd82127ad1177744f367a36e059312a9/ogre-1.9-findogre.patch"
+    sha256 "7ca6f549fbdff7b7fc334f06da4547e071ec0e3f2733897fc6ef0d2bfa1716a3"
   end
 
   def install
