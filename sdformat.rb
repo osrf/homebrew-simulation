@@ -3,12 +3,13 @@ class Sdformat < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.2.tar.bz2"
   sha256 "f1e6e39f1240c6a1732ed3fd26fd70e2bf865aed15fc4b0a24c0f76562eac0ae"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf_2.3", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
     sha256 "d0d0a935f46adc4403cbfdb9cd96fa3cd77e3fdd0dafe355e911e5db92602705" => :yosemite
   end
 

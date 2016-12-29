@@ -3,12 +3,13 @@ class Gazebo5 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-5.3.0.tar.bz2"
   sha256 "9355277ea3f20f411fcb664d891c2f409130cbb16fe844a86cd2f9a90c6428de"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo5", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
     sha256 "52c80d40792f3b96c4c6efe6d7c1380cda2f2b173cddbec2e764bdead7e95478" => :yosemite
   end
 
