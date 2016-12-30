@@ -8,7 +8,7 @@ class Ogre19 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "3ec9bcb03e8543db96adf1e2670e1fb4b6e8f7fd5eec956a78b2073122738cee" => :el_capitan
+    sha256 "48edc8d1d05f35c35a800eca73046f5c5efe4ce8dee9d0c6f0cd0233099a8b30" => :el_capitan
     sha256 "ddfaf2646008d87a73a8a92b980975d9164afa5a3ae53b31e402e939523dbff0" => :yosemite
   end
 
