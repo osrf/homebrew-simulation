@@ -4,12 +4,12 @@ class Ogre19 < Formula
   url "https://bitbucket.org/sinbad/ogre/get/108ab0bcc69603dba32c0ffd4bbbc39051f421c9.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
-  revision 1
+  revision 2
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "1332aa5c8caf54464a3b53decb10edd8428ff8e425d59175d78add84fc75b990" => :el_capitan
-    sha256 "733bb1ddc00359f6a362b3e9ab3b63a2962cff5195caf4eb0595db9b5494f475" => :yosemite
+    sha256 "48edc8d1d05f35c35a800eca73046f5c5efe4ce8dee9d0c6f0cd0233099a8b30" => :el_capitan
+    sha256 "32b9c50bc711fcdb642d786dd20028e0b85585f1287a596ce93285cc51ff20f2" => :yosemite
   end
 
   option "with-cg"
@@ -29,7 +29,7 @@ class Ogre19 < Formula
   end
 
   patch do
-    # this is the same patch as hgaiser's `window.patch` above, but applicable to the latest 1.9 version
+    # retain osx cocoa window
     url "https://gist.githubusercontent.com/NikolausDemmel/927bd7bb3f14c1788599/raw/c9a5ba88b758e80d3f46511629c4e8026b92c462/ogre1.9.patch"
     sha256 "e82d842138f7f5ff4637ed313d1140c3b868c8425d4cdba7a71e0a9d7f7e0fd6"
   end
@@ -56,6 +56,12 @@ class Ogre19 < Formula
     # add libc++ flag
     url "https://gist.githubusercontent.com/iche033/e2b152d9df080b21f71ba3b65aa39922/raw/5397fa149c7570c17f2d78421d44b12dfa175387/ogre-1.9-cxx_flags.patch"
     sha256 "7dc77285029c34b4a6adb52b0d4b9c40578526a5e9764d0a7091c6a4cb63fa78"
+  end
+
+  patch do
+    # fix FindOGRE.cmake for non-framework builds
+    url "https://gist.githubusercontent.com/iche033/2b5e2ba31436881f1db29f9b60c7a5b2/raw/b6ab953ebd82127ad1177744f367a36e059312a9/ogre-1.9-findogre.patch"
+    sha256 "7ca6f549fbdff7b7fc334f06da4547e071ec0e3f2733897fc6ef0d2bfa1716a3"
   end
 
   def install
