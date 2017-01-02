@@ -8,10 +8,12 @@ class IgnitionMath2 < Formula
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/ign-math/releases"
+    #root_url "http://gazebosim.org/distributions/ign-math/releases"
+    root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
     cellar :any
     sha256 "098ed08a8d2afb93cfb9e457dc4f82c70ec304f70b8dc375e174116c2c2bce58" => :el_capitan
     sha256 "d18ff2dad5ecf0abb515ef8246ad21d9b21def2dc06ffb7a8f81112ea9f22fc2" => :yosemite
+    sha256 "234032f265c86e508c8ca8019547de75c2f4bac5440f4726faf32cf48b28e729" => :sierra
   end
 
   depends_on "cmake" => :build

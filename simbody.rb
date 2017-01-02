@@ -7,9 +7,11 @@ class Simbody < Formula
   revision 1
 
   bottle do
-    root_url "http://gazebosim.org/distributions/simbody/releases"
+    #root_url "http://gazebosim.org/distributions/ign-math/releases"
+    root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
     sha256 "e37ea67010f856dbe63b52a8136ad468c3d3dc48eead2ee3e7227abdbb55dd19" => :el_capitan
     sha256 "374b70963d6d5336eccaa83427a1acf0c938b97b618a10a7c1181fdcf06f1c09" => :yosemite
+    sha256 "10be845ceb87d95413b367e16271c6e624603f75361182b58faeea9ca8ae4d99" => :sierra
   end
 
   depends_on "cmake" => :build

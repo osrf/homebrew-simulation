@@ -8,9 +8,11 @@ class Sdformat4 < Formula
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/sdformat/releases"
+    #root_url "http://gazebosim.org/distributions/ign-math/releases"
+    root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
     sha256 "0a8de24e849e2a4fbefa6c4916ff2d35ce46be70897899422d006c76c49a295b" => :el_capitan
     sha256 "e2d043add111f1729f1c188506a65ebbe390099b0e46d7eb6be1592384d0f045" => :yosemite
+    sha256 "51a5f9163769b40f78d6b5845ef9c9d42464b89ccd85cd057a06cfcec0bca348" => :sierra
   end
 
   depends_on "cmake" => :build
