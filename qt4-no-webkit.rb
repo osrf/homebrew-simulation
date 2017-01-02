@@ -8,6 +8,7 @@ class Qt4NoWebkit < Formula
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
   bottle do
+    root_url "http://gazebosim.org/distributions/qt4-no-webkit/releases"
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
   end
