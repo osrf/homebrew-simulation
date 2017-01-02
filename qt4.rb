@@ -150,6 +150,7 @@ class Qt4 < Formula
 
   bottle do
     root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
+    rebuild 1
     sha256 "276e8704ea68d534d2bf40987a1f5e67ef26ac4d1a186748e90af36bd5f3ec60" => :sierra
   end
 end
