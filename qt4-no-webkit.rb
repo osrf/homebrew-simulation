@@ -64,6 +64,10 @@ class Qt4NoWebkit < Formula
       end
     end
 
+    # Phonon is broken on macOS 10.12+ and Xcode 8+ due to QTKit.framework
+    # being removed.
+    args << "-no-phonon" if MacOS.version >= :sierra || MacOS::Xcode.version >= "8.0"
+
     args << "-openssl-linked"
     args << "-I" << Formula["openssl"].opt_include
     args << "-L" << Formula["openssl"].opt_lib
@@ -133,6 +137,8 @@ class Qt4NoWebkit < Formula
     Qt Designer no longer picks up changes to the QT_PLUGIN_PATH environment
     variable as it was tweaked to search for plug-ins provided by formulae in
       #{HOMEBREW_PREFIX}/lib/qt4/plugins
+
+    Phonon is not supported on macOS Sierra or with Xcode 8.
     EOS
   end
 
