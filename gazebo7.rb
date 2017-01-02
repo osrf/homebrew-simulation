@@ -27,7 +27,7 @@ class Gazebo7 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt4"
+  depends_on "px4/simulation/qt"
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"
