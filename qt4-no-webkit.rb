@@ -32,9 +32,6 @@ class Qt4NoWebkit < Formula
   # be migrating to Qt5 as widely as possible, which remains supported upstream.
   depends_on MaximumMacOSRequirement => :el_capitan
 
-  deprecated_option "qtdbus" => "with-dbus"
-  deprecated_option "with-d-bus" => "with-dbus"
-
   resource "test-project" do
     url "https://gist.github.com/tdsmith/f55e7e69ae174b5b5a03.git",
         :revision => "6f565390395a0259fa85fdd3a4f1968ebcd1cc7d"
