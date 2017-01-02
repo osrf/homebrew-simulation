@@ -9,7 +9,7 @@ class Qt4NoWebkit < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/qt4-no-webkit/releases"
-    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
+    sha256 "1efde68da6108d94ad085557cadf0d7baf86437eee53e08bf8f41ef1a850a691" => :el_capitan
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
   end
 
