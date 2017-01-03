@@ -22,7 +22,7 @@ class Gazebo8 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt"
+  depends_on "qt4-no-webkit"
   depends_on "osrf/simulation/qwt-qt4"
   depends_on "sdformat4"
   depends_on "tbb"
