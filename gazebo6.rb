@@ -3,7 +3,7 @@ class Gazebo6 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.6.0.tar.bz2"
   sha256 "0097f694cbcaad8a4508da78472cdf9ccf4cdf7ab20f153beb151b48d7252e96"
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo6", :using => :hg
 
@@ -24,7 +24,7 @@ class Gazebo6 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt"
+  depends_on "qt4-no-webkit"
   depends_on "sdformat3"
   depends_on "tbb"
   depends_on "tinyxml"
