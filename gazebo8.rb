@@ -7,6 +7,12 @@ class Gazebo8 < Formula
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "8108a1d09434dc6cc04129cb99dc7ebaf4f8da047de79d767e655c564b8c4cb9" => :el_capitan
+    sha256 "6f31523a1070d3d360bbcf02324162a1e616bebb89e9a66d31bfaa46906f349e" => :yosemite
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
@@ -18,7 +24,7 @@ class Gazebo8 < Formula
   depends_on "ignition-transport2"
   depends_on "ignition-transport3"
   depends_on "libtar"
-  depends_on "ogre"
+  depends_on "ogre1.9"
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt5"
@@ -57,7 +63,6 @@ class Gazebo8 < Formula
     ENV.m64
 
     cmake_args = std_cmake_args
-    cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
