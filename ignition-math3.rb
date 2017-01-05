@@ -33,9 +33,9 @@ class IgnitionMath3 < Formula
     EOS
     system ENV.cc, "test.cpp",
                    "--std=c++11",
-                   "-I#{include}/ignition/math2",
+                   "-I#{include}/ignition/math3",
                    "-L#{lib}",
-                   "-lignition-math2",
+                   "-lignition-math3",
                    "-lc++",
                    "-o", "test"
     system "./test"
