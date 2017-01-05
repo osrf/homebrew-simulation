@@ -63,7 +63,6 @@ class Gazebo8 < Formula
     ENV.m64
 
     cmake_args = std_cmake_args
-    cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
