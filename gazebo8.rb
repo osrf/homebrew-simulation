@@ -1,10 +1,9 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://bitbucket.org/osrf/gazebo/get/7af563d06884.tar.gz"
-  version "8.0.0-20161007-7af563d06884"
-  sha256 "a91da1b687ea62f69c8948ff88d9a43443a364c86e36e893c8219b2328df2256"
-  revision 1
+  url "https://bitbucket.org/osrf/gazebo/get/d60939b4f3d4.tar.gz"
+  version "8.0.0-20170104-d60939b4f3d4"
+  sha256 "1cf2795fd0d7447be69f6714fba2d63d03d5ae53b562dc1fa96c7f87ceca54ab"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -22,8 +21,8 @@ class Gazebo8 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt4-no-webkit"
-  depends_on "osrf/simulation/qwt-qt4"
+  depends_on "qt5"
+  depends_on "qwt"
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"
