@@ -9,7 +9,7 @@ class IgnitionTransport3 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "0102b4f37f4c802abdd33e1b9f8dd8b1232e7fb3ffb6d6f97c9376bb579bd452" => :el_capitan
+    sha256 "d3530eb3f60ff3983ebdac1c75fbc40eedcaf07bc65c53b949e5b081a39607cb" => :el_capitan
     sha256 "49d6def3d77816dd4a9dbb7a9ea84619cc26ff912b988d09f363b671de47fd70" => :yosemite
   end
 
