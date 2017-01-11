@@ -52,18 +52,6 @@ class Gazebo7 < Formula
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
 
-  patch do
-    # Remove dependence on webkit from qt4, part 1
-    url "https://bitbucket.org/osrf/gazebo/commits/12bbbf5f0968eeb26be7f3d0c441d83edd070dac/raw/"
-    sha256 "77bf176e2fcb8bc4fe751ad0fd205df390a1e9aa9bca2ad42620a4362257286c"
-  end
-
-  patch do
-    # Remove dependence on webkit from qt4, part2
-    url "https://bitbucket.org/osrf/gazebo/commits/33a8a3c3d631f2c48056d4c35942a9899e1db585/raw/"
-    sha256 "16df786e372926aebc24c4d2f28d0e6fa72b83f3e7372c9c5d82271e73c9a93f"
-  end
-
   def install
     ENV.m64
 
