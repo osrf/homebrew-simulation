@@ -1,16 +1,16 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://bitbucket.org/osrf/gazebo/get/d60939b4f3d4.tar.gz"
-  version "8.0.0-20170104-d60939b4f3d4"
-  sha256 "1cf2795fd0d7447be69f6714fba2d63d03d5ae53b562dc1fa96c7f87ceca54ab"
+  url "https://bitbucket.org/osrf/gazebo/get/9cb05888b084.tar.gz"
+  version "8.0.0-20170110-9cb05888b084"
+  sha256 "214e41569a40f0f1cbb6c0ac6a7db58f1b9dc5d23530d2b55eddc3794e35373b"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "8108a1d09434dc6cc04129cb99dc7ebaf4f8da047de79d767e655c564b8c4cb9" => :el_capitan
-    sha256 "6f31523a1070d3d360bbcf02324162a1e616bebb89e9a66d31bfaa46906f349e" => :yosemite
+    sha256 "9c72364424e0d17476b9c8f5cdddfe1b921ff6f998bbcdf979fb7880652795d1" => :el_capitan
+    sha256 "f9cda4396fac5218e987863dae3a96558ccad7953a1aa2682904ef3141b4df4b" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -19,7 +19,7 @@ class Gazebo8 < Formula
   depends_on "boost"
   depends_on "doxygen"
   depends_on "freeimage"
-  depends_on "ignition-math2"
+  depends_on "ignition-math3"
   depends_on "ignition-msgs"
   depends_on "ignition-transport2"
   depends_on "ignition-transport3"
