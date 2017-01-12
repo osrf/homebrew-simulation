@@ -9,7 +9,7 @@ class Gazebo5 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
     sha256 "cdd3f512b4d7821b0ed35f1c06b63b75d34043e4050f1d85b6fe43f24d5e8a14" => :el_capitan
-    sha256 "fcd880608fb4e4dd1cfae958a3da40d460ec67cbe100bb7e6336cde3bcbed973" => :yosemite
+    sha256 "a924066d7d4a27351f6d3137f8b3f95d8daf4133c64dfc7f76e2f76507d6094c" => :yosemite
   end
 
   depends_on "cmake" => :build
