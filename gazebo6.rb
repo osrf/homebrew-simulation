@@ -1,16 +1,15 @@
 class Gazebo6 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.6.0.tar.bz2"
-  sha256 "0097f694cbcaad8a4508da78472cdf9ccf4cdf7ab20f153beb151b48d7252e96"
-  revision 6
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.7.0.tar.bz2"
+  sha256 "f7d73abd463a5e089ba05cd347d4c8dd5ce92bb0c7b6acce21071aba55812ec9"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo6", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "4ce318d28afe3e6a2a36abbbdfa7e79ffded398a40086f4fe86ef6d58463df95" => :el_capitan
-    sha256 "ec88f58381214a8341ac4cd96edfffe5f461436053153f0157101fae2ffebdfb" => :yosemite
+    sha256 "58169f6e9828a1bbb0928361bdcc38f74bf8fb0c77e6395e9e1066573efc89c3" => :el_capitan
+    sha256 "b1f61a3a0eaa585a8c6dda24d049c0c4993b3efecd788af307997c9df53a0f0d" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -50,12 +49,6 @@ class Gazebo6 < Formula
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
-
-  patch do
-    # Fix for compatibility with boost 1.62
-    url "https://bitbucket.org/osrf/gazebo/commits/9c5ce8a121904cf3373502320510ee74bc84b01d/raw/"
-    sha256 "0710a8ead0ff766fa395642d22d47b80b72e173a804a0ffc63385e500c88c271"
-  end unless build.head?
 
   def install
     ENV.m64
