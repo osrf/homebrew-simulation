@@ -1,16 +1,15 @@
 class Gazebo7 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.4.0.tar.bz2"
-  sha256 "a033b2273383f16e5dd5b5bfe597551dc3618b98e64abecfa8a41bdddd6542f7"
-  revision 5
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.5.0.tar.bz2"
+  sha256 "15d87d0d329ef37ff82e676e7b8b0c8535c40ba635cdebd5b8ee3b5832fa8e56"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "a80c52c88413c1ce5caf9a839e92e06bb27c5247c34075ae3dfa7bdeeaf7b112" => :el_capitan
-    sha256 "34a032dc6d3853347f21b2202ff240e6d2783967ac05e412a3caa0d83499cb03" => :yosemite
+    sha256 "c0bdafffd5a9bd651875529bfdcefdd0308aaef48ef7f154085f80445d3c456c" => :el_capitan
+    sha256 "cead3a712828172ae6d587f523bf78ea919d307f67bd7f80ec32d0c5a5ab4c1e" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -51,18 +50,6 @@ class Gazebo7 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Remove dependence on webkit from qt4, part 1
-    url "https://bitbucket.org/osrf/gazebo/commits/12bbbf5f0968eeb26be7f3d0c441d83edd070dac/raw/"
-    sha256 "77bf176e2fcb8bc4fe751ad0fd205df390a1e9aa9bca2ad42620a4362257286c"
-  end
-
-  patch do
-    # Remove dependence on webkit from qt4, part2
-    url "https://bitbucket.org/osrf/gazebo/commits/33a8a3c3d631f2c48056d4c35942a9899e1db585/raw/"
-    sha256 "16df786e372926aebc24c4d2f28d0e6fa72b83f3e7372c9c5d82271e73c9a93f"
   end
 
   def install
