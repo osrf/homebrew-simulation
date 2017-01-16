@@ -13,7 +13,7 @@ class IgnitionMsgs < Formula
   end
 
   depends_on "cmake" => :run
-  depends_on "ignition-math2"
+  depends_on "ignition-math3"
   depends_on "ignition-tools" => :recommended
   depends_on "pkg-config" => :run
   depends_on "protobuf"
