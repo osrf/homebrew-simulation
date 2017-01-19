@@ -3,19 +3,21 @@ class Sdformat4 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-4.2.0.tar.bz2"
   sha256 "75e2d053f97ca33456109b4d7794e6b7d26deef59c778f0d9e25d1369b24b094"
+  revision 3
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "29295f8f81950b1243625ac19602f93f70a15cc640175cfc76b699c4f8126a70" => :yosemite
+    sha256 "963b1b00d8f3d09dfdc53033652720f49d9aa7078c8ae3ef0e09f19769fa1f5d" => :el_capitan
+    sha256 "9c6d0d56b4bcaf6c9c00f52748f9041e7de599d967f4ec0b260c20a635dbaea3" => :yosemite
   end
 
   depends_on "cmake" => :build
 
   depends_on "boost"
   depends_on "doxygen"
-  depends_on "ignition-math2"
+  depends_on "ignition-math3"
   depends_on "pkg-config" => :run
   depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"

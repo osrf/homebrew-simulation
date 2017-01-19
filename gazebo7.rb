@@ -1,14 +1,15 @@
 class Gazebo7 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.4.0.tar.bz2"
-  sha256 "a033b2273383f16e5dd5b5bfe597551dc3618b98e64abecfa8a41bdddd6542f7"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.5.0.tar.bz2"
+  sha256 "15d87d0d329ef37ff82e676e7b8b0c8535c40ba635cdebd5b8ee3b5832fa8e56"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "3ec0b76c6a88dac79604e58e9e447dd010a9b3cf66a18f8e93c7f6ff2247616a" => :yosemite
+    sha256 "c0bdafffd5a9bd651875529bfdcefdd0308aaef48ef7f154085f80445d3c456c" => :el_capitan
+    sha256 "cead3a712828172ae6d587f523bf78ea919d307f67bd7f80ec32d0c5a5ab4c1e" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -23,7 +24,7 @@ class Gazebo7 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt"
+  depends_on "qt4-no-webkit"
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"

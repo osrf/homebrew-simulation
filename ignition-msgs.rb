@@ -1,15 +1,16 @@
 class IgnitionMsgs < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-0.6.0.tar.bz2"
-  sha256 "aaac3f5ffdbc0e81afde4aa2c297bec52293cfa4091adde9d6fd539089cfd269"
-  revision 1
+  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-0.6.1.tar.bz2"
+  sha256 "b23d613d038b94eae0292f38d8e2f68b59d62a239fb2d62405758f47249baf3b"
+  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
-    sha256 "fb18db87fb211d1cf5c169ef7d0fe26d7f0fcd4364eb65c3228d9b3692845c9f" => :yosemite
+    sha256 "eb38300b2ebb3136c413bde3968042d03761f5f39549992984677f155f8b01ec" => :el_capitan
+    sha256 "20bf3b3851521e8815126bfd280e060367a0e21e536a4248658426bef0922611" => :yosemite
   end
 
   depends_on "cmake" => :run

@@ -4,12 +4,14 @@ class Ogre < Formula
   url "https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2"
   version "1.7.4"
   sha256 "afa475803d9e6980ddf3641dceaa53fcfbd348506ed67893c306766c166a4882"
+  revision 2
+
   head "https://bitbucket.org/sinbad/ogre", :branch => "v1-9", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "8041b0541b4aa3bd57ed53ad83f10acc0c98e5aa622cad362bc2c280cadab3af" => :el_capitan
-    sha256 "193c5c5eb56ed471fd5d9c73ed0dc2c6c41c17b75df2ae7174c7d66ff1cfba38" => :yosemite
+    sha256 "b105346d5c3c2277e8aec29b46b75c2a4fb126a1083fdad4066546e91f45dc5d" => :el_capitan
+    sha256 "f6bba68b219a011fddebc61a9199cec4b077d90d3729569c1c32bbcf36edb55b" => :yosemite
   end
 
   option "with-cg"
@@ -62,6 +64,8 @@ class Ogre < Formula
 
     cmake_args = [
       "-DCMAKE_OSX_ARCHITECTURES='x86_64'",
+      "-F/Library/Frameworks/",
+      "-lfreetype",
     ]
     cmake_args << "-DOGRE_BUILD_PLUGIN_CG=OFF" if build.without? "cg"
     cmake_args.concat(std_cmake_args)
@@ -71,5 +75,37 @@ class Ogre < Formula
       system "cmake", *cmake_args
       system "make", "install"
     end
+  end
+
+  test do
+    (testpath/"test.mesh.xml").write <<-EOS.undent
+      <mesh>
+        <submeshes>
+          <submesh material="BaseWhite" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="1">
+              <face v1="0" v2="1" v3="2" />
+            </faces>
+            <geometry vertexcount="3">
+              <vertexbuffer positions="true" normals="false" texture_coords="0">
+                <vertex>
+                  <position x="-50" y="-50" z="50" />
+                </vertex>
+                <vertex>
+                  <position x="-50" y="-50" z="-50" />
+                </vertex>
+                <vertex>
+                  <position x="50" y="-50" z="-50" />
+                </vertex>
+              </vertexbuffer>
+            </geometry>
+          </submesh>
+        </submeshes>
+        <submeshnames>
+          <submeshname name="submesh0" index="0" />
+        </submeshnames>
+      </mesh>
+    EOS
+    system "#{bin}/OgreXMLConverter", "test.mesh.xml"
+    system "du", "-h", "./test.mesh"
   end
 end

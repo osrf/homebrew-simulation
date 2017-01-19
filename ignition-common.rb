@@ -11,7 +11,7 @@ class IgnitionCommon < Formula
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
-  depends_on "ignition-math2"
+  depends_on "ignition-math3"
   depends_on "ossp-uuid"
   depends_on "tinyxml2"
 

@@ -4,10 +4,12 @@ class Simbody < Formula
   url "https://github.com/simbody/simbody/archive/Simbody-3.5.4.tar.gz"
   sha256 "449c36e574d6f859d4fa8854ab6bc8e402e5ca5894bcce3e9fdce2f5658d64de"
   head "https://github.com/simbody/simbody.git", :branch => "master"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/simbody/releases"
-    sha256 "8113447d4f3dd1d7ab7f847edbb8986008502c15f4475cb298e4749268c35c5a" => :yosemite
+    sha256 "e37ea67010f856dbe63b52a8136ad468c3d3dc48eead2ee3e7227abdbb55dd19" => :el_capitan
+    sha256 "374b70963d6d5336eccaa83427a1acf0c938b97b618a10a7c1181fdcf06f1c09" => :yosemite
   end
 
   depends_on "cmake" => :build
