@@ -3,7 +3,7 @@ class IgnitionMsgs < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
   url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-0.6.1.tar.bz2"
   sha256 "b23d613d038b94eae0292f38d8e2f68b59d62a239fb2d62405758f47249baf3b"
-  revision 2
+  revision 4
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
