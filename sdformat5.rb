@@ -1,4 +1,4 @@
-class Sdformat4 < Formula
+class Sdformat5 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.0.0.tar.bz2"
