@@ -1,17 +1,18 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://bitbucket.org/osrf/gazebo/get/9cb05888b084.tar.gz"
-  version "8.0.0-20170110-9cb05888b084"
-  sha256 "214e41569a40f0f1cbb6c0ac6a7db58f1b9dc5d23530d2b55eddc3794e35373b"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0~beta1.tar.bz2"
+  version "8.0.0~beta1"
+  sha256 "6375fd0fe2334c2df4310102f59eeb8a1de6ffb94f51820a4be4611fdd41a3d8"
+  version_scheme 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
   revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "9c72364424e0d17476b9c8f5cdddfe1b921ff6f998bbcdf979fb7880652795d1" => :el_capitan
-    sha256 "f9cda4396fac5218e987863dae3a96558ccad7953a1aa2682904ef3141b4df4b" => :yosemite
+    sha256 "6bb8a6cf1ac650dbd6466b225a1c594747cf25149b1c5da0a8c204fa5ccedf1e" => :el_capitan
+    sha256 "b64d0522f3dba14e173a6f73193222ddd1dd2cfb1c3efc9bdc9b9bfb495732ac" => :yosemite
   end
 
   depends_on "cmake" => :build
