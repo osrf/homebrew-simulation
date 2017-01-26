@@ -10,7 +10,7 @@ class Sdformat5 < Formula
     root_url "http://gazebosim.org/distributions/sdformat/releases"
     cellar :any
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
-    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
+    sha256 "622286646920f2c423d8404a71eb6c787df40a09cc9daae8884c178a5f91b079" => :yosemite
   end
 
   depends_on "cmake" => :build
