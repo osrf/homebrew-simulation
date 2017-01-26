@@ -7,6 +7,7 @@ class Gazebo8 < Formula
   version_scheme 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
