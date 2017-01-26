@@ -10,9 +10,9 @@ class Gazebo8 < Formula
   revision 1
 
   bottle do
-    root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "6bb8a6cf1ac650dbd6466b225a1c594747cf25149b1c5da0a8c204fa5ccedf1e" => :el_capitan
-    sha256 "b64d0522f3dba14e173a6f73193222ddd1dd2cfb1c3efc9bdc9b9bfb495732ac" => :yosemite
+    url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0.tar.bz2"
+    version "8.0.0"
+    sha256 "ea733be6946ac5c538bf207ba01f3a6d6afa456d0b70455f7066b19d722f0d12"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +23,6 @@ class Gazebo8 < Formula
   depends_on "freeimage"
   depends_on "ignition-math3"
   depends_on "ignition-msgs"
-  depends_on "ignition-transport2"
   depends_on "ignition-transport3"
   depends_on "libtar"
   depends_on "ogre1.9"
@@ -31,7 +30,7 @@ class Gazebo8 < Formula
   depends_on "protobuf-c"
   depends_on "qt5"
   depends_on "qwt"
-  depends_on "sdformat4"
+  depends_on "sdformat5"
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
