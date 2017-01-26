@@ -1,17 +1,17 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0~beta1.tar.bz2"
-  version "8.0.0~beta1"
-  sha256 "6375fd0fe2334c2df4310102f59eeb8a1de6ffb94f51820a4be4611fdd41a3d8"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0.tar.bz2"
+  sha256 "ea733be6946ac5c538bf207ba01f3a6d6afa456d0b70455f7066b19d722f0d12"
   version_scheme 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
+  revision 1
 
   bottle do
-    root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "6bb8a6cf1ac650dbd6466b225a1c594747cf25149b1c5da0a8c204fa5ccedf1e" => :el_capitan
-    sha256 "b64d0522f3dba14e173a6f73193222ddd1dd2cfb1c3efc9bdc9b9bfb495732ac" => :yosemite
+     root_url "http://gazebosim.org/distributions/gazebo/releases"
+     sha256 "dcd2b73f57686e390a7f8eac5493172616a358ac0a88928a84c9ce832379d817" => :el_capitan
+     sha256 "9b730f5bac77a20c11afbe7aed89072afbc4bcd39d92a2f6d3a8125f98f4d85c" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,6 @@ class Gazebo8 < Formula
   depends_on "freeimage"
   depends_on "ignition-math3"
   depends_on "ignition-msgs"
-  depends_on "ignition-transport2"
   depends_on "ignition-transport3"
   depends_on "libtar"
   depends_on "ogre1.9"
@@ -30,7 +29,7 @@ class Gazebo8 < Formula
   depends_on "protobuf-c"
   depends_on "qt5"
   depends_on "qwt"
-  depends_on "sdformat4"
+  depends_on "sdformat5"
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
