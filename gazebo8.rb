@@ -6,6 +6,7 @@ class Gazebo8 < Formula
   sha256 "214e41569a40f0f1cbb6c0ac6a7db58f1b9dc5d23530d2b55eddc3794e35373b"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
