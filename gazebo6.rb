@@ -1,13 +1,15 @@
 class Gazebo6 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.5.1.tar.bz2"
-  sha256 "96260aa23f1a1f24bc116f8e359d31f3bc65011033977cb7fb2c64d574321908"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.7.0.tar.bz2"
+  sha256 "f7d73abd463a5e089ba05cd347d4c8dd5ce92bb0c7b6acce21071aba55812ec9"
+
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo6", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "5e212380f8d49ab4c1b22e2a92215258050b41c24b4fc3a7d62bb9ce58d20154" => :yosemite
+    sha256 "58169f6e9828a1bbb0928361bdcc38f74bf8fb0c77e6395e9e1066573efc89c3" => :el_capitan
+    sha256 "b1f61a3a0eaa585a8c6dda24d049c0c4993b3efecd788af307997c9df53a0f0d" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -21,7 +23,7 @@ class Gazebo6 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt"
+  depends_on "qt4-no-webkit"
   depends_on "sdformat3"
   depends_on "tbb"
   depends_on "tinyxml"
@@ -33,6 +35,14 @@ class Gazebo6 < Formula
   depends_on "gts" => :optional
   depends_on "player" => :optional
   depends_on "simbody" => :recommended
+
+  conflicts_with "gazebo1", :because => "Differing version of the same formula"
+  conflicts_with "gazebo2", :because => "Differing version of the same formula"
+  conflicts_with "gazebo3", :because => "Differing version of the same formula"
+  conflicts_with "gazebo4", :because => "Differing version of the same formula"
+  conflicts_with "gazebo5", :because => "Differing version of the same formula"
+  conflicts_with "gazebo7", :because => "Differing version of the same formula"
+  conflicts_with "gazebo8", :because => "Differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed
@@ -53,6 +63,6 @@ class Gazebo6 < Formula
   end
 
   test do
-    system "gz", "sdf"
+    system "#{bin}/gz", "sdf"
   end
 end

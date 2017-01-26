@@ -1,22 +1,22 @@
-class IgnitionMath2 < Formula
+class IgnitionMath3 < Formula
   desc "Math API for robotic applications"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math2-2.7.0.tar.bz2"
-  sha256 "210e87958fc7ede75da02475e539b528536b87043a9f3df8ab0fb211bf3dc7ac"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math3-3.0.0.tar.bz2"
+  sha256 "18ccb4e6190711ebc9c54d0563e14629d3161a4daef824294466d2af20a76796"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "9af8a544e6bcff04ac7f3ab62e26fdee9126d5538c1560fc2702e97b18a4060b" => :el_capitan
-    sha256 "5370ef2075a91d562cda50ea1c77ed02cf8efa3259f9fe811c909b44292e134f" => :yosemite
+    sha256 "d04babaebd30e8b8c2eb1bda07f5b45678bd1b48a06d6eaddcb64f1de51d5168" => :el_capitan
+    sha256 "56579408f9a6838ecf67755aa31e377536364bb52ec34d2d91df91671db205ae" => :yosemite
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 
-  conflicts_with "ignition-math3", :because => "Symbols collision between the two libraries"
+  conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -35,9 +35,9 @@ class IgnitionMath2 < Formula
     EOS
     system ENV.cc, "test.cpp",
                    "--std=c++11",
-                   "-I#{include}/ignition/math2",
+                   "-I#{include}/ignition/math3",
                    "-L#{lib}",
-                   "-lignition-math2",
+                   "-lignition-math3",
                    "-lc++",
                    "-o", "test"
     system "./test"

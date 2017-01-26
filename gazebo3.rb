@@ -15,7 +15,7 @@ class Gazebo3 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt"
+  depends_on "qt4-no-webkit"
   depends_on "sdformat"
   depends_on "tbb"
   depends_on "tinyxml"
@@ -26,6 +26,14 @@ class Gazebo3 < Formula
   depends_on "gts" => :optional
   depends_on "player" => :optional
   depends_on "simbody" => :optional
+
+  conflicts_with "gazebo1", :because => "Differing version of the same formula"
+  conflicts_with "gazebo2", :because => "Differing version of the same formula"
+  conflicts_with "gazebo4", :because => "Differing version of the same formula"
+  conflicts_with "gazebo5", :because => "Differing version of the same formula"
+  conflicts_with "gazebo6", :because => "Differing version of the same formula"
+  conflicts_with "gazebo7", :because => "Differing version of the same formula"
+  conflicts_with "gazebo8", :because => "Differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed
@@ -81,7 +89,7 @@ class Gazebo3 < Formula
   end
 
   test do
-    system "gz", "sdf"
+    system "#{bin}/gz", "sdf"
   end
 end
 

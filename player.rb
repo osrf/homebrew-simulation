@@ -1,4 +1,5 @@
 class Player < Formula
+  desc "Cross-platform robot device interface & server"
   homepage "http://playerstage.sourceforge.net"
   url "https://downloads.sourceforge.net/project/playerstage/Player/3.0.2/player-3.0.2.tar.gz"
   sha256 "25f93185aeae969adcd2f8ec2849f7773e1715a901e0ea365c777368a5c61343"
@@ -10,7 +11,14 @@ class Player < Formula
   patch :DATA
 
   def install
-    system "cmake", ".", *std_cmake_args
+    # swig bindings are broken
+    # https://github.com/osrf/homebrew-simulation/issues/76
+    # https://github.com/playerproject/player/issues/3
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_RUBY_BINDINGS=0"
+    cmake_args << "-DBUILD_PYTHONC_BINDINGS=0"
+
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 end

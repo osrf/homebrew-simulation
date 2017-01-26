@@ -1,32 +1,30 @@
-language: objective-c
+language: ruby
 matrix:
   include:
     - env: OSX=10.11
       os: osx
-      osx_image: osx10.11
-      rvm: system
-    - env: OSX=10.10
-      os: osx
-      osx_image: xcode7
-      rvm: system
-    - env: OSX=10.9
-      os: osx
-      osx_image: beta-xcode6.2
+      osx_image: xcode7.3
       rvm: system
 
 before_install:
+  - export TRAVIS_COMMIT="$(git rev-parse --verify -q HEAD)"
+  - if [ -f ".git/shallow" ]; then
+      travis_retry git fetch --unshallow;
+    fi
+  - sudo chown -R $USER "$(brew --repo)"
+  - git -C "$(brew --repo)" reset --hard origin/master
+  - git -C "$(brew --repo)" clean -qxdff
   - brew update || brew update
-  
-install:
-  - mkdir -p $(brew --repo)/Library/Taps/osrf
-  - ln -s $PWD $(brew --repo)/Library/Taps/osrf/homebrew-simulation
-  - brew tap --repair
-  
+  - rm -rf "$(brew --repo $TRAVIS_REPO_SLUG)"
+  - mkdir -p "$(brew --repo $TRAVIS_REPO_SLUG)"
+  - rsync -az "$TRAVIS_BUILD_DIR/" "$(brew --repo $TRAVIS_REPO_SLUG)"
+  - export TRAVIS_BUILD_DIR="$(brew --repo $TRAVIS_REPO_SLUG)"
+  - cd "$(brew --repo)"
+  - export HOMEBREW_DEVELOPER="1"
+  - ulimit -n 1024
+
 script:
-  - brew audit `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
-  - brew style `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb`
-  - brew fetch --force-bottle `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
-  - brew unpack --patch `ls $(brew --repo)/Library/Taps/osrf/homebrew-simulation/*.rb | grep -v sofa.rb`
+  - brew test-bot --fast
 
 notifications:
   email:

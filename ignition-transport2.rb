@@ -1,23 +1,24 @@
-class IgnitionTransport < Formula
+class IgnitionTransport2 < Formula
   desc "Transport middleware for robotics"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport-1.4.0.tar.bz2"
-  sha256 "bc612e9781f9cab81cc4111ed0de07c4838303f67c25bc8b663d394b40a8f5d4"
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.1.0.tar.bz2"
+  sha256 "f1190ee6a880962b9083328efcaf4c8fe4e9f00504da4432cde69820edbc212e"
   revision 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport1", :using => :hg
+  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "3b3e6700c8e3ae337ea2fbac9327282cc9706d23b132c0fc3e946c912b210251" => :el_capitan
-    sha256 "bee72083247413b7ccb888820a5c6e832a549656d70decf9ac9ad86cc7367cdd" => :yosemite
+    sha256 "ad7376794cb89ba6115b9d3522378c71edac795ce2b6fbecef3e5d566f9a9249" => :el_capitan
+    sha256 "dc23d41f22d4053989c1f8b4862f21000bd90c9530993a33d477f495a6186045" => :yosemite
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :run
 
+  depends_on "ignition-msgs"
   depends_on "ignition-tools"
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
@@ -39,12 +40,12 @@ class IgnitionTransport < Formula
         return 0;
       }
     EOS
-    system "pkg-config", "ignition-transport1"
-    cflags = `pkg-config --cflags ignition-transport1`.split(" ")
+    system "pkg-config", "ignition-transport2"
+    cflags = `pkg-config --cflags ignition-transport2`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-transport1",
+                   "-lignition-transport2",
                    "-lc++",
                    "-o", "test"
     system "./test"

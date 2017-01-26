@@ -1,15 +1,17 @@
-class Gazebo7 < Formula
+class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.5.0.tar.bz2"
-  sha256 "15d87d0d329ef37ff82e676e7b8b0c8535c40ba635cdebd5b8ee3b5832fa8e56"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0~beta1.tar.bz2"
+  version "8.0.0~beta1"
+  sha256 "6375fd0fe2334c2df4310102f59eeb8a1de6ffb94f51820a4be4611fdd41a3d8"
+  version_scheme 1
 
-  head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
+  head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "c0bdafffd5a9bd651875529bfdcefdd0308aaef48ef7f154085f80445d3c456c" => :el_capitan
-    sha256 "cead3a712828172ae6d587f523bf78ea919d307f67bd7f80ec32d0c5a5ab4c1e" => :yosemite
+    sha256 "6bb8a6cf1ac650dbd6466b225a1c594747cf25149b1c5da0a8c204fa5ccedf1e" => :el_capitan
+    sha256 "b64d0522f3dba14e173a6f73193222ddd1dd2cfb1c3efc9bdc9b9bfb495732ac" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -18,17 +20,23 @@ class Gazebo7 < Formula
   depends_on "boost"
   depends_on "doxygen"
   depends_on "freeimage"
-  depends_on "ignition-math2"
-  depends_on "ignition-transport"
+  depends_on "ignition-math3"
+  depends_on "ignition-msgs"
+  depends_on "ignition-transport2"
+  depends_on "ignition-transport3"
   depends_on "libtar"
-  depends_on "ogre"
+  depends_on "ogre1.9"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt4-no-webkit"
+  depends_on "qt5"
+  depends_on "qwt"
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
+
+  depends_on "ossp-uuid" => :linked
+  depends_on "zeromq" => :linked
 
   depends_on "bullet" => [:recommended, "with-shared", "with-double-precision"]
   depends_on "dartsim/dart/dartsim4" => [:optional, "core-only"]
@@ -44,7 +52,7 @@ class Gazebo7 < Formula
   conflicts_with "gazebo4", :because => "Differing version of the same formula"
   conflicts_with "gazebo5", :because => "Differing version of the same formula"
   conflicts_with "gazebo6", :because => "Differing version of the same formula"
-  conflicts_with "gazebo8", :because => "Differing version of the same formula"
+  conflicts_with "gazebo7", :because => "Differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed
@@ -56,7 +64,6 @@ class Gazebo7 < Formula
     ENV.m64
 
     cmake_args = std_cmake_args
-    cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
