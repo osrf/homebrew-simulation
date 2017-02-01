@@ -5,8 +5,6 @@ class HaptixComm < Formula
   sha256 "d495f65e401fc9e3c8fcbdded347313287c2de55f1605f6b76d02a26b893c08d"
   head "https://bitbucket.org/osrf/haptix-comm", :branch => "default", :using => :hg
 
-  revision 1
-
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :build
