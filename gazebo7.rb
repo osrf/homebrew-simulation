@@ -4,6 +4,8 @@ class Gazebo7 < Formula
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.5.0.tar.bz2"
   sha256 "15d87d0d329ef37ff82e676e7b8b0c8535c40ba635cdebd5b8ee3b5832fa8e56"
 
+  revision 1
+
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
