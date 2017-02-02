@@ -5,13 +5,13 @@ class IgnitionTransport3 < Formula
   sha256 "c2b8dd5f391a30f1239893b51d4ea487fd47bfe12ccdb3876a83df192df666be"
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
-  revision 1
+  revision 3
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "25dcdbbff041667d3144306c0ce9a91106428429b02191836593a029725e648c" => :el_capitan
-    sha256 "888f6223913a3aa94203c1e8fe7dfec4c68f68b64785268ba852cefb66854b27" => :yosemite
+    sha256 "c1d3149609df635c744c8b821e2acfb25078cfacfb03ce53bb0219554fe6963c" => :el_capitan
+    sha256 "14653a68db135ea35011557042732b857306be87894e42b2b80912ad0d99d783" => :yosemite
   end
 
   depends_on "cmake" => :build
