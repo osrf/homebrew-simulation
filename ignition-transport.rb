@@ -8,6 +8,7 @@ class IgnitionTransport < Formula
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport1", :using => :hg
 
   bottle do
+    rebuild 1
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
     sha256 "5dd18f7722794e4a21dfd9b7638c1461e5634824daa56f5107384129c6a42917" => :el_capitan
