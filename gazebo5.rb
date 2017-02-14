@@ -3,14 +3,9 @@ class Gazebo5 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-5.4.0.tar.bz2"
   sha256 "a645b3dadbd9aeb8fb4a42857117771fae13c74780bebfbb3c00a233ed5b1cdb"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo5", :using => :hg
-
-  bottle do
-    root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "cdd3f512b4d7821b0ed35f1c06b63b75d34043e4050f1d85b6fe43f24d5e8a14" => :el_capitan
-    sha256 "a924066d7d4a27351f6d3137f8b3f95d8daf4133c64dfc7f76e2f76507d6094c" => :yosemite
-  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
