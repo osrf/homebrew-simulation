@@ -23,6 +23,7 @@ class Sdformat < Formula
 
   conflicts_with "sdformat3", :because => "Differing version of the same formula"
   conflicts_with "sdformat4", :because => "Differing version of the same formula"
+  conflicts_with "sdformat5", :because => "Differing version of the same formula"
 
   def install
     ENV.m64
