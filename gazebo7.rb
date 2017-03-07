@@ -10,10 +10,10 @@ class Gazebo7 < Formula
   bottle do
     #root_url "http://gazebosim.org/distributions/ign-math/releases"
     root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
-    rebuild 2
+    rebuild 3
     sha256 "2bf9fca4eabf4c846082a7e8232a9d2b3a5aea695ca6c5d446fb58b2c752fa45" => :el_capitan
     sha256 "68274d6c7b1a84ba3cbdabdb4328e3afe8e548cf405252b08176fa0637267588" => :yosemite
-    sha256 "b7e9559955d9a3f1b4873d5b4df5d05c7c99503c8d50e640db1bd679c49af97e" => :sierra
+    sha256 "1ec705f1399818ff2fab5eaf1a95ff2223a6b09508a05487d7133d0c6ae975ef" => :sierra
   end
 
   depends_on "cmake" => :build
