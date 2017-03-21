@@ -4,7 +4,7 @@ class Sdformat4 < Formula
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-4.3.0.tar.bz2"
   sha256 "749228729d6a69282eb940a92fbf7a6533ad86d9745ee8fc431cafe058a26004"
 
-  head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
+  head "https://bitbucket.org/osrf/sdformat", :branch => "sdf4", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
