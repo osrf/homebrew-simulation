@@ -1,8 +1,8 @@
 class Sdformat4 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-4.3.0.tar.bz2"
-  sha256 "749228729d6a69282eb940a92fbf7a6533ad86d9745ee8fc431cafe058a26004"
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-4.3.1.tar.bz2"
+  sha256 "37e3a3b0199bbcb6147bc2ff42ff84685bf0bf57cca2660ba7f945805932b5c9"
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf4", :using => :hg
 
