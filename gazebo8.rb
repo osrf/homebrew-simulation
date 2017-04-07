@@ -4,7 +4,7 @@ class Gazebo8 < Formula
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0.tar.bz2"
   sha256 "ea733be6946ac5c538bf207ba01f3a6d6afa456d0b70455f7066b19d722f0d12"
   version_scheme 1
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -27,7 +27,7 @@ class Gazebo8 < Formula
   depends_on "ogre1.9"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt5"
+  depends_on "qt"
   depends_on "qwt"
   depends_on "sdformat5"
   depends_on "tbb"
