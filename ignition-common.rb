@@ -23,12 +23,6 @@ class IgnitionCommon < Formula
 
   depends_on "pkg-config" => :run
 
-  patch do
-    # Fix for compatibility with boost 1.58
-    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/0b9d89179859291ba082ac0e69c010fb46a153bc/raw"
-    sha256 "ebfc7edaf870a6448d5908b78ca601d85b3a8be6fbc540d299a9277e34d09e61"
-  end
-
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
