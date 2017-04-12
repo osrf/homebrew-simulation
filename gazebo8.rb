@@ -4,14 +4,14 @@ class Gazebo8 < Formula
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0.tar.bz2"
   sha256 "ea733be6946ac5c538bf207ba01f3a6d6afa456d0b70455f7066b19d722f0d12"
   version_scheme 1
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
      root_url "http://gazebosim.org/distributions/gazebo/releases"
-     sha256 "2d150190c5e5785980e492c39696cee1ffedd9446692acf0eca9547e3017805e" => :el_capitan
-     sha256 "76e5e82024b78256011e855b59071e34a06ff8dedc9016123f749afc998497c4" => :yosemite
+     sha256 "425c2ac6edfc33a0439f1d25c79fcdce306d7932b0fcf40338e72a6bf88e2501" => :el_capitan
+     sha256 "9c4d39be5fd726f0ec332fd1a019a915c29b81d9a31a89d55b80cf12002eaeaf" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -27,7 +27,7 @@ class Gazebo8 < Formula
   depends_on "ogre1.9"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt5"
+  depends_on "qt"
   depends_on "qwt"
   depends_on "sdformat5"
   depends_on "tbb"
