@@ -23,6 +23,9 @@ class IgnitionCommon < Formula
 
   depends_on "pkg-config" => :run
 
+  # require ignition-math3 in pkgconfig file
+  patch :DATA
+
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
@@ -33,25 +36,41 @@ class IgnitionCommon < Formula
       #include <iostream>
       #include <ignition/common.hh>
       int main() {
-        try {
-          ignthrow("An example exception that is caught.");
-        }
-        catch(const ignition::common::exception &_e) {
-          std::cerr << "Caught a runtime error " << _e.what() << std::endl;
-        }
-        ignassert(0 == 0);
+        igndbg << "debug" << std::endl;
+        ignwarn << "warn" << std::endl;
+        ignerr << "error" << std::endl;
+        // // this example code doesn't compile
+        // try {
+        //   ignthrow("An example exception that is caught.");
+        // }
+        // catch(const ignition::common::exception &_e) {
+        //   std::cerr << "Caught a runtime error " << _e.what() << std::endl;
+        // }
+        // ignassert(0 == 0);
         return 0;
       }
     EOS
-    system "pkg-config", "ignition-common"
-    # # test doesn't compile yet
-    # cflags = `pkg-config --cflags ignition-common`.split(" ")
-    # system ENV.cc, "test.cpp",
-    #                *cflags,
-    #                "-L#{lib}",
-    #                "-lignition-common",
-    #                "-lc++",
-    #                "-o", "test"
-    # system "./test"
+    system "pkg-config", "ignition-common0"
+    cflags = `pkg-config --cflags ignition-common0`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lignition-common0",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
   end
 end
+
+__END__
+diff -r b3d0e504a4a7 cmake/pkgconfig/ignition-common.in
+--- a/cmake/pkgconfig/ignition-common.in	Mon Apr 10 19:31:33 2017 +0200
++++ b/cmake/pkgconfig/ignition-common.in	Wed Apr 12 00:16:04 2017 -0700
+@@ -5,6 +5,6 @@
+ Name: Ignition @IGN_PROJECT_NAME@
+ Description: A set of @IGN_PROJECT_NAME@ classes for robot applications
+ Version: @PROJECT_VERSION_FULL@
+-Requires:
++Requires: ignition-math3
+ Libs: -L${libdir} -l@PROJECT_NAME_LOWER@
+ CFlags: -I${includedir}
