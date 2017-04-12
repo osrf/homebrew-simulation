@@ -1,16 +1,16 @@
 class IgnitionMath3 < Formula
   desc "Math API for robotic applications"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math3-3.0.0.tar.bz2"
-  sha256 "18ccb4e6190711ebc9c54d0563e14629d3161a4daef824294466d2af20a76796"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math3-3.1.0.tar.bz2"
+  sha256 "aeece783a753fbf6b86bd3a7a02529137953bcef5b8be11c740475cc80528448"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "d04babaebd30e8b8c2eb1bda07f5b45678bd1b48a06d6eaddcb64f1de51d5168" => :el_capitan
-    sha256 "56579408f9a6838ecf67755aa31e377536364bb52ec34d2d91df91671db205ae" => :yosemite
+    sha256 "9a6e8a2ea6f981b43b90286fbe00363775390078b87e10b4004b2d9b60e8e631" => :el_capitan
+    sha256 "683ef486529a229b568d5e744f4b8143228dd72ff3d847243bdf0241d07305dd" => :yosemite
   end
 
   depends_on "cmake" => :build
