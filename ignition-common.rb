@@ -1,10 +1,16 @@
 class IgnitionCommon < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.1.0.tar.bz2"
-  sha256 "466dccacc5fbace145fde3c13d0f39a21f701b5595a745a7e25f5fd136bf65e7"
+  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.2.0.tar.bz2"
+  sha256 "ab6f9e966863a63378fd906ee4427fb90be2f08538b5ce85996e3f6d753c59d0"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
+
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-common/releases"
+    sha256 "a4430b712b0be5f8adcc16c1ae51ffdf652fdb5f81d5e22ee95a0bbf01bbb2e0" => :el_capitan 
+    sha256 "faea53b4dcee4f11b4173d7cd74478a178ddbe19ef504e965142aa57c5513300" => :yosemite
+  end
 
   depends_on "cmake" => :build
 
@@ -17,11 +23,8 @@ class IgnitionCommon < Formula
 
   depends_on "pkg-config" => :run
 
-  patch do
-    # Fix for compatibility with boost 1.58
-    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/0b9d89179859291ba082ac0e69c010fb46a153bc/raw"
-    sha256 "ebfc7edaf870a6448d5908b78ca601d85b3a8be6fbc540d299a9277e34d09e61"
-  end
+  # require ignition-math3 in pkgconfig file
+  patch :DATA
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -33,25 +36,41 @@ class IgnitionCommon < Formula
       #include <iostream>
       #include <ignition/common.hh>
       int main() {
-        try {
-          ignthrow("An example exception that is caught.");
-        }
-        catch(const ignition::common::exception &_e) {
-          std::cerr << "Caught a runtime error " << _e.what() << std::endl;
-        }
-        ignassert(0 == 0);
+        igndbg << "debug" << std::endl;
+        ignwarn << "warn" << std::endl;
+        ignerr << "error" << std::endl;
+        // // this example code doesn't compile
+        // try {
+        //   ignthrow("An example exception that is caught.");
+        // }
+        // catch(const ignition::common::exception &_e) {
+        //   std::cerr << "Caught a runtime error " << _e.what() << std::endl;
+        // }
+        // ignassert(0 == 0);
         return 0;
       }
     EOS
-    system "pkg-config", "ignition-common"
-    # # test doesn't compile yet
-    # cflags = `pkg-config --cflags ignition-common`.split(" ")
-    # system ENV.cc, "test.cpp",
-    #                *cflags,
-    #                "-L#{lib}",
-    #                "-lignition-common",
-    #                "-lc++",
-    #                "-o", "test"
-    # system "./test"
+    system "pkg-config", "ignition-common0"
+    cflags = `pkg-config --cflags ignition-common0`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lignition-common0",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
   end
 end
+
+__END__
+diff -r b3d0e504a4a7 cmake/pkgconfig/ignition-common.in
+--- a/cmake/pkgconfig/ignition-common.in	Mon Apr 10 19:31:33 2017 +0200
++++ b/cmake/pkgconfig/ignition-common.in	Wed Apr 12 00:16:04 2017 -0700
+@@ -5,6 +5,6 @@
+ Name: Ignition @IGN_PROJECT_NAME@
+ Description: A set of @IGN_PROJECT_NAME@ classes for robot applications
+ Version: @PROJECT_VERSION_FULL@
+-Requires:
++Requires: ignition-math3
+ Libs: -L${libdir} -l@PROJECT_NAME_LOWER@
+ CFlags: -I${includedir}
