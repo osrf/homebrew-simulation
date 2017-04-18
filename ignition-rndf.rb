@@ -9,8 +9,8 @@ class IgnitionRndf < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rndf/releases"
     cellar :any
-    sha256 "todo" => :el_capitan
-    sha256 "todo" => :yosemite
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
   end
 
   depends_on "cmake" => :build
