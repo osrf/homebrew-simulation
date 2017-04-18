@@ -12,6 +12,11 @@ class Sdformat4 < Formula
     sha256 "071fc4cd5766e4d9f641d3eb4b267cd253fa5374aea9f46eed10fa500505b477" => :yosemite
   end
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/sdformat/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
+  end
+
   depends_on "cmake" => :build
 
   depends_on "boost"
