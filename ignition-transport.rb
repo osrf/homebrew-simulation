@@ -11,7 +11,7 @@ class IgnitionTransport < Formula
     #root_url "http://gazebosim.org/distributions/ign-math/releases"
     root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
     cellar :any
-    sha256 "3b3e6700c8e3ae337ea2fbac9327282cc9706d23b132c0fc3e946c912b210251" => :el_capitan
+    sha256 "78e60436cc225404e2545ba98e759320d4bc99406efb16d1d58c4492b59eee0d" => :el_capitan
     sha256 "bee72083247413b7ccb888820a5c6e832a549656d70decf9ac9ad86cc7367cdd" => :yosemite
     sha256 "f8bf0e21b85d10fe056f49cdc4ffb52c0f3ea53a7a9961a2975f846dcc46a7f4" => :sierra
   end
