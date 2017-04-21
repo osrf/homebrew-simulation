@@ -3,6 +3,7 @@ class Sdformat4 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-4.3.1.tar.bz2"
   sha256 "37e3a3b0199bbcb6147bc2ff42ff84685bf0bf57cca2660ba7f945805932b5c9"
+  revision 1
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf4", :using => :hg
 

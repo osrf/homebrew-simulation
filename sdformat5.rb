@@ -3,6 +3,7 @@ class Sdformat5 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.1.0.tar.bz2"
   sha256 "ccb9b7628a3cd171536e37487bf4c2fd1df909940714e7818e6fd396a3ef01eb"
+  revision 1
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
