@@ -3,14 +3,14 @@ class Sdformat3 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-3.7.0.tar.bz2"
   sha256 "18251b133e4fde105f883518691f15fc9f1fc2af8b89ab6de4bc26b9df42761e"
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf3", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "d0bd76929c5c6756f3f693b2367fe5d7f6c785a0c0c6b5e9c3c34490b83ac0b4" => :el_capitan
-    sha256 "7d88c9180b29a610573aa7cd6800524cc561cd03cc3cb40b5ee9be9f46e0db41" => :yosemite
+    sha256 "f404ae8af13c776a753c5e9665b216279ee42e90dd1ea826e09703ae28d22c07" => :el_capitan
+    sha256 "8332c38461e7e6aefd894f4f0258caa799a18249b01cb9183371965ea41c3162" => :yosemite
   end
 
   depends_on "cmake" => :build
