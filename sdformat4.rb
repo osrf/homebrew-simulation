@@ -17,7 +17,7 @@ class Sdformat4 < Formula
 
   depends_on "boost"
   depends_on "doxygen"
-  depends_on "ignition-math2"
+  depends_on "ignition-math3"
   depends_on "pkg-config" => :run
   depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"
