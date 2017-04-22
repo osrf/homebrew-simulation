@@ -6,10 +6,12 @@ class IgnitionRndf < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-rndf", :branch => "default", :using => :hg
 
+  revision 1
+
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rndf/releases"
     cellar :any
-    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
+    sha256 "656650bcd7fed46e0c8f8a64bcebf3db468d01adfca20be345d8d0e046d55545" => :el_capitan
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
   end
 
@@ -37,12 +39,12 @@ class IgnitionRndf < Formula
       RNDFNode rndfNode(id);
     }
     EOS
-    system "pkg-config", "ignition-rndf"
-    cflags = `pkg-config --cflags ignition-rndf`.split(" ")
+    system "pkg-config", "ignition-rndf0"
+    cflags = `pkg-config --cflags ignition-rndf0`.split(" ")
+    libs   = `pkg-config --libs ignition-rndf0`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
-                   "-L#{lib}",
-                   "-lignition-rndf",
+                   *libs,
                    "-lc++",
                    "-o", "test"
     system "./test"
