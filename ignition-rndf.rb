@@ -19,6 +19,12 @@ class IgnitionRndf < Formula
   depends_on "ignition-math3"
   depends_on "pkg-config" => :run
 
+  patch do
+    # Fix build with protobuf 2.6 (gazebo #1289)
+    url "https://bitbucket.org/ignitionrobotics/ign-rndf/commits/17f2cbae25a82ef29804037cce2a5e3eebff5c6d/raw/"
+    sha256 "283bf707cc6fe0dca33aded8c884adff81dcc81a38fb765eecaf9707b3bfed11"
+  end
+
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
@@ -35,8 +41,8 @@ class IgnitionRndf < Formula
       int segmentId = 1;
       int laneId = 2;
       int waypointId = 3;
-      UniqueId id(segmentId, laneId, waypointId);
-      RNDFNode rndfNode(id);
+      ignition::rndf::UniqueId id(segmentId, laneId, waypointId);
+      ignition::rndf::RNDFNode rndfNode(id);
     }
     EOS
     system "pkg-config", "ignition-rndf0"
