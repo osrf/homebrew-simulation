@@ -6,8 +6,6 @@ class IgnitionRndf < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-rndf", :branch => "default", :using => :hg
 
-  revision 1
-
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rndf/releases"
     cellar :any
