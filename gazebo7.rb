@@ -3,12 +3,13 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.6.0.tar.bz2"
   sha256 "8bf28be9e6d29ba12fe9427d49cb75dfad52307eb85ebdf78498e5e9b05cf11b"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :sierra
     sha256 "593c8983e4ee70144c19938cb0a8fd16f883ee5f55b6b860a60734b3d617b071" => :el_capitan
     sha256 "6ea7d34177c27c35d28c53459eacaed468e19f62336551d9997af2d72dcf8e08" => :yosemite
   end
@@ -31,8 +32,8 @@ class Gazebo7 < Formula
   depends_on "tinyxml"
   depends_on "tinyxml2"
 
-  depends_on "bullet" => [:recommended, "with-shared", "with-double-precision"]
-  depends_on "dartsim/dart/dartsim4" => [:optional, "core-only"]
+  depends_on "bullet" => :recommended
+  depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
   depends_on "gts" => :optional

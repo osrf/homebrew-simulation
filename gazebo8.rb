@@ -3,13 +3,14 @@ class Gazebo8 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0.tar.bz2"
   sha256 "ea733be6946ac5c538bf207ba01f3a6d6afa456d0b70455f7066b19d722f0d12"
-  revision 6
+  revision 7
   version_scheme 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
      root_url "http://gazebosim.org/distributions/gazebo/releases"
+     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :sierra
      sha256 "8010b0ae953cc3690fb7d65e8d5e521bc4a0343d25610895aaa15db63345fe67" => :el_capitan
      sha256 "30223bb0b7c6c7f51145065c1e7105acc6e593633680b1b05920ac79ec23bc76" => :yosemite
   end
@@ -37,8 +38,8 @@ class Gazebo8 < Formula
   depends_on "ossp-uuid" => :linked
   depends_on "zeromq" => :linked
 
-  depends_on "bullet" => [:recommended, "with-shared", "with-double-precision"]
-  depends_on "dartsim/dart/dartsim4" => [:optional, "core-only"]
+  depends_on "bullet" => :recommended
+  depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
   depends_on "gts" => :optional

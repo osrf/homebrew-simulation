@@ -3,13 +3,14 @@ class IgnitionTransport3 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport3-3.0.1.tar.bz2"
   sha256 "c2b8dd5f391a30f1239893b51d4ea487fd47bfe12ccdb3876a83df192df666be"
+  revision 4
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
-  revision 3
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :sierra
     sha256 "c1d3149609df635c744c8b821e2acfb25078cfacfb03ce53bb0219554fe6963c" => :el_capitan
     sha256 "14653a68db135ea35011557042732b857306be87894e42b2b80912ad0d99d783" => :yosemite
   end
