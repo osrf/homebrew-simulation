@@ -1,17 +1,16 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.0.0.tar.bz2"
-  sha256 "ea733be6946ac5c538bf207ba01f3a6d6afa456d0b70455f7066b19d722f0d12"
-  revision 6
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.1.0.tar.bz2"
+  sha256 "d24cda8919c49cd0b15a51975d551eed1c7c0bfba7b9aa2b1ca9711bf9441e5e"
   version_scheme 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
-     root_url "http://gazebosim.org/distributions/gazebo/releases"
-     sha256 "8010b0ae953cc3690fb7d65e8d5e521bc4a0343d25610895aaa15db63345fe67" => :el_capitan
-     sha256 "30223bb0b7c6c7f51145065c1e7105acc6e593633680b1b05920ac79ec23bc76" => :yosemite
+    root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "64f8249ec07652d550215a3747ce4150750033769b597b54ab4915d284b5f94f" => :el_capitan
+    sha256 "6447b0a206b457b58662ec54ef4dc3a26ca76de1b7791e0fab9f09c1d085d4d0" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -37,8 +36,8 @@ class Gazebo8 < Formula
   depends_on "ossp-uuid" => :linked
   depends_on "zeromq" => :linked
 
-  depends_on "bullet" => [:recommended, "with-shared", "with-double-precision"]
-  depends_on "dartsim/dart/dartsim4" => [:optional, "core-only"]
+  depends_on "bullet" => :recommended
+  depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
   depends_on "gts" => :optional
