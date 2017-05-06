@@ -1,16 +1,15 @@
 class Gazebo7 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.6.0.tar.bz2"
-  sha256 "8bf28be9e6d29ba12fe9427d49cb75dfad52307eb85ebdf78498e5e9b05cf11b"
-  revision 1
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.7.0.tar.bz2"
+  sha256 "bd0d5f0157b67b63e5b571043c9e4ad37dc4cc37ade0316d50f37af91dc91102"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "593c8983e4ee70144c19938cb0a8fd16f883ee5f55b6b860a60734b3d617b071" => :el_capitan
-    sha256 "6ea7d34177c27c35d28c53459eacaed468e19f62336551d9997af2d72dcf8e08" => :yosemite
+    sha256 "0d2870558389370bea4be5f9702b1fcef1db669658a4d5dc49722b74c6609747" => :el_capitan
+    sha256 "8c22ccf2ff5923e942b69e5a0398d4bdb20fa554f238cb4f7ffca0753f621353" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -31,8 +30,8 @@ class Gazebo7 < Formula
   depends_on "tinyxml"
   depends_on "tinyxml2"
 
-  depends_on "bullet" => [:recommended, "with-shared", "with-double-precision"]
-  depends_on "dartsim/dart/dartsim4" => [:optional, "core-only"]
+  depends_on "bullet" => :recommended
+  depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
   depends_on "gts" => :optional
