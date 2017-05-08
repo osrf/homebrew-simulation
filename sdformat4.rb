@@ -10,7 +10,7 @@ class Sdformat4 < Formula
   bottle do
     #root_url "http://gazebosim.org/distributions/ign-math/releases"
     root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
-    sha256 "de4f0b6e8b56050ed0aee2edc0d28556367119764011847b17ccc32bb6fc540b" => :el_capitan
+    sha256 "41980363d24f72d749322f4a8b3fca3e20223d5fd62df9004ff3eb2a438b8e7c" => :el_capitan
     sha256 "e2d043add111f1729f1c188506a65ebbe390099b0e46d7eb6be1592384d0f045" => :yosemite
     sha256 "d93b4d90b5ac2166f25a4c1e47904734b5acd1dd4001d72227c88a2bbbf9a300" => :sierra
   end
