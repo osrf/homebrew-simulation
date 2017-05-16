@@ -8,6 +8,7 @@ class IgnitionRndf < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rndf/releases"
+    cellar :any
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :sierra
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
