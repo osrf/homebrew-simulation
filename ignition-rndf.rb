@@ -6,6 +6,13 @@ class IgnitionRndf < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-rndf", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-rndf/releases"
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :sierra
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
+    sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :yosemite
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-math3"
   depends_on "pkg-config" => :run
