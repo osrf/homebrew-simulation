@@ -1,17 +1,17 @@
 class IgnitionMath3 < Formula
   desc "Math API for robotic applications"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math3-3.1.0.tar.bz2"
-  sha256 "aeece783a753fbf6b86bd3a7a02529137953bcef5b8be11c740475cc80528448"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math3-3.2.0.tar.bz2"
+  sha256 "742bc95f95ba2f89913f25e7272bb4f0a202de95e4567cda37fe078d3a2702a1"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "f3dcb25b36a21544b218d1e95cd885591135b886135d66ae9dbc4f16f73d2c6c" => :sierra
-    sha256 "9a6e8a2ea6f981b43b90286fbe00363775390078b87e10b4004b2d9b60e8e631" => :el_capitan
-    sha256 "683ef486529a229b568d5e744f4b8143228dd72ff3d847243bdf0241d07305dd" => :yosemite
+    sha256 "e65b8d0610e2d7ae638734ffed48958a21f76e91aad843b5109e7e91a994495e" => :sierra
+    sha256 "62f3ee3c57ca1c4d8925d2f431ba6390d1c115808c39330a01d98c6dec1c5dd3" => :el_capitan
+    sha256 "360b5673f882a817cb0e576b2778c8665d27f0671d34eaa188f30873221da058" => :yosemite
   end
 
   depends_on "cmake" => :build
