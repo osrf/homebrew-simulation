@@ -3,7 +3,7 @@ class Gazebo5 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-5.4.0.tar.bz2"
   sha256 "a645b3dadbd9aeb8fb4a42857117771fae13c74780bebfbb3c00a233ed5b1cdb"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo5", :using => :hg
 
@@ -17,7 +17,7 @@ class Gazebo5 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt4-no-webkit"
+  depends_on "cartr/qt4/qt@4"
   depends_on "sdformat"
   depends_on "tbb"
   depends_on "tinyxml"
