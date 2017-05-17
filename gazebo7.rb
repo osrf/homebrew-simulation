@@ -3,13 +3,14 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.7.0.tar.bz2"
   sha256 "bd0d5f0157b67b63e5b571043c9e4ad37dc4cc37ade0316d50f37af91dc91102"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "0d2870558389370bea4be5f9702b1fcef1db669658a4d5dc49722b74c6609747" => :el_capitan
-    sha256 "8c22ccf2ff5923e942b69e5a0398d4bdb20fa554f238cb4f7ffca0753f621353" => :yosemite
+    sha256 "a136eb41230297bd6082e0eb66eecbb55a3efdbac3ed77e34ce89314566bf525" => :el_capitan
+    sha256 "5498d1e7e72ba380daa44a2f177070a1c29c5695571cccc215fb7f0c3bd44920" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,7 @@ class Gazebo7 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt4-no-webkit"
+  depends_on "cartr/qt4/qt@4"
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"
