@@ -6,10 +6,9 @@ class Ogre < Formula
   sha256 "afa475803d9e6980ddf3641dceaa53fcfbd348506ed67893c306766c166a4882"
   revision 2
 
-  head "https://bitbucket.org/sinbad/ogre", :branch => "v1-9", :using => :hg
-
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
+    sha256 "fa30d98d12834fc37d87123f4a5892bb1ec4a50a37def6060a34e5f16e8a1bea" => :sierra
     sha256 "b105346d5c3c2277e8aec29b46b75c2a4fb126a1083fdad4066546e91f45dc5d" => :el_capitan
     sha256 "f6bba68b219a011fddebc61a9199cec4b077d90d3729569c1c32bbcf36edb55b" => :yosemite
   end
@@ -29,35 +28,35 @@ class Ogre < Formula
   patch do
     url "https://gist.github.com/wjwwood/4237236/raw/e357f1b9fa8b26d02ed84f411d5b5eb7446c68c5/pkg_config_fix.patch"
     sha256 "a2296a0e505906a09add6534fcc6f60ce598bb56b7fd422953cf92dbfee3ac00"
-  end unless build.head?
+  end
   patch do
     url "https://gist.github.com/wjwwood/4237236/raw/57cb907304433cc0bb83fd332ff98a5789102b00/prevent_framework_apple.patch"
     sha256 "1416fd5dc44f5e219bf7a675888aad53c5f9a4f0596ff35ccdb7ef2a7f7d60a9"
-  end unless build.head?
+  end
   patch do
     url "https://gist.github.com/wjwwood/4237236/raw/31ae53cefdb693cb2fb81333178163a29f8cf7ca/osx_isystem.patch"
     sha256 "a9b010ac15a662a58e13e425d9dde64c2edb04f06650394e8c2b12e451120a4e"
-  end unless build.head?
+  end
   patch do
     url "https://gist.github.com/wjwwood/4237236/raw/9c7df6689da4e0b358429692f6615f2707469f45/osx_linking.patch"
     sha256 "3d971465cf251eaea6d39538b92e9f3a0fbaf7fe3f0e8add10aeadde9f12c338"
-  end unless build.head?
+  end
   patch do
     url "https://gist.github.com/wjwwood/4237236/raw/d667813d5ee1e712e0ea8cc99df9a85da6141b1e/replace_pbxcp_with_ditto.patch"
     sha256 "990abb97fd1a5410a8a557915c8f16d2507133973d6c073acc59b8d0696f8c4d"
-  end unless build.head?
+  end
   patch do
     url "https://gist.github.com/wjwwood/5672104/raw/bf69b4528b3090ad99a760029beb75b7aeb11248/fix_boost_linking.patch"
     sha256 "6962171371f55ad6cc4c6310078c6f563ddc0ae25152b77e4da24d2d8ce2eecb"
-  end unless build.head?
+  end
   patch do
     url "https://gist.github.com/hgaiser/7346167/raw/3167c2fde153618e55b37f857ef4a90cc54ed2a3/ogre.patch"
     sha256 "f81ddf3c6974857311816b2f2c2f974c6365d154f9273bf7c5b5fc37867bb292"
-  end unless build.head?
+  end
   patch do
     url "https://gist.github.com/scpeters/b9034c613189426c2d6a/raw/b74a4c1fb795a69b42d1189dc2a35fac3b975959/ogre_agl.diff"
     sha256 "010413134085b2849491541f887e6fdc63bf87824689411dd9a9d3d06664b7f2"
-  end unless build.head?
+  end
 
   def install
     ENV.m64
