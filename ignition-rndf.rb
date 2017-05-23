@@ -9,7 +9,7 @@ class IgnitionRndf < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rndf/releases"
     cellar :any
-    sha256 "7351c5a627d169e78f9adfccf43d26ed6b085d34bbe802ac59d249029e29fbe1" => :sierra
+    sha256 "82793d8a0f9f9cbb404ce4853afd97c640884e3ec9c10e4f0dfb628c74859fe8" => :sierra
     sha256 "5a5af739d9582ea9bc6f924cc90100765736f42aedbae64f0c42259238893b05" => :el_capitan
     sha256 "6a333774fbbb3d17ff0fb54287f4ffc0a0c17011fe8e009ca29a5a5545f4464f" => :yosemite
   end
