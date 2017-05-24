@@ -1,17 +1,17 @@
 class IgnitionRndf < Formula
   desc "Ignition RNDF is a library for parsing RNDF road network files"
   homepage "http://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-rndf/releases/ignition-rndf-0.1.3.tar.bz2"
-  sha256 "fc273bb1c8c6f5951a41ef3da56347c7fb50a678a8dcdad9569e66ef73a6fc5c"
+  url "http://gazebosim.org/distributions/ign-rndf/releases/ignition-rndf-0.1.4.tar.bz2"
+  sha256 "1fc7dcea88f188c6d244d75a4b04ab61c0d3cb0cfa26e87ca9dd6670d6976f8d"
 
   head "https://bitbucket.org/ignitionrobotics/ign-rndf", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rndf/releases"
     cellar :any
-    sha256 "7351c5a627d169e78f9adfccf43d26ed6b085d34bbe802ac59d249029e29fbe1" => :sierra
-    sha256 "5a5af739d9582ea9bc6f924cc90100765736f42aedbae64f0c42259238893b05" => :el_capitan
-    sha256 "6a333774fbbb3d17ff0fb54287f4ffc0a0c17011fe8e009ca29a5a5545f4464f" => :yosemite
+    sha256 "82793d8a0f9f9cbb404ce4853afd97c640884e3ec9c10e4f0dfb628c74859fe8" => :sierra
+    sha256 "b26f949e290714b996543613bb50ba35e6aeda77a990164c48c16cbc86db1b13" => :el_capitan
+    sha256 "24b0c3ed5a42e43349f7fda556ff25eca43a2b2096a80da8a3e3511522a5e4d1" => :yosemite
   end
 
   depends_on "cmake" => :build
