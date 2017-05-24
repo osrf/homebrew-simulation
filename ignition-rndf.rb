@@ -11,7 +11,7 @@ class IgnitionRndf < Formula
     cellar :any
     sha256 "82793d8a0f9f9cbb404ce4853afd97c640884e3ec9c10e4f0dfb628c74859fe8" => :sierra
     sha256 "b26f949e290714b996543613bb50ba35e6aeda77a990164c48c16cbc86db1b13" => :el_capitan
-    sha256 "6a333774fbbb3d17ff0fb54287f4ffc0a0c17011fe8e009ca29a5a5545f4464f" => :yosemite
+    sha256 "24b0c3ed5a42e43349f7fda556ff25eca43a2b2096a80da8a3e3511522a5e4d1" => :yosemite
   end
 
   depends_on "cmake" => :build
