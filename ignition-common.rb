@@ -1,16 +1,16 @@
 class IgnitionCommon < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.3.0.tar.bz2"
-  sha256 "24fd5c9ed49e3d0e54f0057537383ef07aa7eebd2d622ca5e1ad1e5b39929cb8"
+  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.4.0.tar.bz2"
+  sha256 "48eac350749a4bbc48de4fd1dbab3b0a35f9a3d9f9b0ba9b51958f8be63dee97"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-common/releases"
-    sha256 "227da45580c1e134fc4b08d69c1f2431324b07769bf14538a2fa1a8e235920ab" => :sierra
-    sha256 "60e86c7cd4687599b5b973990a28577b77ba63afc357d8e6a47ce4c71ed0743a" => :el_capitan
-    sha256 "3e1ba775f8399ebb502c330b42460811a938e6a6e0a1aa3ec84af78aea5503a0" => :yosemite
+    sha256 "c805801fd74e4cacc04cf4de444a232ee0536aa5fdb0365a3fee0198aeaf2bc7" => :sierra
+    sha256 "996227f9cc61d79edd753e18ed7ad61cdfb12737c29832c2cf07ccceef82437d" => :el_capitan
+    sha256 "5883282654681587bae1c8bb2f31fe94a04112588d71fd390cb65d3d1ac9af59" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -23,9 +23,6 @@ class IgnitionCommon < Formula
   depends_on "tinyxml2"
 
   depends_on "pkg-config" => :run
-
-  # require ignition-math3 in pkgconfig file
-  patch :DATA
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -62,16 +59,3 @@ class IgnitionCommon < Formula
     system "./test"
   end
 end
-
-__END__
-diff -r b3d0e504a4a7 cmake/pkgconfig/ignition-common.in
---- a/cmake/pkgconfig/ignition-common.in	Mon Apr 10 19:31:33 2017 +0200
-+++ b/cmake/pkgconfig/ignition-common.in	Wed Apr 12 00:16:04 2017 -0700
-@@ -5,6 +5,6 @@
- Name: Ignition @IGN_PROJECT_NAME@
- Description: A set of @IGN_PROJECT_NAME@ classes for robot applications
- Version: @PROJECT_VERSION_FULL@
--Requires:
-+Requires: ignition-math3
- Libs: -L${libdir} -l@PROJECT_NAME_LOWER@
- CFlags: -I${includedir}
