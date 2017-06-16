@@ -19,7 +19,7 @@ class Sdformat4 < Formula
 
   # There is a link error with latest boost
   # dyld: Symbol not found: __ZNK5boost16re_detail_10630031cpp_regex_traits_implementationIcE17transform_primaryEPKcS4_
-  depends_on "boost@1.55"
+  depends_on "boost"
   depends_on "doxygen"
   depends_on "ignition-math2"
   depends_on "pkg-config" => :run
