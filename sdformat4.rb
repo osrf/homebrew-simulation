@@ -12,7 +12,8 @@ class Sdformat4 < Formula
     root_url "http://px4-travis.s3.amazonaws.com/toolchain/bottles"
     sha256 "41980363d24f72d749322f4a8b3fca3e20223d5fd62df9004ff3eb2a438b8e7c" => :el_capitan
     sha256 "e2d043add111f1729f1c188506a65ebbe390099b0e46d7eb6be1592384d0f045" => :yosemite
-    sha256 "d93b4d90b5ac2166f25a4c1e47904734b5acd1dd4001d72227c88a2bbbf9a300" => :sierra
+    rebuild 1
+    sha256 "48a59606bb6b7ad867c0aaf9202d4c5f0174d378609525b128ea935861e25778" => :sierra
   end
 
   depends_on "cmake" => :build
