@@ -9,7 +9,7 @@ class Gazebo7 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "1af7cbf8c132b10e62e9283f01d017ab1a2304fae2f263907b36c54bd28e961e" => :sierra
+    sha256 "af0bf30d13e6d4df6120ef3d3732d7a0cbcc1dc39a079c5b9244052a586475a1" => :sierra
     sha256 "e23e68631ffc5fb54fc26be456e636c1f5e75bdbfe08809b90784bf44462bb88" => :el_capitan
     sha256 "abb72bad5f319d897014a0a93842072014c360229296bddf1a6216cff0fb8cc7" => :yosemite
   end
