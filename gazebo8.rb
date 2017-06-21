@@ -12,7 +12,7 @@ class Gazebo8 < Formula
     root_url "http://gazebosim.org/distributions/gazebo/releases"
     sha256 "2f53a2eeb5e2ccc843c3c793d934c2894da93f88a38c369867d12bbf9e19ce80" => :sierra
     sha256 "a559ce30d53b6b625040c502ad15828cf2014c79b0f9931e4cdf8dd00f9f7954" => :el_capitan
-    sha256 "cf3b5e18d5f4c85c3346604ba4555a42ae2f7866d0f9d578d99de362c48cd5ec" => :yosemite
+    sha256 "b3a90469e54a8e575303be09199cc4465f35613649bcf257d8f77458a58e9ee3" => :yosemite
   end
 
   depends_on "cmake" => :build
