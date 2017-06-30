@@ -18,13 +18,13 @@ before_install:
   - sudo chown -R $USER "$(brew --repo)"
   - git -C "$(brew --repo)" reset --hard origin/master
   - git -C "$(brew --repo)" clean -qxdff
+  - export HOMEBREW_DEVELOPER="1"
   - brew update || brew update
   - rm -rf "$(brew --repo $TRAVIS_REPO_SLUG)"
   - mkdir -p "$(brew --repo $TRAVIS_REPO_SLUG)"
   - rsync -az "$TRAVIS_BUILD_DIR/" "$(brew --repo $TRAVIS_REPO_SLUG)"
   - export TRAVIS_BUILD_DIR="$(brew --repo $TRAVIS_REPO_SLUG)"
   - cd "$(brew --repo)"
-  - export HOMEBREW_DEVELOPER="1"
   - ulimit -n 1024
 
 script:
