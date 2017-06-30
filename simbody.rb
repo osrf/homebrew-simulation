@@ -29,8 +29,8 @@ class Simbody < Formula
 
   patch do
     # Fix pkg-config file
-    url "https://github.com/scpeters/simbody/commit/a37deef08af530b57601251900fadee0d0be6cfd.diff"
-    sha256 "0b99f7b6df46ddcc43094b29ba834896490fe5a76ceaa15f646b3b4579fed51e"
+    url "https://github.com/scpeters/simbody/commit/a37deef08af530b57601251900fadee0d0be6cfd.diff?full_index=1"
+    sha256 "67cf07b493f908f7fc27323b16ff4bbbd796f287744d9a53088806effb920cd1"
   end
 
   test do
