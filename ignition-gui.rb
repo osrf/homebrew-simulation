@@ -1,8 +1,18 @@
 class IgnitionGui < Formula
-  desc "Common libraries for robotics applications. GUI library"
+  desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
+  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/f75a3fb765c79a7deb0c2c783d56afc89aa5ac71.tar.gz"
+  version "0.0.0-20170719-f75a3fb"
+  sha256 "43ba7f421d942c5dfb8c7944345bc44de85f5c595595dc1a81b2dba4b70c836a"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
+
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-gui/releases"
+    sha256 "1234567890123456789012345678901234567890123456789012345678901234" => :sierra
+    sha256 "1234567890123456789012345678901234567890123456789012345678901234" => :el_capitan
+    sha256 "1234567890123456789012345678901234567890123456789012345678901234" => :yosemite
+  end
 
   depends_on "cmake" => :build
 
