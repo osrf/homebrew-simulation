@@ -16,7 +16,7 @@ class IgnitionGui < Formula
 
   depends_on "cmake" => :build
 
-  depends_on "qt"
+  depends_on "qt5"
   depends_on "qwt"
   depends_on "tinyxml"
   depends_on "ignition-common"
@@ -39,20 +39,39 @@ class IgnitionGui < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS.undent
-      #include <iostream>
-      #include <ignition/gui/Plugin.hh>
-      int main() {
-        ignition::gui::Plugin foo;
+    #include <iostream>
+    #include <ignition/gui/qt.h>
+    #include <ignition/gui/Iface.hh>
 
-        return 0;
-      }
+    using namespace ignition;
+    using namespace gui;
+
+    //////////////////////////////////////////////////
+    int main(int _argc, char **_argv)
+    {
+      std::cout << "Hello, GUI!" << std::endl;
+      // Increase verboosity so we see all messages
+      setVerbosity(4);
+      // Initialize app
+      initApp();
+      // Create main window
+      createMainWindow();
+      // Customize main window
+      auto win = mainWindow();
+      win->setWindowTitle("Hello Window!");
+      // After window is closed
+      stop();
+      std::cout << "After run" << std::endl;
+
+      return 0;
+    }
     EOS
-    system "pkg-config", "ignition-gui0"
-    cflags = `pkg-config --cflags ignition-gui0`.split(" ")
+    system "pkg-config", "ignition-gui"
+    cflags   = `pkg-config --cflags ignition-gui`.split(" ")
+    ldflags  = `pkg-config --libs ignition-gui`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
-                   "-L#{lib}",
-                   "-lignition-gui0",
+                   *ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
