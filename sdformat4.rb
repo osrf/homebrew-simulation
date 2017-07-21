@@ -26,6 +26,12 @@ class Sdformat4 < Formula
   conflicts_with "sdformat3", :because => "Differing version of the same formula"
   conflicts_with "sdformat5", :because => "Differing version of the same formula"
 
+  patch do
+    # Fix for cmake 3.9
+    url "https://bitbucket.org/osrf/sdformat/commits/3e1d3f3bd0387b548d347b423a2bea39a7872003/raw/"
+    sha256 "b7fda735c24bf152c44213368575c1addc9ab91d4125611157f79bef32a36250"
+  end
+
   def install
     ENV.m64
 
