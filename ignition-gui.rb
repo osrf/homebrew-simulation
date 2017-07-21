@@ -1,9 +1,9 @@
 class IgnitionGui < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/f75a3fb765c79a7deb0c2c783d56afc89aa5ac71.tar.gz"
-  version "0.0.0-20170719-f75a3fb"
-  sha256 "43ba7f421d942c5dfb8c7944345bc44de85f5c595595dc1a81b2dba4b70c836a"
+  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/374ce9331bd8980f8ff0d150beaaf8fc2baae57d.tar.gz"
+  version "0.0.0-20170721-374ce93"
+  sha256 "0b77737fe332f8479965c9d4ab2582bc025135674aaf7c63d0270ef205aa9878"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
@@ -14,12 +14,9 @@ class IgnitionGui < Formula
     sha256 "1234567890123456789012345678901234567890123456789012345678901234" => :yosemite
   end
 
-  # Fix pkgconfig to be able to run the test properly
-  patch :DATA
-
   depends_on "cmake" => :build
 
-  depends_on "qt5"
+  depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml"
   depends_on "ignition-common"
@@ -80,19 +77,3 @@ class IgnitionGui < Formula
     system "./test"
   end
 end
-
-__END__
-diff -r 28477892f89a cmake/pkgconfig/ignition.in
---- a/cmake/pkgconfig/ignition.in	Wed Jul 19 00:27:10 2017 +0000
-+++ b/cmake/pkgconfig/ignition.in	Fri Jul 21 19:48:20 2017 +0200
-@@ -5,6 +5,6 @@
- Name: Ignition @IGN_PROJECT_NAME@
- Description: A set of @IGN_PROJECT_NAME@ classes for robot applications
- Version: @PROJECT_VERSION_FULL@
--Requires:
--Libs: -L${libdir} -l@PROJECT_NAME_LOWER@
--CFlags: -I${includedir}
-+Requires: Qt5Core Qt5Widgets
-+Libs: -L${libdir} -l@PROJECT_NAME_LOWER@@PROJECT_MAJOR_VERSION@
-+CFlags: -std=c++11 -I${includedir}
-
