@@ -14,6 +14,9 @@ class IgnitionGui < Formula
     sha256 "1234567890123456789012345678901234567890123456789012345678901234" => :yosemite
   end
 
+  # Fix pkgconfig to be able to run the test properly
+  patch :DATA
+
   depends_on "cmake" => :build
 
   depends_on "qt5"
@@ -77,3 +80,19 @@ class IgnitionGui < Formula
     system "./test"
   end
 end
+
+__END__
+diff -r 28477892f89a cmake/pkgconfig/ignition.in
+--- a/cmake/pkgconfig/ignition.in	Wed Jul 19 00:27:10 2017 +0000
++++ b/cmake/pkgconfig/ignition.in	Fri Jul 21 19:48:20 2017 +0200
+@@ -5,6 +5,6 @@
+ Name: Ignition @IGN_PROJECT_NAME@
+ Description: A set of @IGN_PROJECT_NAME@ classes for robot applications
+ Version: @PROJECT_VERSION_FULL@
+-Requires:
+-Libs: -L${libdir} -l@PROJECT_NAME_LOWER@
+-CFlags: -I${includedir}
++Requires: Qt5Core Qt5Widgets
++Libs: -L${libdir} -l@PROJECT_NAME_LOWER@@PROJECT_MAJOR_VERSION@
++CFlags: -std=c++11 -I${includedir}
+
