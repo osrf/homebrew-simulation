@@ -1,17 +1,18 @@
 class IgnitionCommon < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.4.0.tar.bz2"
-  sha256 "48eac350749a4bbc48de4fd1dbab3b0a35f9a3d9f9b0ba9b51958f8be63dee97"
-  revision 1
+  # url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.4.0.tar.bz2"
+  url "https://bitbucket.org/ignitionrobotics/ign-common/get/2071c29973ed10a53275c875199be36fb3dc8196.tar.gz"
+  version "0.4.0~20170720~2071c29"
+  sha256 "cb2bfbd60cfb353c28778f391bb65a13dc31168d9be4478e13f66ba0b9232a88"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-common/releases"
-    sha256 "d391f225717926f1b28033c0901fc1be96d9428186e8ea0067e45614f893b698" => :sierra
-    sha256 "aa6311aeb5fcc5699803957c978caa58cfae749d58e7016d15c6ec6ba67a8017" => :el_capitan
-    sha256 "04dc5b93784a444edfd1900792807105413c10a65d3a23dd940e0d6a1c79c1c5" => :yosemite
+    sha256 "bf56bd002a3bedae78e7369b51d483d370ef67e9df54f5a0c113c17c9e95053b" => :sierra
+    sha256 "d452ceab673157a6b6e8bf0a5ed01a45b66453b9e9c93babb7361a108426b0b8" => :el_capitan
+    sha256 "4e739efdeeb59ca08f8f62307dda205dfc9800ac899bd4e73ef07696ac4e7c69" => :yosemite
   end
 
   depends_on "cmake" => :build
