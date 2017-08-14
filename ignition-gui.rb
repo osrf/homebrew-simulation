@@ -66,6 +66,7 @@ class IgnitionGui < Formula
       return 0;
     }
     EOS
+    ENV.append_path "PKG_CONFIG_PATH" , "#{Formula["qt"].opt_lib}/pkgconfig"
     system "pkg-config", "ignition-gui"
     cflags   = `pkg-config --cflags ignition-gui`.split(" ")
     ldflags  = `pkg-config --libs ignition-gui`.split(" ")
