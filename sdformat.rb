@@ -7,13 +7,6 @@ class Sdformat < Formula
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf_2.3", :using => :hg
 
-  bottle do
-    root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "6afe0da70dccb2928de2d6cd352019fb4b9ba2ed559cf1d77b57e7c11afbe6bc" => :sierra
-    sha256 "bd395482c26cf470ebe7cfa147cacf9a352502784b37bce4f2b38afbf18b3700" => :el_capitan
-    sha256 "0856b25803525a85362160cc6b94971278c2c352402fdd6951a8fff9f9e46149" => :yosemite
-  end
-
   depends_on "cmake" => :build
 
   depends_on "boost"
