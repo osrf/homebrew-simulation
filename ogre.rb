@@ -4,7 +4,7 @@ class Ogre < Formula
   url "https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2"
   version "1.7.4"
   sha256 "afa475803d9e6980ddf3641dceaa53fcfbd348506ed67893c306766c166a4882"
-  revision 2
+  revision 3
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
@@ -56,6 +56,12 @@ class Ogre < Formula
   patch do
     url "https://gist.github.com/scpeters/b9034c613189426c2d6a/raw/b74a4c1fb795a69b42d1189dc2a35fac3b975959/ogre_agl.diff"
     sha256 "010413134085b2849491541f887e6fdc63bf87824689411dd9a9d3d06664b7f2"
+  end
+
+  patch do
+    # fix for boost 1.65
+    url "https://bitbucket.org/scpeters/ogre/commits/8d514c81341a665acf02d87657113053d6f1be74/raw"
+    sha256 "b73af895f6b37a81e4b99e1c442196c52ba4e1a1fad78c70f4f46090f8e8a2ff"
   end
 
   def install
