@@ -60,8 +60,8 @@ class Ogre < Formula
 
   patch do
     # fix for boost 1.65
-    url "https://bitbucket.org/scpeters/ogre/commits/8d514c81341a665acf02d87657113053d6f1be74/raw"
-    sha256 "b73af895f6b37a81e4b99e1c442196c52ba4e1a1fad78c70f4f46090f8e8a2ff"
+    url "https://bitbucket.org/sinbad/ogre/commits/0cd739f7551d0aad3329abb42d981e970e074fa7/raw"
+    sha256 "cb22b8703f36596efa13618085b2d1a59522d04386cf7eb6eca42a99d0abe83d"
   end
 
   def install
