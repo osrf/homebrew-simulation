@@ -3,15 +3,15 @@ class IgnitionMsgs < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
   url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-0.7.0.tar.bz2"
   sha256 "5e749ddad57e3e471e01cfc240a9602595dc095952cf34436c40864add08b9dc"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
-    sha256 "34e13e459480fc745c600645019cf704206466b16bd6459c74cc89524c851195" => :sierra
-    sha256 "7242fc084cb51e89141eeca8999524cdac6c9f824cc956ca1245f72b6e12688e" => :el_capitan
-    sha256 "5a1f852c9ba390e4a68fd371576d94a50b21d8585ef54fd5c9983af01f5fab10" => :yosemite
+    sha256 "694ac60ca0e0aa29169cf9efd6e3f44508023215d607c9e5c59576f001f445b6" => :sierra
+    sha256 "1e076f9585389af145a99e3e218d4afcaed1594b73dc8af7599b013e64f0bae0" => :el_capitan
+    sha256 "85a1de23b5e95b4480b54444d53de4c524c8937df0615fa53fdd44d226d1894f" => :yosemite
   end
 
   depends_on "cmake" => :run

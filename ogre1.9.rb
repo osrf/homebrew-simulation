@@ -4,13 +4,13 @@ class Ogre19 < Formula
   url "https://bitbucket.org/sinbad/ogre/get/108ab0bcc69603dba32c0ffd4bbbc39051f421c9.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
-  revision 2
+  revision 3
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "6373edc81b7bf3a597fc66818c540b4c2bbc15e74e1628e1cd216017d0767ab5" => :sierra
-    sha256 "48edc8d1d05f35c35a800eca73046f5c5efe4ce8dee9d0c6f0cd0233099a8b30" => :el_capitan
-    sha256 "32b9c50bc711fcdb642d786dd20028e0b85585f1287a596ce93285cc51ff20f2" => :yosemite
+    sha256 "999760828472e290c92ad1a3f08b477201482c732ea0dbf6c610b04bc3f43dd4" => :sierra
+    sha256 "7f7f66f505e7911c8abb742e33a80801ee0e508543d2627b795a7716f4c01732" => :el_capitan
+    sha256 "328c281eddc6a5ee57609d554332bab2d74925f19b483f86fcd56f3c602af3e7" => :yosemite
   end
 
   option "with-cg"
@@ -63,6 +63,12 @@ class Ogre19 < Formula
     # fix FindOGRE.cmake for non-framework builds
     url "https://gist.githubusercontent.com/iche033/2b5e2ba31436881f1db29f9b60c7a5b2/raw/b6ab953ebd82127ad1177744f367a36e059312a9/ogre-1.9-findogre.patch"
     sha256 "7ca6f549fbdff7b7fc334f06da4547e071ec0e3f2733897fc6ef0d2bfa1716a3"
+  end
+
+  patch do
+    # fix for boost 1.65
+    url "https://bitbucket.org/sinbad/ogre/commits/0cd739f7551d0aad3329abb42d981e970e074fa7/raw"
+    sha256 "cb22b8703f36596efa13618085b2d1a59522d04386cf7eb6eca42a99d0abe83d"
   end
 
   def install

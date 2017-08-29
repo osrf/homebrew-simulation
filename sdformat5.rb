@@ -3,15 +3,16 @@ class Sdformat5 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.2.0.tar.bz2"
   sha256 "b7ba88275c28c3c26fe245b1ac4aad7337c2fd53d6c1e1c94c04f359f2309d51"
+  revision 1
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
     cellar :any
-    sha256 "eafc4554b050f12e423752d78c6e39c5bb1edb751ebe8af6f2fbe19e49e87d46" => :sierra
-    sha256 "c2ef934ffb5eb602838839dec4d41a72e2ae912b5e8b662c12f6f8353696a848" => :el_capitan
-    sha256 "24579cc4802dfa7c6244ab046456d32b6b32d7e1d263333c2cb7634bdece5a66" => :yosemite
+    sha256 "84297dcf68b1d9aff157df84001612152a8e8b4af56ba4c6e231db2d0ad1d024" => :sierra
+    sha256 "a9c332e4d50524d3ab55c949466aeb097b735c3ae77bf40fc5590a84661969e5" => :el_capitan
+    sha256 "a4604aff382f727c1e4b6db1f55e765dba2e19bbb58634f450f089c0a1052411" => :yosemite
   end
 
   depends_on "cmake" => :build

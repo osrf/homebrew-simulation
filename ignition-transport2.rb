@@ -3,16 +3,16 @@ class IgnitionTransport2 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.1.0.tar.bz2"
   sha256 "f1190ee6a880962b9083328efcaf4c8fe4e9f00504da4432cde69820edbc212e"
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "4520c49eb554240f6e055d87616803a6279ac86877a86a7a4dc7ee1eb5718078" => :sierra
-    sha256 "e7a6e14b919e33b215b27e208561449301caef855d8b9221371f3384471a1b40" => :el_capitan
-    sha256 "2232a168cf1f785d0602fc556708bc0ca70f6a75004b468ec64898b251968500" => :yosemite
+    sha256 "2e25ee39b8a0c56a8a0e75be0dfdd5166c0fbbd79b7a6e205f8ce4e36ba3a1e2" => :sierra
+    sha256 "befa8a692b5ff0c63caeb5deaf3d1cd34bfbcf68ff91f4a9c046579d97ea266b" => :el_capitan
+    sha256 "478c58738080932d0ca463b1fdfef1e8c469862b19ecb315962f717ed9bec77d" => :yosemite
   end
 
   depends_on "cmake" => :build
