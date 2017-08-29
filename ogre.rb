@@ -4,13 +4,13 @@ class Ogre < Formula
   url "https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2"
   version "1.7.4"
   sha256 "afa475803d9e6980ddf3641dceaa53fcfbd348506ed67893c306766c166a4882"
-  revision 2
+  revision 3
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "fa30d98d12834fc37d87123f4a5892bb1ec4a50a37def6060a34e5f16e8a1bea" => :sierra
-    sha256 "b105346d5c3c2277e8aec29b46b75c2a4fb126a1083fdad4066546e91f45dc5d" => :el_capitan
-    sha256 "f6bba68b219a011fddebc61a9199cec4b077d90d3729569c1c32bbcf36edb55b" => :yosemite
+    sha256 "65e68164847c1028b2bdb234b71f3bd2c521cf7bd94435d1f0cdb1d8d1342f69" => :sierra
+    sha256 "b6b802bef454e6286376e5164d69d5b4387755d345d46e5ff00225263a6b6871" => :el_capitan
+    sha256 "8c1404f644a0f2c47f5343a109c513dabd590fb3aeaae2df169d0f5b7c202a12" => :yosemite
   end
 
   option "with-cg"
@@ -56,6 +56,12 @@ class Ogre < Formula
   patch do
     url "https://gist.github.com/scpeters/b9034c613189426c2d6a/raw/b74a4c1fb795a69b42d1189dc2a35fac3b975959/ogre_agl.diff"
     sha256 "010413134085b2849491541f887e6fdc63bf87824689411dd9a9d3d06664b7f2"
+  end
+
+  patch do
+    # fix for boost 1.65
+    url "https://bitbucket.org/scpeters/ogre/commits/78331c592397878ab3377b5f9b55086aca7a63e5/raw"
+    sha256 "baf485a26993fa9c290701779bb78cc778f2c6d4f4aa2a26e85c6949f8ed4333"
   end
 
   def install
