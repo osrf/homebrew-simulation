@@ -11,7 +11,7 @@ class IgnitionGui < Formula
     root_url "http://gazebosim.org/distributions/ign-gui/releases"
     sha256 "c18b71d4f1b7e39090798dfc93ac496ec27f990f92e40c23bca213c3919bdfb2" => :sierra
     sha256 "4c014d9e358355e27f7b1a4b856d0fba6d75aba67acdd21d5ea554d2ce5902e2" => :el_capitan
-    sha256 "1234567890123456789012345678901234567890123456789012345678901234" => :yosemite
+    sha256 "d04bb3bb36062de6405bbd49cc71228503a97deab80f6bf08d7e2b0d39eaf338" => :yosemite
   end
 
   depends_on "cmake" => :build
