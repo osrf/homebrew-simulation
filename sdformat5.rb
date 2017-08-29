@@ -12,7 +12,7 @@ class Sdformat5 < Formula
     cellar :any
     sha256 "eafc4554b050f12e423752d78c6e39c5bb1edb751ebe8af6f2fbe19e49e87d46" => :sierra
     sha256 "a9c332e4d50524d3ab55c949466aeb097b735c3ae77bf40fc5590a84661969e5" => :el_capitan
-    sha256 "24579cc4802dfa7c6244ab046456d32b6b32d7e1d263333c2cb7634bdece5a66" => :yosemite
+    sha256 "a4604aff382f727c1e4b6db1f55e765dba2e19bbb58634f450f089c0a1052411" => :yosemite
   end
 
   depends_on "cmake" => :build
