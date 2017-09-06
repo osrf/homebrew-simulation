@@ -12,7 +12,7 @@ class IgnitionCommon < Formula
     root_url "http://gazebosim.org/distributions/ign-common/releases"
     sha256 "25483747704aaa04f1d86423e67c195f6f50b57297049d751e7d966a388b6f82" => :sierra
     sha256 "167ab634b6f3afeb0ae72c53c5c6752f3f5d81248b6a1762909b20dc5f00265d" => :el_capitan
-    sha256 "4e739efdeeb59ca08f8f62307dda205dfc9800ac899bd4e73ef07696ac4e7c69" => :yosemite
+    sha256 "ca64d8eca4af6b1a5ff3588c6a58e8c091a9c3d45bf38edd5e336064b79dfc13" => :yosemite
   end
 
   depends_on "cmake" => :build
