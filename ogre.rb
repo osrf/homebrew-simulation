@@ -4,13 +4,13 @@ class Ogre < Formula
   url "https://downloads.sourceforge.net/project/ogre/ogre/1.7/ogre_src_v1-7-4.tar.bz2"
   version "1.7.4"
   sha256 "afa475803d9e6980ddf3641dceaa53fcfbd348506ed67893c306766c166a4882"
-  revision 3
+  revision 4
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "65e68164847c1028b2bdb234b71f3bd2c521cf7bd94435d1f0cdb1d8d1342f69" => :sierra
-    sha256 "b6b802bef454e6286376e5164d69d5b4387755d345d46e5ff00225263a6b6871" => :el_capitan
-    sha256 "8c1404f644a0f2c47f5343a109c513dabd590fb3aeaae2df169d0f5b7c202a12" => :yosemite
+    sha256 "1fc8025961199a5c4bf1b79cffdac9b7dad5317f5524b314bd23bfd3dda58633" => :sierra
+    sha256 "a68733c2fff1730f946c9ead9b4db88fed5f8c4637c26b560b717ceec65b0375" => :el_capitan
+    sha256 "081b3f820c4fc31728cb887e7da718893de5c7c51b33edf469c1214041aa6b72" => :yosemite
   end
 
   option "with-cg"
