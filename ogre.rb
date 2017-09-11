@@ -10,7 +10,7 @@ class Ogre < Formula
     root_url "http://gazebosim.org/distributions/ogre/releases"
     sha256 "65e68164847c1028b2bdb234b71f3bd2c521cf7bd94435d1f0cdb1d8d1342f69" => :sierra
     sha256 "a68733c2fff1730f946c9ead9b4db88fed5f8c4637c26b560b717ceec65b0375" => :el_capitan
-    sha256 "8c1404f644a0f2c47f5343a109c513dabd590fb3aeaae2df169d0f5b7c202a12" => :yosemite
+    sha256 "081b3f820c4fc31728cb887e7da718893de5c7c51b33edf469c1214041aa6b72" => :yosemite
   end
 
   option "with-cg"
