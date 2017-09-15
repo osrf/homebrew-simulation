@@ -3,10 +3,9 @@ class Simbody < Formula
   homepage "https://simtk.org/home/simbody"
   url "https://github.com/simbody/simbody/archive/Simbody-3.5.4.tar.gz"
   sha256 "449c36e574d6f859d4fa8854ab6bc8e402e5ca5894bcce3e9fdce2f5658d64de"
-  revision 1
+  revision 2
 
   head "https://github.com/simbody/simbody.git", :branch => "master"
-  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/simbody/releases"
