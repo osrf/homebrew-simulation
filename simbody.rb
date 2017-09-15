@@ -3,14 +3,15 @@ class Simbody < Formula
   homepage "https://simtk.org/home/simbody"
   url "https://github.com/simbody/simbody/archive/Simbody-3.5.4.tar.gz"
   sha256 "449c36e574d6f859d4fa8854ab6bc8e402e5ca5894bcce3e9fdce2f5658d64de"
+  revision 2
+
   head "https://github.com/simbody/simbody.git", :branch => "master"
-  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/simbody/releases"
-    sha256 "6ed800b3c18ad56a677b3b1d1231ce9b716b76d3c144b197a0e790af5ca88860" => :sierra
-    sha256 "e37ea67010f856dbe63b52a8136ad468c3d3dc48eead2ee3e7227abdbb55dd19" => :el_capitan
-    sha256 "374b70963d6d5336eccaa83427a1acf0c938b97b618a10a7c1181fdcf06f1c09" => :yosemite
+    sha256 "68c5aacc1f0f1b14811cd8b342303a7ee2bc204065517d9d7439507e5016e7f9" => :sierra
+    sha256 "68f86436ddad44b6fd0ebbe5aaf36ed67e13a79c9bf0b336440843ac03e1228b" => :el_capitan
+    sha256 "5ae2d17b898aa6884cd7db5c1d85709e9cb25e2de06a6b188d64adc50e964eff" => :yosemite
   end
 
   depends_on "cmake" => :build
@@ -18,6 +19,9 @@ class Simbody < Formula
   depends_on "pkg-config" => :run
 
   def install
+    # Don't use 10.11 SDK frameworks on 10.10 with xcode7
+    ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+    ENV.delete("SDKROOT")
     ENV.m64
 
     mkdir "build" do
