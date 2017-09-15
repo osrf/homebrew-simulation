@@ -24,6 +24,8 @@ class Ogre19 < Formula
   depends_on "tbb"
   depends_on :x11
 
+  conflicts_with "ogre", :because => "Differing version of the same formula"
+
   patch do
     url "https://gist.github.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/bf4a4d16020821218f73db0d56aa111ab2fde679/fix-1.9-HEAD.diff"
     sha256 "15ecd1f12266918650ea789e2f96da4b0ef1a96076d7a671d3c56d98e2459712"

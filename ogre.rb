@@ -24,6 +24,8 @@ class Ogre < Formula
   depends_on "tbb"
   depends_on :x11
 
+  conflicts_with "ogre1.9", :because => "Differing version of the same formula"
+
   # https://gist.github.com/4237236
   patch do
     url "https://gist.github.com/wjwwood/4237236/raw/e357f1b9fa8b26d02ed84f411d5b5eb7446c68c5/pkg_config_fix.patch"
