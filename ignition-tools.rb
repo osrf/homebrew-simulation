@@ -9,6 +9,7 @@ class IgnitionTools < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-tools/releases"
     cellar :any
+    sha256 "9e4a57da67001ddaaf5da36114ba36be03f605dde427f39bc5ca65f6ac978fba" => :high_sierra
     sha256 "9e4a57da67001ddaaf5da36114ba36be03f605dde427f39bc5ca65f6ac978fba" => :sierra
     sha256 "9e4a57da67001ddaaf5da36114ba36be03f605dde427f39bc5ca65f6ac978fba" => :el_capitan
     sha256 "9e4a57da67001ddaaf5da36114ba36be03f605dde427f39bc5ca65f6ac978fba" => :yosemite
