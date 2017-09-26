@@ -9,6 +9,10 @@ matrix:
       os: osx
       osx_image: xcode8.3
       rvm: system
+    - env: OSX=10.13
+      os: osx
+      osx_image: xcode9
+      rvm: system
 
 before_install:
   - export TRAVIS_COMMIT="$(git rev-parse --verify -q HEAD)"
