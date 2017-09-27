@@ -4,6 +4,8 @@ class Cppzmq < Formula
   url "https://github.com/zeromq/cppzmq.git"
   version "0.0.0-brew"
 
+  bottle :unneeded
+
   depends_on "zeromq"
 
   def install
