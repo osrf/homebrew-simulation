@@ -2,8 +2,8 @@ class IgnitionCmake < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "http://ignitionrobotics.org"
   url "https://bitbucket.org/ignitionrobotics/ign-cmake/get/c82f9d30b12b9fc217eeb96c6c1016739c326dbf.tar.gz"
-  sha256 "1ade377912a62e82b5561e14cc1de4816bd558b5687206c7ecf6f9626cf18e2e"
   version "0.1.0~20171003~c82f9d3"
+  sha256 "1ade377912a62e82b5561e14cc1de4816bd558b5687206c7ecf6f9626cf18e2e"
 
   head "https://bitbucket.org/ignitionrobotics/ign-cmake", :branch => "default", :using => :hg
 
@@ -15,7 +15,7 @@ class IgnitionCmake < Formula
     sha256 "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF" => :el_capitan
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => :run
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -30,9 +30,9 @@ class IgnitionCmake < Formula
       ign_configure_build(QUIT_IF_BUILD_ERRORS)
       #ign_create_packages()
     EOS
-    ["doc", "include", "src", "test"].each do |dir|
+    %w(doc include src test).each do |dir|
       mkdir dir do
-        FileUtils.touch "CMakeLists.txt"
+        touch "CMakeLists.txt"
       end
     end
     mkdir "build" do
