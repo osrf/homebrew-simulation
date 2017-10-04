@@ -12,7 +12,7 @@ class IgnitionTransport3 < Formula
     cellar :any
     sha256 "d0f5dc9491e815f98710d5fc6af76a3105358b896824ae4d953fa30a240a6c41" => :high_sierra
     sha256 "0653994999fce80cae9bb4fe9c92639c5fa356dcb0f3b02ab964f177a525e607" => :sierra
-    sha256 "2fd741c74a88e14d3c447a916779678a4f1fc4d438e2b6454481f5521778243c" => :el_capitan
+    sha256 "0c53ebf8af7bc7caa64806e715d4f06341e08ed52bd02c039a299569fb57c5b5" => :el_capitan
     sha256 "713f8e3d26d07b00ee41fed615795ee26914cb406181809a19fc6e5d6a9ef9ff" => :yosemite
   end
 
