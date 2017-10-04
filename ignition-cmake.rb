@@ -30,7 +30,7 @@ class IgnitionCmake < Formula
       ign_configure_build(QUIT_IF_BUILD_ERRORS)
       #ign_create_packages()
     EOS
-    %w(doc include src test).each do |dir|
+    %w[doc include src test].each do |dir|
       mkdir dir do
         touch "CMakeLists.txt"
       end
