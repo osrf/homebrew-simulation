@@ -27,7 +27,6 @@ class Gazebo3 < Formula
   depends_on "player" => :optional
   depends_on "simbody" => :optional
 
-  conflicts_with "gazebo1", :because => "Differing version of the same formula"
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo4", :because => "Differing version of the same formula"
   conflicts_with "gazebo5", :because => "Differing version of the same formula"
