@@ -1,4 +1,4 @@
-class IgnitionMath < Formula
+class IgnitionMathAT1 < Formula
   desc "Math API for robotic applications"
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math-1.0.0.tar.bz2"
