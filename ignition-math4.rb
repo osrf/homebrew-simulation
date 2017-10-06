@@ -38,6 +38,13 @@ class IgnitionMath4 < Formula
         return static_cast<int>(mean.Value());
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS.undent
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      find_package(ignition-math4 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ${IGNITION-MATH_LIBRARIES})
+    EOS
+    # test building with manual compiler flags
     system ENV.cc, "test.cpp",
                    "--std=c++11",
                    "-I#{include}/ignition/math4",
@@ -46,5 +53,13 @@ class IgnitionMath4 < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
