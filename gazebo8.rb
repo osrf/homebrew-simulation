@@ -4,7 +4,7 @@ class Gazebo8 < Formula
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.1.1.tar.bz2"
   sha256 "bca3e36c064d80993a6c4cd53c369e0762c4a8e51e0ee145c20d005fd8d63949"
   version_scheme 1
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -22,7 +22,7 @@ class Gazebo8 < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "ignition-math3"
-  depends_on "ignition-msgs"
+  depends_on "ignition-msgs0"
   depends_on "ignition-transport3"
   depends_on "libtar"
   depends_on "ogre1.9"

@@ -3,7 +3,7 @@ class IgnitionTransport2 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport2-2.1.0.tar.bz2"
   sha256 "f1190ee6a880962b9083328efcaf4c8fe4e9f00504da4432cde69820edbc212e"
-  revision 5
+  revision 6
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
@@ -20,7 +20,7 @@ class IgnitionTransport2 < Formula
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :run
 
-  depends_on "ignition-msgs"
+  depends_on "ignition-msgs0"
   depends_on "ignition-tools"
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
