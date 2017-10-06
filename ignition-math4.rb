@@ -4,6 +4,7 @@ class IgnitionMath4 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-math/get/cb9a1e95cff6.tar.gz"
   version "3.999.999~20170906~cb9a1e9"
   sha256 "833776f59a6c1be5806fef4d3445f9273bbee093a476fc85969ae4c362f446e2"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
