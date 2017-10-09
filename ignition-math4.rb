@@ -4,6 +4,7 @@ class IgnitionMath4 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-math/get/cb9a1e95cff6.tar.gz"
   version "3.999.999~20170906~cb9a1e9"
   sha256 "833776f59a6c1be5806fef4d3445f9273bbee093a476fc85969ae4c362f446e2"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
@@ -17,7 +18,7 @@ class IgnitionMath4 < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "ignition-cmake0" => :build
+  depends_on "ignition-cmake0"
 
   conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
   conflicts_with "ignition-math3", :because => "Symbols collision between the two libraries"
@@ -37,6 +38,13 @@ class IgnitionMath4 < Formula
         return static_cast<int>(mean.Value());
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS.undent
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      find_package(ignition-math4 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ${IGNITION-MATH_LIBRARIES})
+    EOS
+    # test building with manual compiler flags
     system ENV.cc, "test.cpp",
                    "--std=c++11",
                    "-I#{include}/ignition/math4",
@@ -45,5 +53,13 @@ class IgnitionMath4 < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
