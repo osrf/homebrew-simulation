@@ -3,7 +3,7 @@ class IgnitionMath4 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math4-4.0.0~pre1.tar.bz2"
   version "4.0.0~pre1"
-  sha256 "9e4255bbeb72f1e2186a3ac5d665d10a7f46fddf881ab2d344874f0b14791590"
+  sha256 "050dae7aa3452a88285b714ca775f83d33bb02e2b6fe89f4b31ead750f8ae120"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
