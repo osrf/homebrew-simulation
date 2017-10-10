@@ -1,23 +1,23 @@
 class IgnitionMath4 < Formula
   desc "Math API for robotic applications"
   homepage "http://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-math/get/cb9a1e95cff6.tar.gz"
-  version "3.999.999~20170906~cb9a1e9"
-  sha256 "833776f59a6c1be5806fef4d3445f9273bbee093a476fc85969ae4c362f446e2"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math4-4.0.0~pre1.tar.bz2"
+  version "4.0.0~pre1"
+  sha256 "050dae7aa3452a88285b714ca775f83d33bb02e2b6fe89f4b31ead750f8ae120"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "e803940114a1ac046bd1f7712f94b02b842ec1b13085494b09d6b368bf55816d" => :high_sierra
-    sha256 "3085a48d816ae482f4605309ff216e1c8cdaab7ee67156c682433758f4def9e6" => :sierra
-    sha256 "585fe16006871062eff1ccfaccf87809b76bfd356415cdffe70902933c948437" => :el_capitan
+    sha256 "2d23eb987bd4d945064eea7a102c58131d0bae8292c3501a4d9058c7600549d4" => :high_sierra
+    sha256 "b62fc346167b789e78293d3c39b7ba377c2c8ecab2e0e4f6c881861941d2bac8" => :sierra
+    sha256 "5efeaebcae6b74c03c3f02de4affcec4f3286692497f211f844c852f1894052e" => :el_capitan
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "ignition-cmake0" => :build
+  depends_on "ignition-cmake0"
 
   conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
   conflicts_with "ignition-math3", :because => "Symbols collision between the two libraries"
@@ -37,6 +37,13 @@ class IgnitionMath4 < Formula
         return static_cast<int>(mean.Value());
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS.undent
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      find_package(ignition-math4 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ${IGNITION-MATH_LIBRARIES})
+    EOS
+    # test building with manual compiler flags
     system ENV.cc, "test.cpp",
                    "--std=c++11",
                    "-I#{include}/ignition/math4",
@@ -45,5 +52,13 @@ class IgnitionMath4 < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
