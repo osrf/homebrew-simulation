@@ -2,9 +2,9 @@ class IgnitionCommon < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   # url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.4.0.tar.bz2"
-  url "https://bitbucket.org/ignitionrobotics/ign-common/get/ebf4b53ee7633d541172953a213ca4009fc122f2.tar.gz"
-  version "0.4.0~20170906~ebf4b53"
-  sha256 "c28f27c50fad98360b143c1bed270183f7260105b7a21669463400c80efc7ed2"
+  url "https://bitbucket.org/ignitionrobotics/ign-common/get/4c05367a7c0c64c1f647bb424eb5f829e696768f.tar.gz"
+  version "0.4.0~20171011~4c05367"
+  sha256 "1d36c3b86cc87236f53a815cb84d3b3a78d9bac58a629fb9752cc9eb94d840c4"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
@@ -19,7 +19,7 @@ class IgnitionCommon < Formula
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
-  depends_on "ignition-math3"
+  depends_on "ignition-math4"
   depends_on "ossp-uuid"
   depends_on "tinyxml2"
 
