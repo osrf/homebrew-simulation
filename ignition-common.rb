@@ -16,8 +16,6 @@ class IgnitionCommon < Formula
     sha256 "ca64d8eca4af6b1a5ff3588c6a58e8c091a9c3d45bf38edd5e336064b79dfc13" => :yosemite
   end
 
-  depends_on "cmake" => :build
-
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
@@ -25,6 +23,7 @@ class IgnitionCommon < Formula
   depends_on "ossp-uuid"
   depends_on "tinyxml2"
 
+  depends_on "cmake" => :run
   depends_on "pkg-config" => :run
 
   def install
@@ -51,6 +50,12 @@ class IgnitionCommon < Formula
         return 0;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS.undent
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      find_package(ignition-math0 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
+    EOS
     system "pkg-config", "ignition-common0"
     cflags = `pkg-config --cflags ignition-common0`.split(" ")
     system ENV.cc, "test.cpp",
@@ -60,5 +65,13 @@ class IgnitionCommon < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
