@@ -1,4 +1,4 @@
-class IgnitionCommon < Formula
+class IgnitionCommon0 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   # url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.4.0.tar.bz2"
