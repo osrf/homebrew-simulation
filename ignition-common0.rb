@@ -52,7 +52,7 @@ class IgnitionCommon0 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS.undent
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-math0 QUIET REQUIRED)
+      find_package(ignition-common0 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
