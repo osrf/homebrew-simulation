@@ -1,9 +1,9 @@
 class IgnitionMsgs < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-0.7.0.tar.bz2"
-  sha256 "5e749ddad57e3e471e01cfc240a9602595dc095952cf34436c40864add08b9dc"
-  revision 3
+  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-1.0.0~pre2.tar.bz2"
+  version "1.0.0~pre2"
+  sha256 "d840d310077dbc5d48b82f97bf89326d99dde9b147de8e9400d1fee282c8467c"
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
