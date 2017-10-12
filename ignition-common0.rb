@@ -26,6 +26,9 @@ class IgnitionCommon0 < Formula
   depends_on "cmake" => :run
   depends_on "pkg-config" => :run
 
+  # find ignition-math4 in cmake config file
+  patch :DATA
+
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
@@ -75,3 +78,15 @@ class IgnitionCommon0 < Formula
     end
   end
 end
+
+__END__
+diff -r 65af64810c62 cmake/ignition-common-config.cmake.in
+--- a/cmake/ignition-common-config.cmake.in	Wed Oct 11 16:19:59 2017 -0700
++++ b/cmake/ignition-common-config.cmake.in	Wed Oct 11 17:34:25 2017 -0700
+@@ -43,4 +43,4 @@
+ set(@PKG_NAME@_LIBRARY_DIRS "@PACKAGE_LIB_INSTALL_DIR@")
+ set(@PKG_NAME@_LDFLAGS      "-L@PACKAGE_LIB_INSTALL_DIR@")
+ 
+-find_package(ignition-math3 REQUIRED)
++find_package(ignition-math4 REQUIRED)
+
