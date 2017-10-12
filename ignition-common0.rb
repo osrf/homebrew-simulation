@@ -2,9 +2,9 @@ class IgnitionCommon0 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   # url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.4.0.tar.bz2"
-  url "https://bitbucket.org/ignitionrobotics/ign-common/get/4c05367a7c0c64c1f647bb424eb5f829e696768f.tar.gz"
-  version "0.4.0~20171011~4c05367"
-  sha256 "1d36c3b86cc87236f53a815cb84d3b3a78d9bac58a629fb9752cc9eb94d840c4"
+  url "https://bitbucket.org/ignitionrobotics/ign-common/get/41840173c59de679f80cb9a94c94645d618311cd.tar.gz"
+  version "0.4.0~20171011~4184017"
+  sha256 "4887e157c8b91acf5e1912d1443178c18384140792a92047914463c1b6a841f0"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
@@ -13,7 +13,6 @@ class IgnitionCommon0 < Formula
     sha256 "37024f64d990765753406631b27a02c11bf0e5c036b0ee30190e9f1a5595d7e2" => :high_sierra
     sha256 "25483747704aaa04f1d86423e67c195f6f50b57297049d751e7d966a388b6f82" => :sierra
     sha256 "167ab634b6f3afeb0ae72c53c5c6752f3f5d81248b6a1762909b20dc5f00265d" => :el_capitan
-    sha256 "ca64d8eca4af6b1a5ff3588c6a58e8c091a9c3d45bf38edd5e336064b79dfc13" => :yosemite
   end
 
   depends_on "ffmpeg"
@@ -25,9 +24,6 @@ class IgnitionCommon0 < Formula
 
   depends_on "cmake" => :run
   depends_on "pkg-config" => :run
-
-  # find ignition-math4 in cmake config file
-  patch :DATA
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -79,15 +75,3 @@ class IgnitionCommon0 < Formula
     end
   end
 end
-
-__END__
-diff -r 65af64810c62 cmake/ignition-common-config.cmake.in
---- a/cmake/ignition-common-config.cmake.in	Wed Oct 11 16:19:59 2017 -0700
-+++ b/cmake/ignition-common-config.cmake.in	Wed Oct 11 17:34:25 2017 -0700
-@@ -43,4 +43,4 @@
- set(@PKG_NAME@_LIBRARY_DIRS "@PACKAGE_LIB_INSTALL_DIR@")
- set(@PKG_NAME@_LDFLAGS      "-L@PACKAGE_LIB_INSTALL_DIR@")
- 
--find_package(ignition-math3 REQUIRED)
-+find_package(ignition-math4 REQUIRED)
-
