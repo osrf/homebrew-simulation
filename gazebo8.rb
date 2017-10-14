@@ -4,15 +4,15 @@ class Gazebo8 < Formula
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.1.1.tar.bz2"
   sha256 "bca3e36c064d80993a6c4cd53c369e0762c4a8e51e0ee145c20d005fd8d63949"
   version_scheme 1
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "2e502b1ebc23698d1d00ebf93354d3db53373141bdfc86a539923f3e0f8069eb" => :high_sierra
-    sha256 "96410853c0d05da3c580d776a9a9c44981c639eaa666dbab6a3f07dc290cc1d3" => :sierra
-    sha256 "ba4d886743e4de206f621a1cb9007df17f9d25d759cef750c22a4257c9411bce" => :el_capitan
+    sha256 "e0c5761a5b0661794f899556187f6acffade3865d8583c84f6d7114232a500b1" => :high_sierra
+    sha256 "e118891717cff84e391b87bb23735db007cd99b00d23f3920405ec61d97a7c0c" => :sierra
+    sha256 "062cb220d1bc4b5fd78aa430809871eae051d458716533817bc74ac604ec4c64" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Gazebo8 < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "ignition-math3"
-  depends_on "ignition-msgs"
+  depends_on "ignition-msgs0"
   depends_on "ignition-transport3"
   depends_on "libtar"
   depends_on "ogre1.9"

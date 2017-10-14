@@ -3,24 +3,23 @@ class IgnitionTransport3 < Formula
   homepage "http://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport3-3.0.1.tar.bz2"
   sha256 "c2b8dd5f391a30f1239893b51d4ea487fd47bfe12ccdb3876a83df192df666be"
-  revision 6
+  revision 7
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "ecf1c100420cc46bb15e2a0b6b97813abae929786abff923eec37c88a877bf8d" => :high_sierra
-    sha256 "0653994999fce80cae9bb4fe9c92639c5fa356dcb0f3b02ab964f177a525e607" => :sierra
-    sha256 "0c53ebf8af7bc7caa64806e715d4f06341e08ed52bd02c039a299569fb57c5b5" => :el_capitan
-    sha256 "713f8e3d26d07b00ee41fed615795ee26914cb406181809a19fc6e5d6a9ef9ff" => :yosemite
+    sha256 "3b106604af2e8ccfb665ee0d3e677b3a075ec380ee7d818b33892c2ba965bbc3" => :high_sierra
+    sha256 "c7a355b6aa97db3d8dae30362db6747173cc49977569e10442b827805cfc7649" => :sierra
+    sha256 "f142839194381a6da9ca6dbe1a3c7c83238dc93245b12924fde9fea791e1b829" => :el_capitan
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :run
 
-  depends_on "ignition-msgs"
+  depends_on "ignition-msgs0"
   depends_on "ignition-tools"
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
