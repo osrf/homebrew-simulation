@@ -14,7 +14,7 @@ class IgnitionMsgs1 < Formula
   #end
 
   depends_on "cmake" => :run
-  depends_on "ignition-cmake"
+  depends_on "ignition-cmake0"
   depends_on "ignition-math4"
   depends_on "ignition-tools" => :recommended
   depends_on "pkg-config" => :run
