@@ -1,9 +1,9 @@
 class IgnitionTransport4 < Formula
   desc "Transport middleware for robotics"
   homepage "http://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/14dfd475370b.tar.gz"
-  version "3.9.9~20171018~14dfd475370b"
-  sha256 "a15e40770f8a0f53296048c4ce507c8e781e0a6f9fe456e25185d0c40321ce7f"
+  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/74ac13046c41.tar.gz"
+  version "3.9.9~20171018~74ac13046c41"
+  sha256 "1cf22886b030c89bd943b05b99233a4c8f7b42cd943002b5c7ab245d735011d9"
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport4", :using => :hg
 
