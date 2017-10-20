@@ -11,7 +11,7 @@ class Gazebo7 < Formula
     root_url "http://gazebosim.org/distributions/gazebo/releases"
     sha256 "0a24551b623c5694d167486d03ec5fb0a3ac763cefdadaa6d6d48af727049594" => :high_sierra
     sha256 "7f71e6a5af2f0fbc361aecae4049d9183b28b887f69b4b328072b1f1c729337f" => :sierra
-    sha256 "0deabc77d4359fef90976d54fc0a9cfdd3afba1f7631f990cb3ec07823aff044" => :el_capitan
+    sha256 "5a35fe5553e0b3e646340f0877007a80cfaaa81bf494392d3dd30d38fcc3262b" => :el_capitan
   end
 
   depends_on "cmake" => :build
