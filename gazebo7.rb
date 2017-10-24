@@ -3,15 +3,15 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.8.1.tar.bz2"
   sha256 "c884842378ef435f70a106eb10e96da3455a26db6d6b892f99148d2748f98840"
-  revision 4
+  revision 5
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "7ef7023dc2b2e3112b3bb53810709e7b7cc7abc81babca20785a939482212dac" => :high_sierra
-    sha256 "7f71e6a5af2f0fbc361aecae4049d9183b28b887f69b4b328072b1f1c729337f" => :sierra
-    sha256 "0deabc77d4359fef90976d54fc0a9cfdd3afba1f7631f990cb3ec07823aff044" => :el_capitan
+    sha256 "0a24551b623c5694d167486d03ec5fb0a3ac763cefdadaa6d6d48af727049594" => :high_sierra
+    sha256 "247293cd8046dee1db75cd6440f18873e329f92aa4df9d05298357e992e0d237" => :sierra
+    sha256 "5a35fe5553e0b3e646340f0877007a80cfaaa81bf494392d3dd30d38fcc3262b" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -23,7 +23,7 @@ class Gazebo7 < Formula
   depends_on "ignition-math2"
   depends_on "ignition-transport"
   depends_on "libtar"
-  depends_on "ogre"
+  depends_on "ogre1.9"
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "cartr/qt4/qt@4"
