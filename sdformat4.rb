@@ -10,7 +10,7 @@ class Sdformat4 < Formula
     root_url "http://gazebosim.org/distributions/sdformat/releases"
     sha256 "f953082c101bf3673a2e7b3628ce844ca0d5d58444576bfa880c7ad13f017517" => :high_sierra
     sha256 "8a4e951e776dba134ffd411af52dea6b430fef837bbe4d18aef403983d70c4fe" => :sierra
-    sha256 "6e9d06b39e95c2e22165b6738570c36cca8a096f451fe020db8b6c402de3705f" => :el_capitan
+    sha256 "a9c6cd2409d740f014ff04266530bebc3874162a46117054f8d8522b02ff2efe" => :el_capitan
     sha256 "04fec31df772e8d128a44272da9ae3eefa6e57ebeee9f62b957169dc3a400b0f" => :yosemite
   end
 
