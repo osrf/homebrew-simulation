@@ -1,19 +1,18 @@
 class IgnitionCommon0 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  # url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.4.0.tar.bz2"
-  url "https://bitbucket.org/ignitionrobotics/ign-common/get/41840173c59de679f80cb9a94c94645d618311cd.tar.gz"
-  version "0.4.0~20171011~4184017"
-  sha256 "4887e157c8b91acf5e1912d1443178c18384140792a92047914463c1b6a841f0"
+  url "https://bitbucket.org/ignitionrobotics/ign-common/get/76d416addd2fc9bf507923c595ef17dd2a67814f.tar.gz"
+  version "0.4.0~20171027~76d416a"
+  sha256 "f41467c14ed4eb6ff964fa70fbfa85d6497199f2016a2b5fff133159ca91b920"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "http://gazebosim.org/distributions/ign-common/releases"
-    sha256 "7efad0b723d7ef3a5e76cae3abeef60df127108003cac31eac51f3195b3206d8" => :high_sierra
-    sha256 "c488c4f2b4a3c4a85d6bb594b32478a530579f52087f183d602ad5d0fe0816d1" => :sierra
-    sha256 "87798d0e3f89ffa5ca18e35995f045218bfa3a9408cfada6ce427266d5adcb98" => :el_capitan
-  end
+  # bottle do
+  #   root_url "http://gazebosim.org/distributions/ign-common/releases"
+  #   sha256 "7efad0b723d7ef3a5e76cae3abeef60df127108003cac31eac51f3195b3206d8" => :high_sierra
+  #   sha256 "c488c4f2b4a3c4a85d6bb594b32478a530579f52087f183d602ad5d0fe0816d1" => :sierra
+  #   sha256 "87798d0e3f89ffa5ca18e35995f045218bfa3a9408cfada6ce427266d5adcb98" => :el_capitan
+  # end
 
   depends_on "ffmpeg"
   depends_on "freeimage"
