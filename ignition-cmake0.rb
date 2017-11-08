@@ -1,6 +1,6 @@
 class IgnitionCmake0 < Formula
   desc "CMake helper functions for building robotic applications"
-  homepage "http://ignitionrobotics.org"
+  homepage "https://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-cmake/releases/ignition-cmake-0.1.1.tar.bz2"
   sha256 "544be2b5766e20c34f8697be9cc69b7fa3d90a53f030228780312abad6d78070"
 

@@ -1,6 +1,6 @@
 class IgnitionTransport4 < Formula
   desc "Transport middleware for robotics"
-  homepage "http://ignitionrobotics.org"
+  homepage "https://ignitionrobotics.org"
   url "https://bitbucket.org/ignitionrobotics/ign-transport/get/74ac13046c41.tar.gz"
   version "3.9.9~20171018~74ac13046c41"
   sha256 "1cf22886b030c89bd943b05b99233a4c8f7b42cd943002b5c7ab245d735011d9"

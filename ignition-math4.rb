@@ -1,6 +1,6 @@
 class IgnitionMath4 < Formula
   desc "Math API for robotic applications"
-  homepage "http://ignitionrobotics.org"
+  homepage "https://ignitionrobotics.org"
   url "https://bitbucket.org/ignitionrobotics/ign-math/get/abf942243437.tar.gz"
   version "4.0.0~pre1~20171016~abf942243437"
   sha256 "ae28fffa17926bea0fc7810086268d70ab04b6b5e8602d58135290e5191275c1"

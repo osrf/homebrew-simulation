@@ -1,6 +1,6 @@
 class IgnitionRndf < Formula
   desc "Ignition RNDF is a library for parsing RNDF road network files"
-  homepage "http://ignitionrobotics.org"
+  homepage "https://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-rndf/releases/ignition-rndf-0.1.5.tar.bz2"
   sha256 "b5abf08741690071759108b17b6179b7abba04e1088160d6c314e8d18343be15"
 
