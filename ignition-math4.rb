@@ -7,13 +7,13 @@ class IgnitionMath4 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
-  #bottle do
-  #  root_url "http://gazebosim.org/distributions/ign-math/releases"
-  #  cellar :any
-  #  sha256 "2d23eb987bd4d945064eea7a102c58131d0bae8292c3501a4d9058c7600549d4" => :high_sierra
-  #  sha256 "b62fc346167b789e78293d3c39b7ba377c2c8ecab2e0e4f6c881861941d2bac8" => :sierra
-  #  sha256 "5efeaebcae6b74c03c3f02de4affcec4f3286692497f211f844c852f1894052e" => :el_capitan
-  #end
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-math/releases"
+    cellar :any
+    sha256 "2d23eb987bd4d945064eea7a102c58131d0bae8292c3501a4d9058c7600549d4" => :high_sierra
+    sha256 "b62fc346167b789e78293d3c39b7ba377c2c8ecab2e0e4f6c881861941d2bac8" => :sierra
+    sha256 "5efeaebcae6b74c03c3f02de4affcec4f3286692497f211f844c852f1894052e" => :el_capitan
+  end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
