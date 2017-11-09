@@ -12,7 +12,7 @@ class IgnitionMath4 < Formula
     cellar :any
     sha256 "b769bc790791ee11e8c01f595cecdab053f6dac9acc02ec9d13c3219997ee96c" => :high_sierra
     sha256 "86e680ed191dd0abf732e0da8c671024a851a8a6d07ec5409a8405659e920363" => :sierra
-    sha256 "5efeaebcae6b74c03c3f02de4affcec4f3286692497f211f844c852f1894052e" => :el_capitan
+    sha256 "3a94b66c4efc0bb54865345cc0f02d288bc1810c326e1f98985d9b15f3bb7372" => :el_capitan
   end
 
   depends_on "cmake" => :build
