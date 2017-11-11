@@ -21,8 +21,7 @@ class IgnitionGui < Formula
   depends_on "qwt"
   depends_on "tinyxml2"
   depends_on "ignition-common0"
-  depends_on "ignition-msgs1"
-  depends_on "ignition-transport3"
+  depends_on "ignition-transport4"
 
   depends_on "pkg-config" => :run
 
