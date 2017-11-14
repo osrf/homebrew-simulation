@@ -1,9 +1,8 @@
 class Sdformat5 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.2.0.tar.bz2"
-  sha256 "b7ba88275c28c3c26fe245b1ac4aad7337c2fd53d6c1e1c94c04f359f2309d51"
-  revision 2
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.3.0.tar.bz2"
+  sha256 "e5946e84431cf7874cf422d5b5a9f34f42b31d82b5baea532d1e466011bd89e0"
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
