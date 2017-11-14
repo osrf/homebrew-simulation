@@ -11,7 +11,7 @@ class Sdformat5 < Formula
     cellar :any
     sha256 "2de6ac352cb730f898f70cae2d58009e27a1fc9af18853b91eebd2e1ad504c4d" => :high_sierra
     sha256 "670437cc6f17f3578a6e6f5de9be68fb32b8cc8ac77826777e8c59b5b7e591f0" => :sierra
-    sha256 "46f172bff03cf4465ddeb6680926adde36521b774a6a27f821033a401808c454" => :el_capitan
+    sha256 "f3bfaab432d3ee7e61490211ab20ba2c96d5bb0395867751d0e5bd1861238a69" => :el_capitan
     sha256 "2e99b2addc656a73a60632f47720449b7d01610cfdeeab66e61a200125439e8b" => :yosemite
   end
 
