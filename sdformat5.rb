@@ -1,18 +1,17 @@
 class Sdformat5 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.2.0.tar.bz2"
-  sha256 "b7ba88275c28c3c26fe245b1ac4aad7337c2fd53d6c1e1c94c04f359f2309d51"
-  revision 2
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.3.0.tar.bz2"
+  sha256 "e5946e84431cf7874cf422d5b5a9f34f42b31d82b5baea532d1e466011bd89e0"
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
     cellar :any
-    sha256 "d2525313eee567b37ba2e9d8216e1ea4b6ce7d69e687184a2b19f6817b0b9706" => :high_sierra
-    sha256 "22e30c8adc31241c54beec833f2708c6fd0a7042b6b96ae2cf7323be5242bb8e" => :sierra
-    sha256 "46f172bff03cf4465ddeb6680926adde36521b774a6a27f821033a401808c454" => :el_capitan
+    sha256 "2de6ac352cb730f898f70cae2d58009e27a1fc9af18853b91eebd2e1ad504c4d" => :high_sierra
+    sha256 "670437cc6f17f3578a6e6f5de9be68fb32b8cc8ac77826777e8c59b5b7e591f0" => :sierra
+    sha256 "f3bfaab432d3ee7e61490211ab20ba2c96d5bb0395867751d0e5bd1861238a69" => :el_capitan
     sha256 "2e99b2addc656a73a60632f47720449b7d01610cfdeeab66e61a200125439e8b" => :yosemite
   end
 
