@@ -3,15 +3,15 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.8.1.tar.bz2"
   sha256 "c884842378ef435f70a106eb10e96da3455a26db6d6b892f99148d2748f98840"
-  revision 6
+  revision 7
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "17e5f4b72461b8e82466418a9cb0b687b6082aa9f27dbbcf5962a37fcbf56d09" => :high_sierra
-    sha256 "bdef671a4a2151a5054a419634bc3e9ce34c34562ccfac6fc06df562a0f314c1" => :sierra
-    sha256 "3429954bd03191a4bae57f1035dfafe7a52cb7dbf750ee6ae28a69021cfa2f87" => :el_capitan
+    sha256 "32ae89184cc6d1644503c6fddbfb2693af41ea922f0d475fdf327e457d2df064" => :high_sierra
+    sha256 "d7bf85b4c8de5913cca099b46ef7fb036a85fe4c216fba3b18cf0e9e3fa5d2ce" => :sierra
+    sha256 "081f31cb69aa5fb1543c4d9cdacee032a73251f460eccc2c95fae1f5a0f4bdd6" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -36,7 +36,7 @@ class Gazebo7 < Formula
   depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
-  depends_on "gts" => :optional
+  depends_on "gts" => :recommended
   depends_on "player" => :optional
   depends_on "simbody" => :recommended
 

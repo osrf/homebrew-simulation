@@ -4,15 +4,15 @@ class Gazebo8 < Formula
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.1.1.tar.bz2"
   sha256 "bca3e36c064d80993a6c4cd53c369e0762c4a8e51e0ee145c20d005fd8d63949"
   version_scheme 1
-  revision 6
+  revision 7
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "45813e66a54a8aa26bdcf9141f063adf92d6af3c97e03a6c7d698756b5577d86" => :high_sierra
-    sha256 "77366210c8db07b0ac1ceb11634a4a1da4adc52604c3d461580f7fe8ee292c0d" => :sierra
-    sha256 "60a5890236464415b864571fa7f90dddddf771775a1af26c3bef811cfcd2c9df" => :el_capitan
+    sha256 "064cf48472d733b60cb2edf7a4ce4ac6d56c898bed9702d2189b023af74624c1" => :high_sierra
+    sha256 "e2c32358c78564cf96f1d6e383070c00cea24e2d19593717bb9cc79e7e27189a" => :sierra
+    sha256 "04ff951eb6d46aa5fd2095a0c6370731a4c755115b2bc5648a00d842f3359af0" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -42,7 +42,7 @@ class Gazebo8 < Formula
   depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
-  depends_on "gts" => :optional
+  depends_on "gts" => :recommended
   depends_on "player" => :optional
   depends_on "simbody" => :recommended
 
