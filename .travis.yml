@@ -1,7 +1,7 @@
 language: ruby
 matrix:
   include:
-    - env: OSX=10.11
+    - env: TEST_BOT_ARGS=--skip-setup
       os: osx
       osx_image: xcode8
       rvm: system
@@ -32,7 +32,7 @@ before_install:
   - ulimit -n 1024
 
 script:
-  - brew test-bot --fast
+  - brew test-bot --fast $TEST_BOT_ARGS
 
 notifications:
   email:
