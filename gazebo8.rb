@@ -4,7 +4,7 @@ class Gazebo8 < Formula
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.1.1.tar.bz2"
   sha256 "bca3e36c064d80993a6c4cd53c369e0762c4a8e51e0ee145c20d005fd8d63949"
   version_scheme 1
-  revision 6
+  revision 7
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -42,7 +42,7 @@ class Gazebo8 < Formula
   depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
-  depends_on "gts" => :optional
+  depends_on "gts" => :recommended
   depends_on "player" => :optional
   depends_on "simbody" => :recommended
 
