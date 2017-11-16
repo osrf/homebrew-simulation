@@ -7,10 +7,6 @@ matrix:
       rvm: system
     - env: OSX=10.12
       os: osx
-      osx_image: xcode8.3
-      rvm: system
-    - env: OSX=10.13
-      os: osx
       osx_image: xcode9
       rvm: system
 
