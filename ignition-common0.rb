@@ -7,12 +7,12 @@ class IgnitionCommon0 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
-  # bottle do
-  #   root_url "http://gazebosim.org/distributions/ign-common/releases"
-  #   sha256 "7efad0b723d7ef3a5e76cae3abeef60df127108003cac31eac51f3195b3206d8" => :high_sierra
-  #   sha256 "c488c4f2b4a3c4a85d6bb594b32478a530579f52087f183d602ad5d0fe0816d1" => :sierra
-  #   sha256 "87798d0e3f89ffa5ca18e35995f045218bfa3a9408cfada6ce427266d5adcb98" => :el_capitan
-  # end
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-common/releases"
+    sha256 "7efad0b723d7ef3a5e76cae3abeef60df127108003cac31eac51f3195b3206d8" => :high_sierra
+    sha256 "c488c4f2b4a3c4a85d6bb594b32478a530579f52087f183d602ad5d0fe0816d1" => :sierra
+    sha256 "87798d0e3f89ffa5ca18e35995f045218bfa3a9408cfada6ce427266d5adcb98" => :el_capitan
+  end
 
   depends_on "ffmpeg"
   depends_on "freeimage"
