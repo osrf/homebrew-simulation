@@ -9,7 +9,7 @@ class IgnitionMath3 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "f94b64eefadd1dd54cb0a31e18dc537e6dad8e17759aabee8784abfff09b3172" => :high_sierra
+    sha256 "79f35d471b53743a1a8ad5d40d64014ef732247312c8b8cb22ce83b40783e945" => :high_sierra
     sha256 "e65b8d0610e2d7ae638734ffed48958a21f76e91aad843b5109e7e91a994495e" => :sierra
     sha256 "62f3ee3c57ca1c4d8925d2f431ba6390d1c115808c39330a01d98c6dec1c5dd3" => :el_capitan
     sha256 "360b5673f882a817cb0e576b2778c8665d27f0671d34eaa188f30873221da058" => :yosemite
