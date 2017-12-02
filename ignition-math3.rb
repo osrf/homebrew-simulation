@@ -1,8 +1,8 @@
 class IgnitionMath3 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math3-3.2.0.tar.bz2"
-  sha256 "742bc95f95ba2f89913f25e7272bb4f0a202de95e4567cda37fe078d3a2702a1"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math3-3.3.0.tar.bz2"
+  sha256 "97bb7f20b64c9a281873ac6fd02932390ca9a0d5709256e671c4db4221a8e051"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
