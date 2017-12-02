@@ -1,9 +1,9 @@
 class IgnitionMath4 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math4-4.0.0~pre2.tar.bz2"
-  version "4.0.0~pre2"
-  sha256 "6fac379be5ab750caa43f3722f999c6cc088d8301e30772eb317bc729f44e0bc"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math4-4.0.0~pre3.tar.bz2"
+  version "4.0.0~pre3"
+  sha256 "06fe8754b2a0889f810f9e4b7370eb137ab6ba72af716e52b300eaedda4fbdf5"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
