@@ -1,18 +1,18 @@
 class IgnitionMath4 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math4-4.0.0~pre2.tar.bz2"
-  version "4.0.0~pre2"
-  sha256 "6fac379be5ab750caa43f3722f999c6cc088d8301e30772eb317bc729f44e0bc"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math4-4.0.0~pre3.tar.bz2"
+  version "4.0.0~pre3"
+  sha256 "06fe8754b2a0889f810f9e4b7370eb137ab6ba72af716e52b300eaedda4fbdf5"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "b769bc790791ee11e8c01f595cecdab053f6dac9acc02ec9d13c3219997ee96c" => :high_sierra
-    sha256 "86e680ed191dd0abf732e0da8c671024a851a8a6d07ec5409a8405659e920363" => :sierra
-    sha256 "3a94b66c4efc0bb54865345cc0f02d288bc1810c326e1f98985d9b15f3bb7372" => :el_capitan
+    sha256 "32edf1c428c5cd00792e67197c45f163f775d9fa839ad35fdf03bc44098906b7" => :high_sierra
+    sha256 "6953828de80679db88ec3b280d711e10d75497fa95d3509b1a85ae710d8a66d3" => :sierra
+    sha256 "3f767bf6b74f0219133b4a5b1c3cd330e4147fe87443bda35c7dd7866de50dfa" => :el_capitan
   end
 
   depends_on "cmake" => :build
