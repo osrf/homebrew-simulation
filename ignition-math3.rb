@@ -11,7 +11,7 @@ class IgnitionMath3 < Formula
     cellar :any
     sha256 "79f35d471b53743a1a8ad5d40d64014ef732247312c8b8cb22ce83b40783e945" => :high_sierra
     sha256 "e65b8d0610e2d7ae638734ffed48958a21f76e91aad843b5109e7e91a994495e" => :sierra
-    sha256 "62f3ee3c57ca1c4d8925d2f431ba6390d1c115808c39330a01d98c6dec1c5dd3" => :el_capitan
+    sha256 "4f35a563ed082a2c3e72be81b574495eb4d430541bce5323526a4faf6356455c" => :el_capitan
     sha256 "360b5673f882a817cb0e576b2778c8665d27f0671d34eaa188f30873221da058" => :yosemite
   end
 
