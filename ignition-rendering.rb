@@ -1,19 +1,11 @@
 class IgnitionRendering < Formula
   desc "Common libraries for robotics applications. Rendering Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/ca7e2c8d7755131c9374c99a1df41c6eee415739.tar.gz"
-  version "0.0.0~20170721~35b9bae"
-  sha256 "4d2bde8f525d9220d66d972e1915e9f65527f4bc182f1ee450e085663e4db0ae"
+  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/c1582502bc2e266e645b0e5d5fe580865d50d785.tar.gz"
+  version "0.0.0~20170721~c158250"
+  sha256 "d19bdfa43929db4c3925e274c206399f8372761ce067158426a1292fbb18d5df"
 
   head "https://bitbucket.org/ignitionrobotics/ign-rendering", :branch => "default", :using => :hg
-
-  #bottle do
-  #  rebuild 1
-  #  root_url "http://gazebosim.org/distributions/ign-rendering/releases"
-  #  sha256 "a435130d701ebdaa58bd29833a26d53c612ae2163a195b0124ad71f0e54675d8" => :high_sierra
-  #  sha256 "8660bbd506869aebc3c01114af9fa651d4ee67eaa9259748a7fc4204aeb01c08" => :sierra
-  #  sha256 "ab9346c2e57d496cc71275d44f6091c6e0792913ca5cc1c88af97e5f099bb37a" => :el_capitan
-  #end
 
   depends_on "cmake" => :build
 
