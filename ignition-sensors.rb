@@ -25,32 +25,31 @@ class IgnitionSensors < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS.undent
+      #include <iostream>
 
-	#include <iostream>
+      #include <ignition/rendering.hh>
+      #include <ignition/sensors.hh>
 
-	#include <ignition/rendering.hh>
-	#include <ignition/sensors.hh>
+      int main()
+      {
+        // Setup ign-rendering with a scene
+        auto *engine = ignition::rendering::engine("ogre");
+        if (!engine)
+        {
+          std::cerr << "Failed to load ogre\n";
+          return 1;
+        }
+        ignition::rendering::ScenePtr scene = engine->CreateScene("scene");
 
-	int main()
-	{
-	  // Setup ign-rendering with a scene
-	  auto *engine = ignition::rendering::engine("ogre");
-	  if (!engine)
-	  {
-		std::cerr << "Failed to load ogre\n";
-		return 1;
-	  }
-	  ignition::rendering::ScenePtr scene = engine->CreateScene("scene");
+        // Add stuff to take a picture of
+        BuildScene(scene);
 
-	  // Add stuff to take a picture of
-	  BuildScene(scene);
+        // Create a sensor manager
+        ignition::sensors::Manager mgr;
+        mgr.SetRenderingScene(scene);
 
-	  // Create a sensor manager
-	  ignition::sensors::Manager mgr;
-	  mgr.SetRenderingScene(scene);
-
-      return 0;
-    }
+        return 0;
+      }
     EOS
     ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
     system "pkg-config", "ignition-sensors"

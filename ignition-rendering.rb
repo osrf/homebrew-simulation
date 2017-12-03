@@ -23,48 +23,48 @@ class IgnitionRendering < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS.undent
-    #include <ignition/common/Console.hh>
-	#include <ignition/common/Image.hh>
+      #include <ignition/common/Console.hh>
+      #include <ignition/common/Image.hh>
 
-	#include "ignition/rendering/Camera.hh"
-	#include "ignition/rendering/Image.hh"
-	#include "ignition/rendering/PixelFormat.hh"
-	#include "ignition/rendering/RenderEngine.hh"
-	#include "ignition/rendering/RenderingIface.hh"
-	#include "ignition/rendering/Scene.hh"
+      #include "ignition/rendering/Camera.hh"
+      #include "ignition/rendering/Image.hh"
+      #include "ignition/rendering/PixelFormat.hh"
+      #include "ignition/rendering/RenderEngine.hh"
+      #include "ignition/rendering/RenderingIface.hh"
+      #include "ignition/rendering/Scene.hh"
 
-	using namespace ignition;
-	using namespace rendering;
+      using namespace ignition;
+      using namespace rendering;
 
-	int main()
-	{
-	  // override and make sure not to look for resources in installed share dir
-	  std::string projectSrcPath = PROJECT_SOURCE_PATH;
-	  std::string env = "IGN_RENDERING_RESOURCE_PATH=" +
-		  common::joinPaths(projectSrcPath, "src");
-	  putenv(const_cast<char *>(env.c_str()));
+      int main()
+      {
+        // override and make sure not to look for resources in installed share dir
+        std::string projectSrcPath = PROJECT_SOURCE_PATH;
+        std::string env = "IGN_RENDERING_RESOURCE_PATH=" +
+          common::joinPaths(projectSrcPath, "src");
+        putenv(const_cast<char *>(env.c_str()));
 
-	  // create and populate scene
-	  RenderEngine *engine = rendering::engine(_renderEngine);
-	  if (!engine)
-	  {
-		igndbg << "Engine '" << _renderEngine
-				  << "' is not supported" << std::endl;
-		return;
-	  }
+        // create and populate scene
+        RenderEngine *engine = rendering::engine(_renderEngine);
+        if (!engine)
+        {
+        igndbg << "Engine '" << _renderEngine
+              << "' is not supported" << std::endl;
+        return;
+        }
 
-	  // add resources in build dir
-	  engine->AddResourcePath(
-		  common::joinPaths(std::string(PROJECT_BUILD_PATH), "src"));
+        // add resources in build dir
+        engine->AddResourcePath(
+          common::joinPaths(std::string(PROJECT_BUILD_PATH), "src"));
 
-	  ScenePtr scene = engine->CreateScene("scene");
-	  ASSERT_TRUE(scene != nullptr);
-	  scene->SetAmbientLight(0.3, 0.3, 0.3);
+        ScenePtr scene = engine->CreateScene("scene");
+        ASSERT_TRUE(scene != nullptr);
+        scene->SetAmbientLight(0.3, 0.3, 0.3);
 
-	  VisualPtr root = scene->RootVisual();
+        VisualPtr root = scene->RootVisual();
 
-	  CameraPtr camera = scene->CreateCamera();
-    }
+        CameraPtr camera = scene->CreateCamera();
+      }
     EOS
     ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
     system "pkg-config", "ignition-rendering"
