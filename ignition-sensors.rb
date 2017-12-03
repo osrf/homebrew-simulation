@@ -1,5 +1,5 @@
 class IgnitionSensors < Formula
-  desc "Sensors library for robotics applications."
+  desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
   url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/d87cd152c6415be98c07b2daa2e86fd4978c894e.tar.gz"
   version "0.0.0~20171201~d87cd15"
