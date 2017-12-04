@@ -26,12 +26,6 @@ class IgnitionTransport3 < Formula
   depends_on "zeromq"
   depends_on "cppzmq"
 
-  patch do
-    # Fix compiler warning
-    url "https://bitbucket.org/ignitionrobotics/ign-transport/commits/3e5a61a5dadae573c23ba8185bb120cdbaff2d36/raw"
-    sha256 "66570f0dec49e572c8687fc0819cefc5707ccb591e0a4923c48fbebe53b521c9"
-  end
-
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
