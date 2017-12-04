@@ -1,18 +1,17 @@
 class IgnitionTransport3 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport3-3.0.1.tar.bz2"
-  sha256 "c2b8dd5f391a30f1239893b51d4ea487fd47bfe12ccdb3876a83df192df666be"
-  revision 8
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport3-3.1.0.tar.bz2"
+  sha256 "bc8ac5bbb1cfadda857f748ba6467f9512b37a2b8395121586c459166ae45703"
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
-    sha256 "026e29c0ecc4dfee72a5dbb87c176e457e3cb9475b28c6b1fe484b31afa48036" => :high_sierra
-    sha256 "e34e5d4e76d3f80051772c38a4a571798361f6c7ed3cb424e817d8167acae294" => :sierra
-    sha256 "3fe31e2fb3146b69a1b2d1e6b9ff1129709b9265fa32ca53c66d8e8c3b53cd38" => :el_capitan
+    sha256 "d645c27a90958e0c97fb6b012541b35bfe4bcc2b6e8b9604c2d71c973d029aa3" => :high_sierra
+    sha256 "4673ae38021accff0116fc9bc2dc68c52c8a5ba25daa8c5d4cf80363caa5dc6a" => :sierra
+    sha256 "ed86c8108eae4c6195c21f815da5f0a6c387378ccd67f561a0fd7aec233c760f" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -26,12 +25,6 @@ class IgnitionTransport3 < Formula
   depends_on "ossp-uuid"
   depends_on "zeromq"
   depends_on "cppzmq"
-
-  patch do
-    # Fix compiler warning
-    url "https://bitbucket.org/ignitionrobotics/ign-transport/commits/3e5a61a5dadae573c23ba8185bb120cdbaff2d36/raw"
-    sha256 "66570f0dec49e572c8687fc0819cefc5707ccb591e0a4923c48fbebe53b521c9"
-  end
 
   def install
     system "cmake", ".", *std_cmake_args
