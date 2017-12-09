@@ -5,10 +5,11 @@ class IgnitionFuelTools0 < Formula
   version "0.1.2~pre1"
   sha256 "919943db38a6c9560e7726fe6ac6d0b4d2e78f2c4cafa6da868eeb0b09bb11c5"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => :run
   depends_on "ignition-common0"
   depends_on "jsoncpp"
   depends_on "libzip"
+  depends_on "pkg-config" => :run
 
   patch do
     # use libzip_INCLUDE_DIRS
