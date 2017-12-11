@@ -11,18 +11,6 @@ class IgnitionFuelTools0 < Formula
   depends_on "libzip"
   depends_on "pkg-config" => :run
 
-  patch do
-    # use libzip_INCLUDE_DIRS
-    url "https://bitbucket.org/ignitionrobotics/ign-fuel-tools/commits/e9aef58901c0950453b4a9765d52d76ad71c1b64/raw/"
-    sha256 "9791e37102d9ce858839b0be28242f06cff5fd0e31c07dadf3ef0c12f7049882"
-  end
-
-  patch do
-    # fix for deps that use ign-cmake
-    url "https://bitbucket.org/ignitionrobotics/ign-fuel-tools/commits/99170c9b5161a643b984f4580a066212d7ff1ef9/raw/"
-    sha256 "17f9548e4780b51cf34bac674533e05a6aca4d88a3b5e85cd3f9074dcac7d059"
-  end
-
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
