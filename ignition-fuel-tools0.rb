@@ -1,9 +1,9 @@
 class IgnitionFuelTools0 < Formula
   desc "Tools for using fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel-tools-0.1.2~pre1.tar.bz2"
-  version "0.1.2~pre1"
-  sha256 "919943db38a6c9560e7726fe6ac6d0b4d2e78f2c4cafa6da868eeb0b09bb11c5"
+  url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel-tools-0.1.2~pre2.tar.bz2"
+  version "0.1.2~pre2"
+  sha256 "4347e00f47b455e71d3cdbaf14b49851b6e4ab6ac6ed83886835ce2a3bda39bb"
 
   depends_on "cmake" => :run
   depends_on "ignition-common0"
