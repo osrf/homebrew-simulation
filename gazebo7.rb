@@ -3,6 +3,7 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.9.0.tar.bz2"
   sha256 "c401426ea0112a4342aae916e718b6294f39920b75b0dbecb5fffd4605799d37"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
@@ -33,7 +34,7 @@ class Gazebo7 < Formula
 
   depends_on "bullet" => :recommended
   depends_on "dartsim/dart/dartsim4" => :optional
-  depends_on "ffmpeg" => :optional
+  depends_on "ffmpeg" => :recommended
   depends_on "gdal" => :optional
   depends_on "gts" => :recommended
   depends_on "player" => :optional
