@@ -1,18 +1,17 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.1.1.tar.bz2"
-  sha256 "bca3e36c064d80993a6c4cd53c369e0762c4a8e51e0ee145c20d005fd8d63949"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.2.0.tar.bz2"
+  sha256 "2c663c446d93eec4718fd5b4985d1b85dbf29828788f6d214cce1253153d983e"
   version_scheme 1
-  revision 7
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "064cf48472d733b60cb2edf7a4ce4ac6d56c898bed9702d2189b023af74624c1" => :high_sierra
-    sha256 "e2c32358c78564cf96f1d6e383070c00cea24e2d19593717bb9cc79e7e27189a" => :sierra
-    sha256 "04ff951eb6d46aa5fd2095a0c6370731a4c755115b2bc5648a00d842f3359af0" => :el_capitan
+    sha256 "7ecd7f0b3cbf806fe20f57c0a901b36de100c96aa0497a3aaeaec40b4c974d75" => :high_sierra
+    sha256 "42dae9891c832f440eca42df04fec49e1090bf9341f81513476898828b09d6f1" => :sierra
+    sha256 "44fbe6272ef3d4cd28e7209f31bb04dcf0106711a0eef0ee0bb964e88ffcede1" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -40,7 +39,7 @@ class Gazebo8 < Formula
 
   depends_on "bullet" => :recommended
   depends_on "dartsim/dart/dartsim4" => :optional
-  depends_on "ffmpeg" => :optional
+  depends_on "ffmpeg" => :recommended
   depends_on "gdal" => :optional
   depends_on "gts" => :recommended
   depends_on "player" => :optional
@@ -57,6 +56,12 @@ class Gazebo8 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
+
+  patch do
+    # support tinyxml2 6.0.0
+    url "https://bitbucket.org/osrf/gazebo/commits/be154a72c765abd6d9517c04cd46c96870edf5c2/raw/"
+    sha256 "ca4822ea22bba6f3df1fc7e1d79cff8ea3f5c51b7af0d26b7a99e86f93ca3081"
   end
 
   def install
