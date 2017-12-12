@@ -4,6 +4,7 @@ class IgnitionCommon0 < Formula
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.5.0~pre3.tar.bz2"
   version "0.5.0~pre3"
   sha256 "b6406b840c549d8d7fa2c1409ef8ec5e90f7b973c8f3e6f39378d74447a69142"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
@@ -23,6 +24,12 @@ class IgnitionCommon0 < Formula
 
   depends_on "cmake" => :run
   depends_on "pkg-config" => :run
+
+  patch do
+    # tinyxml2 6.0.0
+    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/b9fff1943f8cf5bd24df13eab203e10bee92d52d/raw/"
+    sha256 "befead146b67989d96794d5ac947021980978362c6f7195b31994f84a46dd0c3"
+  end
 
   def install
     system "cmake", ".", *std_cmake_args
