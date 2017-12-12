@@ -3,14 +3,15 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.9.0.tar.bz2"
   sha256 "c401426ea0112a4342aae916e718b6294f39920b75b0dbecb5fffd4605799d37"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "51693921d72560bfdfa5f47fee1d2dfd9af2d536392f5551b3fa76bac72d2fe2" => :high_sierra
-    sha256 "91694f7f0f1ab1103796b2efc9ed9563a654f9c67f954e3d5caed27dfcb398cf" => :sierra
-    sha256 "d314ac8b958e00dd8ac9eb7560d8a51d5e4c5e94a7c070b5d7b99b8a50933dde" => :el_capitan
+    sha256 "b75cb6009369499182fca19c59c1329996608e0b0413d9d0fe5bd868a52bfaab" => :high_sierra
+    sha256 "e21c3d05b3b4ba56fa9485f866275da083e2658c5fcc5602127372bdf280bc7c" => :sierra
+    sha256 "36862a4e4ac548c645a598b17cfb98dad19b552e2791a5d8b2c3249e45990cb4" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -33,7 +34,7 @@ class Gazebo7 < Formula
 
   depends_on "bullet" => :recommended
   depends_on "dartsim/dart/dartsim4" => :optional
-  depends_on "ffmpeg" => :optional
+  depends_on "ffmpeg" => :recommended
   depends_on "gdal" => :optional
   depends_on "gts" => :recommended
   depends_on "player" => :optional
@@ -50,6 +51,12 @@ class Gazebo7 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
+
+  patch do
+    # tinyxml2 6.0.0 API
+    url "https://bitbucket.org/osrf/gazebo/commits/5926e42bd5207ff35e55b72065dd1c967298b8e3/raw/"
+    sha256 "1339f63a7235d063aee66fab2586e4aab8caee3d9192847412908511f8c9ffa5"
   end
 
   def install
