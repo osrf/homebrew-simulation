@@ -1,4 +1,4 @@
-class IgnitionGui < Formula
+class IgnitionGui0 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
   url "https://bitbucket.org/ignitionrobotics/ign-gui/get/374ce9331bd8980f8ff0d150beaaf8fc2baae57d.tar.gz"
