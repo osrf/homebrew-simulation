@@ -4,14 +4,15 @@ class IgnitionCommon0 < Formula
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.5.0~pre3.tar.bz2"
   version "0.5.0~pre3"
   sha256 "b6406b840c549d8d7fa2c1409ef8ec5e90f7b973c8f3e6f39378d74447a69142"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-common/releases"
-    sha256 "1468921fbb9081905031573df11a08b6ad5b7e148b408479f0e533117fa867bc" => :high_sierra
-    sha256 "6cae1ba2981d2fc2a1a7e237a1ace885c0c02328aafed2556221a3a85486ddc9" => :sierra
-    sha256 "1d654d2c6ddc0d0d5686266b475c92f933440f4311c57bb7da8cb2975d48d2a8" => :el_capitan
+    sha256 "532870f8f81a2dd6e6768f7fc90b526e7a405f0d6fbe85891587c3e5e9a4b50f" => :high_sierra
+    sha256 "9d7c5d3a299b39db42c6527b793e0f6509c46aa16a686cd9c12b29dd30d4922a" => :sierra
+    sha256 "1abf3d743da411281ef1fec05e2ab52125ea140dd7e190e3684ce4430606f4b1" => :el_capitan
   end
 
   depends_on "ffmpeg"
@@ -23,6 +24,12 @@ class IgnitionCommon0 < Formula
 
   depends_on "cmake" => :run
   depends_on "pkg-config" => :run
+
+  patch do
+    # tinyxml2 6.0.0
+    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/b9fff1943f8cf5bd24df13eab203e10bee92d52d/raw/"
+    sha256 "befead146b67989d96794d5ac947021980978362c6f7195b31994f84a46dd0c3"
+  end
 
   def install
     system "cmake", ".", *std_cmake_args
