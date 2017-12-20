@@ -1,16 +1,16 @@
 class Ogre19 < Formula
   desc "Scene-oriented 3D engine written in c++"
-  homepage "http://www.ogre3d.org/"
+  homepage "https://www.ogre3d.org/"
   url "https://bitbucket.org/sinbad/ogre/get/108ab0bcc69603dba32c0ffd4bbbc39051f421c9.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
-  revision 4
+  revision 5
 
   bottle do
     root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "68dc10dc225f68314b0ad409069dde1328443071fb8425f34c67a14bb3632388" => :high_sierra
-    sha256 "37ad3313320111d31e506bba11ff7f4ca761aa0a0ad147855e2c8737c918ccca" => :sierra
-    sha256 "925bbe449a0359440085de57a35cb841554e01c743e47e9722fd2b148ac15ee0" => :el_capitan
+    sha256 "88bb03aebad9a8fc99e184d62615839d75997f7a7f1077785891123660be72e8" => :high_sierra
+    sha256 "292d255cbb9ad0137a14d259093b5f9b2c4864cca80d6dfdc8769dd08c1898ae" => :sierra
+    sha256 "0a05f56f23fa5b86c16aa7851b549da765cfeca3dc883381bb5a81e903049b3f" => :el_capitan
     sha256 "99bd21e1675ee26f26fc5dc31f6362dcbcc2cd061a80ae9cc186fc4e4e67a910" => :yosemite
   end
 
