@@ -1,18 +1,18 @@
 class IgnitionMsgs1 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-1.0.0~pre4.tar.bz2"
-  version "1.0.0~pre4"
-  sha256 "1fd9e458458d3805b9340e19c41c4d1355dbf3a0dbd6fc37268fc8f36741e689"
+  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs-1.0.0~pre6.tar.bz2"
+  version "1.0.0~pre6"
+  sha256 "cfa4f046e1d3bdfc34f801780ca39da10dd9d690fbcd08072fe18699122085db"
   version_scheme 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
-    sha256 "bb69c0665b72250d600f7055016b49a1ce8e08548d6211a7db6fa6c42fb00eca" => :high_sierra
-    sha256 "cc0ebb7eef40d07de7399ed78ea40080870a163af8a3c6655342e49050adb9c3" => :sierra
-    sha256 "21d92eddf983d93fd07edd365c32ce67d8a7a38097fc670e23d52a7e9900e6c9" => :el_capitan
+    sha256 "cc561b92f04f14f6aaa2267d4d58ef206a0a4c051dcd945e68ae469ca58c558a" => :high_sierra
+    sha256 "f24ba84c1e08653b5c9178f6201a0d7a80a0c4fa16bf2c12b9cc19ef8b20ed6d" => :sierra
+    sha256 "71b9e9c4df48ebf5586088387175e4f67359eeed53fbbb145cc00f5e970fdcb5" => :el_capitan
   end
 
   depends_on "cmake" => :run
