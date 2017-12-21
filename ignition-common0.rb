@@ -24,12 +24,6 @@ class IgnitionCommon0 < Formula
   depends_on "cmake" => :run
   depends_on "pkg-config" => :run
 
-  patch do
-    # tinyxml2 6.0.0
-    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/b9fff1943f8cf5bd24df13eab203e10bee92d52d/raw/"
-    sha256 "befead146b67989d96794d5ac947021980978362c6f7195b31994f84a46dd0c3"
-  end
-
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
