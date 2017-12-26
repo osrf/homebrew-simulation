@@ -21,7 +21,7 @@ class IgnitionGui0 < Formula
   depends_on "qwt"
   depends_on "tinyxml2"
   depends_on "ignition-common0"
-  depends_on "ignition-rendering0"
+  depends_on "ignition-rendering"
   depends_on "ignition-msgs1"
   depends_on "ignition-transport4"
 
