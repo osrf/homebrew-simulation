@@ -16,6 +16,7 @@ class IgnitionRndf < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "ignition-math3"
   depends_on "ignition-math4"
   depends_on "pkg-config" => :run
   depends_on "ignition-cmake0"
