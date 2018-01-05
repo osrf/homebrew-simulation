@@ -2,8 +2,8 @@ class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
   url "https://bitbucket.org/osrf/gazebo/get/025c9df56cfd.tar.gz"
-  sha256 "b8519071072f758d02ddded69a8d9a972a82f0cdc5f9120dec64153ef8294851"
   version "8.99.99~20180105~025c9df56cfd"
+  sha256 "b8519071072f758d02ddded69a8d9a972a82f0cdc5f9120dec64153ef8294851"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -13,7 +13,7 @@ class Gazebo9 < Formula
   depends_on "boost"
   depends_on "doxygen"
   depends_on "freeimage"
-  depends_on "ignition-fuel-tools"
+  depends_on "ignition-fuel-tools0"
   depends_on "ignition-math3"
   depends_on "ignition-msgs0"
   depends_on "ignition-transport3"
