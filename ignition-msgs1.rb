@@ -10,7 +10,7 @@ class IgnitionMsgs1 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
     sha256 "460e43d056118b26cf656c1c9dddd2226ab196934c094c16fe7f6f33cdeddf63" => :high_sierra
-    sha256 "f24ba84c1e08653b5c9178f6201a0d7a80a0c4fa16bf2c12b9cc19ef8b20ed6d" => :sierra
+    sha256 "fbde98a15e2256b4c3cd3897f24a3372984b5793295422b3ffe811e15c041df2" => :sierra
     sha256 "873064464e6673bb15df5bde47e49da7086166963889223bf686623131204d86" => :el_capitan
   end
 
