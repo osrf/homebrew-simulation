@@ -9,7 +9,7 @@ class IgnitionSensors < Formula
 
   depends_on "cmake" => :build
 
-  depends_on "ignition-common0"
+  depends_on "ignition-common1"
   depends_on "ignition-math4"
   depends_on "ignition-msgs1"
   depends_on "ignition-rendering"

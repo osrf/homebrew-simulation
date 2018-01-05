@@ -3,6 +3,7 @@ class IgnitionFuelTools0 < Formula
   homepage "https://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel-tools-0.1.3.tar.bz2"
   sha256 "b1cf793a6ad32e7ba9ebe63c9c77602456cbbc1066f3f04a7efd58d10372f676"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-fuel-tools/releases"
@@ -12,7 +13,7 @@ class IgnitionFuelTools0 < Formula
   end
 
   depends_on "cmake" => :run
-  depends_on "ignition-common0"
+  depends_on "ignition-common1"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"

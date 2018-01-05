@@ -10,7 +10,7 @@ class IgnitionRendering < Formula
   depends_on "cmake" => :build
 
   depends_on "freeimage"
-  depends_on "ignition-common0"
+  depends_on "ignition-common1"
   depends_on "ignition-math4"
   depends_on "ogre1.9"
 

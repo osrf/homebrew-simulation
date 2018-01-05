@@ -1,9 +1,8 @@
-class IgnitionCommon0 < Formula
+class IgnitionCommon1 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-0.5.0~pre4.tar.bz2"
-  version "0.5.0~pre4"
-  sha256 "4e9c5507a2f480a2e2dc8dd2aaa22e91905791f87745e69f918ab67304ef39a7"
+  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-1.0.0.tar.bz2"
+  sha256 "5803363836b84b2499dd5e50983e7e403a919a85c20f30f27b11796c2c0bf76e"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
@@ -50,16 +49,16 @@ class IgnitionCommon0 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS.undent
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-common0 QUIET REQUIRED)
+      find_package(ignition-common1 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
-    system "pkg-config", "ignition-common0"
-    cflags = `pkg-config --cflags ignition-common0`.split(" ")
+    system "pkg-config", "ignition-common1"
+    cflags = `pkg-config --cflags ignition-common1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-common0",
+                   "-lignition-common1",
                    "-lc++",
                    "-o", "test"
     system "./test"
