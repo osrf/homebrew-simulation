@@ -1,4 +1,4 @@
-class IgnitionCommon0 < Formula
+class IgnitionCommon1 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-1.0.1.tar.bz2"
@@ -49,16 +49,16 @@ class IgnitionCommon0 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS.undent
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-common0 QUIET REQUIRED)
+      find_package(ignition-common1 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
-    system "pkg-config", "ignition-common0"
-    cflags = `pkg-config --cflags ignition-common0`.split(" ")
+    system "pkg-config", "ignition-common1"
+    cflags = `pkg-config --cflags ignition-common1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-common0",
+                   "-lignition-common1",
                    "-lc++",
                    "-o", "test"
     system "./test"
