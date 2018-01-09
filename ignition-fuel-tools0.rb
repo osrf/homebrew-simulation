@@ -12,7 +12,7 @@ class IgnitionFuelTools0 < Formula
   end
 
   depends_on "cmake" => :run
-  depends_on "ignition-common0"
+  depends_on "ignition-common1"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
