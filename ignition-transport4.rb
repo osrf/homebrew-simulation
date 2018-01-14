@@ -11,7 +11,7 @@ class IgnitionTransport4 < Formula
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
     cellar :any
     sha256 "c752172acbeb46d4d52d28f9c5782ee6c2019dc2b225d92ae6d7bc874a9047f6" => :high_sierra
-    sha256 "c7a355b6aa97db3d8dae30362db6747173cc49977569e10442b827805cfc7649" => :sierra
+    sha256 "c459c177f25ef77a11f185f0638d35d99092a892ef82e6228a3e5dd88722e982" => :sierra
     sha256 "3d0e7b17d22a2d4ba056b3384cd7d1f0a1c5835a1a4d76d8a29b23a4cd39ef5f" => :el_capitan
   end
 
