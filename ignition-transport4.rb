@@ -1,19 +1,19 @@
 class IgnitionTransport4 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/4fbebfb97acb.tar.gz"
-  version "3.9.9~20171212~4fbebfb97acb"
-  sha256 "1c20423edc743b365e3246f042e5d395268bca1a4a3464d25f19c7d734e719eb"
+  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/f6f114bd5d57.tar.gz"
+  version "3.9.9~20180112~f6f114bd5d57"
+  sha256 "bbe7522988d2f6af009ae266ce7decb942094a8f7f72e997c3914bb027f2ef59"
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport4", :using => :hg
 
-  # bottle do
-  #   root_url "http://gazebosim.org/distributions/ign-transport/releases"
-  #   cellar :any
-  #   sha256 "3b106604af2e8ccfb665ee0d3e677b3a075ec380ee7d818b33892c2ba965bbc3" => :high_sierra
-  #   sha256 "c7a355b6aa97db3d8dae30362db6747173cc49977569e10442b827805cfc7649" => :sierra
-  #   sha256 "f142839194381a6da9ca6dbe1a3c7c83238dc93245b12924fde9fea791e1b829" => :el_capitan
-  # end
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-transport/releases"
+    cellar :any
+    sha256 "c752172acbeb46d4d52d28f9c5782ee6c2019dc2b225d92ae6d7bc874a9047f6" => :high_sierra
+    sha256 "c459c177f25ef77a11f185f0638d35d99092a892ef82e6228a3e5dd88722e982" => :sierra
+    sha256 "3d0e7b17d22a2d4ba056b3384cd7d1f0a1c5835a1a4d76d8a29b23a4cd39ef5f" => :el_capitan
+  end
 
   depends_on "cmake" => :run
   depends_on "doxygen" => [:build, :optional]
