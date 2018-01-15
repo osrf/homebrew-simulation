@@ -1,16 +1,16 @@
 class IgnitionRendering < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/c1582502bc2e266e645b0e5d5fe580865d50d785.tar.gz"
-  version "0.0.0~20171106~c158250"
-  sha256 "d19bdfa43929db4c3925e274c206399f8372761ce067158426a1292fbb18d5df"
+  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/f70b3f5b73ba2698523ade30f3aa4544a05d9fa9.tar.gz"
+  version "0.0.0~20180109~f70b3f5"
+  sha256 "260953046ac1c35e8e42b43c3433a93ff153e81a539f96e4d40cb4ec9e2c6ce4"
 
   head "https://bitbucket.org/ignitionrobotics/ign-rendering", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
 
   depends_on "freeimage"
-  depends_on "ignition-common0"
+  depends_on "ignition-common1"
   depends_on "ignition-math4"
   depends_on "ogre1.9"
 
