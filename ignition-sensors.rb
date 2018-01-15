@@ -12,7 +12,7 @@ class IgnitionSensors < Formula
   depends_on "ignition-common0"
   depends_on "ignition-math4"
   depends_on "ignition-msgs1"
-  depends_on "ignition-rendering"
+  depends_on "ignition-rendering0"
   depends_on "ignition-transport4"
   depends_on "sdformat6"
 

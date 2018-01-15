@@ -1,4 +1,4 @@
-class IgnitionRendering < Formula
+class IgnitionRendering0 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
   url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/f70b3f5b73ba2698523ade30f3aa4544a05d9fa9.tar.gz"
