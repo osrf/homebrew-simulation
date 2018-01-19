@@ -29,7 +29,7 @@ class IgnitionCommon1 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include <ignition/common.hh>
       int main() {
@@ -47,7 +47,7 @@ class IgnitionCommon1 < Formula
         return 0;
       }
     EOS
-    (testpath/"CMakeLists.txt").write <<-EOS.undent
+    (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(ignition-common1 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)

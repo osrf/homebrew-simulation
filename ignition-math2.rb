@@ -26,7 +26,7 @@ class IgnitionMath2 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include "ignition/math/SignalStats.hh"
       int main() {
         ignition::math::SignalMean mean;

@@ -86,7 +86,7 @@ class Ogre < Formula
   end
 
   test do
-    (testpath/"test.mesh.xml").write <<-EOS.undent
+    (testpath/"test.mesh.xml").write <<-EOS
       <mesh>
         <submeshes>
           <submesh material="BaseWhite" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">

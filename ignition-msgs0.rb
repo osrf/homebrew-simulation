@@ -27,14 +27,14 @@ class IgnitionMsgs0 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <ignition/msgs.hh>
       int main() {
         ignition::msgs::UInt32;
         return 0;
       }
     EOS
-    (testpath/"CMakeLists.txt").write <<-EOS.undent
+    (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
       find_package(ignition-msgs0 QUIET REQUIRED)
       set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IGNITION-MSGS_CXX_FLAGS}")

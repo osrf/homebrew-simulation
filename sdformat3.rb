@@ -34,7 +34,7 @@ class Sdformat3 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include "sdf/sdf.hh"
       const std::string sdfString(

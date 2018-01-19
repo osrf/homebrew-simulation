@@ -41,7 +41,7 @@ class IgnitionGui0 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
     #include <iostream>
     #include <ignition/gui/qt.h>
     #include <ignition/gui/Iface.hh>

@@ -26,7 +26,7 @@ class IgnitionMath4 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include "ignition/math/SignalStats.hh"
       int main() {
         ignition::math::SignalMean mean;
@@ -35,7 +35,7 @@ class IgnitionMath4 < Formula
         return static_cast<int>(mean.Value());
       }
     EOS
-    (testpath/"CMakeLists.txt").write <<-EOS.undent
+    (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(ignition-math4 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)

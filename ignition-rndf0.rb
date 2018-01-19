@@ -30,7 +30,7 @@ class IgnitionRndf0 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
     #include "ignition/rndf/UniqueId.hh"
     #include "ignition/rndf/RNDFNode.hh"
 

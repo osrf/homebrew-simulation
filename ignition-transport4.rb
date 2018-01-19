@@ -34,7 +34,7 @@ class IgnitionTransport4 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include <ignition/transport.hh>
       int main() {
@@ -42,7 +42,7 @@ class IgnitionTransport4 < Formula
         return 0;
       }
     EOS
-    (testpath/"CMakeLists.txt").write <<-EOS.undent
+    (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
       find_package(ignition-transport4 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)

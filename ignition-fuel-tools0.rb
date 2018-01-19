@@ -28,14 +28,14 @@ class IgnitionFuelTools0 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <ignition/fuel-tools.hh>
       int main() {
         ignition::fuel_tools::ServerConfig srv;
         return 0;
       }
     EOS
-    (testpath/"CMakeLists.txt").write <<-EOS.undent
+    (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
       find_package(ignition-fuel-tools0 QUIET REQUIRED)
       include_directories(${IGNITION-FUEL-TOOLS_INCLUDE_DIRS})
