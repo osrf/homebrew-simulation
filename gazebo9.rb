@@ -13,7 +13,7 @@ class Gazebo9 < Formula
   depends_on "boost"
   depends_on "doxygen"
   depends_on "freeimage"
-  depends_on "ignition-fuel-tools0"
+  depends_on "ignition-fuel-tools1"
   depends_on "ignition-math3"
   depends_on "ignition-msgs0"
   depends_on "ignition-transport3"
