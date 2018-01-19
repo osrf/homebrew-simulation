@@ -1,9 +1,9 @@
 class IgnitionFuelTools1 < Formula
   desc "Tools for using fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-fuel-tools/get/dbae9593b26ed676eb0046b6304aa89f5aa67e72.tar.gz"
-  version "1.0.0~20180118~1a1641ce8e"
-  sha256 "1a1641ce8e93fdb73ed99ea008bd0f81d2a58dbcf7c6c3e487a1609223841c88"
+  url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel_tools-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "f08924998d82c95b195d3bd72773a3288d978239671d7f1733ab9007deacfa8f"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-fuel-tools/releases"
