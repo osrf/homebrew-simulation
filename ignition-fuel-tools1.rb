@@ -29,7 +29,7 @@ class IgnitionFuelTools1 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/fuel-tools.hh>
+      #include <ignition/fuel_tools.hh>
       int main() {
         ignition::fuel_tools::ServerConfig srv;
         return 0;
@@ -37,19 +37,19 @@ class IgnitionFuelTools1 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-      find_package(ignition-fuel-tools1 QUIET REQUIRED)
-      include_directories(${IGNITION-FUEL-TOOLS_INCLUDE_DIRS})
-      link_directories(${IGNITION-FUEL-TOOLS_LIBRARY_DIRS})
+      find_package(ignition-fuel_tools1 QUIET REQUIRED)
+      include_directories(${IGNITION-FUEL_TOOLS_INCLUDE_DIRS})
+      link_directories(${IGNITION-FUEL_TOOLS_LIBRARY_DIRS})
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-FUEL-TOOLS_LIBRARIES})
+      target_link_libraries(test_cmake ${IGNITION-FUEL_TOOLS_LIBRARIES})
     EOS
     # test building with pkg-config
-    system "pkg-config", "ignition-fuel-tools1"
-    cflags = `pkg-config --cflags ignition-fuel-tools1`.split(" ")
+    system "pkg-config", "ignition-fuel_tools1"
+    cflags = `pkg-config --cflags ignition-fuel_tools1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-fuel-tools1",
+                   "-lignition-fuel_tools1",
                    "-lc++",
                    "-o", "test"
     system "./test"
