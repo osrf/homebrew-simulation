@@ -23,7 +23,7 @@ class Gazebo9 < Formula
   depends_on "protobuf-c"
   depends_on "qt"
   depends_on "qwt"
-  depends_on "sdformat5"
+  depends_on "sdformat6"
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
