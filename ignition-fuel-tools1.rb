@@ -42,7 +42,7 @@ class IgnitionFuelTools1 < Formula
       include_directories(${IGNITION-FUEL_TOOLS_INCLUDE_DIRS})
       link_directories(${IGNITION-FUEL_TOOLS_LIBRARY_DIRS})
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-FUEL_TOOLS_LIBRARIES})
+      target_link_libraries(test_cmake ignition-fuel_tools1::ignition-fuel_tools1)
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-fuel_tools1"

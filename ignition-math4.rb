@@ -39,7 +39,7 @@ class IgnitionMath4 < Formula
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(ignition-math4 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-MATH_LIBRARIES})
+      target_link_libraries(test_cmake ignition-math4::ignition-math4)
     EOS
     # test building with manual compiler flags
     system ENV.cc, "test.cpp",

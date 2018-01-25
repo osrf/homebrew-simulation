@@ -42,7 +42,7 @@ class IgnitionMsgs1 < Formula
       include_directories(${IGNITION-MSGS_INCLUDE_DIRS})
       link_directories(${IGNITION-MSGS_LIBRARY_DIRS})
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-MSGS_LIBRARIES})
+      target_link_libraries(test_cmake ignition-msgs1::ignition-msgs1)
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-msgs1"

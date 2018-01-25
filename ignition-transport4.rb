@@ -46,7 +46,7 @@ class IgnitionTransport4 < Formula
       cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
       find_package(ignition-transport4 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${ignition-transport4_LIBRARIES})
+      target_link_libraries(test_cmake ignition-transport4::ignition-transport4)
     EOS
     system "pkg-config", "ignition-transport4"
     cflags = `pkg-config --cflags ignition-transport4`.split(" ")
