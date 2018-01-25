@@ -11,7 +11,7 @@ class IgnitionTransport4 < Formula
     cellar :any
     sha256 "31fd7e8e66a8d21873c666b9ff8511811c6605ee3a032b11f222372d0581fdcf" => :high_sierra
     sha256 "d3fa1d9928fbdefec5a5431c6655ba222b8f9b6bfacff3f33f111e5d80c6357b" => :sierra
-    sha256 "ff168245ed7e5d892c2b01bb379fb9cd7569ed709bb757a4d7da9e0a8ef0d12d" => :el_capitan
+    sha256 "b60a0f6e8b4f62da79566f12a81090c205a6656a625ed08348e8fd39b1024ead" => :el_capitan
   end
 
   depends_on "cmake" => :run
