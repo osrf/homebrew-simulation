@@ -3,11 +3,11 @@ matrix:
   include:
     - env: TEST_BOT_ARGS=--skip-setup
       os: osx
-      osx_image: xcode7.3
+      osx_image: xcode8
       rvm: system
     - env: OSX=10.12
       os: osx
-      osx_image: xcode9.1
+      osx_image: xcode9.2
       rvm: system
 
 before_install:
