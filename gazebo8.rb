@@ -1,18 +1,17 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.2.0.tar.bz2"
-  sha256 "2c663c446d93eec4718fd5b4985d1b85dbf29828788f6d214cce1253153d983e"
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.3.0.tar.bz2"
+  sha256 "a303089a339069b6abbf7859847958ea9f6b78ae2685b26f8135c84487e7635b"
   version_scheme 1
-  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "07365d4566a658470415f319762ec6cc0c2527a968d0c97ab49c38d4baacc56b" => :high_sierra
-    sha256 "ce243b22708e0d7cd789c131a0dd8173ec59b281cad38d65e2a46d659a6b8b0e" => :sierra
-    sha256 "e61710fc2fa616ebad4e00287e4fb10cd9765ac758b18565f1950aaff7d9803c" => :el_capitan
+    sha256 "2360b16484fc79d3ab4b65b5c9fe4946e277356f4e74de3264fd77df43db8a54" => :high_sierra
+    sha256 "40a71a08702f7675cc774c6a61c40172189d55ef66e4bc491ed3256bd2d9bc9b" => :sierra
+    sha256 "562a134178bb785672c1e3c0304f161bf3d1acf921e8323a81c76241a914bc99" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -57,12 +56,6 @@ class Gazebo8 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # support tinyxml2 6.0.0
-    url "https://bitbucket.org/osrf/gazebo/commits/be154a72c765abd6d9517c04cd46c96870edf5c2/raw/"
-    sha256 "ca4822ea22bba6f3df1fc7e1d79cff8ea3f5c51b7af0d26b7a99e86f93ca3081"
   end
 
   def install
