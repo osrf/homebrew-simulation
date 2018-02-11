@@ -4,13 +4,13 @@ class IgnitionFuelTools1 < Formula
   url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel_tools-1.0.0.tar.bz2"
   sha256 "4266ff5a16db23deffe24a792901c7a28272c198ae9e484b9ec8b2bf6905b5cd"
   version_scheme 1
-  revision 1
+  revision 2
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-fuel-tools/releases"
-    sha256 "3f5676a7a90f132faa4a19c043abbe59bef1b49c89f1e002b0cb62be1fe6121e" => :high_sierra
-    sha256 "180a49a2f9af22febea099c29320e2b1a63491d13e0170dd7e9f73f89f680a97" => :sierra
-    sha256 "4dd898a076147a1fa2face910f69b64993d56bc3527c1506a15dbfd9a5353805" => :el_capitan
+    sha256 "4638b1cd2607f088559f7aec1b52e437f1bd69696175079efae2b5c13d05301f" => :high_sierra
+    sha256 "25d14a5e923293f2459afe31724be6167767f1d6780160f1d61b551123b74e2a" => :sierra
+    sha256 "8dfe5b7c2cf6a6ccc696100527fb3cdab7d21923ee7a0659ceff96d37183de10" => :el_capitan
   end
 
   depends_on "cmake" => :run

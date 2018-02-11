@@ -3,14 +3,15 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.0.0.tar.bz2"
   sha256 "2c29955d476c97dc0ccbb1c8295ec6e8ffe203d7bc6047c1f34433a82ab9215e"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "3a2f505d6712c2eb3b4dd94082a11c38ed4970a15aa798b2888738c182d0d149" => :high_sierra
-    sha256 "deb69dee7fdd05462b2c540017313451b3bff5f432f723a7ea8ede70539ec024" => :sierra
-    sha256 "5fbcce5fe52142afaa169bb4982b9aba127dcb5270e9ef0f7f27697cbdd732f3" => :el_capitan
+    sha256 "bff4b102b9073ef77a92d7ecfdf71ddc12420dfeae29a69d11968692c52d1e79" => :high_sierra
+    sha256 "e102102896060d45677d097974fabbf9f3a6f446c05a34dc4319a12ea10aa4c1" => :sierra
+    sha256 "4dca42404edc19b9c4927b6f5ea7b2b796ace75d3d9c87447b0d532c15e6149f" => :el_capitan
   end
 
   depends_on "cmake" => :build
