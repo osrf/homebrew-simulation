@@ -11,7 +11,7 @@ class IgnitionCommon1 < Formula
     root_url "http://gazebosim.org/distributions/ign-common/releases"
     sha256 "2c70508307e03366d12c9b1dfbc4eae2ffef19182fc6831d41ad055eba7eb80e" => :high_sierra
     sha256 "286133a582afd5cefe6d80a9618969af9592e5e5f1613e7c267e289dd66675db" => :sierra
-    sha256 "c950430520481fef1818c636b8f1eb25f2bd1033635c6b5073b8c1d0775321af" => :el_capitan
+    sha256 "88e348eb27fd952dd975c1b0665003c81842d0878f2f2de145c60d6d017f2adf" => :el_capitan
   end
 
   depends_on "ffmpeg"
