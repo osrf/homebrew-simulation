@@ -3,15 +3,15 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.0.0.tar.bz2"
   sha256 "2c29955d476c97dc0ccbb1c8295ec6e8ffe203d7bc6047c1f34433a82ab9215e"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "bff4b102b9073ef77a92d7ecfdf71ddc12420dfeae29a69d11968692c52d1e79" => :high_sierra
-    sha256 "e102102896060d45677d097974fabbf9f3a6f446c05a34dc4319a12ea10aa4c1" => :sierra
-    sha256 "4dca42404edc19b9c4927b6f5ea7b2b796ace75d3d9c87447b0d532c15e6149f" => :el_capitan
+    sha256 "dd49ae6ee727a1eb016eec91c4d7e8b5f5f19d9b5da7395ede898e41ad69ca84" => :high_sierra
+    sha256 "101d0d3e36824f31b4e70ad75403fc998ec4d25c33cc4a450f9cddea80920a56" => :sierra
+    sha256 "efa6dc8d0355caccfcfefb08d88acbf70b78f53f3f9713c6c92b551f9a3c349d" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -39,7 +39,7 @@ class Gazebo9 < Formula
   depends_on "zeromq" => :linked
 
   depends_on "bullet" => :recommended
-  depends_on "dartsim/dart/dartsim6" => :optional
+  depends_on "dartsim" => :recommended
   depends_on "ffmpeg" => :recommended
   depends_on "gdal" => :optional
   depends_on "gts" => :recommended
