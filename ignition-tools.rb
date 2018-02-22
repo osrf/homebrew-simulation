@@ -15,6 +15,18 @@ class IgnitionTools < Formula
   end
 
   test do
-    system "false"
+    mkdir testpath/"config"
+    (testpath/"config/test.yaml").write <<~EOS
+      --- # Test subcommand
+      format: 1.0.0
+      library_name: test
+      library_path: path
+      library_version: 2.0.0
+      commands:
+          - test  : Test utility
+      ---
+    EOS
+    ENV["IGN_CONFIG_PATH"] = testpath/"config/"
+    system "#{bin}/ign", "test", "--versions"
   end
 end
