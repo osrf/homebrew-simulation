@@ -8,7 +8,7 @@ class IgnitionTools < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-tools/releases"
     cellar :any
-    sha256 "9e4a57da67001ddaaf5da36114ba36be03f605dde427f39bc5ca65f6ac978fba" => :el_capitan_or_later
+    sha256 "9e4a57da67001ddaaf5da36114ba36be03f605dde427f39bc5ca65f6ac978fba" => :el_capitan
   end
 
   depends_on "cmake" => :build
