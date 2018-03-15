@@ -3,15 +3,15 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.0.0.tar.bz2"
   sha256 "2c29955d476c97dc0ccbb1c8295ec6e8ffe203d7bc6047c1f34433a82ab9215e"
-  revision 3
+  revision 4
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "1c7bc00ca97b885e6ba2ded240321e10ea3e7e5afb8670620d8fd166d8189e3f" => :high_sierra
-    sha256 "3b981e38c61470a7f272551021897c32efdd345b0e45d981ee9ecbf1edd8200a" => :sierra
-    sha256 "25c619723f56df01167c84ac0c654cc4f0456860d907c1f8494d0e6a73e2e154" => :el_capitan
+    sha256 "9deecf48469401d57d510653cbb4dafc3ce232f66e3d8a92cc5e294c009c7049" => :high_sierra
+    sha256 "61a403ce4aee2092e6ed9219bb555407391d09eb5a14a11907860848f542ba3d" => :sierra
+    sha256 "9f5ef8c29cfc02509f2a2efed81167fb89f66a1dba378bd7d190148c8611ceaf" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -53,6 +53,12 @@ class Gazebo9 < Formula
   conflicts_with "gazebo6", :because => "Differing version of the same formula"
   conflicts_with "gazebo7", :because => "Differing version of the same formula"
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
+
+  patch do
+    # Fix find_package(DART) in gazebo-config.cmake
+    url "https://bitbucket.org/osrf/gazebo/commits/74ee141ddd25beb508ec595464638abc54a835c6/raw"
+    sha256 "5e4b177a29dda37a663440faaa83c17be26cb9c3c1b4bfa13e9865650de1370e"
+  end
 
   patch do
     # Fix build when homebrew python is installed
