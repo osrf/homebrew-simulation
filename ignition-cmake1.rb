@@ -7,7 +7,7 @@ class IgnitionCmake1 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-cmake", :branch => "default", :using => :hg
 
-  depends_on "cmake" => :run
+  depends_on "cmake"
 
   def install
     cmake_args = std_cmake_args
