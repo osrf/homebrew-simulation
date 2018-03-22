@@ -1,9 +1,9 @@
 class IgnitionCmake1 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-cmake/get/c4a7896c462256e1a6d567480335e73173ef1285.tar.gz"
-  version "0.999.999~20180322~c4a7896"
-  sha256 "81f9b84fb353c48452a2e9b16672a616f1c5d0a33ae85f1cb8a578a660f19e18"
+  url "http://gazebosim.org/distributions/ign-cmake/releases/ignition-cmake1-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "bb8d33d386261f8d99e9f361fe82651eb05504a13c87292c202abbc831f67797"
 
   head "https://bitbucket.org/ignitionrobotics/ign-cmake", :branch => "default", :using => :hg
 
