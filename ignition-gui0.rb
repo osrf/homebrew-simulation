@@ -16,6 +16,7 @@ class IgnitionGui0 < Formula
   # end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config"
 
   depends_on "qt"
   depends_on "qwt"
@@ -25,8 +26,6 @@ class IgnitionGui0 < Formula
   depends_on "ignition-msgs1"
   depends_on "ignition-rendering0"
   depends_on "ignition-transport4"
-
-  depends_on "pkg-config" => :run
 
   def install
     ENV.m64
