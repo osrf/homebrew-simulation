@@ -8,14 +8,13 @@ class IgnitionCommon2 < Formula
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   depends_on "cmake"
-  depends_on "pkg-config"
-
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
   depends_on "ignition-cmake1"
   depends_on "ignition-math5"
   depends_on "ossp-uuid"
+  depends_on "pkg-config"
   depends_on "tinyxml2"
 
   def install
