@@ -8,6 +8,7 @@ class IgnitionCmake1 < Formula
   head "https://bitbucket.org/ignitionrobotics/ign-cmake", :branch => "default", :using => :hg
 
   depends_on "cmake"
+  depends_on "pkg-config"
 
   def install
     cmake_args = std_cmake_args
@@ -31,5 +32,6 @@ class IgnitionCmake1 < Formula
     mkdir "build" do
       system "cmake", ".."
     end
+    system "pkg-config", "ignition-cmake1"
   end
 end
