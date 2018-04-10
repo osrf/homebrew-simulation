@@ -12,7 +12,7 @@ class IgnitionCmake0 < Formula
     sha256 "60367e2968a95d7ccd902aa8901216ee44c5bb04caac948f430a645352579485" => :el_capitan_or_later
   end
 
-  depends_on "cmake" => :run
+  depends_on "cmake"
 
   def install
     cmake_args = std_cmake_args

@@ -14,18 +14,18 @@ class IgnitionTransport4 < Formula
     sha256 "b60a0f6e8b4f62da79566f12a81090c205a6656a625ed08348e8fd39b1024ead" => :el_capitan
   end
 
-  depends_on "cmake" => :run
   depends_on "doxygen" => [:build, :optional]
-  depends_on "pkg-config" => :run
 
+  depends_on "cmake"
+  depends_on "cppzmq"
   depends_on "ignition-cmake0"
   depends_on "ignition-msgs1"
   depends_on "ignition-tools"
+  depends_on "ossp-uuid"
+  depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "protobuf-c" => :build
-  depends_on "ossp-uuid"
   depends_on "zeromq"
-  depends_on "cppzmq"
 
   def install
     system "cmake", ".", *std_cmake_args

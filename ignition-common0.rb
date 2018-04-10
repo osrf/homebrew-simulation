@@ -7,15 +7,14 @@ class IgnitionCommon0 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
+  depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
   depends_on "ignition-math4"
   depends_on "ossp-uuid"
+  depends_on "pkg-config"
   depends_on "tinyxml2"
-
-  depends_on "cmake" => :run
-  depends_on "pkg-config" => :run
 
   def install
     system "cmake", ".", *std_cmake_args

@@ -5,13 +5,13 @@ class IgnitionFuelTools0 < Formula
   version "0.1.3~20180108~4bf08a71cb"
   sha256 "68f375a2cf2bb6adfa4ecd801b822f0d475af5df5efa41182374adc02f769da1"
 
-  depends_on "cmake" => :run
+  depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-common1"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
-  depends_on "pkg-config" => :run
+  depends_on "pkg-config"
 
   def install
     mkdir "build" do

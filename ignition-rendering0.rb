@@ -14,8 +14,7 @@ class IgnitionRendering0 < Formula
   depends_on "ignition-common1"
   depends_on "ignition-math4"
   depends_on "ogre1.9"
-
-  depends_on "pkg-config" => :run
+  depends_on "pkg-config"
 
   def install
     system "cmake", ".", *std_cmake_args

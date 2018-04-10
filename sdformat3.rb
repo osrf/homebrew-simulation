@@ -8,11 +8,11 @@ class Sdformat3 < Formula
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf3", :using => :hg
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :run
 
   depends_on "boost"
   depends_on "doxygen"
   depends_on "ignition-math2"
+  depends_on "pkg-config"
   depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"
 

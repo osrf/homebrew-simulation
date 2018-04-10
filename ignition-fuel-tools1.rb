@@ -13,13 +13,13 @@ class IgnitionFuelTools1 < Formula
     sha256 "8dfe5b7c2cf6a6ccc696100527fb3cdab7d21923ee7a0659ceff96d37183de10" => :el_capitan
   end
 
-  depends_on "cmake" => :run
+  depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-common1"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
-  depends_on "pkg-config" => :run
+  depends_on "pkg-config"
 
   def install
     mkdir "build" do

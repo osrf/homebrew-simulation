@@ -20,7 +20,7 @@ class IgnitionRndf0 < Formula
   depends_on "ignition-cmake0"
   depends_on "ignition-math3"
   depends_on "ignition-math4"
-  depends_on "pkg-config" => :run
+  depends_on "pkg-config"
 
   def install
     mkdir "build" do

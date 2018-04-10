@@ -14,15 +14,14 @@ class IgnitionCommon1 < Formula
     sha256 "88e348eb27fd952dd975c1b0665003c81842d0878f2f2de145c60d6d017f2adf" => :el_capitan
   end
 
+  depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
   depends_on "ignition-math4"
   depends_on "ossp-uuid"
+  depends_on "pkg-config"
   depends_on "tinyxml2"
-
-  depends_on "cmake" => :run
-  depends_on "pkg-config" => :run
 
   def install
     system "cmake", ".", *std_cmake_args
