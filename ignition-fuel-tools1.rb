@@ -3,8 +3,8 @@ class IgnitionFuelTools1 < Formula
   homepage "https://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel_tools-1.0.0.tar.bz2"
   sha256 "4266ff5a16db23deffe24a792901c7a28272c198ae9e484b9ec8b2bf6905b5cd"
-  version_scheme 1
   revision 2
+  version_scheme 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-fuel-tools/releases"
