@@ -9,7 +9,7 @@ class IgnitionCommon1 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-common/releases"
     sha256 "f8635361addd019f17fe8eeb9d59beaba0d467a0ee934edeb44b82b138516ba6" => :high_sierra
-    sha256 "6405c379fee42a1cbc17b0a883addc944de79bae52c1c81017c9aa54bf594dcc" => :sierra
+    sha256 "5b3b97d4709fb2c3c29911fb1ff250a6425bf499ac183d78533a4bda1d4583cc" => :sierra
     sha256 "88e348eb27fd952dd975c1b0665003c81842d0878f2f2de145c60d6d017f2adf" => :el_capitan
   end
 
