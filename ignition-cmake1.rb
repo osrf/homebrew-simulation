@@ -7,12 +7,6 @@ class IgnitionCmake1 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-cmake", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "http://gazebosim.org/distributions/ign-cmake/releases"
-    cellar :any_skip_relocation
-    sha256 "60367e2968a95d7ccd902aa8901216ee44c5bb04caac948f430a645352579485" => :el_capitan_or_later
-  end
-
   depends_on "cmake"
   depends_on "pkg-config"
 
