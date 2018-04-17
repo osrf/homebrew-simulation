@@ -73,6 +73,12 @@ class Ogre19 < Formula
     sha256 "cb22b8703f36596efa13618085b2d1a59522d04386cf7eb6eca42a99d0abe83d"
   end
 
+  patch do
+    # fix for boost 1.67
+    url "https://bitbucket.org/sinbad/ogre/commits/16a75ea693e65fed3af943b4b2bfaa7e6c8219b1/raw"
+    sha256 "ffad5129caf3344fb408d6af3c8076bb4e97becdcd6d08302db469694a596616"
+  end
+
   def install
     ENV.m64
 
