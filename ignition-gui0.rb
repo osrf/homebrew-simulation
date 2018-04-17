@@ -25,6 +25,7 @@ class IgnitionGui0 < Formula
   depends_on "ignition-common1"
   depends_on "ignition-msgs1"
   depends_on "ignition-rendering0"
+  depends_on "ignition-tools"
   depends_on "ignition-transport4"
 
   def install
