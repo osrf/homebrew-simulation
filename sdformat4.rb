@@ -3,15 +3,15 @@ class Sdformat4 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-4.4.0.tar.bz2"
   sha256 "4424a984f69d3333f087e7aae1d8fa5aec61ad52e09be39e2f5e2cb69ade1527"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf4", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "7ebf945c481386fa3314f5edacd8020a452f76096d90588c395aec071d326670" => :high_sierra
-    sha256 "95bd91c80dbea68edd226d3f0b8dc98013966c54b150b5b017c67e5f5af86eba" => :sierra
-    sha256 "9f856aca4643aa81e8bb70cb0b3d75ba30f16964d43a9206422f48fd0a975b58" => :el_capitan
+    sha256 "3e964eb82dd3c5e5a21396742317a5ee7e7255f16da0fd9a03e0442fdab52efb" => :high_sierra
+    sha256 "29ba798279132ae8bf65ce9f3c0dc2b9a6449a52fe0965cf358ce2a331afa84b" => :sierra
+    sha256 "5d3409c3917fd70318ef0591654393891a9435d83544dbe83eff382536636608" => :el_capitan
     sha256 "04fec31df772e8d128a44272da9ae3eefa6e57ebeee9f62b957169dc3a400b0f" => :yosemite
   end
 

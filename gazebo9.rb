@@ -3,15 +3,15 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.0.0.tar.bz2"
   sha256 "2c29955d476c97dc0ccbb1c8295ec6e8ffe203d7bc6047c1f34433a82ab9215e"
-  revision 5
+  revision 6
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "d0a727888b784de68e6dfbbc2cf32f15af83f82f93baba580fa2ee32eb129855" => :high_sierra
-    sha256 "6da22009c396dbdc5b4fd220f0a9a21bd9829ba39e8c4cf0d96992612ff4352b" => :sierra
-    sha256 "aede7b7ca114ff9ce92ca470902a56def4ddf559439395fdcd77383927892325" => :el_capitan
+    sha256 "9ad7b2640895640dfc311ba3c08ea2d45be2b8edba29e76b3706ef23cd4753a9" => :high_sierra
+    sha256 "7d89fb25af973756d649161d83c365f5d8ac4ac6d7a28ba1e192cffe3042db4d" => :sierra
+    sha256 "b414b5d011e13ae25064169300b15ff3fc94537f9f4ade4467027471824e3304" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -64,6 +64,18 @@ class Gazebo9 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
+
+  patch do
+    # Fix for compatibility with boost 1.67 error_code
+    url "https://bitbucket.org/osrf/gazebo/commits/d6155b6481d4d0cd6ec02f2b8d16679fa1a051b0/raw/"
+    sha256 "f109ccb2b3f79a09dffd061039ba89e830e5ff62388d9d6632066f17621e726c"
+  end
+
+  patch do
+    # Fix for compatibility with boost 1.67 posix_time
+    url "https://bitbucket.org/osrf/gazebo/commits/441bbe5f2e2490d99610eb90015cf5cc9cdd2e18/raw/"
+    sha256 "b73dd0e1ca7b49ce75fe6577dbc56f161ad8c7fe72bd3ff01ad31eb4a6641496"
   end
 
   def install
