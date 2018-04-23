@@ -3,16 +3,16 @@ class Gazebo8 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.4.0.tar.bz2"
   sha256 "f5fa64f8dd0cb406ddf68caf43b905e6a5a8ed3fbfe43009094cf1d18358db73"
-  revision 1
+  revision 2
   version_scheme 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "8d1fb44289300643b55b2c68570b9d97139804dea9838765272235901a43d482" => :high_sierra
-    sha256 "7d460eb56393ba1638205a96bd076294a9bd9e02777d1e1f437b377c893e51a7" => :sierra
-    sha256 "9300a7eaf55b5d4f305394b28dd7881943a9628c61f0974a1b1970ca6ac8f0a5" => :el_capitan
+    sha256 "67a2b36fee3afea423ccc8ebc3367bf26c7153c317d133a7de5eb5cbdb90b90d" => :high_sierra
+    sha256 "e71d3c4e75738cee8738914c5830ec4361227963fcc3a36881fe4c2d1dad754a" => :sierra
+    sha256 "0d29f141b7efc9c6aec20407257a52b52cca5fcbab06781d5d45360af7da65ab" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -69,6 +69,12 @@ class Gazebo8 < Formula
     # Fix for compatibility with boost 1.67 posix_time
     url "https://bitbucket.org/osrf/gazebo/commits/441bbe5f2e2490d99610eb90015cf5cc9cdd2e18/raw/"
     sha256 "b73dd0e1ca7b49ce75fe6577dbc56f161ad8c7fe72bd3ff01ad31eb4a6641496"
+  end
+
+  patch do
+    # Fix for compatibility with ffmpeg4
+    url "https://bitbucket.org/osrf/gazebo/commits/0c6e09de8c20d8465b59a364dbb887c462f72afa/raw/"
+    sha256 "a5ea5fe3c23a6b0ac72a87669051bea143814fe799a56c236b3b6f64c4130058"
   end
 
   def install

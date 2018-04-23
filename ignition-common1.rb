@@ -3,14 +3,15 @@ class IgnitionCommon1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-1.1.0.tar.bz2"
   sha256 "e05d39a2b48c49bbe92701db25cab790d3d5a7f5eac6aa6a9fc1edeadbd7e6ea"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-common/releases"
-    sha256 "f8635361addd019f17fe8eeb9d59beaba0d467a0ee934edeb44b82b138516ba6" => :high_sierra
-    sha256 "5b3b97d4709fb2c3c29911fb1ff250a6425bf499ac183d78533a4bda1d4583cc" => :sierra
-    sha256 "59c9758a5d5f2153a46b98006961a98a99149ff871de19000b9268a98fccbcd9" => :el_capitan
+    sha256 "f7be30a707380232e4fc3c74847259e0a3b8c6aaa2cd814e88f52a13aa4da930" => :high_sierra
+    sha256 "514e08b1536386559b4f4b8815e97e62fe9724fd8b96ab53ded66ff2015c474f" => :sierra
+    sha256 "5af33ed88052a3f8442fff34b9bbc6e7b67d0277b991da16e56117ae5da221ce" => :el_capitan
   end
 
   depends_on "cmake"
@@ -21,6 +22,12 @@ class IgnitionCommon1 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for ffmpeg4
+    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/d937173602af5e6d5c22ced4a80bd0cf3f2f9fff/raw/"
+    sha256 "564ca08bcd547df579a42d4f94aeae0423723b21eb67a9c9d4be2c3025f7dcb4"
+  end
 
   def install
     system "cmake", ".", *std_cmake_args
