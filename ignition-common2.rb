@@ -1,9 +1,9 @@
 class IgnitionCommon2 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "https://bitbucket.org/ignitionrobotics/ign-common/get/b61557a7f5f6.tar.gz"
-  version "1.999.999~20180329~b61557a"
-  sha256 "3d5a7d08a7069d845cab034e9c7d0258e8d10fea1ee91114ea36e5e3f740e852"
+  url "https://bitbucket.org/ignitionrobotics/ign-common/get/e677e1af44f1684aa8519672e407d058dcf52e06.tar.gz"
+  version "1.999.999~20180423~e677e1a"
+  sha256 "27060461e4f6bf85c30a06beaf25fbf2a3f9105b95771a8eb49d27e21c07dd5a"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
@@ -16,12 +16,6 @@ class IgnitionCommon2 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for ffmpeg4
-    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/d937173602af5e6d5c22ced4a80bd0cf3f2f9fff/raw/"
-    sha256 "564ca08bcd547df579a42d4f94aeae0423723b21eb67a9c9d4be2c3025f7dcb4"
-  end
 
   def install
     system "cmake", ".", *std_cmake_args
