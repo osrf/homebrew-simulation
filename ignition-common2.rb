@@ -17,6 +17,12 @@ class IgnitionCommon2 < Formula
   depends_on "pkg-config"
   depends_on "tinyxml2"
 
+  patch do
+    # Fix for ffmpeg4
+    url "https://bitbucket.org/ignitionrobotics/ign-common/commits/d937173602af5e6d5c22ced4a80bd0cf3f2f9fff/raw/"
+    sha256 "564ca08bcd547df579a42d4f94aeae0423723b21eb67a9c9d4be2c3025f7dcb4"
+  end
+
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
