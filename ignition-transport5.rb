@@ -5,9 +5,8 @@ class IgnitionTransport5 < Formula
   version "4.99.99~20180424~e8cb475"
   sha256 "3f435f6a15592d91bfeb29895f36b1d61ccc12e67558a7ed868cc7f4d8378887"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
-
   depends_on "doxygen" => [:build, :optional]
+  depends_on "protobuf-c" => :build
 
   depends_on "cmake"
   depends_on "cppzmq"
@@ -17,8 +16,6 @@ class IgnitionTransport5 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "protobuf-c" => :build
-  depends_on "sqlite"
   depends_on "zeromq"
 
   def install
