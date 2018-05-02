@@ -9,7 +9,7 @@ class IgnitionCmake0 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-cmake/releases"
     cellar :any_skip_relocation
-    sha256 "60367e2968a95d7ccd902aa8901216ee44c5bb04caac948f430a645352579485" => :el_capitan_or_later
+    sha256 "007c3f42eb0aa6d37221df520537910995ada49cbc6c1746b8ff8854df07d3af" => :el_capitan_or_later
   end
 
   depends_on "cmake"
