@@ -1,9 +1,9 @@
 class IgnitionCommon2 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "https://bitbucket.org/ignitionrobotics/ign-common/get/e677e1af44f1684aa8519672e407d058dcf52e06.tar.gz"
-  version "1.999.999~20180423~e677e1a"
-  sha256 "27060461e4f6bf85c30a06beaf25fbf2a3f9105b95771a8eb49d27e21c07dd5a"
+  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common2-2.0.0~pre1.tar.bz2"
+  version "2.0.0~pre1"
+  sha256 "9b5fe63d091b2eb2584642b76befba1144268963b2cdeaefdf795062817de217"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
