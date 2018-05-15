@@ -1,9 +1,9 @@
 class IgnitionGui0 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/374ce9331bd8980f8ff0d150beaaf8fc2baae57d.tar.gz"
-  version "0.0.0~20170721~374ce93"
-  sha256 "0b77737fe332f8479965c9d4ab2582bc025135674aaf7c63d0270ef205aa9878"
+  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/3404955ff73827d13e26f1e70b79d31b056fb53a.tar.gz"
+  version "0.0.0~20180515~3404955"
+  sha256 "28be557d6e89e263b6a6687073ae2499d54ce73f554e0cb7e1dc2682d548a7f8"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
@@ -22,10 +22,10 @@ class IgnitionGui0 < Formula
   depends_on "qwt"
   depends_on "tinyxml2"
   depends_on "ignition-cmake1"
-  depends_on "ignition-common1"
-  depends_on "ignition-msgs1"
+  depends_on "ignition-common2"
+  depends_on "ignition-msgs2"
   depends_on "ignition-rendering0"
-  depends_on "ignition-transport4"
+  depends_on "ignition-transport5"
 
   def install
     ENV.m64
