@@ -1,9 +1,9 @@
 class IgnitionTransport5 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/e8cb475abe13d7f9fd14d2b354f45145f0b63875.tar.gz"
-  version "4.99.99~20180424~e8cb475"
-  sha256 "3f435f6a15592d91bfeb29895f36b1d61ccc12e67558a7ed868cc7f4d8378887"
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport5-5.0.0~pre1.tar.bz2"
+  version "5.0.0~pre1"
+  sha256 "c4e274bf753532cc42ac4a7c3a67c2a10d0f36f4542a3d1c711f2c4d3c0b312a"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
