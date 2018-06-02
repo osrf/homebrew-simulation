@@ -1,17 +1,16 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.0.0.tar.bz2"
-  sha256 "2c29955d476c97dc0ccbb1c8295ec6e8ffe203d7bc6047c1f34433a82ab9215e"
-  revision 8
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.1.0.tar.bz2"
+  sha256 "e30871ede1dfed27743cea86b514f492e3214762bc4592955e9454ff2b2b6fb5"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "21cc4597933f513ea793823e92d823d9c73cd95de82669b273ca51dab8f0af2b" => :high_sierra
-    sha256 "681dea41d201f8aa1eb439818372efa2c196e50c10cff40db95ec4fefbb77764" => :sierra
-    sha256 "4b0d251067092c2d501410d617c6144bd629b74516aef2b7e30ef0e0d6c6f33b" => :el_capitan
+    sha256 "790f5bbffd56b62c56e21dc5636ddc1db83b3e7ff1b53b824bbaede858094bb0" => :high_sierra
+    sha256 "d9399c1bbdff075f9c0c44da0aaf2dd06a7052b3b2c5819587e3210853b4cb1a" => :sierra
+    sha256 "1e1df053194606ee92c6d8a7b47dbcc3850b0eeb40b1fcda707f5d75c44d9b46" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -55,33 +54,9 @@ class Gazebo9 < Formula
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
 
   patch do
-    # Fix find_package(DART) in gazebo-config.cmake
-    url "https://bitbucket.org/osrf/gazebo/commits/74ee141ddd25beb508ec595464638abc54a835c6/raw"
-    sha256 "5e4b177a29dda37a663440faaa83c17be26cb9c3c1b4bfa13e9865650de1370e"
-  end
-
-  patch do
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 error_code
-    url "https://bitbucket.org/osrf/gazebo/commits/d6155b6481d4d0cd6ec02f2b8d16679fa1a051b0/raw/"
-    sha256 "f109ccb2b3f79a09dffd061039ba89e830e5ff62388d9d6632066f17621e726c"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 posix_time
-    url "https://bitbucket.org/osrf/gazebo/commits/441bbe5f2e2490d99610eb90015cf5cc9cdd2e18/raw/"
-    sha256 "b73dd0e1ca7b49ce75fe6577dbc56f161ad8c7fe72bd3ff01ad31eb4a6641496"
-  end
-
-  patch do
-    # Fix for compatibility with ffmpeg4
-    url "https://bitbucket.org/osrf/gazebo/commits/0c6e09de8c20d8465b59a364dbb887c462f72afa/raw/"
-    sha256 "a5ea5fe3c23a6b0ac72a87669051bea143814fe799a56c236b3b6f64c4130058"
   end
 
   def install
