@@ -54,33 +54,9 @@ class Gazebo9 < Formula
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
 
   patch do
-    # Fix find_package(DART) in gazebo-config.cmake
-    url "https://bitbucket.org/osrf/gazebo/commits/74ee141ddd25beb508ec595464638abc54a835c6/raw"
-    sha256 "5e4b177a29dda37a663440faaa83c17be26cb9c3c1b4bfa13e9865650de1370e"
-  end
-
-  patch do
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 error_code
-    url "https://bitbucket.org/osrf/gazebo/commits/d6155b6481d4d0cd6ec02f2b8d16679fa1a051b0/raw/"
-    sha256 "f109ccb2b3f79a09dffd061039ba89e830e5ff62388d9d6632066f17621e726c"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 posix_time
-    url "https://bitbucket.org/osrf/gazebo/commits/441bbe5f2e2490d99610eb90015cf5cc9cdd2e18/raw/"
-    sha256 "b73dd0e1ca7b49ce75fe6577dbc56f161ad8c7fe72bd3ff01ad31eb4a6641496"
-  end
-
-  patch do
-    # Fix for compatibility with ffmpeg4
-    url "https://bitbucket.org/osrf/gazebo/commits/0c6e09de8c20d8465b59a364dbb887c462f72afa/raw/"
-    sha256 "a5ea5fe3c23a6b0ac72a87669051bea143814fe799a56c236b3b6f64c4130058"
   end
 
   def install
