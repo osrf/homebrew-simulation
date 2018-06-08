@@ -2,7 +2,7 @@ class Gazebo7 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.13.0.tar.bz2"
-  sha256 "f550fe9a2d73e7b60a0866bd80e70f3591c87914ba05b6f67d6c44ede9f9c791"
+  sha256 "f881d0d1e8a82b038463bf4520715b829328cc3f0cf8eca0ede1986e83daec16"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
@@ -50,24 +50,6 @@ class Gazebo7 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 error_code
-    url "https://bitbucket.org/osrf/gazebo/commits/d6155b6481d4d0cd6ec02f2b8d16679fa1a051b0/raw/"
-    sha256 "f109ccb2b3f79a09dffd061039ba89e830e5ff62388d9d6632066f17621e726c"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 posix_time
-    url "https://bitbucket.org/osrf/gazebo/commits/441bbe5f2e2490d99610eb90015cf5cc9cdd2e18/raw/"
-    sha256 "b73dd0e1ca7b49ce75fe6577dbc56f161ad8c7fe72bd3ff01ad31eb4a6641496"
-  end
-
-  patch do
-    # Fix for compatibility with ffmpeg4
-    url "https://bitbucket.org/osrf/gazebo/commits/0c6e09de8c20d8465b59a364dbb887c462f72afa/raw/"
-    sha256 "a5ea5fe3c23a6b0ac72a87669051bea143814fe799a56c236b3b6f64c4130058"
   end
 
   def install
