@@ -1,18 +1,17 @@
 class Gazebo8 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.4.0.tar.bz2"
-  sha256 "f5fa64f8dd0cb406ddf68caf43b905e6a5a8ed3fbfe43009094cf1d18358db73"
-  revision 2
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-8.5.0.tar.bz2"
+  sha256 "425bcbde9382f9cdef148b1c96d2927a8df032480618470c90e627ba141869a5"
   version_scheme 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "67a2b36fee3afea423ccc8ebc3367bf26c7153c317d133a7de5eb5cbdb90b90d" => :high_sierra
-    sha256 "e71d3c4e75738cee8738914c5830ec4361227963fcc3a36881fe4c2d1dad754a" => :sierra
-    sha256 "0d29f141b7efc9c6aec20407257a52b52cca5fcbab06781d5d45360af7da65ab" => :el_capitan
+    sha256 "6e00d88f487faa0c4d707852c8fbd8dc9e18b483ee54d0c93ca0ada4b5b951b7" => :high_sierra
+    sha256 "0cd70478dcd535cdc83f9cb4ad293f775deb669f7adf1d552d83bcd7151121f8" => :sierra
+    sha256 "4536ad25d1b7eb77019b649d4bbceb658450123be1bf705b8e10e94f600c0d1b" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -57,24 +56,6 @@ class Gazebo8 < Formula
     # Fix build when homebrew python is installed
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 error_code
-    url "https://bitbucket.org/osrf/gazebo/commits/d6155b6481d4d0cd6ec02f2b8d16679fa1a051b0/raw/"
-    sha256 "f109ccb2b3f79a09dffd061039ba89e830e5ff62388d9d6632066f17621e726c"
-  end
-
-  patch do
-    # Fix for compatibility with boost 1.67 posix_time
-    url "https://bitbucket.org/osrf/gazebo/commits/441bbe5f2e2490d99610eb90015cf5cc9cdd2e18/raw/"
-    sha256 "b73dd0e1ca7b49ce75fe6577dbc56f161ad8c7fe72bd3ff01ad31eb4a6641496"
-  end
-
-  patch do
-    # Fix for compatibility with ffmpeg4
-    url "https://bitbucket.org/osrf/gazebo/commits/0c6e09de8c20d8465b59a364dbb887c462f72afa/raw/"
-    sha256 "a5ea5fe3c23a6b0ac72a87669051bea143814fe799a56c236b3b6f64c4130058"
   end
 
   def install
