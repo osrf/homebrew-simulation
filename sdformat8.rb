@@ -8,8 +8,6 @@ class Sdformat8 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
     sha256 "9a10b503bafc0f68bd73c8dbb3e2588995a5678b5306b4b413429a2dcccfe791" => :high_sierra
-    sha256 "2932a7b7780bcc1595df34441c9f4d451c682138ad8bd58a250989dfbfb3e4aa" => :sierra
-    sha256 "7a15099efa212e924c865320c38501842169606329c86adbcc73a758232be882" => :el_capitan
   end
 
   depends_on "cmake" => :build
