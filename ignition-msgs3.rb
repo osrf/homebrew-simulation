@@ -8,9 +8,9 @@ class IgnitionMsgs3 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
     sha256 "460e43d056118b26cf656c1c9dddd2226ab196934c094c16fe7f6f33cdeddf63" => :high_sierra
-    sha256 "fbde98a15e2256b4c3cd3897f24a3372984b5793295422b3ffe811e15c041df2" => :sierra
-    sha256 "873064464e6673bb15df5bde47e49da7086166963889223bf686623131204d86" => :el_capitan
   end
+
+  depends_on "protobuf-c" => :build
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
@@ -18,7 +18,6 @@ class IgnitionMsgs3 < Formula
   depends_on "ignition-tools"
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "protobuf-c" => :build
 
   def install
     system "cmake", ".", *std_cmake_args
