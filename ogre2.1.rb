@@ -1,9 +1,16 @@
 class Ogre21 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://bitbucket.org/sinbad/ogre/get/d8213f4fb1dbd59668984bbae5f0b65ea06d40db.tar.bz2"
-  version "2.0.9999~20180614~d8213f4"
-  sha256 "98ae0c6144f9905dd409c6c9ae5cc07ca6ce0084e4171dd87641a0fac107492b"
+  url "https://bitbucket.org/sinbad/ogre/get/06a386fa64e79a7204a90faf53da1735743f6c2e.tar.bz2"
+  version "2.0.9999~20180616~06a386f"
+  sha256 "d2e28bfcfbb1277355047c1d8bcd141b05b83af52d277725168e4281eac92a6d"
+
+  bottle do
+    root_url "http://gazebosim.org/distributions/ogre/releases"
+    sha256 "7a89597a8353112ac71e1e45c44c83c16382b9a13998aa6ac25b707e36186f83" => :high_sierra
+    sha256 "614f60c0a4c5f033071e5cddb0e5b357bb5a4d9751ab458ea996ee7bb7d58463" => :sierra
+    sha256 "4e2c0ebab72f0d1a784d8efae4e34f7467bb2c34aec8e0f9612a86d89354559d" => :el_capitan
+  end
 
   depends_on "cmake" => :build
   depends_on "doxygen"
