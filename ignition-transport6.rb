@@ -1,10 +1,9 @@
 class IgnitionTransport6 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/efa81ed82c53.tar.gz"
-
-  version "5.999.999~20180620~efa81ed"
-  sha256 "acfc4d4cd62eeb27371ac5ada1c596b5a3d7a221af4dad20121234540a5f9713"
+  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/e40d5e54ccfb716bc975f75c312b3171da36c15e.tar.gz"
+  version "5.999.999~20180620~e40d5e5"
+  sha256 "dd2ddaed5d896229a66d34d681668a27690a07d6d8514e9a0b536c2959aad5de"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
