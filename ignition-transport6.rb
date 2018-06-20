@@ -11,7 +11,7 @@ class IgnitionTransport6 < Formula
 
   depends_on "cmake"
   depends_on "cppzmq"
-  depends_on "ignition-cmake1"
+  depends_on "ignition-cmake2"
   depends_on "ignition-msgs3"
   depends_on "ignition-tools"
   depends_on "ossp-uuid"
