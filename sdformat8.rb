@@ -1,9 +1,9 @@
 class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://bitbucket.org/osrf/sdformat/get/6a7c07aa6114147983d3d0343e553748135dda7f.tar.gz"
-  version "7.999.999~20180614~6a7c07a"
-  sha256 "29d488903de1f69db55ab634022a876f09cf781a1c952ef4a2a2897d7476cb50"
+  url "https://bitbucket.org/osrf/sdformat/get/fb34d321f8a77b1c934f82af456ce36cbc987ffc.tar.gz"
+  version "7.999.999~20180620~fb34d32"
+  sha256 "6991028b1cb4ae6725e494545b4a55e023fd3668d7bcf4b8619a091ee0dda922"
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
@@ -12,7 +12,6 @@ class Sdformat8 < Formula
 
   depends_on "cmake" => :build
 
-  depends_on "boost"
   depends_on "doxygen"
   depends_on "ignition-math6"
   depends_on "pkg-config"
