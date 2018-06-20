@@ -6,12 +6,12 @@ class Gazebo9 < Formula
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "b8ad45f06e9ba100d51033b9c6b1f938bc9d559f2e71295e3eb297a70a83abab" => :high_sierra
-    sha256 "f570213c5dc6eba4e269d01217e1f059712b634830cfe4609c3bf46b00121248" => :sierra
-    sha256 "7e4544e9bbf95a086e6c3ff13d38a90e866b930b2f2065b2b175c17edd067847" => :el_capitan
-  end
+  # bottle do
+  #   root_url "http://gazebosim.org/distributions/gazebo/releases"
+  #   sha256 "b8ad45f06e9ba100d51033b9c6b1f938bc9d559f2e71295e3eb297a70a83abab" => :high_sierra
+  #   sha256 "f570213c5dc6eba4e269d01217e1f059712b634830cfe4609c3bf46b00121248" => :sierra
+  #   sha256 "7e4544e9bbf95a086e6c3ff13d38a90e866b930b2f2065b2b175c17edd067847" => :el_capitan
+  # end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
