@@ -4,6 +4,7 @@ class IgnitionMsgs3 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-msgs/get/c711bd9a656ecd85d199f4b7fe861b555408559f.tar.gz"
   version "2.999.999~20180618~c711bd9"
   sha256 "63d12f84881b30dc0d7e60ec6217a73234ad5feee5540681ed192a81161b284b"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
