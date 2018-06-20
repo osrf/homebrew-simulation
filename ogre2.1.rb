@@ -9,7 +9,7 @@ class Ogre21 < Formula
     root_url "http://gazebosim.org/distributions/ogre/releases"
     sha256 "088deeb420ba6d058962eca59a58967f54280b197669c5dc59fa3cb06071417a" => :high_sierra
     sha256 "ade07317c6ca515204be1ef64b4d8c87e60732e6d426d100447587a611235c4c" => :sierra
-    sha256 "4e2c0ebab72f0d1a784d8efae4e34f7467bb2c34aec8e0f9612a86d89354559d" => :el_capitan
+    sha256 "115c6af607d0844bc3d51f65933a0394dc23c40a5c3453a1c37abdb7e74b81cb" => :el_capitan
   end
 
   depends_on "cmake" => :build
