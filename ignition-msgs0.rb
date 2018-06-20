@@ -11,7 +11,7 @@ class IgnitionMsgs0 < Formula
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
     sha256 "f3044f05e05a97319aab64ff3eab190c6dd41a007f3c87ecd05e698216df1745" => :high_sierra
     sha256 "7aef4a3ac25a18c26e59e905c05e9908019c19d26a08c7bb2da71d95b4123fe7" => :sierra
-    sha256 "fc6625518cbb1a3b2f85321a6de7f2e35add6b2c7ad134b33669986f803334bb" => :el_capitan
+    sha256 "b39f27b56921b1b837e2d09ed770261cd6edd5c6ffd9cabafb040b3d9b14f191" => :el_capitan
   end
 
   depends_on "cmake"
