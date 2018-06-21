@@ -3,15 +3,16 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.13.1.tar.bz2"
   sha256 "a03e9e37b43a006e4e2de8cc4592451f8e642508bfb8af65c5229c6dbc526667"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
-  # bottle do
-  #   root_url "http://gazebosim.org/distributions/gazebo/releases"
-  #   sha256 "3d38f2f31823f24f1b51e6fc1208d6fc8dc9c201d6c3860ffe9d0eae9a8cd784" => :high_sierra
-  #   sha256 "dc46804d06b0fb8a2f7f6ebce1b24b8310f4f58be9ff50bfcc1c620bd34c28df" => :sierra
-  #   sha256 "1af2137bc22e22ae67d911deb9c2e285e274fc0cb5782d9982a2b6f87fb2f824" => :el_capitan
-  # end
+  bottle do
+    root_url "http://gazebosim.org/distributions/gazebo/releases"
+    sha256 "3d38f2f31823f24f1b51e6fc1208d6fc8dc9c201d6c3860ffe9d0eae9a8cd784" => :high_sierra
+    sha256 "dc46804d06b0fb8a2f7f6ebce1b24b8310f4f58be9ff50bfcc1c620bd34c28df" => :sierra
+    sha256 "1af2137bc22e22ae67d911deb9c2e285e274fc0cb5782d9982a2b6f87fb2f824" => :el_capitan
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -47,7 +48,15 @@ class Gazebo7 < Formula
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
 
   patch do
+    # Fix build with protobuf 3.6 (gazebo #2483)
+    # probably remove this patch with next release
+    url "https://bitbucket.org/osrf/gazebo/commits/cca4561efac1fca4dc9e2a8bb3bb75f279846a10/raw/"
+    sha256 "6d211f1dceab0630773779db4940ad11af3d1773f9f471982c07ab1bc29a9035"
+  end
+
+  patch do
     # Fix build when homebrew python is installed
+    # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
