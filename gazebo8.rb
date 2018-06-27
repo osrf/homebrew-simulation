@@ -53,13 +53,6 @@ class Gazebo8 < Formula
   conflicts_with "gazebo7", :because => "Differing version of the same formula"
 
   patch do
-    # Fix build with protobuf 3.6 (gazebo #2483)
-    # probably remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/cca4561efac1fca4dc9e2a8bb3bb75f279846a10/raw/"
-    sha256 "6d211f1dceab0630773779db4940ad11af3d1773f9f471982c07ab1bc29a9035"
-  end
-
-  patch do
     # Fix build when homebrew python is installed
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
