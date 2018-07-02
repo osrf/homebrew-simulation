@@ -4,8 +4,16 @@ class IgnitionCommon2 < Formula
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common2-2.0.0~pre1.tar.bz2"
   version "2.0.0~pre1"
   sha256 "9b5fe63d091b2eb2584642b76befba1144268963b2cdeaefdf795062817de217"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
+
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-common/releases"
+    sha256 "7e65176beddd592784d0779b98f3c63a19cafda6bf9b1c8b80a75a71538b4081" => :high_sierra
+    sha256 "7008c61aa2aa5c90688169e4c4b698d06f111b3123a44c2f3b04937152b8611b" => :sierra
+    sha256 "cae42cb31ffd664a1108bc79154ee39697c012cb3dcdf276c8cd139dbd474433" => :el_capitan
+  end
 
   depends_on "cmake"
   depends_on "ffmpeg"
