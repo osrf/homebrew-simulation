@@ -1,9 +1,8 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.1.1.tar.bz2"
-  sha256 "5372fdf367952ceafe0f678b87482a013112a570ca2f221ae2a39c95854686e5"
-  revision 1
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.2.0.tar.bz2"
+  sha256 "8bf0455b05103456b521309633e0a4c8d98b9c9b04076e914ee2b8402b5876c2"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
