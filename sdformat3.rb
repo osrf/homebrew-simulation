@@ -13,8 +13,8 @@ class Sdformat3 < Formula
   depends_on "doxygen"
   depends_on "ignition-math2"
   depends_on "pkg-config"
-  depends_on "ros/deps/urdfdom" => :optional
   depends_on "tinyxml"
+  depends_on "urdfdom" => :optional
 
   conflicts_with "sdformat", :because => "Differing version of the same formula"
   conflicts_with "sdformat4", :because => "Differing version of the same formula"
