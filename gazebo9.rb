@@ -1,17 +1,16 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.1.1.tar.bz2"
-  sha256 "5372fdf367952ceafe0f678b87482a013112a570ca2f221ae2a39c95854686e5"
-  revision 1
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.2.0.tar.bz2"
+  sha256 "8bf0455b05103456b521309633e0a4c8d98b9c9b04076e914ee2b8402b5876c2"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "5f43ba0fb0acbc432760cec41c73e846c22bebbb497245ebe429faafa4557fbf" => :high_sierra
-    sha256 "e5eb16ce15a253dcab5d5863eea7ec7ca2edf1f791973403c9587a48cb336e52" => :sierra
-    sha256 "d8b5c675d86a4785936cffb2da03e90b093fe3c2b377943edecedfd7ffaad1ee" => :el_capitan
+    sha256 "e529762afbd4a9c16d8c3497d7babad1fb1bdeb38d1ab0f7aeb7f490b89ef48f" => :high_sierra
+    sha256 "0f5038598f897fd2b76b8ae5259ec2cbd376415aeffd4c489f4b348a8e951af7" => :sierra
+    sha256 "65ec9e3e6d2b91bf748207cc350fbe86fdc32ca2f4312cf178527217214d3384" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -53,13 +52,6 @@ class Gazebo9 < Formula
   conflicts_with "gazebo6", :because => "Differing version of the same formula"
   conflicts_with "gazebo7", :because => "Differing version of the same formula"
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
-
-  patch do
-    # Fix build with protobuf 3.6 (gazebo #2483)
-    # probably remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/cca4561efac1fca4dc9e2a8bb3bb75f279846a10/raw/"
-    sha256 "6d211f1dceab0630773779db4940ad11af3d1773f9f471982c07ab1bc29a9035"
-  end
 
   patch do
     # Fix build when homebrew python is installed
