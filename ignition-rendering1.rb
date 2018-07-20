@@ -1,5 +1,5 @@
 class IgnitionRendering1 < Formula
-  desc "Rendering library for robotics applications using gz11 branches"
+  desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
   url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/8cbb07bef149.tar.gz"
   version "0.999.999~20180720~8cbb07b"
