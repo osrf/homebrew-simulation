@@ -1,9 +1,9 @@
 class IgnitionRendering1 < Formula
   desc "Rendering library for robotics applications using gz11 branches"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/70c0ba0fe42a.tar.gz"
-  version "0.999.999~20180719~70c0ba0"
-  sha256 "e1d5e52b230a8c50dae47174cef14594311b4a4634c67a181f6f4d50cba88656"
+  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/8cbb07bef149.tar.gz"
+  version "0.999.999~20180720~8cbb07b"
+  sha256 "d40c67b5e273720a9ec6f7e42d3ab674d464a20f0fcd5e512a2997375c22c6b1"
 
   head "https://bitbucket.org/ignitionrobotics/ign-rendering", :branch => "gz11", :using => :hg
 
