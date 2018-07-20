@@ -1,9 +1,9 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-math/get/affcc03932742619a7f9d8299d685165af948313.tar.gz"
-  version "5.999.999~20180607~affcc03"
-  sha256 "19e77485f43d7afc8d3445da3df0410b82d9623fa4b57b571bfee76637d82084"
+  url "https://bitbucket.org/ignitionrobotics/ign-math/get/994da159c7a4907fb869580c20ade3a9586b7699.tar.gz"
+  version "5.999.999~20180709~994da15"
+  sha256 "f20f04510e5e8d7f848e0d3a18f3b6bff26fdad512f56667a3f443650dec0756"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
