@@ -1,19 +1,26 @@
 class IgnitionSensors0 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/6773ea272585c96caa0a85b2102f5b2ae6481dfe.tar.gz"
-  version "0.0.0~20180529~6773ea2"
-  sha256 "365671b6de1d422c726f093bf2f6b88da983f537d88b08dcb8aca72931fbcf7a"
+  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/a44a773b2ce9.tar.gz"
+  version "0.0.0~20180718~a44a773"
+  sha256 "9406cc1577a7024e5b6fd1b3c5fe1fa6d4e8c20e10045c3fdb64eda6a884a688"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
+  # bottle do
+  #   root_url "http://gazebosim.org/distributions/ign-sensors/releases"
+  #   sha256 "8b8c253114e3c6af1d6978e79b02c3c10895a5fe276a21570e370eaa4252491d" => :high_sierra
+  #   sha256 "520b171c51d0415f99ae7c8ecdd955249d166bad89edcad83879b85735c9a80f" => :sierra
+  #   sha256 "42acd100d3187950a56ec3fde87349feb78368d7c3552a9a1344f0c031511f72" => :el_capitan
+  # end
+	
   depends_on "cmake" => :build
 
-  depends_on "ignition-common2"
-  depends_on "ignition-math5"
-  depends_on "ignition-msgs2"
-  depends_on "ignition-rendering0"
-  depends_on "ignition-transport5"
+  depends_on "ignition-common3"
+  depends_on "ignition-math6"
+  depends_on "ignition-msgs3"
+  depends_on "ignition-rendering1"
+  depends_on "ignition-transport6"
   depends_on "pkg-config"
   depends_on "sdformat6"
 
