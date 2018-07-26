@@ -56,15 +56,6 @@ class Ogre21 < Formula
 
     # Put these cfg files in share instead of bin
     (share/"OGRE/cfg").install Dir[prefix/"bin/*.cfg"]
-
-    # This is necessary because earlier versions of Ogre seem to have created
-    # the plugins with "lib" prefix and software like "rviz" now has Mac
-    # specific code that looks for the plugins with "lib" prefix. Hence we add
-    # symlinks with the "lib" prefix manually, but their use is deprecated.
-    Dir.glob(lib/"OGRE/*.dylib") do |path|
-      filename = File.basename(path)
-      symlink path, lib/"OGRE/lib#{filename}"
-    end
   end
 
   test do
