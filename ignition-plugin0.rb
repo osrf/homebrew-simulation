@@ -7,7 +7,7 @@ class IgnitionPlugin0 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
-    sha256 "7e65176beddd592784d0779b98f3c63a19cafda6bf9b1c8b80a75a71538b4081" => :high_sierra
+    sha256 "a663808c0808f97fd8f16e784bb52e4ecd9851ac96a69aed7cf8af91c42ace86" => :high_sierra
     sha256 "7008c61aa2aa5c90688169e4c4b698d06f111b3123a44c2f3b04937152b8611b" => :sierra
     sha256 "cae42cb31ffd664a1108bc79154ee39697c012cb3dcdf276c8cd139dbd474433" => :el_capitan
   end
