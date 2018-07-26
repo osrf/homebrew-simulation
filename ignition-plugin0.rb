@@ -1,9 +1,9 @@
 class IgnitionPlugin0 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-plugin"
-  url "https://bitbucket.org/ignitionrobotics/ign-plugin/get/1cf03327fcc11a557fbe53defa5626c69f1a7f26.tar.gz"
-  version "0.0.999~20180719~1cf0332"
-  sha256 "f6c32b9f45ebc231640c1255ab1b5a073383e8ab87c293fce932c9aef764a518"
+  url "https://bitbucket.org/ignitionrobotics/ign-plugin/get/0040d054faaac98fd1bf74b87bf9a673f84a4df8.tar.gz"
+  version "0.0.999~20180723~0040d05"
+  sha256 "59333fdb43e6a263db5e7cf779929e7d94ff50686473af9003e96fec6731fcdb"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
