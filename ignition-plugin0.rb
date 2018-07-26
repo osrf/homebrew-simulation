@@ -23,28 +23,17 @@ class IgnitionPlugin0 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <iostream>
-      #include <ignition/plugin.hh>
+      #include <ignition/plugin/Loader.hh>
       int main() {
-        igndbg << "debug" << std::endl;
-        ignwarn << "warn" << std::endl;
-        ignerr << "error" << std::endl;
-        // // this example code doesn't compile
-        // try {
-        //   ignthrow("An example exception that is caught.");
-        // }
-        // catch(const ignition::plugin::exception &_e) {
-        //   std::cerr << "Caught a runtime error " << _e.what() << std::endl;
-        // }
-        // ignassert(0 == 0);
-        return 0;
+        ignition::plugin::Loader loader;
+        return loader.InterfacesImplemented().size();
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-plugin0 QUIET REQUIRED)
+      find_package(ignition-plugin0 QUIET REQUIRED COMPONENTS loader)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
+      target_link_libraries(test_cmake ${IGNITION-PLUGIN_LIBRARIES})
     EOS
     system "pkg-config", "ignition-plugin0"
     cflags = `pkg-config --cflags ignition-plugin0`.split(" ")
