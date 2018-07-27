@@ -10,7 +10,7 @@ class IgnitionPlugin0 < Formula
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
     sha256 "9180d701f9bf2bd8b97ee4bf33d98db49d39c48d1a6d1ddb49ee98df4f0b6d56" => :high_sierra
     sha256 "32ac161e54098c6bbc7bc497bb85096874eb29bf5c2b97273ff33fb1aa5e878a" => :sierra
-    sha256 "18c74ee8f0984357fc65c7d09a2e452912ea54338df5aed120944f331bf4a276" => :el_capitan
+    sha256 "1b3adbde8cdbbd07180163a857fbd15082c0f1214c101d1e6593e88a947ce353" => :el_capitan
   end
 
   depends_on "cmake"
