@@ -4,6 +4,7 @@ class IgnitionPlugin0 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-plugin/get/0040d054faaac98fd1bf74b87bf9a673f84a4df8.tar.gz"
   version "0.0.999~20180723~0040d05"
   sha256 "59333fdb43e6a263db5e7cf779929e7d94ff50686473af9003e96fec6731fcdb"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
@@ -35,15 +36,15 @@ class IgnitionPlugin0 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-PLUGIN_LIBRARIES})
     EOS
-    system "pkg-config", "ignition-plugin0"
-    # cflags = `pkg-config --cflags ignition-plugin0`.split(" ")
-    # system ENV.cc, "test.cpp",
-    #                *cflags,
-    #                "-L#{lib}",
-    #                "-lignition-plugin0",
-    #                "-lc++",
-    #                "-o", "test"
-    # system "./test"
+    system "pkg-config", "ignition-plugin0-loader"
+    cflags = `pkg-config --cflags ignition-plugin0-loader`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lignition-plugin0-loader",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
     # test building with cmake
     mkdir "build" do
       ENV.delete("MACOSX_DEPLOYMENT_TARGET")
