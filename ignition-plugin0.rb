@@ -4,12 +4,13 @@ class IgnitionPlugin0 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-plugin/get/0040d054faaac98fd1bf74b87bf9a673f84a4df8.tar.gz"
   version "0.0.999~20180723~0040d05"
   sha256 "59333fdb43e6a263db5e7cf779929e7d94ff50686473af9003e96fec6731fcdb"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
-    sha256 "a663808c0808f97fd8f16e784bb52e4ecd9851ac96a69aed7cf8af91c42ace86" => :high_sierra
-    sha256 "32ac161e54098c6bbc7bc497bb85096874eb29bf5c2b97273ff33fb1aa5e878a" => :sierra
-    sha256 "18c74ee8f0984357fc65c7d09a2e452912ea54338df5aed120944f331bf4a276" => :el_capitan
+    sha256 "9180d701f9bf2bd8b97ee4bf33d98db49d39c48d1a6d1ddb49ee98df4f0b6d56" => :high_sierra
+    sha256 "7970122f15f6d907e60ddeaafc76e963007db0bb4f5a11362791fd3b29d6de56" => :sierra
+    sha256 "1b3adbde8cdbbd07180163a857fbd15082c0f1214c101d1e6593e88a947ce353" => :el_capitan
   end
 
   depends_on "cmake"
@@ -35,15 +36,15 @@ class IgnitionPlugin0 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-PLUGIN_LIBRARIES})
     EOS
-    system "pkg-config", "ignition-plugin0"
-    # cflags = `pkg-config --cflags ignition-plugin0`.split(" ")
-    # system ENV.cc, "test.cpp",
-    #                *cflags,
-    #                "-L#{lib}",
-    #                "-lignition-plugin0",
-    #                "-lc++",
-    #                "-o", "test"
-    # system "./test"
+    system "pkg-config", "ignition-plugin0-loader"
+    cflags = `pkg-config --cflags ignition-plugin0-loader`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   "-lignition-plugin0-loader",
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
     # test building with cmake
     mkdir "build" do
       ENV.delete("MACOSX_DEPLOYMENT_TARGET")
