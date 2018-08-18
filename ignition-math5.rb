@@ -1,9 +1,9 @@
 class IgnitionMath5 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math5-5.0.0~pre3.tar.bz2"
-  version "5.0.0~pre3"
-  sha256 "8a58a1898c9f7a52afb322daa5f6cc1b80113e11d67c90985f3a840923ae7344"
+  url "https://bitbucket.org/ignitionrobotics/ign-math/get/92fc4e757584.tar.gz"
+  version "5.0.0~20180817~92fc4e7"
+  sha256 "d381633e9302c02220fda97e79fdbe7cb6d5b1d92acbad150322b1cc60219907"
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
@@ -17,6 +17,7 @@ class IgnitionMath5 < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "eigen"
   depends_on "ignition-cmake1"
 
   conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
