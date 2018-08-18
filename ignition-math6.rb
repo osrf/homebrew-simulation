@@ -4,17 +4,19 @@ class IgnitionMath6 < Formula
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math6-6.0.0~pre4.tar.bz2"
   version "6.0.0~pre4"
   sha256 "6e0d1c1ecd6385d8cdb2c7ec08b2e5ac37ae4008c636832aed0e8eb8d5771ebd"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
-    sha256 "483a2fb9414a6cf967523365e6deaa3e6c6f7fd1536c96c5902e2db33305ff4c" => :high_sierra
-    sha256 "a7d0bc49afd4f9cb38d7c01651a4c457287fb5705ccd0176544efa73c93d2398" => :sierra
-    sha256 "a1cae39d66600b8876b3c59d5620e040892c5a8098b6d7f7ec93b9b7370720d3" => :el_capitan
+    sha256 "a8881d382e3c57074bc194a241f0337b4331e9455f93a3e26af749475cf64572" => :high_sierra
+    sha256 "b98b2996e487558ac72f1743a6fe2c82f2f88b4811b202d1a41ba98dea58eefc" => :sierra
+    sha256 "dc84cb7eee1fb4f4aa32d0d6c67b6bde9867556728451895ad59b49070beb4be" => :el_capitan
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "eigen"
   depends_on "ignition-cmake2"
 
   conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
