@@ -4,6 +4,7 @@ class IgnitionMath6 < Formula
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math6-6.0.0~pre4.tar.bz2"
   version "6.0.0~pre4"
   sha256 "6e0d1c1ecd6385d8cdb2c7ec08b2e5ac37ae4008c636832aed0e8eb8d5771ebd"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-math/releases"
@@ -15,6 +16,7 @@ class IgnitionMath6 < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "eigen"
   depends_on "ignition-cmake2"
 
   conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
