@@ -1,13 +1,13 @@
 class IgnitionTransport6 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/e40d5e54ccfb716bc975f75c312b3171da36c15e.tar.gz"
-  version "5.999.999~20180620~e40d5e5"
-  sha256 "dd2ddaed5d896229a66d34d681668a27690a07d6d8514e9a0b536c2959aad5de"
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport6-6.0.0~pre1.tar.bz2"
+  version "6.0.0~pre1"
+  sha256 "ba08b0b500fd50218d76ead22814b9b7c93c3f18677834a7a1cfde72c7a8cf3c"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
-    sha256 "799874361c492b28f8ea72c14a32d7f01c1816966eb11853ceafa4586bee03f4" => :high_sierra
+    sha256 "ab9a5f5f3a4b84fc96854c398d9645310744f40f58ef184651f284cf0e6dfc83" => :high_sierra
   end
 
   depends_on "doxygen" => [:build, :optional]
