@@ -1,16 +1,15 @@
 class IgnitionPlugin0 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-plugin"
-  url "https://bitbucket.org/ignitionrobotics/ign-plugin/get/0040d054faaac98fd1bf74b87bf9a673f84a4df8.tar.gz"
-  version "0.0.999~20180723~0040d05"
-  sha256 "59333fdb43e6a263db5e7cf779929e7d94ff50686473af9003e96fec6731fcdb"
-  revision 1
+  url "http://gazebosim.org/distributions/ign-plugin/releases/ignition-plugin-0.1.0~pre1.tar.bz2"
+  version "0.1.0~pre1"
+  sha256 "645fa5f2baee8f97455b109cc1314b9c686ec2f70d01b6fafbe45111a80a0129"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
-    sha256 "9180d701f9bf2bd8b97ee4bf33d98db49d39c48d1a6d1ddb49ee98df4f0b6d56" => :high_sierra
-    sha256 "7970122f15f6d907e60ddeaafc76e963007db0bb4f5a11362791fd3b29d6de56" => :sierra
-    sha256 "1b3adbde8cdbbd07180163a857fbd15082c0f1214c101d1e6593e88a947ce353" => :el_capitan
+    sha256 "735c49b73cfe0c123571f232126daf3cc726a39fa9e0d84d2e71fef0c2746d5e" => :high_sierra
+    sha256 "b44e1b267c709bfef211c0ca1863a1096bb87798b9bfe05716fd5d260ae6c48a" => :sierra
+    sha256 "1d86b2dd48a0a64f723691846d58a41f39055b1c284751461b564effbd37c38a" => :el_capitan
   end
 
   depends_on "cmake"
