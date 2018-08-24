@@ -10,7 +10,7 @@ class IgnitionRendering0 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rendering/releases"
     sha256 "6d991b7724f7392e7d93a3ce71b53e24dbcdf633dea89be69ccc2505b1447042" => :high_sierra
-    sha256 "520b171c51d0415f99ae7c8ecdd955249d166bad89edcad83879b85735c9a80f" => :sierra
+    sha256 "3eccaf18af2cb2f3d4f337486ae107bdf2c5017a52de650a3bbf294ad833ae63" => :sierra
     sha256 "2b1b85aa8c51a8fb22ea901a7a46d607a12ca2df5b50e3e7d1a806493537ece8" => :el_capitan
   end
 
