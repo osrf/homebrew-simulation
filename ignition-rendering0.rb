@@ -1,17 +1,17 @@
 class IgnitionRendering0 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/02471846d59963f171540b1d0767efa944b82224.tar.gz"
-  version "0.0.0~20180629~0247184"
-  sha256 "4691349e7859f313ddf2bbc0647cef560d05f6ef24b7a764731277111e40a281"
+  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/5b69fe76e650c3d9c087edf50cee10bec0a22e05.tar.gz"
+  version "0.0.0~20180823~5b69fe7"
+  sha256 "7334dcffffa5674d7905dc6168d7c12fc82279f2f1736ef7ce86664071c43f5c"
 
   head "https://bitbucket.org/ignitionrobotics/ign-rendering", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-rendering/releases"
-    sha256 "8b8c253114e3c6af1d6978e79b02c3c10895a5fe276a21570e370eaa4252491d" => :high_sierra
-    sha256 "520b171c51d0415f99ae7c8ecdd955249d166bad89edcad83879b85735c9a80f" => :sierra
-    sha256 "42acd100d3187950a56ec3fde87349feb78368d7c3552a9a1344f0c031511f72" => :el_capitan
+    sha256 "6d991b7724f7392e7d93a3ce71b53e24dbcdf633dea89be69ccc2505b1447042" => :high_sierra
+    sha256 "3eccaf18af2cb2f3d4f337486ae107bdf2c5017a52de650a3bbf294ad833ae63" => :sierra
+    sha256 "2b1b85aa8c51a8fb22ea901a7a46d607a12ca2df5b50e3e7d1a806493537ece8" => :el_capitan
   end
 
   depends_on "cmake" => :build
