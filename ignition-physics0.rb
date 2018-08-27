@@ -12,8 +12,10 @@ class IgnitionPhysics0 < Formula
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "ignition-cmake1"
+  depends_on "ignition-cmake2"
   depends_on "ignition-common2"
   depends_on "ignition-math5"
+  depends_on "ignition-math6"
   depends_on "ignition-plugin0"
   depends_on "pkg-config"
 
