@@ -12,7 +12,7 @@ class IgnitionMath5 < Formula
     root_url "http://gazebosim.org/distributions/ign-math/releases"
     cellar :any
     sha256 "394b0d8370daf3cfee902f0c3a8178519be39685eeb55391b92d039e0db108b7" => :high_sierra
-    sha256 "0d1c46264873d957e3f14ccf72cb45308ab0bd194e7c3ad68f0e0c1dcf8a16d8" => :sierra
+    sha256 "f47d34b37ac933d24a2c8824de3784d8ee49efcb6e7ce29b1513402c02ceeaa8" => :sierra
     sha256 "e01b5eaa66e3c7dcc0304ec241347ead412dbfda37b41fe693abf1c742d424f7" => :el_capitan
   end
 
