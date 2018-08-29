@@ -4,7 +4,8 @@ class IgnitionMath5 < Formula
   url "http://gazebosim.org/distributions/ign-math/releases/ignition-math5-5.0.0~pre4.tar.bz2"
   version "5.0.0~pre4"
   sha256 "b500b4f117ac98de9d078af8fb32ac8f5df85626a0a1297e140c2f5e931a2e77"
-
+  version_scheme 1
+  
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
