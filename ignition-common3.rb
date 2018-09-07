@@ -3,7 +3,7 @@ class IgnitionCommon3 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common3-3.0.0~pre1.tar.bz2"
   version "3.0.0~pre1"
-  sha256 "3b5be2abfe8e449e3a88ff31c243099aa79d05d1c3ae910071af2a2d59c788d1"
+  sha256 "0e52c12cd1d16049c9e9535598aa75940da96b8c918f23456eb18484d43e8423"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-common/releases"
