@@ -1,9 +1,9 @@
 class IgnitionPlugin0 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-plugin"
-  url "https://bitbucket.org/ignitionrobotics/ign-plugin/get/0640dcb6f62fd2c58a720d2328203b0798c7e61d.tar.gz"
-  version "0.1.0~pre3"
-  sha256 "2ee4554d5f8dc120faa9e5d71974f663bc45356d7e04b2d943cc22c95169ad6b"
+  url "http://gazebosim.org/distributions/ign-plugin/releases/ignition-plugin-0.1.0~pre2.tar.bz2"
+  version "0.1.0~pre2"
+  sha256 "04efa0e1a5437ae800f770f997bf8ebcbb0f9a415d0565a66bebec7ae570ec9d"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
@@ -13,6 +13,7 @@ class IgnitionPlugin0 < Formula
   end
 
   depends_on "cmake"
+  depends_on "ignition-cmake1"
   depends_on "ignition-cmake2"
   depends_on "pkg-config"
 
