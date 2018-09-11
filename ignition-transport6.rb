@@ -1,10 +1,9 @@
 class IgnitionTransport6 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport6-6.0.0~pre1.tar.bz2"
-  version "6.0.0~pre1"
-  sha256 "ba08b0b500fd50218d76ead22814b9b7c93c3f18677834a7a1cfde72c7a8cf3c"
-  revision 1
+  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport6-6.0.0~pre2.tar.bz2"
+  version "6.0.0~pre2"
+  sha256 "e37a2f9716d9a195d7614769569dbba9c2dbc7bb9f8d2dc68a5cdaf37fde2da0"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
