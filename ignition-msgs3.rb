@@ -7,7 +7,7 @@ class IgnitionMsgs3 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-msgs/releases"
-    sha256 "e629dbd4fadda555f227a8af789d694da18f3f940ccedb12d3ad14bdfaca1797" => :high_sierra
+    sha256 "699eab114590bfdb73897e15f661859806cf3cefa62f7b34cfe8f9c285f7e7a0" => :high_sierra
   end
 
   depends_on "protobuf-c" => :build
