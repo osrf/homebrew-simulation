@@ -14,6 +14,7 @@ class IgnitionPlugin0 < Formula
 
   depends_on "cmake"
   depends_on "ignition-cmake1"
+  depends_on "ignition-cmake2"
   depends_on "pkg-config"
 
   def install
