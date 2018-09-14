@@ -1,9 +1,9 @@
 class IgnitionRendering1 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/8cbb07bef149.tar.gz"
-  version "0.999.999~20180720~8cbb07b"
-  sha256 "d40c67b5e273720a9ec6f7e42d3ab674d464a20f0fcd5e512a2997375c22c6b1"
+  url "http://gazebosim.org/distributions/ign-rendering/releases/ignition-rendering-1.0.0~pre3.tar.bz2"
+  version "1.0.0~pre3"
+  sha256 "201e382313ac9fdf9fcce21b4a6e12bde184c47426b398436062be80a0520399"
 
   # bottle do
   #   root_url "http://gazebosim.org/distributions/ign-rendering/releases"
