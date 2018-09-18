@@ -1,9 +1,9 @@
 class IgnitionSensors0 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/a44a773b2ce9.tar.gz"
-  version "0.0.0~20180718~a44a773"
-  sha256 "9406cc1577a7024e5b6fd1b3c5fe1fa6d4e8c20e10045c3fdb64eda6a884a688"
+  url "http://gazebosim.org/distributions/ign-sensors/releases/ignition-sensors-0.1.0~pre1.tar.bz2"
+  version "0.1.0~pre1"
+  sha256 "308279da4edd74bb3f08996fe71416445d8ff799b5b6764a0f259d65a67c1fbe"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
