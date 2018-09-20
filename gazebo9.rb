@@ -1,17 +1,16 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.3.1.tar.bz2"
-  sha256 "3171e897270b3bf7f8374398fa016850418bcd2475c14a644d2d4f044db1ad78"
-  revision 1
+  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.4.1.tar.bz2"
+  sha256 "c787cd845ed454f6dd4179936c8326b45a61cec3cf18c30e5f63271a21e839c5"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/gazebo/releases"
-    sha256 "7284d0e1165fd2fbda681296b032aed5e2d9ccf83ddc61c407aaa2fdceb90a9c" => :high_sierra
-    sha256 "9eb06acd5f4c4bc34e9c5f945915897e41138db3009689106e2633119fe26f78" => :sierra
-    sha256 "77188c4aa93bd445dd64d74b18f809ade67d87b6d1938e8d3f7a81e7d9d434a0" => :el_capitan
+    sha256 "375d2a71a279b2a02b79ccb5313645b03da552c6194268b0c53b7ddbd4bd0b69" => :high_sierra
+    sha256 "65755f43b05534683b7922521a3077a466929f0de43aed4b4d351bbeaac948c5" => :sierra
+    sha256 "24db0c8a9cf29a46508248bde05b50f2fe31473edf5312884492525711e4559d" => :el_capitan
   end
 
   depends_on "cmake" => :build
@@ -26,6 +25,7 @@ class Gazebo9 < Formula
   depends_on "ignition-transport4"
   depends_on "libtar"
   depends_on "ogre1.9"
+  depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt"
@@ -34,17 +34,15 @@ class Gazebo9 < Formula
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
-
-  depends_on "ossp-uuid" => :linked
   depends_on "zeromq" => :linked
 
   depends_on "bullet" => :recommended
   depends_on "dartsim" => :recommended
   depends_on "ffmpeg" => :recommended
-  depends_on "gdal" => :optional
   depends_on "gts" => :recommended
-  depends_on "player" => :optional
   depends_on "simbody" => :recommended
+  depends_on "gdal" => :optional
+  depends_on "player" => :optional
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo3", :because => "Differing version of the same formula"
