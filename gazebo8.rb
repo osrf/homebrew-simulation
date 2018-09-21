@@ -26,6 +26,7 @@ class Gazebo8 < Formula
   depends_on "ignition-transport3"
   depends_on "libtar"
   depends_on "ogre1.9"
+  depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt"
@@ -34,17 +35,15 @@ class Gazebo8 < Formula
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
-
-  depends_on "ossp-uuid" => :linked
   depends_on "zeromq" => :linked
 
   depends_on "bullet" => :recommended
-  depends_on "dartsim/dart/dartsim4" => :optional
   depends_on "ffmpeg" => :recommended
-  depends_on "gdal" => :optional
   depends_on "gts" => :recommended
-  depends_on "player" => :optional
   depends_on "simbody" => :recommended
+  depends_on "dartsim/dart/dartsim4" => :optional
+  depends_on "gdal" => :optional
+  depends_on "player" => :optional
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo3", :because => "Differing version of the same formula"

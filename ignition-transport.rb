@@ -18,12 +18,12 @@ class IgnitionTransport < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
 
+  depends_on "protobuf-c" => :build
   depends_on "cppzmq"
   depends_on "ignition-tools"
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "protobuf-c" => :build
   depends_on "zeromq"
 
   def install

@@ -15,13 +15,13 @@ class IgnitionMsgs1 < Formula
     sha256 "ecd1acd2086d145059d831a094aedeb17a1a94cc8389c5bd321e2bd0fbaeed10" => :el_capitan
   end
 
+  depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-math4"
-  depends_on "ignition-tools" => :recommended
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "protobuf-c" => :build
+  depends_on "ignition-tools" => :recommended
 
   def install
     system "cmake", ".", *std_cmake_args
