@@ -23,7 +23,7 @@ class IgnitionSensors0 < Formula
   depends_on "ignition-rendering1"
   depends_on "ignition-transport6"
   depends_on "pkg-config"
-  depends_on "sdformat6"
+  depends_on "sdformat8"
 
   def install
     system "cmake", ".", *std_cmake_args
