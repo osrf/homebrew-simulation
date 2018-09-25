@@ -1,9 +1,9 @@
 class IgnitionPhysics0 < Formula
   desc "Physics library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
-  url "https://bitbucket.org/ignitionrobotics/ign-physics/get/d85b70f7d31c3dc41580f5dcb5e6bc2ec28345ba.tar.gz"
-  version "0.0.0~20180409~d85b70f"
-  sha256 "c48b640c4dca5a861df5f41c58bd4a45e74a2a6ff17bfee205926608c9eb8a33"
+  url "http://gazebosim.org/distributions/ign-physics/releases/ignition-physics-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "49578ef004342064f5bf6508e9f9e552355ca7c23652c8e907895c9c3c86df93"
 
   head "https://bitbucket.org/ignitionrobotics/ign-physics", :branch => "default", :using => :hg
 
