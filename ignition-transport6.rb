@@ -4,10 +4,11 @@ class IgnitionTransport6 < Formula
   url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport6-6.0.0~pre1.tar.bz2"
   version "6.0.0~pre1"
   sha256 "ba08b0b500fd50218d76ead22814b9b7c93c3f18677834a7a1cfde72c7a8cf3c"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-transport/releases"
-    sha256 "ab9a5f5f3a4b84fc96854c398d9645310744f40f58ef184651f284cf0e6dfc83" => :high_sierra
+    sha256 "22f5026c2df8b00be19508f93177ee865fae492bc34ea2f7216a6532757ac8ee" => :high_sierra
   end
 
   depends_on "doxygen" => [:build, :optional]
