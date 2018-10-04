@@ -8,6 +8,7 @@ class IgnitionPlugin1 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
+    cellar :any
     sha256 "1037da4b026453b10cabb265655c18cef2fa101fae043368f8270f7264a66db4" => :high_sierra
   end
 
