@@ -4,6 +4,7 @@ class IgnitionPlugin1 < Formula
   url "http://gazebosim.org/distributions/ign-plugin/releases/ignition-plugin-1.0.0~pre1.tar.bz2"
   version "1.0.0~pre1"
   sha256 "13eebee797286e6640c5c9a7489760359a0b759ddd81745afffe19b23e4e29f1"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
