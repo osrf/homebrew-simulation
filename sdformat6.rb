@@ -1,17 +1,15 @@
 class Sdformat6 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-6.0.0.tar.bz2"
-  sha256 "93ea8007e9d92c87f99240e378231977fb1de2072fd752449f65917cb430bc4d"
-  revision 1
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-6.1.0.tar.bz2"
+  sha256 "7a46f0c58047124be7c99cabed2fccb838dd92dd5739801070121afe779d87a6"
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "b6205db41196339c6971931f70b62c6bac424c57538292372420afbfc7e6834f" => :high_sierra
-    sha256 "2932a7b7780bcc1595df34441c9f4d451c682138ad8bd58a250989dfbfb3e4aa" => :sierra
-    sha256 "7a15099efa212e924c865320c38501842169606329c86adbcc73a758232be882" => :el_capitan
+    sha256 "b55bc288e029fe612dab63ae99da74231e40a7f89567780c1b66155231879707" => :high_sierra
+    sha256 "a9ad7532d753bcbe1d8cd970ae53c935be975b9b08dbe72e7e20a75527bb3b68" => :sierra
   end
 
   depends_on "cmake" => :build
