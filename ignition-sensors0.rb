@@ -13,7 +13,7 @@ class IgnitionSensors0 < Formula
   #   sha256 "520b171c51d0415f99ae7c8ecdd955249d166bad89edcad83879b85735c9a80f" => :sierra
   #   sha256 "42acd100d3187950a56ec3fde87349feb78368d7c3552a9a1344f0c031511f72" => :el_capitan
   # end
-	
+
   depends_on "cmake" => :build
 
   depends_on "ignition-cmake2"
