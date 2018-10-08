@@ -1,19 +1,17 @@
 class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://bitbucket.org/osrf/sdformat/get/6a7c07aa6114147983d3d0343e553748135dda7f.tar.gz"
-  version "7.999.999~20180614~6a7c07a"
-  sha256 "29d488903de1f69db55ab634022a876f09cf781a1c952ef4a2a2897d7476cb50"
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-8.0.0~pre1.tar.bz2"
+  version "8.0.0~pre1"
+  sha256 "091e92bdd91e555b9768a128eca27fc48c8e35743f978229dddffc3da6be54c2"
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "0135409a727a741f8e7431eac51d7fdf3db7186f4a5b4c33ba850c5c3044a40a" => :mojave
-    sha256 "9a10b503bafc0f68bd73c8dbb3e2588995a5678b5306b4b413429a2dcccfe791" => :high_sierra
+    sha256 "e028a6d05228b0519da69b7d41d3072971fc5a386f02d607c51a2459a329a79b" => :mojave
   end
 
   depends_on "cmake" => :build
 
-  depends_on "boost"
   depends_on "doxygen"
   depends_on "ignition-math6"
   depends_on "pkg-config"
@@ -58,12 +56,12 @@ class Sdformat8 < Formula
         std::cout << modelSDF.ToString() << std::endl;
       }
     EOS
-    system "pkg-config", "sdformat"
-    cflags = `pkg-config --cflags sdformat`.split(" ")
+    system "pkg-config", "sdformat8"
+    cflags = `pkg-config --cflags sdformat8`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lsdformat",
+                   "-lsdformat8",
                    "-lc++",
                    "-o", "test"
     system "./test"
