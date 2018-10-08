@@ -57,12 +57,12 @@ class Sdformat8 < Formula
         std::cout << modelSDF.ToString() << std::endl;
       }
     EOS
-    system "pkg-config", "sdformat"
-    cflags = `pkg-config --cflags sdformat`.split(" ")
+    system "pkg-config", "sdformat8"
+    cflags = `pkg-config --cflags sdformat8`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lsdformat",
+                   "-lsdformat8",
                    "-lc++",
                    "-o", "test"
     system "./test"
