@@ -7,6 +7,11 @@ class IgnitionPhysics1 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-physics", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-physics/releases"
+    sha256 "e028a6d05228b0519da69b7d41d3072971fc5a386f02d607c51a2459a329a79b" => :mojave
+  end
+
   depends_on "cmake" => :build
 
   depends_on "bullet"
@@ -16,6 +21,7 @@ class IgnitionPhysics1 < Formula
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on "pkg-config"
+  depends_on "sdformat8"
 
   def install
     system "cmake", ".", *std_cmake_args
