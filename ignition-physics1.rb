@@ -5,8 +5,6 @@ class IgnitionPhysics1 < Formula
   version "1.0.0~pre1"
   sha256 "49578ef004342064f5bf6508e9f9e552355ca7c23652c8e907895c9c3c86df93"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-physics", :branch => "default", :using => :hg
-
   bottle do
     root_url "http://gazebosim.org/distributions/ign-physics/releases"
     sha256 "e028a6d05228b0519da69b7d41d3072971fc5a386f02d607c51a2459a329a79b" => :mojave
