@@ -19,6 +19,12 @@ class Simbody < Formula
   depends_on "doxygen" => :build
   depends_on "pkg-config"
 
+  patch do
+    # Fix pkg-config file
+    url "https://github.com/scpeters/simbody/commit/a37deef08af530b57601251900fadee0d0be6cfd.diff?full_index=1"
+    sha256 "67cf07b493f908f7fc27323b16ff4bbbd796f287744d9a53088806effb920cd1"
+  end
+
   def install
     # Don't use 10.11 SDK frameworks on 10.10 with xcode7
     ENV.delete("MACOSX_DEPLOYMENT_TARGET")
@@ -30,12 +36,6 @@ class Simbody < Formula
       system "make", "doxygen"
       system "make", "install"
     end
-  end
-
-  patch do
-    # Fix pkg-config file
-    url "https://github.com/scpeters/simbody/commit/a37deef08af530b57601251900fadee0d0be6cfd.diff?full_index=1"
-    sha256 "67cf07b493f908f7fc27323b16ff4bbbd796f287744d9a53088806effb920cd1"
   end
 
   test do
