@@ -7,7 +7,7 @@ class IgnitionPhysics1 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-physics/releases"
-    sha256 "e028a6d05228b0519da69b7d41d3072971fc5a386f02d607c51a2459a329a79b" => :mojave
+    sha256 "f7d93c04595bb01de5d6be4ed30bc85c0fd93ba9ef0657a92613c147f3a0ea1f" => :mojave
   end
 
   depends_on "cmake" => :build
