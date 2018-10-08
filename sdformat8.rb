@@ -3,7 +3,7 @@ class Sdformat8 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-8.0.0~pre1.tar.bz2"
   version "8.0.0~pre1"
-  sha256 "a067acd6daceb56121e94ac2557f2c94d3fcec43c42680bdbc21e5526a5ae96a"
+  sha256 "091e92bdd91e555b9768a128eca27fc48c8e35743f978229dddffc3da6be54c2"
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
