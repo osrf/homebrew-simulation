@@ -1,10 +1,6 @@
 language: ruby
 matrix:
   include:
-    - env: TEST_BOT_ARGS=--skip-setup
-      os: osx
-      osx_image: xcode8
-      rvm: system
     - env: OSX=10.12
       os: osx
       osx_image: xcode9.2
