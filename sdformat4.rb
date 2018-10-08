@@ -9,6 +9,7 @@ class Sdformat4 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/sdformat/releases"
+    sha256 "557e280452fe1b342911fe4ac4f96407918dfdcb7471b0730dfdb46036fbd0c5" => :mojave
     sha256 "3e964eb82dd3c5e5a21396742317a5ee7e7255f16da0fd9a03e0442fdab52efb" => :high_sierra
     sha256 "29ba798279132ae8bf65ce9f3c0dc2b9a6449a52fe0965cf358ce2a331afa84b" => :sierra
     sha256 "5d3409c3917fd70318ef0591654393891a9435d83544dbe83eff382536636608" => :el_capitan
