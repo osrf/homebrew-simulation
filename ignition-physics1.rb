@@ -1,23 +1,25 @@
-class IgnitionPhysics0 < Formula
+class IgnitionPhysics1 < Formula
   desc "Physics library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
-  url "https://bitbucket.org/ignitionrobotics/ign-physics/get/d85b70f7d31c3dc41580f5dcb5e6bc2ec28345ba.tar.gz"
-  version "0.0.0~20180409~d85b70f"
-  sha256 "c48b640c4dca5a861df5f41c58bd4a45e74a2a6ff17bfee205926608c9eb8a33"
+  url "http://gazebosim.org/distributions/ign-physics/releases/ignition-physics-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "49578ef004342064f5bf6508e9f9e552355ca7c23652c8e907895c9c3c86df93"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-physics", :branch => "default", :using => :hg
+  bottle do
+    root_url "http://gazebosim.org/distributions/ign-physics/releases"
+    sha256 "f7d93c04595bb01de5d6be4ed30bc85c0fd93ba9ef0657a92613c147f3a0ea1f" => :mojave
+  end
 
   depends_on "cmake" => :build
 
   depends_on "bullet"
   depends_on "dartsim"
-  depends_on "ignition-cmake1"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common2"
-  depends_on "ignition-math5"
+  depends_on "ignition-common3"
   depends_on "ignition-math6"
-  depends_on "ignition-plugin0"
+  depends_on "ignition-plugin1"
   depends_on "pkg-config"
+  depends_on "sdformat8"
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -33,9 +35,9 @@ class IgnitionPhysics0 < Formula
         return data.Has<std::string>();
       }
     EOS
-    system "pkg-config", "ignition-physics0"
-    cflags   = `pkg-config --cflags ignition-physics0`.split(" ")
-    ldflags  = `pkg-config --libs ignition-physics0`.split(" ")
+    system "pkg-config", "ignition-physics1"
+    cflags   = `pkg-config --cflags ignition-physics1`.split(" ")
+    ldflags  = `pkg-config --libs ignition-physics1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
