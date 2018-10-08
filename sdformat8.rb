@@ -13,7 +13,6 @@ class Sdformat8 < Formula
 
   depends_on "cmake" => :build
 
-  depends_on "boost"
   depends_on "doxygen"
   depends_on "ignition-math6"
   depends_on "pkg-config"
