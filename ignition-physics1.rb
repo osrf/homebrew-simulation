@@ -1,4 +1,4 @@
-class IgnitionPhysics0 < Formula
+class IgnitionPhysics1 < Formula
   desc "Physics library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
   url "http://gazebosim.org/distributions/ign-physics/releases/ignition-physics-1.0.0~pre1.tar.bz2"
@@ -11,12 +11,10 @@ class IgnitionPhysics0 < Formula
 
   depends_on "bullet"
   depends_on "dartsim"
-  depends_on "ignition-cmake1"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common2"
-  depends_on "ignition-math5"
+  depends_on "ignition-common3"
   depends_on "ignition-math6"
-  depends_on "ignition-plugin0"
+  depends_on "ignition-plugin1"
   depends_on "pkg-config"
 
   def install
@@ -33,9 +31,9 @@ class IgnitionPhysics0 < Formula
         return data.Has<std::string>();
       }
     EOS
-    system "pkg-config", "ignition-physics0"
-    cflags   = `pkg-config --cflags ignition-physics0`.split(" ")
-    ldflags  = `pkg-config --libs ignition-physics0`.split(" ")
+    system "pkg-config", "ignition-physics1"
+    cflags   = `pkg-config --cflags ignition-physics1`.split(" ")
+    ldflags  = `pkg-config --libs ignition-physics1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
