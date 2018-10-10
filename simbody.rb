@@ -1,9 +1,8 @@
 class Simbody < Formula
   desc "Multibody physics API"
   homepage "https://simtk.org/home/simbody"
-  url "https://github.com/simbody/simbody/archive/Simbody-3.5.4.tar.gz"
-  sha256 "449c36e574d6f859d4fa8854ab6bc8e402e5ca5894bcce3e9fdce2f5658d64de"
-  revision 2
+  url "https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz"
+  sha256 "7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639"
 
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
