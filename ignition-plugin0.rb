@@ -11,7 +11,7 @@ class IgnitionPlugin0 < Formula
     cellar :any
     sha256 "4f75341d4700b06d527eaf8c7d9a3b3b44854bcef92b48dfea04fe74c97b1f97" => :mojave
     sha256 "4c9f8cb01899c3871237e36c0394f513d3c5209104d821b87cbe1170860dc4a4" => :high_sierra
-    sha256 "1488ce3c65c2131d8e46aae8cccbefa0fe6836a8b164c3db9cd126dfd091fa13" => :sierra
+    sha256 "7cf67747e18e582bacb60a0fc87ef601fcdbdbbb69771a22ffc6e191a85360c4" => :sierra
     sha256 "813f6a21a9f722cb1ca605e4d1703e77ea753ae2c9e43ed0c3393b69ec902719" => :el_capitan
   end
 
