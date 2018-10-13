@@ -21,6 +21,9 @@ class IgnitionMsgs3 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
 
+  # c++17
+  depends_on :macos => :high_sierra
+
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"

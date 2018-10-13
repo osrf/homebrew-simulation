@@ -24,6 +24,9 @@ class IgnitionTransport6 < Formula
   depends_on "protobuf"
   depends_on "zeromq"
 
+  # c++17
+  depends_on :macos => :high_sierra
+
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
