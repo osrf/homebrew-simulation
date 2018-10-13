@@ -18,6 +18,9 @@ class Sdformat8 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
+  # c++17
+  depends_on :macos => :mojave
+
   conflicts_with "sdformat", :because => "Differing version of the same formula"
   conflicts_with "sdformat3", :because => "Differing version of the same formula"
   conflicts_with "sdformat4", :because => "Differing version of the same formula"

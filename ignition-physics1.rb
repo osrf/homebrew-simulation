@@ -21,6 +21,9 @@ class IgnitionPhysics1 < Formula
   depends_on "pkg-config"
   depends_on "sdformat8"
 
+  # c++17
+  depends_on :macos => :mojave
+
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
