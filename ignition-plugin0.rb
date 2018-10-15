@@ -4,13 +4,14 @@ class IgnitionPlugin0 < Formula
   url "http://gazebosim.org/distributions/ign-plugin/releases/ignition-plugin0-0.2.0~pre1.tar.bz2"
   version "0.2.0~pre1"
   sha256 "9ba562b503c98914ae8ca392db833c6a3f0fec5cc7c56e1229740dd0d0122db9"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
     cellar :any
-    sha256 "8bab9824aa1e5a1bd6e11e9b9408fe6ff911cb33db3e201936d3f0e27e883398" => :mojave
-    sha256 "4c9f8cb01899c3871237e36c0394f513d3c5209104d821b87cbe1170860dc4a4" => :high_sierra
-    sha256 "1488ce3c65c2131d8e46aae8cccbefa0fe6836a8b164c3db9cd126dfd091fa13" => :sierra
+    sha256 "4f75341d4700b06d527eaf8c7d9a3b3b44854bcef92b48dfea04fe74c97b1f97" => :mojave
+    sha256 "ca6d9d9b7400180b06a16c738c1c1aaa0abf441bd8bef3e84eb4066578a675e8" => :high_sierra
+    sha256 "7cf67747e18e582bacb60a0fc87ef601fcdbdbbb69771a22ffc6e191a85360c4" => :sierra
     sha256 "813f6a21a9f722cb1ca605e4d1703e77ea753ae2c9e43ed0c3393b69ec902719" => :el_capitan
   end
 
