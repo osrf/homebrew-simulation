@@ -19,13 +19,11 @@ class IgnitionTransport6 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-msgs3"
   depends_on "ignition-tools"
+  depends_on :macos => :high_sierra   # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "zeromq"
-
-  # c++17
-  depends_on :macos => :high_sierra
 
   def install
     system "cmake", ".", *std_cmake_args
