@@ -1,19 +1,16 @@
 class Simbody < Formula
   desc "Multibody physics API"
   homepage "https://simtk.org/home/simbody"
-  url "https://github.com/simbody/simbody/archive/Simbody-3.5.4.tar.gz"
-  sha256 "449c36e574d6f859d4fa8854ab6bc8e402e5ca5894bcce3e9fdce2f5658d64de"
-  revision 2
+  url "https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz"
+  sha256 "7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639"
 
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
   bottle do
-    root_url "http://gazebosim.org/distributions/simbody/releases"
-    sha256 "867331f5d54f0c8649fc29389873af671cd2cd11edfe54c5e13adb6262e90c6c" => :mojave
-    sha256 "bb2932af0b11a96c634876267a7628f08ae77057f1c1b6d19703328b098c7b84" => :high_sierra
-    sha256 "68c5aacc1f0f1b14811cd8b342303a7ee2bc204065517d9d7439507e5016e7f9" => :sierra
-    sha256 "68f86436ddad44b6fd0ebbe5aaf36ed67e13a79c9bf0b336440843ac03e1228b" => :el_capitan
-    sha256 "5ae2d17b898aa6884cd7db5c1d85709e9cb25e2de06a6b188d64adc50e964eff" => :yosemite
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "61618279759115f0312f7ea896462c1e39ce2f7ad1a26bb8b0c1f3fd37a858f4" => :mojave
+    sha256 "56f3b7eb258a2e8496339bcbfe0859511c132b70feabc63760eef855ae16a7cb" => :high_sierra
+    sha256 "e4908b1ab765cdfad161a9f7e9e6031dcead593909fe7e88115ac9c19d7662e0" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -22,8 +19,8 @@ class Simbody < Formula
 
   patch do
     # Fix pkg-config file
-    url "https://github.com/scpeters/simbody/commit/a37deef08af530b57601251900fadee0d0be6cfd.diff?full_index=1"
-    sha256 "67cf07b493f908f7fc27323b16ff4bbbd796f287744d9a53088806effb920cd1"
+    url "https://github.com/scpeters/simbody/commit/7e43ab0fa4f808f11bf9385867002b359cf8dd36.diff?full_index=1"
+    sha256 "2148108fc41d78fa81bb1102a14fa83f2bc643f788625a7b335daa3fa4e49740"
   end
 
   def install
