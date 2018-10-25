@@ -1,9 +1,9 @@
 class IgnitionRendering1 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "http://gazebosim.org/distributions/ign-rendering/releases/ignition-rendering-1.0.0~pre3.tar.bz2"
-  version "1.0.0~pre3"
-  sha256 "201e382313ac9fdf9fcce21b4a6e12bde184c47426b398436062be80a0520399"
+  url "http://gazebosim.org/distributions/ign-rendering/releases/ignition-rendering-1.0.0~pre4.tar.bz2"
+  version "1.0.0~pre4"
+  sha256 "ee16c499bf0ef19b18712e271892ab6aa04344a9afce5fdf32ec2a7a8a86a8d5"
 
   depends_on "cmake" => :build
 
