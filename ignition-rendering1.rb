@@ -1,16 +1,9 @@
 class IgnitionRendering1 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/8cbb07bef149.tar.gz"
-  version "0.999.999~20180720~8cbb07b"
-  sha256 "d40c67b5e273720a9ec6f7e42d3ab674d464a20f0fcd5e512a2997375c22c6b1"
-
-  # bottle do
-  #   root_url "http://gazebosim.org/distributions/ign-rendering/releases"
-  #   sha256 "8b8c253114e3c6af1d6978e79b02c3c10895a5fe276a21570e370eaa4252491d" => :high_sierra
-  #   sha256 "520b171c51d0415f99ae7c8ecdd955249d166bad89edcad83879b85735c9a80f" => :sierra
-  #   sha256 "42acd100d3187950a56ec3fde87349feb78368d7c3552a9a1344f0c031511f72" => :el_capitan
-  # end
+  url "http://gazebosim.org/distributions/ign-rendering/releases/ignition-rendering-1.0.0~pre3.tar.bz2"
+  version "1.0.0~pre3"
+  sha256 "201e382313ac9fdf9fcce21b4a6e12bde184c47426b398436062be80a0520399"
 
   depends_on "cmake" => :build
 
@@ -18,6 +11,7 @@ class IgnitionRendering1 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-math6"
+  depends_on :macos => :high_sierra # c++17
   depends_on "ogre1.9"
   depends_on "pkg-config"
 
