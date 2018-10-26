@@ -13,6 +13,7 @@ class IgnitionGui1 < Formula
   depends_on "ignition-msgs3"
   depends_on "ignition-rendering1"
   depends_on "ignition-transport6"
+  depends_on :macos => :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "qt"
   depends_on "qwt"
