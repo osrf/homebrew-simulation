@@ -11,6 +11,7 @@ class IgnitionGui1 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-msgs3"
+  depends_on "ignition-plugin1"
   depends_on "ignition-rendering1"
   depends_on "ignition-transport6"
   depends_on :macos => :high_sierra # c++17
