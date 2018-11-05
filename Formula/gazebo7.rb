@@ -3,7 +3,7 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.14.0.tar.bz2"
   sha256 "c1e48a2304d8186a3df4fb763262d189a8afe6b1ab82c30e614e336f3cb6034f"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
@@ -14,6 +14,7 @@ class Gazebo7 < Formula
   depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
+  depends_on "graphviz"
   depends_on "ignition-math2"
   depends_on "ignition-transport"
   depends_on "libtar"
