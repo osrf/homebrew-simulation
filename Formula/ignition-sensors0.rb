@@ -59,9 +59,9 @@ class IgnitionSensors0 < Formula
       }
     EOS
     ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
-    system "pkg-config", "ignition-sensors"
-    cflags   = `pkg-config --cflags ignition-sensors`.split(" ")
-    ldflags  = `pkg-config --libs ignition-sensors`.split(" ")
+    system "pkg-config", "ignition-sensors0"
+    cflags   = `pkg-config --cflags ignition-sensors0`.split(" ")
+    ldflags  = `pkg-config --libs ignition-sensors0`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
