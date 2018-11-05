@@ -7,13 +7,6 @@ class IgnitionSensors0 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
-  # bottle do
-  #   root_url "http://gazebosim.org/distributions/ign-sensors/releases"
-  #   sha256 "8b8c253114e3c6af1d6978e79b02c3c10895a5fe276a21570e370eaa4252491d" => :high_sierra
-  #   sha256 "520b171c51d0415f99ae7c8ecdd955249d166bad89edcad83879b85735c9a80f" => :sierra
-  #   sha256 "42acd100d3187950a56ec3fde87349feb78368d7c3552a9a1344f0c031511f72" => :el_capitan
-  # end
-
   depends_on "cmake" => :build
 
   depends_on "ignition-cmake2"
