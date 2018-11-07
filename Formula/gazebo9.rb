@@ -3,7 +3,7 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.4.1.tar.bz2"
   sha256 "c787cd845ed454f6dd4179936c8326b45a61cec3cf18c30e5f63271a21e839c5"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 

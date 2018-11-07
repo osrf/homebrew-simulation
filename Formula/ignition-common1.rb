@@ -3,6 +3,7 @@ class IgnitionCommon1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
