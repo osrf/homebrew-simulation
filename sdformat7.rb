@@ -4,6 +4,7 @@ class Sdformat7 < Formula
   url "https://bitbucket.org/osrf/sdformat/get/2fed80e6bc44.tar.gz"
   version "6.999.999~20180905~2fed80e"
   sha256 "b9792f701be807a9f522b9b9b09c521340744ba1bd593d533765b1dc7bb40bb5"
+  revision 1
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
