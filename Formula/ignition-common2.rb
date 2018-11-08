@@ -25,7 +25,7 @@ class IgnitionCommon2 < Formula
   depends_on "ignition-math5"
   depends_on "ossp-uuid"
   depends_on "pkg-config"
-  depends_on "tinyxml2"
+  depends_on "tinyxml2@6.2.0"
 
   def install
     system "cmake", ".", *std_cmake_args
