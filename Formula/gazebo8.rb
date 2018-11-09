@@ -47,6 +47,12 @@ class Gazebo8 < Formula
   conflicts_with "gazebo7", :because => "Differing version of the same formula"
 
   patch do
+    # Fix for compatibility with boost 1.68
+    url "https://bitbucket.org/osrf/gazebo/commits/cc53e4cdd34875dbb99048137f1d27541d12b3d0/raw/"
+    sha256 "f382a668ba2c6a318f3d4b5f616a11ad098973d941cd73a5493f0b1788ae8a42"
+  end
+
+  patch do
     # Fix build when homebrew python is installed
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
