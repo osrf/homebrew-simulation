@@ -4,14 +4,13 @@ class Ogre19 < Formula
   url "https://bitbucket.org/sinbad/ogre/get/108ab0bcc69603dba32c0ffd4bbbc39051f421c9.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
-  revision 6
+  revision 7
 
   bottle do
-    root_url "http://gazebosim.org/distributions/ogre/releases"
-    sha256 "fb282dfcc0bc51631ea7c3ce8db505ade6cb37f3d6979c89355167d8ed65009e" => :mojave
-    sha256 "7a89597a8353112ac71e1e45c44c83c16382b9a13998aa6ac25b707e36186f83" => :high_sierra
-    sha256 "614f60c0a4c5f033071e5cddb0e5b357bb5a4d9751ab458ea996ee7bb7d58463" => :sierra
-    sha256 "4e2c0ebab72f0d1a784d8efae4e34f7467bb2c34aec8e0f9612a86d89354559d" => :el_capitan
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "160e7ee9686c2a87009c6ef6f774208841466da71aacd25dfb0ca896a5e5299e" => :mojave
+    sha256 "b530362abcf2db10ee8bc18b1f2f5bae9cd216a552a6e24c7bdfd7cfc51d56de" => :high_sierra
+    sha256 "584d3397f9ef3ff720ce6c3fbbcdbf2bb3f174cef85b0ffcbba1aa1f7bc10144" => :sierra
   end
 
   option "with-cg"

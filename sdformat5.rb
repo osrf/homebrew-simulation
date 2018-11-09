@@ -3,17 +3,15 @@ class Sdformat5 < Formula
   homepage "http://sdformat.org"
   url "http://gazebosim.org/distributions/sdformat/releases/sdformat-5.3.0.tar.bz2"
   sha256 "e5946e84431cf7874cf422d5b5a9f34f42b31d82b5baea532d1e466011bd89e0"
-  revision 3
+  revision 4
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "aa678047e981cd9fe2c5073de4f663133b9a0dfce81c9bdea94eb10e964ee95f" => :mojave
-    sha256 "21346424826d7f0b0b5e1a1b6afe8043997b56b7cfa2d0c04416e4f6cda8691a" => :high_sierra
-    sha256 "ec34546fa262152465befd6a63dac81aafccaf784f6d9a679b6829c7b0d08b52" => :sierra
-    sha256 "d2c374effc03d53c0a4228b7c108d97de78556b08cb5123db2bdf74525aef519" => :el_capitan
-    sha256 "2e99b2addc656a73a60632f47720449b7d01610cfdeeab66e61a200125439e8b" => :yosemite
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "4b8a84d2bc9cfcedcea70bea85324125bcfdef65681ea01c339e95fbad0012ff" => :mojave
+    sha256 "47d9edab2327d0fc594490070d73aa95b7b007b824a4b0989e299cc8a13ca3d7" => :high_sierra
+    sha256 "f84604dbfdbe4d6828ce5746fa8a614d1abeac27c07778bc788418a1ccf3a5e1" => :sierra
   end
 
   depends_on "cmake" => :build
