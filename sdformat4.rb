@@ -8,12 +8,10 @@ class Sdformat4 < Formula
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf4", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/sdformat/releases"
-    sha256 "557e280452fe1b342911fe4ac4f96407918dfdcb7471b0730dfdb46036fbd0c5" => :mojave
-    sha256 "3e964eb82dd3c5e5a21396742317a5ee7e7255f16da0fd9a03e0442fdab52efb" => :high_sierra
-    sha256 "29ba798279132ae8bf65ce9f3c0dc2b9a6449a52fe0965cf358ce2a331afa84b" => :sierra
-    sha256 "5d3409c3917fd70318ef0591654393891a9435d83544dbe83eff382536636608" => :el_capitan
-    sha256 "04fec31df772e8d128a44272da9ae3eefa6e57ebeee9f62b957169dc3a400b0f" => :yosemite
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "3110ecc715f6ed7804065c7045adf775900427d35849825104e7d8fa2ba3410a" => :mojave
+    sha256 "6b81d8914cb9e4173cd0931e06a17f260dbcb15595a86dd6e54555e1668cc510" => :high_sierra
+    sha256 "ac922c99d9de95ffc74fc475104a0cda96c2b6ebf1b6b6f9631e52b538fa83af" => :sierra
   end
 
   depends_on "cmake" => :build
