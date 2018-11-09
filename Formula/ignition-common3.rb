@@ -9,9 +9,9 @@ class IgnitionCommon3 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "fada1182ebe279f31ef7c4dd88e7cf8733f06188a383c287dfd82f43069f5d2c" => :mojave
-    sha256 "fd58fcf9049f40137ad8044385dcfb8c0086aa553f47db25cb2e69073a614a83" => :high_sierra
-    sha256 "cdcdbee038fe4f32e16330209be1979198f95f5118db8cd5a772679506371d76" => :sierra
+    sha256 "b2bb965be4d1b650e90f577184e5ad94b4324711366e8a0f3ecde61a334cab93" => :mojave
+    sha256 "b0b020beebbe6f677dfe4ff07221a1a60cad08b8eb6dc1b485cd61ed97fa744a" => :high_sierra
+    sha256 "cdeb68e585a3349a0b2e052653b5487ab2c269c7b4f8d98196b633f4b752992d" => :sierra
   end
 
   depends_on "cmake"

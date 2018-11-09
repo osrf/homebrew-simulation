@@ -8,6 +8,13 @@ class IgnitionRendering0 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-rendering", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "5bfb8645b610be2a8f92068927c6eb14bce166e295eb7186edabed2f9a93bf8f" => :mojave
+    sha256 "7492d8f05b6727ca7e38a0df2367668a442bea1e6873000ec27cc6cecae1eb4b" => :high_sierra
+    sha256 "ee7299b00e976c2e9ed82e60f77e8ad9f1eac20d51360cf8714b74d2a25664fa" => :sierra
+  end
+
   depends_on "cmake" => :build
 
   depends_on "freeimage"
