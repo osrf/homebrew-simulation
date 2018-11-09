@@ -27,7 +27,7 @@ class Gazebo8 < Formula
   depends_on "sdformat5"
   depends_on "tbb"
   depends_on "tinyxml"
-  depends_on "tinyxml2"
+  depends_on "tinyxml2@6.2.0"
   depends_on "zeromq" => :linked
 
   depends_on "bullet" => :recommended

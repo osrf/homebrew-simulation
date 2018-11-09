@@ -23,7 +23,7 @@ class Gazebo7 < Formula
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"
-  depends_on "tinyxml2"
+  depends_on "tinyxml2@6.2.0"
 
   depends_on "bullet" => :recommended
   depends_on "ffmpeg" => :recommended
