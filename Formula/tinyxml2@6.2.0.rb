@@ -5,7 +5,7 @@ class Tinyxml2AT620 < Formula
   sha256 "cdf0c2179ae7a7931dba52463741cf59024198bbf9673bf08415bcb46344110f"
   head "https://github.com/leethomason/tinyxml2.git"
 
-  keg_only "temporary version until 7.0.0 is fixed"
+  keg_only "temporary version until tinyxml2.pc is fixed"
 
   depends_on "cmake" => :build
 
