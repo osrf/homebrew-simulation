@@ -22,7 +22,7 @@ class Tinyxml2AT620 < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.cpp", "-L#{lib}", "-ltinyxml2", "-o", "test"
+    system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-ltinyxml2", "-o", "test"
     system "./test"
   end
 end
