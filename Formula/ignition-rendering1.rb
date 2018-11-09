@@ -4,6 +4,7 @@ class IgnitionRendering1 < Formula
   url "http://gazebosim.org/distributions/ign-rendering/releases/ignition-rendering-1.0.0~pre4.tar.bz2"
   version "1.0.0~pre4"
   sha256 "ee16c499bf0ef19b18712e271892ab6aa04344a9afce5fdf32ec2a7a8a86a8d5"
+  revision 1
 
   depends_on "cmake" => :build
 
