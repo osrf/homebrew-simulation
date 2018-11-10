@@ -46,6 +46,7 @@ class IgnitionFuelTools1 < Formula
       target_link_libraries(test_cmake ignition-fuel_tools1::ignition-fuel_tools1)
     EOS
     # test building with pkg-config
+    ENV.append "PKG_CONFIG_PATH", Formula["tinyxml2@6.2.0"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-fuel_tools1"
     cflags = `pkg-config --cflags ignition-fuel_tools1`.split(" ")
     system ENV.cc, "test.cpp",
