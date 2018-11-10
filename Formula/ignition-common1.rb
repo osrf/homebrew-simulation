@@ -55,6 +55,7 @@ class IgnitionCommon1 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
+    ENV.append "PKG_CONFIG_PATH", Formula["tinyxml2@6.2.0"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-common1"
     cflags = `pkg-config --cflags ignition-common1`.split(" ")
     system ENV.cc, "test.cpp",
