@@ -3,9 +3,16 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.14.0.tar.bz2"
   sha256 "c1e48a2304d8186a3df4fb763262d189a8afe6b1ab82c30e614e336f3cb6034f"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
+
+  bottle do
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "aa093e0a5a36a6a4f291dcbfcbc04ef04b027f24cbbb7758199a8d8739c3f2c4" => :mojave
+    sha256 "ef7fcbaedff5b3bfd89d8c162633e81549d3eba2b2a68d4fe158688fc034e13e" => :high_sierra
+    sha256 "2b35d23860523b8c5835f599593a5222943aa23fb21d1c458c35781ae7878f86" => :sierra
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -14,6 +21,7 @@ class Gazebo7 < Formula
   depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
+  depends_on "graphviz"
   depends_on "ignition-math2"
   depends_on "ignition-transport"
   depends_on "libtar"
@@ -39,6 +47,12 @@ class Gazebo7 < Formula
   conflicts_with "gazebo5", :because => "Differing version of the same formula"
   conflicts_with "gazebo6", :because => "Differing version of the same formula"
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
+
+  patch do
+    # Fix for compatibility with boost 1.68
+    url "https://bitbucket.org/osrf/gazebo/commits/cc53e4cdd34875dbb99048137f1d27541d12b3d0/raw/"
+    sha256 "f382a668ba2c6a318f3d4b5f616a11ad098973d941cd73a5493f0b1788ae8a42"
+  end
 
   patch do
     # Fix build when homebrew python is installed
