@@ -2,7 +2,7 @@ class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
   url "https://bitbucket.org/osrf/sdformat/get/a4b01e481d1a.tar.gz"
-  version "8.0.0~pre3"
+  version "8.0.0~pre2~1~a4b01e4"
   sha256 "3923e8cf1f84669132c207ce639192840644009ce29cceb8579b689205ce8b6d"
 
   depends_on "cmake" => :build
@@ -52,6 +52,12 @@ class Sdformat8 < Formula
         std::cout << modelSDF.ToString() << std::endl;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      find_package(sdformat8 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ${SDFormat_LIBRARIES})
+    EOS
     system "pkg-config", "sdformat8"
     cflags = `pkg-config --cflags sdformat8`.split(" ")
     system ENV.cc, "test.cpp",
@@ -61,5 +67,13 @@ class Sdformat8 < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
