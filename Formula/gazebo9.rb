@@ -39,10 +39,10 @@ class Gazebo9 < Formula
   depends_on "zeromq" => :linked
 
   depends_on "bullet" => :recommended
+  depends_on "dartsim" => :recommended
   depends_on "ffmpeg" => :recommended
   depends_on "gts" => :recommended
   depends_on "simbody" => :recommended
-  depends_on "dartsim" => :optional
   depends_on "gdal" => :optional
   depends_on "player" => :optional
 
