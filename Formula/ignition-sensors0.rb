@@ -25,28 +25,11 @@ class IgnitionSensors0 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <iostream>
-
-      #include <ignition/rendering.hh>
       #include <ignition/sensors.hh>
 
       int main()
       {
-        // Setup ign-rendering with a scene
-        auto *engine = ignition::rendering::engine("ogre");
-        if (!engine)
-        {
-          std::cerr << "Failed to load ogre\n";
-          return 1;
-        }
-        ignition::rendering::ScenePtr scene = engine->CreateScene("scene");
-
-        // Add stuff to take a picture of
-        BuildScene(scene);
-
-        // Create a sensor manager
-        ignition::sensors::Manager mgr;
-        mgr.SetRenderingScene(scene);
+        ignition::sensors::Noise noise(ignition::sensors::NoiseType::NONE);
 
         return 0;
       }
