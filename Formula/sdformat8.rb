@@ -1,9 +1,9 @@
 class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://bitbucket.org/osrf/sdformat/get/a4b01e481d1a.tar.gz"
-  version "8.0.0~pre2~1~a4b01e4"
-  sha256 "3923e8cf1f84669132c207ce639192840644009ce29cceb8579b689205ce8b6d"
+  url "https://bitbucket.org/osrf/sdformat/get/c45f6ab723b5189ea8045f7785479d6717a35c0f.tar.gz"
+  version "8.0.0~pre2~2~c45f6ab"
+  sha256 "9a842d759dd4a6c05c0786f577183f1d60425ebb66c748781a4b811d65ca4f87"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
