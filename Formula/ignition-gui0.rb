@@ -17,7 +17,6 @@ class IgnitionGui0 < Formula
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake1"
-  depends_on "ignition-cmake2" # Workaround to support the ign-gui1 alias
   depends_on "ignition-common2"
   depends_on "ignition-msgs2"
   depends_on "ignition-rendering0"
