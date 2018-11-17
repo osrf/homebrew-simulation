@@ -7,6 +7,12 @@ class IgnitionGui1 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "gz11", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "2489a47d8f8adca2a0b07d1e6989fa2487baa4fa2f7ca3cb71599b620f9b9811" => :mojave
+    sha256 "512f47c998e823b3811eef3ee40d91627591f0c9a069572724c44fcddd748303" => :high_sierra
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
