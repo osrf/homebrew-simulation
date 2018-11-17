@@ -18,7 +18,7 @@ class IgnitionGui1 < Formula
   depends_on "pkg-config"
   depends_on "qt"
   depends_on "qwt"
-  depends_on "tinyxml2"
+  depends_on "tinyxml2@6.2.0"
 
   def install
     ENV.m64
