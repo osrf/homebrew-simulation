@@ -3,15 +3,15 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.4.1.tar.bz2"
   sha256 "c787cd845ed454f6dd4179936c8326b45a61cec3cf18c30e5f63271a21e839c5"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "e9ee21d3db0e95a8ffa482efde3648eda1a41886df856981de531718c7073340" => :mojave
-    sha256 "99d649564929396ced7d3d4313fece64156ab989f80d29e2f6e9ab10d6fdc1fe" => :high_sierra
-    sha256 "c4da8b3ba7380eef88f0f3a1fb1e665dfb0eb50550f025036d61ba46cb588e7f" => :sierra
+    sha256 "f75c873788df70945aeccd6ee0f20e7e84621ce1485377e3b24b970d7ad5eec5" => :mojave
+    sha256 "a40a98ab218a6cc26c2feac8257c7f9ee808120bfd0176f74a7cd9b622305d63" => :high_sierra
+    sha256 "2e5547a570d4f4cf154e31c62a9642d9c536c33264df45b8110d94d91bacdd61" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,7 @@ class Gazebo9 < Formula
   depends_on "sdformat6"
   depends_on "tbb"
   depends_on "tinyxml"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
   depends_on "bullet" => :recommended

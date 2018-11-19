@@ -3,16 +3,16 @@ class IgnitionCommon1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "7fac4d4859c6224b86a96742ea13da1ba4a2ac312df98fbcf60f8a62b1f22c6a" => :mojave
-    sha256 "9dc34e66f32fd63b5792c5c4385ffe5ec81895133da5a26e600e88381b665646" => :high_sierra
-    sha256 "c64df45c5240d326046cc79300e0ca435bc94734ced04fe93cf06b79b8c9fb1f" => :sierra
+    sha256 "96aae5a3e84af38bbba586bdd67973979bcebac971750e470fce95d7f7e1c594" => :mojave
+    sha256 "99f8bc0108a2f4d01e03ef2a3106daba63e8be5649beea9e5795ce03d0be407f" => :high_sierra
+    sha256 "54e0b84ccd0490235423d304eb4dac7a704946ced551bac2fd5b8fcd6150397d" => :sierra
   end
 
   depends_on "cmake"
@@ -22,7 +22,7 @@ class IgnitionCommon1 < Formula
   depends_on "ignition-math4"
   depends_on "ossp-uuid"
   depends_on "pkg-config"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -54,7 +54,6 @@ class IgnitionCommon1 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
-    ENV.append "PKG_CONFIG_PATH", Formula["tinyxml2@6.2.0"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-common1"
     cflags = `pkg-config --cflags ignition-common1`.split(" ")
     system ENV.cc, "test.cpp",
