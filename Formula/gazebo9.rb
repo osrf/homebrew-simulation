@@ -3,7 +3,7 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.4.1.tar.bz2"
   sha256 "c787cd845ed454f6dd4179936c8326b45a61cec3cf18c30e5f63271a21e839c5"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -35,7 +35,7 @@ class Gazebo9 < Formula
   depends_on "sdformat6"
   depends_on "tbb"
   depends_on "tinyxml"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
   depends_on "bullet" => :recommended

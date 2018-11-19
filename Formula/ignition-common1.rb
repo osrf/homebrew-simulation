@@ -3,7 +3,7 @@ class IgnitionCommon1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
@@ -22,7 +22,7 @@ class IgnitionCommon1 < Formula
   depends_on "ignition-math4"
   depends_on "ossp-uuid"
   depends_on "pkg-config"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -54,7 +54,6 @@ class IgnitionCommon1 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
-    ENV.append "PKG_CONFIG_PATH", Formula["tinyxml2@6.2.0"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-common1"
     cflags = `pkg-config --cflags ignition-common1`.split(" ")
     system ENV.cc, "test.cpp",

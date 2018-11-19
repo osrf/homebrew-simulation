@@ -3,7 +3,7 @@ class IgnitionFuelTools1 < Formula
   homepage "https://ignitionrobotics.org"
   url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel-tools1-1.2.0.tar.bz2"
   sha256 "6b1d631a095e8273dc09be7456758aeaa7582b74bebe983cc14da49063994473"
-  revision 1
+  revision 2
   version_scheme 1
 
   bottle do
@@ -45,7 +45,6 @@ class IgnitionFuelTools1 < Formula
       target_link_libraries(test_cmake ignition-fuel_tools1::ignition-fuel_tools1)
     EOS
     # test building with pkg-config
-    ENV.append "PKG_CONFIG_PATH", Formula["tinyxml2@6.2.0"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-fuel_tools1"
     cflags = `pkg-config --cflags ignition-fuel_tools1`.split(" ")
     system ENV.cc, "test.cpp",
