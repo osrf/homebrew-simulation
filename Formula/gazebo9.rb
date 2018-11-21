@@ -8,9 +8,9 @@ class Gazebo9 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "f75c873788df70945aeccd6ee0f20e7e84621ce1485377e3b24b970d7ad5eec5" => :mojave
-    sha256 "a40a98ab218a6cc26c2feac8257c7f9ee808120bfd0176f74a7cd9b622305d63" => :high_sierra
-    sha256 "2e5547a570d4f4cf154e31c62a9642d9c536c33264df45b8110d94d91bacdd61" => :sierra
+    sha256 "7666f7daa82f9f34cc311b8dfd9a1f57d430824e95757126673fc815e195e52e" => :mojave
+    sha256 "c78362becc395fc9de7b0baf732ea081d1d2187a2898712d65219c3a0bd61152" => :high_sierra
+    sha256 "6f35402a95704c674c920e7918825b3396de5b9d5018b2f37dfe5d4cb118a483" => :sierra
   end
 
   depends_on "cmake" => :build
