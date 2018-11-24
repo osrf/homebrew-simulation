@@ -3,15 +3,15 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "http://gazebosim.org/distributions/gazebo/releases/gazebo-7.14.0.tar.bz2"
   sha256 "c1e48a2304d8186a3df4fb763262d189a8afe6b1ab82c30e614e336f3cb6034f"
-  revision 3
+  revision 4
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "aa093e0a5a36a6a4f291dcbfcbc04ef04b027f24cbbb7758199a8d8739c3f2c4" => :mojave
-    sha256 "ef7fcbaedff5b3bfd89d8c162633e81549d3eba2b2a68d4fe158688fc034e13e" => :high_sierra
-    sha256 "2b35d23860523b8c5835f599593a5222943aa23fb21d1c458c35781ae7878f86" => :sierra
+    sha256 "840ecfb8e17a23f6225415e263b865156178321115ea7f702950b3bdb27f67d2" => :mojave
+    sha256 "2f1738a1dafc6b84fc4e9ef0a628d3f9fadc84b94ec66b2db166ce789a164c1c" => :high_sierra
+    sha256 "370e23b25fb5f0dd69c6ed616ba8d17696aa74108354d9e2190b22ebbf44d7fe" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -31,7 +31,7 @@ class Gazebo7 < Formula
   depends_on "sdformat4"
   depends_on "tbb"
   depends_on "tinyxml"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
 
   depends_on "bullet" => :recommended
   depends_on "ffmpeg" => :recommended
