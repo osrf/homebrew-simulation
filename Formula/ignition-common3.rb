@@ -4,7 +4,7 @@ class IgnitionCommon3 < Formula
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common3-3.0.0~pre2.tar.bz2"
   version "3.0.0~pre2"
   sha256 "b14385e3be0522ef7ba6ac5f346909fac906d80ed873c2aa86ea732adcb6b61f"
-  revision 1
+  revision 2
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
@@ -22,7 +22,7 @@ class IgnitionCommon3 < Formula
   depends_on "ignition-math6"
   depends_on "ossp-uuid"
   depends_on "pkg-config"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
 
   def install
     system "cmake", ".", *std_cmake_args

@@ -4,7 +4,7 @@ class IgnitionCommon2 < Formula
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common2-2.0.0~pre1.tar.bz2"
   version "2.0.0~pre1"
   sha256 "9b5fe63d091b2eb2584642b76befba1144268963b2cdeaefdf795062817de217"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
@@ -24,7 +24,7 @@ class IgnitionCommon2 < Formula
   depends_on "ignition-math5"
   depends_on "ossp-uuid"
   depends_on "pkg-config"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
 
   def install
     system "cmake", ".", *std_cmake_args
