@@ -10,8 +10,8 @@ class IgnitionGui1 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "2489a47d8f8adca2a0b07d1e6989fa2487baa4fa2f7ca3cb71599b620f9b9811" => :mojave
-    sha256 "512f47c998e823b3811eef3ee40d91627591f0c9a069572724c44fcddd748303" => :high_sierra
+    sha256 "e9174e80c241448d5a05f65c8ba2de60fd07f280ccd1351c629d9f0f9e6407e6" => :mojave
+    sha256 "0cddd077e908f34c0733c9bf9df25adb35032c55831a3d62f41c872019f5948d" => :high_sierra
   end
 
   depends_on "cmake" => :build
