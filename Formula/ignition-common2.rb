@@ -4,16 +4,16 @@ class IgnitionCommon2 < Formula
   url "http://gazebosim.org/distributions/ign-common/releases/ignition-common2-2.0.0~pre1.tar.bz2"
   version "2.0.0~pre1"
   sha256 "9b5fe63d091b2eb2584642b76befba1144268963b2cdeaefdf795062817de217"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "339f3895ae57a9519f9683ec36114e827134734f5a32c2874023b5cdd2382728" => :mojave
-    sha256 "5bc9842a45bc0dd3f94d461e9489001685199e541fc164d01c262579e931507b" => :high_sierra
-    sha256 "08299d6d7ffdd71c9678c27b77de28fe780c79521be0909ec29af2dc7cd9acbb" => :sierra
+    sha256 "6f95d0ae8ff280c0defb01d29770d3960306a9f556be4e896d1cfbd915f33796" => :mojave
+    sha256 "661d64a901297346f8d90178f1943c699a50918d75965202191b5c6f6d2648bc" => :high_sierra
+    sha256 "75678b56a12a04a98e7f5f77750a4e6383b56ed61ff2ab11e1b196934d1c0ac7" => :sierra
   end
 
   depends_on "cmake"
@@ -24,7 +24,7 @@ class IgnitionCommon2 < Formula
   depends_on "ignition-math5"
   depends_on "ossp-uuid"
   depends_on "pkg-config"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
 
   def install
     system "cmake", ".", *std_cmake_args

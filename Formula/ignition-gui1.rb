@@ -4,13 +4,14 @@ class IgnitionGui1 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-gui/get/fae7d4bb536acce627ce971308029ad49cb5fe2a.tar.gz"
   version "1.0.0~pre2~1~fae7d4b"
   sha256 "5c7fc684b83b8ac8db930930353e20abf37f6492d60f730ca3978c5774dd2446"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "gz11", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "2489a47d8f8adca2a0b07d1e6989fa2487baa4fa2f7ca3cb71599b620f9b9811" => :mojave
-    sha256 "512f47c998e823b3811eef3ee40d91627591f0c9a069572724c44fcddd748303" => :high_sierra
+    sha256 "e9174e80c241448d5a05f65c8ba2de60fd07f280ccd1351c629d9f0f9e6407e6" => :mojave
+    sha256 "0cddd077e908f34c0733c9bf9df25adb35032c55831a3d62f41c872019f5948d" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,7 @@ class IgnitionGui1 < Formula
   depends_on "pkg-config"
   depends_on "qt"
   depends_on "qwt"
-  depends_on "tinyxml2@6.2.0"
+  depends_on "tinyxml2"
 
   def install
     ENV.m64
@@ -85,7 +86,6 @@ class IgnitionGui1 < Formula
       target_link_libraries(test_cmake ignition-gui1::ignition-gui1)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
-    ENV.append_path "PKG_CONFIG_PATH", Formula["tinyxml2@6.2.0"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-gui1"
     cflags   = `pkg-config --cflags ignition-gui1`.split(" ")
     ldflags  = `pkg-config --libs ignition-gui1`.split(" ")
