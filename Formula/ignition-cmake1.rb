@@ -9,8 +9,6 @@ class IgnitionCmake1 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any_skip_relocation
-    sha256 "c35ac26d527e897f0a60bfe3cb41ddb8c9a05283d38d964a3254f8020b3b2d4b" => :mojave
-    sha256 "7527124388711be4f75b4f927629c55f1b32ae64ef7063082d4fbdc6e2cd7b62" => :high_sierra
     sha256 "10cdf432ef40bbcdaee901763a457467710d3007bca99250fda5ac49cbd0bfae" => :sierra
   end
 
