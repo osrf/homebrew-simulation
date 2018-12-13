@@ -1,20 +1,18 @@
 class IgnitionMath5 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math5-5.0.0~pre4.tar.bz2"
-  version "5.0.0~pre4"
-  sha256 "b500b4f117ac98de9d078af8fb32ac8f5df85626a0a1297e140c2f5e931a2e77"
+  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math5-5.0.0.tar.bz2"
+  sha256 "2536f20aebfa617dbf4a552638b25b084774f6b65f92d9ed3c304af5e45e3db2"
   version_scheme 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/ign-math/releases"
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "02759823095c7b6bd69470aa8574911385df439d6f67326a024bd77563cef133" => :mojave
-    sha256 "394b0d8370daf3cfee902f0c3a8178519be39685eeb55391b92d039e0db108b7" => :high_sierra
-    sha256 "f47d34b37ac933d24a2c8824de3784d8ee49efcb6e7ce29b1513402c02ceeaa8" => :sierra
-    sha256 "8895b002eca170ed4102240c121d1ad90a914fc08f583d1f0988b1735ead2fc8" => :el_capitan
+    sha256 "1fa8dfc5c6453d869131f3ff103909ca8364fde2a1ddbd4e1b1c5a2a5bb8a52e" => :mojave
+    sha256 "e064841eb6fcf150e84fc7ceb8de27cbc404816d9031df7a658f7535da8da011" => :high_sierra
+    sha256 "504f37f5ff7ad64e31cf1538a76c7e689ede271c6eddee0a6a779ee581e62875" => :sierra
   end
 
   depends_on "cmake" => :build
