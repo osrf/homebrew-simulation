@@ -1,15 +1,15 @@
 class IgnitionMsgs3 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs3-3.0.0~pre3.tar.bz2"
-  version "3.0.0~pre3"
-  sha256 "304cd21b363d249d9ace4e879f7c671dae90177a28e17b5e0921c60a65175d67"
+  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs3-3.0.0~pre4.tar.bz2"
+  version "3.0.0~pre4"
+  sha256 "f4ef46bf8fbf68f4f3aea183e3030af1d280e7783e326421b6fbe9bbeaa280a1"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "eca761d8cde2dad5037a99d3806f10a5e73d968123936f8ffe5620194626d8b3" => :mojave
-    sha256 "34807d7232f961fde440f60bb46612c8c30afe9845ed7091c27b1874f929f375" => :high_sierra
+    sha256 "b0eb2b904e89b6f90a3737cecb5c3e1f5dc865323c260d808877f49ecbb796ec" => :mojave
+    sha256 "e02e373f5e8eff2286fde51929de1f769b3aa51754844b215427147bd44a2e2d" => :high_sierra
   end
 
   depends_on "protobuf-c" => :build
