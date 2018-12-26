@@ -3,7 +3,7 @@ class IgnitionPlugin1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-plugin"
   url "http://gazebosim.org/distributions/ign-plugin/releases/ignition-plugin-1.0.0~pre2.tar.bz2"
   version "1.0.0~pre2"
-  sha256 "729af670a26472e50b92d67da4a80c9f83f024b6806ddc7a88697ee8275ece0b"
+  sha256 "4e2883398fe72089736596dce6ef882675aa0eda91c231d6df4704285d1053af"
 
   bottle do
     root_url "http://gazebosim.org/distributions/ign-plugin/releases"
