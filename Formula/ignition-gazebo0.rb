@@ -11,6 +11,7 @@ class IgnitionGazebo0 < Formula
   depends_on "gflags"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
+  depends_on "ignition-fuel-tools3"
   depends_on "ignition-gui1"
   depends_on "ignition-math6"
   depends_on "ignition-msgs3"
