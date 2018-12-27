@@ -4,7 +4,7 @@ class IgnitionGui1 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-gui/get/fae7d4bb536acce627ce971308029ad49cb5fe2a.tar.gz"
   version "1.0.0~pre2~1~fae7d4b"
   sha256 "5c7fc684b83b8ac8db930930353e20abf37f6492d60f730ca3978c5774dd2446"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "gz11", :using => :hg
 
