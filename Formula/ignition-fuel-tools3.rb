@@ -12,7 +12,7 @@ class IgnitionFuelTools3 < Formula
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common1"
+  depends_on "ignition-common3"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
