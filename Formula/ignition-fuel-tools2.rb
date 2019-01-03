@@ -4,6 +4,13 @@ class IgnitionFuelTools2 < Formula
   url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel-tools2-2.0.0.tar.bz2"
   sha256 "8560f68fff0e075dcd95aebdb9bccf3fcae64f1011000683c05ac17436ee8824"
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "1b3c9420e00cc6434c3027bd4371a8ac9e5876abf4e1c43c92ba35364fa5dfdf" => :mojave
+    sha256 "bdf6b0fef12a813697642fe53463bb2e4da55f85f23d1fd5cf1a7fa86dd673d7" => :high_sierra
+    sha256 "bd826f66e9fbb18f44630ae549f26ff635b8b36ec0c01095f38e470f001512f9" => :sierra
+  end
+
   depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-common1"
