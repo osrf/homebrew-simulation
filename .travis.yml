@@ -7,7 +7,7 @@ matrix:
       rvm: system
     - env: OSX=10.13
       os: osx
-      osx_image: xcode9.4
+      osx_image: xcode10.1
       rvm: system
 
 before_install:
@@ -28,7 +28,7 @@ before_install:
   - ulimit -n 1024
 
 script:
-  - brew test-bot --fast $TEST_BOT_ARGS
+  - brew test-bot --fast --skip-setup $TEST_BOT_ARGS
 
 notifications:
   email:
