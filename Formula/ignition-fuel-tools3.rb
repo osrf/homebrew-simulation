@@ -5,6 +5,13 @@ class IgnitionFuelTools3 < Formula
   version "2.999.999~pre1"
   sha256 "bc8d36d83b0324ab17c2ec6715ddaaa104da7bff827b5cb333fcb991d6a8e623"
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    sha256 "53c901774aa32f32a721d439d6e55fbd9c0636d36ba264e92f397bf7309e8657" => :mojave
+    sha256 "454cf6157e5bb9de39612d9d43a27e6494192e5e93131e69e43905c5ff0b6288" => :high_sierra
+    sha256 "bfec072e1dd068046c1fdc5e2634068bc369ebed2dad8e6df70272c9d3bcf3e3" => :sierra
+  end
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
