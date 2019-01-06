@@ -4,6 +4,7 @@ class IgnitionPhysics1 < Formula
   url "http://gazebosim.org/distributions/ign-physics/releases/ignition-physics-1.0.0~pre3.tar.bz2"
   version "1.0.0~pre3"
   sha256 "31b20bb58c533b50483e176293595ac1a4cc25dabfc2572d2f4eab72962d5c3b"
+  revision 1
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
