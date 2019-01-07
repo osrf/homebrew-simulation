@@ -1,10 +1,9 @@
 class IgnitionPhysics1 < Formula
   desc "Physics library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
-  url "http://gazebosim.org/distributions/ign-physics/releases/ignition-physics-1.0.0~pre3.tar.bz2"
-  version "1.0.0~pre3"
-  sha256 "31b20bb58c533b50483e176293595ac1a4cc25dabfc2572d2f4eab72962d5c3b"
-  revision 1
+  url "https://bitbucket.org/ignitionrobotics/ign-physics/get/77f9c258e46f3480495b1b407c3c05c374467b93.tar.gz"
+  version "1.0.0~pre3~1~77f9c25"
+  sha256 "59f2c5a8a120788ed8b7f0b9a379d750f2f6d37efcea6c2f023c10efd7babcb0"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
