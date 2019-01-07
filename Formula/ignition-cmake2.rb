@@ -1,16 +1,16 @@
 class IgnitionCmake2 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-cmake/releases/ignition-cmake2-2.0.0~pre2.tar.bz2"
-  version "2.0.0~pre2"
-  sha256 "0d17e4896287b1cb472bd0aa859ad08d8af30166ccd3058a0aba7f59e7689492"
+  url "http://gazebosim.org/distributions/ign-cmake/releases/ignition-cmake2-2.0.0~pre3.tar.bz2"
+  version "2.0.0~pre3"
+  sha256 "20134ddeabd6e54cb4aad7ffd7a6b357746bd58ff6e41603ad69bd37a0d8559e"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any_skip_relocation
-    sha256 "f3535b0a730ec401e3c73344190c6970571a5d59870d38f1724f030970868ff2" => :mojave
-    sha256 "243af0747cf9b3e8e03d9ff00a45fe6fefbc2ab7815758ad4d4e36d84c77f0c7" => :high_sierra
-    sha256 "c4147bbe1852fc39e220d7308381e2ff1deabb534afceeaedbe02367b90dd778" => :sierra
+    sha256 "9fd0b2cd27ed9cea32dbb689befc72b56d467c3287e05be765ef05116f6f13d0" => :mojave
+    sha256 "abbab0f4fbebb15492e602c5d04789cc5ced3e3dbccef08a5bfc4954a95ee8c2" => :high_sierra
+    sha256 "859628201a9f622600edca59d0b5b812ad75102823ef9bdd5faca0dbb0e81d28" => :sierra
   end
 
   depends_on "cmake"
