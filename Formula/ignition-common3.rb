@@ -1,10 +1,9 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common3-3.0.0~pre2.tar.bz2"
-  version "3.0.0~pre2"
-  sha256 "b14385e3be0522ef7ba6ac5f346909fac906d80ed873c2aa86ea732adcb6b61f"
-  revision 2
+  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common3-3.0.0~pre4.tar.bz2"
+  version "3.0.0~pre4"
+  sha256 "5aef6fcf1a3cc6ef85d8ef7a99de4f98df5f201514e6065752e050b2a9f24b79"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
