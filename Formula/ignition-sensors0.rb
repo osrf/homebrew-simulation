@@ -1,15 +1,15 @@
 class IgnitionSensors0 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "http://gazebosim.org/distributions/ign-sensors/releases/ignition-sensors-0.1.0~pre1.tar.bz2"
-  version "0.1.0~pre1"
-  sha256 "308279da4edd74bb3f08996fe71416445d8ff799b5b6764a0f259d65a67c1fbe"
+  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/6f3b5f091187dfa6385ba1f1449c2472b7f6916b.tar.gz"
+  version "0.1.0~pre1~1~6f3b5f0"
+  sha256 "4ee68a62e6355fd4e7465449d67e9adfa11a1d793d2c62644453e6d0b96512d3"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "2ea10323070f79369f1272715a47907a7a6fa922beb0d7a668d5745982ebe0e9" => :mojave
+    sha256 "f000b97a9c526ea2022fa9a7e9c9a2bc5313e0d1e5ddd0507e5ce4b595a9c8f4" => :mojave
   end
 
   depends_on "cmake" => :build
