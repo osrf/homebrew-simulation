@@ -7,7 +7,7 @@ class Sdformat8 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "d3b3be1421fcc490409ab04a29372d271a31ee5028a5c2f4df8d5fd8b2f8e650" => :mojave
+    sha256 "3541343b94d9a0cc4e0efe5dd45bad1dcb2f724d942dc45482a272009752d7cb" => :mojave
   end
 
   depends_on "cmake" => :build
