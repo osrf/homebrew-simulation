@@ -8,7 +8,7 @@ class IgnitionPhysics1 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "350657d1684698c2fc0c1158cc3e61861bc0a4c47533bc7f1b0bbc71d751ec08" => :mojave
+    sha256 "c9e6c1ab7d4af130bd1aab1625df823b896e90d9801466a089c6dd70297f5a96" => :mojave
   end
 
   depends_on "cmake" => :build
