@@ -1,15 +1,14 @@
 class IgnitionPhysics1 < Formula
   desc "Physics library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
-  url "https://bitbucket.org/ignitionrobotics/ign-physics/get/77f9c258e46f3480495b1b407c3c05c374467b93.tar.gz"
-  version "1.0.0~pre3~1~77f9c25"
-  sha256 "59f2c5a8a120788ed8b7f0b9a379d750f2f6d37efcea6c2f023c10efd7babcb0"
-  revision 1
+  url "http://gazebosim.org/distributions/ign-physics/releases/ignition-physics-1.0.0~pre4.tar.bz2"
+  version "1.0.0~pre4"
+  sha256 "0c6e06f8be36bceb2d49ab1c6fe10a443004da8d545ffae3deceb873cc0882c2"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "350657d1684698c2fc0c1158cc3e61861bc0a4c47533bc7f1b0bbc71d751ec08" => :mojave
+    sha256 "c9e6c1ab7d4af130bd1aab1625df823b896e90d9801466a089c6dd70297f5a96" => :mojave
   end
 
   depends_on "cmake" => :build
