@@ -7,11 +7,6 @@ class ChronoEngine < Formula
   depends_on "cmake" => :build
   depends_on "irrlicht" => :optional
 
-  fails_with :clang do
-    build 503
-    cause "HACD problem"
-  end
-
   # Fix irrlicht demos: incorrect path to data folder
   patch :DATA if build.head?
 
