@@ -1,15 +1,14 @@
 class IgnitionPlugin1 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-plugin"
-  url "http://gazebosim.org/distributions/ign-plugin/releases/ignition-plugin-1.0.0~pre2.tar.bz2"
-  version "1.0.0~pre2"
-  sha256 "4e2883398fe72089736596dce6ef882675aa0eda91c231d6df4704285d1053af"
+  url "http://gazebosim.org/distributions/ign-plugin/releases/ignition-plugin-1.0.0.tar.bz2"
+  sha256 "d6f4941e9640798af1d463a96ea5c1f6b70acf494f85905fd0012da54816e3ef"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "ee5080163f97b1c4f6f61c131af7fa7062e3edced7c798a010d7bc915c4ca121" => :mojave
-    sha256 "e33eca3900799ea3cd972221415423d839f02969a29c15b535bf2035e3896de0" => :high_sierra
+    sha256 "5c56c9c2c65a38eff9c5e61ad229c25878e29e35b837a92d09626a598deffe4d" => :mojave
+    sha256 "11ee8f67c5995dcb144719ab9fda3ad56f5ecf7f2f388765f4f5ab5e0df8ea66" => :high_sierra
   end
 
   depends_on "cmake"
