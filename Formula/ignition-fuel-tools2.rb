@@ -7,9 +7,9 @@ class IgnitionFuelTools2 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "1b3c9420e00cc6434c3027bd4371a8ac9e5876abf4e1c43c92ba35364fa5dfdf" => :mojave
-    sha256 "bdf6b0fef12a813697642fe53463bb2e4da55f85f23d1fd5cf1a7fa86dd673d7" => :high_sierra
-    sha256 "bd826f66e9fbb18f44630ae549f26ff635b8b36ec0c01095f38e470f001512f9" => :sierra
+    sha256 "b0b3747f79e575dcc216398c293d3ac3639e75681629415887ff82c121890b9e" => :mojave
+    sha256 "a9fe71a6e276d3adfb5799c18dd977bad69f7fc462519705bdcf9f7ef6013270" => :high_sierra
+    sha256 "b1d6479b778fd6e37a33c146d43bd54e3d582f3dc12ddf4087813b8f03d0ec67" => :sierra
   end
 
   depends_on "cmake"
