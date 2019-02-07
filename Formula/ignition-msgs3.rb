@@ -2,7 +2,7 @@ class IgnitionMsgs3 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
   url "https://bitbucket.org/ignitionrobotics/ign-msgs/get/2f8a9726192615852fa0eea925f96df3bac57b21.tar.gz"
-  version "3.0.0~pre4~2f8a9726"
+  version "3.0.0~pre4~1~2f8a9726"
   sha256 "3da2d59a0182f0803a611478f97e11dc348e597e8c5573c7323886867565d1a2"
 
   bottle do
