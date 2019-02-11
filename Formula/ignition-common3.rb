@@ -1,16 +1,15 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "https://bitbucket.org/ignitionrobotics/ign-common/get/a3b13b35ea4fa29436de9a72d028074b98fd4ef6.tar.gz"
-  version "3.0.0~pre4~1~a3b13b35"
-  sha256 "d00ed2f5363e9cbe25959e259eddb65131c8df9e30efa70e8df81402ceeeaf50"
+  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common3-3.0.0~pre5.tar.bz2"
+  version "3.0.0~pre5"
+  sha256 "fabf393da281721a1dae1a5a0508ce8b889c6dbdbb5882fe6fad378d00867079"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "6bfb92b8a35494d8f7a1d9e977eecb4b0723f33831a64176e6952c3c1dc1836a" => :mojave
-    sha256 "bfa584002c7602576734707af7a1935f76e2763bcab25bc29bc6cea988c58019" => :high_sierra
-    sha256 "c113b40e1953a31e2c5e813b990378ae86c3dd20843041b18eaeee85e1e5e88b" => :sierra
+    sha256 "0b4c3b829c840eb9ebbaf9325958ba8017902306ba17b2317ed0c66b46b71f0d" => :mojave
+    sha256 "f6d7ea98929187eec6ad5399bbabb0e5b037c05c9fe29143fe5fe417cf1244bf" => :high_sierra
   end
 
   depends_on "cmake"
@@ -19,6 +18,7 @@ class IgnitionCommon3 < Formula
   depends_on "gts"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
+  depends_on :macos => :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
