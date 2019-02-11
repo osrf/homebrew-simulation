@@ -1,19 +1,27 @@
 class IgnitionMsgs2 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs2-2.0.0~pre3.tar.bz2"
-  version "2.0.0~pre3"
-  sha256 "496fbb96b55b2a8c083a603595df172c914e441e4d725a89f4eaf2d9f5fc8a72"
+  url "http://gazebosim.org/distributions/ign-msgs/releases/ignition-msgs2-2.0.0.tar.bz2"
+  sha256 "d1fcb00b54b08f44b20796ee6cf1072e3a28dd0c563cde5de57ba79fe9660a13"
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
+
+  bottle do
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    cellar :any
+    sha256 "30dac4aeb4c85d0dbab0c0025fa071a1be0b38f21bcdede161f733ffe81a36c2" => :mojave
+    sha256 "8d7ac3200d07f1553d81dae7450a5719df6b3fda1c77a01e2a055cc90874060e" => :high_sierra
+    sha256 "24ee8e6b7a269d899e8e11f6c40f2812bb955f52f954aa7b09a0dcc1ad1f73b2" => :sierra
+  end
+
+  depends_on "protobuf-c" => :build
 
   depends_on "cmake"
   depends_on "ignition-cmake1"
   depends_on "ignition-math5"
+  depends_on "ignition-tools"
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "protobuf-c" => :build
-  depends_on "ignition-tools"
 
   def install
     system "cmake", ".", *std_cmake_args
