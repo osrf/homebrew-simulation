@@ -9,10 +9,10 @@ class IgnitionMsgs2 < Formula
   depends_on "cmake"
   depends_on "ignition-cmake1"
   depends_on "ignition-math5"
-  depends_on "pkg-config"
-  depends_on "protobuf"
-  depends_on "protobuf-c" => :build
   depends_on "ignition-tools"
+  depends_on "pkg-config"
+  depends_on "protobuf-c" => :build
+  depends_on "protobuf"
 
   def install
     system "cmake", ".", *std_cmake_args
