@@ -6,6 +6,14 @@ class IgnitionMsgs2 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    cellar :any
+    sha256 "30dac4aeb4c85d0dbab0c0025fa071a1be0b38f21bcdede161f733ffe81a36c2" => :mojave
+    sha256 "8d7ac3200d07f1553d81dae7450a5719df6b3fda1c77a01e2a055cc90874060e" => :high_sierra
+    sha256 "24ee8e6b7a269d899e8e11f6c40f2812bb955f52f954aa7b09a0dcc1ad1f73b2" => :sierra
+  end
+
   depends_on "protobuf-c" => :build
 
   depends_on "cmake"
