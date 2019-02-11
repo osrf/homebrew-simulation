@@ -1,19 +1,17 @@
 class IgnitionCommon2 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common2-2.0.0~pre1.tar.bz2"
-  version "2.0.0~pre1"
-  sha256 "9b5fe63d091b2eb2584642b76befba1144268963b2cdeaefdf795062817de217"
-  revision 3
+  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common2-2.0.0.tar.bz2"
+  sha256 "f76ed5a7a86728391bc6d7fb13fb07b61a1106e39d8cb87f3053154432d4b0f6"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "6f95d0ae8ff280c0defb01d29770d3960306a9f556be4e896d1cfbd915f33796" => :mojave
-    sha256 "661d64a901297346f8d90178f1943c699a50918d75965202191b5c6f6d2648bc" => :high_sierra
-    sha256 "75678b56a12a04a98e7f5f77750a4e6383b56ed61ff2ab11e1b196934d1c0ac7" => :sierra
+    sha256 "e2d38882f31358078c82f84a85ace6e71d9405323ca8f26b7b35e3152e9d0335" => :mojave
+    sha256 "c7f3b475c669709f900b1f76ebbf4e1abbd02f97a4de693147cffd17baf106b0" => :high_sierra
+    sha256 "fd86dcee981cb04ee1cee0ac9fd681b2292eb0d2b2e2efa13566e08c27dcaf6f" => :sierra
   end
 
   depends_on "cmake"
