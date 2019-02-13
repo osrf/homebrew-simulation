@@ -9,7 +9,7 @@ class IgnitionSensors0 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "f000b97a9c526ea2022fa9a7e9c9a2bc5313e0d1e5ddd0507e5ce4b595a9c8f4" => :mojave
+    sha256 "3066265228d314095860f483a21da3086596c3b55c2dba858092095a95ad724c" => :mojave
   end
 
   depends_on "cmake" => :build
