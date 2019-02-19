@@ -4,6 +4,7 @@ class IgnitionSensors0 < Formula
   url "http://gazebosim.org/distributions/ign-sensors/releases/ignition-sensors-0.1.0~pre2.tar.bz2"
   version "0.1.0~pre2"
   sha256 "7aeb19324fd03fce26bac26f6e074e69cb882490a24562d68cd620d22618b1e5"
+  version_scheme 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
