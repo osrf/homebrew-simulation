@@ -1,14 +1,14 @@
 class IgnitionRendering1 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "http://gazebosim.org/distributions/ign-rendering/releases/ignition-rendering-1.0.0~pre6.tar.bz2"
-  version "1.0.0~pre6"
-  sha256 "7ee824287f600562b2da1993d6fbb684b8d3d87b878c08d5a5a101c41e3bbf5b"
+  url "http://gazebosim.org/distributions/ign-rendering/releases/ignition-rendering-1.0.0~pre7.tar.bz2"
+  version "1.0.0~pre7"
+  sha256 "150d85050f334915b08ec69f49b83017b61cf3fa4b9b504c26bd353b90b981d8"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "30a7b0f3e29551d0cc4f43654a57414d342df9112a5dca829c2e66b409914982" => :mojave
-    sha256 "8c3825a79b9c62dcdbc035a9dc8b18ec9117c27f84562c0bf9a413b315813b99" => :high_sierra
+    sha256 "59e9706546b7d5234b340ad9e65f3d45ebb1a4087e30936579547cde147f0da5" => :mojave
+    sha256 "ae017bd0895114c194264401f54b69b3bc968260f939e5dba5d660406012d18d" => :high_sierra
   end
 
   depends_on "cmake" => :build
