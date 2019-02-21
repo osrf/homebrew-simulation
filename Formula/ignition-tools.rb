@@ -13,7 +13,6 @@ class IgnitionTools < Formula
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
-  depends_on "libyaml"
 
   def install
     mkdir "build" do
