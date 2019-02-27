@@ -7,8 +7,8 @@ class IgnitionMsgs3 < Formula
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "ff158d74f1b02a1f74396f9fc94446d464c192f9abad6d460af334355cce4c23" => :mojave
-    sha256 "16bf7c945ce3be26a8741b2dd6c331965e6b3a6e8a31c0088f8cc832d4e4f96e" => :high_sierra
+    sha256 "b0ea2469967a9a5998656a03e28b6ab6f82b41595f2f19ce65ea4d285729fd41" => :mojave
+    sha256 "eeabf387f94d6239235bcb5818f1f0312db53bb69439813db1d4fd1c4d1108d2" => :high_sierra
   end
 
   depends_on "protobuf-c" => :build
