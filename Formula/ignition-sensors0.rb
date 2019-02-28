@@ -2,7 +2,7 @@ class IgnitionSensors0 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
   url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/a1506694b185f77146b6c9daf5b2a8b093d7e70f.tar.bz2"
-  version "0.1.0~pre2~a1506694b"
+  version "0.1.0~pre2~1~a1506694b"
   sha256 "63facb721a69cde014c2edf82f49199f5fafddf189675cf36bbbe5f6bc916556"
   version_scheme 1
 
