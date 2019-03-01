@@ -1,13 +1,12 @@
 class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-8.0.0~pre5.tar.bz2"
-  version "8.0.0~pre5"
-  sha256 "ecdf2b0b1c53e6d71f6a4d44ec72aad004a1009ac772a349c6aecc5b44d2b2c0"
+  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-8.0.0.tar.bz2"
+  sha256 "bf114af4fde1460111f6eecfd699d5e80810d966c69688c8bb0d08d962e010e2"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "38b8a55802300b4f2b597f694f391677585b2232f924aafe1b98718cc2153f2a" => :mojave
+    sha256 "b7d6c4d1d596e5ccc0aeabd31cf2de4b3c0e4235702ceff69396830ffaf9fcce" => :mojave
   end
 
   depends_on "cmake" => :build
