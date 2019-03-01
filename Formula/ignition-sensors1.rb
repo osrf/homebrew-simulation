@@ -1,17 +1,10 @@
-class IgnitionSensors0 < Formula
+class IgnitionSensors1 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/a1506694b185f77146b6c9daf5b2a8b093d7e70f.tar.bz2"
-  version "0.1.0~pre2~1~a1506694b"
-  sha256 "63facb721a69cde014c2edf82f49199f5fafddf189675cf36bbbe5f6bc916556"
-  version_scheme 1
+  url "http://gazebosim.org/distributions/ign-sensors/releases/ignition-sensors-1.0.0.tar.bz2"
+  sha256 "30227166eb3fba8d9f39b5edbd9694ccb483799c8230d2fdcd7642674e4a7464"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
-
-  bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "ff4daf959d0c39d5d56341d716f96430567734dfaf68d1edf4391d7f3fce4af8" => :mojave
-  end
 
   depends_on "cmake" => :build
 
@@ -41,9 +34,9 @@ class IgnitionSensors0 < Formula
       }
     EOS
     ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
-    system "pkg-config", "ignition-sensors0"
-    cflags   = `pkg-config --cflags ignition-sensors0`.split(" ")
-    ldflags  = `pkg-config --libs ignition-sensors0`.split(" ")
+    system "pkg-config", "ignition-sensors1"
+    cflags   = `pkg-config --cflags ignition-sensors1`.split(" ")
+    ldflags  = `pkg-config --libs ignition-sensors1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
