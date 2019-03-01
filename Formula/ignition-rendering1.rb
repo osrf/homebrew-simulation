@@ -6,8 +6,8 @@ class IgnitionRendering1 < Formula
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
-    sha256 "59e9706546b7d5234b340ad9e65f3d45ebb1a4087e30936579547cde147f0da5" => :mojave
-    sha256 "ae017bd0895114c194264401f54b69b3bc968260f939e5dba5d660406012d18d" => :high_sierra
+    sha256 "cafade1cb99232ab1e187b986b0489f17121a6879aff7fde762a7417207d4689" => :mojave
+    sha256 "3f065edd6db6be46c5225377f5a393e00e0877a8f1be6261aa218734aee92c05" => :high_sierra
   end
 
   depends_on "cmake" => :build
