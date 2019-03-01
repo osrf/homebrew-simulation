@@ -1,14 +1,14 @@
 class Sdformat4 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-4.4.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-4.4.0.tar.bz2"
   sha256 "4424a984f69d3333f087e7aae1d8fa5aec61ad52e09be39e2f5e2cb69ade1527"
   revision 3
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "sdf4", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "3110ecc715f6ed7804065c7045adf775900427d35849825104e7d8fa2ba3410a" => :mojave
     sha256 "6b81d8914cb9e4173cd0931e06a17f260dbcb15595a86dd6e54555e1668cc510" => :high_sierra
     sha256 "ac922c99d9de95ffc74fc475104a0cda96c2b6ebf1b6b6f9631e52b538fa83af" => :sierra
