@@ -1,15 +1,14 @@
 class IgnitionFuelTools3 < Formula
   desc "Tools for using fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel-tools3-3.0.0.tar.bz2"
-  sha256 "ad0efda06c0d98a5d2f2d093e00e780281f1ed6387c1d16d6ba6c7c805a3acbb"
+  url "http://gazebosim.org/distributions/ign-fuel-tools/releases/ignition-fuel-tools3-3.0.1.tar.bz2"
+  sha256 "5bea7e65638061d3bc7197975a031a290d88608e612662160ad00ac7b2b52645"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "af7565d917048e3ace75dff7142f14d65f931c91c837c06829d9bb9f5e3dc85c" => :mojave
-    sha256 "801db9c91edd9648a0de61b177072f50f60f1e5b638103538d22246fd29722db" => :high_sierra
-    sha256 "43688c5e014e470fc8ec6eef1e7449b855625ab3c13b5e1c2e453af737a6957c" => :sierra
+    sha256 "da96ad39bc5f13f2b8b3ff574e410f12f3632b552a235b9ded579657ef10f559" => :mojave
+    sha256 "98c87cc1eecbe2a6118a11d50804db5195b0f21b200d7a2c1f5222f8fb08b0db" => :high_sierra
   end
 
   depends_on "cmake"
