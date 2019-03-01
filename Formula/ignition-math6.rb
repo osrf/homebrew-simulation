@@ -42,7 +42,7 @@ class IgnitionMath6 < Formula
     EOS
     # test building with manual compiler flags
     system ENV.cc, "test.cpp",
-                   "--std=c++11",
+                   "--std=c++14",
                    "-I#{include}/ignition/math6",
                    "-L#{lib}",
                    "-lignition-math6",
