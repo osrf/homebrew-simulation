@@ -34,6 +34,7 @@ class IgnitionGazebo1 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
+    #include <cstdint>
     #include <ignition/gazebo/Entity.hh>
     #include <ignition/gazebo/EntityComponentManager.hh>
     #include <ignition/gazebo/components/World.hh>
