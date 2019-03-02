@@ -6,8 +6,6 @@ class IgnitionGazebo0 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
-  bottle :unneeded
-
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "ignition-cmake2"
