@@ -1,14 +1,14 @@
 class IgnitionTransport3 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-transport/releases/ignition-transport3-3.1.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport3-3.1.0.tar.bz2"
   sha256 "bc8ac5bbb1cfadda857f748ba6467f9512b37a2b8395121586c459166ae45703"
   revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/ign-transport/releases"
+    root_url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases"
     cellar :any
     sha256 "cca7e9feb714fb3524090edabc9282aa59438602dc8667130f0502923a7a3921" => :mojave
     sha256 "95a7ba12bee7f75be226ca02ca5130232def56746e1cbf0a9d85d9195fbbff0f" => :high_sierra
