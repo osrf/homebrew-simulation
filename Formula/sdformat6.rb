@@ -1,13 +1,13 @@
 class Sdformat6 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-6.2.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.2.0.tar.bz2"
   sha256 "be818648f0a639a0c410231673e8c7ba043c2589586e43ef8c757070855898fa"
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "b54f7bce9d7ef970d7968935f1784e212ac3ff37d64ad6c82b439b381bb0cb02" => :mojave
     sha256 "3179c632c6664cbe0fdfad88e1c5c8acb1a4b4c9e5a3d8ee8856103b4cdd6db0" => :high_sierra
     sha256 "dde590ba3a975bf1ddbaf4e2d92ad9c01178740f24e0b194872f2fbff27d1e26" => :sierra
