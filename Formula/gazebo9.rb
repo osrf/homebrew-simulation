@@ -1,14 +1,14 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-9.6.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.6.0.tar.bz2"
   sha256 "289a78e09d1a49f55df2d3c72930f474f12b492c65d368af4f0e97e6dc4d1d19"
   revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "9d59615f6199abae132adc25d428a1241bd19da34ec84cbd7cd4190fc4313f3d" => :mojave
     sha256 "bd94619f20efc435d1f4aee7fb91db8edf40c2a30219916fe06f59b4b4838744" => :high_sierra
     sha256 "ff393aa5f4911aa910884e1e361c5bbbf6c1918b73bd93e204e4d1f787c1ba89" => :sierra
