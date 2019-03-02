@@ -1,12 +1,18 @@
 class IgnitionSensors1 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "http://gazebosim.org/distributions/ign-sensors/releases/ignition-sensors-1.0.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors-1.0.0.tar.bz2"
   sha256 "30227166eb3fba8d9f39b5edbd9694ccb483799c8230d2fdcd7642674e4a7464"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
-  depends_on "cmake" => :build
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "872ee434bc72701450905b4deb5432485fe45797f72e38607f7d813b4cba2faf" => :mojave
+  end
+
+  depends_on "cmake" => [:build, :test]
+  depends_on "pkg-config" => [:build, :test]
 
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
@@ -14,7 +20,6 @@ class IgnitionSensors1 < Formula
   depends_on "ignition-msgs3"
   depends_on "ignition-rendering1"
   depends_on "ignition-transport6"
-  depends_on "pkg-config"
   depends_on "sdformat8"
 
   def install
@@ -33,6 +38,13 @@ class IgnitionSensors1 < Formula
         return 0;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(ignition-sensors1 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ignition-sensors1::ignition-sensors1)
+    EOS
+    # test building with pkg-config
     ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
     system "pkg-config", "ignition-sensors1"
     cflags   = `pkg-config --cflags ignition-sensors1`.split(" ")
@@ -43,5 +55,13 @@ class IgnitionSensors1 < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
