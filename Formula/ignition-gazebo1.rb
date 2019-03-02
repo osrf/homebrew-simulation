@@ -1,7 +1,7 @@
-class IgnitionGazebo0 < Formula
+class IgnitionGazebo1 < Formula
   desc "Gazebo robot simulator"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
-  url "http://gazebosim.org/distributions/ign-gazebo/releases/ignition-gazebo-1.0.1.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo-1.0.1.tar.bz2"
   sha256 "925395d68347fa59ec2cd5dd55ca630db841d577f50f616e749845a4be80ebf8"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
@@ -70,14 +70,14 @@ class IgnitionGazebo0 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-gazebo QUIET REQUIRED)
+      find_package(ignition-gazebo1 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-gazebo::core)
+      target_link_libraries(test_cmake ignition-gazebo1::core)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
-    system "pkg-config", "ignition-gazebo"
-    cflags   = `pkg-config --cflags ignition-gazebo`.split(" ")
-    ldflags  = `pkg-config --libs ignition-gazebo`.split(" ")
+    system "pkg-config", "ignition-gazebo1"
+    cflags   = `pkg-config --cflags ignition-gazebo1`.split(" ")
+    ldflags  = `pkg-config --libs ignition-gazebo1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
