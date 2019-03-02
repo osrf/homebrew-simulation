@@ -8,7 +8,7 @@ class IgnitionRndf0 < Formula
 
   # TODO(clalancette): temporarily disable bottles
   # bottle do
-  #   root_url "http://gazebosim.org/distributions/ign-rndf/releases"
+  #   root_url "https://osrf-distributions.s3.amazonaws.com/ign-rndf/releases"
   #   cellar :any
   #   sha256 "12d534749f864a492063023fd8348af0b640fe8c06d0aac5ebd35f8a4fce79b8" => :high_sierra
   #   sha256 "14f140d27c57392fd2660ad82b4f2a4baec3b2c6b35b4e99bc03ff8cf3f76b1e" => :sierra

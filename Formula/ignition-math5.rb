@@ -1,14 +1,14 @@
 class IgnitionMath5 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math5-5.0.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math5-5.0.0.tar.bz2"
   sha256 "2536f20aebfa617dbf4a552638b25b084774f6b65f92d9ed3c304af5e45e3db2"
   version_scheme 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
     sha256 "1fa8dfc5c6453d869131f3ff103909ca8364fde2a1ddbd4e1b1c5a2a5bb8a52e" => :mojave
     sha256 "e064841eb6fcf150e84fc7ceb8de27cbc404816d9031df7a658f7535da8da011" => :high_sierra

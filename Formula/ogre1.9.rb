@@ -7,7 +7,7 @@ class Ogre19 < Formula
   revision 7
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "160e7ee9686c2a87009c6ef6f774208841466da71aacd25dfb0ca896a5e5299e" => :mojave
     sha256 "b530362abcf2db10ee8bc18b1f2f5bae9cd216a552a6e24c7bdfd7cfc51d56de" => :high_sierra
     sha256 "584d3397f9ef3ff720ce6c3fbbcdbf2bb3f174cef85b0ffcbba1aa1f7bc10144" => :sierra

@@ -6,7 +6,7 @@ class Ogre21 < Formula
   sha256 "d2e28bfcfbb1277355047c1d8bcd141b05b83af52d277725168e4281eac92a6d"
 
   bottle do
-    root_url "http://gazebosim.org/distributions/ogre/releases"
+    root_url "https://osrf-distributions.s3.amazonaws.com/ogre/releases"
     sha256 "088deeb420ba6d058962eca59a58967f54280b197669c5dc59fa3cb06071417a" => :high_sierra
     sha256 "ade07317c6ca515204be1ef64b4d8c87e60732e6d426d100447587a611235c4c" => :sierra
     sha256 "115c6af607d0844bc3d51f65933a0394dc23c40a5c3453a1c37abdb7e74b81cb" => :el_capitan

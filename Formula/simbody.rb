@@ -7,7 +7,7 @@ class Simbody < Formula
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "61618279759115f0312f7ea896462c1e39ce2f7ad1a26bb8b0c1f3fd37a858f4" => :mojave
     sha256 "56f3b7eb258a2e8496339bcbfe0859511c132b70feabc63760eef855ae16a7cb" => :high_sierra
     sha256 "e4908b1ab765cdfad161a9f7e9e6031dcead593909fe7e88115ac9c19d7662e0" => :sierra

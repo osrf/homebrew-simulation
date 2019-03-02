@@ -1,7 +1,7 @@
 class Sdformat < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-2.3.2.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-2.3.2.tar.bz2"
   sha256 "f1e6e39f1240c6a1732ed3fd26fd70e2bf865aed15fc4b0a24c0f76562eac0ae"
   revision 3
 

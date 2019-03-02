@@ -5,7 +5,7 @@ class IgnitionMath6 < Formula
   sha256 "e72ef72fcfaa509d6f574f83bfc49f0c728ab72b8818bb6e5d4ac9a3e6814b49"
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
     sha256 "01870b1d831bac06c81e866a3884e6cb499270b38d3456ceec646f4b564893fd" => :mojave
     sha256 "9de6af50337406681f8d620dd7d10354b8f272a82691f9ea0d528e21710df66e" => :high_sierra

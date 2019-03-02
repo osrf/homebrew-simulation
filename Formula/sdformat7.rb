@@ -9,7 +9,7 @@ class Sdformat7 < Formula
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "bf3d324d52935d7f243a80ab85453b0d9c5e72fc9f6d7c50fa9d1aae94096c08" => :mojave
     sha256 "5a9c88cbbe90b664c16e1052ada5de714c8dbc48a992b0b1187c325a976e744c" => :high_sierra
     sha256 "9e06b3d56433ece25f0054a51f64c682c791abadb425b15fa742e8694dac0cdc" => :sierra

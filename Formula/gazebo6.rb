@@ -1,7 +1,7 @@
 class Gazebo6 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "http://gazebosim.org/distributions/gazebo/releases/gazebo-6.7.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-6.7.0.tar.bz2"
   sha256 "f7d73abd463a5e089ba05cd347d4c8dd5ce92bb0c7b6acce21071aba55812ec9"
   revision 2
 

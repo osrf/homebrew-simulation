@@ -1,11 +1,11 @@
 class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "http://gazebosim.org/distributions/sdformat/releases/sdformat-8.0.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-8.0.0.tar.bz2"
   sha256 "bf114af4fde1460111f6eecfd699d5e80810d966c69688c8bb0d08d962e010e2"
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "b7d6c4d1d596e5ccc0aeabd31cf2de4b3c0e4235702ceff69396830ffaf9fcce" => :mojave
   end
 

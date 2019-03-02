@@ -1,13 +1,13 @@
 class IgnitionCmake1 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-cmake/releases/ignition-cmake1-1.1.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake1-1.1.0.tar.bz2"
   sha256 "1d9cad25b61774e0cb131fa244cc09b082166c2644b6aeaaa1f20d0d060cc30c"
 
   head "https://bitbucket.org/ignitionrobotics/ign-cmake", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any_skip_relocation
     sha256 "10cdf432ef40bbcdaee901763a457467710d3007bca99250fda5ac49cbd0bfae" => :sierra
   end

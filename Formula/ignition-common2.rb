@@ -1,13 +1,13 @@
 class IgnitionCommon2 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "http://gazebosim.org/distributions/ign-common/releases/ignition-common2-2.0.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common2-2.0.0.tar.bz2"
   sha256 "f76ed5a7a86728391bc6d7fb13fb07b61a1106e39d8cb87f3053154432d4b0f6"
 
   head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
 
   bottle do
-    root_url "http://gazebosim.org/distributions/bottles-simulation"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
     sha256 "e2d38882f31358078c82f84a85ace6e71d9405323ca8f26b7b35e3152e9d0335" => :mojave
     sha256 "c7f3b475c669709f900b1f76ebbf4e1abbd02f97a4de693147cffd17baf106b0" => :high_sierra
