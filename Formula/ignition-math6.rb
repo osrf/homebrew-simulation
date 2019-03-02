@@ -1,7 +1,7 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math6-6.1.0.tar.bz2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.1.0.tar.bz2"
   sha256 "e72ef72fcfaa509d6f574f83bfc49f0c728ab72b8818bb6e5d4ac9a3e6814b49"
 
   bottle do
