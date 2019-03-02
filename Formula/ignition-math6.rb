@@ -1,15 +1,15 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "http://gazebosim.org/distributions/ign-math/releases/ignition-math6-6.0.0.tar.bz2"
-  sha256 "b579bea8371a61ed53b079a9280805a25795ab931799f2d13f34eac5c5551196"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.1.0.tar.bz2"
+  sha256 "e72ef72fcfaa509d6f574f83bfc49f0c728ab72b8818bb6e5d4ac9a3e6814b49"
 
   bottle do
     root_url "http://gazebosim.org/distributions/bottles-simulation"
     cellar :any
-    sha256 "2997f197d5de21626f643c4ebf9625f26bbd75e6884e3bd1f929519233c51304" => :mojave
-    sha256 "78042089ae239c0afa65741265c106877bce566084263f0aa5f37484f8353e3e" => :high_sierra
-    sha256 "7092b44978d901ea565a0c59c5c7bc3cd25d97327a7ec3da676f45be03a8980a" => :sierra
+    sha256 "01870b1d831bac06c81e866a3884e6cb499270b38d3456ceec646f4b564893fd" => :mojave
+    sha256 "9de6af50337406681f8d620dd7d10354b8f272a82691f9ea0d528e21710df66e" => :high_sierra
+    sha256 "be3ae92f89f96aea971c662d0d876b2c7dfb47902a5c4a42a3798df8801120ed" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -42,7 +42,7 @@ class IgnitionMath6 < Formula
     EOS
     # test building with manual compiler flags
     system ENV.cc, "test.cpp",
-                   "--std=c++11",
+                   "--std=c++14",
                    "-I#{include}/ignition/math6",
                    "-L#{lib}",
                    "-lignition-math6",
