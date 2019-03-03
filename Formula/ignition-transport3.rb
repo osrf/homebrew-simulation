@@ -7,15 +7,6 @@ class IgnitionTransport3 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases"
-    cellar :any
-    sha256 "cca7e9feb714fb3524090edabc9282aa59438602dc8667130f0502923a7a3921" => :mojave
-    sha256 "95a7ba12bee7f75be226ca02ca5130232def56746e1cbf0a9d85d9195fbbff0f" => :high_sierra
-    sha256 "87a0947afcd7a04fab5bad175e323a99dbea7b9bd2f5271511d81bab822883b3" => :sierra
-    sha256 "577ca981fd7db206728084aeee723d250b45f23056eec309066b850b145c0221" => :el_capitan
-  end
-
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
 

@@ -7,15 +7,6 @@ class IgnitionMsgs0 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases"
-    cellar :any
-    sha256 "3f6cf639985d5c578053f1670ee022576333f2992101b824cba2b9cc8d6f4831" => :mojave
-    sha256 "b9c74417be950d730952b10eddbca461919294e863cabdd26e69626ee75d9d07" => :high_sierra
-    sha256 "da495426f66fddf679d84d6549c7f94698722ea1a5e30645dedbad91fe592b8f" => :sierra
-    sha256 "d7c689ab872abc47fd60d500d0eb95d6ab8dec9d4d7db7dc1a401c2448f1acc6" => :el_capitan
-  end
-
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-math3"
