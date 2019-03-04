@@ -3,6 +3,7 @@ class IgnitionGazebo1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo-1.0.1.tar.bz2"
   sha256 "925395d68347fa59ec2cd5dd55ca630db841d577f50f616e749845a4be80ebf8"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
