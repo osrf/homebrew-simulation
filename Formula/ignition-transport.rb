@@ -3,17 +3,16 @@ class IgnitionTransport < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport-1.4.0.tar.bz2"
   sha256 "bc612e9781f9cab81cc4111ed0de07c4838303f67c25bc8b663d394b40a8f5d4"
-  revision 7
+  revision 8
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport1", :using => :hg
 
   bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases"
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "ff2017db04d258b74e37f2416f9c9ea40baa692ec839573c0c155f078ee10da0" => :mojave
-    sha256 "4b1dc7392539dc61bd831fe8d5e4b9052cbdfb777b26131dd600bf8a042a9bf2" => :high_sierra
-    sha256 "b27be93bf6998116c005b38a58f26472ec31f491a9011f6c99ed9b41c065a0b7" => :sierra
-    sha256 "68667938462d60b374bfc8372815a5c1ac87cf80d368fb33b6664a677f31b8a6" => :el_capitan
+    sha256 "a4bfadafc525fe98ee3d88cfbd8426ab4c83d552d80a89e4262d5a2e497acd9d" => :mojave
+    sha256 "6ac9455fa402ea41b3b8de932d4fb002eaf8f467182339c9f659a98c3e0c6623" => :high_sierra
+    sha256 "00051c608906752131f98e4c7495aa15d02f4afba533e4a62936c402fa099d78" => :sierra
   end
 
   depends_on "cmake" => :build
