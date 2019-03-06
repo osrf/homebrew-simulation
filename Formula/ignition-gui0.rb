@@ -6,14 +6,6 @@ class IgnitionGui0 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
-  # bottle do
-  #   rebuild 1
-  #   root_url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases"
-  #   sha256 "a435130d701ebdaa58bd29833a26d53c612ae2163a195b0124ad71f0e54675d8" => :high_sierra
-  #   sha256 "8660bbd506869aebc3c01114af9fa651d4ee67eaa9259748a7fc4204aeb01c08" => :sierra
-  #   sha256 "ab9346c2e57d496cc71275d44f6091c6e0792913ca5cc1c88af97e5f099bb37a" => :el_capitan
-  # end
-
   depends_on "cmake" => :build
   depends_on "ignition-cmake1"
   depends_on "ignition-common2"
