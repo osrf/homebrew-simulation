@@ -59,15 +59,30 @@ class IgnitionGui0 < Formula
       return 0;
     }
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
-    system "pkg-config", "ignition-gui"
-    cflags   = `pkg-config --cflags ignition-gui`.split(" ")
-    ldflags  = `pkg-config --libs ignition-gui`.split(" ")
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      find_package(ignition-gui0 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ignition-gui0::ignition-gui0)
+    EOS
+    ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    system "pkg-config", "ignition-gui0"
+    cflags   = `pkg-config --cflags ignition-gui0`.split(" ")
+    ldflags  = `pkg-config --libs ignition-gui0`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
