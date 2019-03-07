@@ -35,6 +35,7 @@ class IgnitionGui0 < Formula
     #include <iostream>
     #include <ignition/gui/qt.h>
     #include <ignition/gui/Iface.hh>
+    #include <ignition/gui/MainWindow.hh>
 
     using namespace ignition;
     using namespace gui;
