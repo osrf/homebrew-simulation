@@ -17,6 +17,12 @@ class IgnitionGui0 < Formula
   depends_on "qwt"
   depends_on "tinyxml2"
 
+  # fix pkg-config file to find Qt
+  patch do
+    url "https://bitbucket.org/ignitionrobotics/ign-gui/commits/353611675f42e7c3a11b339240f83fe97be3ce24/raw/"
+    sha256 "7a56b7083cc1bc016f876545ee3a9e864295fab6b5bdeb139e7448d77ae971f4"
+  end
+
   def install
     ENV.m64
 
