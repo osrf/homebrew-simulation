@@ -1,19 +1,17 @@
 class IgnitionGui0 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/3404955ff73827d13e26f1e70b79d31b056fb53a.tar.gz"
-  version "0.0.0~20180515~3404955"
-  sha256 "28be557d6e89e263b6a6687073ae2499d54ce73f554e0cb7e1dc2682d548a7f8"
+  url "http://gazebosim.org/distributions/ign-gui/releases/ignition-gui0-0.1.0.tar.bz2"
+  sha256 "3bed23af1cf5e680cf4ec3fc9bd857d0f9ad02232f17d6b37aedc65be9aac0ab"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
-  # bottle do
-  #   rebuild 1
-  #   root_url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases"
-  #   sha256 "a435130d701ebdaa58bd29833a26d53c612ae2163a195b0124ad71f0e54675d8" => :high_sierra
-  #   sha256 "8660bbd506869aebc3c01114af9fa651d4ee67eaa9259748a7fc4204aeb01c08" => :sierra
-  #   sha256 "ab9346c2e57d496cc71275d44f6091c6e0792913ca5cc1c88af97e5f099bb37a" => :el_capitan
-  # end
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "e1b6bada8611d2d56db902dcba35777e2e14fa63cc2d1d1e3bbb291182b37459" => :mojave
+    sha256 "39362147784098119b8c692c2a0d094cc4e96526167124504fc79cc4a99dfbb7" => :high_sierra
+    sha256 "2da950175cf6b9293deded62b81e652101bd933ee0f627179379eef6e65e90a9" => :sierra
+  end
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake1"
@@ -25,6 +23,12 @@ class IgnitionGui0 < Formula
   depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml2"
+
+  # fix pkg-config file to find Qt
+  patch do
+    url "https://bitbucket.org/ignitionrobotics/ign-gui/commits/353611675f42e7c3a11b339240f83fe97be3ce24/raw/"
+    sha256 "7a56b7083cc1bc016f876545ee3a9e864295fab6b5bdeb139e7448d77ae971f4"
+  end
 
   def install
     ENV.m64
@@ -44,6 +48,7 @@ class IgnitionGui0 < Formula
     #include <iostream>
     #include <ignition/gui/qt.h>
     #include <ignition/gui/Iface.hh>
+    #include <ignition/gui/MainWindow.hh>
 
     using namespace ignition;
     using namespace gui;
@@ -68,15 +73,30 @@ class IgnitionGui0 < Formula
       return 0;
     }
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
-    system "pkg-config", "ignition-gui"
-    cflags   = `pkg-config --cflags ignition-gui`.split(" ")
-    ldflags  = `pkg-config --libs ignition-gui`.split(" ")
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      find_package(ignition-gui0 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ignition-gui0::ignition-gui0)
+    EOS
+    ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    system "pkg-config", "ignition-gui0"
+    cflags   = `pkg-config --cflags ignition-gui0`.split(" ")
+    ldflags  = `pkg-config --libs ignition-gui0`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
