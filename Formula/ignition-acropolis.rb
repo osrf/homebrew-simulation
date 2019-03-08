@@ -13,7 +13,7 @@ class IgnitionAcropolis < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-fuel-tools3"
-  depends_on "ignition-gazebo0"
+  depends_on "ignition-gazebo1"
   depends_on "ignition-gui1"
   depends_on "ignition-launch1"
   depends_on "ignition-math6"
