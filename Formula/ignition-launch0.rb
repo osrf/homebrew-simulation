@@ -10,7 +10,7 @@ class IgnitionLaunch0 < Formula
 
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-gazebo0"
+  depends_on "ignition-gazebo1"
   depends_on "ignition-gui1"
   depends_on "ignition-msgs3"
   depends_on "ignition-plugin1"
