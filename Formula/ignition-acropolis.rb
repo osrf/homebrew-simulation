@@ -15,7 +15,7 @@ class IgnitionAcropolis < Formula
   depends_on "ignition-fuel-tools3"
   depends_on "ignition-gazebo1"
   depends_on "ignition-gui1"
-  depends_on "ignition-launch1"
+  depends_on "ignition-launch0"
   depends_on "ignition-math6"
   depends_on "ignition-msgs3"
   depends_on "ignition-physics1"
