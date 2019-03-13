@@ -46,7 +46,6 @@ class IgnitionSensors1 < Formula
       target_link_libraries(test_cmake ignition-sensors1::ignition-sensors1)
     EOS
     # test building with pkg-config
-    ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
     system "pkg-config", "ignition-sensors1"
     cflags   = `pkg-config --cflags ignition-sensors1`.split(" ")
     ldflags  = `pkg-config --libs ignition-sensors1`.split(" ")
