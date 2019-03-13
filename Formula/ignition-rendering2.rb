@@ -5,7 +5,7 @@ class IgnitionRendering2 < Formula
   version "1.999.999~20190311~95a38eb1"
   sha256 "83571fff709752a66049bc1a16b90ecfbd3425a9bd82bf52cd598ae9f7310156"
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
   depends_on "freeimage"
@@ -30,7 +30,13 @@ class IgnitionRendering2 < Formula
         return ignition::rendering::PixelUtil::IsValid(pf);
       }
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(ignition-rendering2 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ignition-rendering2::ignition-rendering2)
+    EOS
+    # test building with pkg-config
     system "pkg-config", "ignition-rendering2"
     cflags   = `pkg-config --cflags ignition-rendering2`.split(" ")
     ldflags  = `pkg-config --libs ignition-rendering2`.split(" ")
@@ -40,5 +46,13 @@ class IgnitionRendering2 < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
