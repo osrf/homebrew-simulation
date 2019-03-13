@@ -8,9 +8,9 @@ class Gazebo9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "ab1f3fec140fdbfa17b73a41b0341712e2598256ed63ec17717aaac49b6b6377" => :mojave
-    sha256 "797dd45c09e148df28f23162b724cd1776bc033b015e9427ab344d73e2ee02c0" => :high_sierra
-    sha256 "21974b81dace190dc0193606b31d8211b69395738b546188d7e455948f80b20b" => :sierra
+    sha256 "4fa3c3be2ca6ff873718f294a5289eda4f8eb517dfe483e761659b97f7c54d84" => :mojave
+    sha256 "7ed28a715b3b7d1646add8613a59a6053bd39f486c0a193055c8082e8a10c51c" => :high_sierra
+    sha256 "5db8442cf7f6cd2ccd62d3797068b7ae25e7a3d99a26fdb001d7968bb8474d61" => :sierra
   end
 
   depends_on "cmake" => :build
