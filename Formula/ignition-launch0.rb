@@ -29,8 +29,7 @@ class IgnitionLaunch0 < Formula
     system "make", "install"
   end
 
-  # TODO: fix test. Failing: https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/209/label=osx_mojave/
-  # test do
-  #  system "ignition", "-run", "config/gazebo.ign"
-  # end
+  test do
+    system "ignition", "-run", "config/gazebo.ign"
+  end
 end
