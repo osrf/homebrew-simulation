@@ -5,7 +5,6 @@ class IgnitionAcropolis < Formula
   version "1.0.0"
   sha256 "87f3f8415f0d3f3603d84b401902587997b0fff26fbdf5637b8ec691c3fc739f"
 
-
   head "https://bitbucket.org/ignitionrobotics/ign-acropolis", :branch => "default", :using => :hg
 
   depends_on "cmake" => :build
@@ -37,7 +36,7 @@ class IgnitionAcropolis < Formula
   end
   
   test do
-    # TODO: create a real test
-    system "#{bin}/ignition-gazebo", "--help"
+    # TODO: improve the testing
+    system "#{bin}/ignition-gazebo", "--help"    
   end
 end
