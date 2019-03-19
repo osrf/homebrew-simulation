@@ -34,9 +34,9 @@ class IgnitionAcropolis < Formula
       system "make", "install"
     end
   end
-  
+
   test do
     # TODO: improve the testing
-    system "#{bin}/ignition-gazebo", "--help"    
+    system "#{bin}/ignition-gazebo", "--help"
   end
 end
