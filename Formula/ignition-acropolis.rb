@@ -8,7 +8,6 @@ class IgnitionAcropolis < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-acropolis", :branch => "default", :using => :hg
 
-  depends_on :macos => :mojave # c++17
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
@@ -24,6 +23,7 @@ class IgnitionAcropolis < Formula
   depends_on "ignition-sensors1"
   depends_on "ignition-tools"
   depends_on "ignition-transport6"
+  depends_on :macos => :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat8"
 
