@@ -1,9 +1,8 @@
 class IgnitionAcropolis < Formula
   desc "Ignition acropolis collection"
   homepage "https://bitbucket.org/ignitionrobotics/ign-acropolis"
-  url "https://bitbucket.org/ignitionrobotics/ign-acropolis/get/5f3dd9eb70b9.tar.gz"
-  version "1.0.0"
-  sha256 "87f3f8415f0d3f3603d84b401902587997b0fff26fbdf5637b8ec691c3fc739f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-acropolis/releases/ignition-acropolis-1.0.1.tar.bz2"
+  sha256 "1d4c81e08bea92f508cd71b7a2af22f0111f205799f888eac6aa8c665e0260fe"
 
   head "https://bitbucket.org/ignitionrobotics/ign-acropolis", :branch => "default", :using => :hg
 
