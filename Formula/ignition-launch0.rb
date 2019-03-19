@@ -4,6 +4,11 @@ class IgnitionLaunch0 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-0.2.0.tar.bz2"
   sha256 "5becd254b5e47668e41b2da676bae16c119a856ed2ea0a0de661a555fcd5f685"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "e7d5d1148a243137e062b3aadd69b806298558cd863d1e17fb61d918bb777ca9" => :mojave
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
