@@ -21,7 +21,7 @@ class IgnitionAcropolis < Formula
   depends_on "ignition-physics1"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering1"
-  depends_on "ignition-sensors0"
+  depends_on "ignition-sensors1"
   depends_on "ignition-tools"
   depends_on "ignition-transport6"
   depends_on "pkg-config"
