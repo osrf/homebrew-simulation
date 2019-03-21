@@ -3,11 +3,16 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-7.14.0.tar.bz2"
   sha256 "c1e48a2304d8186a3df4fb763262d189a8afe6b1ab82c30e614e336f3cb6034f"
-  revision 6
+  revision 7
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
-  bottle :unneeded
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "8adac7ff6bf9d5e95e9444eac570c5b805b881233493aa99ed062117351a36a5" => :mojave
+    sha256 "09fd4865ab733362f198f7e04654814124e833ccc171655d427ac23895fe46b9" => :high_sierra
+    sha256 "3aed34518eeecffe4f13ecabdec064e52c3447fd225e70da0a1b712add465d0b" => :sierra
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -42,6 +47,18 @@ class Gazebo7 < Formula
   conflicts_with "gazebo5", :because => "Differing version of the same formula"
   conflicts_with "gazebo6", :because => "Differing version of the same formula"
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
+
+  patch do
+    # Fix for compatibility with boost 1.69
+    url "https://bitbucket.org/osrf/gazebo/commits/88f30af10b49c10ac5598640f40dccc0e3ba6e8a/raw/"
+    sha256 "8fb4d61ce97d1a3437e4e4ef76d61e9768fad72e555b4303c4c90a326e9346dd"
+  end
+
+  patch do
+    # Fix for compatibility with boost 1.69
+    url "https://bitbucket.org/osrf/gazebo/commits/d702208a1c5013dea3bfa986ae5a201ad4bc8cf3/raw/"
+    sha256 "f6aef9035c24d7e2a1457a2ca1c2b37485dcb3b970b58beca9c7b8c28109ffa4"
+  end
 
   patch do
     # Fix for compatibility with boost 1.68
