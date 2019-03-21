@@ -4,13 +4,13 @@ class Ogre19 < Formula
   url "https://bitbucket.org/sinbad/ogre/get/108ab0bcc69603dba32c0ffd4bbbc39051f421c9.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
-  revision 7
+  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "160e7ee9686c2a87009c6ef6f774208841466da71aacd25dfb0ca896a5e5299e" => :mojave
-    sha256 "b530362abcf2db10ee8bc18b1f2f5bae9cd216a552a6e24c7bdfd7cfc51d56de" => :high_sierra
-    sha256 "584d3397f9ef3ff720ce6c3fbbcdbf2bb3f174cef85b0ffcbba1aa1f7bc10144" => :sierra
+    sha256 "a7113b6b6d88fe5755d0c9c809e592d59dcbe99ac7a24a8d76cd0bd69ebbd32f" => :mojave
+    sha256 "0aab13c0c1475912241bb0d26a4148d21e948c025b6b3199715e4e860cb97ef7" => :high_sierra
+    sha256 "ca9a63ea85a41014f49f46de0cb9ef120ae763738313b301e3e91ca09d170f5e" => :sierra
   end
 
   option "with-cg"
