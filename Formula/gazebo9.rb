@@ -6,12 +6,7 @@ class Gazebo9 < Formula
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "4fa3c3be2ca6ff873718f294a5289eda4f8eb517dfe483e761659b97f7c54d84" => :mojave
-    sha256 "7ed28a715b3b7d1646add8613a59a6053bd39f486c0a193055c8082e8a10c51c" => :high_sierra
-    sha256 "5db8442cf7f6cd2ccd62d3797068b7ae25e7a3d99a26fdb001d7968bb8474d61" => :sierra
-  end
+  bottle :unneeded
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
