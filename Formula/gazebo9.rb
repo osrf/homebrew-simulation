@@ -3,10 +3,9 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.7.0.tar.bz2"
   sha256 "722add6c29d5c843b64aeacb456a4c9e9e50886f926b1eefd4310d333f7f6bfa"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
-
-  bottle :unneeded
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
