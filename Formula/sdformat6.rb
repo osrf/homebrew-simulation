@@ -3,6 +3,7 @@ class Sdformat6 < Formula
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.2.0.tar.bz2"
   sha256 "be818648f0a639a0c410231673e8c7ba043c2589586e43ef8c757070855898fa"
+  revision 1
 
   head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
 
