@@ -28,14 +28,22 @@ class IgnitionRendering1 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/rendering/PixelFormat.hh>
+      #include <ignition/rendering/RenderEngine.hh>
+      #include <ignition/rendering/RenderingIface.hh>
       int main(int _argc, char** _argv)
       {
-        ignition::rendering::PixelFormat pf = ignition::rendering::PF_UNKNOWN;
-        return ignition::rendering::PixelUtil::IsValid(pf);
+        ignition::rendering::RenderEngine *engine =
+            ignition::rendering::engine("ogre");
+        return engine == nullptr;
       }
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(ignition-rendering1 QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake ignition-rendering1::ignition-rendering1)
+    EOS
+    # test building with pkg-config
     system "pkg-config", "ignition-rendering1"
     cflags   = `pkg-config --cflags ignition-rendering1`.split(" ")
     ldflags  = `pkg-config --libs ignition-rendering1`.split(" ")
@@ -45,5 +53,13 @@ class IgnitionRendering1 < Formula
                    "-lc++",
                    "-o", "test"
     system "./test"
+    # test building with cmake
+    mkdir "build" do
+      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
+      ENV.delete("SDKROOT")
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
   end
 end
