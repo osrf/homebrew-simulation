@@ -4,11 +4,12 @@ class IgnitionRendering2 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/95a38eb155b92ebb4419d7a4377dcfe2d183e0a2.tar.bz2"
   version "1.999.999~20190311~95a38eb1"
   sha256 "83571fff709752a66049bc1a16b90ecfbd3425a9bd82bf52cd598ae9f7310156"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "40be91c7dbee8ae672c700eeac938e1693cbc044c8a9b6740dfb05a65273655f" => :mojave
-    sha256 "c41d9542d6d914f921841737ac18f2ee0a19560a972ea1bd5691a7f3255ff112" => :high_sierra
+    sha256 "e1283fe630c9892608cfb77e3e5fdce7a22cf1f4fcddad5772ee1ff398c371d5" => :mojave
+    sha256 "572f65a6f08910d44182a43cf92bdee84faad342091b3bf4c3b1e24029526341" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]
@@ -29,11 +30,13 @@ class IgnitionRendering2 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/rendering/PixelFormat.hh>
+      #include <ignition/rendering/RenderEngine.hh>
+      #include <ignition/rendering/RenderingIface.hh>
       int main(int _argc, char** _argv)
       {
-        ignition::rendering::PixelFormat pf = ignition::rendering::PF_UNKNOWN;
-        return ignition::rendering::PixelUtil::IsValid(pf);
+        ignition::rendering::RenderEngine *engine =
+            ignition::rendering::engine("ogre");
+        return engine == nullptr;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
