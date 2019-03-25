@@ -3,6 +3,7 @@ class IgnitionRendering0 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering0-0.2.0.tar.bz2"
   sha256 "2935ec21e61d40e93d89540843d0317527b25a28b8cd750658edd619db45ff03"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-rendering", :branch => "default", :using => :hg
 
@@ -35,14 +36,15 @@ class IgnitionRendering0 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/rendering/PixelFormat.hh>
+      #include <ignition/rendering/RenderEngine.hh>
+      #include <ignition/rendering/RenderingIface.hh>
       int main(int _argc, char** _argv)
       {
-        ignition::rendering::PixelFormat pf = ignition::rendering::PF_UNKNOWN;
-        return ignition::rendering::PixelUtil::IsValid(pf);
+        ignition::rendering::RenderEngine *engine =
+            ignition::rendering::engine("ogre");
+        return engine == nullptr;
       }
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", "#{Formula["qt"].opt_lib}/pkgconfig"
     system "pkg-config", "ignition-rendering0"
     cflags   = `pkg-config --cflags ignition-rendering0`.split(" ")
     ldflags  = `pkg-config --libs ignition-rendering0`.split(" ")

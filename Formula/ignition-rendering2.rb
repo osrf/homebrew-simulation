@@ -4,6 +4,7 @@ class IgnitionRendering2 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/95a38eb155b92ebb4419d7a4377dcfe2d183e0a2.tar.bz2"
   version "1.999.999~20190311~95a38eb1"
   sha256 "83571fff709752a66049bc1a16b90ecfbd3425a9bd82bf52cd598ae9f7310156"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -29,11 +30,13 @@ class IgnitionRendering2 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/rendering/PixelFormat.hh>
+      #include <ignition/rendering/RenderEngine.hh>
+      #include <ignition/rendering/RenderingIface.hh>
       int main(int _argc, char** _argv)
       {
-        ignition::rendering::PixelFormat pf = ignition::rendering::PF_UNKNOWN;
-        return ignition::rendering::PixelUtil::IsValid(pf);
+        ignition::rendering::RenderEngine *engine =
+            ignition::rendering::engine("ogre");
+        return engine == nullptr;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
