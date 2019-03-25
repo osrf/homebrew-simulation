@@ -1,9 +1,11 @@
 class Ogre21 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://bitbucket.org/sinbad/ogre/get/06a386fa64e79a7204a90faf53da1735743f6c2e.tar.bz2"
-  version "2.0.9999~20180616~06a386f"
-  sha256 "d2e28bfcfbb1277355047c1d8bcd141b05b83af52d277725168e4281eac92a6d"
+  url "https://bitbucket.org/sinbad/ogre/get/bf5de3029fd5a88d103ff99d7b2f94a5f8396ac9.tar.bz2"
+  version "2.0.9999~20190325~bf5de30"
+  sha256 "3949377daf5485847eeb78e420c3de4d8ed522bab8ac4c053c3deb4daa4bf4bd"
+
+  head "https://bitbucket.org/sinbad/ogre", :branch => "v2-1", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/ogre/releases"
@@ -17,6 +19,7 @@ class Ogre21 < Formula
   depends_on "freeimage"
   depends_on "freetype"
   depends_on "libzzip"
+  depends_on "rapidjson"
   depends_on "tbb"
   depends_on :x11
 
@@ -27,6 +30,11 @@ class Ogre21 < Formula
     # fix for cmake3 and c++11
     url "https://gist.github.com/scpeters/4a7516b52c6e918ac02cbacabfeda4b3/raw/c515f8f313c444b306dfff9d437ec7cf3622ab12/cmake3.diff"
     sha256 "99d76e023cd5740da66c76ced40ce85e7da7b811ea99d9015d1293fc454badc0"
+  end
+
+  patch do
+    url "https://bitbucket.org/scpeters/ogre-1/commits/14b5dc7fc2d8e1281140d027e1effb4d8a317895/raw"
+    sha256 "41c678d3021feab844c5731c0cc2aa7007b731cfde5e084bc87d3a1eba9fa581"
   end
 
   # workaround for test since OgreMeshTool can't find plugins_tools.cfg otherwise
@@ -41,8 +49,11 @@ class Ogre21 < Formula
       "-DOGRE_BUILD_DOCS:BOOL=FALSE",
       "-DOGRE_INSTALL_DOCS:BOOL=FALSE",
       "-DOGRE_BUILD_SAMPLES:BOOL=FALSE",
+      "-DOGRE_BUILD_SAMPLES2:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES_SOURCE:BOOL=FALSE",
     ]
+    # use the following to disable GL3Plus render engine which won't work when OpenGL is removed
+    # cmake_args << "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF" if MacOS::Xcode.version >= "10"
     cmake_args.concat std_cmake_args
 
     mkdir "build" do
