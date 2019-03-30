@@ -8,10 +8,11 @@ class Ogre21 < Formula
   head "https://bitbucket.org/sinbad/ogre", :branch => "v2-1", :using => :hg
 
   bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/ogre/releases"
-    sha256 "088deeb420ba6d058962eca59a58967f54280b197669c5dc59fa3cb06071417a" => :high_sierra
-    sha256 "ade07317c6ca515204be1ef64b4d8c87e60732e6d426d100447587a611235c4c" => :sierra
-    sha256 "115c6af607d0844bc3d51f65933a0394dc23c40a5c3453a1c37abdb7e74b81cb" => :el_capitan
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "8a2e7dfba343138df66831a7e81d61431da6e42c7eccbbc392535106ca77eb3c" => :mojave
+    sha256 "9f01ccd917196f78ad06198fa69fea2698ae4161bb7b61b4fa21b3b56d50e6ce" => :high_sierra
+    sha256 "ffde1dc5510e2c624f808cdf6f06e4d41f808a3db9234a9c8e2bfff3614e6597" => :sierra
   end
 
   depends_on "cmake" => :build
