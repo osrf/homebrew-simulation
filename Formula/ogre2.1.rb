@@ -2,7 +2,7 @@ class Ogre21 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
   url "https://bitbucket.org/sinbad/ogre/get/06a386fa64e79a7204a90faf53da1735743f6c2e.tar.bz2"
-  version "2.0.9999~pre0~0~20180616~06a386f"
+  version "2.0.99999~pre0~0~20180616~06a386f"
   sha256 "d2e28bfcfbb1277355047c1d8bcd141b05b83af52d277725168e4281eac92a6d"
 
   head "https://bitbucket.org/sinbad/ogre", :branch => "v2-1", :using => :hg
