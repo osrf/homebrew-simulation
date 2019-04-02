@@ -5,7 +5,7 @@ matrix:
       os: osx
       osx_image: xcode9.2
     - env: OSX=10.14
-      ox: osx
+      os: osx
       osx_image: xcode10.2
 
 before_install:
