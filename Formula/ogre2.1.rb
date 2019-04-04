@@ -36,7 +36,7 @@ class Ogre21 < Formula
 
   patch do
     # fix GL3+ compilation with Xcode 10
-    url "https://bitbucket.org/scpeters/ogre-1/commits/14b5dc7fc2d8e1281140d027e1effb4d8a317895/raw"
+    url "https://bitbucket.org/sinbad/ogre/commits/14b5dc7fc2d8e1281140d027e1effb4d8a317895/raw"
     sha256 "41c678d3021feab844c5731c0cc2aa7007b731cfde5e084bc87d3a1eba9fa581"
   end
 
