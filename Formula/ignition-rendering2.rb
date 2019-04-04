@@ -4,7 +4,7 @@ class IgnitionRendering2 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/95a38eb155b92ebb4419d7a4377dcfe2d183e0a2.tar.bz2"
   version "1.999.999~20190311~95a38eb1"
   sha256 "83571fff709752a66049bc1a16b90ecfbd3425a9bd82bf52cd598ae9f7310156"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -22,6 +22,7 @@ class IgnitionRendering2 < Formula
   depends_on "ignition-plugin1"
   depends_on :macos => :high_sierra # c++17
   depends_on "ogre1.9"
+  depends_on "ogre2.1"
 
   def install
     system "cmake", ".", *std_cmake_args

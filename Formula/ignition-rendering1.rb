@@ -3,7 +3,7 @@ class IgnitionRendering1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering-1.0.0.tar.bz2"
   sha256 "73dc1ce94c281ddd21796ebf363e1cd03acf15709cda959926d3187462221bfe"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -20,6 +20,7 @@ class IgnitionRendering1 < Formula
   depends_on "ignition-plugin1"
   depends_on :macos => :high_sierra # c++17
   depends_on "ogre1.9"
+  depends_on "ogre2.1"
   depends_on "pkg-config"
 
   def install
