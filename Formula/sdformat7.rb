@@ -1,12 +1,11 @@
 class Sdformat7 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://bitbucket.org/osrf/sdformat/get/2fed80e6bc44.tar.gz"
-  version "6.999.999~20180905~2fed80e"
-  sha256 "b9792f701be807a9f522b9b9b09c521340744ba1bd593d533765b1dc7bb40bb5"
-  revision 2
+  url "https://bitbucket.org/osrf/sdformat/get/f6b1f8e573d2af8abc40f63f3deb363de2472280.tar.gz"
+  version "6.999.999~20190808~f6b1f8e"
+  sha256 "cc58b11d5f7af8db0f293bef7cffdf86609ea233806ccfe065caeb38776ec954"
 
-  head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
+  head "https://bitbucket.org/osrf/sdformat", :branch => "sdf7", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -20,6 +19,7 @@ class Sdformat7 < Formula
   depends_on "boost"
   depends_on "doxygen"
   depends_on "ignition-math5"
+  depends_on "ignition-tools"
   depends_on "pkg-config"
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
