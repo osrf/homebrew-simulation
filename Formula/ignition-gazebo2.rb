@@ -14,7 +14,7 @@ class IgnitionGazebo2 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-fuel-tools3"
-  depends_on "ignition-gui1"
+  depends_on "ignition-gui2"
   depends_on "ignition-math6"
   depends_on "ignition-msgs3"
   depends_on "ignition-physics1"
