@@ -1,27 +1,27 @@
-class IgnitionGui2 < Formula
+class IgnitionGui1 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/f1f10a14efe6341c19ae5faab1254cb14d62d8b9.tar.bz2"
-  version "1.999.999~20190329~f1f10a1"
-  sha256 "272d2dfd1d8068c75b3620cf0f7d046da2249debe80d64dccfe72d5f849f7dcf"
+  url "https://bitbucket.org/ignitionrobotics/ign-gui/commits/f8233e0450f35a75cacb746cbf04e78c122c4472.tar.bz2"
+  sha256 "06ca57b83f567b06741b4122d4ba01745960ad1d21d48994380200ff1c90a758"
+  revision 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
+  head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "gz11", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "69bea1d1cb3e4b3deb97fa5095f2170e858de8a8764770ca7c12c62635e121ac" => :mojave
-    sha256 "95d906c6a6d162c2f888663d16592d7f1fece40414abd2a029f32930cd9cb0b0" => :high_sierra
+    sha256 "fdf1f0ec1a3adb40ed5f30076dfc9f0908288937d8b20f5234e51f0ce20f678c" => :mojave
+    sha256 "6131e2bb02806f299c20bc158b117b2ae6498fec2bc0f70f5595d410a1a4e096" => :high_sierra
   end
 
-  depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-msgs3"
+  depends_on "ignition-msgs4"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering2"
-  depends_on "ignition-transport6"
+  depends_on "ignition-transport7"
   depends_on :macos => :high_sierra # c++17
+  depends_on "pkg-config"
   depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml2"
@@ -80,14 +80,14 @@ class IgnitionGui2 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-gui2 QUIET REQUIRED)
+      find_package(ignition-gui1 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-gui2::ignition-gui2)
+      target_link_libraries(test_cmake ignition-gui1::ignition-gui1)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
-    system "pkg-config", "ignition-gui2"
-    cflags   = `pkg-config --cflags ignition-gui2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-gui2`.split(" ")
+    system "pkg-config", "ignition-gui1"
+    cflags   = `pkg-config --cflags ignition-gui1`.split(" ")
+    ldflags  = `pkg-config --libs ignition-gui1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
