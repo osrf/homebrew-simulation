@@ -7,10 +7,7 @@ class IgnitionGazebo2 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "279063788212e328522f5cc0b677dbbbadc141472230417cbefa049cf1d5f2b2" => :mojave
-  end
+  bottle :unneeded
 
   depends_on "cmake" => :build
   depends_on "gflags"
