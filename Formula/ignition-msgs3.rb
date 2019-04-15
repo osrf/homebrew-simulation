@@ -21,10 +21,6 @@ class IgnitionMsgs3 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
 
-  # https://bitbucket.org/ignitionrobotics/ign-msgs/issues/24
-  # https://bitbucket.org/ignitionrobotics/ign-msgs/issues/27
-  conflicts_with "ignition-msgs4", :because => "Unversioned ruby files installed to lib"
-
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
