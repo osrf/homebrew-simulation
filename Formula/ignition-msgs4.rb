@@ -1,15 +1,15 @@
 class IgnitionMsgs4 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "https://bitbucket.org/ignitionrobotics/ign-msgs/get/720bf70f1085bf867f6cf47cbfb7e1ed37c564f9.tar.gz"
-  version "3.999.999~1~20190404~720bf70"
-  sha256 "7775ecb0317b0c50e273ed251a4545f73a0ad6e58c026984e2998110e951bb17"
+  url "https://bitbucket.org/ignitionrobotics/ign-msgs/get/7429b60ffdbc77bdbfd8dd3dfaed2343351da447.tar.gz"
+  version "3.999.999~2~20190415~7429b60"
+  sha256 "365a444948833c46da6e47a9c086d6f8c85e44864cb9f0b2d54f935d2894d759"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "e49edf7a9b749e68d799470a87e2587a7dfafa973f253d2abd754929ec53a93c" => :mojave
-    sha256 "04d706192d75befbd73115c200dbb809c18103202507fa1092c9c9bf9424aedd" => :high_sierra
+    sha256 "71cc6b411c3262230910416103507bc19532c5d9ee473dd2a5bf07f6a8530e00" => :mojave
+    sha256 "508f7f29cf7674dfcfedee2f060c96e048ea9c95b817a94e9d4f47809be07255" => :high_sierra
   end
 
   depends_on "protobuf-c" => :build
@@ -21,10 +21,6 @@ class IgnitionMsgs4 < Formula
   depends_on :macos => :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
-
-  # https://bitbucket.org/ignitionrobotics/ign-msgs/issues/24
-  # https://bitbucket.org/ignitionrobotics/ign-msgs/issues/27
-  conflicts_with "ignition-msgs3", :because => "Unversioned ruby files installed to lib"
 
   def install
     system "cmake", ".", *std_cmake_args

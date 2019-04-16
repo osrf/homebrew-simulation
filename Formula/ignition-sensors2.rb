@@ -1,15 +1,15 @@
 class IgnitionSensors2 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/a65f0ee9ede963f772ff001134dde748842d5cb2.tar.bz2"
-  version "1.999.999~20190327~a65f0ee"
-  sha256 "1b9292d7f46e636e7aae3ba2d67eca093c109e01e21a0fdd2b7bacc35d2a4cf2"
+  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/fe0232e17b05b8ee835c8aac4dd48058956c5288.tar.bz2"
+  version "1.999.999~20190415~fe0232e"
+  sha256 "089f63703c49edb5bba5805e32352d62157099b3739fea3486486c0639d2e2d1"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "434f36e7cef23217659bedfd9809825be35d9a7d27a1b97a394e39505557e592" => :mojave
+    sha256 "68d2423f664c349b8056306402021bd4a4f1fd9b60a2e46028554a5674e40d12" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -18,9 +18,9 @@ class IgnitionSensors2 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs3"
+  depends_on "ignition-msgs4"
   depends_on "ignition-rendering2"
-  depends_on "ignition-transport6"
+  depends_on "ignition-transport7"
   depends_on "sdformat8"
 
   def install
