@@ -1,9 +1,9 @@
 class IgnitionGazebo2 < Formula
   desc "Gazebo robot simulator"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
-  url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/513134c1ff9005d268124c1ea6f935aaa00e4d4e.tar.bz2"
-  version "1.999.999~20190327~513134c"
-  sha256 "f581b388edcfacd1fa13e1137d17bff248943c26b3fb201c236bcc00f21b9bf3"
+  url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/717270eda240f9c087c26c65cb68043d00ff71e4.tar.bz2"
+  version "1.999.999~20190418~717270e"
+  sha256 "48a1c5ffd7c0ed0cdbbecb1f896b8344f8efae1b3eb2097f36504bd5f18ef86f"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
@@ -16,12 +16,12 @@ class IgnitionGazebo2 < Formula
   depends_on "ignition-fuel-tools3"
   depends_on "ignition-gui2"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs3"
+  depends_on "ignition-msgs4"
   depends_on "ignition-physics1"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering2"
   depends_on "ignition-sensors2"
-  depends_on "ignition-transport6"
+  depends_on "ignition-transport7"
   depends_on :macos => :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat8"
