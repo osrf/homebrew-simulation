@@ -13,6 +13,7 @@ class IgnitionPhysics1 < Formula
 
   depends_on "cmake" => :build
 
+  depends_on "google-benchmark"
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "ignition-cmake2"
