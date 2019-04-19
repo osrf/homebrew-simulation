@@ -1,14 +1,15 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.0.0.tar.bz2"
-  sha256 "8037bbc679b807207d342b87c353badd27b7aa1b26167b0c59e89f9b4a3471c0"
+  url "https://bitbucket.org/ignitionrobotics/ign-common/get/4191ec638c9a8bb06295651f9564df2a403029aa.tar.bz2"
+  version "3.0.1~pre0~20190418~4191ec6"
+  sha256 "2ae4863fac99336069a2c342b21af328a051d2400fb6a32ae5900ef9bd98f16e"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "489d886f451fb2ab3a429492bcfd0986f506625de2b3c5dc535f0de2d0d0546d" => :mojave
-    sha256 "d2b41b5dd61825a5607a25d0dfacc7282b1a05656569066ab8b6f2c828a171e7" => :high_sierra
+    sha256 "9d9a66144923d55582ca5a6a1f8525679cab507da2567dbc1a9e74a8075dd4a8" => :mojave
+    sha256 "4702c57832d7beea6d1d46c7d2b523b5e3ba453428f76799356bd8a1d91baf87" => :high_sierra
   end
 
   depends_on "cmake"
@@ -70,5 +71,11 @@ class IgnitionCommon3 < Formula
       system "make"
       system "./test_cmake"
     end
+    # check for Xcode frameworks in bottle
+    # ! requires system with single argument, which uses standard shell
+    # put in variable to avoid audit complaint
+    # enclose / in [] so the following line won't match itself
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
