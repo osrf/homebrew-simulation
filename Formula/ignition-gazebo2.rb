@@ -14,6 +14,7 @@ class IgnitionGazebo2 < Formula
 
   depends_on "cmake" => :build
   depends_on "gflags"
+  depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-fuel-tools3"

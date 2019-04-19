@@ -15,6 +15,7 @@ class IgnitionPhysics1 < Formula
 
   depends_on "bullet"
   depends_on "dartsim"
+  depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-math6"
