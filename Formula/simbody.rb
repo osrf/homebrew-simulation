@@ -3,6 +3,7 @@ class Simbody < Formula
   homepage "https://simtk.org/home/simbody"
   url "https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz"
   sha256 "7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639"
+  revision 1
 
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
@@ -34,6 +35,10 @@ class Simbody < Formula
       system "make", "doxygen"
       system "make", "install"
     end
+
+    inreplace Dir[lib/"cmake/simbody/SimbodyTargets-*.cmake"],
+        %r{/Applications[/]Xcode.app/[^;]*/System/Library},
+        "/System/Library"
   end
 
   test do
