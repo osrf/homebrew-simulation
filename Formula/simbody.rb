@@ -67,5 +67,11 @@ class Simbody < Formula
     flags = `pkg-config --cflags --libs simbody`.split(" ")
     system ENV.cxx, "test.cpp", *flags, "-o", "test"
     system "./test"
+    # check for Xcode frameworks in bottle
+    # ! requires system with single argument, which uses standard shell
+    # put in variable to avoid audit complaint
+    # enclose / in [] so the following line won't match itself
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
