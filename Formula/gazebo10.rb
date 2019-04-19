@@ -52,6 +52,7 @@ class Gazebo10 < Formula
   conflicts_with "gazebo6", :because => "Differing version of the same formula"
   conflicts_with "gazebo7", :because => "Differing version of the same formula"
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
+  conflicts_with "gazebo9", :because => "Differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed
