@@ -70,5 +70,10 @@ class IgnitionCommon3 < Formula
       system "make"
       system "./test_cmake"
     end
+    # check for Xcode frameworks in bottle
+    # ! requires system with single argument, which uses standard shell
+    # put in variable to avoid audit complaint
+    cmd_not_grep_xcode = "! grep -rnI Applications/Xcode #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
