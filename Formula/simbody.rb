@@ -9,9 +9,9 @@ class Simbody < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "61618279759115f0312f7ea896462c1e39ce2f7ad1a26bb8b0c1f3fd37a858f4" => :mojave
-    sha256 "56f3b7eb258a2e8496339bcbfe0859511c132b70feabc63760eef855ae16a7cb" => :high_sierra
-    sha256 "e4908b1ab765cdfad161a9f7e9e6031dcead593909fe7e88115ac9c19d7662e0" => :sierra
+    sha256 "f782a48a58e646ca6fdf97cc39d9c7c2eed5d039b8a9cfcebcf685891f210c6d" => :mojave
+    sha256 "7ea5d3458a0c254d631d3be880473890939cc9ff87cc0b6cfe294b97b1d4df40" => :high_sierra
+    sha256 "65042cc670f294351cce80d7381d9998d77a6b8d9a8b55eb018d98ec41d95462" => :sierra
   end
 
   depends_on "cmake" => :build
