@@ -1,5 +1,12 @@
+strategy:
+  matrix:
+    mojave:
+      imageName: 'macOS-10.14'
+    high_sierra:
+      imageName: 'macOS-10.13'
+
 pool:
-  vmImage: macOS-10.13
+  vmImage: $(imageName)
 
 steps:
 - bash: |
