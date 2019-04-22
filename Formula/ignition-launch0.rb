@@ -32,5 +32,8 @@ class IgnitionLaunch0 < Formula
   # TODO: fix test. Failing: https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/209/label=osx_mojave/
   # test do
   #  system "ignition", "-run", "config/gazebo.ign"
+  #  # check for Xcode frameworks in bottle
+  #  cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+  #  system cmd_not_grep_xcode
   # end
 end

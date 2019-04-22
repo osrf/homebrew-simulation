@@ -103,5 +103,8 @@ class IgnitionGui1 < Formula
       system "make"
       system "./test_cmake"
     end
+    # check for Xcode frameworks in bottle
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
