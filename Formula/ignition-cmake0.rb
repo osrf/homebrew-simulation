@@ -37,5 +37,8 @@ class IgnitionCmake0 < Formula
     mkdir "build" do
       system "cmake", ".."
     end
+    # check for Xcode frameworks in bottle
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
