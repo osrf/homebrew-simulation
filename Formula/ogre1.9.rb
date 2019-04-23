@@ -145,5 +145,8 @@ class Ogre19 < Formula
     EOS
     system "#{bin}/OgreXMLConverter", "test.mesh.xml"
     system "du", "-h", "./test.mesh"
+    # check for Xcode frameworks in bottle
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
