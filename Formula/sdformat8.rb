@@ -82,6 +82,6 @@ class Sdformat8 < Formula
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
-    system cmd_not_grep_xcodeend
+    system cmd_not_grep_xcode
   end
 end
