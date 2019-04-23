@@ -10,9 +10,10 @@ class Ogre21 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "e1f3e42863ce7cd5f8da8b70ce62b3fc01eb9ad4b7b4fcd6840eda4940f3e215" => :mojave
-    sha256 "fddac650048e82dfa25ace0cbc5602e65c8e58e99120f59be10e8101d18261af" => :high_sierra
-    sha256 "9e9cbae5a7f64ad6f6b20458403e61352a9a80cc8df3198551801c6521690503" => :sierra
+    rebuild 1
+    sha256 "1c1603e76240f8cccd10f839d67ffa726c8b66b60ceb499249cf84cb850ca2a1" => :mojave
+    sha256 "c300233dd9589c60576fcfb2d4f22dd3c788bdae9cc44550e7d9855bf7ad89e7" => :high_sierra
+    sha256 "553e77a967dbb8e58a2f2033517fe932ad2d6e50ee568e82585b384175eea653" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -25,9 +26,6 @@ class Ogre21 < Formula
   depends_on "tbb"
   depends_on :x11
 
-  conflicts_with "ogre", :because => "Differing version of the same formula"
-  conflicts_with "ogre1.9", :because => "Differing version of the same formula"
-
   patch do
     # fix for cmake3 and c++11
     url "https://gist.github.com/scpeters/4a7516b52c6e918ac02cbacabfeda4b3/raw/c515f8f313c444b306dfff9d437ec7cf3622ab12/cmake3.diff"
@@ -36,7 +34,7 @@ class Ogre21 < Formula
 
   patch do
     # fix GL3+ compilation with Xcode 10
-    url "https://bitbucket.org/scpeters/ogre-1/commits/14b5dc7fc2d8e1281140d027e1effb4d8a317895/raw"
+    url "https://bitbucket.org/sinbad/ogre/commits/14b5dc7fc2d8e1281140d027e1effb4d8a317895/raw"
     sha256 "41c678d3021feab844c5731c0cc2aa7007b731cfde5e084bc87d3a1eba9fa581"
   end
 
@@ -44,6 +42,7 @@ class Ogre21 < Formula
     ENV.m64
 
     cmake_args = [
+      "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.1",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",
       "-DOGRE_BUILD_DOCS:BOOL=FALSE",
@@ -63,8 +62,39 @@ class Ogre21 < Formula
     end
 
     # Put these cmake files where Debian puts them
-    (share/"OGRE/cmake/modules").install Dir[prefix/"CMake/*.cmake"]
+    (share/"OGRE-2.1/cmake/modules").install Dir[prefix/"CMake/*.cmake"]
     rmdir prefix/"CMake"
+
+    # Support side-by-side OGRE installs
+    # Move headers
+    (include/"OGRE-2.1").install Dir[include/"OGRE/*"]
+    rmdir include/"OGRE"
+
+    # Move and update .pc files
+    lib.install Dir[lib/"OGRE-2.1/pkgconfig"]
+    Dir[lib/"pkgconfig/*"].each do |pc|
+      mv pc, pc.sub("pkgconfig/OGRE", "pkgconfig/OGRE-2.1")
+    end
+    inreplace Dir[lib/"pkgconfig/*"] do |s|
+      s.gsub! prefix, opt_prefix
+      s.sub! "Name: OGRE", "Name: OGRE-2.1"
+      s.sub! /^includedir=.*$/, "includedir=${prefix}/include/OGRE-2.1"
+    end
+    inreplace (lib/"pkgconfig/OGRE-2.1.pc"), " -I${includedir}\/OGRE", ""
+    inreplace (lib/"pkgconfig/OGRE-2.1-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
+    inreplace (lib/"pkgconfig/OGRE-2.1-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
+
+    # Move versioned libraries (*.2.1.0.dylib) to standard location and remove symlinks
+    lib.install Dir[lib/"OGRE-2.1/lib*.2.1.0.dylib"]
+    rm Dir[lib/"OGRE-2.1/lib*"]
+
+    # Move plugins to subfolder
+    (lib/"OGRE-2.1/OGRE").install Dir[lib/"OGRE-2.1/*.dylib"]
+
+    # Restore lib symlinks
+    Dir[lib/"lib*"].each do |l|
+      (lib/"OGRE-2.1").install_symlink l => File.basename(l.sub(".2.1.0", ""))
+    end
   end
 
   test do
@@ -77,13 +107,13 @@ class Ogre21 < Formula
         return 0;
       }
     EOS
-    system "pkg-config", "OGRE"
-    cflags = `pkg-config --cflags OGRE`.split(" ")
+    system "pkg-config", "OGRE-2.1"
+    cflags = `pkg-config --cflags OGRE-2.1`.split(" ")
+    libs = `pkg-config --libs OGRE-2.1`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-std=c++11",
-                   "-L#{lib}",
-                   "-lOgreMain",
+                   *libs,
                    "-lc++",
                    "-o", "test"
     system "./test"
