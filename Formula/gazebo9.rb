@@ -3,14 +3,15 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.8.0.tar.bz2"
   sha256 "6846c38fd4fbd735379a0be65ccf15c8dea07e52f33598ceebb5e6e60e8de7b0"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e4e3d31fe039b0f12005162dedb8447c44a809f59673876f78f25e4df841a8b2" => :mojave
-    sha256 "0f2e6bbe17aa9ade96d08f6cfb52e1f779edfe6db22a7aad4fa34923a9e260fe" => :high_sierra
-    sha256 "aec2267ab9b8781378f5888125d1fd4400bfd174161ecc3a9b755a1acd613d2a" => :sierra
+    sha256 "998478c523e130b1ba442ee9e350a9f15ec1e44921faf080e3c7b962f4ca45c2" => :mojave
+    sha256 "b640bc946e28c2cbfdd6efecc61057f51a0cfd696b4e0c7acaaee03d1c227aca" => :high_sierra
+    sha256 "d7b451f72db74c8910d2c1f4fee6f1fd1e505593089d84de0d63b8b894f22781" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -59,6 +60,13 @@ class Gazebo9 < Formula
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
+
+  patch do
+    # Fix build with dartsim 6.8
+    # remove this patch with next release
+    url "https://bitbucket.org/osrf/gazebo/commits/5ba948b87faf98eb038fc3488e88a07bc4bd9df9/raw"
+    sha256 "5f3738e04d8e23e3c49a6662e0029bfc94b8a1e2c142e084b7bd42f4d84bf993"
   end
 
   def install
