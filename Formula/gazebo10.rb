@@ -3,6 +3,7 @@ class Gazebo10 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.1.0.tar.bz2"
   sha256 "8a1fcf8697704928c9cda610a9ce81f563f211bdfb2f1fdb458193ffb36c4287"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -59,6 +60,13 @@ class Gazebo10 < Formula
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
+
+  patch do
+    # Fix build with dartsim 6.8
+    # remove this patch with next release
+    url "https://bitbucket.org/osrf/gazebo/commits/5ba948b87faf98eb038fc3488e88a07bc4bd9df9/raw"
+    sha256 "5f3738e04d8e23e3c49a6662e0029bfc94b8a1e2c142e084b7bd42f4d84bf993"
   end
 
   def install
