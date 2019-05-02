@@ -93,6 +93,7 @@ class IgnitionGui1 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
+    ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
