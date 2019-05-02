@@ -1,9 +1,9 @@
 class IgnitionMsgs4 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "https://bitbucket.org/ignitionrobotics/ign-msgs/get/7429b60ffdbc77bdbfd8dd3dfaed2343351da447.tar.gz"
-  version "3.999.999~2~20190415~7429b60"
-  sha256 "365a444948833c46da6e47a9c086d6f8c85e44864cb9f0b2d54f935d2894d759"
+  url "https://bitbucket.org/ignitionrobotics/ign-msgs/get/b82726d01252e141847335da3e8144d4e4cba54b.tar.gz"
+  version "3.999.999~2~20190502~b82726d"
+  sha256 "fe6db6f5687f879fc695fc81992ef0835529fb7fc5310bac6f6858bad93de9e9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
