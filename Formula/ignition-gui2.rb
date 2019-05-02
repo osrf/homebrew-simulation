@@ -1,9 +1,9 @@
 class IgnitionGui2 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/90726900c6d6e78cccfdc411a49c8fdb4125a2fc.tar.bz2"
-  version "1.999.999~20190412~907269"
-  sha256 "e46fd75246c041ffdd0a8549cfab8e14ebcc5e77ed6f35debc0fc43a800ef8ea"
+  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/85d9019f6c71f1c533468a0e9907f9a4d6115099.tar.bz2"
+  version "1.999.999~20190502~ 85d9019"
+  sha256 "705c86b4bd7e38661760d79f2825d7f73bffb73509bfeb030363913c641577ed"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
