@@ -56,6 +56,7 @@ class IgnitionTransport4 < Formula
                    "-lignition-transport4",
                    "-lc++",
                    "-o", "test"
+    ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     mkdir "build" do
       system "cmake", ".."
