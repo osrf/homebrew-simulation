@@ -1,9 +1,9 @@
 class IgnitionLaunch1 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
-  url "https://bitbucket.org/ignitionrobotics/ign-launch/get/d90d7a7cd35066419c3e19c1a899855c3d5a190b.tar.bz2"
-  version "1.0.0~pre1~1~20190430~d90d7a7"
-  sha256 "1e237e971e50186ef429dc9b64451c7c79793ed4258888ab9f054077ec220610"
+  url "https://bitbucket.org/ignitionrobotics/ign-launch/get/3b5510d68a164d96e9f0a87a761e330d3f1b45ae.tar.bz2"
+  version "1.0.0~pre1~1~20190506~3b5510d6"
+  sha256 "4c8691141253249c852b32e1e5d4dd0fc8f0b2e7192639abe6884533e1afcb00"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
