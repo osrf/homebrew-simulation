@@ -2,7 +2,7 @@ class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-8.1.0~pre1.tar.bz2"
-  version "8.1.0~pre1"
+  version "8.1.0~pre1~20190509"
   sha256 "3497d324fa76093c0610beb56f86b36d5d36fa5247df0ee03ca8ec32206f13b0"
 
   bottle do
