@@ -38,7 +38,7 @@ class IgnitionTransport4 < Formula
       #include <iostream>
       #include <ignition/transport.hh>
       int main() {
-        ignition::transport::Node node;
+        ignition::transport::NodeOptions options;
         return 0;
       }
     EOS
