@@ -1,9 +1,9 @@
 class IgnitionRendering2 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/bd0133a7283307cd829ffe2254cb7e5fd1daa9b1.tar.bz2"
-  version "1.999.999~20190507~bd0133a7"
-  sha256 "ec40f50cdfd31b16cb51668b7f225121679939124282d7f61817825ae594e68f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering2-2.0.0~pre1.tar.bz2"
+  version "2.0.0~pre1"
+  sha256 "3bdb8067e3b797d62150b9de725acc038b45806eaec89ec2b7b8d679983f91eb"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
