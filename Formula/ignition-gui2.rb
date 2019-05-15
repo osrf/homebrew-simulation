@@ -1,16 +1,16 @@
 class IgnitionGui2 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/85d9019f6c71f1c533468a0e9907f9a4d6115099.tar.bz2"
-  version "1.999.999~20190502~85d9019"
-  sha256 "705c86b4bd7e38661760d79f2825d7f73bffb73509bfeb030363913c641577ed"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui2-2.0.0~pre1.tar.bz2"
+  version "2.0.0~pre1"
+  sha256 "8a83e32db7daeb91c024eea07ddbe35f624173a885dc96fe802807ad409e9b30"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "eaef20bff46739a23da48564c6fba399bb1f24639eee6bc282db8c3c37c994a8" => :mojave
-    sha256 "a7f90701701eed7722eec5d785cb699370750b1342411bda28e9a42653744067" => :high_sierra
+    sha256 "fddae83ceed1549d357d8c23cc30702ea49b698485198d4ec6c79e724f9eb553" => :mojave
+    sha256 "d34b3829eb408b6846597e56877207f8f69858f9aa3a4f4913f81050e1fad925" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]
