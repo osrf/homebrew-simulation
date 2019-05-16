@@ -4,6 +4,7 @@ class IgnitionGui2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui2-2.0.0~pre1.tar.bz2"
   version "2.0.0~pre1"
   sha256 "8a83e32db7daeb91c024eea07ddbe35f624173a885dc96fe802807ad409e9b30"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
