@@ -7,9 +7,9 @@ class IgnitionTools < Formula
   head "https://bitbucket.org/ignitionrobotics/ign-tools", :branch => "default", :using => :hg
 
   bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases"
-    cellar :any
-    sha256 "9749ed1c0a0fae437ba4f7f2a4605c1defb7c78b3306d7f32b3e322e72d0f511" => :el_capitan
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any_skip_relocation
+    sha256 "12810515ae12967113d0fa3c49db707eb815d6d9605c75a06ed7dea5dd4dd0f2" => :sierra
   end
 
   depends_on "cmake" => :build
