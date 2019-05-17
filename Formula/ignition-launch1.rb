@@ -2,7 +2,7 @@ class IgnitionLaunch1 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.0.0~pre1.tar.bz2"
-  version "1.0.0~pre1"
+  version "1.0.0~pre1~2"
   sha256 "f10f0a327b933ab5389c601bf7b62b79711e27dc6f580a630d221b0a69939c74"
 
   depends_on "cmake" => :build
