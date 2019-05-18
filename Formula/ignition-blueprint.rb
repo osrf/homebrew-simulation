@@ -1,11 +1,17 @@
 class IgnitionBlueprint < Formula
   desc "Ignition blueprint collection"
   homepage "https://bitbucket.org/ignitionrobotics/ign-blueprint"
-  url "https://bitbucket.org/ignitionrobotics/ign-blueprint/get/7684ca620f67e07a3436d012ad050bd6b8434b87.tar.bz2"
-  version "0.999.999~20190508~7684ca62"
-  sha256 "58fc013af075956fe7ae0e90d979bc3da6f20d1516627a0b7115c5760ef3659a"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "91e808ca793e4c50d94cd6f9e443708c869526a00d7bc4384ac5c047e2dfb6ff"
 
   head "https://bitbucket.org/ignitionrobotics/ign-blueprint", :branch => "default", :using => :hg
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any_skip_relocation
+    sha256 "71a62be1a7cea6a8de64e11b5c6023755246258eb767c916bd5339c541d3878d" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
