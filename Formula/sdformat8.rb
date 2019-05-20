@@ -1,13 +1,12 @@
 class Sdformat8 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-8.1.0~pre1.tar.bz2"
-  version "8.1.0~pre1~20190509"
-  sha256 "3497d324fa76093c0610beb56f86b36d5d36fa5247df0ee03ca8ec32206f13b0"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-8.1.0.tar.bz2"
+  sha256 "03765ae901cda256346bf8cf3916609a92bc252ab1d0f811c4553b28bb535067"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "2e6e0f9d5e2a89b1e990c627b8be868ac3ffe59df0d8cdfa35fee5e6d87a6a1f" => :mojave
+    sha256 "0137e2b18345477024c68d164317061a17859e6a5d7b8be3ae4e35918e4d2f9e" => :mojave
   end
 
   depends_on "cmake" => :build
