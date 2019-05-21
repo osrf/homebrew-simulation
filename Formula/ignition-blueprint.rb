@@ -1,9 +1,8 @@
 class IgnitionBlueprint < Formula
   desc "Ignition blueprint collection"
   homepage "https://bitbucket.org/ignitionrobotics/ign-blueprint"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.0.0~pre1.tar.bz2"
-  version "1.0.0~pre1"
-  sha256 "91e808ca793e4c50d94cd6f9e443708c869526a00d7bc4384ac5c047e2dfb6ff"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.0.0.tar.bz2"
+  sha256 "a55860fa37bfb0c357ca86aaa31cd5de42e5f8f9022bced3e827808785e83041"
 
   head "https://bitbucket.org/ignitionrobotics/ign-blueprint", :branch => "default", :using => :hg
 
