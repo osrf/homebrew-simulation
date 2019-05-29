@@ -3,15 +3,15 @@ class Gazebo10 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.1.0.tar.bz2"
   sha256 "8a1fcf8697704928c9cda610a9ce81f563f211bdfb2f1fdb458193ffb36c4287"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "20a33766918aae6ad49236ad74ce9333a8a4abafd4a38b2353fc003c38f62205" => :mojave
-    sha256 "c984047885b7b31fea6df3749894f9f84c704e457def9188bbb7c318110c821e" => :high_sierra
-    sha256 "52728b71f03e110372686c837e2b287ba1354144019d210e7529bc5af6479784" => :sierra
+    sha256 "d2de6351da929aa80111ef3918435641232a7a6270c7ff3728534dcf4d8b1c72" => :mojave
+    sha256 "ad5484ea973f4a866d0ec2285f0dfaa3c5ea5acedd6cf309dfd8cf1f33721917" => :high_sierra
+    sha256 "c642b509c1161cffc844226223a039301609d6d926eeb1e61f1682860084ef7f" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -67,6 +67,13 @@ class Gazebo10 < Formula
     # remove this patch with next release
     url "https://bitbucket.org/osrf/gazebo/commits/5ba948b87faf98eb038fc3488e88a07bc4bd9df9/raw"
     sha256 "5f3738e04d8e23e3c49a6662e0029bfc94b8a1e2c142e084b7bd42f4d84bf993"
+  end
+
+  patch do
+    # Fix build with dartsim 6.9
+    # remove this patch with next release
+    url "https://bitbucket.org/osrf/gazebo/commits/c7b7f62f76722d57e768b1d2b4c8371841bf856c/raw"
+    sha256 "fa8b817197dcd8413904a97a7765580c8096060e68afc110b6ec6a6bf087268f"
   end
 
   def install
