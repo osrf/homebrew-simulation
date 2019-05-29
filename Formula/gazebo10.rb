@@ -3,7 +3,7 @@ class Gazebo10 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.1.0.tar.bz2"
   sha256 "8a1fcf8697704928c9cda610a9ce81f563f211bdfb2f1fdb458193ffb36c4287"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -67,6 +67,13 @@ class Gazebo10 < Formula
     # remove this patch with next release
     url "https://bitbucket.org/osrf/gazebo/commits/5ba948b87faf98eb038fc3488e88a07bc4bd9df9/raw"
     sha256 "5f3738e04d8e23e3c49a6662e0029bfc94b8a1e2c142e084b7bd42f4d84bf993"
+  end
+
+  patch do
+    # Fix build with dartsim 6.9
+    # remove this patch with next release
+    url "https://bitbucket.org/osrf/gazebo/commits/c7b7f62f76722d57e768b1d2b4c8371841bf856c/raw"
+    sha256 "fa8b817197dcd8413904a97a7765580c8096060e68afc110b6ec6a6bf087268f"
   end
 
   def install
