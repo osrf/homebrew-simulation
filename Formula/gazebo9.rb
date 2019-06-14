@@ -3,15 +3,15 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.9.0.tar.bz2"
   sha256 "1cd386f655182baa41e32eae0f222f1049929a73d49fed9ae12e67b01fa3fe67"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "472ada6636b3dd37217d1fa0c716e436dcd1acfb5dcd7c46336b3717c9e20728" => :mojave
-    sha256 "d71b3accf64ce1eeeef688fe87e78c160a297e0e38e75a635810a46a1eec7b16" => :high_sierra
-    sha256 "ca51743c601730ea12ccd3e9d63f27912cae33eb5a26f55525122c5e8b6214ac" => :sierra
+    sha256 "ca2ec2d739d4b4676b0120e06330dc8852aaa8e59649ab6b8dcd3bb52b218f28" => :mojave
+    sha256 "78cc04df64dc17511731aa014e08502abe0470f2948664cf47d7379e61d96461" => :high_sierra
+    sha256 "d387326073c029cd667c9ca6886568b7c6ad0225e2ead356c85f70fc060a107c" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -76,7 +76,39 @@ class Gazebo9 < Formula
   end
 
   test do
+    # this used to show boost linking errors, but not anymore
     system "#{bin}/gz", "sdf"
+    # running this sample code seg-faults from boost filesystem
+    # if a bottle rebuild is needed
+    (testpath/"test.cpp").write <<-EOS
+      #include <gazebo/common/CommonIface.hh>
+      int main() {
+        gazebo::common::copyDir(".", "./tmp");
+        return 0;
+      }
+    EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      find_package(gazebo QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      include_directories(${GAZEBO_INCLUDE_DIRS})
+      target_link_libraries(test_cmake ${GAZEBO_LIBRARIES})
+    EOS
+    system "pkg-config", "gazebo"
+    cflags = `pkg-config --cflags gazebo`.split(" ")
+    libs = `pkg-config --libs gazebo`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   *libs,
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
