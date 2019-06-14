@@ -3,7 +3,7 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.9.0.tar.bz2"
   sha256 "1cd386f655182baa41e32eae0f222f1049929a73d49fed9ae12e67b01fa3fe67"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -76,7 +76,39 @@ class Gazebo9 < Formula
   end
 
   test do
+    # this used to show boost linking errors, but not anymore
     system "#{bin}/gz", "sdf"
+    # running this sample code seg-faults from boost filesystem
+    # if a bottle rebuild is needed
+    (testpath/"test.cpp").write <<-EOS
+      #include <gazebo/common/CommonIface.hh>
+      int main() {
+        gazebo::common::copyDir(".", "./tmp");
+        return 0;
+      }
+    EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      find_package(gazebo QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      include_directories(${GAZEBO_INCLUDE_DIRS})
+      target_link_libraries(test_cmake ${GAZEBO_LIBRARIES})
+    EOS
+    system "pkg-config", "gazebo"
+    cflags = `pkg-config --cflags gazebo`.split(" ")
+    libs = `pkg-config --libs gazebo`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   *libs,
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
