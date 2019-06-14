@@ -3,18 +3,19 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-7.15.0.tar.bz2"
   sha256 "a648d6850c91b94b1b744b37d5a0b1663942e8b5d0f80d800dbc873feac67889"
+  revision 1
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "18ae1b239ae65073510d71a070f3a914b5c5311f1c03bbca6ff1c22d7341a7db" => :mojave
-    sha256 "5b55937d8ba81504fac1f979cca733e4ff42fab2a1e4c0121167561d0a496b00" => :high_sierra
-    sha256 "2a9744fbeccc6e2f2ffaf508d6306c93452b7e5d54d6ad668dd9fde6e8211009" => :sierra
+    sha256 "62d835704d3f6a46395566d71d85874ab1b02bb3aeb52be0438cc840ba50f024" => :mojave
+    sha256 "470d0d0fbf06300154a048ae12f0d084fbf194a20fc38d0f5b5996e5a6dcc7e4" => :high_sierra
+    sha256 "bdc93961b781fd4a800488e37494d0a35cecceba533bf5ac9218fe8ee79a3cbd" => :sierra
   end
 
-  depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "pkg-config" => [:build, :test]
 
   depends_on "boost"
   depends_on "cartr/qt4/qt@4"
@@ -69,7 +70,39 @@ class Gazebo7 < Formula
   end
 
   test do
+    # this used to show boost linking errors, but not anymore
     system "#{bin}/gz", "sdf"
+    # running this sample code seg-faults from boost filesystem
+    # if a bottle rebuild is needed
+    (testpath/"test.cpp").write <<-EOS
+      #include <gazebo/common/CommonIface.hh>
+      int main() {
+        gazebo::common::copyDir(".", "./tmp");
+        return 0;
+      }
+    EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      find_package(gazebo QUIET REQUIRED)
+      add_executable(test_cmake test.cpp)
+      include_directories(${GAZEBO_INCLUDE_DIRS})
+      target_link_libraries(test_cmake ${GAZEBO_LIBRARIES})
+    EOS
+    system "pkg-config", "gazebo"
+    cflags = `pkg-config --cflags gazebo`.split(" ")
+    libs = `pkg-config --libs gazebo`.split(" ")
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   "-L#{lib}",
+                   *libs,
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
