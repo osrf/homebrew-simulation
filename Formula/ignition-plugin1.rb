@@ -1,8 +1,9 @@
 class IgnitionPlugin1 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.0.0.tar.bz2"
-  sha256 "d6f4941e9640798af1d463a96ea5c1f6b70acf494f85905fd0012da54816e3ef"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.1.0~pre1.tar.bz2"
+  version "1.1.0~pre1"
+  sha256 "afbb09819e3b8ebec559a506fb99469e5463a1506bdabf203c3b9a020e0b2937"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
