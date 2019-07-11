@@ -1,9 +1,9 @@
 class IgnitionTransport5 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport5-5.0.0.tar.bz2"
-  sha256 "9704f4ad16b2caf1d24e51fca0994aff23a43f565f03c66b2b6670c98e1ea080"
-  revision 1
+  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/08aa1f3d1d5b2e006dd8b357f3c9367d27f66107.tar.gz"
+  version "5.0.0.999~20190711~f2402ae2"
+  sha256 "033c35dc3e0338035a8aed6b46418a7caee298c207b72a50b0282031093b404c"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -20,6 +20,7 @@ class IgnitionTransport5 < Formula
   depends_on "ignition-cmake1"
   depends_on "ignition-msgs2"
   depends_on "ignition-tools"
+  depends_on :macos => :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
