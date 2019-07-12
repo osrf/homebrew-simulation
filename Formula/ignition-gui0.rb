@@ -1,25 +1,28 @@
 class IgnitionGui0 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui0-0.1.1.tar.bz2"
-  sha256 "e6f8c6e3caebc003992f6d1dbfbc00c3315a3532afe5a34e230f0e61514debf1"
+  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/9df8a06ef680ee21982a94cb4d9cd56e7a854fd6.tar.gz"
+  version "0.1.999~20190711~9df8a06e"
+  sha256 "a4e2873aabea8d9c1b77f077a510f05b6ecb07521665a5c2e073c8921fc341eb"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "28be9667929831369ca0eb61c649f7b00fe8688e002b60433a7dd9141a6fab36" => :mojave
-    sha256 "df493d10138399089348ccc4b1f5cc37bb5e82e6953b0538d456288f5ccf7e18" => :high_sierra
-    sha256 "07ed1503b63dab511b63b096545b980d892dac258a093b57d71c7c92c70fa194" => :sierra
+    sha256 "1a1d032b7730d3004c63ed8954eb602872b7ed712e0c6c05bed3c1a8a6eff2e0" => :mojave
+    sha256 "d5f8c642c4f09f445ba1d1223567337c867b1ebf2ba6de836bd2baa8283624cd" => :high_sierra
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "pkg-config" => [:build, :test]
+
   depends_on "ignition-cmake1"
   depends_on "ignition-common2"
+  depends_on "ignition-math6"
   depends_on "ignition-msgs2"
-  depends_on "ignition-rendering0"
+  depends_on "ignition-rendering2"
   depends_on "ignition-transport5"
-  depends_on "pkg-config"
+  depends_on :macos => :high_sierra # c++17
   depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml2"
