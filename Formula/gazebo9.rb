@@ -1,17 +1,16 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.9.0.tar.bz2"
-  sha256 "1cd386f655182baa41e32eae0f222f1049929a73d49fed9ae12e67b01fa3fe67"
-  revision 2
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.10.0.tar.bz2"
+  sha256 "f91d4cd40275f53350801cab9646bf4bc7bcae3dbd368f7923af06125463a88a"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "ca2ec2d739d4b4676b0120e06330dc8852aaa8e59649ab6b8dcd3bb52b218f28" => :mojave
-    sha256 "78cc04df64dc17511731aa014e08502abe0470f2948664cf47d7379e61d96461" => :high_sierra
-    sha256 "d387326073c029cd667c9ca6886568b7c6ad0225e2ead356c85f70fc060a107c" => :sierra
+    sha256 "122faabffe708e2527b387d869419d194585c7f2fe7df4669f2774a35e08a39c" => :mojave
+    sha256 "66c371774e4ac32dd17e19ac179668728b248bf8fce0e3dd7ea1ba4cbc5c28e1" => :high_sierra
+    sha256 "ebb9fb98e144dfb1a195d1fa0619221ed14a56e4521b371dd1a70bd4005d5122" => :sierra
   end
 
   depends_on "cmake" => :build
