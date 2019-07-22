@@ -1,4 +1,4 @@
-class Dartsim < Formula
+class DartsimAT6100 < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
   # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
