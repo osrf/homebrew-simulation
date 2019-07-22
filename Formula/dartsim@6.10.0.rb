@@ -3,8 +3,8 @@ class DartsimAT6100 < Formula
   homepage "https://dartsim.github.io/"
   # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
   url "https://github.com/dartsim/dart/archive/fdde7e7894ebc36bae8811f7a63e5b1c899bb4af.zip"
+  version "6.10.0~20190718~fdde7e7894ebc36bae8811f7a63e5b1c899bb4af"
   sha256 "5aa9069ac4cada47d026f93a25fadd8461ce2de302b2a91699ab10a095205347"
-  revision 1
 
   bottle do
   end
