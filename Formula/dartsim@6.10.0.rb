@@ -2,9 +2,9 @@ class DartsimAT6100 < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
   # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
-  url "https://github.com/dartsim/dart/archive/fdde7e7894ebc36bae8811f7a63e5b1c899bb4af.zip"
+  url "https://github.com/dartsim/dart/archive/fdde7e7894ebc36bae8811f7a63e5b1c899bb4af.tar.gz"
   version "6.10.0~20190718~fdde7e7894ebc36bae8811f7a63e5b1c899bb4af"
-  sha256 "5aa9069ac4cada47d026f93a25fadd8461ce2de302b2a91699ab10a095205347"
+  sha256 "2083a5a52a8376d1c99c33423a64c35c80fec97825cb1ed65f1d09e74a3940c7"
 
   bottle do
   end
