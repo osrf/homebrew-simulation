@@ -8,6 +8,9 @@ class DartsimAT6100 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "50f451b0e902ee01fc189405fa92af7a26c10370bce95a7a09c8f2dcf980debb" => :mojave
+    sha256 "befffe7a4dda18a3dcb0bf02d8ff27c22a07e2c1ade14f0f3d6ff7d0fcab781b" => :high_sierra
+    sha256 "96a5c68065937e4b0b919388da078c75433edd5d2a088d23296890d84ae023ba" => :sierra
   end
 
   depends_on "cmake" => :build
