@@ -3,6 +3,7 @@ class IgnitionPhysics1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics-1.3.1.tar.bz2"
   sha256 "5c15bb7fa466e1dee821ffc4495a37fb365014217c68b9a445534ce896c5f12f"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -13,7 +14,7 @@ class IgnitionPhysics1 < Formula
   depends_on "cmake" => :build
 
   depends_on "bullet"
-  depends_on "dartsim"
+  depends_on "dartsim@6.10.0"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
