@@ -13,6 +13,8 @@ class DartsimAT6100 < Formula
     sha256 "96a5c68065937e4b0b919388da078c75433edd5d2a088d23296890d84ae023ba" => :sierra
   end
 
+  keg_only "open robotics fork of dart HEAD + custom changes"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "assimp"
