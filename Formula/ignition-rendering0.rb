@@ -15,13 +15,13 @@ class IgnitionRendering0 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => [:build, :test]
 
   depends_on "freeimage"
   depends_on "ignition-cmake1"
   depends_on "ignition-common2"
   depends_on "ignition-math5"
   depends_on "ogre1.9"
-  depends_on "pkg-config"
 
   patch do
     # Don't conflict with ignition-rendering1
@@ -35,6 +35,8 @@ class IgnitionRendering0 < Formula
   end
 
   test do
+    azure = !ENV["HOMEBREW_AZURE_PIPELINES"].nil?
+    travis = !ENV["HOMEBREW_TRAVIS_CI"].nil?
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/rendering/RenderEngine.hh>
       #include <ignition/rendering/RenderingIface.hh>
@@ -53,6 +55,9 @@ class IgnitionRendering0 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test"
+    system "./test" unless azure || travis
+    # check for Xcode frameworks in bottle
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
