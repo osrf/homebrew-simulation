@@ -31,19 +31,33 @@ class IgnitionPhysics1 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include "ignition/physics.hh"
+      #include "ignition/plugin/Loader.hh"
+      #include "ignition/physics/ConstructEmpty.hh"
+      #include "ignition/physics/RequestEngine.hh"
       int main()
       {
-        ignition::physics::CompositeData data;
-        return data.Has<std::string>();
+        ignition::plugin::Loader loader;
+        loader.LoadLib("#{opt_lib}/libignition-physics1-dartsim-plugin.dylib");
+        ignition::plugin::PluginPtr dartsim =
+            loader.Instantiate("ignition::physics::dartsim::Plugin");
+        using featureList = ignition::physics::FeatureList<
+            ignition::physics::ConstructEmptyWorldFeature>;
+        auto engine =
+            ignition::physics::RequestEngine3d<featureList>::From(dartsim);
+        return engine == nullptr;
       }
     EOS
     system "pkg-config", "ignition-physics1"
     cflags   = `pkg-config --cflags ignition-physics1`.split(" ")
     ldflags  = `pkg-config --libs ignition-physics1`.split(" ")
+    system "pkg-config", "ignition-plugin1-loader"
+    loader_cflags   = `pkg-config --cflags ignition-plugin1-loader`.split(" ")
+    loader_ldflags  = `pkg-config --libs ignition-plugin1-loader`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
+                   *loader_cflags,
+                   *loader_ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
