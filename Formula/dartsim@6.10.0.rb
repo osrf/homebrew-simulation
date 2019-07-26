@@ -41,7 +41,9 @@ class DartsimAT6100 < Formula
 
     # Add rpath to shared libraries
     Dir[lib/"libdart*.6.10.0.dylib"].each do |l|
-      system "install_name_tool", "-add_rpath", opt_lib, l
+      macho = MachO.open(l)
+      macho.add_rpath(opt_lib.to_s)
+      macho.write!
     end
   end
 
