@@ -29,6 +29,8 @@ class IgnitionRendering1 < Formula
   end
 
   test do
+    azure = !ENV["HOMEBREW_AZURE_PIPELINES"].nil?
+    travis = !ENV["HOMEBREW_TRAVIS_CI"].nil?
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/rendering/RenderEngine.hh>
       #include <ignition/rendering/RenderingIface.hh>
@@ -54,14 +56,14 @@ class IgnitionRendering1 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test"
+    system "./test" unless azure || travis
     # test building with cmake
     mkdir "build" do
       ENV.delete("MACOSX_DEPLOYMENT_TARGET")
       ENV.delete("SDKROOT")
       system "cmake", ".."
       system "make"
-      system "./test_cmake"
+      system "./test_cmake" unless azure || travis
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
