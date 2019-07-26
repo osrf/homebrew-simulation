@@ -3,17 +3,18 @@ class IgnitionPhysics1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics-1.3.1.tar.bz2"
   sha256 "5c15bb7fa466e1dee821ffc4495a37fb365014217c68b9a445534ce896c5f12f"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "030f09088fa9690de7b7177348071c7b08f231244198aa462414ebd3e059bc88" => :mojave
+    sha256 "289b99062461a15f5ea1a8726303f60062fdf260cd371f8cad388d57a67b10fd" => :mojave
   end
 
   depends_on "cmake" => :build
 
   depends_on "bullet"
-  depends_on "dartsim"
+  depends_on "dartsim@6.10.0"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
@@ -30,19 +31,33 @@ class IgnitionPhysics1 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include "ignition/physics.hh"
+      #include "ignition/plugin/Loader.hh"
+      #include "ignition/physics/ConstructEmpty.hh"
+      #include "ignition/physics/RequestEngine.hh"
       int main()
       {
-        ignition::physics::CompositeData data;
-        return data.Has<std::string>();
+        ignition::plugin::Loader loader;
+        loader.LoadLib("#{opt_lib}/libignition-physics1-dartsim-plugin.dylib");
+        ignition::plugin::PluginPtr dartsim =
+            loader.Instantiate("ignition::physics::dartsim::Plugin");
+        using featureList = ignition::physics::FeatureList<
+            ignition::physics::ConstructEmptyWorldFeature>;
+        auto engine =
+            ignition::physics::RequestEngine3d<featureList>::From(dartsim);
+        return engine == nullptr;
       }
     EOS
     system "pkg-config", "ignition-physics1"
     cflags   = `pkg-config --cflags ignition-physics1`.split(" ")
     ldflags  = `pkg-config --libs ignition-physics1`.split(" ")
+    system "pkg-config", "ignition-plugin1-loader"
+    loader_cflags   = `pkg-config --cflags ignition-plugin1-loader`.split(" ")
+    loader_ldflags  = `pkg-config --libs ignition-plugin1-loader`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
+                   *loader_cflags,
+                   *loader_ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
