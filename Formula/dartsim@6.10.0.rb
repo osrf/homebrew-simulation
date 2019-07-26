@@ -38,6 +38,11 @@ class DartsimAT6100 < Formula
     system "cmake", ".", "-DGLUT_glut_LIBRARY=/System/Library/Frameworks/GLUT.framework",
                          *std_cmake_args
     system "make", "install"
+
+    # Add rpath to shared libraries
+    Dir[lib/"libdart*.6.10.0.dylib"].each do |l|
+      system "install_name_tool", "-add_rpath", opt_lib, l
+    end
   end
 
   test do
