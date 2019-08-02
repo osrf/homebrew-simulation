@@ -8,7 +8,7 @@ class IgnitionSensors2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "dfcbacd96c0adffe1b0596b14eaa72cc97ed11b787bea09878cf0eddee493edf" => :mojave
+    sha256 "fee9bfd612fbfe78e6befbd0bc7e3c42d6af56258212e2c43243f5e3c90e70c9" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
