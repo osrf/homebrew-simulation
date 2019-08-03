@@ -43,14 +43,14 @@ class IgnitionRendering3 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(ignition-rendering2 QUIET REQUIRED)
+      find_package(ignition-rendering3 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-rendering2::ignition-rendering2)
+      target_link_libraries(test_cmake ignition-rendering3::ignition-rendering3)
     EOS
     # test building with pkg-config
-    system "pkg-config", "ignition-rendering2"
-    cflags   = `pkg-config --cflags ignition-rendering2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-rendering2`.split(" ")
+    system "pkg-config", "ignition-rendering3"
+    cflags   = `pkg-config --cflags ignition-rendering3`.split(" ")
+    ldflags  = `pkg-config --libs ignition-rendering3`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
