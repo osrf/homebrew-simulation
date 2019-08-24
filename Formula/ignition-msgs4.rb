@@ -3,6 +3,7 @@ class IgnitionMsgs4 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs4-4.7.0.tar.bz2"
   sha256 "3bbf7b30425a811191f8c0a7549942a81ded05af80521801937bf2eeb9c222b1"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
