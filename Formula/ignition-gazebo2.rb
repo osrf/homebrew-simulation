@@ -9,7 +9,7 @@ class IgnitionGazebo2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "a0b27a0374147396afc59eafd8293ebc09dc142b3e3d90f21e6cbc47789c41b4" => :mojave
+    sha256 "b3a0ababfebd5f9f4f7b7e4f03e680a21d5e27fff6e444c4b17ec6a5111bc0ae" => :mojave
   end
 
   depends_on "cmake" => :build
