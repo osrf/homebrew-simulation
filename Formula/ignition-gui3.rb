@@ -4,6 +4,7 @@ class IgnitionGui3 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-gui/get/4fc18bf44e8cf6575c33f0627f8b7496264df598.tar.bz2"
   version "2.999.999~20190802~4fc18b"
   sha256 "12876b21ac96c5627015c16397384e908a2d612d3b67de86feb122e2f23c7ee2"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
