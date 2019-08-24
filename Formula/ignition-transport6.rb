@@ -3,7 +3,7 @@ class IgnitionTransport6 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport6-6.0.0.tar.bz2"
   sha256 "a562a64ee8415f94f4424bc170a7354c8633a6474c9192b701e7f423b45a82cb"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
