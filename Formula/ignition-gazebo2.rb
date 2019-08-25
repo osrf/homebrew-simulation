@@ -3,12 +3,13 @@ class IgnitionGazebo2 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo2-2.8.0.tar.bz2"
   sha256 "92927d82cec8e94e468d7ec1994668c3a7e725c5145c15811426cab3c1775ef7"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "a0b27a0374147396afc59eafd8293ebc09dc142b3e3d90f21e6cbc47789c41b4" => :mojave
+    sha256 "b3a0ababfebd5f9f4f7b7e4f03e680a21d5e27fff6e444c4b17ec6a5111bc0ae" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -30,6 +31,7 @@ class IgnitionGazebo2 < Formula
   depends_on "sdformat8"
 
   conflicts_with "ignition-gazebo1", :because => "Both install bin/ign-gazebo symlinks"
+  conflicts_with "ignition-gazebo3", :because => "Both install bin/ign-gazebo symlinks"
 
   def install
     ENV.m64
