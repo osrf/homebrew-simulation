@@ -1,9 +1,9 @@
 class IgnitionSensors2 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors2-2.5.1.tar.bz2"
-  sha256 "55d6ad3884d90f9c9804dabb1ab5af70ab9858162aae24539ae4ff74899c742d"
-  revision 1
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors2-2.6.0~pre1.tar.bz2"
+  version "2.6.0~pre1"
+  sha256 "4c82f0478cf5659baadd7f432776c289c1350b3575bbbfc335871a0c86401f2c"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
