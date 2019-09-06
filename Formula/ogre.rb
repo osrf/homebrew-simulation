@@ -54,7 +54,7 @@ class Ogre < Formula
 
   patch do
     # fix for boost 1.65
-    url "https://bitbucket.org/scpeters/ogre/commits/78331c592397878ab3377b5f9b55086aca7a63e5/raw"
+    url "https://gist.githubusercontent.com/scpeters/95efda97cc2ece7774e1fdd869eb8937/raw/02bb1f239a7fce242eba5b737f2cb27292d4f1af/bitbucket.org_scpeters_ogre_commits_78331c592397878ab3377b5f9b55086aca7a63e5_raw"
     sha256 "baf485a26993fa9c290701779bb78cc778f2c6d4f4aa2a26e85c6949f8ed4333"
   end
 
