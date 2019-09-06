@@ -7,8 +7,9 @@ class Ogre < Formula
 
   option "with-cg"
 
-  depends_on "boost"
   depends_on "cmake" => :build
+
+  depends_on "boost"
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
