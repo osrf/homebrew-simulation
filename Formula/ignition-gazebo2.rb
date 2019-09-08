@@ -1,8 +1,8 @@
 class IgnitionGazebo2 < Formula
   desc "Gazebo robot simulator"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo2-2.9.0.tar.bz2"
-  sha256 "1ba0ac8fa8e0d100885f17265a867b67d4b0ce52412a9ae2e06b49fed740a2dc"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo2-2.10.0.tar.bz2"
+  sha256 "b096a472563bbda9940797b52bd6dc9fd20adf458f503999c748d864e2061238"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
