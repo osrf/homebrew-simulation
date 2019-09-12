@@ -1,8 +1,8 @@
 class IgnitionMath5 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math5-5.0.0.tar.bz2"
-  sha256 "2536f20aebfa617dbf4a552638b25b084774f6b65f92d9ed3c304af5e45e3db2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math5-5.1.0.tar.bz2"
+  sha256 "f28aa11f8f292e70cc8a0427452fa4548390408ec9b6df88d5b221dde0d42d1c"
   version_scheme 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
