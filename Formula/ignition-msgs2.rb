@@ -3,7 +3,7 @@ class IgnitionMsgs2 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs2-2.1.0.tar.bz2"
   sha256 "fd70b8d9b57066b008be85afad04fbe14f6c6399133f16485ba1ef5f572943d6"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
