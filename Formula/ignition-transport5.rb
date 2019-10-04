@@ -4,12 +4,12 @@ class IgnitionTransport5 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-transport/get/08aa1f3d1d5b2e006dd8b357f3c9367d27f66107.tar.gz"
   version "5.0.0.999~20190711~f2402ae2"
   sha256 "033c35dc3e0338035a8aed6b46418a7caee298c207b72a50b0282031093b404c"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "345931d4123fa00d8e6f5a98f4e3d804e76870deb4e33ce675c28b5f77132b8b" => :mojave
-    sha256 "3212cba56075c1222efebead9d0fb72dc013bda131958798f486152bff4f2fb7" => :high_sierra
+    sha256 "a43d2b46a8180094daedf8c49aa72f3984ee27f8c405052c65ea1c0123d479e4" => :mojave
+    sha256 "847e0cdac3b02726e9d4880b16ad499c854ee12ed32bc2fb87c724860dac8b4e" => :high_sierra
   end
 
   depends_on "doxygen" => [:build, :optional]
