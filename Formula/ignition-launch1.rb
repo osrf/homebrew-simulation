@@ -3,10 +3,11 @@ class IgnitionLaunch1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.2.3.tar.bz2"
   sha256 "e18ac000709b0908ff71efb2085ec4fd73a20bbf5d4c037236851e92c3828503"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "68e3814a82cc8e19c286ceef9df533128f3fe16ffe279233f7fd4d2f467c95d3" => :mojave
+    sha256 "5404eef495cc29930be9555e116288f0444d86184c62596f6a27afa6e6040eb4" => :mojave
   end
 
   depends_on "cmake" => :build
