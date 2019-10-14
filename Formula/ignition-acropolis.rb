@@ -6,12 +6,6 @@ class IgnitionAcropolis < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-acropolis", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any_skip_relocation
-    sha256 "431730f4844ee511c4514603558477362ef922dd7adf0355eac33b0da9866939" => :mojave
-  end
-
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
