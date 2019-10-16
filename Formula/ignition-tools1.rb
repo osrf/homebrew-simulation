@@ -14,7 +14,7 @@ class IgnitionTools1 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "ignition-cmake2" => :build
+  depends_on "ignition-cmake2"
 
   conflicts_with "ignition-tools", :because => "Differing version of the same formula"
 
