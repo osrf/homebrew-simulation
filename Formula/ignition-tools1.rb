@@ -6,6 +6,13 @@ class IgnitionTools1 < Formula
   sha256 "b45a82d27ae121e63aa0245d0649ccdc59b7c93d893bbbb05fccafaa394b1979"
   head "https://bitbucket.org/ignitionrobotics/ign-tools", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any_skip_relocation
+    sha256 "6eb3ef450a4be90a7b0213075d0526dcd05527432ed3414f327a5e45968575ff" => :mojave
+    sha256 "83dd5a2a58dbbc03315505405c6822464d32cc716663c4aba5fae850b7b24157" => :high_sierra
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2" => :build
 
