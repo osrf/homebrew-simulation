@@ -14,6 +14,7 @@ class IgnitionTools < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "ignition-cmake2"
 
   def install
     mkdir "build" do
