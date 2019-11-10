@@ -5,6 +5,7 @@ class DartsimAT6100 < Formula
   url "https://github.com/azeey/dart/archive/fdde7e7894ebc36bae8811f7a63e5b1c899bb4af.tar.gz"
   version "6.10.0~20190718~fdde7e7894ebc36bae8811f7a63e5b1c899bb4af"
   sha256 "2083a5a52a8376d1c99c33423a64c35c80fec97825cb1ed65f1d09e74a3940c7"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
