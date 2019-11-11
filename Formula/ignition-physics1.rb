@@ -4,11 +4,12 @@ class IgnitionPhysics1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics-1.5.0~pre1.tar.bz2"
   version "1.5.0~pre1"
   sha256 "7678d6951a67ccf5d313369a2fb0f8b559a1ba3ff89c797d68009f33a759bb56"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "86d291f11e96d6c9f97b9e7bcb94c7582166edd1d70dea0304a729a297d925e5" => :mojave
+    sha256 "c25e7bc16c3f980be4cb05cd2a857d981265eb3979b043d200801a6615780d84" => :mojave
   end
 
   depends_on "cmake" => :build

@@ -5,12 +5,12 @@ class DartsimAT6100 < Formula
   url "https://github.com/azeey/dart/archive/fdde7e7894ebc36bae8811f7a63e5b1c899bb4af.tar.gz"
   version "6.10.0~20190718~fdde7e7894ebc36bae8811f7a63e5b1c899bb4af"
   sha256 "2083a5a52a8376d1c99c33423a64c35c80fec97825cb1ed65f1d09e74a3940c7"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e503985143ff418998f1d2544064d6d54ef9fbb1b566cc758defd9f6fb87939d" => :mojave
-    sha256 "5c9ae0ebb861a2a3aad07df37141d32a81a0160ff9a268ee2704f6dfe8a745cf" => :high_sierra
-    sha256 "f90c4672ae707680b377afd1248afe27d2694eee2548fe077bb9a4884d2ea5f3" => :sierra
+    sha256 "dd45cda4fca47465bc99deb238904a217cb0dd2584b7a9716d188bbc71c4310d" => :mojave
+    sha256 "a0a3dd0943290c15f778a4b5ebe9f4e36ce6ceb822a3c4c11de2a2f2c629db64" => :high_sierra
   end
 
   keg_only "open robotics fork of dart HEAD + custom changes"
@@ -62,6 +62,7 @@ class DartsimAT6100 < Formula
                     "-L#{Formula["boost"].opt_lib}", "-lboost_system",
                     "-std=c++14", "-o", "test"
     ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["dartsim@6.10.0"].opt_lib
+    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["assimp"].opt_lib
     ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["octomap"].opt_lib
     system "./test"
   end
