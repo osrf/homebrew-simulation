@@ -63,6 +63,7 @@ class DartsimAT6100 < Formula
                     "-L#{Formula["boost"].opt_lib}", "-lboost_system",
                     "-std=c++14", "-o", "test"
     ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["dartsim@6.10.0"].opt_lib
+    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["assimp"].opt_lib
     ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["octomap"].opt_lib
     system "./test"
   end
