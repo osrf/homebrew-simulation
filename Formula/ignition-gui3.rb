@@ -1,9 +1,9 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
-  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/4fc18bf44e8cf6575c33f0627f8b7496264df598.tar.bz2"
-  version "2.999.999~20190802~4fc18b"
-  sha256 "12876b21ac96c5627015c16397384e908a2d612d3b67de86feb122e2f23c7ee2"
+  url "https://bitbucket.org/ignitionrobotics/ign-gui/get/5ed1dad36ae599d738f9f7475555940d800a6f3a.tar.bz2"
+  version "2.999.999~20191114~5ed1da"
+  sha256 "45e4b4d8c20a64d62b6c86daac2c95e0525610e4391b5e92512176f17a9dc185"
   revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
@@ -18,10 +18,10 @@ class IgnitionGui3 < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-msgs4"
+  depends_on "ignition-msgs5"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering3"
-  depends_on "ignition-transport7"
+  depends_on "ignition-transport8"
   depends_on :macos => :high_sierra # c++17
   depends_on "qt"
   depends_on "qwt"
