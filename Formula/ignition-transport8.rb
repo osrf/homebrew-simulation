@@ -1,9 +1,9 @@
 class IgnitionTransport8 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/1a7d53eb2b44e220fe281cd86d77860fbbf1d7cc.tar.bz2"
-  version "7.999.999~20191111~1a7d53"
-  sha256 "0c9aba36e0e583ebb99c9c1c19aa959f357ba2dcde93489088b52605dad61450"
+  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/f2e14068c955dbd6624488574e007068c0b13329.tar.bz2"
+  version "7.999.999~20191111~f2e140"
+  sha256 "5136509e3c2d9dbc4f2cab68efa6a8253a22fa1fbb9f7e7ede1333a3577d028d"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
