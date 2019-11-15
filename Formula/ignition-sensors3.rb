@@ -4,7 +4,6 @@ class IgnitionSensors3 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/0e37b1ef0ac97da9fbad8d82fd9182105bb80c24.tar.bz2"
   version "2.999.999~20191114~0e37b1"
   sha256 "8b9ef0e1c629fdd040920157d6087333f0eccaf12bb5fc6aac6b4e9dd0535203"
-  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
