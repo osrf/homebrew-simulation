@@ -1,14 +1,13 @@
 class IgnitionRendering3 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.0.0~pre1.tar.bz2"
-  version "3.0.0~pre1"
-  sha256 "31a569ca86c7417b01ab3dca378710d53dac0c91544307aac2e99baaf7825017"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.0.0~pre2.tar.bz2"
+  version "3.0.0~pre2"
+  sha256 "558c3a192d74984ad39891c932a5ae761e0b13b5c7651cc0548d14859dd7eb4d"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "64afa137fe4c33601174d88b5e7670d988527bcf0f4ec6e94ec7d755b5a3346a" => :mojave
-    sha256 "61b24475faee4e9a020817330260d7b2dd0f47d15cfd79e127e94d17fa592e4f" => :high_sierra
+    sha256 "5540aae6e3715069b67acf21e7fb6b9ed562258dcd152fa212aa8a0013ae2018" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -19,7 +18,7 @@ class IgnitionRendering3 < Formula
   depends_on "ignition-common3"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
-  depends_on :macos => :high_sierra # c++17
+  depends_on :macos => :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.1"
 
