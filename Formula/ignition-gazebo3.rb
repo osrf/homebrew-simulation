@@ -1,12 +1,16 @@
 class IgnitionGazebo3 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
-  url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/cc18930145e52014e7ea18352dcbc13c55dd2b12.tar.bz2"
-  version "2.999.999~20190802~cc18930"
-  sha256 "45dd25a9634ff6fe2cd267f7f60746f5b4deebbf98d67c4b447eed324424c0b4"
-  revision 2
+  url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/56d62ca8e5f4976fc8ccee78b16e535eb4fe5757.tar.bz2"
+  version "2.999.999~20191114~56d62c"
+  sha256 "53cd994540ab78fbd26c8a1a788d60fd9072530ef39e03b2106b334db209f737"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "6a9bbc98f795dd479d436234a6f5befdc0202c4c35c4b3e34463bcad9cfb5de0" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -16,12 +20,12 @@ class IgnitionGazebo3 < Formula
   depends_on "ignition-fuel-tools3"
   depends_on "ignition-gui3"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs4"
+  depends_on "ignition-msgs5"
   depends_on "ignition-physics1"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering3"
   depends_on "ignition-sensors3"
-  depends_on "ignition-transport7"
+  depends_on "ignition-transport8"
   depends_on :macos => :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat8"
