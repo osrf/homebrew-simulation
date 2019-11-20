@@ -14,8 +14,8 @@ class IgnitionTools < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "ruby" => :test
   depends_on "libyaml" => :test
+  depends_on "ruby" => :test
 
   def install
     mkdir "build" do
