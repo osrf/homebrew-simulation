@@ -1,9 +1,9 @@
 class IgnitionSensors3 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/a7228f37710470cdf8c01343eb5a3ecb7d32b41f.tar.bz2"
-  version "2.999.999~20191127~a7228f3"
-  sha256 "2e54e47391998502421011486102667a7cfd0ab9a8ac6922c7b1ed48af90e54b"
+  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/fddd09097714ff2f29fd6945f8b4debe0c151874.tar.bz2"
+  version "2.999.999~20191121~fddd090"
+  sha256 "7d069faca6fc9e109b4b43f3e240caa176984cd554e87c97a1fe0a1eea320c0e"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
@@ -21,7 +21,7 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-msgs5"
   depends_on "ignition-rendering3"
   depends_on "ignition-transport8"
-  depends_on "sdformat8"
+  depends_on "sdformat9"
 
   def install
     system "cmake", ".", *std_cmake_args
