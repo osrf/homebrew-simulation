@@ -10,7 +10,6 @@ class IgnitionGui3 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "e232586716e48e07179506e19a585a0d5f00cb93c1d9362c43d02cdc521b3f5d" => :mojave
-    sha256 "0f8505bd6316ffd0e1fa4ae2e59f99d8128112b9da1c835c03d997050b9f1ba4" => :high_sierra
   end
 
   depends_on "cmake" => [:build, :test]
@@ -21,7 +20,7 @@ class IgnitionGui3 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering3"
   depends_on "ignition-transport8"
-  depends_on :macos => :high_sierra # c++17
+  depends_on :macos => :mojave # c++17
   depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml2"
