@@ -5,6 +5,12 @@ class IgnitionPhysics2 < Formula
   version "1.999.999~0~20191125~02e61c0"
   sha256 "3662f154b21a2d9243bea9e23d0361ce2c5dbb5023839f211cedaf8b8c861ca1"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "2c3eb9d753a62b83730fabe808bd57565a69bb9a0c6a4b6a2ea956d8e7ea87d4" => :mojave
+  end
+
   depends_on "cmake" => :build
 
   depends_on "bullet"
