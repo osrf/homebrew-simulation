@@ -4,6 +4,7 @@ class IgnitionLaunch2 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-launch/get/eab55552d2985fb15c95a2fb88b604e23d2c382b.tar.bz2"
   version "1.999.999~20191114~eab555"
   sha256 "a41deaca6e97b40c3590c01b14d381d95861992daca573293be72e49b6b327f4"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-launch", :branch => "default", :using => :hg
 
