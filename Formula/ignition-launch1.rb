@@ -3,6 +3,7 @@ class IgnitionLaunch1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.4.0.tar.bz2"
   sha256 "324aee0b8a961ed08b07e71afbab875dc3be31d96785dcbd4fe9c2e6760bcb3f"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
