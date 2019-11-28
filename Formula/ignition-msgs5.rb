@@ -4,6 +4,7 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.0.0~pre1.tar.bz2"
   version "5.0.0~pre1"
   sha256 "2c7608275a096f9fce01f88aaf5c72dd50516722fbced09631252cd8c7bafbbc"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
