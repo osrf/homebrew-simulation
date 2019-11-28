@@ -3,6 +3,7 @@ class IgnitionBlueprint < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-blueprint"
   url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.0.0.tar.bz2"
   sha256 "a55860fa37bfb0c357ca86aaa31cd5de42e5f8f9022bced3e827808785e83041"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-blueprint", :branch => "default", :using => :hg
 
