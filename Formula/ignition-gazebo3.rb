@@ -4,6 +4,7 @@ class IgnitionGazebo3 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/56d62ca8e5f4976fc8ccee78b16e535eb4fe5757.tar.bz2"
   version "2.999.999~20191114~56d62c"
   sha256 "53cd994540ab78fbd26c8a1a788d60fd9072530ef39e03b2106b334db209f737"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
