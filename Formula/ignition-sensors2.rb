@@ -3,13 +3,13 @@ class IgnitionSensors2 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors2-2.6.1.tar.bz2"
   sha256 "67f437201ebcd8f1a363857cfacce0db213a4873f2cb4de82fa90ba47bf404fc"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "03ff04bc9ae763e27083c5b739b9215fcb25b4c16ce2f8ab29f630365519fd73" => :mojave
+    sha256 "c59770646d8044d62dd7ffee86f8808c0bb490d950cd250adbdcd26ce83dbff7" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -24,7 +24,9 @@ class IgnitionSensors2 < Formula
   depends_on "sdformat8"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=OFF"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
