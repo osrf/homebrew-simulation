@@ -24,7 +24,9 @@ class IgnitionSensors2 < Formula
   depends_on "sdformat8"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=OFF"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
