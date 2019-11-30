@@ -8,13 +8,6 @@ class IgnitionMsgs1 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "bf3f25501b1b362374fdf51fbcaf7234339407fed2e9215c2bc5b71fc0f23196" => :mojave
-    sha256 "b1b8dd81e2e5188c45e04681668c255a9db32029d11dcf6e6d442e94d8e4132b" => :high_sierra
-  end
-
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake0"
