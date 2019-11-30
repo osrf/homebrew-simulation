@@ -3,7 +3,7 @@ class IgnitionTransport4 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport4-4.0.0.tar.bz2"
   sha256 "b0d8d3d4b0d4fbb06ed293955f5dfe2f840fe510daec867422676b41fc3824b4"
-  revision 5
+  revision 6
 
   head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport4", :using => :hg
 
