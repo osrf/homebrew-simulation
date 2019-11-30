@@ -1,20 +1,21 @@
 class IgnitionTools < Formula
   desc "Entry point for ignition command-line tools"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.0.0~pre2.tar.bz2"
-  version "1.0.0~pre2"
-  sha256 "98b5b688c9e981b8d4b7dc3775041853b534bae72faabae8c6391cef497e2b6e"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.0.0~pre3.tar.bz2"
+  version "1.0.0~pre3"
+  sha256 "27e1692efc8e23b5eb7778782dcb4edb04278f9760d73329f8699606948f4614"
   head "https://bitbucket.org/ignitionrobotics/ign-tools", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any_skip_relocation
-    sha256 "f2a9cb3e60b18e23444497dedcdf4cdfb1199f54f3b5ce6b9bf2b33d93ddf8ee" => :mojave
-    sha256 "3a75a638b843a443bde46b625b11ef82ad0b6a74b9a8ca696bf62ec2b8e8ae24" => :high_sierra
+    sha256 "4b3fa25748cf7752032622ddd327c83f2d2594bee5768322128845b49dd91dc1" => :mojave
+    sha256 "d80252f5c46cb12186ccf510f09a1449d1eed30180e0222f42ebb06b62025515" => :high_sierra
   end
 
   depends_on "cmake" => :build
-  depends_on "ignition-cmake2"
+  depends_on "libyaml" => :test
+  depends_on "ruby" => :test
 
   def install
     mkdir "build" do
