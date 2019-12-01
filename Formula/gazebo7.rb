@@ -55,6 +55,12 @@ class Gazebo7 < Formula
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
 
+  patch do
+    # Fix gts linking
+    url "https://bitbucket.org/osrf/gazebo/commits/d9682e139668d9798bbea938c47aeed62a0b060f/raw"
+    sha256 "6e716cadf7e4d70c73e376f5ee5db2d2df49a321ef70be83d6979dfd1e07d4e2"
+  end
+
   def install
     ENV.m64
 
