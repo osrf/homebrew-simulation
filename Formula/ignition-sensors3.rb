@@ -30,7 +30,7 @@ class IgnitionSensors3 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/sensors.hh>
+      #include <ignition/sensors/Noise.hh>
 
       int main()
       {
