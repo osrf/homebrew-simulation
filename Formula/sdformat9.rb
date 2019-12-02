@@ -1,9 +1,9 @@
 class Sdformat9 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.0.0~pre1.tar.bz2"
-  version "9.0.0~pre1"
-  sha256 "142b2375cbe906dc441613d1160227e585b5d93183178b29d9a1ae4198899bb4"
+  url "https://bitbucket.org/osrf/sdformat/get/5ee09560e7f5602ccd6696204a45c275966ff796.tar.bz2"
+  version "9.0.0~pre1~20191127~5ee0956"
+  sha256 "79f711ecf5b86a00c58910bd225c7d69c758e021eed6f09e3896c65d2daaebab"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
