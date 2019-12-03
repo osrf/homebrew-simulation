@@ -17,7 +17,7 @@ class IgnitionGazebo3 < Formula
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-fuel-tools3" # needs to be update when fuel-tools4 is released
+  depends_on "ignition-fuel-tools4"
   depends_on "ignition-gui3"
   depends_on "ignition-math6"
   depends_on "ignition-msgs5"
