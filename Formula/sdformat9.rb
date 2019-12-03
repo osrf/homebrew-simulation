@@ -7,7 +7,7 @@ class Sdformat9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "38b9b08c505b0a0d768c5d26b1a08fa68a678f94ce8d656151453917d9c9d113" => :mojave
+    sha256 "ffda08fb32bc281e4bd70d5f402e5f8d2c5fba4e474817d1eace4003af5532dd" => :mojave
   end
 
   depends_on "cmake" => :build
