@@ -4,7 +4,6 @@ class IgnitionGazebo3 < Formula
   url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/7688431664ff351a9d7ece060e0057bc9b118eba.tar.bz2"
   version "2.999.999~20191203~7688431"
   sha256 "7bf006eba628a7eb999e7a50bd8d97d6501e942bf63204b36d9447891ebac704"
-  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
@@ -18,7 +17,7 @@ class IgnitionGazebo3 < Formula
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-fuel-tools4"
+  depends_on "ignition-fuel-tools3" # needs to be update when fuel-tools4 is released
   depends_on "ignition-gui3"
   depends_on "ignition-math6"
   depends_on "ignition-msgs5"
