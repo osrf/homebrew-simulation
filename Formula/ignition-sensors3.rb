@@ -1,15 +1,15 @@
 class IgnitionSensors3 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
-  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/a7228f37710470cdf8c01343eb5a3ecb7d32b41f.tar.bz2"
-  version "2.999.999~20191127~a7228f3"
-  sha256 "2e54e47391998502421011486102667a7cfd0ab9a8ac6922c7b1ed48af90e54b"
+  url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/2843217aa606c8ec3ff9ec7ae0b46e00f849d47c.tar.bz2"
+  version "2.999.999~20191127~2843217"
+  sha256 "4cca062f872babbb838823ed06d65d8c48368b5c200631cb1f884cc38a8a0d0c"
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "d71a3fa762893122b74214d6894345bf15bc297373c6e322742384a6e035701d" => :mojave
+    sha256 "c2e46cb750ac2d104d9bf494624a2c5e3b2312821cbda2b63e410a8c07e015c8" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -21,7 +21,7 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-msgs5"
   depends_on "ignition-rendering3"
   depends_on "ignition-transport8"
-  depends_on "sdformat8"
+  depends_on "sdformat9"
 
   def install
     system "cmake", ".", *std_cmake_args
@@ -30,7 +30,7 @@ class IgnitionSensors3 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/sensors.hh>
+      #include <ignition/sensors/Noise.hh>
 
       int main()
       {
