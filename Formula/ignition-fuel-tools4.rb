@@ -1,9 +1,9 @@
 class IgnitionFuelTools4 < Formula
   desc "Tools for using fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-fuel-tools/get/c6bdc21470d0cbd717e9b299fe9ea9558ef91690.tar.bz2"
-  version "3.999.999~20191202~2c696f6"
-  sha256 "2c696f656aefb46165cb49010061f1bd45f949d0ba104e56a44b2f828e4cac9a"
+  url "https://bitbucket.org/ignitionrobotics/ign-fuel-tools/get/b575879f76505806621a868898c1a66406c7aa8b.tar.bz2"
+  version "3.999.999~20191203~b575879"
+  sha256 "32af552eb1112fcb7de00c22f0446797a5fea520e560f5badcbe78ae78071517"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
