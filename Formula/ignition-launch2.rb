@@ -20,7 +20,6 @@ class IgnitionLaunch2 < Formula
   depends_on "ignition-tools"
   depends_on "ignition-transport8"
   depends_on "qt"
-  depends_on "sdformat8"
   depends_on "tinyxml2"
 
   def install
