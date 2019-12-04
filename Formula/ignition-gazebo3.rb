@@ -1,16 +1,15 @@
 class IgnitionGazebo3 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
-  url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/56d62ca8e5f4976fc8ccee78b16e535eb4fe5757.tar.bz2"
-  version "2.999.999~20191114~56d62c"
-  sha256 "53cd994540ab78fbd26c8a1a788d60fd9072530ef39e03b2106b334db209f737"
-  revision 1
+  url "https://bitbucket.org/ignitionrobotics/ign-gazebo/get/7688431664ff351a9d7ece060e0057bc9b118eba.tar.bz2"
+  version "2.999.999~20191203~7688431"
+  sha256 "7bf006eba628a7eb999e7a50bd8d97d6501e942bf63204b36d9447891ebac704"
 
   head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "6702cbb3d6998cdb4577acb505fb9abe565b176d46dd365b30a4c8c0c6f94f1c" => :mojave
+    sha256 "ff0c40a2187337ce2d34c641ac796110f4aafd649b8672b3f75c03e21255e80d" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -18,18 +17,18 @@ class IgnitionGazebo3 < Formula
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-fuel-tools3"
+  depends_on "ignition-fuel-tools4"
   depends_on "ignition-gui3"
   depends_on "ignition-math6"
   depends_on "ignition-msgs5"
-  depends_on "ignition-physics1"
+  depends_on "ignition-physics2"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering3"
   depends_on "ignition-sensors3"
   depends_on "ignition-transport8"
   depends_on :macos => :mojave # c++17
   depends_on "pkg-config"
-  depends_on "sdformat8"
+  depends_on "sdformat9"
 
   conflicts_with "ignition-gazebo1", :because => "Both install bin/ign-gazebo symlinks"
   conflicts_with "ignition-gazebo2", :because => "Both install bin/ign-gazebo symlinks"
