@@ -1,15 +1,15 @@
 class IgnitionLaunch2 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.0.0~pre1.tar.bz2"
-  version "2.0.0~pre1"
-  sha256 "b77c83ebaab33080cedf75cd88b34d9d8288ca5795de1022d0ef190c69d6725a"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.0.0~pre2.tar.bz2"
+  version "2.0.0~pre2"
+  sha256 "a05767748cffe1c594a4e89960c3f78da1f89ccdbfb482cee8dc46b2d7e5d358"
 
   head "https://bitbucket.org/ignitionrobotics/ign-launch", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "5ca22d2999730b93d1aca7f832fb315e801c4a15504ca1afc0cdd3288d339df4" => :mojave
+    sha256 "beec77815e4cf1b807795ec9790a926bf1205c835015430f243651e29d76c043" => :mojave
   end
 
   depends_on "cmake" => :build
