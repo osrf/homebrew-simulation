@@ -1,13 +1,13 @@
 class Sdformat9 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://bitbucket.org/osrf/sdformat/get/5ee09560e7f5602ccd6696204a45c275966ff796.tar.bz2"
-  version "9.0.0~pre1~20191127~5ee0956"
-  sha256 "79f711ecf5b86a00c58910bd225c7d69c758e021eed6f09e3896c65d2daaebab"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.0.0~pre2.tar.bz2"
+  version "9.0.0~pre2"
+  sha256 "94ff9080a63b1a359c550f13d5e3f0c9e0d686743d73232283dd14e6ec6ff489"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "ffda08fb32bc281e4bd70d5f402e5f8d2c5fba4e474817d1eace4003af5532dd" => :mojave
+    sha256 "740a1019aebcaab768c284e2e3a933b4eef7eb4467781b39699476515b3ce47a" => :mojave
   end
 
   depends_on "cmake" => :build
