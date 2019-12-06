@@ -3,15 +3,9 @@ class Gazebo7 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-7.16.0.tar.bz2"
   sha256 "c6e5f27b9bfa2494a02dd34d567869c5431659895dea3aca22dc15df6716cf4f"
-  revision 2
+  revision 3
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo7", :using => :hg
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "c86db7f9b29dff2bef4e8366483e9ea39dc454829902669a1611560bde76729f" => :mojave
-    sha256 "45ad0f4b074cd0925d2428fcb1ca221cbdbec13faa776f7dd9ce76c588ce5878" => :high_sierra
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -53,6 +47,12 @@ class Gazebo7 < Formula
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
+
+  patch do
+    # Fix gts linking
+    url "https://bitbucket.org/osrf/gazebo/commits/d9682e139668d9798bbea938c47aeed62a0b060f/raw"
+    sha256 "6e716cadf7e4d70c73e376f5ee5db2d2df49a321ef70be83d6979dfd1e07d4e2"
   end
 
   def install
