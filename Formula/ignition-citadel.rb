@@ -33,5 +33,9 @@ class IgnitionCitadel < Formula
       system "make", "install"
     end
   end
-  # Failing test in mojave https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_mojave/211/console
+
+  test do
+    # TODO: improve the testing
+    system "#{bin}/ign", "gazebo", "--help"
+  end
 end
