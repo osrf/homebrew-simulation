@@ -1,14 +1,14 @@
 class IgnitionTransport8 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.0.0~pre2.tar.bz2"
-  version "8.0.0~pre2"
-  sha256 "2c91d73150ec7d5dd35e7212915d649240fa17352bb29a3f46777f3c018e3adf"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.0.0~pre3.tar.bz2"
+  version "8.0.0~pre3"
+  sha256 "b873cffa50ef43e4a8a6c009fec67328cbdeca876256c7fda9f8bed508126591"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "8d2bf25d5041daf021414e4395e3f2db9066fd63311bd3e1375be88c5333374a" => :mojave
-    sha256 "f38784088ab7bb7d2fb2dbbf4455b7e9bcff1936c07fdb5f1351d4c1a7514a82" => :high_sierra
+    sha256 "d3bb80f8f93b6291c83f950727616cc87d3bfd7a156a51e71ff66e52a56698d9" => :mojave
+    sha256 "df010a6a63edd8d3997f7493336b4140ce07f1eb2502450221db0ac0805d808a" => :high_sierra
   end
 
   depends_on "doxygen" => [:build, :optional]
