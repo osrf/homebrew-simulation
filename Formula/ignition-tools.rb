@@ -1,9 +1,8 @@
 class IgnitionTools < Formula
   desc "Entry point for ignition command-line tools"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.0.0~pre3.tar.bz2"
-  version "1.0.0~pre3"
-  sha256 "27e1692efc8e23b5eb7778782dcb4edb04278f9760d73329f8699606948f4614"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.0.0.tar.bz2"
+  sha256 "491e21e08deeb33958743a757828e589741998e014282bf880cd7db7351ccd6e"
   head "https://bitbucket.org/ignitionrobotics/ign-tools", :branch => "default", :using => :hg
 
   bottle do
