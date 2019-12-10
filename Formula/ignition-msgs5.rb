@@ -1,15 +1,14 @@
 class IgnitionMsgs5 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.0.0~pre2.tar.bz2"
-  version "5.0.0~pre2"
-  sha256 "2416470135f61c48429b8407024677ba4fdb9d7053cd68ef09e3b4f052c73812"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.0.0.tar.bz2"
+  sha256 "6796c9f4bced07094d61e1011d56511fb48a60f69a27afdf3bcd0e4667609c2d"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "0f05abbb6a879d13bbf956cb6273b73e1006fdfe7636646fea8acae8ad8913ff" => :mojave
-    sha256 "c84c18f46610e35034737d4a3bce34e4781f92a4f7d333310446bdaccae0b81b" => :high_sierra
+    sha256 "21aca1761160fea8dc7cb93a3301c81c1eeb146f491c21c029315472ec40b273" => :mojave
+    sha256 "845030d52d499e04c5506d2dd1ce86891b522032129edfbb05358e7b8e3f3876" => :high_sierra
   end
 
   depends_on "protobuf-c" => :build
