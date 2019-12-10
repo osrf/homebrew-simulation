@@ -1,15 +1,14 @@
 class IgnitionFuelTools4 < Formula
   desc "Tools for using fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools4-4.0.0~pre2.tar.bz2"
-  version "4.0.0~pre2"
-  sha256 "c0871f06259cd7296e68cf308aca2656705bcbaacc5e27795b3e055ac20a8421"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools4-4.0.0.tar.bz2"
+  sha256 "f989476d8a54d7b9574cfeed0aafd7bf0a40d892f5d06ae6a97c63ad03ed8196"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "fef3c2a0ad12b825b3fea2120f8644a79d3382bb1f98db368a11ecc53038a6a0" => :mojave
-    sha256 "8dabbc4355b8079f767c41d7a00940f048d4bf1e988d836786c385d4bb719e0b" => :high_sierra
+    sha256 "e0dd65d54fefa8e028f14ed8bde24c3a2ea35d9773053e8e61f17392972fd61d" => :mojave
+    sha256 "3249b6401131f609feb8ea24362e33908acff16e7f8dada4525cf63742048094" => :high_sierra
   end
 
   depends_on "cmake"
