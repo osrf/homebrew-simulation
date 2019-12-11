@@ -1,9 +1,8 @@
 class IgnitionLaunch2 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.0.0~pre3.tar.bz2"
-  version "2.0.0~pre3"
-  sha256 "4024896aab0b0e2b9ad80ea7157d66b9912d323d65167cc030cc48baf87d1c7e"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.0.0.tar.bz2"
+  sha256 "98920cfb9622880ed0254b204c6ea44eed6c74893e1768ba547663e645f47f04"
 
   head "https://bitbucket.org/ignitionrobotics/ign-launch", :branch => "default", :using => :hg
 
