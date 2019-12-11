@@ -3,6 +3,7 @@ class IgnitionCitadel < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-citadel"
   url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.0.tar.bz2"
   sha256 "e35ceda484b91bf3ece58dd3679df4998a042a5b7442cbd3153f042180e6a03a"
+  version_scheme 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-citadel", :branch => "default", :using => :hg
 
