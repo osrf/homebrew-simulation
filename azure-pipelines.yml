@@ -2,7 +2,7 @@ strategy:
   matrix:
     mojave:
       imageName: 'macOS-10.14'
-      xcodeVersion: '10.3'
+      xcodeVersion: '11.3'
     high_sierra:
       imageName: 'macOS-10.13'
       xcodeVersion: '10.1'
