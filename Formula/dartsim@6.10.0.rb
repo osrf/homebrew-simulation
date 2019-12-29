@@ -9,8 +9,8 @@ class DartsimAT6100 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "dd45cda4fca47465bc99deb238904a217cb0dd2584b7a9716d188bbc71c4310d" => :mojave
-    sha256 "a0a3dd0943290c15f778a4b5ebe9f4e36ce6ceb822a3c4c11de2a2f2c629db64" => :high_sierra
+    sha256 "5eaa944364128c54c8646da7db2ee38f57102e911991b35db9aee7d9205513ac" => :mojave
+    sha256 "35e70c0d53963d336ded5095dfdd733a9f27948220e7eebd856c5a9ab29858b1" => :high_sierra
   end
 
   keg_only "open robotics fork of dart HEAD + custom changes"
