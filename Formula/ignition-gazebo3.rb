@@ -29,9 +29,6 @@ class IgnitionGazebo3 < Formula
   depends_on "pkg-config"
   depends_on "sdformat9"
 
-  conflicts_with "ignition-gazebo1", :because => "Both install bin/ign-gazebo symlinks"
-  conflicts_with "ignition-gazebo2", :because => "Both install bin/ign-gazebo symlinks"
-
   def install
     ENV.m64
 
