@@ -5,12 +5,12 @@ class DartsimAT6100 < Formula
   url "https://github.com/azeey/dart/archive/fdde7e7894ebc36bae8811f7a63e5b1c899bb4af.tar.gz"
   version "6.10.0~20190718~fdde7e7894ebc36bae8811f7a63e5b1c899bb4af"
   sha256 "2083a5a52a8376d1c99c33423a64c35c80fec97825cb1ed65f1d09e74a3940c7"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "dd45cda4fca47465bc99deb238904a217cb0dd2584b7a9716d188bbc71c4310d" => :mojave
-    sha256 "a0a3dd0943290c15f778a4b5ebe9f4e36ce6ceb822a3c4c11de2a2f2c629db64" => :high_sierra
+    sha256 "5eaa944364128c54c8646da7db2ee38f57102e911991b35db9aee7d9205513ac" => :mojave
+    sha256 "35e70c0d53963d336ded5095dfdd733a9f27948220e7eebd856c5a9ab29858b1" => :high_sierra
   end
 
   keg_only "open robotics fork of dart HEAD + custom changes"
