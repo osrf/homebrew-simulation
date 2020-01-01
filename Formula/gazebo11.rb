@@ -1,9 +1,9 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://bitbucket.org/osrf/gazebo/get/cbb7dae7e83536da241f5ce71b51cb734f9e9bd9.tar.bz2"
-  version "10.999.999~20191228~cbb7dae"
-  sha256 "9a42fc4e020a507765b0d3c9e584da8684a7031c18147e232096ef1f9123f847"
+  url "https://bitbucket.org/osrf/gazebo/get/dec1ab3a3a6975be3d46cd3ab9b001e1d95f06b7.tar.bz2"
+  version "10.999.999~20191228~dec1ab3"
+  sha256 "67e5f7e46b15a5e5a1eb2d966bc5cc66de90a2500b26fce3b3f77de0f926dda0"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
