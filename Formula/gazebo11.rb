@@ -1,16 +1,11 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://bitbucket.org/osrf/gazebo/get/dec1ab3a3a6975be3d46cd3ab9b001e1d95f06b7.tar.bz2"
-  version "10.999.999~20191228~dec1ab3"
-  sha256 "67e5f7e46b15a5e5a1eb2d966bc5cc66de90a2500b26fce3b3f77de0f926dda0"
+  url "https://bitbucket.org/osrf/gazebo/get/90c0fcef21f8b35a2e87d665e761ca2cbaa4f600.tar.bz2"
+  version "10.999.999~20200102~90c0fce"
+  sha256 "b6692f6cec794e3e95d2726fd6e176d2bdb857058ec77aece2809046b9f7b504"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "316280dba242e4661fba3fc35f9a55506c46d9fd568f5b3e596bb6b059d52aff" => :mojave
-  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -31,7 +26,7 @@ class Gazebo11 < Formula
   depends_on "protobuf-c"
   depends_on "qt"
   depends_on "qwt"
-  depends_on "sdformat9"
+  depends_on "sdformat8"
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
