@@ -1,9 +1,8 @@
 class IgnitionMsgs5 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.1.0~pre1.tar.bz2"
-  version "5.1.0~pre1"
-  sha256 "71bf68fb973115a3e1285d863f8b7cf6a5ff80bea959248ec7e5c980b1d985c4"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.1.0.tar.bz2"
+  sha256 "e63c990463e118eab19ba4c6f1f587313eecb7fcbd2cc3f326954c1b2c97fa89"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
