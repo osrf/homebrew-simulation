@@ -1,9 +1,9 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://bitbucket.org/osrf/gazebo/get/4c0591897f59a777fe5c0bf89d1bede4c7f66f21.tar.bz2"
-  version "10.999.999~20191227~4c05918"
-  sha256 "86940b13c1a2a6f2373f82c544d750ad2e32bcd6578168064a480db3b5f9f90c"
+  url "https://bitbucket.org/osrf/gazebo/get/90c0fcef21f8b35a2e87d665e761ca2cbaa4f600.tar.bz2"
+  version "10.999.999~20200102~90c0fce"
+  sha256 "b6692f6cec794e3e95d2726fd6e176d2bdb857058ec77aece2809046b9f7b504"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
@@ -14,10 +14,11 @@ class Gazebo11 < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "graphviz"
-  depends_on "ignition-fuel-tools1"
-  depends_on "ignition-math4"
-  depends_on "ignition-msgs1"
-  depends_on "ignition-transport4"
+  depends_on "ignition-common3"
+  depends_on "ignition-fuel-tools4"
+  depends_on "ignition-math6"
+  depends_on "ignition-msgs5"
+  depends_on "ignition-transport8"
   depends_on "libtar"
   depends_on "ogre1.9"
   depends_on "ossp-uuid" => :linked
@@ -25,7 +26,7 @@ class Gazebo11 < Formula
   depends_on "protobuf-c"
   depends_on "qt"
   depends_on "qwt"
-  depends_on "sdformat6"
+  depends_on "sdformat8"
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
@@ -48,6 +49,13 @@ class Gazebo11 < Formula
   conflicts_with "gazebo8", :because => "Differing version of the same formula"
   conflicts_with "gazebo9", :because => "Differing version of the same formula"
   conflicts_with "gazebo10", :because => "Differing version of the same formula"
+
+  patch do
+    # Fix build when homebrew python is installed
+    # keep this patch
+    url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
+    sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
 
   def install
     ENV.m64
@@ -75,7 +83,7 @@ class Gazebo11 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
       find_package(gazebo QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       include_directories(${GAZEBO_INCLUDE_DIRS})
