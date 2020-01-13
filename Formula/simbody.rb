@@ -1,9 +1,8 @@
 class Simbody < Formula
   desc "Multibody physics API"
   homepage "https://simtk.org/home/simbody"
-  url "https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz"
-  sha256 "7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639"
-  revision 1
+  url "https://github.com/simbody/simbody/archive/Simbody-3.7.tar.gz"
+  sha256 "d371a92d440991400cb8e8e2473277a75307abb916e5aabc14194bea841b804a"
 
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
@@ -17,12 +16,6 @@ class Simbody < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkg-config"
-
-  patch do
-    # Fix pkg-config file
-    url "https://github.com/scpeters/simbody/commit/7e43ab0fa4f808f11bf9385867002b359cf8dd36.diff?full_index=1"
-    sha256 "2148108fc41d78fa81bb1102a14fa83f2bc643f788625a7b335daa3fa4e49740"
-  end
 
   def install
     # Don't use 10.11 SDK frameworks on 10.10 with xcode7
