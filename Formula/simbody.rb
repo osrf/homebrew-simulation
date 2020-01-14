@@ -1,28 +1,20 @@
 class Simbody < Formula
   desc "Multibody physics API"
   homepage "https://simtk.org/home/simbody"
-  url "https://github.com/simbody/simbody/archive/Simbody-3.6.1.tar.gz"
-  sha256 "7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639"
-  revision 1
+  url "https://github.com/simbody/simbody/archive/Simbody-3.7.tar.gz"
+  sha256 "d371a92d440991400cb8e8e2473277a75307abb916e5aabc14194bea841b804a"
 
   head "https://github.com/simbody/simbody.git", :branch => "master"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "f782a48a58e646ca6fdf97cc39d9c7c2eed5d039b8a9cfcebcf685891f210c6d" => :mojave
-    sha256 "7ea5d3458a0c254d631d3be880473890939cc9ff87cc0b6cfe294b97b1d4df40" => :high_sierra
-    sha256 "65042cc670f294351cce80d7381d9998d77a6b8d9a8b55eb018d98ec41d95462" => :sierra
+    sha256 "2ea952e21afc83d111acacc70af126f0ae5845b270b100451f17400fad0a47df" => :mojave
+    sha256 "5c1fa0c1f7a78a2c9dbdc505ce278a924ea6a4dde555a49051cf862a56ce64f5" => :high_sierra
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkg-config"
-
-  patch do
-    # Fix pkg-config file
-    url "https://github.com/scpeters/simbody/commit/7e43ab0fa4f808f11bf9385867002b359cf8dd36.diff?full_index=1"
-    sha256 "2148108fc41d78fa81bb1102a14fa83f2bc643f788625a7b335daa3fa4e49740"
-  end
 
   def install
     # Don't use 10.11 SDK frameworks on 10.10 with xcode7
