@@ -61,27 +61,6 @@ class Gazebo10 < Formula
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
 
-  patch do
-    # Fix build with dartsim 6.8
-    # remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/5ba948b87faf98eb038fc3488e88a07bc4bd9df9/raw"
-    sha256 "5f3738e04d8e23e3c49a6662e0029bfc94b8a1e2c142e084b7bd42f4d84bf993"
-  end
-
-  patch do
-    # Fix build with dartsim 6.9
-    # remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/c7b7f62f76722d57e768b1d2b4c8371841bf856c/raw"
-    sha256 "fa8b817197dcd8413904a97a7765580c8096060e68afc110b6ec6a6bf087268f"
-  end
-
-  patch do
-    # Fix build with boost 1.72
-    # remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/9d71a6134982e2bf60ce96ca97c18c956c0cc7e0/raw"
-    sha256 "f69a8dfb3224a93a50b0e10d80a0b42f8652eb667dcbacc741b5c8a638b1e768"
-  end
-
   def install
     ENV.m64
 
