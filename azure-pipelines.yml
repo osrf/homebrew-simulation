@@ -3,9 +3,6 @@ strategy:
     mojave:
       imageName: 'macOS-10.14'
       xcodeVersion: '11.3'
-    high_sierra:
-      imageName: 'macOS-10.13'
-      xcodeVersion: '10.1'
 
 pool:
   vmImage: $(imageName)
