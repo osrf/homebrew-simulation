@@ -4,6 +4,9 @@ matrix:
     - env: OSX=10.14
       os: osx
       osx_image: xcode10.3
+    - env: OSX=10.13
+      os: osx
+      osx_image: xcode10.1
 
 before_install:
   - export TRAVIS_COMMIT="$(git rev-parse --verify -q HEAD)"
