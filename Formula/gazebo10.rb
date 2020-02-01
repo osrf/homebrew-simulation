@@ -1,16 +1,15 @@
 class Gazebo10 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.1.0.tar.bz2"
-  sha256 "8a1fcf8697704928c9cda610a9ce81f563f211bdfb2f1fdb458193ffb36c4287"
-  revision 9
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.2.0.tar.bz2"
+  sha256 "47d8bfe70ffcde21cbc6dec142f3aecefaac66c63562aab6114f442f7ab27392"
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "aed2149e85c929b88deaf9df1a770f832058ae2025446c7982673a03e6912fab" => :mojave
-    sha256 "7e537b43d07ac6c25318aad790eca7eb6febea9ab96f74ecc2c1fd0d484bf01a" => :high_sierra
+    sha256 "bcead9366b3f127aef668aeab2470238caf735fee1b30cc82dbdbfba5d356999" => :mojave
+    sha256 "239cf46cc0defb6195b28d0cec8f9df268d85c5040e21c7f2b36f49b280f89e8" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -60,27 +59,6 @@ class Gazebo10 < Formula
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Fix build with dartsim 6.8
-    # remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/5ba948b87faf98eb038fc3488e88a07bc4bd9df9/raw"
-    sha256 "5f3738e04d8e23e3c49a6662e0029bfc94b8a1e2c142e084b7bd42f4d84bf993"
-  end
-
-  patch do
-    # Fix build with dartsim 6.9
-    # remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/c7b7f62f76722d57e768b1d2b4c8371841bf856c/raw"
-    sha256 "fa8b817197dcd8413904a97a7765580c8096060e68afc110b6ec6a6bf087268f"
-  end
-
-  patch do
-    # Fix build with boost 1.72
-    # remove this patch with next release
-    url "https://bitbucket.org/osrf/gazebo/commits/9d71a6134982e2bf60ce96ca97c18c956c0cc7e0/raw"
-    sha256 "f69a8dfb3224a93a50b0e10d80a0b42f8652eb667dcbacc741b5c8a638b1e768"
   end
 
   def install
