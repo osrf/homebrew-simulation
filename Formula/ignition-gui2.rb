@@ -21,7 +21,7 @@ class IgnitionGui2 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering2"
   depends_on "ignition-transport7"
-  depends_on :macos => :high_sierra # c++17
+  depends_on :macos => :mojave # c++17
   depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml2"
