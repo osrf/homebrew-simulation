@@ -7,6 +7,11 @@ class IgnitionSensors4 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "e199155d71d9b114d16c28f0a928bf8295c1761a1a92e0d885a3535de302bc0a" => :mojave
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
