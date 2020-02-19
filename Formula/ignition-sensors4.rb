@@ -38,7 +38,7 @@ class IgnitionSensors4 < Formula
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
       find_package(ignition-sensors4 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-sensors4::ignition-sensors3)
+      target_link_libraries(test_cmake ignition-sensors4::ignition-sensors4)
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-sensors4"
