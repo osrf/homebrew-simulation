@@ -3,7 +3,7 @@ class IgnitionRendering4 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
   url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/e034fda8fefb2eff5d463013e38d2a6475eecc2a.tar.gz"
   version "3.999.999~0~20200214~e034fda"
-  sha256 "e6aed4313ba695ae49b23f5b37f281dd6a0ed410b9f15faddb52b8f7f43ed89c"
+  sha256 "a060260f5168c644191cca9e75a1af99500c1dddd0a1435f2753d382d820dfe1"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
