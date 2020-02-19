@@ -1,4 +1,4 @@
-class IgnitionGui3 < Formula
+class IgnitionGui4 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
   url "https://bitbucket.org/ignitionrobotics/ign-gui/get/c1631effeca39dfd056a32b87939b4ab0adfcf52.tar.bz2"
@@ -74,14 +74,14 @@ class IgnitionGui3 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-gui3 QUIET REQUIRED)
+      find_package(ignition-gui4 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-gui3::ignition-gui3)
+      target_link_libraries(test_cmake ignition-gui4::ignition-gui4)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
-    system "pkg-config", "ignition-gui3"
-    cflags   = `pkg-config --cflags ignition-gui3`.split(" ")
-    ldflags  = `pkg-config --libs ignition-gui3`.split(" ")
+    system "pkg-config", "ignition-gui4"
+    cflags   = `pkg-config --cflags ignition-gui4`.split(" ")
+    ldflags  = `pkg-config --libs ignition-gui4`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
