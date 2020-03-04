@@ -1,9 +1,9 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.4.0~pre1.tar.bz2"
-  version "3.4.0~pre1"
-  sha256 "3793b9952225fc3348e98b229ae87c39f30258002130cffc5974cbf0936f7de1"
+  url "https://bitbucket.org/ignitionrobotics/ign-common/get/b51b06b073dfac9784fecbc1ca8911c94e8f9c1b.tar.bz2"
+  version "3.4.999~20200303~b51b06b"
+  sha256 "5f773731e15d60544f692a0ac08446f07b2a9ae6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
