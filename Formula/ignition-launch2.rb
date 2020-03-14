@@ -3,6 +3,7 @@ class IgnitionLaunch2 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.0.1.tar.bz2"
   sha256 "757db516a0acf9618b0d8eece1745d976564adf490039c54acc41f5d28670588"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-launch", :branch => "default", :using => :hg
 
