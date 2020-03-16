@@ -49,8 +49,6 @@ class IgnitionMsgs3 < Formula
     system "./test"
     # test building with cmake
     mkdir "build" do
-      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
-      ENV.delete("SDKROOT")
       system "cmake", ".."
       system "make"
       system "./test_cmake"
