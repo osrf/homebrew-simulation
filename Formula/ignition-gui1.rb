@@ -92,8 +92,6 @@ class IgnitionGui1 < Formula
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
     mkdir "build" do
-      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
-      ENV.delete("SDKROOT")
       system "cmake", ".."
       system "make"
       system "./test_cmake"

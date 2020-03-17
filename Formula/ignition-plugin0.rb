@@ -48,8 +48,6 @@ class IgnitionPlugin0 < Formula
     system "./test"
     # test building with cmake
     mkdir "build" do
-      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
-      ENV.delete("SDKROOT")
       ENV.append "LIBRARY_PATH", Formula["gettext"].opt_lib
       system "cmake", ".."
       system "make"

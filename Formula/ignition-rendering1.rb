@@ -59,8 +59,6 @@ class IgnitionRendering1 < Formula
     system "./test" unless azure || travis
     # test building with cmake
     mkdir "build" do
-      ENV.delete("MACOSX_DEPLOYMENT_TARGET")
-      ENV.delete("SDKROOT")
       system "cmake", ".."
       system "make"
       system "./test_cmake" unless azure || travis
