@@ -3,12 +3,13 @@ class IgnitionGui2 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui2-2.1.0.tar.bz2"
   sha256 "1a8da1079148b19ded56987aa924025895243add194bfc46fda6964939e9ace1"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "93f4406170feeab70c5a1e51f47da21e2f7ea97e918f86b57e7364f77b756f4c" => :mojave
+    sha256 "73e4beb6a21de1782f479c5b21d1e586b6bf4dd323d5dcf91f3ac82d46363908" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
