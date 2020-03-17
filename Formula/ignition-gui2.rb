@@ -9,7 +9,7 @@ class IgnitionGui2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "93f4406170feeab70c5a1e51f47da21e2f7ea97e918f86b57e7364f77b756f4c" => :mojave
+    sha256 "73e4beb6a21de1782f479c5b21d1e586b6bf4dd323d5dcf91f3ac82d46363908" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
