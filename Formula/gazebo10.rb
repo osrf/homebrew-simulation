@@ -3,14 +3,14 @@ class Gazebo10 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.2.0.tar.bz2"
   sha256 "47d8bfe70ffcde21cbc6dec142f3aecefaac66c63562aab6114f442f7ab27392"
-  revision 1
+  revision 2
 
   head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "1381cf602aea4a473ea954e2cc6aa688b0f9bcea8dbcfd06e8d7cdcff1d11833" => :mojave
-    sha256 "53144aa954f7613a57dd6de1c51252e502e538755d8aa88c73165eeb10aa2757" => :high_sierra
+    sha256 "ab8994784261cef9dc1b3742fd69e31c9e6fd6d21eb437389ca2930fbae14b0a" => :mojave
+    sha256 "5484a1a8d031151da3403682e632490c5df4fb3162c8c5f420c4c182f7abe6dd" => :high_sierra
   end
 
   depends_on "cmake" => :build
