@@ -3,30 +3,27 @@ class Sdformat8 < Formula
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-8.8.0.tar.bz2"
   sha256 "73167c9f4edc75540b8b5239db9a61c5eaa7c39c845b37c25784ac4e96a35170"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "2f6ccb33deb27c3e01c5bbfdd8a1d314f4dcd2292d37e3c1dcb8ec306433ff54" => :mojave
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "pkg-config" => [:build, :test]
 
   depends_on "doxygen"
   depends_on "ignition-math6"
   depends_on :macos => :mojave # c++17
-  depends_on "pkg-config"
   depends_on "tinyxml"
-  depends_on "urdfdom" => :optional
+  depends_on "urdfdom"
 
   def install
     ENV.m64
 
-    cmake_args = std_cmake_args
-    cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
-    cmake_args << ".."
-
     mkdir "build" do
-      system "cmake", *cmake_args
+      system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
   end
