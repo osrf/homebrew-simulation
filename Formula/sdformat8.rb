@@ -19,6 +19,12 @@ class Sdformat8 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom"
 
+  patch do
+    # Fix for building against external urdfdom
+    url "https://bitbucket.org/osrf/sdformat/commits/9569df114fc1b5c5cd3add59918dbed2ab41618e/raw"
+    sha256 "e2f32c2bbdfb53bec4c36262c65f7839a0fe34646557a5bce23dc2e927cc13bc"
+  end
+
   def install
     ENV.m64
 
