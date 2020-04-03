@@ -3,30 +3,33 @@ class Sdformat9 < Formula
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.2.0.tar.bz2"
   sha256 "18193e571877d06b679a476f52329f326d02b5f70bc90c7cdc92f7dae2f5d784"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "02df890b9cb4ad5a48efcfabd31375c52248c472bf754aef5f5744923317592c" => :mojave
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "pkg-config" => [:build, :test]
 
   depends_on "doxygen"
   depends_on "ignition-math6"
   depends_on :macos => :mojave # c++17
-  depends_on "pkg-config"
   depends_on "tinyxml"
-  depends_on "urdfdom" => :optional
+  depends_on "urdfdom"
+
+  patch do
+    # Fix for building against external urdfdom
+    url "https://bitbucket.org/osrf/sdformat/commits/9569df114fc1b5c5cd3add59918dbed2ab41618e/raw"
+    sha256 "e2f32c2bbdfb53bec4c36262c65f7839a0fe34646557a5bce23dc2e927cc13bc"
+  end
 
   def install
     ENV.m64
 
-    cmake_args = std_cmake_args
-    cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
-    cmake_args << ".."
-
     mkdir "build" do
-      system "cmake", *cmake_args
+      system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
   end
