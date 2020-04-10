@@ -87,7 +87,7 @@ class Gazebo7 < Formula
       include_directories(${GAZEBO_INCLUDE_DIRS})
       target_link_libraries(test_cmake ${GAZEBO_LIBRARIES})
     EOS
-    system "pkg-config", "gazebo"
+    # system "pkg-config", "--cflags", "gazebo"
     # cflags = `pkg-config --cflags gazebo`.split(" ")
     # libs = `pkg-config --libs gazebo`.split(" ")
     # boost libs not properly generated in pkg-config file
