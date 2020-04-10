@@ -45,16 +45,16 @@ class IgnitionFuelTools4 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-fuel_tools4::ignition-fuel_tools4)
     EOS
-    # test building with pkg-config
-    system "pkg-config", "ignition-fuel_tools4"
-    cflags = `pkg-config --cflags ignition-fuel_tools4`.split(" ")
-    system ENV.cc, "test.cpp",
-                   *cflags,
-                   "-L#{lib}",
-                   "-lignition-fuel_tools4",
-                   "-lc++",
-                   "-o", "test"
-    system "./test"
+    # # test building with pkg-config
+    # system "pkg-config", "--cflags", "ignition-fuel_tools4"
+    # cflags = `pkg-config --cflags ignition-fuel_tools4`.split(" ")
+    # system ENV.cc, "test.cpp",
+    #                *cflags,
+    #                "-L#{lib}",
+    #                "-lignition-fuel_tools4",
+    #                "-lc++",
+    #                "-o", "test"
+    # system "./test"
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."

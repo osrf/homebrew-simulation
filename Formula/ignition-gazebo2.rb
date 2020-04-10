@@ -82,15 +82,15 @@ class IgnitionGazebo2 < Formula
       target_link_libraries(test_cmake ignition-gazebo2::core)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
-    system "pkg-config", "ignition-gazebo2"
-    cflags   = `pkg-config --cflags ignition-gazebo2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-gazebo2`.split(" ")
-    system ENV.cc, "test.cpp",
-                   *cflags,
-                   *ldflags,
-                   "-lc++",
-                   "-o", "test"
-    system "./test"
+    # system "pkg-config", "--cflags", "ignition-gazebo2"
+    # cflags   = `pkg-config --cflags ignition-gazebo2`.split(" ")
+    # ldflags  = `pkg-config --libs ignition-gazebo2`.split(" ")
+    # system ENV.cc, "test.cpp",
+    #                *cflags,
+    #                *ldflags,
+    #                "-lc++",
+    #                "-o", "test"
+    # system "./test"
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
     mkdir "build" do
