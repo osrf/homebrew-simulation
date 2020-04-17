@@ -5,7 +5,7 @@ class Sdformat5 < Formula
   sha256 "e5946e84431cf7874cf422d5b5a9f34f42b31d82b5baea532d1e466011bd89e0"
   revision 5
 
-  head "https://bitbucket.org/osrf/sdformat", :branch => "default", :using => :hg
+  head "https://github.com/osrf/sdformat", :branch => "sdf5", :using => :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

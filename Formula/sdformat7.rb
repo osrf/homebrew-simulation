@@ -1,11 +1,11 @@
 class Sdformat7 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://bitbucket.org/osrf/sdformat/get/f6b1f8e573d2af8abc40f63f3deb363de2472280.tar.gz"
-  version "6.999.999~20190808~f6b1f8e"
-  sha256 "cc58b11d5f7af8db0f293bef7cffdf86609ea233806ccfe065caeb38776ec954"
+  url "https://github.com/osrf/sdformat/archive/fc497c4408e9e111f66588140cadfcbc17827894.tar.gz"
+  version "6.999.999~20190809~f6b1f8e"
+  sha256 "f6b67acabb22194ef33df5ef95646ad717f59d737e9e8d473b0d9b674d4c199f"
 
-  head "https://bitbucket.org/osrf/sdformat", :branch => "sdf7", :using => :hg
+  head "https://github.com/osrf/sdformat", :branch => "sdf7", :using => :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

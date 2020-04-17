@@ -21,8 +21,8 @@ class Sdformat8 < Formula
 
   patch do
     # Fix for building against external urdfdom
-    url "https://bitbucket.org/osrf/sdformat/commits/9569df114fc1b5c5cd3add59918dbed2ab41618e/raw"
-    sha256 "e2f32c2bbdfb53bec4c36262c65f7839a0fe34646557a5bce23dc2e927cc13bc"
+    url "https://github.com/osrf/sdformat/commit/eddf3ef00f07549e7270f619de1ae2849d49daaa.diff?full_index=1"
+    sha256 "873fda0847c7fcdced3053c8f363794521cb6c5bd400b948ee33c888117a1ea1"
   end
 
   def install

@@ -5,7 +5,7 @@ class Sdformat3 < Formula
   sha256 "18251b133e4fde105f883518691f15fc9f1fc2af8b89ab6de4bc26b9df42761e"
   revision 5
 
-  head "https://bitbucket.org/osrf/sdformat", :branch => "sdf3", :using => :hg
+  head "https://github.com/osrf/sdformat", :branch => "sdf3", :using => :git
 
   depends_on "cmake" => :build
 
@@ -23,8 +23,8 @@ class Sdformat3 < Formula
   patch do
     # Fix for cmake 3.9
     # As per https://github.com/osrf/homebrew-simulation/issues/263
-    url "https://bitbucket.org/osrf/sdformat/commits/3e1d3f3bd0387b548d347b423a2bea39a7872003/raw/"
-    sha256 "b7fda735c24bf152c44213368575c1addc9ab91d4125611157f79bef32a36250"
+    url "https://github.com/osrf/sdformat/commit/136159ff7b75b8a779fa7f2a52634b6b26194d17.diff?full_index=1"
+    sha256 "1185bcf6e337b8346d96d54ed42d49103d0a2c25576ef4e97220431ba70d2997"
   end
 
   def install
