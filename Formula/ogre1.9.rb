@@ -4,7 +4,7 @@ class Ogre19 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ogre/releases/sinbad-ogre-108ab0bcc696.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
-  revision 8
+  revision 9
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
