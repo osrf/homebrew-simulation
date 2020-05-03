@@ -21,6 +21,7 @@ class Ogre19 < Formula
   depends_on "freeimage"
   depends_on "freetype"
   depends_on "libzzip"
+  depends_on :macos => :mojave # OpenGL problem on 10.13
   depends_on "tbb"
   depends_on :x11
 
