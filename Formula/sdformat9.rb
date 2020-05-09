@@ -3,7 +3,7 @@ class Sdformat9 < Formula
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.2.0.tar.bz2"
   sha256 "18193e571877d06b679a476f52329f326d02b5f70bc90c7cdc92f7dae2f5d784"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
