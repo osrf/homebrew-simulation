@@ -9,7 +9,8 @@ Homebrew tap for osrf simulation software
 
 To use:
 
-brew tap osrf/simulation
+    brew tap osrf/simulation
+    brew install ignition-citadel
 
 ## To build bottles
 
@@ -17,10 +18,39 @@ The https://build.osrfoundation.org jenkins instance is used for building bottle
 
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_bottle_builder)](https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/) https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/
 
+This jenkins job takes a `PULL_REQUEST_URL` as an input parameter uses the
+[homebrew_bottle_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
+script from [ignition-tooling/release-tools](https://github.com/ignition-tooling/release-tools),
+which invokes [brew test-bot](https://github.com/Homebrew/homebrew-test-bot)
+with the [following command](https://github.com/ignition-tooling/release-tools/blob/d6417a5c1be87238f155683e2ef70b2e784eb31c/jenkins-scripts/lib/homebrew_bottle_creation.bash#L38-L40):
+
+~~~
+brew test-bot --tap=osrf/simulation \
+  --root-url=https://osrf-distributions.s3.amazonaws.com/bottles-simulation \
+  --ci-pr ${PULL_REQUEST_URL}
+~~~
+
 If you are using the `release.py` script from [osrf/release-tools](https://bitbucket.org/osrf/release-tools),
 a Jenkins bottle builder job will be started automatically.
 Otherwise, create a pull request to this repository and paste the pull request url into the `PULL_REQUEST_URL`
 build parameter.
+
+The job is not configured to run automatically without the `release.py` script
+since it will automatically upload bottles to s3 once it is finished.
+This process differs from the approach taken by
+[homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core)
+whose bottles are hosted at Bintray, which has a different publishing mechanism
+than s3.
+
+The jenkins job currently builds bottles for macOS 10.13 `high_sierra` and 10.14 `mojave`
+using the following job configurations:
+
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_bottle_builder%2Flabel%3Dosx_highsierra)](https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_highsierra/) https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_highsierra
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_bottle_builder%2Flabel%3Dosx_mojave)](https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_mojave/) https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_mojave
+
+After starting a bottle building job
+
+The GitHub build status that appears in each PR is mainly checking that bottles can be fetched.
 
 ## Bottle status
 
