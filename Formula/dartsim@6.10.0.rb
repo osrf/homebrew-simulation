@@ -45,6 +45,9 @@ class DartsimAT6100 < Formula
       macho.add_rpath(opt_lib.to_s)
       macho.write!
     end
+
+    # Clean up the build file garbage that has been installed.
+    rm_r Dir["#{share}/doc/dart/**/CMakeFiles/"]
   end
 
   test do
