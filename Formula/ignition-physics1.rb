@@ -3,11 +3,12 @@ class IgnitionPhysics1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics-1.7.0.tar.bz2"
   sha256 "d7218b0cac62ddc0055313291cc15f69744fc903026bdecffe1e185142b58cb2"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "563437424c25fea6ec7a4fe08c723b2712b5a3d2f107a61a6078f55eff1b8291" => :mojave
+    sha256 "cd569afef8934abd980ccce150e7c72d89fc448904989cf9dcbb1e1b0bcc4e67" => :mojave
   end
 
   depends_on "cmake" => :build
