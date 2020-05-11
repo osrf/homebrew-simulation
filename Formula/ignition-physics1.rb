@@ -1,9 +1,8 @@
 class IgnitionPhysics1 < Formula
   desc "Physics library for robotics applications"
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics-1.7.0.tar.bz2"
-  sha256 "d7218b0cac62ddc0055313291cc15f69744fc903026bdecffe1e185142b58cb2"
-  revision 1
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics-1.8.0.tar.bz2"
+  sha256 "42c3bfdc64517b14af65dd5d0d7bc87bdec270a389b1efaf92403b0aa0bccf5f"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
