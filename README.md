@@ -18,7 +18,7 @@ The https://build.osrfoundation.org jenkins instance is used for building bottle
 
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_bottle_builder)](https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/) https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/
 
-This jenkins job takes a `PULL_REQUEST_URL` as an input parameter uses the
+This jenkins job takes a `PULL_REQUEST_URL` as an input parameter and uses the
 [homebrew_bottle_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
 script from [ignition-tooling/release-tools](https://github.com/ignition-tooling/release-tools),
 which invokes [brew test-bot](https://github.com/Homebrew/homebrew-test-bot)
