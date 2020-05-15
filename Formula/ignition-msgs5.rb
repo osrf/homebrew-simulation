@@ -7,8 +7,8 @@ class IgnitionMsgs5 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "7de96360a804a9f6e63092cee7ea8756d34fa442b082c40c73e2b3c783929bb0" => :mojave
-    sha256 "97734dd5adab91840f3726fc68edfd261b667e55e2b0ce64da213cfe78ba3a4d" => :high_sierra
+    sha256 "ef39bfc39600399598efe58c8de32e9264da46704bedfe131c0776b7d6c8c745" => :mojave
+    sha256 "af15fb58ac4ca171de36b24c482450255983207fa2b0439c154f87f05afc0fa0" => :high_sierra
   end
 
   depends_on "protobuf-c" => :build
