@@ -19,6 +19,7 @@ class Gazebo10 < Formula
   depends_on "ignition-msgs1"
   depends_on "ignition-transport4"
   depends_on "libtar"
+  depends_on :macos => :mojave # ogre1.9 missing in highsierra
   depends_on "ogre1.9"
   depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
