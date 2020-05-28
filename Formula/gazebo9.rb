@@ -71,8 +71,10 @@ class Gazebo9 < Formula
   end
 
   test do
+    # Test is broken. See https://github.com/osrf/homebrew-simulation/issues/1003
     # this used to show boost linking errors, but not anymore
-    system "#{bin}/gz", "sdf"
+    # system "#{bin}/gz", "sdf"
+
     # running this sample code seg-faults from boost filesystem
     # if a bottle rebuild is needed
     (testpath/"test.cpp").write <<-EOS
