@@ -5,6 +5,11 @@ class IgnitionTransport7 < Formula
   sha256 "09f038244e27a2514ebc736499e40e42aa0824bbb5c02df913042ae10c886d41"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "c82321a2068a1751039fdeca92f05663acddef74263571ca28c42970ee77b80e" => :mojave
+  end
+
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
 
