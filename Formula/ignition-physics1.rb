@@ -3,6 +3,7 @@ class IgnitionPhysics1 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-physics"
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics-1.8.0.tar.bz2"
   sha256 "42c3bfdc64517b14af65dd5d0d7bc87bdec270a389b1efaf92403b0aa0bccf5f"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
