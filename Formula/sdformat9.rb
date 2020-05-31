@@ -3,11 +3,11 @@ class Sdformat9 < Formula
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.2.0.tar.bz2"
   sha256 "18193e571877d06b679a476f52329f326d02b5f70bc90c7cdc92f7dae2f5d784"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "9c3084344959cd1b3de0ef21cf70ecbea19f779aa58269ff20053466eadf7d24" => :mojave
+    sha256 "b923c0f08b40152b58d1732cd39ac99bd1e7c2d61c6d00940541bcecf225e40c" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]

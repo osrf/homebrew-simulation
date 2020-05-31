@@ -3,12 +3,13 @@ class IgnitionSensors3 < Formula
   homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.0.0.tar.bz2"
   sha256 "a1b8eafb06a07c4631c62d98a5e333f1db81b0b0f95b8ea2981a0c29a858c824"
+  revision 1
 
   head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e144c457dc8e8e6c080e7df2dcde3b0f88d07f8b73c2323233294498f868576f" => :mojave
+    sha256 "d8596f3092d5ef8446de6175ae448779bcb746981b953091b79b6588dcc83dc4" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]

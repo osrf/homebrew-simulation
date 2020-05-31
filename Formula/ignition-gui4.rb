@@ -8,11 +8,6 @@ class IgnitionGui4 < Formula
 
   head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "615aeb4eeac78bc03af0ae51e5ee26eeea96b829eef7cb36abb581f8bb133d52" => :mojave
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
