@@ -23,11 +23,12 @@ class Gazebo5 < Formula
   depends_on "tinyxml"
 
   depends_on "bullet" => [:recommended, "with-double-precision"]
+  depends_on "simbody" => :recommended
+
   depends_on "dartsim/dart/dartsim4" => [:optional, "with-core-only"]
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
   depends_on "gts" => :optional
-  depends_on "simbody" => :recommended
   depends_on "player" => :optional
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
