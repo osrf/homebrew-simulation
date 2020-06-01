@@ -36,11 +36,11 @@ class BulletAT287 < Formula
 
     args_static = args.dup << "-DBUILD_SHARED_LIBS=OFF"
     args_static <<
-    if build.without? "demo"
-      "-DBUILD_BULLET2_DEMOS=OFF"
-    else
-      "-DBUILD_BULLET2_DEMOS=ON"
-    end
+      if build.without? "demo"
+        "-DBUILD_BULLET2_DEMOS=OFF"
+      else
+        "-DBUILD_BULLET2_DEMOS=ON"
+      end
 
     mkdir "build" do
       system "cmake", "..", *args_shared
