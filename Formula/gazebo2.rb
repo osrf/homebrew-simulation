@@ -9,12 +9,12 @@ class Gazebo2 < Formula
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "libtar"
   depends_on "ogre"
   depends_on "protobuf"
-  depends_on "cartr/qt4/qt@4"
   depends_on "protobuf-c"
   depends_on "sdformat"
   depends_on "tbb"
@@ -24,8 +24,8 @@ class Gazebo2 < Formula
   depends_on "dartsim/dart/dartsim" => [:optional, "core-only"]
   depends_on "ffmpeg" => :optional
   depends_on "gts" => :optional
-  depends_on "simbody" => :optional
   depends_on "player" => :optional
+  depends_on "simbody" => :optional
 
   conflicts_with "gazebo3", :because => "Differing version of the same formula"
   conflicts_with "gazebo4", :because => "Differing version of the same formula"

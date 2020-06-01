@@ -1,5 +1,5 @@
 class Sofa < Formula
-  desc "Sofa physics framework"
+  desc "Physics framework sofa"
   homepage "http://www.sofa-framework.org"
   head "https://github.com/sofa-framework/sofa.git"
 
