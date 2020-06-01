@@ -3,13 +3,13 @@ class IgnitionFuelTools4 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools4-4.1.0.tar.bz2"
   sha256 "81a82e472d59ccf852b7869f39ba70be2f1bf91e3ea95ef0503ca7ea55189d9c"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "3f1c9acebc47aad6bc2b6cba681733093be8a52b79fb479daf9eaaa073f02620" => :mojave
-    sha256 "7380cb4ba4b4c2c9caf15518013b0441a785a0d4758c23f17fb40c72ccdcddd8" => :high_sierra
+    sha256 "e4fb108d249cd0b2afbaedb48f60d928f705c076d5f2194623bef23f62206495" => :mojave
+    sha256 "2d8f14dc076a1d1e3f652e0d0a7db85fd87f4fc9a9d815c0e351355236e6c548" => :high_sierra
   end
 
   depends_on "cmake"
