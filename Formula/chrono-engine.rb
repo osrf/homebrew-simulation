@@ -1,4 +1,5 @@
 class ChronoEngine < Formula
+  desc "Chrono physics engine"
   homepage "http://www.projectchrono.org/chronoengine/"
   url "https://github.com/projectchrono/chrono/archive/2.0.0.tar.gz"
   sha256 "ef5d5831881bc2fc6f3f80106e6e763c904f57dc39b6db880968f00451ac936b"

@@ -35,10 +35,11 @@ class BulletAT287 < Formula
     args_shared += args_framework if build.with? "framework"
 
     args_static = args.dup << "-DBUILD_SHARED_LIBS=OFF"
+    args_static <<
     if build.without? "demo"
-      args_static << "-DBUILD_BULLET2_DEMOS=OFF"
+      "-DBUILD_BULLET2_DEMOS=OFF"
     else
-      args_static << "-DBUILD_BULLET2_DEMOS=ON"
+      "-DBUILD_BULLET2_DEMOS=ON"
     end
 
     mkdir "build" do
@@ -69,10 +70,10 @@ class BulletAT287 < Formula
       }
     EOS
 
-    if OS.mac?
-      cxx_lib = "-lc++"
+    cxx_lib = if OS.mac?
+      "-lc++"
     else
-      cxx_lib = "-lstdc++"
+      "-lstdc++"
     end
 
     if build.with? "framework"

@@ -27,8 +27,8 @@ class Gazebo5 < Formula
   depends_on "ffmpeg" => :optional
   depends_on "gdal" => :optional
   depends_on "gts" => :optional
-  depends_on "player" => :optional
   depends_on "simbody" => :recommended
+  depends_on "player" => :optional
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo3", :because => "Differing version of the same formula"
