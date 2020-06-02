@@ -3,7 +3,7 @@ class Gazebo3 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-3.2.0.tar.bz2"
   sha256 "6b77382a491833d5292b3e1fca34a04c968025a09746d87cdcf77cff040acea5"
-  head "https://github.com/osrf/gazebo", :branch => "master"
+  head "https://github.com/osrf/gazebo", :branch => "gazebo_3.1"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
