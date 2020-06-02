@@ -1,11 +1,11 @@
 class Ogre21 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://bitbucket.org/sinbad/ogre/get/06a386fa64e79a7204a90faf53da1735743f6c2e.tar.bz2"
+  url "https://github.com/OGRECave/ogre-next/archive/b4c4fa785c03c2d4ba2a1d28d94394c7ca000358.tar.gz"
   version "2.0.99999~pre0~0~20180616~06a386f"
-  sha256 "d2e28bfcfbb1277355047c1d8bcd141b05b83af52d277725168e4281eac92a6d"
+  sha256 "c9580c2380669c1de170612609f2f122c08cd88393a75ad53535e433c8feb72d"
 
-  head "https://bitbucket.org/sinbad/ogre", :branch => "v2-1", :using => :hg
+  head "https://github.com/OGRECave/ogre-next", :branch => "v2-1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -34,8 +34,8 @@ class Ogre21 < Formula
 
   patch do
     # fix GL3+ compilation with Xcode 10
-    url "https://bitbucket.org/sinbad/ogre/commits/14b5dc7fc2d8e1281140d027e1effb4d8a317895/raw"
-    sha256 "41c678d3021feab844c5731c0cc2aa7007b731cfde5e084bc87d3a1eba9fa581"
+    url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.diff?full_index=1"
+    sha256 "cb16e12a5caa6a44c3891f23bbd9af120c9e31172b1b1eb65e350c8aefa0bf89"
   end
 
   def install
