@@ -1,11 +1,11 @@
 class IgnitionGazebo1 < Formula
   desc "Gazebo robot simulator"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-gazebo"
+  homepage "https://github.com/ignitionrobotics/ign-gazebo"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo-1.1.0.tar.bz2"
   sha256 "fd4060fbe0d4dc1ef3db9b87104a427fddae510c101b1690f0fed43f2aeea76b"
   revision 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-gazebo", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-gazebo", :branch => "ign-gazebo1"
 
   depends_on "cmake" => :build
   depends_on "gflags"

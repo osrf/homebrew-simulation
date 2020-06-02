@@ -1,11 +1,11 @@
 class IgnitionCommon1 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-common"
+  homepage "https://github.com/ignitionrobotics/ign-common"
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
   revision 3
 
-  head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-common", :branch => "ign-common1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

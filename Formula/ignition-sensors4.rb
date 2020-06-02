@@ -1,11 +1,11 @@
 class IgnitionSensors4 < Formula
   desc "Sensors library for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
+  homepage "https://github.com/ignitionrobotics/ign-sensors"
   url "https://bitbucket.org/ignitionrobotics/ign-sensors/get/84f8018bc3185ada6f4e85a8d0728f2cdd3b3699.tar.gz"
   version "3.999.999~0~20200408~84f8018"
   sha256 "73522f74aa29fbb423c6908dd1670a5298ce2609a54cd95cb5901b47198af914"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-sensors", :branch => "master"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

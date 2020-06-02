@@ -1,6 +1,6 @@
 class IgnitionRendering1 < Formula
   desc "Rendering library for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
+  homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering-1.0.0.tar.bz2"
   sha256 "73dc1ce94c281ddd21796ebf363e1cd03acf15709cda959926d3187462221bfe"
   revision 2

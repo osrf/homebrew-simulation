@@ -1,11 +1,11 @@
 class IgnitionCommon0 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-common"
+  homepage "https://github.com/ignitionrobotics/ign-common"
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common-0.5.0~pre4.tar.bz2"
   version "0.5.0~pre4"
   sha256 "4e9c5507a2f480a2e2dc8dd2aaa22e91905791f87745e69f918ab67304ef39a7"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-common", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-common", :branch => "ign-common0"
 
   depends_on "cmake"
   depends_on "ffmpeg"

@@ -1,6 +1,6 @@
 class IgnitionPlugin1 < Formula
   desc "Plugin libraries for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-plugin"
+  homepage "https://github.com/ignitionrobotics/ign-plugin"
   url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.1.0.tar.bz2"
   sha256 "72e6a9af35507b8f49e22205e44110419fc9170f7fc8d7e491587db2287041ae"
 

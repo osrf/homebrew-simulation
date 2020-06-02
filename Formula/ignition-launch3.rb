@@ -1,11 +1,11 @@
 class IgnitionLaunch3 < Formula
   desc "Launch libraries for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-launch"
+  homepage "https://github.com/ignitionrobotics/ign-launch"
   url "https://bitbucket.org/ignitionrobotics/ign-launch/get/8995670392f01a43424ff3bc934da174329aebb5.tar.bz2"
   version "2.999.999~0~20200316~899567"
   sha256 "c427112fed59fcb783ccbdaf58586546b1e561046c695ca16843db7e1e308d7c"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-launch", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-launch", :branch => "master"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

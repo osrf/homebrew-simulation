@@ -1,11 +1,11 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-gui"
+  homepage "https://github.com/ignitionrobotics/ign-gui"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.1.0.tar.bz2"
   sha256 "3987d538885b8388c1755209b5e969c8366b3fab52ab4325154be3b315ce9b72"
   revision 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-gui", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-gui", :branch => "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

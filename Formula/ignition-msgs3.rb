@@ -1,6 +1,6 @@
 class IgnitionMsgs3 < Formula
   desc "Middleware protobuf messages for robotics"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
+  homepage "https://github.com/ignitionrobotics/ign-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs3-3.2.0.tar.bz2"
   sha256 "5754ee472e83dc0e46111f66123dbc8b635570603f4bcbaf0f71be0efaff1d11"
   revision 1
