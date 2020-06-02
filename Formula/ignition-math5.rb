@@ -5,7 +5,7 @@ class IgnitionMath5 < Formula
   sha256 "f28aa11f8f292e70cc8a0427452fa4548390408ec9b6df88d5b221dde0d42d1c"
   version_scheme 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-math", :branch => "ign-math5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

@@ -5,7 +5,7 @@ class Gazebo5 < Formula
   sha256 "a645b3dadbd9aeb8fb4a42857117771fae13c74780bebfbb3c00a233ed5b1cdb"
   revision 2
 
-  head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo5", :using => :hg
+  head "https://github.com/osrf/gazebo", :branch => "gazebo5"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

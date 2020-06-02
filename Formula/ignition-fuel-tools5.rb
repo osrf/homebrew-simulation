@@ -5,7 +5,7 @@ class IgnitionFuelTools5 < Formula
   sha256 "8f8a25b56265dd3853383100f9b73b9af22fdb06980c8d917dfb0316afb16229"
   version "4.999.999~0~20200407~5b7d9e"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-fuel-tools", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-fuel-tools", :branch => "master"
 
   depends_on "cmake"
   depends_on "ignition-cmake2"

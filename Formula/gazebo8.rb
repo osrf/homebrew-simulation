@@ -6,7 +6,7 @@ class Gazebo8 < Formula
   revision 5
   version_scheme 1
 
-  head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
+  head "https://github.com/osrf/gazebo", :branch => "gazebo8"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
