@@ -1,11 +1,11 @@
 class IgnitionMsgs6 < Formula
   desc "Middleware protobuf messages for robotics"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-msgs"
+  homepage "https://github.com/ignitionrobotics/ign-msgs"
   url "https://bitbucket.org/ignitionrobotics/ign-msgs/get/47d93769c80c7da72f03c3dd8ba5a36fcd6ab076.tar.bz2"
-  sha256 "8b9422786573a4f40e2aa63741fa964336a3e1138c8dee6e8c98847ff4ea1fb1"
   version "5.999.999~0~20200407~47d937"
+  sha256 "8b9422786573a4f40e2aa63741fa964336a3e1138c8dee6e8c98847ff4ea1fb1"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-msgs", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-msgs", :branch => "master"
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"

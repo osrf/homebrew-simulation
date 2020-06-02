@@ -5,7 +5,7 @@ class IgnitionTransport4 < Formula
   sha256 "b0d8d3d4b0d4fbb06ed293955f5dfe2f840fe510daec867422676b41fc3824b4"
   revision 7
 
-  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport4", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-transport", :branch => "ign-transport4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

@@ -1,6 +1,6 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-common"
+  homepage "https://github.com/ignitionrobotics/ign-common"
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.5.0.tar.bz2"
   sha256 "1eabc79b98cd6b3d61d1c8106ce5546fb33ba673facdc0efb6d8dbbb49c4dfde"
 

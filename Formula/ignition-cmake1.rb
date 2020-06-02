@@ -4,7 +4,7 @@ class IgnitionCmake1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake1-1.1.0.tar.bz2"
   sha256 "1d9cad25b61774e0cb131fa244cc09b082166c2644b6aeaaa1f20d0d060cc30c"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-cmake", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-cmake", :branch => "ign-cmake1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

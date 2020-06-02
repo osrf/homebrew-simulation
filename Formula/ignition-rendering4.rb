@@ -1,6 +1,6 @@
 class IgnitionRendering4 < Formula
   desc "Rendering library for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
+  homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://bitbucket.org/ignitionrobotics/ign-rendering/get/f0dc5f4ce27697dbc02e2fe74a1a0fb3b5c091d8.tar.gz"
   version "3.999.999~0~20200310~f0dc5f4"
   sha256 "4f5eae2d1de279ae16c20607c8dcc0ef1dab057e4b29cda68dccfbe07161a71f"

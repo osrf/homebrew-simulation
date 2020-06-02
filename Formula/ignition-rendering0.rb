@@ -1,11 +1,11 @@
 class IgnitionRendering0 < Formula
   desc "Rendering library for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-rendering"
+  homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering0-0.2.0.tar.bz2"
   sha256 "2935ec21e61d40e93d89540843d0317527b25a28b8cd750658edd619db45ff03"
   revision 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-rendering", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-rendering", :branch => "ign-rendering0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

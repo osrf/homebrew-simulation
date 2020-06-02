@@ -5,7 +5,7 @@ class IgnitionTransport < Formula
   sha256 "bc612e9781f9cab81cc4111ed0de07c4838303f67c25bc8b663d394b40a8f5d4"
   revision 10
 
-  head "https://bitbucket.org/ignitionrobotics/ign-transport", :branch => "ign-transport1", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-transport", :branch => "ign-transport1"
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]

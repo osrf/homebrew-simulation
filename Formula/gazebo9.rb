@@ -5,7 +5,7 @@ class Gazebo9 < Formula
   sha256 "2ff87d23c56dd843b3b38e1b1eafc93bd453710e8a4a31229b3244343ec1741a"
   revision 1
 
-  head "https://bitbucket.org/osrf/gazebo", :branch => "default", :using => :hg
+  head "https://github.com/osrf/gazebo", :branch => "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

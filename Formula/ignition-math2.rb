@@ -4,7 +4,7 @@ class IgnitionMath2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math2-2.9.0.tar.bz2"
   sha256 "4c007af9efe42908a240895b2a9bcb5c4e570ac0e4ed152c4edd724f86171931"
 
-  head "https://bitbucket.org/ignitionrobotics/ign-math", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-math", :branch => "ign-math2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases"

@@ -1,11 +1,11 @@
 class IgnitionSensors2 < Formula
   desc "Sensors library for robotics applications"
-  homepage "https://bitbucket.org/ignitionrobotics/ign-sensors"
+  homepage "https://github.com/ignitionrobotics/ign-sensors"
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors2-2.8.0.tar.bz2"
   sha256 "f957e9948af37671d0f0b77fd24acde2401cc0f79e21d6658d781cb838fb1a87"
   revision 1
 
-  head "https://bitbucket.org/ignitionrobotics/ign-sensors", :branch => "default", :using => :hg
+  head "https://github.com/ignitionrobotics/ign-sensors", :branch => "ign-sensors2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

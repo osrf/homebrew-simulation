@@ -3,7 +3,7 @@ class GazeboAT1 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-1.9.7.tar.bz2"
   sha256 "27f3f81d3b11f997e8879e660445e49e81f8d15909ef7352b166c5050c61573a"
-  head "https://bitbucket.org/osrf/gazebo", :branch => "gazebo_1.9", :using => :hg
+  head "https://github.com/osrf/gazebo", :branch => "gazebo_1.9"
 
   keg_only "old version of gazebo"
 
