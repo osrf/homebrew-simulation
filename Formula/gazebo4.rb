@@ -7,25 +7,26 @@ class Gazebo4 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "protobuf-c" => :build
 
   depends_on "boost"
+  depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "libtar"
   depends_on "ogre"
   depends_on "protobuf"
-  depends_on "protobuf-c"
-  depends_on "cartr/qt4/qt@4"
   depends_on "sdformat"
   depends_on "tbb"
   depends_on "tinyxml"
 
   depends_on "bullet" => [:recommended, "with-double-precision"]
+  depends_on "simbody" => :recommended
+
   depends_on "dartsim/dart/dartsim" => [:optional, "core-only"]
   depends_on "ffmpeg" => :optional
   depends_on "gts" => :optional
   depends_on "player" => :optional
-  depends_on "simbody" => :recommended
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo3", :because => "Differing version of the same formula"

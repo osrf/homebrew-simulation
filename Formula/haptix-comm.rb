@@ -8,12 +8,12 @@ class HaptixComm < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :build
+  depends_on "protobuf-c" => :build
 
+  depends_on "cppzmq"
   depends_on "ignition-transport"
   depends_on "protobuf"
-  depends_on "protobuf-c" => :build
   depends_on "zeromq"
-  depends_on "cppzmq"
 
   def install
     system "cmake", ".", *std_cmake_args

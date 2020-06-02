@@ -11,13 +11,13 @@ class GazeboAT1 < Formula
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "libtar"
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "cartr/qt4/qt@4"
   depends_on "sdformat"
   depends_on "tbb"
   depends_on "tinyxml"
