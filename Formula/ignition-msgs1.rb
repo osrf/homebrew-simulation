@@ -3,7 +3,7 @@ class IgnitionMsgs1 < Formula
   homepage "https://github.com/ignitionrobotics/ign-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs-1.0.0.tar.bz2"
   sha256 "fed54d079a58087fa83cc871f01ba2919866292ba949b6b8f37a0cb3d7186b4b"
-  revision 7
+  revision 8
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-msgs", :branch => "ign-msgs1"
@@ -11,8 +11,8 @@ class IgnitionMsgs1 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "c6c989b8793a3bc3e66261e57807ff7b090f6a5d758d62e914f8054baa5726a7" => :mojave
-    sha256 "9474da86fbc6ea4fb79de3cf17c805cfe1fe96d758d5a85abec7763735a805b8" => :high_sierra
+    sha256 "7f15d7293d300ec3822c1968e984a438802192dcdd23cbcdc44591e5e509b216" => :mojave
+    sha256 "b28e7cd35a36c5609ebc475f5f062aa1a8cb8e644e3373c971259dbb25529428" => :high_sierra
   end
 
   depends_on "protobuf-c" => :build
