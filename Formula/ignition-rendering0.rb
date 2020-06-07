@@ -25,8 +25,8 @@ class IgnitionRendering0 < Formula
 
   patch do
     # Don't conflict with ignition-rendering1
-    url "https://bitbucket.org/ignitionrobotics/ign-rendering/commits/8aaa4b8188cae5cd5082e46a05abde6bfcc7fbde/raw/"
-    sha256 "87ca51e370faab94d2ff92bc3fde3d236fe5f264a582a5740e047d85818280a8"
+    url "https://github.com/ignitionrobotics/ign-rendering/commit/ba788c7261d367e3f1d72d62ee57ad8a32602bc1.diff?full_index=1"
+    sha256 "41710795b494e86b983dae5c97e604f38a605d29f638f1386474bd3f348879fb"
   end
 
   def install
