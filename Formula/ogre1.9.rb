@@ -69,14 +69,14 @@ class Ogre19 < Formula
 
   patch do
     # fix for boost 1.65
-    url "https://bitbucket.org/sinbad/ogre/commits/0cd739f7551d0aad3329abb42d981e970e074fa7/raw"
-    sha256 "cb22b8703f36596efa13618085b2d1a59522d04386cf7eb6eca42a99d0abe83d"
+    url "https://github.com/OGRECave/ogre/commit/cade48b4c2215dd77ea74b7aa219a22c2a5d6654.diff?full_index=1"
+    sha256 "4b000a58663713dbfdf3e06ce99a641b636dcb8ae76c84d53a960a419fe452b8"
   end
 
   patch do
     # fix for boost 1.67
-    url "https://bitbucket.org/sinbad/ogre/commits/16a75ea693e65fed3af943b4b2bfaa7e6c8219b1/raw"
-    sha256 "ffad5129caf3344fb408d6af3c8076bb4e97becdcd6d08302db469694a596616"
+    url "https://github.com/OGRECave/ogre/commit/2371c8d001725190a9cda62dc5df282cde78f951.diff?full_index=1"
+    sha256 "9c6b600d528f6329d9728faa4eacf4363dd71d8c0e4dae238e480361796d58c8"
   end
 
   def install
