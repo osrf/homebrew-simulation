@@ -1,9 +1,9 @@
 class IgnitionLaunch3 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://bitbucket.org/ignitionrobotics/ign-launch/get/8995670392f01a43424ff3bc934da174329aebb5.tar.bz2"
+  url "https://github.com/ignitionrobotics/ign-launch/archive/f9a11aeefdfe2a22ef6b4b253f2e68548436725b.tar.gz"
   version "2.999.999~0~20200316~899567"
-  sha256 "c427112fed59fcb783ccbdaf58586546b1e561046c695ca16843db7e1e308d7c"
+  sha256 "2d25ab18e6593a777e77a1e64d398486b712e1ab78cbfca9ec7320af5daac319"
 
   head "https://github.com/ignitionrobotics/ign-launch", :branch => "master"
 
