@@ -1,13 +1,12 @@
 class IgnitionRendering2 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering2-2.3.0.tar.bz2"
-  sha256 "ef77f5eec729275de5acd36c1b62a0c82e9db255396ae420a586f255af114d64"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering2-2.4.0.tar.bz2"
+  sha256 "ef8d3ffe4b0ba39a271e695371c533f142c0a6305933c0df1fd8e472f8cf3478"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "41514f4b590799f34273e5d084bd33542a7e11bbb2789ccff36750020d1799c1" => :mojave
-    sha256 "900944d3032be5c1a963d3005ec6aaf48d732ffc551d31b5f724581e1d8573ca" => :high_sierra
+    sha256 "10c79e5694e9031cdba9e24fe9c914d715bd5d5ddd2d5d7fa9d99661eb4e0d51" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -18,7 +17,7 @@ class IgnitionRendering2 < Formula
   depends_on "ignition-common3"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
-  depends_on :macos => :high_sierra # c++17
+  depends_on :macos => :mojave # OpenGL problem on 10.13
   depends_on "ogre1.9"
   depends_on "ogre2.1"
 
