@@ -42,7 +42,7 @@ class Gazebo3 < Formula
 
   patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
-    url "https://bitbucket.org/osrf/gazebo/commits/4bb4390655af316b582f8e0fea23438426b4e681/raw/"
+    url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.diff?full_index=1"
     sha256 "70d39a547aa27a5357ddf0859d41515c945730ca1cef770be3c0cff2e29340d2"
   end
 
