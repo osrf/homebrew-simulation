@@ -1,9 +1,9 @@
 class IgnitionTransport5 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://bitbucket.org/ignitionrobotics/ign-transport/get/08aa1f3d1d5b2e006dd8b357f3c9367d27f66107.tar.gz"
+  url "https://github.com/ignitionrobotics/ign-transport/archive/c559f4db5ea6fe6e800a2d9ce36942e3f2ffcaec.tar.gz"
   version "5.0.0.999~20190711~f2402ae2"
-  sha256 "033c35dc3e0338035a8aed6b46418a7caee298c207b72a50b0282031093b404c"
+  sha256 "4f84e852f48843bd226b397d2c49384fa7f9709df8fee3ba76688ac24040ba04"
   revision 2
 
   depends_on "doxygen" => [:build, :optional]

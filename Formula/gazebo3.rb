@@ -42,7 +42,7 @@ class Gazebo3 < Formula
 
   patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
-    url "https://bitbucket.org/osrf/gazebo/commits/4bb4390655af316b582f8e0fea23438426b4e681/raw/"
+    url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.diff?full_index=1"
     sha256 "70d39a547aa27a5357ddf0859d41515c945730ca1cef770be3c0cff2e29340d2"
   end
 
@@ -54,14 +54,14 @@ class Gazebo3 < Formula
 
   patch do
     # Fix build with boost 1.57 (gazebo #1399)
-    url "https://bitbucket.org/osrf/gazebo/commits/39f8398003ada7381dc03096f666627e84c738eb/raw/"
-    sha256 "6d38b6f01491f0419d70d72c067a69b75dfc3ac4520b4ceaeb7f0da9436b4a37"
+    url "https://github.com/osrf/gazebo/commit/7c185d822403750467da05289b8ff681c122a2f8.diff?full_index=1"
+    sha256 "65d4e00c5a6e53161ef3e80df04bc92a1a9a44f005b8019671bd9f61370d66ed"
   end
 
   patch do
     # Fix for compatibility with boost 1.58
-    url "https://bitbucket.org/osrf/gazebo/commits/91f6f3c59f40af34855548c37857955d08fd1368/raw/"
-    sha256 "1a8b232be58f36bf5fa0129169f4d4d40d72624b460735457c781ba3e02c7900"
+    url "https://github.com/osrf/gazebo/commit/5f533662e72cf63c18f122a21cdc61599238d4c5.diff?full_index=1"
+    sha256 "e484e6c46243d451ad5473486c97768b593b34b61fb183c06d18651dc76d8b5f"
   end
 
   # Fix whitespace before next patch
@@ -69,7 +69,7 @@ class Gazebo3 < Formula
 
   patch do
     # Another fix with boost 1.57 (gazebo #1399)
-    url "https://bitbucket.org/osrf/gazebo/commits/34e70706a56709a5c3a2a5ef4e79e271fcaa4e9c/raw/"
+    url "https://github.com/osrf/gazebo/commit/205d42a5cb9ad7a749a8cb6ba6b56d7751b5653d.diff?full_index=1"
     sha256 "3e7946107855a88a72862c3efe0931f0862b94f6641e21258e21dae8690246d5"
   end
 
