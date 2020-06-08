@@ -48,7 +48,7 @@ class Gazebo2 < Formula
 
   patch do
     # Fix for compatibility with boost 1.62
-    url "https://bitbucket.org/osrf/gazebo/commits/5819aa5d7d186e65a9054e2da8d9fc8e092483ca/raw/"
+    url "https://github.com/osrf/gazebo/commit/ff37ecfed0af9da0e9e98f26fa49217f51c4ac0f.diff?full_index=1"
     sha256 "1fa2b2149bd1a4fbf999fe24bf39f06f7f652d4936dbdeacb807938207d0851e"
   end
 

@@ -69,7 +69,7 @@ class Gazebo3 < Formula
 
   patch do
     # Another fix with boost 1.57 (gazebo #1399)
-    url "https://bitbucket.org/osrf/gazebo/commits/34e70706a56709a5c3a2a5ef4e79e271fcaa4e9c/raw/"
+    url "https://github.com/osrf/gazebo/commit/205d42a5cb9ad7a749a8cb6ba6b56d7751b5653d.diff?full_index=1"
     sha256 "3e7946107855a88a72862c3efe0931f0862b94f6641e21258e21dae8690246d5"
   end
 
