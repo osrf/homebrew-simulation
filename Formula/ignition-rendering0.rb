@@ -7,13 +7,6 @@ class IgnitionRendering0 < Formula
 
   head "https://github.com/ignitionrobotics/ign-rendering", :branch => "ign-rendering0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "aeb2fb7172c3f2b19bb5d4d6bfc61890b97c3129e4a7468094ae4e72bfb40ab9" => :mojave
-    sha256 "38ac694f6dc64e7918c9b3e535b6b8317220dc3481a8fe09c8c86f7f10fd0fdc" => :high_sierra
-    sha256 "10ebd9c0c4f223688efed8e5256e91e87328d70880dd9031d5809d95ab2aaaa4" => :sierra
-  end
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => [:build, :test]
 
