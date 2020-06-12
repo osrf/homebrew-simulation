@@ -1,7 +1,6 @@
 class Sdformat10 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.2.0.tar.bz2"
   url "https://github.com/osrf/sdformat/archive/1e213886f892e6accd1c7b0f104a8af2583ed68b.tar.gz"
   version "9.999.999~0~20200604~1e21388"
   sha256 "8b33c4675c7447a780d676bf40c50925524d210982f857d6ffb17a2279f745ca"
