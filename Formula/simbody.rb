@@ -29,7 +29,7 @@ class Simbody < Formula
     end
 
     inreplace Dir[lib/"cmake/simbody/SimbodyTargets-*.cmake"],
-        %r{/Applications[/]Xcode.app/[^;]*/System/Library},
+        %r{/Applications/Xcode.app/[^;]*/System/Library},
         "/System/Library", false
   end
 

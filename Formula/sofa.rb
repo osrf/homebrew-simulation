@@ -4,9 +4,13 @@ class Sofa < Formula
   head "https://github.com/sofa-framework/sofa.git"
 
   depends_on "cmake" => :build
+  depends_on "boost"
+  depends_on "eigen"
   depends_on "glew"
+  depends_on "libjpeg"
   depends_on "libpng"
-  depends_on "qt" => "with-qt3support"
+  depends_on "libtiff"
+  depends_on "qt"
 
   depends_on :x11
 

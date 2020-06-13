@@ -7,10 +7,13 @@ class GazeboAT1 < Formula
 
   keg_only "old version of gazebo"
 
+  deprecate! :date => "July 27, 2015"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "bullet"
   depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
@@ -19,14 +22,9 @@ class GazeboAT1 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "sdformat"
+  depends_on "simbody"
   depends_on "tbb"
   depends_on "tinyxml"
-
-  depends_on "bullet" => [:optional, "with-double-precision"]
-  depends_on "ffmpeg" => :optional
-  depends_on "gts" => :optional
-  depends_on "player" => :optional
-  depends_on "simbody" => :optional
 
   patch do
     # Fix build when homebrew python is installed

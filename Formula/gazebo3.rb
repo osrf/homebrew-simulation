@@ -5,27 +5,24 @@ class Gazebo3 < Formula
   sha256 "6b77382a491833d5292b3e1fca34a04c968025a09746d87cdcf77cff040acea5"
   head "https://github.com/osrf/gazebo", :branch => "gazebo_3.1"
 
+  deprecate! :date => "July 27, 2015"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "protobuf-c" => :build
 
   depends_on "boost"
-  depends_on "doxygen"
+  depends_on "bullet"
   depends_on "cartr/qt4/qt@4"
+  depends_on "doxygen"
   depends_on "freeimage"
   depends_on "libtar"
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "sdformat"
+  depends_on "simbody"
   depends_on "tbb"
   depends_on "tinyxml"
-
-  depends_on "bullet" => [:optional, "with-double-precision"]
-  depends_on "dartsim/dart/dartsim" => [:optional, "core-only"]
-  depends_on "ffmpeg" => :optional
-  depends_on "gts" => :optional
-  depends_on "player" => :optional
-  depends_on "simbody" => :optional
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo4", :because => "Differing version of the same formula"
