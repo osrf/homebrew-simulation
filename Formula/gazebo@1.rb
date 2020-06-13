@@ -35,7 +35,7 @@ class GazeboAT1 < Formula
   patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
     url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.diff?full_index=1"
-    sha256 "70d39a547aa27a5357ddf0859d41515c945730ca1cef770be3c0cff2e29340d2"
+    sha256 "08739b2d84d7a5ca3bfe973eb463f9f1599d22da437b0aadcd7564f18eb09429"
   end
 
   patch do

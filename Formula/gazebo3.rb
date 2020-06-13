@@ -40,7 +40,7 @@ class Gazebo3 < Formula
   patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
     url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.diff?full_index=1"
-    sha256 "70d39a547aa27a5357ddf0859d41515c945730ca1cef770be3c0cff2e29340d2"
+    sha256 "08739b2d84d7a5ca3bfe973eb463f9f1599d22da437b0aadcd7564f18eb09429"
   end
 
   patch do
@@ -67,7 +67,7 @@ class Gazebo3 < Formula
   patch do
     # Another fix with boost 1.57 (gazebo #1399)
     url "https://github.com/osrf/gazebo/commit/205d42a5cb9ad7a749a8cb6ba6b56d7751b5653d.diff?full_index=1"
-    sha256 "3e7946107855a88a72862c3efe0931f0862b94f6641e21258e21dae8690246d5"
+    sha256 "293731da37dc211a016734fbdf226842d965293b2a2c2aa19443f81052585a68"
   end
 
   def install
