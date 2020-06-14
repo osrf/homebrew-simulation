@@ -5,27 +5,24 @@ class Gazebo3 < Formula
   sha256 "6b77382a491833d5292b3e1fca34a04c968025a09746d87cdcf77cff040acea5"
   head "https://github.com/osrf/gazebo", :branch => "gazebo_3.1"
 
+  deprecate! :date => "July 27, 2015"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "protobuf-c" => :build
 
   depends_on "boost"
-  depends_on "doxygen"
+  depends_on "bullet"
   depends_on "cartr/qt4/qt@4"
+  depends_on "doxygen"
   depends_on "freeimage"
   depends_on "libtar"
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "sdformat"
+  depends_on "simbody"
   depends_on "tbb"
   depends_on "tinyxml"
-
-  depends_on "bullet" => [:optional, "with-double-precision"]
-  depends_on "dartsim/dart/dartsim" => [:optional, "core-only"]
-  depends_on "ffmpeg" => :optional
-  depends_on "gts" => :optional
-  depends_on "player" => :optional
-  depends_on "simbody" => :optional
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo4", :because => "Differing version of the same formula"
@@ -43,7 +40,7 @@ class Gazebo3 < Formula
   patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
     url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.diff?full_index=1"
-    sha256 "70d39a547aa27a5357ddf0859d41515c945730ca1cef770be3c0cff2e29340d2"
+    sha256 "08739b2d84d7a5ca3bfe973eb463f9f1599d22da437b0aadcd7564f18eb09429"
   end
 
   patch do
@@ -70,7 +67,7 @@ class Gazebo3 < Formula
   patch do
     # Another fix with boost 1.57 (gazebo #1399)
     url "https://github.com/osrf/gazebo/commit/205d42a5cb9ad7a749a8cb6ba6b56d7751b5653d.diff?full_index=1"
-    sha256 "3e7946107855a88a72862c3efe0931f0862b94f6641e21258e21dae8690246d5"
+    sha256 "293731da37dc211a016734fbdf226842d965293b2a2c2aa19443f81052585a68"
   end
 
   def install

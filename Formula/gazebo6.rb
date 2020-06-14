@@ -7,11 +7,14 @@ class Gazebo6 < Formula
 
   head "https://github.com/osrf/gazebo", :branch => "gazebo6"
 
+  deprecate! :date => "January 25, 2017"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "protobuf-c" => :build
 
   depends_on "boost"
+  depends_on "bullet"
   depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
@@ -20,17 +23,9 @@ class Gazebo6 < Formula
   depends_on "ogre"
   depends_on "protobuf"
   depends_on "sdformat3"
+  depends_on "simbody"
   depends_on "tbb"
   depends_on "tinyxml"
-
-  depends_on "bullet" => [:recommended, "with-double-precision"]
-  depends_on "simbody" => :recommended
-  depends_on "dartsim/dart/dartsim4" => [:optional, "with-core-only"]
-
-  depends_on "ffmpeg" => :optional
-  depends_on "gdal" => :optional
-  depends_on "gts" => :optional
-  depends_on "player" => :optional
 
   conflicts_with "gazebo2", :because => "Differing version of the same formula"
   conflicts_with "gazebo3", :because => "Differing version of the same formula"

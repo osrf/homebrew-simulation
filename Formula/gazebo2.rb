@@ -5,10 +5,13 @@ class Gazebo2 < Formula
   sha256 "c5e886a9d43a99865d3393dab643493c906c106781ea2ee50555bb8dcf03bd81"
   head "https://github.com/osrf/gazebo", :branch => "gazebo_2.2"
 
+  deprecate! :date => "January 25, 2016"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "bullet"
   depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
@@ -17,15 +20,9 @@ class Gazebo2 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "sdformat"
+  depends_on "simbody"
   depends_on "tbb"
   depends_on "tinyxml"
-
-  depends_on "bullet" => [:optional, "with-double-precision"]
-  depends_on "dartsim/dart/dartsim" => [:optional, "core-only"]
-  depends_on "ffmpeg" => :optional
-  depends_on "gts" => :optional
-  depends_on "player" => :optional
-  depends_on "simbody" => :optional
 
   conflicts_with "gazebo3", :because => "Differing version of the same formula"
   conflicts_with "gazebo4", :because => "Differing version of the same formula"
@@ -49,7 +46,7 @@ class Gazebo2 < Formula
   patch do
     # Fix for compatibility with boost 1.62
     url "https://github.com/osrf/gazebo/commit/ff37ecfed0af9da0e9e98f26fa49217f51c4ac0f.diff?full_index=1"
-    sha256 "1fa2b2149bd1a4fbf999fe24bf39f06f7f652d4936dbdeacb807938207d0851e"
+    sha256 "0f40b547837b5b45353ec5fc0b6ebc30e82edfed4c40290f4e0ee5610034a21c"
   end
 
   def install

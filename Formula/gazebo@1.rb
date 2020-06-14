@@ -7,10 +7,13 @@ class GazeboAT1 < Formula
 
   keg_only "old version of gazebo"
 
+  deprecate! :date => "July 27, 2015"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "bullet"
   depends_on "cartr/qt4/qt@4"
   depends_on "doxygen"
   depends_on "freeimage"
@@ -19,14 +22,9 @@ class GazeboAT1 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "sdformat"
+  depends_on "simbody"
   depends_on "tbb"
   depends_on "tinyxml"
-
-  depends_on "bullet" => [:optional, "with-double-precision"]
-  depends_on "ffmpeg" => :optional
-  depends_on "gts" => :optional
-  depends_on "player" => :optional
-  depends_on "simbody" => :optional
 
   patch do
     # Fix build when homebrew python is installed
@@ -37,7 +35,7 @@ class GazeboAT1 < Formula
   patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
     url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.diff?full_index=1"
-    sha256 "70d39a547aa27a5357ddf0859d41515c945730ca1cef770be3c0cff2e29340d2"
+    sha256 "08739b2d84d7a5ca3bfe973eb463f9f1599d22da437b0aadcd7564f18eb09429"
   end
 
   patch do
