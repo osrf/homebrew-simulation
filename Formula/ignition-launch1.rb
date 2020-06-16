@@ -1,8 +1,8 @@
 class IgnitionLaunch1 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.6.0.tar.bz2"
-  sha256 "7ebc5342f60b2578c531e9d05a3d276c930285cd37eee02882244dffbb5b2f61"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.7.0.tar.bz2"
+  sha256 "d08e8a738858a81acf8ab74bf90f1b7f895b38f14304313a12ad4834d6de223a"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
