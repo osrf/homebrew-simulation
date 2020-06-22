@@ -8,9 +8,7 @@ class Ogre19 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "a7113b6b6d88fe5755d0c9c809e592d59dcbe99ac7a24a8d76cd0bd69ebbd32f" => :mojave
-    sha256 "0aab13c0c1475912241bb0d26a4148d21e948c025b6b3199715e4e860cb97ef7" => :high_sierra
-    sha256 "ca9a63ea85a41014f49f46de0cb9ef120ae763738313b301e3e91ca09d170f5e" => :sierra
+    sha256 "5f46882681a07c5c78eae56de66d09e5ac353939e00841af856e875fb8402a56" => :mojave
   end
 
   option "with-cg"
