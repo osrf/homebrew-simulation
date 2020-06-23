@@ -1,9 +1,8 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.1.0.tar.bz2"
-  sha256 "3987d538885b8388c1755209b5e969c8366b3fab52ab4325154be3b315ce9b72"
-  revision 1
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.2.0.tar.bz2"
+  sha256 "969e3515e055a9f1b743b0366c91fb1e30434efc892cd0195f04689fb33dabe7"
 
   head "https://github.com/ignitionrobotics/ign-gui", :branch => "ign-gui3"
 
