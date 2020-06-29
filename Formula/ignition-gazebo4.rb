@@ -18,18 +18,18 @@ class IgnitionGazebo4 < Formula
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-fuel-tools4"
+  depends_on "ignition-fuel-tools5"
   depends_on "ignition-gui4"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs5"
+  depends_on "ignition-msgs6"
   depends_on "ignition-physics2"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering4"
   depends_on "ignition-sensors4"
-  depends_on "ignition-transport8"
+  depends_on "ignition-transport9"
   depends_on :macos => :mojave # c++17
   depends_on "pkg-config"
-  depends_on "sdformat9"
+  depends_on "sdformat10"
 
   def install
     ENV.m64

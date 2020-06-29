@@ -14,10 +14,10 @@ class IgnitionLaunch3 < Formula
   depends_on "ignition-common3"
   depends_on "ignition-gazebo4"
   depends_on "ignition-gui4"
-  depends_on "ignition-msgs5"
+  depends_on "ignition-msgs6"
   depends_on "ignition-plugin1"
   depends_on "ignition-tools"
-  depends_on "ignition-transport8"
+  depends_on "ignition-transport9"
   depends_on "qt"
   depends_on "tinyxml2"
 
