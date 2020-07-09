@@ -12,7 +12,7 @@ class IgnitionDome < Formula
   depends_on "ignition-launch3"
   depends_on "ignition-math6"
   depends_on "ignition-msgs6"
-  depends_on "ignition-physics2"
+  depends_on "ignition-physics3"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering3"
   depends_on "ignition-sensors4"
