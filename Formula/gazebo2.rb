@@ -5,7 +5,7 @@ class Gazebo2 < Formula
   sha256 "c5e886a9d43a99865d3393dab643493c906c106781ea2ee50555bb8dcf03bd81"
   head "https://github.com/osrf/gazebo", :branch => "gazebo_2.2"
 
-  deprecate! :date => "January 25, 2016"
+  deprecate! :date => "2016-01-25"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -24,12 +24,12 @@ class Gazebo2 < Formula
   depends_on "tbb"
   depends_on "tinyxml"
 
-  conflicts_with "gazebo3", :because => "Differing version of the same formula"
-  conflicts_with "gazebo4", :because => "Differing version of the same formula"
-  conflicts_with "gazebo5", :because => "Differing version of the same formula"
-  conflicts_with "gazebo6", :because => "Differing version of the same formula"
-  conflicts_with "gazebo7", :because => "Differing version of the same formula"
-  conflicts_with "gazebo8", :because => "Differing version of the same formula"
+  conflicts_with "gazebo3", :because => "differing version of the same formula"
+  conflicts_with "gazebo4", :because => "differing version of the same formula"
+  conflicts_with "gazebo5", :because => "differing version of the same formula"
+  conflicts_with "gazebo6", :because => "differing version of the same formula"
+  conflicts_with "gazebo7", :because => "differing version of the same formula"
+  conflicts_with "gazebo8", :because => "differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed

@@ -15,9 +15,9 @@ class Sdformat < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat3", :because => "Differing version of the same formula"
-  conflicts_with "sdformat4", :because => "Differing version of the same formula"
-  conflicts_with "sdformat5", :because => "Differing version of the same formula"
+  conflicts_with "sdformat3", :because => "differing version of the same formula"
+  conflicts_with "sdformat4", :because => "differing version of the same formula"
+  conflicts_with "sdformat5", :because => "differing version of the same formula"
 
   def install
     ENV.m64

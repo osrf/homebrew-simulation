@@ -21,7 +21,7 @@ class IgnitionGui0 < Formula
   depends_on "qwt"
   depends_on "tinyxml2"
 
-  # conflicts_with "cartr/qt4/qt@4", :because => "Differing versions of qt"
+  # conflicts_with "cartr/qt4/qt@4", :because => "differing versions of qt"
 
   def install
     ENV.m64

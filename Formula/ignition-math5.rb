@@ -20,7 +20,7 @@ class IgnitionMath5 < Formula
   depends_on "eigen"
   depends_on "ignition-cmake1"
 
-  conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
+  conflicts_with "ignition-math2", :because => "symbols collision between the two libraries"
 
   def install
     system "cmake", ".", *std_cmake_args

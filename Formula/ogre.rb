@@ -17,7 +17,7 @@ class Ogre < Formula
   depends_on "tbb"
   depends_on :x11
 
-  conflicts_with "ogre1.9", :because => "Differing version of the same formula"
+  conflicts_with "ogre1.9", :because => "differing version of the same formula"
 
   # https://gist.github.com/4237236
   patch do
