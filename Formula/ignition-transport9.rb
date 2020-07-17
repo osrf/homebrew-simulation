@@ -5,7 +5,7 @@ class IgnitionTransport9 < Formula
   version "9.999.999~0~20200716~876236"
   sha256 "a5ab1c8e23877f4485eeed21243ad3bef284846e4be2a4d550ecfdab648a6017"
   license "Apache-2.0"
-  
+
   head "https://github.com/ignitionrobotics/ign-transport", :branch => "master"
 
   depends_on "doxygen" => [:build, :optional]
