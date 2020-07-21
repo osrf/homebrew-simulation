@@ -3,6 +3,7 @@ class IgnitionRendering2 < Formula
   homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering2-2.4.0.tar.bz2"
   sha256 "ef8d3ffe4b0ba39a271e695371c533f142c0a6305933c0df1fd8e472f8cf3478"
+  license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

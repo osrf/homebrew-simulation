@@ -4,6 +4,7 @@ class IgnitionMsgs6 < Formula
   url "https://github.com/ignitionrobotics/ign-msgs/archive/5bbf3bd4bd5b33df42c0803fec3864a52b66cff4.tar.gz"
   version "5.999.999~0~20200407~47d937"
   sha256 "e9e7bceae471eed7fd6fe9dee9c003deb86d05fdf2d92acbe2e8703ac3947093"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-msgs", :branch => "master"
 

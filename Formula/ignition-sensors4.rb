@@ -4,6 +4,7 @@ class IgnitionSensors4 < Formula
   url "https://github.com/ignitionrobotics/ign-sensors/archive/766301b738d9a92a7b17fbdefdbc0f0487fb1bea.tar.gz"
   version "3.999.999~0~20200408~84f8018"
   sha256 "1d5334a25c9cb34c36744d1d2ebdc7dd0c92c8bf214df4eabc26f487493058b6"
+  license "Apache-2.0"
   revision 1
 
   head "https://github.com/ignitionrobotics/ign-sensors", :branch => "master"

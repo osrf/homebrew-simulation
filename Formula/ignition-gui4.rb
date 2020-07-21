@@ -4,6 +4,7 @@ class IgnitionGui4 < Formula
   url "https://github.com/ignitionrobotics/ign-gui/archive/a60cb7d61339b407ff3285ddbf16f618c4c4b3b9.tar.gz"
   version "3.999.999~0~20200520~a60cb7"
   sha256 "3984a5a00010b1da7a95908149345cabb1cbbc3428d03eeaa27c3a4354c3d53d"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gui", :branch => "master"
 

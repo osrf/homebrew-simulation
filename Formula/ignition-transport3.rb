@@ -3,6 +3,7 @@ class IgnitionTransport3 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport3-3.1.0.tar.bz2"
   sha256 "bc8ac5bbb1cfadda857f748ba6467f9512b37a2b8395121586c459166ae45703"
+  license "Apache-2.0"
   revision 2
 
   head "https://github.com/ignitionrobotics/ign-transport", :branch => "ign-transport3"

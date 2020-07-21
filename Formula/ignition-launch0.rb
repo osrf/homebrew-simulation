@@ -3,6 +3,7 @@ class IgnitionLaunch0 < Formula
   homepage "https://github.com/ignitionrobotics/ign-launch"
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-0.2.0.tar.bz2"
   sha256 "5becd254b5e47668e41b2da676bae16c119a856ed2ea0a0de661a555fcd5f685"
+  license "Apache-2.0"
   revision 1
 
   depends_on "cmake" => :build

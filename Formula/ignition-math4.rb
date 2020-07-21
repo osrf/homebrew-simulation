@@ -3,6 +3,7 @@ class IgnitionMath4 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math4-4.0.0.tar.bz2"
   sha256 "5533d1aca0a87450a6ec4770e489bfe24860e6da843b005e594be264c2d6faa0"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-math", :branch => "ign-math4"
 

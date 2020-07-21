@@ -3,6 +3,7 @@ class IgnitionCmake0 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake-0.6.1.tar.bz2"
   sha256 "60745d5637a790a244b68c848ded6dd78acb11b542ae302d7ac9b7b629634064"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-cmake", :branch => "ign-cmake0"
 
