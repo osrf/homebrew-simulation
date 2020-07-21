@@ -3,6 +3,7 @@ class Player < Formula
   homepage "https://playerstage.sourceforge.net"
   url "https://downloads.sourceforge.net/project/playerstage/Player/3.0.2/player-3.0.2.tar.gz"
   sha256 "25f93185aeae969adcd2f8ec2849f7773e1715a901e0ea365c777368a5c61343"
+  license "GPL-2.0"
   head "http://svn.code.sf.net/p/playerstage/svn/code/player/trunk"
 
   depends_on "cmake" => :build

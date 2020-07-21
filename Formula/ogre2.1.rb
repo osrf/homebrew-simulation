@@ -4,6 +4,7 @@ class Ogre21 < Formula
   url "https://github.com/OGRECave/ogre-next/archive/b4c4fa785c03c2d4ba2a1d28d94394c7ca000358.tar.gz"
   version "2.0.99999~pre0~0~20180616~06a386f"
   sha256 "c9580c2380669c1de170612609f2f122c08cd88393a75ad53535e433c8feb72d"
+  license "MIT"
 
   head "https://github.com/OGRECave/ogre-next", :branch => "v2-1"
 
