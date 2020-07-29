@@ -3,6 +3,7 @@ class Sdformat6 < Formula
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.2.0.tar.bz2"
   sha256 "be818648f0a639a0c410231673e8c7ba043c2589586e43ef8c757070855898fa"
+  license "Apache-2.0"
   revision 1
 
   head "https://github.com/osrf/sdformat", :branch => "sdf6", :using => :git
@@ -24,11 +25,11 @@ class Sdformat6 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", :because => "Differing version of the same formula"
-  conflicts_with "sdformat3", :because => "Differing version of the same formula"
-  conflicts_with "sdformat4", :because => "Differing version of the same formula"
-  conflicts_with "sdformat5", :because => "Differing version of the same formula"
-  conflicts_with "sdformat7", :because => "Differing version of the same formula"
+  conflicts_with "sdformat", :because => "differing version of the same formula"
+  conflicts_with "sdformat3", :because => "differing version of the same formula"
+  conflicts_with "sdformat4", :because => "differing version of the same formula"
+  conflicts_with "sdformat5", :because => "differing version of the same formula"
+  conflicts_with "sdformat7", :because => "differing version of the same formula"
 
   def install
     ENV.m64

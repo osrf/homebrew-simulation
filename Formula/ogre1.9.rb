@@ -4,11 +4,14 @@ class Ogre19 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ogre/releases/sinbad-ogre-108ab0bcc696.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
-  revision 9
+  license "MIT"
+  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "5f46882681a07c5c78eae56de66d09e5ac353939e00841af856e875fb8402a56" => :mojave
+    sha256 "a7113b6b6d88fe5755d0c9c809e592d59dcbe99ac7a24a8d76cd0bd69ebbd32f" => :mojave
+    sha256 "0aab13c0c1475912241bb0d26a4148d21e948c025b6b3199715e4e860cb97ef7" => :high_sierra
+    sha256 "ca9a63ea85a41014f49f46de0cb9ef120ae763738313b301e3e91ca09d170f5e" => :sierra
   end
 
   option "with-cg"
@@ -19,11 +22,10 @@ class Ogre19 < Formula
   depends_on "freeimage"
   depends_on "freetype"
   depends_on "libzzip"
-  depends_on :macos => :mojave # OpenGL problem on 10.13
   depends_on "tbb"
   depends_on :x11
 
-  conflicts_with "ogre", :because => "Differing version of the same formula"
+  conflicts_with "ogre", :because => "differing version of the same formula"
 
   patch do
     url "https://gist.github.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/bf4a4d16020821218f73db0d56aa111ab2fde679/fix-1.9-HEAD.diff"

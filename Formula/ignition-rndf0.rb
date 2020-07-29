@@ -3,6 +3,7 @@ class IgnitionRndf0 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://github.com/ignitionrobotics/ign-rndf/archive/45652bceabce1ea1630b41623f56560f10674343.tar.gz"
   sha256 "ae108308d8a7b4dddfd3a5d23eb3d8a844e1760bf01cb3066cdd45570cf6c26f"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-rndf", :branch => "master"
 

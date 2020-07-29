@@ -1,16 +1,12 @@
-class IgnitionTransport8 < Formula
+class IgnitionTransport9 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.0.0.tar.bz2"
-  sha256 "d0963783c4db87fa71bacebd424c573331fed5d713d610b20b3552effe6d3ce3"
+  url "https://github.com/ignitionrobotics/ign-transport/archive/876236053887dea5f0727a7e7e52d3580aac597d.tar.gz"
+  version "9.999.999~0~20200716~876236"
+  sha256 "a5ab1c8e23877f4485eeed21243ad3bef284846e4be2a4d550ecfdab648a6017"
   license "Apache-2.0"
-  revision 1
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "3e4aaa942cc4ec43b0a8cf12108a67efe479908d78a80795d89a1065ff68b329" => :mojave
-    sha256 "3ddf81b59c8039a34fbb64a2134dd4e641928ddeca6bb9ca9f765e8bf0d8930c" => :high_sierra
-  end
+  head "https://github.com/ignitionrobotics/ign-transport", :branch => "master"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
@@ -18,7 +14,7 @@ class IgnitionTransport8 < Formula
   depends_on "cmake"
   depends_on "cppzmq"
   depends_on "ignition-cmake2"
-  depends_on "ignition-msgs5"
+  depends_on "ignition-msgs6"
   depends_on "ignition-tools"
   depends_on :macos => :high_sierra # c++17
   depends_on "ossp-uuid"
@@ -42,16 +38,16 @@ class IgnitionTransport8 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
-      find_package(ignition-transport8 QUIET REQUIRED)
+      find_package(ignition-transport9 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-transport8::ignition-transport8)
+      target_link_libraries(test_cmake ignition-transport9::ignition-transport9)
     EOS
-    system "pkg-config", "ignition-transport8"
-    cflags = `pkg-config --cflags ignition-transport8`.split(" ")
+    system "pkg-config", "ignition-transport9"
+    cflags = `pkg-config --cflags ignition-transport9`.split(" ")
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-transport8",
+                   "-lignition-transport9",
                    "-lc++",
                    "-o", "test"
     ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s

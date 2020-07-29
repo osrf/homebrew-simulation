@@ -3,6 +3,7 @@ class IgnitionMath6 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.4.0.tar.bz2"
   sha256 "d31061dc34e940a1d84234c068e3da9c1015e1580eeed31844a6d04071578526"
+  license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -17,7 +18,7 @@ class IgnitionMath6 < Formula
   depends_on "eigen"
   depends_on "ignition-cmake2"
 
-  conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
+  conflicts_with "ignition-math2", :because => "symbols collision between the two libraries"
 
   def install
     system "cmake", ".", *std_cmake_args
