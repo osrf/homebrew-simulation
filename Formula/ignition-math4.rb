@@ -3,6 +3,7 @@ class IgnitionMath4 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math4-4.0.0.tar.bz2"
   sha256 "5533d1aca0a87450a6ec4770e489bfe24860e6da843b005e594be264c2d6faa0"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-math", :branch => "ign-math4"
 
@@ -19,7 +20,7 @@ class IgnitionMath4 < Formula
   depends_on "doxygen" => :build
   depends_on "ignition-cmake0"
 
-  conflicts_with "ignition-math2", :because => "Symbols collision between the two libraries"
+  conflicts_with "ignition-math2", :because => "symbols collision between the two libraries"
 
   def install
     system "cmake", ".", *std_cmake_args

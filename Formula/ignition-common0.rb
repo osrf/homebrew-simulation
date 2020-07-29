@@ -4,6 +4,7 @@ class IgnitionCommon0 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common-0.5.0~pre4.tar.bz2"
   version "0.5.0~pre4"
   sha256 "4e9c5507a2f480a2e2dc8dd2aaa22e91905791f87745e69f918ab67304ef39a7"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-common", :branch => "ign-common0"
 

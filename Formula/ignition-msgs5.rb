@@ -3,14 +3,8 @@ class IgnitionMsgs5 < Formula
   homepage "https://github.com/ignitionrobotics/ign-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.3.0.tar.bz2"
   sha256 "49541d54e43f1aa38b7cf2735c216c38f4ec5a1f5389b94200115206c18c7e17"
-  revision 2
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "6beb317bc62c9f1ca673813256efda3945e1896a5ac6d95916efe650b5a2714b" => :mojave
-    sha256 "78d3e7134778965f5280a05513a642c67449a88e141ac2eecbfdd34c9deca837" => :high_sierra
-  end
+  license "Apache-2.0"
+  revision 3
 
   depends_on "protobuf-c" => :build
 

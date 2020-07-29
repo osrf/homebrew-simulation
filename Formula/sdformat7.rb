@@ -4,6 +4,7 @@ class Sdformat7 < Formula
   url "https://github.com/osrf/sdformat/archive/fc497c4408e9e111f66588140cadfcbc17827894.tar.gz"
   version "6.999.999~20190809~f6b1f8e"
   sha256 "f6b67acabb22194ef33df5ef95646ad717f59d737e9e8d473b0d9b674d4c199f"
+  license "Apache-2.0"
 
   head "https://github.com/osrf/sdformat", :branch => "sdf7", :using => :git
 
@@ -24,11 +25,11 @@ class Sdformat7 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", :because => "Differing version of the same formula"
-  conflicts_with "sdformat3", :because => "Differing version of the same formula"
-  conflicts_with "sdformat4", :because => "Differing version of the same formula"
-  conflicts_with "sdformat5", :because => "Differing version of the same formula"
-  conflicts_with "sdformat6", :because => "Differing version of the same formula"
+  conflicts_with "sdformat", :because => "differing version of the same formula"
+  conflicts_with "sdformat3", :because => "differing version of the same formula"
+  conflicts_with "sdformat4", :because => "differing version of the same formula"
+  conflicts_with "sdformat5", :because => "differing version of the same formula"
+  conflicts_with "sdformat6", :because => "differing version of the same formula"
 
   def install
     ENV.m64

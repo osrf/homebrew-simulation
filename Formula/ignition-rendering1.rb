@@ -3,6 +3,7 @@ class IgnitionRendering1 < Formula
   homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering-1.0.0.tar.bz2"
   sha256 "73dc1ce94c281ddd21796ebf363e1cd03acf15709cda959926d3187462221bfe"
+  license "Apache-2.0"
   revision 2
 
   depends_on "cmake" => :build

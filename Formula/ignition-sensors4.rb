@@ -1,6 +1,12 @@
 class IgnitionSensors4 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
+  url "https://github.com/ignitionrobotics/ign-sensors/archive/cf9a8bcf66477a6b30f7415cfb5591699bc2fedc.tar.gz"
+  version "3.999.999~0~20200721~cf9a8bc"
+  sha256 "a9fa1db1c340169e701d2ecb59b91e865bdb4856b72466da409a0b2302b5bca0"
+  license "Apache-2.0"
+  revision 1
+
   head "https://github.com/ignitionrobotics/ign-sensors", :branch => "master"
 
   depends_on "cmake" => [:build, :test]

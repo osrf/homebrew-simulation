@@ -4,6 +4,7 @@ class IgnitionFuelTools5 < Formula
   url "https://github.com/ignitionrobotics/ign-fuel-tools/archive/e0ecb6f22b2ed0fb2e547eb419b61bebf1cd3afa.tar.gz"
   version "4.999.999~0~20200407~5b7d9e"
   sha256 "a6eaa557c45938cef64520ab9f434f32701a1a2849260641c1c67d2eab38b096"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools", :branch => "master"
 

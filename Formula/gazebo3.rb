@@ -3,9 +3,10 @@ class Gazebo3 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-3.2.0.tar.bz2"
   sha256 "6b77382a491833d5292b3e1fca34a04c968025a09746d87cdcf77cff040acea5"
+  license "Apache-2.0"
   head "https://github.com/osrf/gazebo", :branch => "gazebo_3.1"
 
-  deprecate! :date => "July 27, 2015"
+  deprecate! :date => "2015-07-27"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -24,12 +25,12 @@ class Gazebo3 < Formula
   depends_on "tbb"
   depends_on "tinyxml"
 
-  conflicts_with "gazebo2", :because => "Differing version of the same formula"
-  conflicts_with "gazebo4", :because => "Differing version of the same formula"
-  conflicts_with "gazebo5", :because => "Differing version of the same formula"
-  conflicts_with "gazebo6", :because => "Differing version of the same formula"
-  conflicts_with "gazebo7", :because => "Differing version of the same formula"
-  conflicts_with "gazebo8", :because => "Differing version of the same formula"
+  conflicts_with "gazebo2", :because => "differing version of the same formula"
+  conflicts_with "gazebo4", :because => "differing version of the same formula"
+  conflicts_with "gazebo5", :because => "differing version of the same formula"
+  conflicts_with "gazebo6", :because => "differing version of the same formula"
+  conflicts_with "gazebo7", :because => "differing version of the same formula"
+  conflicts_with "gazebo8", :because => "differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed
