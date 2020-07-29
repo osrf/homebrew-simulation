@@ -3,6 +3,7 @@ class IgnitionCommon3 < Formula
   homepage "https://github.com/ignitionrobotics/ign-common"
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.6.0.tar.bz2"
   sha256 "f033b96c8a1500e2bdaa3760715e28264403148b3a0628534565fea0dec67bed"
+  license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

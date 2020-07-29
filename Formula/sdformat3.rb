@@ -3,6 +3,7 @@ class Sdformat3 < Formula
   homepage "http://sdformat.org"
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-3.7.0.tar.bz2"
   sha256 "18251b133e4fde105f883518691f15fc9f1fc2af8b89ab6de4bc26b9df42761e"
+  license "Apache-2.0"
   revision 5
 
   head "https://github.com/osrf/sdformat", :branch => "sdf3", :using => :git

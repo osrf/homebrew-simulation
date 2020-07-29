@@ -3,6 +3,7 @@ class IgnitionRendering0 < Formula
   homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering0-0.2.0.tar.bz2"
   sha256 "2935ec21e61d40e93d89540843d0317527b25a28b8cd750658edd619db45ff03"
+  license "Apache-2.0"
   revision 1
 
   head "https://github.com/ignitionrobotics/ign-rendering", :branch => "ign-rendering0"

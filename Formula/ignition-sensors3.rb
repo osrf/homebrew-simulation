@@ -3,6 +3,7 @@ class IgnitionSensors3 < Formula
   homepage "https://github.com/ignitionrobotics/ign-sensors"
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.0.0.tar.bz2"
   sha256 "a1b8eafb06a07c4631c62d98a5e333f1db81b0b0f95b8ea2981a0c29a858c824"
+  license "Apache-2.0"
   revision 1
 
   head "https://github.com/ignitionrobotics/ign-sensors", :branch => "ign-sensors3"

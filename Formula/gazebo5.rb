@@ -3,6 +3,7 @@ class Gazebo5 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-5.4.0.tar.bz2"
   sha256 "a645b3dadbd9aeb8fb4a42857117771fae13c74780bebfbb3c00a233ed5b1cdb"
+  license "Apache-2.0"
   revision 2
 
   head "https://github.com/osrf/gazebo", :branch => "gazebo5"

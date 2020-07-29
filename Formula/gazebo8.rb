@@ -3,6 +3,7 @@ class Gazebo8 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-8.6.0.tar.bz2"
   sha256 "c62aeb4a0a761a3685c7f8caa63e8f8ba588ab2ce5ac7b956c6ddeb1ada7be88"
+  license "Apache-2.0"
   revision 5
   version_scheme 1
 

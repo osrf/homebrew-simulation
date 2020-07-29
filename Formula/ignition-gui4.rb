@@ -1,9 +1,10 @@
 class IgnitionGui4 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://github.com/ignitionrobotics/ign-gui/archive/a60cb7d61339b407ff3285ddbf16f618c4c4b3b9.tar.gz"
-  version "3.999.999~0~20200520~a60cb7"
-  sha256 "3984a5a00010b1da7a95908149345cabb1cbbc3428d03eeaa27c3a4354c3d53d"
+  url "https://github.com/ignitionrobotics/ign-gui/archive/5d1428a3c90302daa73d5b94c14618fb4c25f7d4.tar.gz"
+  version "3.999.999~0~20200721~5d1428"
+  sha256 "12a6e69a90f546721fac3ff7e4a0e41705373e3f63508a82599052241573666a"
+  license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gui", :branch => "master"
 
@@ -16,10 +17,10 @@ class IgnitionGui4 < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-msgs5"
+  depends_on "ignition-msgs6"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering4"
-  depends_on "ignition-transport8"
+  depends_on "ignition-transport9"
   depends_on :macos => :mojave # c++17
   depends_on "qt"
   depends_on "qwt"

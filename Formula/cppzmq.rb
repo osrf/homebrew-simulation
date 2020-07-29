@@ -3,6 +3,7 @@ class Cppzmq < Formula
   homepage "https://github.com/zeromq/cppzmq"
   url "https://github.com/zeromq/cppzmq.git"
   version "0.0.0-brew"
+  license "MIT"
 
   bottle :unneeded
 

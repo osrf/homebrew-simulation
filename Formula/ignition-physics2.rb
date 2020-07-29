@@ -3,6 +3,7 @@ class IgnitionPhysics2 < Formula
   homepage "https://github.com/ignitionrobotics/ign-physics"
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.1.0.tar.bz2"
   sha256 "25eebe1c320993f0a433a7d6b41407b2ab4bb8a8407174e17b8e3c505518e117"
+  license "Apache-2.0"
   revision 1
 
   bottle do

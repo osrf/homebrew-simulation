@@ -3,6 +3,8 @@ class Gazebo9 < Formula
   homepage "http://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.13.2.tar.bz2"
   sha256 "4a73008b3a7b3dd5cc112fd73f46a9157d30323d7356054998c7d93cb9ce1e46"
+  license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/gazebo", :branch => "gazebo9"
 

@@ -3,6 +3,7 @@ class IgnitionCommon1 < Formula
   homepage "https://github.com/ignitionrobotics/ign-common"
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
+  license "Apache-2.0"
   revision 3
 
   head "https://github.com/ignitionrobotics/ign-common", :branch => "ign-common1"
