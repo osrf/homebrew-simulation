@@ -6,14 +6,14 @@ class IgnitionMsgs6 < Formula
   sha256 "e9e7bceae471eed7fd6fe9dee9c003deb86d05fdf2d92acbe2e8703ac3947093"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-msgs", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-msgs", branch: "master"
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
   depends_on "ignition-tools"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "tinyxml2"

@@ -6,7 +6,7 @@ class IgnitionSensors1 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-sensors", :branch => "ign-sensors1"
+  head "https://github.com/ignitionrobotics/ign-sensors", branch: "ign-sensors1"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

@@ -6,7 +6,7 @@ class Gazebo11 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/osrf/gazebo", :branch => "gazebo11"
+  head "https://github.com/osrf/gazebo", branch: "gazebo11"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -41,15 +41,15 @@ class Gazebo11 < Formula
   depends_on "gdal" => :optional
   depends_on "player" => :optional
 
-  conflicts_with "gazebo2", :because => "differing version of the same formula"
-  conflicts_with "gazebo3", :because => "differing version of the same formula"
-  conflicts_with "gazebo4", :because => "differing version of the same formula"
-  conflicts_with "gazebo5", :because => "differing version of the same formula"
-  conflicts_with "gazebo6", :because => "differing version of the same formula"
-  conflicts_with "gazebo7", :because => "differing version of the same formula"
-  conflicts_with "gazebo8", :because => "differing version of the same formula"
-  conflicts_with "gazebo9", :because => "differing version of the same formula"
-  conflicts_with "gazebo10", :because => "differing version of the same formula"
+  conflicts_with "gazebo2", because: "differing version of the same formula"
+  conflicts_with "gazebo3", because: "differing version of the same formula"
+  conflicts_with "gazebo4", because: "differing version of the same formula"
+  conflicts_with "gazebo5", because: "differing version of the same formula"
+  conflicts_with "gazebo6", because: "differing version of the same formula"
+  conflicts_with "gazebo7", because: "differing version of the same formula"
+  conflicts_with "gazebo8", because: "differing version of the same formula"
+  conflicts_with "gazebo9", because: "differing version of the same formula"
+  conflicts_with "gazebo10", because: "differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed

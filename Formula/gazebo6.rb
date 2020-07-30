@@ -6,9 +6,9 @@ class Gazebo6 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/osrf/gazebo", :branch => "gazebo6"
+  head "https://github.com/osrf/gazebo", branch: "gazebo6"
 
-  deprecate! :date => "2017-01-25"
+  deprecate! date: "2017-01-25"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -28,12 +28,12 @@ class Gazebo6 < Formula
   depends_on "tbb"
   depends_on "tinyxml"
 
-  conflicts_with "gazebo2", :because => "differing version of the same formula"
-  conflicts_with "gazebo3", :because => "differing version of the same formula"
-  conflicts_with "gazebo4", :because => "differing version of the same formula"
-  conflicts_with "gazebo5", :because => "differing version of the same formula"
-  conflicts_with "gazebo7", :because => "differing version of the same formula"
-  conflicts_with "gazebo8", :because => "differing version of the same formula"
+  conflicts_with "gazebo2", because: "differing version of the same formula"
+  conflicts_with "gazebo3", because: "differing version of the same formula"
+  conflicts_with "gazebo4", because: "differing version of the same formula"
+  conflicts_with "gazebo5", because: "differing version of the same formula"
+  conflicts_with "gazebo7", because: "differing version of the same formula"
+  conflicts_with "gazebo8", because: "differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed

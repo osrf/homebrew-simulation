@@ -6,7 +6,7 @@ class IgnitionTransport9 < Formula
   sha256 "a5ab1c8e23877f4485eeed21243ad3bef284846e4be2a4d550ecfdab648a6017"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-transport", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-transport", branch: "master"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
@@ -16,7 +16,7 @@ class IgnitionTransport9 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-msgs6"
   depends_on "ignition-tools"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"

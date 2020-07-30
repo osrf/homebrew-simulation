@@ -6,7 +6,7 @@ class IgnitionGazebo1 < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", :branch => "ign-gazebo1"
+  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo1"
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -21,11 +21,11 @@ class IgnitionGazebo1 < Formula
   depends_on "ignition-rendering1"
   depends_on "ignition-sensors1"
   depends_on "ignition-transport6"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat8"
 
-  conflicts_with "ignition-gazebo2", :because => "both install bin/ign-gazebo symlinks"
+  conflicts_with "ignition-gazebo2", because: "both install bin/ign-gazebo symlinks"
 
   def install
     ENV.m64

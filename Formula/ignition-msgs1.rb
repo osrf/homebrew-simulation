@@ -7,7 +7,7 @@ class IgnitionMsgs1 < Formula
   revision 8
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-msgs", :branch => "ign-msgs1"
+  head "https://github.com/ignitionrobotics/ign-msgs", branch: "ign-msgs1"
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
