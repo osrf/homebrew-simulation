@@ -1,4 +1,4 @@
-class IgnitionPhysics2 < Formula
+class IgnitionPhysics3 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
   url "https://github.com/ignitionrobotics/ign-physics/archive/061965f69be7077c2ec3732ef4ef6b07f1a8cf06.tar.gz"
