@@ -6,7 +6,7 @@ class Gazebo9 < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/osrf/gazebo", :branch => "gazebo9"
+  head "https://github.com/osrf/gazebo", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -25,7 +25,7 @@ class Gazebo9 < Formula
   depends_on "ignition-msgs1"
   depends_on "ignition-transport4"
   depends_on "libtar"
-  depends_on :macos => :mojave # ogre1.9 missing in highsierra
+  depends_on macos: :mojave # ogre1.9 missing in highsierra
   depends_on "ogre1.9"
   depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
@@ -46,15 +46,15 @@ class Gazebo9 < Formula
   depends_on "gdal" => :optional
   depends_on "player" => :optional
 
-  conflicts_with "gazebo2", :because => "differing version of the same formula"
-  conflicts_with "gazebo3", :because => "differing version of the same formula"
-  conflicts_with "gazebo4", :because => "differing version of the same formula"
-  conflicts_with "gazebo5", :because => "differing version of the same formula"
-  conflicts_with "gazebo6", :because => "differing version of the same formula"
-  conflicts_with "gazebo7", :because => "differing version of the same formula"
-  conflicts_with "gazebo8", :because => "differing version of the same formula"
-  conflicts_with "gazebo10", :because => "differing version of the same formula"
-  conflicts_with "gazebo11", :because => "differing version of the same formula"
+  conflicts_with "gazebo2", because: "differing version of the same formula"
+  conflicts_with "gazebo3", because: "differing version of the same formula"
+  conflicts_with "gazebo4", because: "differing version of the same formula"
+  conflicts_with "gazebo5", because: "differing version of the same formula"
+  conflicts_with "gazebo6", because: "differing version of the same formula"
+  conflicts_with "gazebo7", because: "differing version of the same formula"
+  conflicts_with "gazebo8", because: "differing version of the same formula"
+  conflicts_with "gazebo10", because: "differing version of the same formula"
+  conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed

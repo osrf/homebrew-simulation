@@ -7,9 +7,9 @@ class Gazebo8 < Formula
   revision 5
   version_scheme 1
 
-  head "https://github.com/osrf/gazebo", :branch => "gazebo8"
+  head "https://github.com/osrf/gazebo", branch: "gazebo8"
 
-  deprecate! :date => "2019-01-25"
+  deprecate! date: "2019-01-25"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -42,12 +42,12 @@ class Gazebo8 < Formula
   depends_on "gdal" => :optional
   depends_on "player" => :optional
 
-  conflicts_with "gazebo2", :because => "differing version of the same formula"
-  conflicts_with "gazebo3", :because => "differing version of the same formula"
-  conflicts_with "gazebo4", :because => "differing version of the same formula"
-  conflicts_with "gazebo5", :because => "differing version of the same formula"
-  conflicts_with "gazebo6", :because => "differing version of the same formula"
-  conflicts_with "gazebo7", :because => "differing version of the same formula"
+  conflicts_with "gazebo2", because: "differing version of the same formula"
+  conflicts_with "gazebo3", because: "differing version of the same formula"
+  conflicts_with "gazebo4", because: "differing version of the same formula"
+  conflicts_with "gazebo5", because: "differing version of the same formula"
+  conflicts_with "gazebo6", because: "differing version of the same formula"
+  conflicts_with "gazebo7", because: "differing version of the same formula"
 
   patch do
     # Fix for compatibility with boost 1.69
