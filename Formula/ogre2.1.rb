@@ -6,7 +6,7 @@ class Ogre21 < Formula
   sha256 "c9580c2380669c1de170612609f2f122c08cd88393a75ad53535e433c8feb72d"
   license "MIT"
 
-  head "https://github.com/OGRECave/ogre-next", :branch => "v2-1"
+  head "https://github.com/OGRECave/ogre-next", branch: "v2-1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
