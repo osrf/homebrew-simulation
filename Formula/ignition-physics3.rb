@@ -2,8 +2,8 @@ class IgnitionPhysics3 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
   url "https://github.com/ignitionrobotics/ign-physics/archive/061965f69be7077c2ec3732ef4ef6b07f1a8cf06.tar.gz"
-  sha256 "fac94bdc0fb61b0bd6fe398ebce9b6a2525a421e134747772ee0fb7e633e7233"
   version "2.999.999~0~20200731~061965f"
+  sha256 "fac94bdc0fb61b0bd6fe398ebce9b6a2525a421e134747772ee0fb7e633e7233"
   license "Apache-2.0"
   revision 1
 

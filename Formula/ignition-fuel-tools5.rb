@@ -6,7 +6,7 @@ class IgnitionFuelTools5 < Formula
   sha256 "a6eaa557c45938cef64520ab9f434f32701a1a2849260641c1c67d2eab38b096"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-fuel-tools", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-fuel-tools", branch: "master"
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
@@ -15,7 +15,7 @@ class IgnitionFuelTools5 < Formula
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
 
   def install
