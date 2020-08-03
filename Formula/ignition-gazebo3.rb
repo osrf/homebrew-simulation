@@ -6,7 +6,7 @@ class IgnitionGazebo3 < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", :branch => "ign-gazebo3"
+  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -27,7 +27,7 @@ class IgnitionGazebo3 < Formula
   depends_on "ignition-rendering3"
   depends_on "ignition-sensors3"
   depends_on "ignition-transport8"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat9"
 

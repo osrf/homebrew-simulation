@@ -6,7 +6,7 @@ class IgnitionLaunch3 < Formula
   sha256 "2d25ab18e6593a777e77a1e64d398486b712e1ab78cbfca9ec7320af5daac319"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-launch", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-launch", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
