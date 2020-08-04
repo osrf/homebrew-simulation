@@ -5,7 +5,7 @@ class IgnitionMath2 < Formula
   sha256 "4c007af9efe42908a240895b2a9bcb5c4e570ac0e4ed152c4edd724f86171931"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-math", :branch => "ign-math2"
+  head "https://github.com/ignitionrobotics/ign-math", branch: "ign-math2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases"
@@ -20,7 +20,7 @@ class IgnitionMath2 < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 
-  conflicts_with "ignition-math3", :because => "symbols collision between the two libraries"
+  conflicts_with "ignition-math3", because: "symbols collision between the two libraries"
 
   def install
     system "cmake", ".", *std_cmake_args

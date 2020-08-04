@@ -6,7 +6,7 @@ class Sdformat6 < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/osrf/sdformat", :branch => "sdf6", :using => :git
+  head "https://github.com/osrf/sdformat", branch: "sdf6", using: :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -25,11 +25,11 @@ class Sdformat6 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", :because => "differing version of the same formula"
-  conflicts_with "sdformat3", :because => "differing version of the same formula"
-  conflicts_with "sdformat4", :because => "differing version of the same formula"
-  conflicts_with "sdformat5", :because => "differing version of the same formula"
-  conflicts_with "sdformat7", :because => "differing version of the same formula"
+  conflicts_with "sdformat", because: "differing version of the same formula"
+  conflicts_with "sdformat3", because: "differing version of the same formula"
+  conflicts_with "sdformat4", because: "differing version of the same formula"
+  conflicts_with "sdformat5", because: "differing version of the same formula"
+  conflicts_with "sdformat7", because: "differing version of the same formula"
 
   def install
     ENV.m64

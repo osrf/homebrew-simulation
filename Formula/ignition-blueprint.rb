@@ -5,7 +5,7 @@ class IgnitionBlueprint < Formula
   sha256 "a55860fa37bfb0c357ca86aaa31cd5de42e5f8f9022bced3e827808785e83041"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-blueprint", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-blueprint", branch: "master"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -28,7 +28,7 @@ class IgnitionBlueprint < Formula
   depends_on "ignition-sensors2"
   depends_on "ignition-tools"
   depends_on "ignition-transport7"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat8"
 

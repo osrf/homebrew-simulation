@@ -5,7 +5,7 @@ class IgnitionGui2 < Formula
   sha256 "3e7b5f50e823f29fd3e6f1be030b308497b0100296e08c4e5240a06a58a2ee8c"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-gui", :branch => "ign-gui2"
+  head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -20,7 +20,7 @@ class IgnitionGui2 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering2"
   depends_on "ignition-transport7"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml2"

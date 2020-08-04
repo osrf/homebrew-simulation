@@ -6,7 +6,7 @@ class IgnitionSensors2 < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-sensors", :branch => "ign-sensors2"
+  head "https://github.com/ignitionrobotics/ign-sensors", branch: "ign-sensors2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
