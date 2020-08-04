@@ -1,7 +1,7 @@
 class IgnitionDome < Formula
   desc "Ignition dome collection"
   homepage "https://github.com/ignitionrobotics/ign-dome"
-  head "https://github.com/ignitionrobotics/ign-dome", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-dome", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
@@ -18,7 +18,7 @@ class IgnitionDome < Formula
   depends_on "ignition-sensors4"
   depends_on "ignition-tools"
   depends_on "ignition-transport9"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat10"
 
