@@ -1,6 +1,11 @@
 class IgnitionDome < Formula
   desc "Ignition dome collection"
   homepage "https://github.com/ignitionrobotics/ign-dome"
+  url "https://github.com/ignitionrobotics/ign-dome/archive/4090bd607032e8c397f03da8e6654ad1fb63f136.tar.gz"
+  version "0.999.999~0~20200805~4090bd6"
+  sha256 "fa21047a9c3ef7ce81b42d61bb290bfbfaffe5e34cda46187097caa052486021"
+  license "Apache-2.0"
+
   head "https://github.com/ignitionrobotics/ign-dome", branch: "master"
 
   depends_on "cmake" => :build
