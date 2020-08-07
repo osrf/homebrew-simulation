@@ -6,6 +6,9 @@ class IgnitionRendering1 < Formula
   license "Apache-2.0"
   revision 2
 
+  deprecate! date: "2019-09-30"
+  disable! date: "2020-08-31"
+
   depends_on "cmake" => :build
 
   depends_on "freeimage"
