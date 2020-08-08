@@ -4,7 +4,10 @@ class IgnitionAcropolis < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-acropolis/releases/ignition-acropolis-1.0.1.tar.bz2"
   sha256 "1d4c81e08bea92f508cd71b7a2af22f0111f205799f888eac6aa8c665e0260fe"
 
-  head "https://github.com/ignitionrobotics/ign-acropolis", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-acropolis", branch: "master"
+
+  deprecate! date: "2019-09-30"
+  disable! date: "2020-08-31"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
@@ -21,7 +24,7 @@ class IgnitionAcropolis < Formula
   depends_on "ignition-sensors1"
   depends_on "ignition-tools"
   depends_on "ignition-transport6"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat8"
 

@@ -1,16 +1,11 @@
-class IgnitionPhysics2 < Formula
+class IgnitionPhysics3 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.1.0.tar.bz2"
-  sha256 "25eebe1c320993f0a433a7d6b41407b2ab4bb8a8407174e17b8e3c505518e117"
+  url "https://github.com/ignitionrobotics/ign-physics/archive/061965f69be7077c2ec3732ef4ef6b07f1a8cf06.tar.gz"
+  version "2.999.999~0~20200731~061965f"
+  sha256 "fac94bdc0fb61b0bd6fe398ebce9b6a2525a421e134747772ee0fb7e633e7233"
   license "Apache-2.0"
   revision 1
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "df6650bf073bd46de50afa944151ab202b30a8f4fbee544af0204f5c7422013c" => :mojave
-  end
 
   depends_on "cmake" => :build
 
@@ -23,7 +18,7 @@ class IgnitionPhysics2 < Formula
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
-  depends_on "sdformat9"
+  depends_on "sdformat10"
 
   def install
     system "cmake", ".", *std_cmake_args
