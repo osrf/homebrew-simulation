@@ -5,13 +5,6 @@ class IgnitionCmake2 < Formula
   sha256 "2aa5b1795908dc4328fc5cefbd1a25cf5770bdb9ec4932c4edb61a2f0b3e9b49"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any_skip_relocation
-    sha256 "160d4c0ad4ef8c1fe0186fd2698d8cf5dfe393ceabd99f6fb7e67c06cfd340b6" => :mojave
-    sha256 "91a725331709fc3e146b0f82277541d575f5663c8e636b906e5b28d2d6c71111" => :high_sierra
-  end
-
   depends_on "cmake"
   depends_on "pkg-config"
 
