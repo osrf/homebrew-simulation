@@ -1,9 +1,9 @@
 class IgnitionLaunch3 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://github.com/ignitionrobotics/ign-launch/archive/f9a11aeefdfe2a22ef6b4b253f2e68548436725b.tar.gz"
-  version "2.999.999~0~20200316~899567"
-  sha256 "2d25ab18e6593a777e77a1e64d398486b712e1ab78cbfca9ec7320af5daac319"
+  url "https://github.com/ignitionrobotics/ign-launch/archive/342ea404aff1d9d34cd98b459003ebaaec746df3.tar.gz"
+  version "2.999.999~0~20200804~342ea40"
+  sha256 "b5c8e3a96e666cb1bcf1caf4d8cc764950cfb33122535329eb9baf668f4fb0c5"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-launch", branch: "master"
@@ -15,10 +15,10 @@ class IgnitionLaunch3 < Formula
   depends_on "ignition-common3"
   depends_on "ignition-gazebo4"
   depends_on "ignition-gui4"
-  depends_on "ignition-msgs5"
+  depends_on "ignition-msgs6"
   depends_on "ignition-plugin1"
   depends_on "ignition-tools"
-  depends_on "ignition-transport8"
+  depends_on "ignition-transport9"
   depends_on "qt"
   depends_on "tinyxml2"
 
