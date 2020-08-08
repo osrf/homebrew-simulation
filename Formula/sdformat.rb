@@ -6,7 +6,7 @@ class Sdformat < Formula
   license "Apache-2.0"
   revision 3
 
-  head "https://github.com/osrf/sdformat", :branch => "sdf_2.3", :using => :git
+  head "https://github.com/osrf/sdformat", branch: "sdf_2.3", using: :git
 
   depends_on "cmake" => :build
 
@@ -16,9 +16,9 @@ class Sdformat < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat3", :because => "differing version of the same formula"
-  conflicts_with "sdformat4", :because => "differing version of the same formula"
-  conflicts_with "sdformat5", :because => "differing version of the same formula"
+  conflicts_with "sdformat3", because: "differing version of the same formula"
+  conflicts_with "sdformat4", because: "differing version of the same formula"
+  conflicts_with "sdformat5", because: "differing version of the same formula"
 
   def install
     ENV.m64

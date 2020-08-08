@@ -6,7 +6,7 @@ class IgnitionGui0 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-gui", :branch => "ign-gui0"
+  head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui0"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -17,7 +17,7 @@ class IgnitionGui0 < Formula
   depends_on "ignition-msgs2"
   depends_on "ignition-rendering2"
   depends_on "ignition-transport5"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "qt"
   depends_on "qwt"
   depends_on "tinyxml2"

@@ -1,15 +1,9 @@
 class IgnitionTransport7 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport7-7.4.0.tar.bz2"
-  sha256 "09f038244e27a2514ebc736499e40e42aa0824bbb5c02df913042ae10c886d41"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport7-7.5.0.tar.bz2"
+  sha256 "710b5d4d2ece5d9a7a244912cc0590c1be670e2bc35686063ea1e1536096890e"
   license "Apache-2.0"
-  revision 1
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "c82321a2068a1751039fdeca92f05663acddef74263571ca28c42970ee77b80e" => :mojave
-  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
@@ -19,7 +13,7 @@ class IgnitionTransport7 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-msgs4"
   depends_on "ignition-tools"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"

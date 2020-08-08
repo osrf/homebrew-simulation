@@ -20,7 +20,7 @@ class IgnitionFuelTools4 < Formula
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
 
   def install
