@@ -6,7 +6,7 @@ class IgnitionCitadel < Formula
   license "Apache-2.0"
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-citadel", :branch => "master"
+  head "https://github.com/ignitionrobotics/ign-citadel", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
@@ -23,7 +23,7 @@ class IgnitionCitadel < Formula
   depends_on "ignition-sensors3"
   depends_on "ignition-tools"
   depends_on "ignition-transport8"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat9"
 

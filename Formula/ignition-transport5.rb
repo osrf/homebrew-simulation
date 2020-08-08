@@ -15,7 +15,7 @@ class IgnitionTransport5 < Formula
   depends_on "ignition-cmake1"
   depends_on "ignition-msgs2"
   depends_on "ignition-tools"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"

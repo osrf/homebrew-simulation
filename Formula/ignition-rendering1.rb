@@ -6,6 +6,9 @@ class IgnitionRendering1 < Formula
   license "Apache-2.0"
   revision 2
 
+  deprecate! date: "2019-09-30"
+  disable! date: "2020-08-31"
+
   depends_on "cmake" => :build
 
   depends_on "freeimage"
@@ -13,7 +16,7 @@ class IgnitionRendering1 < Formula
   depends_on "ignition-common3"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.1"
   depends_on "pkg-config"
