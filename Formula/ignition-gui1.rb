@@ -6,7 +6,10 @@ class IgnitionGui1 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-gui", :branch => "ign-gui1"
+  head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui1"
+
+  deprecate! date: "2019-09-30"
+  disable! date: "2020-08-31"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
@@ -15,7 +18,7 @@ class IgnitionGui1 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering1"
   depends_on "ignition-transport6"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "qt"
   depends_on "qwt"

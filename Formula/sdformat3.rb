@@ -6,7 +6,7 @@ class Sdformat3 < Formula
   license "Apache-2.0"
   revision 5
 
-  head "https://github.com/osrf/sdformat", :branch => "sdf3", :using => :git
+  head "https://github.com/osrf/sdformat", branch: "sdf3", using: :git
 
   depends_on "cmake" => :build
 
@@ -17,9 +17,9 @@ class Sdformat3 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", :because => "differing version of the same formula"
-  conflicts_with "sdformat4", :because => "differing version of the same formula"
-  conflicts_with "sdformat5", :because => "differing version of the same formula"
+  conflicts_with "sdformat", because: "differing version of the same formula"
+  conflicts_with "sdformat4", because: "differing version of the same formula"
+  conflicts_with "sdformat5", because: "differing version of the same formula"
 
   patch do
     # Fix for cmake 3.9

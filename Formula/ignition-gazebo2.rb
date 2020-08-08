@@ -5,7 +5,7 @@ class IgnitionGazebo2 < Formula
   sha256 "4125f13227ceb0971faef9c7afb562270fdb13d3b32ac2cde5a77b6d1c8b5ea6"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", :branch => "ign-gazebo2"
+  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -26,11 +26,11 @@ class IgnitionGazebo2 < Formula
   depends_on "ignition-rendering2"
   depends_on "ignition-sensors2"
   depends_on "ignition-transport7"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat8"
 
-  conflicts_with "ignition-gazebo1", :because => "both install bin/ign-gazebo symlinks"
+  conflicts_with "ignition-gazebo1", because: "both install bin/ign-gazebo symlinks"
 
   def install
     ENV.m64

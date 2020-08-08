@@ -6,13 +6,16 @@ class IgnitionMsgs3 < Formula
   license "Apache-2.0"
   revision 1
 
+  deprecate! date: "2019-09-30"
+  disable! date: "2020-08-31"
+
   depends_on "protobuf-c" => :build
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
   depends_on "ignition-tools"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
 

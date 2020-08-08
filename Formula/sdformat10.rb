@@ -16,7 +16,7 @@ class Sdformat10 < Formula
 
   depends_on "doxygen"
   depends_on "ignition-math6"
-  depends_on :macos => :mojave # c++17
+  depends_on macos: :mojave # c++17
   # TODO remove dependency on tinyxml after the following is merged:
   # https://github.com/osrf/sdformat/pull/264
   depends_on "tinyxml"

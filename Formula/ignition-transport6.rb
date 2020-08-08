@@ -6,6 +6,9 @@ class IgnitionTransport6 < Formula
   license "Apache-2.0"
   revision 2
 
+  deprecate! date: "2019-09-30"
+  disable! date: "2020-08-31"
+
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
 
@@ -14,7 +17,7 @@ class IgnitionTransport6 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-msgs3"
   depends_on "ignition-tools"
-  depends_on :macos => :high_sierra # c++17
+  depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
