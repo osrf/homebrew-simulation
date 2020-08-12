@@ -1,8 +1,8 @@
 class IgnitionGui2 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui2-2.2.0.tar.bz2"
-  sha256 "3e7b5f50e823f29fd3e6f1be030b308497b0100296e08c4e5240a06a58a2ee8c"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui2-2.3.0.tar.bz2"
+  sha256 "c91f6b40cd893dcb281f24072dd15b0adf971b09e0835bb2ad5070e2c86c6f69"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui2"
