@@ -1,15 +1,10 @@
 class Sdformat9 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.2.0.tar.bz2"
-  sha256 "18193e571877d06b679a476f52329f326d02b5f70bc90c7cdc92f7dae2f5d784"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.3.0~pre1.tar.bz2"
+  version "9.3.0~pre1"
+  sha256 "d1e85d54cc0297d36c2120191b9e639f0c1ad8c3054739720a0e657cc74cb786"
   license "Apache-2.0"
-  revision 3
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "b923c0f08b40152b58d1732cd39ac99bd1e7c2d61c6d00940541bcecf225e40c" => :mojave
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -19,12 +14,6 @@ class Sdformat9 < Formula
   depends_on macos: :mojave # c++17
   depends_on "tinyxml"
   depends_on "urdfdom"
-
-  patch do
-    # Fix for building against external urdfdom
-    url "https://github.com/osrf/sdformat/commit/eddf3ef00f07549e7270f619de1ae2849d49daaa.diff?full_index=1"
-    sha256 "873fda0847c7fcdced3053c8f363794521cb6c5bd400b948ee33c888117a1ea1"
-  end
 
   def install
     ENV.m64
