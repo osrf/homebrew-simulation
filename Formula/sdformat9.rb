@@ -15,12 +15,6 @@ class Sdformat9 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom"
 
-  patch do
-    # Fix for building against external urdfdom
-    url "https://github.com/osrf/sdformat/commit/eddf3ef00f07549e7270f619de1ae2849d49daaa.diff?full_index=1"
-    sha256 "873fda0847c7fcdced3053c8f363794521cb6c5bd400b948ee33c888117a1ea1"
-  end
-
   def install
     ENV.m64
 
