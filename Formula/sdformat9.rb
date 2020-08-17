@@ -6,11 +6,6 @@ class Sdformat9 < Formula
   sha256 "d1e85d54cc0297d36c2120191b9e639f0c1ad8c3054739720a0e657cc74cb786"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "b923c0f08b40152b58d1732cd39ac99bd1e7c2d61c6d00940541bcecf225e40c" => :mojave
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
