@@ -1,15 +1,10 @@
 class Sdformat10 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.0.0~pre1.tar.bz2"
-  version "10.0.0~pre1"
-  sha256 "dc7090b3c4f52b3b504fa903130c4181943a8bed7d40fc62870a48f04a8cf125"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.0.0~pre2.tar.bz2"
+  version "10.0.0~pre2"
+  sha256 "72a25bd48bffc46f15ddc3e44e5f08f4514494cf40f10a5f8b106e4b412f1c19"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "6872fcc4fd07e083ddefb58a432752485de9df6e4b637eacbfe88ffabee9b1f9" => :mojave
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -17,9 +12,6 @@ class Sdformat10 < Formula
   depends_on "doxygen"
   depends_on "ignition-math6"
   depends_on macos: :mojave # c++17
-  # TODO remove dependency on tinyxml after the following is merged:
-  # https://github.com/osrf/sdformat/pull/264
-  depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
