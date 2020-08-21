@@ -7,12 +7,6 @@ class IgnitionBlueprint < Formula
 
   head "https://github.com/ignitionrobotics/ign-blueprint", branch: "master"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any_skip_relocation
-    sha256 "21c5f29eb768c24056b2bb025ec2941877176dd6c1a0791ce0f95b63ad4feab5" => :mojave
-  end
-
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
