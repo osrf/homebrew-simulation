@@ -21,7 +21,9 @@ class IgnitionMath6 < Formula
   conflicts_with "ignition-math2", because: "symbols collision between the two libraries"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
