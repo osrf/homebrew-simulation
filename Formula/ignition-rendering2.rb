@@ -5,11 +5,6 @@ class IgnitionRendering2 < Formula
   sha256 "728065861e19e5dd286b8b271d66ad3186c958230594d480f810b9d899792590"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "10c79e5694e9031cdba9e24fe9c914d715bd5d5ddd2d5d7fa9d99661eb4e0d51" => :mojave
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
@@ -23,7 +18,9 @@ class IgnitionRendering2 < Formula
   depends_on "ogre2.1"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
