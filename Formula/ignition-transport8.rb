@@ -1,10 +1,9 @@
 class IgnitionTransport8 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.0.0.tar.bz2"
-  sha256 "d0963783c4db87fa71bacebd424c573331fed5d713d610b20b3552effe6d3ce3"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.1.0.tar.bz2"
+  sha256 "48971eb0d83a54efe8637762f3ad1117e916cfee9d8325a2b3997f9ee55ff673"
   license "Apache-2.0"
-  revision 1
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
