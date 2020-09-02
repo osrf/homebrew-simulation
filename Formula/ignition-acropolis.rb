@@ -1,5 +1,5 @@
 class IgnitionAcropolis < Formula
-  desc "Ignition acropolis collection"
+  desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-acropolis"
   url "https://osrf-distributions.s3.amazonaws.com/ign-acropolis/releases/ignition-acropolis-1.0.1.tar.bz2"
   sha256 "1d4c81e08bea92f508cd71b7a2af22f0111f205799f888eac6aa8c665e0260fe"

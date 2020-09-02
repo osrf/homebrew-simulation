@@ -1,5 +1,5 @@
 class IgnitionDome < Formula
-  desc "Ignition dome collection"
+  desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-dome"
   url "https://github.com/ignitionrobotics/ign-dome/archive/4090bd607032e8c397f03da8e6654ad1fb63f136.tar.gz"
   version "0.999.999~0~20200805~4090bd6"
