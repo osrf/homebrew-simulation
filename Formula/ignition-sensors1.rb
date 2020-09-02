@@ -8,8 +8,8 @@ class IgnitionSensors1 < Formula
 
   head "https://github.com/ignitionrobotics/ign-sensors", branch: "ign-sensors1"
 
-  deprecate! date: "2019-09-30"
-  disable! date: "2020-08-31"
+  deprecate! because: "is past end-of-life date", date: "2019-09-30"
+  disable! because: "is past end-of-life date", date: "2020-08-31"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

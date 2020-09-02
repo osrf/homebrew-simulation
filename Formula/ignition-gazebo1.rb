@@ -8,8 +8,8 @@ class IgnitionGazebo1 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo1"
 
-  deprecate! date: "2019-09-30"
-  disable! date: "2020-08-31"
+  deprecate! because: "is past end-of-life date", date: "2019-09-30"
+  disable! because: "is past end-of-life date", date: "2020-08-31"
 
   depends_on "cmake" => :build
   depends_on "gflags"

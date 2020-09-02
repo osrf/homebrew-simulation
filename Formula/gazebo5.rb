@@ -8,7 +8,7 @@ class Gazebo5 < Formula
 
   head "https://github.com/osrf/gazebo", branch: "gazebo5"
 
-  deprecate! date: "2017-01-25"
+  deprecate! because: "is past end-of-life date", date: "2017-01-25"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
