@@ -5,14 +5,6 @@ class IgnitionMath6 < Formula
   sha256 "9ad943395b732863950b520a702d0fcf642aafb296a63ed2d7b5062cdcf70ee5"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "4368b8c4e513244afeed835bf2d56092d4134118235e6e7b534e53362ec89f27" => :mojave
-    sha256 "6ffc10c2e24e9dad29953eaa8012801e71583a85f9ea8e1f20f07adceb918a3e" => :high_sierra
-    sha256 "424cd989b7d86835845a09cbe57041feaa006ad52277f1a696f7ac2ed44c4ce0" => :sierra
-  end
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "eigen"
