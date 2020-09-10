@@ -1,17 +1,9 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.4.0.tar.bz2"
-  sha256 "d31061dc34e940a1d84234c068e3da9c1015e1580eeed31844a6d04071578526"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.5.0.tar.bz2"
+  sha256 "ad98d0c1c8798a1f3df8c5ad05916fc6a28013e13afe90ec2f9fef3e27c4c6bf"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "4368b8c4e513244afeed835bf2d56092d4134118235e6e7b534e53362ec89f27" => :mojave
-    sha256 "6ffc10c2e24e9dad29953eaa8012801e71583a85f9ea8e1f20f07adceb918a3e" => :high_sierra
-    sha256 "424cd989b7d86835845a09cbe57041feaa006ad52277f1a696f7ac2ed44c4ce0" => :sierra
-  end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
