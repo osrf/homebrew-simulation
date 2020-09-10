@@ -2,7 +2,7 @@ class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.5.0.tar.bz2"
-  sha256 "9ad943395b732863950b520a702d0fcf642aafb296a63ed2d7b5062cdcf70ee5"
+  sha256 "ad98d0c1c8798a1f3df8c5ad05916fc6a28013e13afe90ec2f9fef3e27c4c6bf"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
