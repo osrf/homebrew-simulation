@@ -1,9 +1,9 @@
 class Sdformat10 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.0.0~pre2.tar.bz2"
-  version "10.0.0~pre2"
-  sha256 "72a25bd48bffc46f15ddc3e44e5f08f4514494cf40f10a5f8b106e4b412f1c19"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.0.0~pre3.tar.bz2"
+  version "10.0.0~pre3"
+  sha256 "146cecd5ce42bb2b8faf7673f6e187d4d0df58a3313e0df2dfd3888a99a89ce0"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
