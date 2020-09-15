@@ -52,6 +52,12 @@ class Gazebo10 < Formula
   conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do
+    # Fix for compatibility with boost 1.73
+    url "https://github.com/osrf/gazebo/commit/c55942ed348580317ea77312f7efce5c7937a49c.diff?full_index=1"
+    sha256 "3da0aa653a5ffeff46cffd7c8ab84a000dfd5ad55126e7df34f8971aff3e3a9c"
+  end
+
+  patch do
     # Fix build when homebrew python is installed
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
