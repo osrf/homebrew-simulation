@@ -3,7 +3,7 @@ class DartsimAT6100 < Formula
   homepage "https://dartsim.github.io/"
   # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
   url "https://github.com/azeey/dart/archive/1673b0be51fb370023df7490dc49706b590d8f72.tar.gz"
-  version "6.10.0~2020-09-16~1673b0be51fb370023df7490dc49706b590d8f72"
+  version "6.10.0~20200916~1673b0be51fb370023df7490dc49706b590d8f72"
   sha256 "ec2e833d3225ac3f4365cc6d8b2f5511170a47d140ff43dcc7d63a50fbb6bfd5"
   license "BSD-2-Clause"
   revision 1
