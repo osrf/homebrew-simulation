@@ -2,9 +2,9 @@ class DartsimAT6100 < Formula
   desc "Dynamic Animation and Robotics Toolkit (openrobotics port)"
   homepage "https://dartsim.github.io/"
   # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
-  url "https://github.com/azeey/dart/archive/f32a1d32c843d156bd8cff28fe587c4534186a1d.tar.gz"
-  version "6.10.0~2020-09-16~f32a1d32c843d156bd8cff28fe587c4534186a1d~f"
-  sha256 "97a15bdc2ae7c8b6b7e63b110594d4a1fcb89d44719401e0ff6c9d9e16d68a07"
+  url "https://github.com/azeey/dart/archive/1673b0be51fb370023df7490dc49706b590d8f72.tar.gz"
+  version "6.10.0~2020-09-16~1673b0be51fb370023df7490dc49706b590d8f72"
+  sha256 "ec2e833d3225ac3f4365cc6d8b2f5511170a47d140ff43dcc7d63a50fbb6bfd5"
   license "BSD-2-Clause"
   revision 1
 
