@@ -2,17 +2,11 @@ class DartsimAT6100 < Formula
   desc "Dynamic Animation and Robotics Toolkit (openrobotics port)"
   homepage "https://dartsim.github.io/"
   # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
-  url "https://github.com/azeey/dart/archive/fdde7e7894ebc36bae8811f7a63e5b1c899bb4af.tar.gz"
-  version "6.10.0~20190718~fdde7e7894ebc36bae8811f7a63e5b1c899bb4af"
-  sha256 "2083a5a52a8376d1c99c33423a64c35c80fec97825cb1ed65f1d09e74a3940c7"
+  url "https://github.com/azeey/dart/archive/1673b0be51fb370023df7490dc49706b590d8f72.tar.gz"
+  version "6.10.0~20200916~1673b0be51fb370023df7490dc49706b590d8f72"
+  sha256 "ec2e833d3225ac3f4365cc6d8b2f5511170a47d140ff43dcc7d63a50fbb6bfd5"
   license "BSD-2-Clause"
-  revision 6
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "9aeb3823ff74c1197d4a2076b760699acdcc392e7f5339f0bc536cefb0a4a876" => :mojave
-    sha256 "ae422dd7c8d02818016c9914b31250f388850202a58ae4a4f5eee0927e8fd786" => :high_sierra
-  end
+  revision 1
 
   keg_only "open robotics fork of dart HEAD + custom changes"
 
