@@ -4,6 +4,12 @@ class Sdformat8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-8.9.0.tar.bz2"
   sha256 "5198c90c5424df5b3b27567498cf63d4c7ec4db1564831a57c674a4804a683dd"
   license "Apache-2.0"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "e4e3dc57a7643f665aec5c3ca09e804cfdf8522f8cf23c893e4231570b91dc37" => :mojave
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
