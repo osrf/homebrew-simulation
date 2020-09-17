@@ -8,8 +8,8 @@ class IgnitionCommon3 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "5b0214c63ecb15cc0a654f460ac6dfb907b219baad1ab7d4842dd7eb76b23972" => :mojave
-    sha256 "7afcdf0ef02b16185d1ecb2c9f85c9efaeecf8bdeb0b2e2efd19fc8951a74e85" => :high_sierra
+    sha256 "205eff94eecf22d1f9dba254e4d7f0922c0e6416614ec64f7b78db8853db649e" => :mojave
+    sha256 "40e0991af5dee19ffeddf9573d275c87184769ddae9b8c544d4b66b4d2b1a2f1" => :high_sierra
   end
 
   depends_on "cmake"
