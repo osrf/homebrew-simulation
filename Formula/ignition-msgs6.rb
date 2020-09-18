@@ -5,6 +5,7 @@ class IgnitionMsgs6 < Formula
   version "6.0.0~pre2"
   sha256 "ae3d19c0564478c09fcb76d3e7b6d842276ccbfcfae36b79847202f47906d88f"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-msgs", branch: "master"
 
