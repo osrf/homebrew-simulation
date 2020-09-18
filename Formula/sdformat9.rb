@@ -4,6 +4,7 @@ class Sdformat9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.3.0.tar.bz2"
   sha256 "30ab425a586e61c3bf1d6bc905e797cd66572a5b8a0f4d26f86d1cb0ef9f5106"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
