@@ -6,6 +6,11 @@ class IgnitionLaunch1 < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "a55b156a95ea5aa32e63dd212438dd69814ed0ca3ca4ad374d21696facc69dc6" => :mojave
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
