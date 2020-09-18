@@ -6,6 +6,11 @@ class IgnitionTransport8 < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "d03e6dcf6bb2d5b2e9d1e6ff31197e7436b4102be99028b44dd1402e0c18282c" => :mojave
+  end
+
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
 
