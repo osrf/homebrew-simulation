@@ -4,6 +4,7 @@ class IgnitionLaunch1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.9.0.tar.bz2"
   sha256 "85e7b7638bebcf21d46cf8e707029732a2026cf940d5e802b6b3a8e3a08a1c2c"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
