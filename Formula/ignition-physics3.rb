@@ -34,7 +34,7 @@ class IgnitionPhysics3 < Formula
       int main()
       {
         ignition::plugin::Loader loader;
-        loader.LoadLib("#{opt_lib}/libignition-physics2-dartsim-plugin.dylib");
+        loader.LoadLib("#{opt_lib}/libignition-physics3-dartsim-plugin.dylib");
         ignition::plugin::PluginPtr dartsim =
             loader.Instantiate("ignition::physics::dartsim::Plugin");
         using featureList = ignition::physics::FeatureList<
@@ -44,9 +44,9 @@ class IgnitionPhysics3 < Formula
         return engine == nullptr;
       }
     EOS
-    system "pkg-config", "ignition-physics2"
-    cflags   = `pkg-config --cflags ignition-physics2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-physics2`.split(" ")
+    system "pkg-config", "ignition-physics3"
+    cflags   = `pkg-config --cflags ignition-physics3`.split(" ")
+    ldflags  = `pkg-config --libs ignition-physics3`.split(" ")
     system "pkg-config", "ignition-plugin1-loader"
     loader_cflags   = `pkg-config --cflags ignition-plugin1-loader`.split(" ")
     loader_ldflags  = `pkg-config --libs ignition-plugin1-loader`.split(" ")
