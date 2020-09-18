@@ -1,11 +1,16 @@
 class IgnitionPhysics3 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://github.com/ignitionrobotics/ign-physics/archive/061965f69be7077c2ec3732ef4ef6b07f1a8cf06.tar.gz"
-  version "2.999.999~0~20200731~061965f"
-  sha256 "fac94bdc0fb61b0bd6fe398ebce9b6a2525a421e134747772ee0fb7e633e7233"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics3-3.0.0~pre1.tar.bz2"
+  version "3.0.0~pre1"
+  sha256 "837ed443927ad14acd2a0cd992da8e31b6b23dddb255951783bc5f8056753879"
   license "Apache-2.0"
-  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "b4a7bc05b8333b8e26c0df085a9555f43ede3dbcd13f02f1636cd4c0ef4c1713" => :mojave
+  end
 
   depends_on "cmake" => :build
 
@@ -35,7 +40,7 @@ class IgnitionPhysics3 < Formula
       int main()
       {
         ignition::plugin::Loader loader;
-        loader.LoadLib("#{opt_lib}/libignition-physics2-dartsim-plugin.dylib");
+        loader.LoadLib("#{opt_lib}/libignition-physics3-dartsim-plugin.dylib");
         ignition::plugin::PluginPtr dartsim =
             loader.Instantiate("ignition::physics::dartsim::Plugin");
         using featureList = ignition::physics::FeatureList<
@@ -45,9 +50,9 @@ class IgnitionPhysics3 < Formula
         return engine == nullptr;
       }
     EOS
-    system "pkg-config", "ignition-physics2"
-    cflags   = `pkg-config --cflags ignition-physics2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-physics2`.split(" ")
+    system "pkg-config", "ignition-physics3"
+    cflags   = `pkg-config --cflags ignition-physics3`.split(" ")
+    ldflags  = `pkg-config --libs ignition-physics3`.split(" ")
     system "pkg-config", "ignition-plugin1-loader"
     loader_cflags   = `pkg-config --cflags ignition-plugin1-loader`.split(" ")
     loader_ldflags  = `pkg-config --libs ignition-plugin1-loader`.split(" ")
