@@ -49,7 +49,6 @@ class IgnitionPlugin1 < Formula
     system "./test"
     # test building with cmake
     mkdir "build" do
-      ENV.append "LIBRARY_PATH", Formula["gettext"].opt_lib
       system "cmake", ".."
       system "make"
       system "./test_cmake"
