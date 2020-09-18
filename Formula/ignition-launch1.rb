@@ -26,10 +26,10 @@ class IgnitionLaunch1 < Formula
   end
 
   test do
-   ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
-   system "ign", "launch", "--versions"
-   # check for Xcode frameworks in bottle
-   cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
-   system cmd_not_grep_xcode
+    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
+    system "ign", "launch", "--versions"
+    # check for Xcode frameworks in bottle
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
