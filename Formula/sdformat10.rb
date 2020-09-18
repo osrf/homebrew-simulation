@@ -7,6 +7,11 @@ class Sdformat10 < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "6111205d85e6b1bfd4d5842606c34d05e2a9a879ca1f72a87a46698003a11827" => :mojave
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
