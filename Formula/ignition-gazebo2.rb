@@ -1,11 +1,16 @@
 class IgnitionGazebo2 < Formula
   desc "Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo2-2.24.0.tar.bz2"
-  sha256 "dbe81ebe232cb71cf55551032e9e98441a3a1e028ed2efc6068e9ef12c002861"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo2-2.25.0.tar.bz2"
+  sha256 "7d05c1586ef53d67cbf6562f5c7d1bf4480280f5ecb172d235101c40942ee1f9"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo2"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "fb434db277440e4a20e512b44c412afc43ee09e8ad1e3be54de95ef4775c7141" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -30,8 +35,11 @@ class IgnitionGazebo2 < Formula
   def install
     ENV.m64
 
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end

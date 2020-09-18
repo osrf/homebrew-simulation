@@ -4,6 +4,14 @@ class IgnitionFuelTools3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools3-3.4.0.tar.bz2"
   sha256 "3cac0e59623d806b5e30d62b370666209b27ba373156c7337c37e9cbea03518a"
   license "Apache-2.0"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "48557618dbc7848f32f7c77c6585e90fa53e259bd503d770157b8e6cf8d91faa" => :mojave
+    sha256 "265b4c77b041777ca699bd39263e80fb3b77adb5a7323d64cb303fd545e6c5a6" => :high_sierra
+  end
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
@@ -15,8 +23,11 @@ class IgnitionFuelTools3 < Formula
   depends_on "pkg-config"
 
   def install
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end

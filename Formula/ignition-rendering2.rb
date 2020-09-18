@@ -4,6 +4,12 @@ class IgnitionRendering2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering2-2.5.0.tar.bz2"
   sha256 "728065861e19e5dd286b8b271d66ad3186c958230594d480f810b9d899792590"
   license "Apache-2.0"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "a61b3ccaf281da942802b79ace6b1c174e654aa70d78d1f61029882867b3f6a4" => :mojave
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
