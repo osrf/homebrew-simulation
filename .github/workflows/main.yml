@@ -19,4 +19,4 @@ jobs:
           mkdir -p "$HOMEBREW_TAP_DIR"
           rm -rf "$HOMEBREW_TAP_DIR"
           ln -s "$PWD" "$HOMEBREW_TAP_DIR"
-          brew test-bot --fail-fast
+          brew test-bot --fail-fast --tap=osrf/simulation --only-tap-syntax
