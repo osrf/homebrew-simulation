@@ -4,7 +4,14 @@ class IgnitionMsgs4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs4-4.9.0.tar.bz2"
   sha256 "3a75aabd1f39bf0e48f0c99070e210154d62c35b3571f20d47348e08ac3015f6"
   license "Apache-2.0"
-  revision 3
+  revision 4
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "1726e5f43688c57dd5adbada79baeaa897eb04c9814e437178d2e87b2734ed6e" => :mojave
+    sha256 "537fda364dc252b7ec9138dadc4226372d734d6698b79d6a2bd8bf8a89a76f08" => :high_sierra
+  end
 
   depends_on "protobuf-c" => :build
 
@@ -17,7 +24,9 @@ class IgnitionMsgs4 < Formula
   depends_on "protobuf"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
