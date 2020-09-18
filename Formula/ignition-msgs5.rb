@@ -4,7 +4,14 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.3.0.tar.bz2"
   sha256 "49541d54e43f1aa38b7cf2735c216c38f4ec5a1f5389b94200115206c18c7e17"
   license "Apache-2.0"
-  revision 3
+  revision 4
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "7ebcd2ff1d5187ef731de759aa3290b94e0d4b7dca75cb7f9f33d76a76b97024" => :mojave
+    sha256 "aa5a9fa456be60bd2547a78ae3e70a17f9173b3ce9734cb79b7776e730c368f1" => :high_sierra
+  end
 
   depends_on "protobuf-c" => :build
 
@@ -18,7 +25,9 @@ class IgnitionMsgs5 < Formula
   depends_on "tinyxml2"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 

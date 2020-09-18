@@ -4,6 +4,12 @@ class IgnitionTransport8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.1.0.tar.bz2"
   sha256 "48971eb0d83a54efe8637762f3ad1117e916cfee9d8325a2b3997f9ee55ff673"
   license "Apache-2.0"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "d03e6dcf6bb2d5b2e9d1e6ff31197e7436b4102be99028b44dd1402e0c18282c" => :mojave
+  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
@@ -13,14 +19,16 @@ class IgnitionTransport8 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-msgs5"
   depends_on "ignition-tools"
-  depends_on macos: :high_sierra # c++17
+  depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "zeromq"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
