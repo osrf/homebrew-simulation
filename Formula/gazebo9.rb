@@ -4,8 +4,14 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.14.0.tar.bz2"
   sha256 "79ed341749d42c4f813ff6f3ab21530c903e8dd08e8b437ffabe35cf8a3ce236"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/gazebo", branch: "gazebo9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "a1d7e244be2ce61a78ea4b604743a8ef3a9641ce590622beedfac1d0ca6d11b1" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
