@@ -5,6 +5,7 @@ class Sdformat10 < Formula
   version "10.0.0~pre3"
   sha256 "146cecd5ce42bb2b8faf7673f6e187d4d0df58a3313e0df2dfd3888a99a89ce0"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
