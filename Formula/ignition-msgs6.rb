@@ -5,8 +5,16 @@ class IgnitionMsgs6 < Formula
   version "6.0.0~pre2"
   sha256 "ae3d19c0564478c09fcb76d3e7b6d842276ccbfcfae36b79847202f47906d88f"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-msgs", branch: "master"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "855231ff94c187dd2a09c2cd92357f4435c082c032aabab54f2297c5ac218113" => :mojave
+    sha256 "9005dc50defb645e1f2bbb116a732c3165fd2b99834fb8b5d0b24daa06f238a4" => :high_sierra
+  end
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
@@ -19,7 +27,10 @@ class IgnitionMsgs6 < Formula
   depends_on "tinyxml2"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 

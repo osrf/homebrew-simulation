@@ -5,9 +5,15 @@ class IgnitionTransport9 < Formula
   version "9.0.0~pre1"
   sha256 "9e0de5431932c55e92a5b8b8767275e3fa539f2653961ebc650d944c8c462492"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-transport", branch: "master"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "fb91039a6fe303a4444415538e1412b3e840aedde51a565ff823892c88910f43" => :mojave
+  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
@@ -17,14 +23,17 @@ class IgnitionTransport9 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-msgs6"
   depends_on "ignition-tools"
-  depends_on macos: :high_sierra # c++17
+  depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "zeromq"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
