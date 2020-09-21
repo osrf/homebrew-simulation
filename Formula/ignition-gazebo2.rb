@@ -30,8 +30,6 @@ class IgnitionGazebo2 < Formula
   depends_on "pkg-config"
   depends_on "sdformat8"
 
-  conflicts_with "ignition-gazebo1", because: "both install bin/ign-gazebo symlinks"
-
   def install
     ENV.m64
 
