@@ -4,8 +4,14 @@ class IgnitionGazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.3.0.tar.bz2"
   sha256 "8cbdadbc833621d01888d67ed83a4b191effe8a842693bad5320ede8dfd8234b"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo3"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "a4a1767e1f1ab00fa9f204fa7a8eaad79266179328991229841c5417ab1655ad" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -28,8 +34,11 @@ class IgnitionGazebo3 < Formula
   def install
     ENV.m64
 
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=OFF"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end

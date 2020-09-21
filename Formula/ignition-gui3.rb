@@ -4,8 +4,14 @@ class IgnitionGui3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.3.0.tar.bz2"
   sha256 "ee88bddcb06dbf14fc5e422aeaa8571b201bdc5d10e64c02f9dd0097749f6ddb"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui3"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "25ebb29e1e57b4f7a2d677efa57b34bc169dfdec671ef48aab11fd1ac4110bc0" => :mojave
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -26,6 +32,7 @@ class IgnitionGui3 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
+    cmake_args << "-DBUILD_TESTING=Off"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
