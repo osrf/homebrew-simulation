@@ -5,6 +5,7 @@ class IgnitionFuelTools5 < Formula
   version "5.0.0~pre1"
   sha256 "f9697c614b8722784d1ee1c1fe874e90dab779e2906f91a571047682c6d1a944"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools", branch: "master"
 
