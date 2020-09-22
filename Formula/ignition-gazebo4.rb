@@ -30,8 +30,11 @@ class IgnitionGazebo4 < Formula
   def install
     ENV.m64
 
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=OFF"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end
