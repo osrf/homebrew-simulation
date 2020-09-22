@@ -5,6 +5,7 @@ class IgnitionDome < Formula
   version "0.999.999~0~20200805~4090bd6"
   sha256 "fa21047a9c3ef7ce81b42d61bb290bfbfaffe5e34cda46187097caa052486021"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-dome", branch: "master"
 
