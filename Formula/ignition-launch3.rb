@@ -5,8 +5,14 @@ class IgnitionLaunch3 < Formula
   version "2.999.999~0~20200804~342ea40"
   sha256 "b5c8e3a96e666cb1bcf1caf4d8cc764950cfb33122535329eb9baf668f4fb0c5"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch", branch: "master"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "59a99b0c8ebf822b261e4456bb8390d4a0dc6cf6ed76da303226827f12321922" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -27,11 +33,11 @@ class IgnitionLaunch3 < Formula
     system "make", "install"
   end
 
-  # TODO: fix test. Failing: https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/209/label=osx_mojave/
-  # test do
-  #  system "ignition", "-run", "config/gazebo.ign"
-  #  # check for Xcode frameworks in bottle
-  #  cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
-  #  system cmd_not_grep_xcode
-  # end
+  test do
+    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
+    system "ign", "launch", "--versions"
+    # check for Xcode frameworks in bottle
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
+  end
 end

@@ -5,8 +5,16 @@ class IgnitionFuelTools5 < Formula
   version "5.0.0~pre1"
   sha256 "f9697c614b8722784d1ee1c1fe874e90dab779e2906f91a571047682c6d1a944"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools", branch: "master"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "3f172f136cb58badc667bfe3703a10f093c1346218a6124f001e56a718d3f50a" => :mojave
+    sha256 "f1f92e85002e659ca47800e6ea06d33d8fbba37bd91bbd7c63e3c0182a8e1806" => :high_sierra
+  end
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
@@ -19,8 +27,11 @@ class IgnitionFuelTools5 < Formula
   depends_on "pkg-config"
 
   def install
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end

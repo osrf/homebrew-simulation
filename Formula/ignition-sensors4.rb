@@ -5,8 +5,15 @@ class IgnitionSensors4 < Formula
   version "3.999.999~0~20200721~cf9a8bc"
   sha256 "a9fa1db1c340169e701d2ecb59b91e865bdb4856b72466da409a0b2302b5bca0"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-sensors", branch: "master"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    rebuild 1
+    sha256 "8949fc3215b1e9c87417be363d36662a5c8d48d04617081dab7ea4433c8a7b3a" => :mojave
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -20,7 +27,10 @@ class IgnitionSensors4 < Formula
   depends_on "sdformat10"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=OFF"
+
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 

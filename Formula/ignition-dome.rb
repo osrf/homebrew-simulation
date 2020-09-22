@@ -5,8 +5,15 @@ class IgnitionDome < Formula
   version "0.999.999~0~20200805~4090bd6"
   sha256 "fa21047a9c3ef7ce81b42d61bb290bfbfaffe5e34cda46187097caa052486021"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-dome", branch: "master"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any_skip_relocation
+    sha256 "4a1d3c5da674adaf0f966d42a34cee1aae56a2fcfe474697eb0baa24a7fdcf7a" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
