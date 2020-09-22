@@ -5,6 +5,7 @@ class IgnitionGazebo4 < Formula
   version "3.999.999~0~20200729~9f80d0"
   sha256 "39751dcad8f000ba80937533faac5aff0ea81c3ed614a35511643a6955b3976f"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "master"
 
