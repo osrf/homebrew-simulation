@@ -9,6 +9,12 @@ class IgnitionDome < Formula
 
   head "https://github.com/ignitionrobotics/ign-dome", branch: "master"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any_skip_relocation
+    sha256 "4a1d3c5da674adaf0f966d42a34cee1aae56a2fcfe474697eb0baa24a7fdcf7a" => :mojave
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"

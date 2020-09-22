@@ -9,6 +9,12 @@ class IgnitionGazebo4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "master"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    rebuild 1
+    sha256 "b8cdda46b98a8b7e717112f8c6f8be84f48709ac33f0d43395702baedf2b17c3" => :mojave
+  end
+
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "google-benchmark"
