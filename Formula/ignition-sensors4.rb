@@ -1,11 +1,10 @@
 class IgnitionSensors4 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://github.com/ignitionrobotics/ign-sensors/archive/cf9a8bcf66477a6b30f7415cfb5591699bc2fedc.tar.gz"
-  version "3.999.999~0~20200721~cf9a8bc"
-  sha256 "a9fa1db1c340169e701d2ecb59b91e865bdb4856b72466da409a0b2302b5bca0"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors4-4.0.0~pre1.tar.bz2"
+  version "4.0.0~pre1"
+  sha256 "bf5f8676e4a3f1c32e4d6e11a6e6e5cda0cbb8cc4e1ef0436dcdf381829e553d"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-sensors", branch: "master"
 
