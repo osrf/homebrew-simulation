@@ -1,6 +1,6 @@
 Build | Status
 -- | --
-macOS 10.14 azure pipeline | [![Build Status](https://dev.azure.com/william0339/osrf%20homebrew-simulation/_apis/build/status/osrf.homebrew-simulation?branchName=master)](https://dev.azure.com/william0339/osrf%20homebrew-simulation/_build/latest?definitionId=1&branchName=master)
+macOS 10.15 GitHub action | [![Build Status](![brew test-bot](https://github.com/osrf/homebrew-simulation/workflows/brew%20test-bot/badge.svg?branch=master&event=push))
 
 homebrew-simulation
 ===================
