@@ -73,55 +73,69 @@ To use:
 The https://build.osrfoundation.org jenkins instance is used for building bottles with the following job
 (configured in [brew_release.dsl](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/dsl/brew_release.dsl)):
 
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_bottle_builder)](https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/) https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/
 
-This jenkins job takes a `PULL_REQUEST_URL` as an input parameter and uses the
-[homebrew_bottle_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
-script from [ignition-tooling/release-tools](https://github.com/ignition-tooling/release-tools),
-which invokes [brew test-bot](https://github.com/Homebrew/homebrew-test-bot)
-with the [following command](https://github.com/ignition-tooling/release-tools/blob/d6417a5c1be87238f155683e2ef70b2e784eb31c/jenkins-scripts/lib/homebrew_bottle_creation.bash#L38-L40):
+This jenkins job is triggered for pull requests when an administrator makes a comment
+on the pull request that includes the phrase `build bottle`.
+The job should appear in the GitHub build status interface for the latest commit:
 
-~~~
-brew test-bot --tap=osrf/simulation \
-  --root-url=https://osrf-distributions.s3.amazonaws.com/bottles-simulation \
-  --ci-pr ${PULL_REQUEST_URL}
-~~~
+![GitHub build status interface screenshot](.github/github_build_status.png)
 
-If you are using the `release.py` script from [osrf/release-tools](https://bitbucket.org/osrf/release-tools),
-a Jenkins bottle builder job will be started automatically.
-Otherwise, create a pull request to this repository and paste the pull request url into the `PULL_REQUEST_URL`
-build parameter.
+For example, osrf/homebrew-simulation#1157 was created after
+running our [release.py](https://github.com/ignition-tooling/release-tools/blob/master/release.py) script
+and [this comment](https://github.com/osrf/homebrew-simulation/pull/1157#issuecomment-698111311)
+triggered the bottle build, resulting in a successful bottle upload and a47933878a7e073225acf5ceef0960cd6cfd50b2.
 
-The job is not configured to run automatically without the `release.py` script
-since it will automatically upload bottles to s3 once it is finished,
-where they are immediately available for public download.
-This process differs from the approach taken by
-[homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core)
-whose bottles are hosted at Bintray, which has a
-[different publishing mechanism](https://www.jfrog.com/confluence/display/BT/Managing+Uploaded+Content#ManagingUploadedContent-Publishing)
-than s3.
-Files uploaded to Bintray are not immediately available for public download;
-they must first be published.
-If they are not published within 7 days of upload, they are automatically deleted.
-The homebrew-core CI jobs will build bottles for any incoming pull request,
-which will upload bottles directly to bintray, but these bottles will not be
-publicly available unless the pull request is merged by a homebrew maintainer
-within 7 days.
+Bottle builds are not triggered automatically for every pull request for several reasons:
 
-The jenkins job currently builds bottles for macOS 10.13 `high_sierra` and 10.14 `mojave`
-using the following job configurations:
+* Not all pull requests require a bottle to be rebuilt (such as #1007 that added this text to the README)
+* Successful bottle builds result in binary artifacts being immediately uploaded to our hosting provider
+  so pull requests should be screened for malicious intent by administrators before triggering
+  a bottle build.
+    - This process differs from the approach taken by
+      [homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core)
+      whose bottles are hosted at Bintray, which has a
+      [different publishing mechanism](https://www.jfrog.com/confluence/display/BT/Managing+Uploaded+Content#ManagingUploadedContent-Publishing)
+      than s3.
+      Files uploaded to Bintray are not immediately available for public download;
+      they must first be published.
+      If they are not published within 7 days of upload, they are automatically deleted.
+      The homebrew-core CI jobs will build bottles for any incoming pull request,
+      which will upload bottles directly to bintray, but these bottles will not be
+      publicly available unless the pull request is merged by a homebrew maintainer
+      within 7 days.
 
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_bottle_builder%2Flabel%3Dosx_highsierra)](https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_highsierra/) https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_highsierra
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_bottle_builder%2Flabel%3Dosx_mojave)](https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_mojave/) https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_mojave
+## Troubleshotting
+
+* I commented `build bottle`, but it did not start a
+  [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
+  job.
+    - Confirm that the build.osrfoundation.org web page loads. If it is not accessible, an OSRF build farmer should be notified.
+    - If build.osrfoundation.org is operational, confirm that you have adequate permissions.
+      Currently, you must be a member of the github.com/ignitionrobotics org in order to use
+      the `build bottle` trigger phrase (see configuration in [brew_release.dsl](https://github.com/ignition-tooling/release-tools/blob/2ae0424303a5/jenkins-scripts/dsl/brew_release.dsl#L181-L185)).
+
+* I ran the [release.py](https://github.com/ignition-tooling/release-tools/blob/master/release.py) script multiple
+  times for the same release and commented `build bottle` on the pull request, but the bottle building job failed,
+  with console output containing the text `Warning: Formula reports different SHA256:`.
+    - It's possible that the tarball uploaded at the time the pull request was created was overwritten
+      by a subsequent call to `release.py` (see ignition-tooling/release-tools#274).
+      If so, update the `sha256` field for the tarball (see #1156 and 57fa5defcce for an example).
+
+## Jenkins implementation details
+
+The [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
+jenkins job currently builds bottles for macOS 10.13 `high_sierra` and 10.14 `mojave`
+using the following job configurations and the
+[homebrew\_bottle\_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
+script:
+
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_highsierra)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_highsierra/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_highsierra
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_mojave)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_mojave/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_mojave
 
 If the bottle building job finishes without errors for each build configuration,
-it will trigger a subsequent [repository_uploader_ng](https://build.osrfoundation.org/job/repository_uploader_ng/)
+it will trigger a subsequent [repository\_uploader\_packages](https://build.osrfoundation.org/job/repository_uploader_packages/)
 job that uploads the bottles to s3
-and a [generic-release-homebrew_pr_bottle_hash_updater](https://build.osrfoundation.org/job/generic-release-homebrew_pr_bottle_hash_updater/)
+and a [generic-release-homebrew\_pr\_bottle\_hash\_updater](https://build.osrfoundation.org/job/generic-release-homebrew_pr_bottle_hash_updater/)
 job that commits the changes in bottle `sha256` values to the pull request branch
 using [this script](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_pullrequest.bash).
-
-The GitHub build status that appears in each PR is currently broken.
-It used to check that bottles could be downloaded properly, but recent
-changes to [brew test-bot](https://github.com/Homebrew/homebrew-test-bot)
-have disabled this feature.
