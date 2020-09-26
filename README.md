@@ -81,14 +81,15 @@ The job should appear in the GitHub build status interface for the latest commit
 
 ![GitHub build status interface screenshot](.github/github_build_status.png)
 
-For example, osrf/homebrew-simulation#1157 was created after
+For example, [#1157](https://github.com/osrf/homebrew-simulation/pull/1157) was created after
 running our [release.py](https://github.com/ignition-tooling/release-tools/blob/master/release.py) script
 and [this comment](https://github.com/osrf/homebrew-simulation/pull/1157#issuecomment-698111311)
-triggered the bottle build, resulting in a successful bottle upload and a47933878a7e073225acf5ceef0960cd6cfd50b2.
+triggered the bottle build, resulting in a successful bottle upload and [a4793387](https://github.com/osrf/homebrew-simulation/commit/a47933878a7e073225acf5ceef0960cd6cfd50b2).
 
 Bottle builds are not triggered automatically for every pull request for several reasons:
 
-* Not all pull requests require a bottle to be rebuilt (such as #1007 that added this text to the README)
+* Not all pull requests require a bottle to be rebuilt (such as
+  [#1007](https://github.com/osrf/homebrew-simulation/pull/1007) that added this text to the README)
 * Successful bottle builds result in binary artifacts being immediately uploaded to our hosting provider
   so pull requests should be screened for malicious intent by administrators before triggering
   a bottle build.
@@ -119,8 +120,9 @@ Bottle builds are not triggered automatically for every pull request for several
   times for the same release and commented `build bottle` on the pull request, but the bottle building job failed,
   with console output containing the text `Warning: Formula reports different SHA256:`.
     - It's possible that the tarball uploaded at the time the pull request was created was overwritten
-      by a subsequent call to `release.py` (see ignition-tooling/release-tools#274).
-      If so, update the `sha256` field for the tarball (see #1156 and 57fa5defcce for an example).
+      by a subsequent call to `release.py` (see [ignition-tooling/release-tools#274](https://github.com/ignition-tooling/release-tools/issues/274)).
+      If so, update the `sha256` field for the tarball (see [#1156](https://github.com/osrf/homebrew-simulation/pull/1156)
+      and [57fa5defcce](https://github.com/osrf/homebrew-simulation/commit/57fa5defcce) for an example).
 
 ## Jenkins implementation details
 
