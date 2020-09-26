@@ -106,15 +106,18 @@ Bottle builds are not triggered automatically for every pull request for several
       publicly available unless the pull request is merged by a homebrew maintainer
       within 7 days.
 
-## Troubleshotting
+## Troubleshooting
 
 * I commented `build bottle`, but it did not start a
   [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
   job.
-    - Confirm that the build.osrfoundation.org web page loads. If it is not accessible, an OSRF build farmer should be notified.
-    - If build.osrfoundation.org is operational, confirm that you have adequate permissions.
-      Currently, you must be a member of the github.com/ignitionrobotics org in order to use
-      the `build bottle` trigger phrase (see configuration in [brew_release.dsl](https://github.com/ignition-tooling/release-tools/blob/2ae0424303a5/jenkins-scripts/dsl/brew_release.dsl#L181-L185)).
+    - Confirm that the [build.osrfoundation.org](https://build.osrfoundation.org) web page loads.
+      If it is not accessible, an OSRF build farmer should be notified.
+    - If [build.osrfoundation.org](https://build.osrfoundation.org) is operational,
+      confirm that you have adequate permissions.
+      Currently, you must be a member of the [github.com/ignitionrobotics](https://github.com/ignitionrobotics)
+      org in order to use the `build bottle` trigger phrase (see configuration in
+      [brew_release.dsl](https://github.com/ignition-tooling/release-tools/blob/2ae0424303a5/jenkins-scripts/dsl/brew_release.dsl#L181-L185)).
 
 * I ran the [release.py](https://github.com/ignition-tooling/release-tools/blob/master/release.py) script multiple
   times for the same release and commented `build bottle` on the pull request, but the bottle building job failed,
