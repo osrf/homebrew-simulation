@@ -108,6 +108,21 @@ Bottle builds are not triggered automatically for every pull request for several
 
 ## Troubleshooting
 
+* Does a new bottle need to be built for every homebrew pull request?
+    - A new bottle is not needed for all pull requests.
+      For example, updates to documentation or a formula's `test do` block do not change
+      the installed binary and thus don't require a new bottle.
+      Changing the tarball `url`, adding patches, or bumping the formula `revision` do
+      require new bottles.
+      If you aren't sure, just ask in the pull request.
+
+* Do I need to wait for the `brew test-bot / test-bot` GitHub action to succeed for starting a bottle build?
+    - No, you don't need to wait. You can start the bottle build as soon as the pull request is opened.
+
+* When can I merge a pull request? Does CI need to be finished?
+    - Yes, CI must be finished and successful. If a new bottle is needed, the
+      `generic-release-homebrew_triggered_bottle_builder` job must be successful as well.
+
 * I commented `build bottle`, but it did not start a
   [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
   job.
