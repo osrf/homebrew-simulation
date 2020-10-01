@@ -10,7 +10,7 @@ class IgnitionDome < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any_skip_relocation
-    sha256 "3c7fa4cb6bf7d56fcfc23237faaeb66bd9bde682097e080d82d4b059d5176f81" => :mojave
+    sha256 "c79db7d711dd6c40d91ad10ef2e40e6c7f9155ec4520f51739506ca21b115b0a" => :mojave
   end
 
   depends_on "cmake" => :build
