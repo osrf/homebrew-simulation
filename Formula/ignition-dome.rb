@@ -1,9 +1,8 @@
 class IgnitionDome < Formula
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-dome"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-dome/releases/ignition-dome-1.0.0~pre1.tar.bz2"
-  version "1.0.0~pre1"
-  sha256 "98cf7fa6a0ed81107551cf0622827cff71f7cbc50deeef4282be4d4e48e6a66d"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-dome/releases/ignition-dome-1.0.0.tar.bz2"
+  sha256 "9ea9c638064a3afcfb4971b17c366cc8b56db80e7a207c7b4bd75de799ec0e14"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-dome", branch: "master"
@@ -11,7 +10,7 @@ class IgnitionDome < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any_skip_relocation
-    sha256 "3c7fa4cb6bf7d56fcfc23237faaeb66bd9bde682097e080d82d4b059d5176f81" => :mojave
+    sha256 "c79db7d711dd6c40d91ad10ef2e40e6c7f9155ec4520f51739506ca21b115b0a" => :mojave
   end
 
   depends_on "cmake" => :build
