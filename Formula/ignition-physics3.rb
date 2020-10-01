@@ -1,15 +1,14 @@
 class IgnitionPhysics3 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics3-3.0.0~pre1.tar.bz2"
-  version "3.0.0~pre1"
-  sha256 "837ed443927ad14acd2a0cd992da8e31b6b23dddb255951783bc5f8056753879"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics3-3.0.0.tar.bz2"
+  sha256 "bb63d40ba5e4c05b0d89bfe163cc7adacc769a953199e6b37412d423f4e3cfde"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "b4a7bc05b8333b8e26c0df085a9555f43ede3dbcd13f02f1636cd4c0ef4c1713" => :mojave
+    sha256 "9e29bff526d20d9704eaa521c74fb1c51b905af33e35d5d7a8ef51e81cb64623" => :mojave
   end
 
   depends_on "cmake" => :build
