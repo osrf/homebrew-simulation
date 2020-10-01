@@ -1,16 +1,15 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.14.0.tar.bz2"
-  sha256 "79ed341749d42c4f813ff6f3ab21530c903e8dd08e8b437ffabe35cf8a3ce236"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.15.0.tar.bz2"
+  sha256 "e91eba92341995db2536b23e323a8f10ef8e9c75837df603ca512e3b21646f27"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/osrf/gazebo", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "a1d7e244be2ce61a78ea4b604743a8ef3a9641ce590622beedfac1d0ca6d11b1" => :mojave
+    sha256 "7b3467c278cb17adaca58011ebb3e321db1efd24647a09dd701b4faf3b5bf043" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -55,12 +54,6 @@ class Gazebo9 < Formula
   conflicts_with "gazebo8", because: "differing version of the same formula"
   conflicts_with "gazebo10", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
-
-  patch do
-    # Fix for compatibility with boost 1.73
-    url "https://github.com/osrf/gazebo/commit/c55942ed348580317ea77312f7efce5c7937a49c.diff?full_index=1"
-    sha256 "3da0aa653a5ffeff46cffd7c8ab84a000dfd5ad55126e7df34f8971aff3e3a9c"
-  end
 
   patch do
     # Fix build when homebrew python is installed
