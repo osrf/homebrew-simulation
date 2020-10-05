@@ -5,7 +5,7 @@ class IgnitionDome < Formula
   sha256 "9ea9c638064a3afcfb4971b17c366cc8b56db80e7a207c7b4bd75de799ec0e14"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-dome", branch: "master"
+  head "https://github.com/ignitionrobotics/ign-dome", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

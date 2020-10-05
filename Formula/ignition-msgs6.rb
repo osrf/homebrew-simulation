@@ -5,7 +5,7 @@ class IgnitionMsgs6 < Formula
   sha256 "71f1d833ab49df21305266089f62af19c5727be5f4d7f22b2e8d1d1c4d958a69"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-msgs", branch: "master"
+  head "https://github.com/ignitionrobotics/ign-msgs", branch: "ign-msgs6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

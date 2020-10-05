@@ -5,7 +5,7 @@ class IgnitionBlueprint < Formula
   sha256 "a55860fa37bfb0c357ca86aaa31cd5de42e5f8f9022bced3e827808785e83041"
   revision 3
 
-  head "https://github.com/ignitionrobotics/ign-blueprint", branch: "master"
+  head "https://github.com/ignitionrobotics/ign-blueprint", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
