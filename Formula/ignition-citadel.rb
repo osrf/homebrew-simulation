@@ -1,10 +1,9 @@
 class IgnitionCitadel < Formula
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-citadel"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.0.tar.bz2"
-  sha256 "e35ceda484b91bf3ece58dd3679df4998a042a5b7442cbd3153f042180e6a03a"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.1.tar.bz2"
+  sha256 "1436ebb1b2497abb8f75599f2d8f2b79ec4c29b1d4d4ae6a264cae2f066e5702"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-citadel", branch: "main"
@@ -12,7 +11,7 @@ class IgnitionCitadel < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any_skip_relocation
-    sha256 "ec85e51ae8e552e869c166b3856774508399481feca20f586710bfd2e43828e0" => :mojave
+    sha256 "c9da6d6b238d818c6f3ddde88fdf6740a8090301f835199b1a1fdbfb2d4c3859" => :mojave
   end
 
   depends_on "cmake" => :build
