@@ -1,14 +1,13 @@
 class IgnitionLaunch1 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.9.0.tar.bz2"
-  sha256 "85e7b7638bebcf21d46cf8e707029732a2026cf940d5e802b6b3a8e3a08a1c2c"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.10.0.tar.bz2"
+  sha256 "04a52aef4e3d261432732647415d30ea1e53abb1cf2b87aace0d65703c811b5c"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "a55b156a95ea5aa32e63dd212438dd69814ed0ca3ca4ad374d21696facc69dc6" => :mojave
+    sha256 "7bec8fd5b5166e1c5848c5f744941bc284e9c6d543d8f1136e554a76bfabc06c" => :mojave
   end
 
   depends_on "cmake" => :build
