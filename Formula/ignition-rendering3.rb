@@ -1,13 +1,13 @@
 class IgnitionRendering3 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.1.0.tar.bz2"
-  sha256 "eb3c567455a1a6a999ace04544efaeda788d8d6f411a23a8e47dba71a736e553"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.2.0.tar.bz2"
+  sha256 "912b80ffc5424a8be5f257168506cd4b8195ebf773a9aac2613f449a93ce17ec"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "6576ac1c425ccd102ab8f5b1e4b91eea0f645a05e726a820495bdbb071e2350d" => :mojave
+    sha256 "616a528c51ee55fbd0a77fa6824a98ec982155c65ff5ad254647210598c9bbf3" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
