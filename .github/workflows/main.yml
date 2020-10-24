@@ -10,8 +10,21 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Cache Bundler RubyGems
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+
+      - name: Install Bundler RubyGems
+        run: brew install-bundler-gems
+
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
+
+      # Needed for X11Requirement (i.e: ignition-sensors)
+      - run: brew cask install xquartz
 
       - run: brew test-bot --fail-fast --tap=osrf/simulation --only-tap-syntax
