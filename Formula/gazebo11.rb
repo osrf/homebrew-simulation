@@ -4,12 +4,13 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.2.0.tar.bz2"
   sha256 "05ca11573e9d3451aae9ae282dada9f822a4d8a473642b499e4f7947c8397cf3"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/gazebo", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "fc04979b624b1adbca9c47abc47b0b9b649ef52b796889d0cd3887c75fc4f244" => :mojave
+    sha256 "83bc750e839cf45afc6d57741a85c3f3ee0f4e4066eeef90d3199c460659de77" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -54,6 +55,12 @@ class Gazebo11 < Formula
   conflicts_with "gazebo8", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gazebo10", because: "differing version of the same formula"
+
+  patch do
+    # Fix for compatibility with boost 1.74
+    url "https://github.com/osrf/gazebo/commit/02e77e7bbc86697c1c55e1a1bbaf1360e5f31a68.patch?full_index=1"
+    sha256 "707efb799086a834ad95b606178ec241d0650e401ab209efb8a5ff53abb5a59a"
+  end
 
   patch do
     # Fix build when homebrew python is installed
