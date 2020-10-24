@@ -7,17 +7,11 @@ jobs:
   test-bot:
     runs-on: macos-latest
     steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      # Needed for X11Requirement (i.e: ignition-sensors)
-      - run: brew cask install xquartz
-      - run: brew update
-      - name: Add symlink to homebrew Taps folder
-        env:
-          HOMEBREW_TAP_DIR: /usr/local/Homebrew/Library/Taps/osrf/homebrew-simulation
-        run: |
-          set -e
-          mkdir -p "$HOMEBREW_TAP_DIR"
-          rm -rf "$HOMEBREW_TAP_DIR"
-          ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - run: brew test-bot --only-cleanup-before
+
+      - run: brew test-bot --only-setup
+
       - run: brew test-bot --fail-fast --tap=osrf/simulation --only-tap-syntax
