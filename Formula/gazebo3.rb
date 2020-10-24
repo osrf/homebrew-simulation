@@ -40,7 +40,7 @@ class Gazebo3 < Formula
 
   patch do
     # Fix build with protobuf 2.6 (gazebo #1289)
-    url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.diff?full_index=1"
+    url "https://github.com/osrf/gazebo/commit/1ef108cc501a2e839278c9510f744640b8cfc903.patch?full_index=1"
     sha256 "08739b2d84d7a5ca3bfe973eb463f9f1599d22da437b0aadcd7564f18eb09429"
   end
 
@@ -52,13 +52,13 @@ class Gazebo3 < Formula
 
   patch do
     # Fix build with boost 1.57 (gazebo #1399)
-    url "https://github.com/osrf/gazebo/commit/7c185d822403750467da05289b8ff681c122a2f8.diff?full_index=1"
+    url "https://github.com/osrf/gazebo/commit/7c185d822403750467da05289b8ff681c122a2f8.patch?full_index=1"
     sha256 "65d4e00c5a6e53161ef3e80df04bc92a1a9a44f005b8019671bd9f61370d66ed"
   end
 
   patch do
     # Fix for compatibility with boost 1.58
-    url "https://github.com/osrf/gazebo/commit/5f533662e72cf63c18f122a21cdc61599238d4c5.diff?full_index=1"
+    url "https://github.com/osrf/gazebo/commit/5f533662e72cf63c18f122a21cdc61599238d4c5.patch?full_index=1"
     sha256 "e484e6c46243d451ad5473486c97768b593b34b61fb183c06d18651dc76d8b5f"
   end
 
@@ -67,7 +67,7 @@ class Gazebo3 < Formula
 
   patch do
     # Another fix with boost 1.57 (gazebo #1399)
-    url "https://github.com/osrf/gazebo/commit/205d42a5cb9ad7a749a8cb6ba6b56d7751b5653d.diff?full_index=1"
+    url "https://github.com/osrf/gazebo/commit/205d42a5cb9ad7a749a8cb6ba6b56d7751b5653d.patch?full_index=1"
     sha256 "293731da37dc211a016734fbdf226842d965293b2a2c2aa19443f81052585a68"
   end
 
