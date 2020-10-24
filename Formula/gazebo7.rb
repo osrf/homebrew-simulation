@@ -53,7 +53,7 @@ class Gazebo7 < Formula
 
   patch do
     # Fix gts linking
-    url "https://github.com/osrf/gazebo/commit/6178c06666102fc81958bd2f20b0cd2e04f854cb.diff?full_index=1"
+    url "https://github.com/osrf/gazebo/commit/6178c06666102fc81958bd2f20b0cd2e04f854cb.patch?full_index=1"
     sha256 "03555a669b3121a1da693ec10e52901633860de0c6ac4729161bda52e5a381a4"
   end
 

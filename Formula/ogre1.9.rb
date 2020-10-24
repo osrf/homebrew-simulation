@@ -70,13 +70,13 @@ class Ogre19 < Formula
 
   patch do
     # fix for boost 1.65
-    url "https://github.com/OGRECave/ogre/commit/cade48b4c2215dd77ea74b7aa219a22c2a5d6654.diff?full_index=1"
+    url "https://github.com/OGRECave/ogre/commit/cade48b4c2215dd77ea74b7aa219a22c2a5d6654.patch?full_index=1"
     sha256 "4b000a58663713dbfdf3e06ce99a641b636dcb8ae76c84d53a960a419fe452b8"
   end
 
   patch do
     # fix for boost 1.67
-    url "https://github.com/OGRECave/ogre/commit/2371c8d001725190a9cda62dc5df282cde78f951.diff?full_index=1"
+    url "https://github.com/OGRECave/ogre/commit/2371c8d001725190a9cda62dc5df282cde78f951.patch?full_index=1"
     sha256 "9c6b600d528f6329d9728faa4eacf4363dd71d8c0e4dae238e480361796d58c8"
   end
 
