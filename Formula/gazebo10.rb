@@ -57,6 +57,12 @@ class Gazebo10 < Formula
   conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do
+    # Fix for compatibility with boost 1.74
+    url "https://github.com/osrf/gazebo/commit/c2fd34c00f4611d149aae5479dc4d98fe639805b.patch?full_index=1"
+    sha256 "75ccd13714d39a0e1f1ecb882ad6fea1f15025d2e102fee79053fe88ef25bf4e"
+  end
+
+  patch do
     # Fix for compatibility with boost 1.73
     url "https://github.com/osrf/gazebo/commit/c55942ed348580317ea77312f7efce5c7937a49c.patch?full_index=1"
     sha256 "3da0aa653a5ffeff46cffd7c8ab84a000dfd5ad55126e7df34f8971aff3e3a9c"
