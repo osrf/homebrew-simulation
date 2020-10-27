@@ -32,6 +32,12 @@ class DartsimAT6100 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
+  patch do
+    # Fix for compatibility with ipopt 3.13
+    url "https://github.com/scpeters/dart/commit/d8500b7ee4d672ede22fbbbd72ef66c003aa2b6f.patch?full_index=1"
+    sha256 "3c85f594b477ff2357017364a55cdc7b3ffa25ab53f08bd910ed5db71083ed6d"
+  end
+
   def install
     ENV.cxx11
 
