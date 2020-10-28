@@ -6,7 +6,6 @@ class IgnitionRendering5 < Formula
   sha256 "4c97c5eb65b3c939db06176b5d1b3728af69ce17a0bb7ba522fcadcbac6b5c2b"
   license "Apache-2.0"
 
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
