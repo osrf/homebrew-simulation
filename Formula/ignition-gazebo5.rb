@@ -3,7 +3,6 @@ class IgnitionGazebo5 < Formula
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
   url "https://github.com/ignitionrobotics/ign-gazebo/archive/e43f7610859fdd2fcc89047483044f86f067ca0e.tar.gz"
   version "4.999.999~0~20201028~e43f76"
-  version: "4.999.999~0~20201028~da2ddb"
   sha256 "41e860861a22040892cdbd6c3cf69d10f59ce693eb8078f233fde63c3b16f9bd"
   license "Apache-2.0"
 
