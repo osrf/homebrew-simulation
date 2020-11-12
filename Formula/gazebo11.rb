@@ -59,7 +59,7 @@ class Gazebo11 < Formula
   patch do
     # Fix for compatibility with boost 1.74
     url "https://github.com/osrf/gazebo/commit/02e77e7bbc86697c1c55e1a1bbaf1360e5f31a68.patch?full_index=1"
-    sha256 "707efb799086a834ad95b606178ec241d0650e401ab209efb8a5ff53abb5a59a"
+    sha256 "16f0887e2ddf02af2a5338065463ca00d152915251ea686f93be8b350f3e9aa6"
   end
 
   patch do

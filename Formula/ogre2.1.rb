@@ -36,7 +36,7 @@ class Ogre21 < Formula
   patch do
     # fix GL3+ compilation with Xcode 10
     url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.patch?full_index=1"
-    sha256 "cb16e12a5caa6a44c3891f23bbd9af120c9e31172b1b1eb65e350c8aefa0bf89"
+    sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
   end
 
   def install
