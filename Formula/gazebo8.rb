@@ -52,19 +52,19 @@ class Gazebo8 < Formula
   patch do
     # Fix for compatibility with boost 1.69
     url "https://github.com/osrf/gazebo/commit/69fcced27c1df15719f626eb3dc4721540a1de63.patch?full_index=1"
-    sha256 "2cdb4e9400c4d8d7242cd25d26efd0db89f885da13584d46977e66c1bea77fe4"
+    sha256 "e521d5de72014e7ccc115c6c880da42fea10350229673f8d423cefef60115539"
   end
 
   patch do
     # Fix for compatibility with boost 1.69
     url "https://github.com/osrf/gazebo/commit/9c3fa7f66e5d8333b7b6bf5349e53eff2cb11bc0.patch?full_index=1"
-    sha256 "87e2522508c6588f2f3279b0c1a449e70ee942d1385ddd32f97e71b8fc76d5f7"
+    sha256 "8e3b3d676f397251971716c7154ef176be661392930842a60b417f63ea1a9552"
   end
 
   patch do
     # Fix for compatibility with boost 1.68
     url "https://github.com/osrf/gazebo/commit/3555b9021931f404b39195f51af1b07c4ee0df9c.patch?full_index=1"
-    sha256 "b282821d34f62b0a2ce1e46f737f39d2183ed1435a1a353c0c806b3c8741a787"
+    sha256 "f4780064cc7f7ce7d4ec8d897b99a75e701cf60d19c591a74783615d9e8690e9"
   end
 
   patch do
