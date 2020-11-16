@@ -8,7 +8,7 @@ class IgnitionRendering4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "eec5d6b6c68ce426e98834e348959baad660ba4dbd8838c7cbaf3960b2fd9a96" => :mojave
+    sha256 "2b68ee675b1cb34afba1b3a9c16777a29aac2ccba17a740c68faf379ca5609e9" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
