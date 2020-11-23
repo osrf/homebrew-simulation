@@ -4,6 +4,7 @@ class IgnitionMsgs6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs6-6.0.0.tar.bz2"
   sha256 "71f1d833ab49df21305266089f62af19c5727be5f4d7f22b2e8d1d1c4d958a69"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-msgs", branch: "ign-msgs6"
 
