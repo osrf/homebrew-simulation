@@ -4,7 +4,7 @@ class IgnitionFuelTools4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools4-4.2.1.tar.bz2"
   sha256 "457b96b5066ee358c0267d5f18787a8be4cb28a9efd6c5b17638c725f1e94df6"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
