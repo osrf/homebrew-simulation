@@ -11,7 +11,7 @@ class IgnitionTransport9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "3eaefa98c137b29ab01b448b932f13f0c59a43bf5b6676b3c0e4e2fb8a96c1b9" => :mojave
+    sha256 "575aa468cd8d44a1d316ee398df1af8336bacecfbe47a4e60e21d7a48d50e17f" => :mojave
   end
 
   depends_on "doxygen" => [:build, :optional]
