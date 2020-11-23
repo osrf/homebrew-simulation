@@ -5,12 +5,13 @@ class IgnitionGui5 < Formula
   version "4.999.999~0~20201028~225d8b"
   sha256 "5d51b169ce8b3e4553c512fba15a10419d36c28dd525db64a4b7060049332715"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "289c263d8125c03a16b01759d32efee514d327f9cabf07b999a5fec400664f79" => :mojave
+    sha256 "f3da22c295f2ce57716f2bfc5f533c57b143e1c6c093a4d9d343d315e490fb25" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
