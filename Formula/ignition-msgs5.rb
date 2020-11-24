@@ -4,12 +4,12 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.4.0.tar.bz2"
   sha256 "e30f7f5d2e4aace7e72adfd3042e7cc786390b377a49c7a44b31a816e4656dd0"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "863207f6f692cc17ac649d20fe45c03336114b9d851055adcc26dd79b9daaae1" => :mojave
-    sha256 "5ced2df998e5c18d4f5d6e1516e959386978eae01017613b2f999ef59cf452f2" => :high_sierra
+    sha256 "f81ccd9476447706582deb2de35fe7824b5acd61a8c044838c696d463f233ed6" => :mojave
   end
 
   depends_on "protobuf-c" => :build
