@@ -4,13 +4,13 @@ class Gazebo10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.2.0.tar.bz2"
   sha256 "47d8bfe70ffcde21cbc6dec142f3aecefaac66c63562aab6114f442f7ab27392"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/osrf/gazebo", branch: "gazebo10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "0350246f0dbde0439062dd5305d77aa701efde4c5004dc7fd8f9fcd374581eed" => :mojave
+    sha256 "2ba64c270486dd3af66f052d171764942307f0d9031b7399ecb72f3b7237c5ab" => :mojave
   end
 
   depends_on "cmake" => :build
