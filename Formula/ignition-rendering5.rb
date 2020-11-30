@@ -5,7 +5,6 @@ class IgnitionRendering5 < Formula
   version "4.999.999~0~20201130~d4406e"
   sha256 "781a633371a2525ff6f622a275456b72ec40467726dd452deba82aa28422be94"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
