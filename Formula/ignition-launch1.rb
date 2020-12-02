@@ -4,6 +4,7 @@ class IgnitionLaunch1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch-1.10.0.tar.bz2"
   sha256 "04a52aef4e3d261432732647415d30ea1e53abb1cf2b87aace0d65703c811b5c"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
