@@ -4,6 +4,7 @@ class IgnitionLaunch2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.2.0.tar.bz2"
   sha256 "078b32dfe3fecaf95073b17f44be5afc3badc8e706f97a900ee89147a97b38a3"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch", branch: "ign-launch2"
 
