@@ -134,6 +134,14 @@ Bottle builds are not triggered automatically for every pull request for several
       org in order to use the `build bottle` trigger phrase (see configuration in
       [brew_release.dsl](https://github.com/ignition-tooling/release-tools/blob/2ae0424303a5/jenkins-scripts/dsl/brew_release.dsl#L181-L185)).
 
+* I'm updating a Formula to build from a specific commit in a git repository.
+How do I get the `sha256` for the tarball corresponding to that commit?
+    - First, make sure that you have updated the [url](https://github.com/osrf/homebrew-simulation/blob/376e1f471ba492a936e088596dc365f2bec43798/Formula/ignition-sensors5.rb#L4) to use the commit hash that corresponds to the commit in the repository that you'd like to use.
+Also be sure to update the [version](https://github.com/osrf/homebrew-simulation/blob/376e1f471ba492a936e088596dc365f2bec43798/Formula/ignition-sensors5.rb#L5), if it exists (in the example linked here, `20201028~c02cd0` is the part that needs to be modified: `20201028` is the date (year-month-day), and `c02cd0` is the first 6 characters of the commit was used in the updated url).
+    - Now, run the command `wget <url>`, where `<url>` is the updated url that was just mentioned.
+Once you have the `tar` file downloaded, run the command `sha256sum <file>`, replacing `<file>` with the file that was downloaded via `wget`.
+The `sha256` will be printed to the console, which can then be used to update the Formula's [sha256](https://github.com/osrf/homebrew-simulation/blob/376e1f471ba492a936e088596dc365f2bec43798/Formula/ignition-sensors5.rb#L6).
+
 * I ran the [release.py](https://github.com/ignition-tooling/release-tools/blob/master/release.py) script multiple
   times for the same release and commented `build bottle` on the pull request, but the bottle building job failed,
   with console output containing the text `Warning: Formula reports different SHA256:`.
