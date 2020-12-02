@@ -5,12 +5,13 @@ class IgnitionLaunch4 < Formula
   version "3.999.999~0~20201028~29823c"
   sha256 "c2a28509cad17b26bca726c7ae030585c6f9df34c7cdc8481874821fcbbd94ad"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e762124ff20869172e2c3027f2482ed99c86a83711d8c3ee1ebc3977b65aca05" => :mojave
+    sha256 "dcea3d3f3d84440e3f958c8732042fea1e506d07ec0ed603b03c7849175cda25" => :mojave
   end
 
   depends_on "cmake" => :build
