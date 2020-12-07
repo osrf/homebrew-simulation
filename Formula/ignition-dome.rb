@@ -49,12 +49,13 @@ class IgnitionDome < Formula
     end
 
     venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
-    %w{PyYAML, vcstool}.each do |pkg|
+    %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
     end
   end
 
   test do
-    system libexec/"bin/vcs", "validate", "--input", share/"ignition/ignition-citadel/gazebodistro/collection-citadel.yaml"
+    yaml_file = share/"ignition/ignition-citadel/gazebodistro/collection-citadel.yaml"
+    system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
