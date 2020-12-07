@@ -1,9 +1,11 @@
 class IgnitionBlueprint < Formula
+  include Language::Python::Virtualenv
+
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-blueprint"
   url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.0.0.tar.bz2"
   sha256 "a55860fa37bfb0c357ca86aaa31cd5de42e5f8f9022bced3e827808785e83041"
-  revision 3
+  revision 4
 
   head "https://github.com/ignitionrobotics/ign-blueprint", branch: "main"
 
@@ -30,6 +32,7 @@ class IgnitionBlueprint < Formula
   depends_on "ignition-transport7"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "python@3.9"
   depends_on "sdformat8"
 
   def install
@@ -39,6 +42,15 @@ class IgnitionBlueprint < Formula
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
+
+    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
+    %w[PyYAML vcstool].each do |pkg|
+      venv.pip_install pkg
+    end
   end
-  # Failing test in mojave https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_mojave/211/console
+
+  test do
+    yaml_file = share/"ignition/ignition-blueprint/gazebodistro/collection-blueprint.yaml"
+    system libexec/"bin/vcs", "validate", "--input", yaml_file
+  end
 end
