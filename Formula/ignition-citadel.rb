@@ -13,8 +13,8 @@ class IgnitionCitadel < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any_skip_relocation
-    sha256 "c9da6d6b238d818c6f3ddde88fdf6740a8090301f835199b1a1fdbfb2d4c3859" => :mojave
+    cellar :any
+    sha256 "7cce188ae4521322df468e003b14b92bebbb4e20eb96def3e33973eeab59b2d8" => :mojave
   end
 
   depends_on "cmake" => :build
