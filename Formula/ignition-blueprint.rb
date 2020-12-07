@@ -1,16 +1,19 @@
 class IgnitionBlueprint < Formula
+  include Language::Python::Virtualenv
+
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-blueprint"
   url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.0.0.tar.bz2"
-  sha256 "a55860fa37bfb0c357ca86aaa31cd5de42e5f8f9022bced3e827808785e83041"
-  revision 3
+  url "https://github.com/ignitionrobotics/ign-blueprint/archive/a3f44f4ab45633e807b1a0402d6952b95c6b2d6f.tar.gz"
+  version "1.0.1~0~20201207~a3f44f"
+  sha256 "190fe8c427adfe300da62b772ef9fe1bf118f38acf81efd6cdb7672bbc67c304"
 
   head "https://github.com/ignitionrobotics/ign-blueprint", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any_skip_relocation
-    sha256 "9684a232138ca5ab9e55a3a5d5f95a8d559a89151c4a792a275f5ef959a8ef07" => :mojave
+    cellar :any
+    sha256 "454a2f24373107bf43de3f449c06a2b99456b0dfc911891919378e9306d1bb99" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -30,6 +33,7 @@ class IgnitionBlueprint < Formula
   depends_on "ignition-transport7"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "python@3.9"
   depends_on "sdformat8"
 
   def install
@@ -39,6 +43,15 @@ class IgnitionBlueprint < Formula
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
+
+    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
+    %w[PyYAML vcstool].each do |pkg|
+      venv.pip_install pkg
+    end
   end
-  # Failing test in mojave https://build.osrfoundation.org/job/generic-release-homebrew_bottle_builder/label=osx_mojave/211/console
+
+  test do
+    yaml_file = share/"ignition/ignition-blueprint/gazebodistro/collection-blueprint.yaml"
+    system libexec/"bin/vcs", "validate", "--input", yaml_file
+  end
 end
