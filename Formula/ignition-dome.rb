@@ -55,7 +55,7 @@ class IgnitionDome < Formula
   end
 
   test do
-    yaml_file = share/"ignition/ignition-citadel/gazebodistro/collection-citadel.yaml"
+    yaml_file = share/"ignition/ignition-dome/gazebodistro/collection-dome.yaml"
     system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
