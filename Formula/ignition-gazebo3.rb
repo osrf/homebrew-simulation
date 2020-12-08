@@ -4,7 +4,7 @@ class IgnitionGazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.5.0.tar.bz2"
   sha256 "3ed0cc0f0c3c03e6de4b54c450ad1df52be5897443d82ed4ac0ca89387252352"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo3"
 
@@ -26,9 +26,11 @@ class IgnitionGazebo3 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering3"
   depends_on "ignition-sensors3"
+  depends_on "ignition-tools"
   depends_on "ignition-transport8"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "ruby"
   depends_on "sdformat9"
 
   def install
@@ -44,6 +46,10 @@ class IgnitionGazebo3 < Formula
   end
 
   test do
+    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
+    system Formula["ruby"].opt_bin/"ruby",
+           Formula["ignition-tools"].opt_bin/"ign",
+           "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <ignition/gazebo/Entity.hh>
