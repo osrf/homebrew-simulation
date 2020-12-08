@@ -4,13 +4,13 @@ class IgnitionGazebo4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.0.0.tar.bz2"
   sha256 "58b4d7079dc1f9c7adf7a348a008b20eb96a0bb4504f95f07c31036aa3701dca"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "358ad19e816377c73488be80ae2feb725d099dc217270ebd600e849b18c1f97a" => :mojave
+    sha256 "4ebd751fe39b52415a60828bde0a625e238eddfca9e58e98692b192bb8afd30a" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -26,9 +26,11 @@ class IgnitionGazebo4 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering4"
   depends_on "ignition-sensors4"
+  depends_on "ignition-tools"
   depends_on "ignition-transport9"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "ruby"
   depends_on "sdformat10"
 
   def install
@@ -44,6 +46,10 @@ class IgnitionGazebo4 < Formula
   end
 
   test do
+    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
+    system Formula["ruby"].opt_bin/"ruby",
+           Formula["ignition-tools"].opt_bin/"ign",
+           "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <ignition/gazebo/Entity.hh>
