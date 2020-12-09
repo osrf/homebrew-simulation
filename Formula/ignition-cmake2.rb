@@ -14,12 +14,6 @@ class IgnitionCmake2 < Formula
   depends_on "cmake"
   depends_on "pkg-config"
 
-  patch do
-    # Fix for finding ogre2 Overlay library
-    url "https://github.com/ignitionrobotics/ign-cmake/commit/6a646e9201d84d7945b6aad4c12b0fa43d6af6f0.patch?full_index=1"
-    sha256 "893e4174b470e67f9ff0a41ac20d7642d79e00f14581355ec418098d995337b1"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
