@@ -1,10 +1,9 @@
 class IgnitionFuelTools5 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools5-5.0.0.tar.bz2"
-  sha256 "85bac45f1f7f2d1c900cf036ca4a46511e0d187c96fb2bbb72b10a809b1dacb6"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools5-5.1.0.tar.bz2"
+  sha256 "6f7ff9680fae8236376ca95a6b99f684e2c4f97357a2a5aa978b22a31fbef69a"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools", branch: "ign-fuel-tools5"
 
