@@ -1,25 +1,18 @@
 class IgnitionCmake2 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.5.0.tar.bz2"
-  sha256 "b5ea81835ea398b378edb818083f9dfc08441fadb721e37fc722d7faa9bd63b2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.6.1.tar.bz2"
+  sha256 "607fc15ebf2a62ef79dcb968603d5ede02b48c345cff024161c216f0afa31fe3"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any_skip_relocation
-    sha256 "e6322224f0403c1438ae086fc3d84cc66afede6a3d8f552449f84eefb2549164" => :mojave
+    sha256 "877a286b535b84bd9e561fcf8fe9fd99fb8d94142f36eaa49e0b2bfd37f42d2e" => :mojave
   end
 
   depends_on "cmake"
   depends_on "pkg-config"
-
-  patch do
-    # Fix for finding ogre2 Overlay library
-    url "https://github.com/ignitionrobotics/ign-cmake/commit/6a646e9201d84d7945b6aad4c12b0fa43d6af6f0.patch?full_index=1"
-    sha256 "893e4174b470e67f9ff0a41ac20d7642d79e00f14581355ec418098d995337b1"
-  end
 
   def install
     cmake_args = std_cmake_args
