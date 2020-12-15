@@ -1,8 +1,8 @@
 class Sdformat10 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.0.0.tar.bz2"
-  sha256 "29e39cce8faf9388663ce30fa05e83f992cdc6d405535070f4874040e9a47e3b"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.1.0.tar.bz2"
+  sha256 "12a9e757e8c4b48558701f155f4d41dd6860a9b1d83b03dd241e9bc8c0c5b964"
   license "Apache-2.0"
 
   bottle do
