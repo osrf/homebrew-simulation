@@ -1,16 +1,15 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.3.0.tar.bz2"
-  sha256 "ee88bddcb06dbf14fc5e422aeaa8571b201bdc5d10e64c02f9dd0097749f6ddb"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.4.0.tar.bz2"
+  sha256 "265415ad76c72f1db94349e827c2dba69ba87726477b375d926487aa113a960f"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "9aab259beb850ce4972d761c15054ea31efefaf86bdfab616fd0c8a6d529b90b" => :mojave
+    sha256 "1356b89a863f2dcbdd6695fdcf267567c8376f71c2f50de64ade9d941f490f5f" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]

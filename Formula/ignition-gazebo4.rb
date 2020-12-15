@@ -1,16 +1,15 @@
 class IgnitionGazebo4 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.0.0.tar.bz2"
-  sha256 "58b4d7079dc1f9c7adf7a348a008b20eb96a0bb4504f95f07c31036aa3701dca"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.1.0.tar.bz2"
+  sha256 "976e9bfa70d8ae0fae7976d12efdc9b39d61957ab24db8a8f13daa6833398646"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "358ad19e816377c73488be80ae2feb725d099dc217270ebd600e849b18c1f97a" => :mojave
+    sha256 "ab52ae093305f856fd0f16041f59517d4bd26ba7b2a323dd6f00501304b64bb3" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -26,9 +25,11 @@ class IgnitionGazebo4 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering4"
   depends_on "ignition-sensors4"
+  depends_on "ignition-tools"
   depends_on "ignition-transport9"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "ruby"
   depends_on "sdformat10"
 
   def install
@@ -44,6 +45,10 @@ class IgnitionGazebo4 < Formula
   end
 
   test do
+    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
+    system Formula["ruby"].opt_bin/"ruby",
+           Formula["ignition-tools"].opt_bin/"ign",
+           "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <ignition/gazebo/Entity.hh>
