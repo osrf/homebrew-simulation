@@ -1,15 +1,14 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.7.0.tar.bz2"
-  sha256 "000d7489f9b1105a8ab59fd27b097ff835cc5c76a712149cfc891e7fc35fdace"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.8.0.tar.bz2"
+  sha256 "0a08c68bd5db7c96c4e0866d7996b2f3745a9f09d550aaf5d93cd6883fa11eca"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "2e4ff8721113af1277c861c7c93f6720f6f0a1bb745d8e787dbae9d835c12618" => :mojave
-    sha256 "cf900653c7346edee058ce689ea3eba9f05b1226465c87d1b023df6ff5fa7c62" => :high_sierra
+    sha256 "ea90b841417c0dd261acf5e13c8c4ae9d6e501c4bdc33227fa9c6fc954e610e2" => :mojave
   end
 
   depends_on "cmake"
