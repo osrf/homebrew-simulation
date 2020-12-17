@@ -48,7 +48,7 @@ class IgnitionCommon0 < Formula
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
     system "pkg-config", "ignition-common0"
-    cflags = `pkg-config --cflags ignition-common0`.split(" ")
+    cflags = `pkg-config --cflags ignition-common0`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",

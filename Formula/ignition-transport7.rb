@@ -48,7 +48,7 @@ class IgnitionTransport7 < Formula
       target_link_libraries(test_cmake ignition-transport7::ignition-transport7)
     EOS
     system "pkg-config", "ignition-transport7"
-    cflags = `pkg-config --cflags ignition-transport7`.split(" ")
+    cflags = `pkg-config --cflags ignition-transport7`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",

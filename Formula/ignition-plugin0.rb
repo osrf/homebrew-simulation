@@ -39,7 +39,7 @@ class IgnitionPlugin0 < Formula
       target_link_libraries(test_cmake ${IGNITION-PLUGIN_LIBRARIES})
     EOS
     system "pkg-config", "ignition-plugin0-loader"
-    cflags = `pkg-config --cflags ignition-plugin0-loader`.split(" ")
+    cflags = `pkg-config --cflags ignition-plugin0-loader`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",

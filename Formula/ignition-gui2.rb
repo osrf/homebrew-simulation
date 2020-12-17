@@ -87,8 +87,8 @@ class IgnitionGui2 < Formula
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-gui2"
-    cflags   = `pkg-config --cflags ignition-gui2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-gui2`.split(" ")
+    cflags   = `pkg-config --cflags ignition-gui2`.split
+    ldflags  = `pkg-config --libs ignition-gui2`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,

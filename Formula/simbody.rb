@@ -62,7 +62,7 @@ class Simbody < Formula
       }
     EOS
     system "pkg-config", "simbody"
-    flags = `pkg-config --cflags --libs simbody`.split(" ")
+    flags = `pkg-config --cflags --libs simbody`.split
     system ENV.cxx, "test.cpp", *flags, "-o", "test"
     system "./test"
     # check for Xcode frameworks in bottle
