@@ -92,8 +92,8 @@ class IgnitionGazebo3 < Formula
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo3"
-    # cflags   = `pkg-config --cflags ignition-gazebo3`.split(" ")
-    # ldflags  = `pkg-config --libs ignition-gazebo3`.split(" ")
+    # cflags   = `pkg-config --cflags ignition-gazebo3`.split
+    # ldflags  = `pkg-config --libs ignition-gazebo3`.split
     # system ENV.cc, "test.cpp",
     #                *cflags,
     #                *ldflags,

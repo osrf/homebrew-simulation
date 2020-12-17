@@ -51,7 +51,7 @@ class IgnitionFuelTools5 < Formula
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-fuel_tools5"
-    cflags = `pkg-config --cflags ignition-fuel_tools5`.split(" ")
+    cflags = `pkg-config --cflags ignition-fuel_tools5`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",

@@ -109,8 +109,8 @@ class Ogre21 < Formula
       }
     EOS
     system "pkg-config", "OGRE-2.1"
-    cflags = `pkg-config --cflags OGRE-2.1`.split(" ")
-    libs = `pkg-config --libs OGRE-2.1`.split(" ")
+    cflags = `pkg-config --cflags OGRE-2.1`.split
+    libs = `pkg-config --libs OGRE-2.1`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-std=c++11",

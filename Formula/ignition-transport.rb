@@ -34,7 +34,7 @@ class IgnitionTransport < Formula
       }
     EOS
     system "pkg-config", "ignition-transport1"
-    cflags = `pkg-config --cflags ignition-transport1`.split(" ")
+    cflags = `pkg-config --cflags ignition-transport1`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
