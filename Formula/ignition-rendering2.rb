@@ -52,8 +52,8 @@ class IgnitionRendering2 < Formula
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-rendering2"
-    cflags   = `pkg-config --cflags ignition-rendering2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-rendering2`.split(" ")
+    cflags   = `pkg-config --cflags ignition-rendering2`.split
+    ldflags  = `pkg-config --libs ignition-rendering2`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,

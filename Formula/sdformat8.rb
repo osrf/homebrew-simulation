@@ -54,7 +54,7 @@ class Sdformat8 < Formula
       target_link_libraries(test_cmake ${SDFormat_LIBRARIES})
     EOS
     system "pkg-config", "sdformat8"
-    cflags = `pkg-config --cflags sdformat8`.split(" ")
+    cflags = `pkg-config --cflags sdformat8`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",

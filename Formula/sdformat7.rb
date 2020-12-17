@@ -63,7 +63,7 @@ class Sdformat7 < Formula
       }
     EOS
     system "pkg-config", "sdformat"
-    cflags = `pkg-config --cflags sdformat`.split(" ")
+    cflags = `pkg-config --cflags sdformat`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",

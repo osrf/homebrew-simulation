@@ -50,8 +50,8 @@ class IgnitionSensors2 < Formula
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-sensors2"
-    cflags   = `pkg-config --cflags ignition-sensors2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-sensors2`.split(" ")
+    cflags   = `pkg-config --cflags ignition-sensors2`.split
+    ldflags  = `pkg-config --libs ignition-sensors2`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,

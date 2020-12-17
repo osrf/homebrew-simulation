@@ -89,8 +89,8 @@ class Gazebo7 < Formula
       target_link_libraries(test_cmake ${GAZEBO_LIBRARIES})
     EOS
     # system "pkg-config", "--cflags", "gazebo"
-    # cflags = `pkg-config --cflags gazebo`.split(" ")
-    # libs = `pkg-config --libs gazebo`.split(" ")
+    # cflags = `pkg-config --cflags gazebo`.split
+    # libs = `pkg-config --libs gazebo`.split
     # boost libs not properly generated in pkg-config file
     # disable test for now
     # see https://github.com/osrf/homebrew-simulation/issues/850

@@ -39,7 +39,7 @@ class IgnitionMsgs0 < Formula
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-msgs0"
-    cflags = `pkg-config --cflags ignition-msgs0`.split(" ")
+    cflags = `pkg-config --cflags ignition-msgs0`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",

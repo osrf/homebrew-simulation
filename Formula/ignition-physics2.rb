@@ -50,11 +50,11 @@ class IgnitionPhysics2 < Formula
       }
     EOS
     system "pkg-config", "ignition-physics2"
-    cflags   = `pkg-config --cflags ignition-physics2`.split(" ")
-    ldflags  = `pkg-config --libs ignition-physics2`.split(" ")
+    cflags   = `pkg-config --cflags ignition-physics2`.split
+    ldflags  = `pkg-config --libs ignition-physics2`.split
     system "pkg-config", "ignition-plugin1-loader"
-    loader_cflags   = `pkg-config --cflags ignition-plugin1-loader`.split(" ")
-    loader_ldflags  = `pkg-config --libs ignition-plugin1-loader`.split(" ")
+    loader_cflags   = `pkg-config --cflags ignition-plugin1-loader`.split
+    loader_ldflags  = `pkg-config --libs ignition-plugin1-loader`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,

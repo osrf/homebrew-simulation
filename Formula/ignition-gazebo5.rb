@@ -93,8 +93,8 @@ class IgnitionGazebo5 < Formula
     EOS
     # ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo5"
-    # cflags   = `pkg-config --cflags ignition-gazebo5`.split(" ")
-    # ldflags  = `pkg-config --libs ignition-gazebo5`.split(" ")
+    # cflags   = `pkg-config --cflags ignition-gazebo5`.split
+    # ldflags  = `pkg-config --libs ignition-gazebo5`.split
     # system ENV.cc, "test.cpp",
     #                *cflags,
     #                *ldflags,

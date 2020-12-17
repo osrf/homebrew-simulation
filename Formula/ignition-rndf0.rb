@@ -34,8 +34,8 @@ class IgnitionRndf0 < Formula
     }
     EOS
     system "pkg-config", "ignition-rndf0"
-    cflags = `pkg-config --cflags ignition-rndf0`.split(" ")
-    libs   = `pkg-config --libs ignition-rndf0`.split(" ")
+    cflags = `pkg-config --cflags ignition-rndf0`.split
+    libs   = `pkg-config --libs ignition-rndf0`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *libs,
