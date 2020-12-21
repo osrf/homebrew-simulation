@@ -18,9 +18,12 @@ class IgnitionUtils0 < Formula
   test do
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/utils/ImplPtr.hh>
+      class SomeClassPrivate
+      {
+      };
       class SomeClass
       {
-        private: ignition::utils::ImplPtr<Implementation> dataPtr;
+        private: ignition::utils::ImplPtr<SomeClassPrivate> dataPtr;
       };
       int main() {
         SomeClass object;
