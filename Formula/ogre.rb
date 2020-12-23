@@ -14,9 +14,9 @@ class Ogre < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
+  depends_on "libx11"
   depends_on "libzzip"
   depends_on "tbb"
-  depends_on :x11
 
   conflicts_with "ogre1.9", because: "differing version of the same formula"
 
