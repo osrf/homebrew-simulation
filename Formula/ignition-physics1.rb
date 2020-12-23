@@ -5,8 +5,8 @@ class IgnitionPhysics1 < Formula
   sha256 "284da92a9852e5e776fda71e1abaf1e084306c972112be1902ef1d105eb78fa2"
   license "Apache-2.0"
 
-  deprecate! date: "2020-12-31"
-  disable! date: "2021-01-31"
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
+  disable! date: "2021-01-31", because: "is past end-of-life date"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

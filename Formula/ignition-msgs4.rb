@@ -6,8 +6,8 @@ class IgnitionMsgs4 < Formula
   license "Apache-2.0"
   revision 5
 
-  deprecate! date: "2020-12-31"
-  disable! date: "2021-01-31"
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
+  disable! date: "2021-01-31", because: "is past end-of-life date"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
