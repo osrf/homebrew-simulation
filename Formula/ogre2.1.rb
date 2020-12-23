@@ -5,6 +5,7 @@ class Ogre21 < Formula
   version "2.0.99999~pre0~0~20180616~06a386f"
   sha256 "c9580c2380669c1de170612609f2f122c08cd88393a75ad53535e433c8feb72d"
   license "MIT"
+  revision 1
 
   head "https://github.com/OGRECave/ogre-next", branch: "v2-1"
 
@@ -22,10 +23,10 @@ class Ogre21 < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
+  depends_on "libx11"
   depends_on "libzzip"
   depends_on "rapidjson"
   depends_on "tbb"
-  depends_on :x11
 
   patch do
     # fix for cmake3 and c++11
