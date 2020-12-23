@@ -5,7 +5,7 @@ class Ogre19 < Formula
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
   license "MIT"
-  revision 8
+  revision 9
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -21,9 +21,9 @@ class Ogre19 < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
+  depends_on "libx11"
   depends_on "libzzip"
   depends_on "tbb"
-  depends_on :x11
 
   conflicts_with "ogre", because: "differing version of the same formula"
 
