@@ -20,8 +20,6 @@ class Sdformat10 < Formula
   depends_on "urdfdom"
 
   def install
-    ENV.m64
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
