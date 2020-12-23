@@ -4,11 +4,11 @@ class IgnitionRendering3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.2.0.tar.bz2"
   sha256 "425ecc78fae067f9e1b97208f84eb36803881c26c6fd464bcacd9321d529c992"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "6f808c45f232606055a18ed82f6884428a193b737d32081fed45404139f57403" => :mojave
+    sha256 "f14def506cd46dee2f30fe76c558833983792e2d87b70f90dbf0e80e47357433" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
