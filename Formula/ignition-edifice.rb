@@ -41,8 +41,6 @@ class IgnitionEdifice < Formula
   end
 
   def install
-    ENV.m64
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"

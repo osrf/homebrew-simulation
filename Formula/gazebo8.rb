@@ -75,8 +75,6 @@ class Gazebo8 < Formula
   end
 
   def install
-    ENV.m64
-
     cmake_args = std_cmake_args
     cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"

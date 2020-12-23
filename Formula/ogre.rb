@@ -61,8 +61,6 @@ class Ogre < Formula
   end
 
   def install
-    ENV.m64
-
     cmake_args = [
       "-DCMAKE_OSX_ARCHITECTURES='x86_64'",
       "-F/Library/Frameworks/",
