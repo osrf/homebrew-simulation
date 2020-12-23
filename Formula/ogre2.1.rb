@@ -5,16 +5,14 @@ class Ogre21 < Formula
   version "2.0.99999~pre0~0~20180616~06a386f"
   sha256 "c9580c2380669c1de170612609f2f122c08cd88393a75ad53535e433c8feb72d"
   license "MIT"
+  revision 1
 
   head "https://github.com/OGRECave/ogre-next", branch: "v2-1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    rebuild 1
-    sha256 "1c1603e76240f8cccd10f839d67ffa726c8b66b60ceb499249cf84cb850ca2a1" => :mojave
-    sha256 "c300233dd9589c60576fcfb2d4f22dd3c788bdae9cc44550e7d9855bf7ad89e7" => :high_sierra
-    sha256 "553e77a967dbb8e58a2f2033517fe932ad2d6e50ee568e82585b384175eea653" => :sierra
+    sha256 "4641e0d611d87f9c063b26cb11d61c7ad32be62448c6fcd6fc75339c42f563ba" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -22,10 +20,10 @@ class Ogre21 < Formula
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
+  depends_on "libx11"
   depends_on "libzzip"
   depends_on "rapidjson"
   depends_on "tbb"
-  depends_on :x11
 
   patch do
     # fix for cmake3 and c++11
