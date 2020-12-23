@@ -21,7 +21,6 @@ class Simbody < Formula
     # Don't use 10.11 SDK frameworks on 10.10 with xcode7
     ENV.delete("MACOSX_DEPLOYMENT_TARGET")
     ENV.delete("SDKROOT")
-    ENV.m64
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
