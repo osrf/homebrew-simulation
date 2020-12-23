@@ -6,6 +6,9 @@ class IgnitionLaunch1 < Formula
   license "Apache-2.0"
   revision 1
 
+  deprecate! date: "2020-12-31"
+  disable! date: "2021-01-31"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "89f281e5b8e9f15a800858c668043f2ba237149e1760c851abe3545c0be7f63d" => :mojave
