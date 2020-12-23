@@ -4,7 +4,7 @@ class IgnitionRendering2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering2-2.5.1.tar.bz2"
   sha256 "3d1f77d3e8afc86aee31e12e7e096ac5dc9afcb8faa78be63fa90884a68f9e08"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
