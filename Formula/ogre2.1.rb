@@ -40,8 +40,6 @@ class Ogre21 < Formula
   end
 
   def install
-    ENV.m64
-
     cmake_args = [
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.1",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",

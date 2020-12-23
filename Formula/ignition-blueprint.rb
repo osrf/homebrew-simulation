@@ -37,8 +37,6 @@ class IgnitionBlueprint < Formula
   depends_on "sdformat8"
 
   def install
-    ENV.m64
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
