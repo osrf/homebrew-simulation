@@ -21,8 +21,6 @@ class Sdformat < Formula
   conflicts_with "sdformat5", because: "differing version of the same formula"
 
   def install
-    ENV.m64
-
     cmake_args = std_cmake_args
     cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
     cmake_args << ".."

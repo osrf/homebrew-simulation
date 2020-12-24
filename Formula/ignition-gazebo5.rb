@@ -35,8 +35,6 @@ class IgnitionGazebo5 < Formula
   depends_on "sdformat10"
 
   def install
-    ENV.m64
-
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
 
