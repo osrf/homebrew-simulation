@@ -8,11 +8,6 @@ class Gazebo11 < Formula
 
   head "https://github.com/osrf/gazebo", branch: "gazebo11"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "587b8a0faa9ffc751823efdeee91c0f28f042a9d03327448913cc924fac1988c" => :mojave
-  end
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
@@ -64,8 +59,6 @@ class Gazebo11 < Formula
   end
 
   def install
-    ENV.m64
-
     cmake_args = std_cmake_args
     cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"

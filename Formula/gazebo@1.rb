@@ -52,8 +52,6 @@ class GazeboAT1 < Formula
   end
 
   def install
-    ENV.m64
-
     cmake_args = std_cmake_args
     cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
     cmake_args << "-DFORCE_GRAPHIC_TESTS_COMPILATION:BOOL=True"
