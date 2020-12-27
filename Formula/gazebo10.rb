@@ -53,8 +53,8 @@ class Gazebo10 < Formula
 
   patch do
     # set CMP0100
-    url "https://github.com/osrf/gazebo/commit/2e4f1b185cb46b2c06fe63881d60f3fbeb868923.diff?full_index=1"
-    sha256 "9440826488808b4efe5952cdd454d80e93e6f897e865af01353e0e8ef0513d54"
+    url "https://github.com/osrf/gazebo/commit/2e4f1b185cb46b2c06fe63881d60f3fbeb868923.patch?full_index=1"
+    sha256 "77dd71e8aba1cdcffe015c79e6820b58084567a5c192dba775264a935b71d09b"
   end
 
   patch do
