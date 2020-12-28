@@ -10,14 +10,15 @@ class IgnitionBlueprint < Formula
 
   head "https://github.com/ignitionrobotics/ign-blueprint", branch: "main"
 
-  deprecate! date: "2020-12-31", because: "is past end-of-life date"
-  disable! date: "2021-01-31", because: "is past end-of-life date"
-
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
     sha256 "454a2f24373107bf43de3f449c06a2b99456b0dfc911891919378e9306d1bb99" => :mojave
   end
+
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"

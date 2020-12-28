@@ -8,13 +8,14 @@ class IgnitionGui2 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui2"
 
-  deprecate! date: "2020-12-31", because: "is past end-of-life date"
-  disable! date: "2021-01-31", because: "is past end-of-life date"
-
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "44d542b938257c46e4dbe966fe0fc761bf57d939b4d18399fed52eb006c0ae4c" => :mojave
   end
+
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

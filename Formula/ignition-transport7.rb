@@ -6,13 +6,14 @@ class IgnitionTransport7 < Formula
   license "Apache-2.0"
   revision 2
 
-  deprecate! date: "2020-12-31", because: "is past end-of-life date"
-  disable! date: "2021-01-31", because: "is past end-of-life date"
-
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 "bce6e3510f25a642b9942687feab6495e5678a19e15ecc8a7708eb86e6091db2" => :mojave
   end
+
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
