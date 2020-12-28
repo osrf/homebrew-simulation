@@ -1,10 +1,9 @@
 class IgnitionTransport7 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport7-7.5.0.tar.bz2"
-  sha256 "710b5d4d2ece5d9a7a244912cc0590c1be670e2bc35686063ea1e1536096890e"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport7-7.5.1.tar.bz2"
+  sha256 "7bcf66c1bf2f6d0617240d435df9a4176606f85705ecb82a253a7d54dd2f31e4"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
