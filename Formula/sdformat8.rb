@@ -7,7 +7,7 @@ class Sdformat8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e4e3dc57a7643f665aec5c3ca09e804cfdf8522f8cf23c893e4231570b91dc37" => :mojave
+    sha256 "9cb9f0aec39e028270c460e796b93684fdb1c711de28ca92564f50f1745338c6" => :mojave
   end
 
   disable! date: "2021-01-31", because: "is past end-of-life date"
