@@ -12,8 +12,6 @@ class IgnitionPhysics1 < Formula
     sha256 "4b8eba959f866f7a9c306736eab34f4795de8c1801603b64b21d4000593fd167" => :mojave
   end
 
-  disable! date: "2021-01-31", because: "is past end-of-life date"
-
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
