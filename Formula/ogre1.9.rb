@@ -15,8 +15,8 @@ class Ogre19 < Formula
   option "with-cg"
 
   depends_on "cmake" => :build
-  depends_on "boost"
   depends_on "doxygen" => [:build, :optional]
+  depends_on "boost"
   depends_on "freeimage"
   depends_on "freetype"
   depends_on "libx11"

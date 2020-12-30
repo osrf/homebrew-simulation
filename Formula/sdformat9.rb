@@ -12,9 +12,9 @@ class Sdformat9 < Formula
   end
 
   depends_on "cmake" => [:build, :test]
+  depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => [:build, :test]
 
-  depends_on "doxygen" => [:build, :optional]
   depends_on "ignition-math6"
   depends_on macos: :mojave # c++17
   depends_on "tinyxml"
