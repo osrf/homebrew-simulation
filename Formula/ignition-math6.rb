@@ -13,7 +13,7 @@ class IgnitionMath6 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
+  depends_on "doxygen" => [:build, :optional]
   depends_on "eigen"
   depends_on "ignition-cmake2"
   depends_on "ruby"
