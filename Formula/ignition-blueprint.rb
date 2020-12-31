@@ -4,9 +4,8 @@ class IgnitionBlueprint < Formula
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-blueprint"
   url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.0.0.tar.bz2"
-  url "https://github.com/ignitionrobotics/ign-blueprint/archive/a3f44f4ab45633e807b1a0402d6952b95c6b2d6f.tar.gz"
-  version "1.0.1~0~20201207~a3f44f"
-  sha256 "190fe8c427adfe300da62b772ef9fe1bf118f38acf81efd6cdb7672bbc67c304"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.1.0.tar.bz2"
+  sha256 "51e224efc51ce5ff7ef164883a5b7428e169409386900b82f7ef6b84b611d7aa"
 
   head "https://github.com/ignitionrobotics/ign-blueprint", branch: "main"
 
