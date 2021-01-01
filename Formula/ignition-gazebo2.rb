@@ -13,6 +13,8 @@ class IgnitionGazebo2 < Formula
     sha256 "0be73f21beab891fd7ef73d85df055cfe5026f79ce18c38927ced1e84e8998f3" => :mojave
   end
 
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

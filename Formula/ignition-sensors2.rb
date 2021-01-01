@@ -12,6 +12,8 @@ class IgnitionSensors2 < Formula
     sha256 "7ee748d0bce398e8a649568050eedd224d3dbe2b05236f8575dfabbe0e2a32a9" => :mojave
   end
 
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]

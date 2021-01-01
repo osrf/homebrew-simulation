@@ -10,6 +10,8 @@ class Sdformat8 < Formula
     sha256 "9cb9f0aec39e028270c460e796b93684fdb1c711de28ca92564f50f1745338c6" => :mojave
   end
 
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
