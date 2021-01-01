@@ -34,6 +34,12 @@ class IgnitionGazebo2 < Formula
   depends_on "ruby"
   depends_on "sdformat8"
 
+  patch do
+    # Disable doxygen until due to seg-fault with 1.9.0
+    url "https://github.com/ignitionrobotics/ign-gazebo/commit/ca55337b4b662194ba417c1971f483fbc69dafc3.patch?full_index=1"
+    sha256 "8090bd3347f7792da736ae7d05bc691429c8ce38eef436b6fbdd9a5144ea49e2"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
