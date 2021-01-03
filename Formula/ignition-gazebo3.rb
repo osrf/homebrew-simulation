@@ -34,8 +34,8 @@ class IgnitionGazebo3 < Formula
 
   patch do
     # Disable doxygen until due to seg-fault with 1.9.0
-    url "https://github.com/ignitionrobotics/ign-gazebo/commit/ca55337b4b662194ba417c1971f483fbc69dafc3.patch?full_index=1"
-    sha256 "8090bd3347f7792da736ae7d05bc691429c8ce38eef436b6fbdd9a5144ea49e2"
+    url "https://github.com/ignitionrobotics/ign-gazebo/commit/0798029c0e5d3d4c475cc524512cdce46c40500a.patch?full_index=1"
+    sha256 "cba5706b85b9d5c160dea0836aecf11070b1c1c6fa3d93e06a6b8a4b4583d0fb"
   end
 
   def install
