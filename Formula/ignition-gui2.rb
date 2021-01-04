@@ -13,6 +13,8 @@ class IgnitionGui2 < Formula
     sha256 "44d542b938257c46e4dbe966fe0fc761bf57d939b4d18399fed52eb006c0ae4c" => :mojave
   end
 
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
