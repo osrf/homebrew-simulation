@@ -15,6 +15,8 @@ class IgnitionBlueprint < Formula
     sha256 "c0667f15a6db2bafaebf0e23110b2260f5830d524a5216d327dbdabe627050ed" => :mojave
   end
 
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

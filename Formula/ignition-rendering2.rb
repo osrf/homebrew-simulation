@@ -11,6 +11,8 @@ class IgnitionRendering2 < Formula
     sha256 "69cfeffcdb2ddbca21e057eda959332286ef5c07981724d30c67d7b8ff36733a" => :mojave
   end
 
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
