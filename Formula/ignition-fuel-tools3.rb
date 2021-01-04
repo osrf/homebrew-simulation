@@ -13,6 +13,8 @@ class IgnitionFuelTools3 < Formula
     sha256 "265b4c77b041777ca699bd39263e80fb3b77adb5a7323d64cb303fd545e6c5a6" => :high_sierra
   end
 
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"

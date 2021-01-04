@@ -11,6 +11,8 @@ class IgnitionLaunch1 < Formula
     sha256 "89f281e5b8e9f15a800858c668043f2ba237149e1760c851abe3545c0be7f63d" => :mojave
   end
 
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
