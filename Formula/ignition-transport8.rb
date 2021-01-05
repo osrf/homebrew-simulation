@@ -1,10 +1,9 @@
 class IgnitionTransport8 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.1.0.tar.bz2"
-  sha256 "48971eb0d83a54efe8637762f3ad1117e916cfee9d8325a2b3997f9ee55ff673"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.2.0.tar.bz2"
+  sha256 "cff732a797ea08fdb4834331bea14ae50d1cbdd63efae613a475bc42f32e29b3"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
