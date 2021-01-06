@@ -1,16 +1,15 @@
 class IgnitionGazebo3 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.5.0.tar.bz2"
-  sha256 "3ed0cc0f0c3c03e6de4b54c450ad1df52be5897443d82ed4ac0ca89387252352"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.6.0.tar.bz2"
+  sha256 "c58ce324d74013505723a4c82c086bdbaf3acb543f785e5e7b5c81e4f611716b"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "7ece6aba59fd7f6f5ef71eee1f08f017c464de535e3fe3015e3a7fdb51ae2fbd" => :mojave
+    sha256 "0cb80b9659c7cf8fab26e69a0f236754146e92196a7b3d69e95f168fa7c6da10" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -32,6 +31,12 @@ class IgnitionGazebo3 < Formula
   depends_on "pkg-config"
   depends_on "ruby"
   depends_on "sdformat9"
+
+  patch do
+    # Disable doxygen until due to seg-fault with 1.9.0
+    url "https://github.com/ignitionrobotics/ign-gazebo/commit/0798029c0e5d3d4c475cc524512cdce46c40500a.patch?full_index=1"
+    sha256 "cba5706b85b9d5c160dea0836aecf11070b1c1c6fa3d93e06a6b8a4b4583d0fb"
+  end
 
   def install
     cmake_args = std_cmake_args
