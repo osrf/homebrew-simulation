@@ -23,7 +23,7 @@ class IgnitionGui5 < Formula
   depends_on "ignition-rendering5"
   depends_on "ignition-transport9"
   depends_on macos: :mojave # c++17
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "qwt"
   depends_on "tinyxml2"
 
@@ -84,7 +84,7 @@ class IgnitionGui5 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gui5::ignition-gui5)
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-gui5"
     cflags   = `pkg-config --cflags ignition-gui5`.split
     ldflags  = `pkg-config --libs ignition-gui5`.split
@@ -96,7 +96,7 @@ class IgnitionGui5 < Formula
     ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

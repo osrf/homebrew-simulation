@@ -15,7 +15,7 @@ class Sofa < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libx11"
-  depends_on "qt"
+  depends_on "qt@5"
 
   def install
     # For some reason, cmake must be invoked twice
