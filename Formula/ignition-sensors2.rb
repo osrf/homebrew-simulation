@@ -1,17 +1,20 @@
 class IgnitionSensors2 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors2-2.9.0.tar.bz2"
-  sha256 "8477acadaf5a4e883eed7d7475d3d07f7e7f2c014f0cb9be5b8a128042319f95"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors2-2.9.1.tar.bz2"
+  sha256 "a48644f58126526e787aeec89014062adc3dd918a4da35ad43f23fcd3ff97069"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/ignitionrobotics/ign-sensors", branch: "ign-sensors2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "64d0b89903418f3887c5261c4ca07809d444db0115b859b82dda80021d8c44e0" => :mojave
+    sha256 "7ee748d0bce398e8a649568050eedd224d3dbe2b05236f8575dfabbe0e2a32a9" => :mojave
   end
+
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

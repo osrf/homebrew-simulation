@@ -1,17 +1,20 @@
 class IgnitionGazebo2 < Formula
   desc "Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo2-2.25.0.tar.bz2"
-  sha256 "7d05c1586ef53d67cbf6562f5c7d1bf4480280f5ecb172d235101c40942ee1f9"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo2-2.26.0.tar.bz2"
+  sha256 "71820ea9ecd541331645dd6feb75a6e62a8339e788ef43ffcd8f0c3890e33361"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "0be73f21beab891fd7ef73d85df055cfe5026f79ce18c38927ced1e84e8998f3" => :mojave
+    sha256 "e523e84e70436612410f55ec29a2ac3dc0641f6d1fdb52906f5eedac11e7d629" => :mojave
   end
+
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -32,6 +35,12 @@ class IgnitionGazebo2 < Formula
   depends_on "pkg-config"
   depends_on "ruby"
   depends_on "sdformat8"
+
+  patch do
+    # Disable doxygen until due to seg-fault with 1.9.0
+    url "https://github.com/ignitionrobotics/ign-gazebo/commit/ca55337b4b662194ba417c1971f483fbc69dafc3.patch?full_index=1"
+    sha256 "8090bd3347f7792da736ae7d05bc691429c8ce38eef436b6fbdd9a5144ea49e2"
+  end
 
   def install
     cmake_args = std_cmake_args

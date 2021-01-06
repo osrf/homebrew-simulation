@@ -12,6 +12,10 @@ class IgnitionMsgs4 < Formula
     sha256 "24b32ba1a5344dce35629e3c4b1b48455c596a2be10ed52dac1da5ce77cb455d" => :mojave
   end
 
+  disable! date: "2021-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2020-12-31", because: "is past end-of-life date"
+
   depends_on "protobuf-c" => :build
 
   depends_on "cmake"

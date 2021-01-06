@@ -1,18 +1,20 @@
-class IgnitionMsgs5 < Formula
+class IgnitionMsgs7 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.6.0.tar.bz2"
-  sha256 "54a08e2b194d9d4857f4930f62c1c66ef85a518a742c60597d91908e91b609ba"
+  url "https://github.com/ignitionrobotics/ign-msgs/archive/21555dc6244d84c6374759469364e5507edef635.tar.gz"
+  version "6.999.999~0~20201223~21555d"
+  sha256 "21109b819f0804df493631e701921d0e54323e790257a1d82c3a47c71ece537e"
   license "Apache-2.0"
+
+  head "https://github.com/ignitionrobotics/ign-msgs", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "cf7a3a4a3a5757931c7a815f1dab2a07ba56bc11dc8eecadb974ea5ae186abd3" => :mojave
+    sha256 "5adf9d3b344c6d85297bab09f471a8da2939d39a1a24fd15de33bd28ace9c55f" => :mojave
   end
 
   depends_on "protobuf-c" => :build
-
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
@@ -25,6 +27,7 @@ class IgnitionMsgs5 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
+
     system "cmake", ".", *cmake_args
     system "make", "install"
   end
@@ -39,20 +42,20 @@ class IgnitionMsgs5 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
-      find_package(ignition-msgs5 QUIET REQUIRED)
+      find_package(ignition-msgs7 QUIET REQUIRED)
       set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IGNITION-MSGS_CXX_FLAGS}")
       include_directories(${IGNITION-MSGS_INCLUDE_DIRS})
       link_directories(${IGNITION-MSGS_LIBRARY_DIRS})
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-msgs5::ignition-msgs5)
+      target_link_libraries(test_cmake ignition-msgs7::ignition-msgs7)
     EOS
     # test building with pkg-config
-    system "pkg-config", "ignition-msgs5"
-    cflags = `pkg-config --cflags ignition-msgs5`.split
+    system "pkg-config", "ignition-msgs7"
+    cflags = `pkg-config --cflags ignition-msgs7`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-msgs5",
+                   "-lignition-msgs7",
                    "-lc++",
                    "-o", "test"
     system "./test"

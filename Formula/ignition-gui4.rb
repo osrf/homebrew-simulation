@@ -1,15 +1,15 @@
 class IgnitionGui4 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui4-4.1.0.tar.bz2"
-  sha256 "c610e249402d7c8f787e6912d116d1de6cb933e50c15fc74b23eb44e209eea00"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui4-4.1.1.tar.bz2"
+  sha256 "90c66f3ac1c634d865bb6846c5d320013eed1aa9a6672a6aae74927851c5b620"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "c1402da0b3b4f8a8e127aaa60ac2a9c7ecff24bf19b82eba17d87b168e2419a4" => :mojave
+    sha256 "5a434ccfe6dbfb03eed51a39e48e2542c070e84cc73ef14dd5b5f76bcdc36cbc" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -21,7 +21,7 @@ class IgnitionGui4 < Formula
   depends_on "ignition-rendering4"
   depends_on "ignition-transport9"
   depends_on macos: :mojave # c++17
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "qwt"
   depends_on "tinyxml2"
 
@@ -82,7 +82,7 @@ class IgnitionGui4 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gui4::ignition-gui4)
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-gui4"
     cflags   = `pkg-config --cflags ignition-gui4`.split
     ldflags  = `pkg-config --libs ignition-gui4`.split
@@ -94,7 +94,7 @@ class IgnitionGui4 < Formula
     ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
