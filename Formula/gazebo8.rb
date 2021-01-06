@@ -26,7 +26,7 @@ class Gazebo8 < Formula
   depends_on "ogre1.9"
   depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
-  depends_on "qt"
+  depends_on "qt@5"
   depends_on "qwt"
   depends_on "sdformat5"
   depends_on "tbb"

@@ -1,23 +1,20 @@
-class IgnitionMsgs4 < Formula
+class IgnitionMsgs7 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs4-4.9.0.tar.bz2"
-  sha256 "3a75aabd1f39bf0e48f0c99070e210154d62c35b3571f20d47348e08ac3015f6"
+  url "https://github.com/ignitionrobotics/ign-msgs/archive/21555dc6244d84c6374759469364e5507edef635.tar.gz"
+  version "6.999.999~0~20201223~21555d"
+  sha256 "21109b819f0804df493631e701921d0e54323e790257a1d82c3a47c71ece537e"
   license "Apache-2.0"
-  revision 5
+
+  head "https://github.com/ignitionrobotics/ign-msgs", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "24b32ba1a5344dce35629e3c4b1b48455c596a2be10ed52dac1da5ce77cb455d" => :mojave
+    sha256 "5adf9d3b344c6d85297bab09f471a8da2939d39a1a24fd15de33bd28ace9c55f" => :mojave
   end
 
-  disable! date: "2021-01-31", because: "is past end-of-life date"
-
-  deprecate! date: "2020-12-31", because: "is past end-of-life date"
-
   depends_on "protobuf-c" => :build
-
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
@@ -25,10 +22,12 @@ class IgnitionMsgs4 < Formula
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
+
     system "cmake", ".", *cmake_args
     system "make", "install"
   end
@@ -43,20 +42,20 @@ class IgnitionMsgs4 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
-      find_package(ignition-msgs4 QUIET REQUIRED)
+      find_package(ignition-msgs7 QUIET REQUIRED)
       set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IGNITION-MSGS_CXX_FLAGS}")
       include_directories(${IGNITION-MSGS_INCLUDE_DIRS})
       link_directories(${IGNITION-MSGS_LIBRARY_DIRS})
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-msgs4::ignition-msgs4)
+      target_link_libraries(test_cmake ignition-msgs7::ignition-msgs7)
     EOS
     # test building with pkg-config
-    system "pkg-config", "ignition-msgs4"
-    cflags = `pkg-config --cflags ignition-msgs4`.split
+    system "pkg-config", "ignition-msgs7"
+    cflags = `pkg-config --cflags ignition-msgs7`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-msgs4",
+                   "-lignition-msgs7",
                    "-lc++",
                    "-o", "test"
     system "./test"
