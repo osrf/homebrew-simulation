@@ -4,9 +4,14 @@ class Gazebo10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-10.2.0.tar.bz2"
   sha256 "47d8bfe70ffcde21cbc6dec142f3aecefaac66c63562aab6114f442f7ab27392"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   head "https://github.com/osrf/gazebo", branch: "gazebo10"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "1cc8e89ebfb482ff5f1a90537d4d82073733802d0f806ff92a1514e9028d4f48" => :mojave
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -50,6 +55,12 @@ class Gazebo10 < Formula
   conflicts_with "gazebo8", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
+
+  patch do
+    # set CMP0100
+    url "https://github.com/osrf/gazebo/commit/2e4f1b185cb46b2c06fe63881d60f3fbeb868923.patch?full_index=1"
+    sha256 "77dd71e8aba1cdcffe015c79e6820b58084567a5c192dba775264a935b71d09b"
+  end
 
   patch do
     # Fix for compatibility with boost 1.74
