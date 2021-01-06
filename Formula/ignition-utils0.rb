@@ -1,5 +1,5 @@
 class IgnitionUtils0 < Formula
-  desc "General purpose classes and functions designed for robotic applications."
+  desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
   url "https://github.com/ignitionrobotics/ign-utils/archive/20527970a7795661d8ca7b15f8197e4457595ce5.tar.gz"
   version "0.1.0~pre1"
@@ -37,7 +37,6 @@ class IgnitionUtils0 < Formula
       target_link_libraries(test_cmake ${IGNITION-UTILS_LIBRARIES})
     EOS
     system "pkg-config", "ignition-utils0"
-    cflags = `pkg-config --cflags ignition-utils0`.split
     system ENV.cc, "test.cpp",
                    "--std=c++17",
                    "-I#{include}/ignition/utils0",
