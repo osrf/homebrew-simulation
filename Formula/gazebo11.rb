@@ -8,6 +8,11 @@ class Gazebo11 < Formula
 
   head "https://github.com/osrf/gazebo", branch: "gazebo11"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "3f5b55dd0a6f887653e3027fc63f7ab9638fba345a6768bfcdb6cd0f9a66529f" => :mojave
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
