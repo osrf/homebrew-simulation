@@ -2,16 +2,18 @@ class IgnitionUtils0 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
   url "https://github.com/ignitionrobotics/ign-utils/archive/20527970a7795661d8ca7b15f8197e4457595ce5.tar.gz"
-  version "0.1.0~pre1"
+  version "0.1.0~pre0~0"
   sha256 "fcb84b71063b7a2a9a0b53e31aa57101e1dc4005e2d38487e046bdec2849ec46"
   license "Apache-2.0"
 
-  depends_on "cmake"
+  depends_on "cmake" => [:build, :test]
+  depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
-  depends_on "pkg-config"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    system "cmake", ".", *cmake_args
     system "make", "install"
   end
 
@@ -51,5 +53,8 @@ class IgnitionUtils0 < Formula
       system "make"
       system "./test_cmake"
     end
+    # check for Xcode frameworks in bottle
+    cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
+    system cmd_not_grep_xcode
   end
 end
