@@ -6,6 +6,12 @@ class IgnitionUtils0 < Formula
   sha256 "feaee24774ad06e9a735ad3bc5341c75bbc33a1eafdf528a6a1acce48eba2488"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    cellar :any
+    sha256 "12378ce9c4da350fc3b55be0193dfc3f54ffa4b3717f652247b50f5ee2004836" => :mojave
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
