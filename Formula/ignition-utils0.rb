@@ -23,7 +23,7 @@ class IgnitionUtils0 < Formula
       class SomeClassPrivate
       {
       };
-      class SomeClass
+      class SomeClass: dataPtr(ignition::utils::MakeImpl<SomeClassPrivate>())
       {
         private: ignition::utils::ImplPtr<SomeClassPrivate> dataPtr;
       };
