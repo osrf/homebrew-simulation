@@ -23,9 +23,10 @@ class IgnitionUtils0 < Formula
       class SomeClassPrivate
       {
       };
-      class SomeClass: dataPtr(ignition::utils::MakeImpl<SomeClassPrivate>())
+      class SomeClass
       {
-        private: ignition::utils::ImplPtr<SomeClassPrivate> dataPtr;
+        private: ignition::utils::ImplPtr<SomeClassPrivate> dataPtr =
+            ignition::utils::MakeImpl<SomeClassPrivate>();
       };
       int main() {
         SomeClass object;
