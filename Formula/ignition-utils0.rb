@@ -1,9 +1,9 @@
 class IgnitionUtils0 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://github.com/ignitionrobotics/ign-utils/archive/20a2b6fc0030cd3abbac36d476da8e36d6794404.tar.gz"
-  version "0.1.0~pre0~0~20201223~20a2b6f"
-  sha256 "fa5584d13116ef2b00a1776a8acacdc27f1d5755e416763bb836bb0490558bfd"
+  url "https://github.com/ignitionrobotics/ign-utils/archive/922bb53992fd275817a3c0b093bc8ed1cb4743af.tar.gz"
+  version "0.1.0~pre0~0~20210107~922bb53"
+  sha256 "feaee24774ad06e9a735ad3bc5341c75bbc33a1eafdf528a6a1acce48eba2488"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
