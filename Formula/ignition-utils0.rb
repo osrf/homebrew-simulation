@@ -46,13 +46,12 @@ class IgnitionUtils0 < Formula
       target_link_libraries(test_cmake ${IGNITION-UTILS_LIBRARIES})
     EOS
     system "pkg-config", "ignition-utils0"
-    system ENV.cc, "test.cpp",
-                   "--std=c++17",
-                   "-I#{include}/ignition/utils0",
-                   "-L#{lib}",
-                   "-lignition-utils0",
-                   "-lc++",
-                   "-o", "test"
+    cflags = `pkg-config --cflags ignition-utils0`.split
+    ldflags = `pkg-config --libs ignition-utils0`.split
+    system ENV.cxx, "test.cpp",
+                    *cflags,
+                    *ldflags,
+                    "-o", "test"
     system "./test"
     # test building with cmake
     mkdir "build" do
