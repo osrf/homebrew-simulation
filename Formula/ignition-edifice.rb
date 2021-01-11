@@ -3,8 +3,8 @@ class IgnitionEdifice < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-edifice"
-  url "https://github.com/ignitionrobotics/ign-edifice/archive/4d48857070561af742efd68b8d4b13b9903572a8.tar.gz"
-  sha256 "ad648480b1abe1a6bc08c9ece5d422cf21aad4eb27c619fe7519e3673e5b35d5"
+  url "https://github.com/ignitionrobotics/ign-edifice/archive/be4570f0b4757445ff77496cb30d4ceb940e8baf.tar.gz"
+  sha256 "2da4c054c562fb3703ada530dc04fb92705a73df30e2d2c39d4dd5e01e8800e9"
   license "Apache-2.0"
   revision 1
 
@@ -19,18 +19,18 @@ class IgnitionEdifice < Formula
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-fuel-tools5"
-  depends_on "ignition-gazebo4"
-  depends_on "ignition-gui4"
-  depends_on "ignition-launch3"
+  depends_on "ignition-fuel-tools6"
+  depends_on "ignition-gazebo5"
+  depends_on "ignition-gui5"
+  depends_on "ignition-launch4"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs6"
+  depends_on "ignition-msgs7"
   depends_on "ignition-physics3"
   depends_on "ignition-plugin1"
-  depends_on "ignition-rendering4"
-  depends_on "ignition-sensors4"
+  depends_on "ignition-rendering5"
+  depends_on "ignition-sensors5"
   depends_on "ignition-tools"
-  depends_on "ignition-transport9"
+  depends_on "ignition-transport10"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat10"
