@@ -1,9 +1,9 @@
 class IgnitionSensors5 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://github.com/ignitionrobotics/ign-sensors/archive/c02cd052f263373d630eb8e1a2714d9965cb48d2.tar.gz"
-  version "4.999.999~0~20201028~c02cd0"
-  sha256 "fdd953c50aa814f52ec4c769c74c83755ec5056c9b53cd4a899bbd12004e5481"
+  url "https://github.com/ignitionrobotics/ign-sensors/archive/2d54bb919ce1da90c13e26be8e90c07b7cd73a7a.tar.gz"
+  version "4.999.999~0~20210111~2d54bb"
+  sha256 "02e7da87cbef4ebdcb25535edfbafa63b1a185384aee9559a26971a491b97213"
   license "Apache-2.0"
   revision 1
 
@@ -20,9 +20,9 @@ class IgnitionSensors5 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs6"
+  depends_on "ignition-msgs7"
   depends_on "ignition-rendering5"
-  depends_on "ignition-transport9"
+  depends_on "ignition-transport10"
   depends_on "sdformat10"
 
   def install
