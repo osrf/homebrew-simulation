@@ -6,7 +6,6 @@ class IgnitionEdifice < Formula
   url "https://github.com/ignitionrobotics/ign-edifice/archive/be4570f0b4757445ff77496cb30d4ceb940e8baf.tar.gz"
   sha256 "2da4c054c562fb3703ada530dc04fb92705a73df30e2d2c39d4dd5e01e8800e9"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-edifice", branch: "main"
 
