@@ -59,12 +59,12 @@ class IgnitionRendering3 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" unless azure || github_actions || travis
+    system "./test" if !(azure || github_actions) && !travis
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
       system "make"
-      system "./test_cmake" unless azure || github_actions || travis
+      system "./test_cmake" if !(azure || github_actions) && !travis
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
