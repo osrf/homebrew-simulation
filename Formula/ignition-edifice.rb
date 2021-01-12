@@ -4,7 +4,7 @@ class IgnitionEdifice < Formula
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-edifice"
   url "https://github.com/ignitionrobotics/ign-edifice/archive/7a87f6d356962a363bbe5d8e64565a283ca9e9a1.tar.gz"
-  version "-1.999.999~0~20210112~7a87f6"
+  version "0.999.999~0~20210112~7a87f6"
   sha256 "91bb623765123f41082dbd75d4777b84f32974f11c88d9c1aa98e1ac7f060d6f"
   license "Apache-2.0"
   version_scheme 1
