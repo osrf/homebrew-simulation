@@ -1,17 +1,13 @@
 class IgnitionGazebo5 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://github.com/ignitionrobotics/ign-gazebo/archive/64aa64f993d7698d5a1488523ff7bac185d9b6f2.tar.gz"
+  url "https://github.com/ignitionrobotics/ign-gazebo/archive/a11e143758b43cf20884cae34fdae40659c80502.tar.gz"
+  version "4.999.999~0~20210112~a11e14"
   version "4.999.999~0~20210111~64aa64"
-  sha256 "29f3433bd386f1ef2ae98b847daf65a166782da2cd6a278343e54f994ca5bc0b"
+  sha256 "dd2305efded2d5dc72615fc2e8a02f19c9ed4310c121bdbb21e27dfeb93dbf64"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "1e704f8e7eaa8ae857dfceb47c333dd35d657926e07b979aa806279695092a8c" => :mojave
-  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -22,7 +18,7 @@ class IgnitionGazebo5 < Formula
   depends_on "ignition-gui5"
   depends_on "ignition-math6"
   depends_on "ignition-msgs7"
-  depends_on "ignition-physics3"
+  depends_on "ignition-physics4"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering5"
   depends_on "ignition-sensors5"
@@ -31,7 +27,7 @@ class IgnitionGazebo5 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "ruby"
-  depends_on "sdformat10"
+  depends_on "sdformat11"
 
   def install
     cmake_args = std_cmake_args
