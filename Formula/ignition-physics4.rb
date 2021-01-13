@@ -5,7 +5,6 @@ class IgnitionPhysics4 < Formula
   version "3.999.999~0~20210112~9c3f3f"
   sha256 "8dc656b8dfe2625a02c578922fb6e9bd48a233bc72f6fa91f97a9d7db13c27cc"
   license "Apache-2.0"
-  revision 2
 
   depends_on "cmake" => :build
 
