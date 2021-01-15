@@ -8,6 +8,11 @@ class IgnitionLaunch4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-launch", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 "2009896d82042bb346d504b378f9b38d879c2374ed3c1b301f3aa3136bf6ffbf" => :mojave
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
