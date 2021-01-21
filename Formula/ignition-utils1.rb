@@ -1,9 +1,9 @@
-class IgnitionUtils0 < Formula
+class IgnitionUtils1 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://github.com/ignitionrobotics/ign-utils/archive/922bb53992fd275817a3c0b093bc8ed1cb4743af.tar.gz"
-  version "0.1.0~pre0~0~20210107~922bb53"
-  sha256 "feaee24774ad06e9a735ad3bc5341c75bbc33a1eafdf528a6a1acce48eba2488"
+  url "https://github.com/ignitionrobotics/ign-utils/archive/3decea70170bd09230b02acbb0fabd0a95f76b31.tar.gz"
+  version "1.0.0~pre0~0~20210121~3decea7"
+  sha256 "ab427ca06416e6de17a5a0a3d34acf75591345f8dbde4fc16e7e6e96c2299606"
   license "Apache-2.0"
 
   bottle do
@@ -41,13 +41,13 @@ class IgnitionUtils0 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-utils0 QUIET REQUIRED)
+      find_package(ignition-utils QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-UTILS_LIBRARIES})
     EOS
-    system "pkg-config", "ignition-utils0"
-    cflags = `pkg-config --cflags ignition-utils0`.split
-    ldflags = `pkg-config --libs ignition-utils0`.split
+    system "pkg-config", "ignition-utils"
+    cflags = `pkg-config --cflags ignition-utils`.split
+    ldflags = `pkg-config --libs ignition-utils`.split
     system ENV.cxx, "test.cpp",
                     *cflags,
                     *ldflags,
