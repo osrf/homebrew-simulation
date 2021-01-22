@@ -41,13 +41,13 @@ class IgnitionUtils1 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-utils QUIET REQUIRED)
+      find_package(ignition-utils1 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-UTILS_LIBRARIES})
     EOS
-    system "pkg-config", "ignition-utils"
-    cflags = `pkg-config --cflags ignition-utils`.split
-    ldflags = `pkg-config --libs ignition-utils`.split
+    system "pkg-config", "ignition-utils1"
+    cflags = `pkg-config --cflags ignition-utils1`.split
+    ldflags = `pkg-config --libs ignition-utils1`.split
     system ENV.cxx, "test.cpp",
                     *cflags,
                     *ldflags,
