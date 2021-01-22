@@ -1,9 +1,9 @@
 class IgnitionLaunch4 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://github.com/ignitionrobotics/ign-launch/archive/7fa59b68cc8570add87819fbeb6c112474405894.tar.gz"
-  version "3.999.999~0~20210112~7fa59b"
-  sha256 "d3781dc7f6d50043cf8237bca061d276a629e55ae7b61818863893d7d86af9f2"
+  url "https://github.com/ignitionrobotics/ign-launch/archive/ef97b8ab3693c5296905bf1982f676d316ecaca1.tar.gz"
+  version "3.999.999~0~20210122~ef97b8"
+  sha256 "03c09504483cd178b3ce48a4df1ca545d7efd85ced56410e08cffe3a18c59be2"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-launch", branch: "main"
@@ -12,7 +12,7 @@ class IgnitionLaunch4 < Formula
   depends_on "pkg-config" => :build
 
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-gazebo5"
   depends_on "ignition-gui5"
   depends_on "ignition-msgs7"
