@@ -1,9 +1,9 @@
 class IgnitionGui5 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://github.com/ignitionrobotics/ign-gui/archive/47b0d6182f467bb52ce0ce239e89da51d723cdc3.tar.gz"
-  version "4.999.999~0~20210111~47b0d6"
-  sha256 "022001f3089aef8ecfcf5b97393d3eff1609a359144252b6160c5dc672070215"
+  url "https://github.com/ignitionrobotics/ign-gui/archive/4ef9c174e55ff8c6d44fb8b2d4986a170ab4158f.tar.gz"
+  version "4.999.999~0~20210122~4ef9c1"
+  sha256 "e98dd1d721909481fb1b252f8e2fb9ea2755aaa6ed9c54d44ee6aa5d6028b48a"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "main"
@@ -16,7 +16,7 @@ class IgnitionGui5 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-msgs7"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering5"
