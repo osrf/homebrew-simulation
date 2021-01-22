@@ -9,7 +9,7 @@ class IgnitionUtils1 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "12378ce9c4da350fc3b55be0193dfc3f54ffa4b3717f652247b50f5ee2004836" => :mojave
+    sha256 "80130dab74a78df21da013096497d05f130e32b41ee66d13d72039e23425d958" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
