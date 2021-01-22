@@ -3,9 +3,9 @@ class IgnitionEdifice < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-edifice"
-  url "https://github.com/ignitionrobotics/ign-edifice/archive/7a87f6d356962a363bbe5d8e64565a283ca9e9a1.tar.gz"
-  version "0.999.999~0~20210112~7a87f6"
-  sha256 "91bb623765123f41082dbd75d4777b84f32974f11c88d9c1aa98e1ac7f060d6f"
+  url "https://github.com/ignitionrobotics/ign-edifice/archive/fa1d69f55ced450aca095d55105eea2f04f6857e.tar.gz"
+  version "0.999.999~0~20210122~fa1d69"
+  sha256 "8b252a9034489c4ede8bdfc9e7688c0b7165744d8aa650d41ffe9a4baf930217"
   license "Apache-2.0"
   version_scheme 1
 
@@ -13,7 +13,7 @@ class IgnitionEdifice < Formula
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-fuel-tools6"
   depends_on "ignition-gazebo5"
   depends_on "ignition-gui5"
