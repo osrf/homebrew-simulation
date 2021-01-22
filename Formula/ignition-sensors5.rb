@@ -1,16 +1,16 @@
 class IgnitionSensors5 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://github.com/ignitionrobotics/ign-sensors/archive/2d54bb919ce1da90c13e26be8e90c07b7cd73a7a.tar.gz"
-  version "4.999.999~0~20210111~2d54bb"
-  sha256 "02e7da87cbef4ebdcb25535edfbafa63b1a185384aee9559a26971a491b97213"
+  url "https://github.com/ignitionrobotics/ign-sensors/archive/c42ffce0d5d37141a27f357ab72c6666179e6308.tar.gz"
+  version "4.999.999~0~20210112~c42ffc"
+  sha256 "46f87a2977c7ea04e12c64ff1205eabb48acd6acdf822c7f65664ae249f78352"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-sensors", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "4dad092f6f0d610824f3639d63aeb7523abc47d5a8b937d857878fab642a0f67" => :mojave
+    sha256 "92ebe9ca507b7156571a30467d7569109323830d9ba95462c4447b211cbbabc6" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -22,7 +22,7 @@ class IgnitionSensors5 < Formula
   depends_on "ignition-msgs7"
   depends_on "ignition-rendering5"
   depends_on "ignition-transport10"
-  depends_on "sdformat10"
+  depends_on "sdformat11"
 
   def install
     cmake_args = std_cmake_args
