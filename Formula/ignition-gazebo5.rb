@@ -1,10 +1,9 @@
 class IgnitionGazebo5 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://github.com/ignitionrobotics/ign-gazebo/archive/a11e143758b43cf20884cae34fdae40659c80502.tar.gz"
-  version "4.999.999~0~20210112~a11e14"
-  version "4.999.999~0~20210111~64aa64"
-  sha256 "dd2305efded2d5dc72615fc2e8a02f19c9ed4310c121bdbb21e27dfeb93dbf64"
+  url "https://github.com/ignitionrobotics/ign-gazebo/archive/4f025873a01e55562895812a2e3850315dda2d87.tar.gz"
+  version "4.999.999~0~20210122~4f0258"
+  sha256 "05ee0ea0aa27ccb5d4285f5c24f732951bee53b39a6fc98f919106fdebcb9be3"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gazebo", branch: "main"
@@ -13,7 +12,7 @@ class IgnitionGazebo5 < Formula
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-fuel-tools6"
   depends_on "ignition-gui5"
   depends_on "ignition-math6"
