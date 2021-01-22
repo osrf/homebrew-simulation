@@ -1,9 +1,9 @@
 class IgnitionRendering5 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://github.com/ignitionrobotics/ign-rendering/archive/d4406e1d98fba7b1362ce8ee52056cfd4ecb0bdb.tar.gz"
-  version "4.999.999~0~20201130~d4406e"
-  sha256 "781a633371a2525ff6f622a275456b72ec40467726dd452deba82aa28422be94"
+  url "https://github.com/ignitionrobotics/ign-rendering/archive/597204820a1fd1019965a446f43bf7fc9e40d00d.tar.gz"
+  version "4.999.999~0~20210122~597204"
+  sha256 "665ccce2b2def2bf902c937534404ce96e266f1bf8195e46bc5e784d7da9107e"
   license "Apache-2.0"
   revision 1
 
@@ -17,7 +17,7 @@ class IgnitionRendering5 < Formula
 
   depends_on "freeimage"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17
