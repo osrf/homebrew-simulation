@@ -1,9 +1,9 @@
 class IgnitionUtils1 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://github.com/ignitionrobotics/ign-utils/archive/3decea70170bd09230b02acbb0fabd0a95f76b31.tar.gz"
-  version "1.0.0~pre0~0~20210121~3decea7"
-  sha256 "ab427ca06416e6de17a5a0a3d34acf75591345f8dbde4fc16e7e6e96c2299606"
+  url "https://github.com/ignitionrobotics/ign-utils/archive/6d6a54935c8f8ea443c150f5bfb375adfb2b2e28.tar.gz"
+  version "1.0.0~pre0~0~20210121~6d6a549"
+  sha256 "46502e25fa7de060848ddaeac94ba9f0d0ee326b92c2c9fd80ab37117c638f38"
   license "Apache-2.0"
 
   bottle do
