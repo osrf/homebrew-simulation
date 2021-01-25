@@ -1,11 +1,10 @@
 class IgnitionRendering5 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://github.com/ignitionrobotics/ign-rendering/archive/d4406e1d98fba7b1362ce8ee52056cfd4ecb0bdb.tar.gz"
-  version "4.999.999~0~20201130~d4406e"
-  sha256 "781a633371a2525ff6f622a275456b72ec40467726dd452deba82aa28422be94"
+  url "https://github.com/ignitionrobotics/ign-rendering/archive/821dd9de908254d18c6d4c166c56cbbb0de533ee.tar.gz"
+  version "4.999.999~0~20210125~821dd9"
+  sha256 "e8c40ac091c350170d26140ec21b3b1361aab639cb1fcab824de18a472c4a48a"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
