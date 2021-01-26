@@ -5,6 +5,7 @@ class IgnitionUtils1 < Formula
   version "1.0.0~pre0~0~20210121~6d6a549"
   sha256 "46502e25fa7de060848ddaeac94ba9f0d0ee326b92c2c9fd80ab37117c638f38"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
