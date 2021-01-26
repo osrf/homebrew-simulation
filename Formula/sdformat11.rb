@@ -1,13 +1,14 @@
-class Sdformat10 < Formula
+class Sdformat11 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.2.0.tar.bz2"
-  sha256 "bd7cfbcd70ca6699845baac5ab4cf508d337a3bde44950b0af4ce505a2ea5783"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.0.0~pre1.tar.bz2"
+  version "11.0.0~pre1"
+  sha256 "fd3dcd9c2f51febb20f6435bd98bf449eaa78e10f06e218d87dc424f038b1fe7"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "2b3576410bff7da7622434393faf585524ff47bae0f16b8876dade286fd9b673" => :mojave
+    sha256 "ff9a875572aca84e05ca49ea60181585153b312464964dcf73513fa3c97b65c6" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -46,16 +47,16 @@ class Sdformat10 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(sdformat10 QUIET REQUIRED)
+      find_package(sdformat11 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${SDFormat_LIBRARIES})
     EOS
-    system "pkg-config", "sdformat10"
-    cflags = `pkg-config --cflags sdformat10`.split
+    system "pkg-config", "sdformat11"
+    cflags = `pkg-config --cflags sdformat11`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lsdformat10",
+                   "-lsdformat11",
                    "-lc++",
                    "-o", "test"
     system "./test"

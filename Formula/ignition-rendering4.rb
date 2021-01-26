@@ -1,14 +1,13 @@
 class IgnitionRendering4 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering4-4.1.0.tar.bz2"
-  sha256 "d0648fbc71844ee17b17db7faa5d9ae2bceceb65ea4871ea39e43556a949164f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering4-4.2.0.tar.bz2"
+  sha256 "6bf87da1715941370b47455254337e8216bc35b3a23bfd409400a85c11d58d10"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "6a79ec1aa88fbc8ed2003fcb788523b6682403082ac4fb7cd751b5c3b5f9d387" => :mojave
+    sha256 "40c541672844a4f9aa55e86371975eeb84e711e810b88896d58ba859f90beb09" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
@@ -31,9 +30,7 @@ class IgnitionRendering4 < Formula
   end
 
   test do
-    azure = ENV["HOMEBREW_AZURE_PIPELINES"].present?
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-    travis = ENV["HOMEBREW_TRAVIS_CI"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/rendering/RenderEngine.hh>
       #include <ignition/rendering/RenderingIface.hh>
@@ -59,12 +56,12 @@ class IgnitionRendering4 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" unless azure || github_actions || travis
+    system "./test" unless github_actions
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
       system "make"
-      system "./test_cmake" unless azure || github_actions || travis
+      system "./test_cmake" unless github_actions
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"

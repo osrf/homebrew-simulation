@@ -1,27 +1,26 @@
 class IgnitionGui5 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://github.com/ignitionrobotics/ign-gui/archive/225d8b66171abe8d0a6be4988cd1bd93020200ea.tar.gz"
-  version "4.999.999~0~20201028~225d8b"
-  sha256 "5d51b169ce8b3e4553c512fba15a10419d36c28dd525db64a4b7060049332715"
+  url "https://github.com/ignitionrobotics/ign-gui/archive/47b0d6182f467bb52ce0ce239e89da51d723cdc3.tar.gz"
+  version "4.999.999~0~20210111~47b0d6"
+  sha256 "022001f3089aef8ecfcf5b97393d3eff1609a359144252b6160c5dc672070215"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "f3da22c295f2ce57716f2bfc5f533c57b143e1c6c093a4d9d343d315e490fb25" => :mojave
+    sha256 "1fea160eb3b8b1ebf384c6e518e9a4502e7c4c6d9dc4bb9bf3f5546e742b9428" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
-  depends_on "ignition-msgs6"
+  depends_on "ignition-msgs7"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering5"
-  depends_on "ignition-transport9"
+  depends_on "ignition-transport10"
   depends_on macos: :mojave # c++17
   depends_on "qt@5"
   depends_on "qwt"
