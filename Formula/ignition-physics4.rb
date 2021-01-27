@@ -1,9 +1,9 @@
 class IgnitionPhysics4 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://github.com/ignitionrobotics/ign-physics/archive/9c3f3f130d6351fb1211ed3ec63289f2c90da7ab.tar.gz"
-  version "3.999.999~0~20210112~9c3f3f"
-  sha256 "8dc656b8dfe2625a02c578922fb6e9bd48a233bc72f6fa91f97a9d7db13c27cc"
+  url "https://github.com/ignitionrobotics/ign-physics/archive/53251e4c48246b3993f2742b45d4eab1b76b15be.tar.gz"
+  version "3.999.999~0~20210122~53251e"
+  sha256 "936cc21d94fe1c6d43284a744e76b7092806265520b642ab60acd92cb75d2e8b"
   license "Apache-2.0"
 
   bottle do
@@ -18,7 +18,7 @@ class IgnitionPhysics4 < Formula
   depends_on "dartsim@6.10.0"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17
