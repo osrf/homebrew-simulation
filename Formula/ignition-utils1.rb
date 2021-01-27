@@ -5,11 +5,13 @@ class IgnitionUtils1 < Formula
   version "1.0.0~pre0~0~20210121~6d6a549"
   sha256 "46502e25fa7de060848ddaeac94ba9f0d0ee326b92c2c9fd80ab37117c638f38"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     cellar :any
-    sha256 "80130dab74a78df21da013096497d05f130e32b41ee66d13d72039e23425d958" => :mojave
+    sha256 "400a24fb5d856c251139e889a81e5607bbedfba47d2f428f6a1c9980b6e468c6" => :catalina
+    sha256 "adb31d25215ef193218fce063a9b161fb7d48a98dfa4e67f59b21e68ddab6c2d" => :mojave
   end
 
   depends_on "cmake" => [:build, :test]
