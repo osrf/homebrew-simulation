@@ -2,7 +2,7 @@ class IgnitionRendering5 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://github.com/ignitionrobotics/ign-rendering/archive/597204820a1fd1019965a446f43bf7fc9e40d00d.tar.gz"
-  version "4.999.999~0~20210122~597204"
+  version "4.999.999~0~20210126~597204"
   sha256 "665ccce2b2def2bf902c937534404ce96e266f1bf8195e46bc5e784d7da9107e"
   license "Apache-2.0"
 
