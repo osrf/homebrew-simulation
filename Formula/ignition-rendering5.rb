@@ -1,22 +1,17 @@
 class IgnitionRendering5 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://github.com/ignitionrobotics/ign-rendering/archive/821dd9de908254d18c6d4c166c56cbbb0de533ee.tar.gz"
-  version "4.999.999~0~20210125~821dd9"
-  sha256 "e8c40ac091c350170d26140ec21b3b1361aab639cb1fcab824de18a472c4a48a"
+  url "https://github.com/ignitionrobotics/ign-rendering/archive/597204820a1fd1019965a446f43bf7fc9e40d00d.tar.gz"
+  version "4.999.999~0~20210122~597204"
+  sha256 "665ccce2b2def2bf902c937534404ce96e266f1bf8195e46bc5e784d7da9107e"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "81cec3a8d374d20a92786d58dd4577a1f3922cd571b28c1881389b184a44bbc3" => :mojave
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
   depends_on "freeimage"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17
