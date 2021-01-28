@@ -6,7 +6,7 @@ class IgnitionRendering0 < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-rendering", branch: "ign-rendering0"
+  head "https://github.com/ignitionrobotics/ign-rendering.git", branch: "ign-rendering0"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => [:build, :test]

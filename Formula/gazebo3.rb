@@ -4,7 +4,7 @@ class Gazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-3.2.0.tar.bz2"
   sha256 "6b77382a491833d5292b3e1fca34a04c968025a09746d87cdcf77cff040acea5"
   license "Apache-2.0"
-  head "https://github.com/osrf/gazebo", branch: "gazebo_3.1"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo_3.1"
 
   deprecate! because: "is past end-of-life date", date: "2015-07-27"
 

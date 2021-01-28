@@ -6,7 +6,7 @@ class IgnitionCommon1 < Formula
   license "Apache-2.0"
   revision 3
 
-  head "https://github.com/ignitionrobotics/ign-common", branch: "ign-common1"
+  head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

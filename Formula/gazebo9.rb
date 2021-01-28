@@ -6,7 +6,7 @@ class Gazebo9 < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo9"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

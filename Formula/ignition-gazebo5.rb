@@ -6,7 +6,7 @@ class IgnitionGazebo5 < Formula
   sha256 "05ee0ea0aa27ccb5d4285f5c24f732951bee53b39a6fc98f919106fdebcb9be3"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

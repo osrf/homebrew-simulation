@@ -5,7 +5,7 @@ class IgnitionGui3 < Formula
   sha256 "265415ad76c72f1db94349e827c2dba69ba87726477b375d926487aa113a960f"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui3"
+  head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

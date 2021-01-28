@@ -6,7 +6,7 @@ class Sdformat4 < Formula
   license "Apache-2.0"
   revision 5
 
-  head "https://github.com/osrf/sdformat", branch: "sdf4", using: :git
+  head "https://github.com/osrf/sdformat.git", branch: "sdf4", using: :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

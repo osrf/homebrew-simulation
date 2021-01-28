@@ -6,7 +6,7 @@ class IgnitionTransport3 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-transport", branch: "ign-transport3"
+  head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport3"
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
