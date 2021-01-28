@@ -5,7 +5,7 @@ class IgnitionCommon2 < Formula
   sha256 "f76ed5a7a86728391bc6d7fb13fb07b61a1106e39d8cb87f3053154432d4b0f6"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-common", branch: "ign-common2"
+  head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

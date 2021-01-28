@@ -7,7 +7,7 @@ class IgnitionMsgs1 < Formula
   revision 10
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-msgs", branch: "ign-msgs1"
+  head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

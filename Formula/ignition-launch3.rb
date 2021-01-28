@@ -5,7 +5,7 @@ class IgnitionLaunch3 < Formula
   sha256 "7de66c18b14388f4679488bc76bff0a7528ef59e0c3faf6c50713a2a40a5217c"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-launch", branch: "ign-launch3"
+  head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

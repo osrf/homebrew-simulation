@@ -5,7 +5,7 @@ class IgnitionRndf0 < Formula
   sha256 "ae108308d8a7b4dddfd3a5d23eb3d8a844e1760bf01cb3066cdd45570cf6c26f"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-rndf", branch: "master"
+  head "https://github.com/ignitionrobotics/ign-rndf.git", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake0"

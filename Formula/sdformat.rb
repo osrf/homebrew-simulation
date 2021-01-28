@@ -6,7 +6,7 @@ class Sdformat < Formula
   license "Apache-2.0"
   revision 3
 
-  head "https://github.com/osrf/sdformat", branch: "sdf_2.3", using: :git
+  head "https://github.com/osrf/sdformat.git", branch: "sdf_2.3", using: :git
 
   depends_on "cmake" => :build
 

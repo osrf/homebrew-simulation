@@ -6,7 +6,7 @@ class IgnitionGui0 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui0"
+  head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui0"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
