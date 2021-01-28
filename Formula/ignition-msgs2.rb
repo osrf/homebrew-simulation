@@ -6,7 +6,7 @@ class IgnitionMsgs2 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-msgs", branch: "ign-msgs2"
+  head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs2"
 
   depends_on "protobuf-c" => :build
 

@@ -8,7 +8,7 @@ class IgnitionDome < Formula
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-dome", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-dome.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

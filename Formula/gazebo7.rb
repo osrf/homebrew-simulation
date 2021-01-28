@@ -6,7 +6,7 @@ class Gazebo7 < Formula
   license "Apache-2.0"
   revision 3
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo7"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo7"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

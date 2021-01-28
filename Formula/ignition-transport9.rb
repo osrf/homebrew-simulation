@@ -6,7 +6,7 @@ class IgnitionTransport9 < Formula
   license "Apache-2.0"
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-transport", branch: "ign-transport9"
+  head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

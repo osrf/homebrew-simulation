@@ -6,7 +6,7 @@ class IgnitionGui2 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui2"
+  head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

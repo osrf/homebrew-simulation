@@ -6,7 +6,7 @@ class IgnitionSensors5 < Formula
   sha256 "46f87a2977c7ea04e12c64ff1205eabb48acd6acdf822c7f65664ae249f78352"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-sensors", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

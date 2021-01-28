@@ -9,7 +9,7 @@ class IgnitionEdifice < Formula
   license "Apache-2.0"
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-edifice", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
