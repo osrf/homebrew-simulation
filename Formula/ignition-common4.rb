@@ -18,6 +18,7 @@ class IgnitionCommon4 < Formula
   depends_on "gts"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
+  depends_on "ignition-utils1"
   depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
