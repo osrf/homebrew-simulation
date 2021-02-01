@@ -29,6 +29,7 @@ class IgnitionGazebo5 < Formula
   depends_on "ignition-sensors5"
   depends_on "ignition-tools"
   depends_on "ignition-transport10"
+  depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "ruby"
