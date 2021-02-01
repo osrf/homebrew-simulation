@@ -11,8 +11,7 @@ class Ogre21 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "4641e0d611d87f9c063b26cb11d61c7ad32be62448c6fcd6fc75339c42f563ba" => :mojave
+    sha256 cellar: :any, mojave: "4641e0d611d87f9c063b26cb11d61c7ad32be62448c6fcd6fc75339c42f563ba"
   end
 
   depends_on "cmake" => :build

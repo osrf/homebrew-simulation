@@ -7,7 +7,7 @@ class IgnitionLaunch1 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "dc68ed8ac85e4f87a151efe209745b9f11b62eadf9f8abd0ab22aff93651a69e" => :mojave
+    sha256 mojave: "dc68ed8ac85e4f87a151efe209745b9f11b62eadf9f8abd0ab22aff93651a69e"
   end
 
   disable! date: "2021-01-31", because: "is past end-of-life date"
