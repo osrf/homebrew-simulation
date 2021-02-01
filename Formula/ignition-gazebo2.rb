@@ -9,7 +9,7 @@ class IgnitionGazebo2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e523e84e70436612410f55ec29a2ac3dc0641f6d1fdb52906f5eedac11e7d629" => :mojave
+    sha256 mojave: "e523e84e70436612410f55ec29a2ac3dc0641f6d1fdb52906f5eedac11e7d629"
   end
 
   disable! date: "2021-01-31", because: "is past end-of-life date"

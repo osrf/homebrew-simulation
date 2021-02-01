@@ -11,8 +11,7 @@ class IgnitionBlueprint < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "c0667f15a6db2bafaebf0e23110b2260f5830d524a5216d327dbdabe627050ed" => :mojave
+    sha256 cellar: :any, mojave: "c0667f15a6db2bafaebf0e23110b2260f5830d524a5216d327dbdabe627050ed"
   end
 
   disable! date: "2021-01-31", because: "is past end-of-life date"
