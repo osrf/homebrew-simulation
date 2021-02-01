@@ -9,8 +9,7 @@ class IgnitionCmake1 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any_skip_relocation
-    sha256 "10cdf432ef40bbcdaee901763a457467710d3007bca99250fda5ac49cbd0bfae" => :sierra
+    sha256 cellar: :any_skip_relocation, sierra: "10cdf432ef40bbcdaee901763a457467710d3007bca99250fda5ac49cbd0bfae"
   end
 
   depends_on "cmake"
