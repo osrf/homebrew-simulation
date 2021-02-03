@@ -22,6 +22,7 @@ class IgnitionTransport10 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-msgs7"
   depends_on "ignition-tools"
+  depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
