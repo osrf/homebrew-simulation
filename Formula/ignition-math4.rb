@@ -9,10 +9,10 @@ class IgnitionMath4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases"
-    sha256 cellar: :any, mojave: "b8976152550094ee7a006e6932133eabbf7a200fb3f9fec44c976ada9965e334"
+    sha256 cellar: :any, mojave:      "b8976152550094ee7a006e6932133eabbf7a200fb3f9fec44c976ada9965e334"
     sha256 cellar: :any, high_sierra: "0a012fad519f0e726f6090c5b7e4fef128a8b66c346109f392f8109f37a14af2"
-    sha256 cellar: :any, sierra: "a2152c21135fc7e7d887ecfbdf0cb17e612780a6088e5c81c639bdcaaf529fdd"
-    sha256 cellar: :any, el_capitan: "e7c3f313b025c4733bd79cb3a27f54846e910e11c34e12d78e1c054eb06bbd48"
+    sha256 cellar: :any, sierra:      "a2152c21135fc7e7d887ecfbdf0cb17e612780a6088e5c81c639bdcaaf529fdd"
+    sha256 cellar: :any, el_capitan:  "e7c3f313b025c4733bd79cb3a27f54846e910e11c34e12d78e1c054eb06bbd48"
   end
 
   depends_on "cmake" => :build
