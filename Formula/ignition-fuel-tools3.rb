@@ -8,7 +8,7 @@ class IgnitionFuelTools3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, mojave: "48557618dbc7848f32f7c77c6585e90fa53e259bd503d770157b8e6cf8d91faa"
+    sha256 cellar: :any, mojave:      "48557618dbc7848f32f7c77c6585e90fa53e259bd503d770157b8e6cf8d91faa"
     sha256 cellar: :any, high_sierra: "265b4c77b041777ca699bd39263e80fb3b77adb5a7323d64cb303fd545e6c5a6"
   end
 
