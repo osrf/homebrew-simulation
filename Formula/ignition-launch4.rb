@@ -10,8 +10,8 @@ class IgnitionLaunch4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "067a030e9da805bab09890c920784efcf578604fe7e92f6f2138634b4036b9d0"
-    sha256 mojave:   "05fe687227d71203865eae430027950e32f016abcc42391cd2985caccf91ca14"
+    sha256 catalina: "48104157bce762651adcd16c6bebcafffaa41b475a3e714f30e39d7889d4b91b"
+    sha256 mojave:   "12934d72c1d7c205a29394a8a0945e2c7cd0988282d9b9d2382d8356a49dfe3b"
   end
 
   depends_on "cmake" => :build
