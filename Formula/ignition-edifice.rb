@@ -7,6 +7,7 @@ class IgnitionEdifice < Formula
   version "0.999.999~0~20210112~7a87f6"
   sha256 "91bb623765123f41082dbd75d4777b84f32974f11c88d9c1aa98e1ac7f060d6f"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
