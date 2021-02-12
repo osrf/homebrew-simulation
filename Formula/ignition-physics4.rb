@@ -21,6 +21,7 @@ class IgnitionPhysics4 < Formula
   depends_on "ignition-common3"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
+  depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat11"
