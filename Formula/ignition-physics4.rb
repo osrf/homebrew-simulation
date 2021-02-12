@@ -1,11 +1,10 @@
 class IgnitionPhysics4 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://github.com/ignitionrobotics/ign-physics/archive/9c3f3f130d6351fb1211ed3ec63289f2c90da7ab.tar.gz"
-  version "3.999.999~0~20210112~9c3f3f"
-  sha256 "8dc656b8dfe2625a02c578922fb6e9bd48a233bc72f6fa91f97a9d7db13c27cc"
+  url "https://github.com/ignitionrobotics/ign-physics/archive/1446ab284a09d07031970378b6f7e35a26184be2.tar.gz"
+  version "3.999.999~0~20210212~1446ab2"
+  sha256 "b8e17b87132eeb922888aa143cddec523d9a5a57f32882c5da417e88f7b96608"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
