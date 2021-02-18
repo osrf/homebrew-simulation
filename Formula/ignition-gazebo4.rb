@@ -1,8 +1,8 @@
 class IgnitionGazebo4 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.4.0.tar.bz2"
-  sha256 "5844c40c8293222409c83d80fcb296086ad7b032feba313203a5472d44a4c16f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.5.0.tar.bz2"
+  sha256 "e68a55a490531062fd1d509d9ff7d8b7103d40ce5302fe4a21ad17aad5d74e88"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo4"
