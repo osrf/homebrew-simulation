@@ -1,9 +1,9 @@
 class IgnitionPhysics4 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://github.com/ignitionrobotics/ign-physics/archive/53251e4c48246b3993f2742b45d4eab1b76b15be.tar.gz"
-  version "3.999.999~0~20210122~53251e"
-  sha256 "936cc21d94fe1c6d43284a744e76b7092806265520b642ab60acd92cb75d2e8b"
+  url "https://github.com/ignitionrobotics/ign-physics/archive/ba00ff1756b92f1ea38fb4687950e6fa23b12b60.tar.gz"
+  version "3.999.999~0~20210218~ba00ff1"
+  sha256 "1fd9c554c8b923cecf0879cbc0a33207687cb8fc2fab379814872b615923f5fb"
   license "Apache-2.0"
 
   bottle do
@@ -21,6 +21,7 @@ class IgnitionPhysics4 < Formula
   depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
+  depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat11"

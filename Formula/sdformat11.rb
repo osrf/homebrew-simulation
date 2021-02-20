@@ -1,14 +1,15 @@
 class Sdformat11 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.0.0~pre1.tar.bz2"
-  version "11.0.0~pre1"
-  sha256 "fd3dcd9c2f51febb20f6435bd98bf449eaa78e10f06e218d87dc424f038b1fe7"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.0.0~pre2.tar.bz2"
+  version "11.0.0~pre2"
+  sha256 "a0e93376787e17da6b28c9b80e8c68729b470062aad485e7673463c51ae897a1"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 mojave: "ff9a875572aca84e05ca49ea60181585153b312464964dcf73513fa3c97b65c6"
+    sha256 catalina: "134f0b05985ed6f934277e2b2f3612fa9913dc813d394960e5db9491a8307dd9"
+    sha256 mojave:   "2d56bd5b802aef4db8c1fd750784488039f54e9c8a12f5a5409166ebc635953b"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -20,6 +21,12 @@ class Sdformat11 < Formula
   depends_on macos: :mojave # c++17
   depends_on "tinyxml2"
   depends_on "urdfdom"
+
+  patch do
+    # Fix for sdformat11.pc file
+    url "https://github.com/osrf/sdformat/commit/41db974819e38bd766e8f84491d50e1a2b7e8cd9.patch?full_index=1"
+    sha256 "89475346593771a0d8a6fe91158e2706c41e85055de92b0ecb192a40d13c179b"
+  end
 
   def install
     mkdir "build" do
