@@ -1,9 +1,9 @@
 class IgnitionCommon4 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://github.com/ignitionrobotics/ign-common/archive/260e23d2e11eb5d022fa5db39538c190adfdd713.tar.gz"
-  version "3.999.999~0~20210125~260e23"
-  sha256 "6a2494244a070327488e3d2d60313e34d88abaea55fe1a300bca256ed69c333a"
+  url "https://github.com/ignitionrobotics/ign-common/archive/7510820a2f046cb4bda73a63e589ac4c5a361cee.tar.gz"
+  version "3.999.999~0~20210219~7510820"
+  sha256 "e30750c6e9b45306e2314bce861d79baff089e1bb0411c0726e5a1216e0772e2"
   license "Apache-2.0"
 
   depends_on "cmake"
