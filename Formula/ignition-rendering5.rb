@@ -1,15 +1,15 @@
 class IgnitionRendering5 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://github.com/ignitionrobotics/ign-rendering/archive/c6fc79f9299ae274666d0869edce996925f70cba.tar.gz"
-  version "4.999.999~0~20210211~c6fc79"
-  sha256 "7a47f7044fd47ade45dece4ac6ecd395eaa54779a6eb0a21f8c66e95cecf0ff6"
+  url "https://github.com/ignitionrobotics/ign-rendering/archive/85bd683dc90e54bac6d8dd20c4e07940579e7eb7.tar.gz"
+  version "4.999.999~0~20210218~85bd683"
+  sha256 "65b97423dd8a0e4e41c6ba003fc7f972173c9865a0670bd5aff93a1af694dd90"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "7a9927d081d75c97131d3cd47ff4ec9f1117a4832c1d80db72c367ca4c0e1a31"
-    sha256 mojave:   "e5d17dde5b4fe4cb8f5945f8d038f213d18b691436c31439be6b97afabd84fed"
+    sha256 catalina: "762ca2cec9f7389a11dae463a21ca9291f6cfd8e319546e6ab1bb681ad108d8f"
+    sha256 mojave:   "a3f40e388527515a43ff6b9716f90d2ef43a7757d6466cdc493cf3bee7f32ca0"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -17,7 +17,7 @@ class IgnitionRendering5 < Formula
 
   depends_on "freeimage"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17

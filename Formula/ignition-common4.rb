@@ -1,10 +1,16 @@
 class IgnitionCommon4 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://github.com/ignitionrobotics/ign-common/archive/260e23d2e11eb5d022fa5db39538c190adfdd713.tar.gz"
-  version "3.999.999~0~20210125~260e23"
-  sha256 "6a2494244a070327488e3d2d60313e34d88abaea55fe1a300bca256ed69c333a"
+  url "https://github.com/ignitionrobotics/ign-common/archive/7510820a2f046cb4bda73a63e589ac4c5a361cee.tar.gz"
+  version "3.999.999~0~20210219~7510820"
+  sha256 "e30750c6e9b45306e2314bce861d79baff089e1bb0411c0726e5a1216e0772e2"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "f85c2a36e2d3f5756108957dd373fc13f09d773df4998cd770a34a25a2eb63b6"
+    sha256 cellar: :any, mojave:   "d347ed14e125bc14eeec5a7d6c84d383b25c06c8904d6a3670f3eec22064d324"
+  end
 
   depends_on "cmake"
   depends_on "ffmpeg"

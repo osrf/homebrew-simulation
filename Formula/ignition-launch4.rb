@@ -1,25 +1,24 @@
 class IgnitionLaunch4 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://github.com/ignitionrobotics/ign-launch/archive/7fa59b68cc8570add87819fbeb6c112474405894.tar.gz"
-  version "3.999.999~0~20210112~7fa59b"
-  sha256 "d3781dc7f6d50043cf8237bca061d276a629e55ae7b61818863893d7d86af9f2"
+  url "https://github.com/ignitionrobotics/ign-launch/archive/ef97b8ab3693c5296905bf1982f676d316ecaca1.tar.gz"
+  version "3.999.999~0~20210122~ef97b8"
+  sha256 "03c09504483cd178b3ce48a4df1ca545d7efd85ced56410e08cffe3a18c59be2"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "dfc2ef6863bd786800a9ed4119ee97e3f9b8f75ca92ad2a65f0b1485c8c671c8"
-    sha256 mojave:   "742fc0663bab0bfaa682f39eccecc63875e9606452fc7d2383bbed6090f3de52"
+    sha256 catalina: "f2d0538deb17348ee1ec17b2fc3fdc8299de05676db507a92d161fd49d86a095"
+    sha256 mojave:   "b772fb787091e7225af50d525b7c111ee999dec733631be882844fcd44aaf903"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-gazebo5"
   depends_on "ignition-gui5"
   depends_on "ignition-msgs7"
