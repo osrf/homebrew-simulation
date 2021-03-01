@@ -4,7 +4,7 @@ class IgnitionPhysics3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics3-3.1.0.tar.bz2"
   sha256 "1e914482c636fa35bb79c17d97a908c69aea4e6a8968e70b39b101b185c7132d"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
