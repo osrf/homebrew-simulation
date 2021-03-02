@@ -6,11 +6,6 @@ class IgnitionMsgs4 < Formula
   license "Apache-2.0"
   revision 5
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, mojave: "24b32ba1a5344dce35629e3c4b1b48455c596a2be10ed52dac1da5ce77cb455d"
-  end
-
   disable! date: "2021-01-31", because: "is past end-of-life date"
 
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
