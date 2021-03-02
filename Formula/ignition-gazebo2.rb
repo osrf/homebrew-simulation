@@ -7,11 +7,6 @@ class IgnitionGazebo2 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo2"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 mojave: "e523e84e70436612410f55ec29a2ac3dc0641f6d1fdb52906f5eedac11e7d629"
-  end
-
   disable! date: "2021-01-31", because: "is past end-of-life date"
 
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
