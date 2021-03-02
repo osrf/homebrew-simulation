@@ -9,11 +9,6 @@ class IgnitionMsgs1 < Formula
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs1"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, mojave: "07307209f548dd2840f90ca0d6d2f6afe32c4b39dad454e5f8d80f2e200b65bd"
-  end
-
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake0"
