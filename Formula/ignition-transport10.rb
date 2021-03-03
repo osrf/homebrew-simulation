@@ -5,9 +5,16 @@ class IgnitionTransport10 < Formula
   version "9.999.999~0~20210120~4a4bc1"
   sha256 "ec7e7e34224f43b69c5354e2ef6601f12f687825e19cb642783fdf90122e275a"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "6ac0f82e63d6bacc19509335dc20ee6d22229724919078b3f255491b8ab430a9"
+    sha256 mojave:   "c8f831b682041f9c34d3a95ea75fd97fe9313c63d7e07ad096ff1872fdd6326c"
+  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
