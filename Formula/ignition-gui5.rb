@@ -5,6 +5,7 @@ class IgnitionGui5 < Formula
   version "4.999.999~0~20210122~4ef9c1"
   sha256 "e98dd1d721909481fb1b252f8e2fb9ea2755aaa6ed9c54d44ee6aa5d6028b48a"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
 
