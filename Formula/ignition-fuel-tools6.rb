@@ -5,8 +5,15 @@ class IgnitionFuelTools6 < Formula
   version "5.999.999~0~20210221~dddb1e"
   sha256 "55988a3193f710a5fcd4d13dcef1b71a535e35b06340ada04ad829b65ea84db7"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "a19d55adc671eade234864c56e43afda56b8b9e137fcc817008b43060e3326e7"
+    sha256 cellar: :any, mojave:   "d5a2ae1e6b466f382cf716fdc861bb371df3391164db262f1de80a5ffb5c3220"
+  end
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
