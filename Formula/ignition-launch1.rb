@@ -5,11 +5,6 @@ class IgnitionLaunch1 < Formula
   sha256 "99fd3dca44c76c312bbf0e328d5fcf64ebfdab26c20f382e9d6bdb61fe1fe203"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 mojave: "dc68ed8ac85e4f87a151efe209745b9f11b62eadf9f8abd0ab22aff93651a69e"
-  end
-
   disable! date: "2021-01-31", because: "is past end-of-life date"
 
   deprecate! date: "2020-12-31", because: "is past end-of-life date"

@@ -5,11 +5,6 @@ class IgnitionMsgs5 < Formula
   sha256 "54a08e2b194d9d4857f4930f62c1c66ef85a518a742c60597d91908e91b609ba"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, mojave: "cf7a3a4a3a5757931c7a815f1dab2a07ba56bc11dc8eecadb974ea5ae186abd3"
-  end
-
   depends_on "protobuf-c" => :build
 
   depends_on "cmake"

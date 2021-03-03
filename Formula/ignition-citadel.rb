@@ -11,11 +11,6 @@ class IgnitionCitadel < Formula
 
   head "https://github.com/ignitionrobotics/ign-citadel.git", branch: "main"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, mojave: "7cce188ae4521322df468e003b14b92bebbb4e20eb96def3e33973eeab59b2d8"
-  end
-
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
