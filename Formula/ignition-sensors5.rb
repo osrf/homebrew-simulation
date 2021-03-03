@@ -5,6 +5,7 @@ class IgnitionSensors5 < Formula
   version "4.999.999~0~20210122~1835c6"
   sha256 "f20fa33d7f6e3e56101c9741d214dc98bde05c0227bd3effc9cc1261657e59f3"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
 
