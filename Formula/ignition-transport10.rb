@@ -5,6 +5,7 @@ class IgnitionTransport10 < Formula
   version "9.999.999~0~20210120~4a4bc1"
   sha256 "ec7e7e34224f43b69c5354e2ef6601f12f687825e19cb642783fdf90122e275a"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
