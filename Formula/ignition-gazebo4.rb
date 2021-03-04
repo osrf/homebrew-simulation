@@ -82,7 +82,7 @@ class IgnitionGazebo4 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gazebo4::core)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo4"
     # cflags   = `pkg-config --cflags ignition-gazebo4`.split
     # ldflags  = `pkg-config --libs ignition-gazebo4`.split
