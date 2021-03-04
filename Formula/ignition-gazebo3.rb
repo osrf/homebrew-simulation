@@ -4,6 +4,7 @@ class IgnitionGazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.7.0.tar.bz2"
   sha256 "d86b148c6f0ec23c25ba63eed5c7d4d467728ca10c90c843761ed1539acc0792"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo3"
 
