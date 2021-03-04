@@ -4,8 +4,15 @@ class IgnitionGui4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui4-4.2.0.tar.bz2"
   sha256 "4423401325d2060a0fd50f11596e6826eb685907e38ca27794288875d587bfa5"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui4"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "ad731805d3a0fcbeccbcacc472a202a9de601c53ad3f876f1abd1ac0f13f5b36"
+    sha256 mojave:   "9d168f18d8be087507eba43ce8710cc06f1fa9debd7453456fd560785bffed06"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
