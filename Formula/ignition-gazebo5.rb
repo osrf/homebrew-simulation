@@ -5,8 +5,15 @@ class IgnitionGazebo5 < Formula
   version "4.999.999~0~20210218~8b948d7"
   sha256 "9fc45bde79367fb946ff188be843976c954cb9c276483d556f9cad968ae1e329"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "3bbf678adddfab83bdcd0e145d1b2516b59eec937dcdab9e8592eba90dfb898f"
+    sha256 mojave:   "2f6c3108335d4ca6e07cad90d0ec9d97e6108e390a6f3479ea46a89c40bffe87"
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -84,7 +91,7 @@ class IgnitionGazebo5 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gazebo5::core)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo5"
     # cflags   = `pkg-config --cflags ignition-gazebo5`.split
     # ldflags  = `pkg-config --libs ignition-gazebo5`.split
@@ -95,7 +102,7 @@ class IgnitionGazebo5 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
