@@ -4,9 +4,15 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.16.0.tar.bz2"
   sha256 "8cf2805f254a32896002d4b6a24578c9dc1c5628123a5c30b7c6cb443461d15b"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "f88a9ec89f2d7df249ff01fdb9d1667ed9d6087ccfb799e5c2b4a2b0b47bf43e"
+    sha256 mojave:   "29178852829a60f93ca1ef34e3b30e3ec76374971b2d40a71848897149826d00"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
