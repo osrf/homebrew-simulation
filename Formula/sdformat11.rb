@@ -22,12 +22,6 @@ class Sdformat11 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
-  patch do
-    # Fix for sdformat11.pc file
-    url "https://github.com/osrf/sdformat/commit/41db974819e38bd766e8f84491d50e1a2b7e8cd9.patch?full_index=1"
-    sha256 "89475346593771a0d8a6fe91158e2706c41e85055de92b0ecb192a40d13c179b"
-  end
-
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
