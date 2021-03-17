@@ -1,8 +1,8 @@
 class IgnitionRendering4 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering4-4.6.0.tar.bz2"
-  sha256 "3bb0ee40ea9aee685ac6c71d0dcafd57cb5a98758ccd653686e7001d76df48bc"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering4-4.7.0.tar.bz2"
+  sha256 "9606d67274d689ccb94f3673bddfeec6b86cdd245532df036387c5b4d74ba6cb"
   license "Apache-2.0"
 
   bottle do
