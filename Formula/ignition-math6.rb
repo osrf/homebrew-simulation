@@ -1,15 +1,15 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.8.0~pre2.tar.bz2"
-  version "6.8.0~pre2"
-  sha256 "30b6da9c9f9b99ad29931942363ef4d10256f43f529c7c853fcf18543d45b72f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.8.0~pre3.tar.bz2"
+  version "6.8.0~pre3"
+  sha256 "d0ffd2f7ccc22641e52be3457544f458e0a88cdde8b4e58b67a42cb1a64ea361"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "9a7f6fe470c3e170a964572e7165f02314a5b7b6f497a97b355230476b5556cf"
-    sha256 cellar: :any, mojave:   "aae77cd0c3164e563ed96bec3ba531cd4c856149d958e03e504a4482841fe0f3"
+    sha256 cellar: :any, catalina: "80d26e6cda57cc3899581a9c5c000fabb014d728f1a04ba57e364fba5f4a89ab"
+    sha256 cellar: :any, mojave:   "afbc69f024ab64983759a0ab6d448ccfaf3c64b1a6e07a9c880ab3fc46e40283"
   end
 
   depends_on "cmake" => :build
