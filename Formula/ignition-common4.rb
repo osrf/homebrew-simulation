@@ -1,9 +1,9 @@
 class IgnitionCommon4 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://github.com/ignitionrobotics/ign-common/archive/7510820a2f046cb4bda73a63e589ac4c5a361cee.tar.gz"
-  version "3.999.999~0~20210219~7510820"
-  sha256 "e30750c6e9b45306e2314bce861d79baff089e1bb0411c0726e5a1216e0772e2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.0.0~pre1.tar.bz2"
+  version "4.0.0~pre1"
+  sha256 "d5017754e2d26ef76f77a09a2a15a014d6f53b4276eb1b06c0fccd376fe86e74"
   license "Apache-2.0"
 
   bottle do
