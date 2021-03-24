@@ -29,11 +29,11 @@ class Ogre22 < Formula
     sha256 "4a3d90b351819d81bc4c02f1adb98c85865a8bb7e0a8070a6e7f23e6f037fd73"
   end
 
-  #patch do
+  # patch do
   # fix GL3+ compilation with Xcode 10
   #  url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.patch?full_index=1"
   #  sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
-  #end
+  # end
 
   def install
     cmake_args = [
