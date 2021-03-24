@@ -1,18 +1,17 @@
 class IgnitionFuelTools6 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-fuel-tools/archive/dddb1efec1020b3a12c3137768edda10483459a4.tar.gz"
-  version "5.999.999~0~20210221~dddb1e"
-  sha256 "55988a3193f710a5fcd4d13dcef1b71a535e35b06340ada04ad829b65ea84db7"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools6-6.0.0~pre1.tar.bz2"
+  version "6.0.0~pre1"
+  sha256 "a26460bd554113ea7f85a760f2bd4d884e919fc59059a86446db9bded6d49b20"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "a19d55adc671eade234864c56e43afda56b8b9e137fcc817008b43060e3326e7"
-    sha256 cellar: :any, mojave:   "d5a2ae1e6b466f382cf716fdc861bb371df3391164db262f1de80a5ffb5c3220"
+    sha256 cellar: :any, catalina: "d6c3299eb2cbefa2ccb710cf1e6b25fbb502fc9c210bc3c153e549cdc7d995d5"
+    sha256 cellar: :any, mojave:   "1b46de66b82e352d18f2ffbaace2af3ab4e6d381275040486aaa14a2f423b85c"
   end
 
   depends_on "cmake"
