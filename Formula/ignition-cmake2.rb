@@ -8,8 +8,8 @@ class IgnitionCmake2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, catalina: "80b959c307345a5c39015f007358b27f08b38003d01d1419f00965c36c8373fb"
-    sha256 cellar: :any_skip_relocation, mojave:   "8cb7c8964b4d36728033362fb141e084ac816d8e64859b49ce53bd9d18dc8663"
+    sha256 cellar: :any_skip_relocation, catalina: "5199baa592b976e6f7e9eb5e66cac23ad38afd77893fe64a3622e369e02b1f95"
+    sha256 cellar: :any_skip_relocation, mojave:   "16000359a320fce7a6b0617970055e2f81ece5ebe3bfecfc8a3ffc67361da150"
   end
 
   depends_on "cmake"
