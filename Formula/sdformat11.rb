@@ -1,9 +1,9 @@
 class Sdformat11 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/osrf/sdformat/archive/3fb531284b62ac9062d8943e89ad90abd2bf92cc.tar.gz"
-  version "11.0.0~pre2~1~20210308~3fb531"
-  sha256 "8b29ca754e7074cce1be1f1b376bf8cd19ea88c13e4564a3d1212faad4fc700e"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.0.0~pre3.tar.bz2"
+  version "11.0.0~pre3"
+  sha256 "8da992565f61c90783657001f07254346e71fde0733d01363559c3da85fc3165"
   license "Apache-2.0"
 
   bottle do
