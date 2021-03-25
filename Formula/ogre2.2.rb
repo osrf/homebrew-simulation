@@ -20,6 +20,7 @@ class Ogre22 < Formula
   depends_on "freetype"
   depends_on "libx11"
   depends_on "libzzip"
+  depends_on "mesa"
   depends_on "rapidjson"
   depends_on "tbb"
 
