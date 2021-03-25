@@ -29,6 +29,12 @@ class Ogre22 < Formula
     sha256 "4a3d90b351819d81bc4c02f1adb98c85865a8bb7e0a8070a6e7f23e6f037fd73"
   end
 
+  patch do
+    # import changes from master branch to get sysctl right on Mac
+    url "https://gist.githubusercontent.com/j-rivero/3c34490b12434558e52521183dda4750/raw/2c0fe7029e5b9b80c1b011d1b9b4925bfbf610c1/sysctl_mac_from_master.patch"
+    sha256 "c99abbcedaf5ba88f0740e091b12b2390177e4ed73c4863b01a53a59974043e2"
+  end
+
   # patch do
   # fix GL3+ compilation with Xcode 10
   #  url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.patch?full_index=1"
