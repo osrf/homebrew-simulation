@@ -5,7 +5,7 @@ class Ogre22 < Formula
   version "2.1.99999~pre0~0~20210319~3aa42f"
   sha256 "393110ab7a12a2011be4c261b4acddcb00c9b538fae2898ec2705f3d61592767"
   license "MIT"
-  revision 1
+  revision 2
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
 
