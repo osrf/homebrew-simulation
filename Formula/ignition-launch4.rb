@@ -1,11 +1,10 @@
 class IgnitionLaunch4 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://github.com/ignitionrobotics/ign-launch/archive/ef97b8ab3693c5296905bf1982f676d316ecaca1.tar.gz"
-  version "3.999.999~0~20210122~ef97b8"
-  sha256 "03c09504483cd178b3ce48a4df1ca545d7efd85ced56410e08cffe3a18c59be2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch4-4.0.0~pre1.tar.bz2"
+  version "4.0.0~pre1"
+  sha256 "50e6f9207d2faaac0da3f4543ea7f11e5359465363195a1924c15ab78c6eebf6"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
 
