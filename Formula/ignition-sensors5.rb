@@ -1,11 +1,10 @@
 class IgnitionSensors5 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://github.com/ignitionrobotics/ign-sensors/archive/1835c65dcf8b55faa5355cd774c2aeeaaaa60c8e.tar.gz"
-  version "4.999.999~0~20210122~1835c6"
-  sha256 "f20fa33d7f6e3e56101c9741d214dc98bde05c0227bd3effc9cc1261657e59f3"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.0.0~pre2.tar.bz2"
+  version "5.0.0~pre2"
+  sha256 "ebcde2b32efb68d82a04cdfb7c480ad8d35eb24bf18e78658a4438e65288b143"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
 
