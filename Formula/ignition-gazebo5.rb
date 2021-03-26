@@ -1,11 +1,10 @@
 class IgnitionGazebo5 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://github.com/ignitionrobotics/ign-gazebo/archive/8b948d7ce8140171f72edbe66c060b7fe7f44aba.tar.gz"
-  version "4.999.999~0~20210218~8b948d7"
-  sha256 "9fc45bde79367fb946ff188be843976c954cb9c276483d556f9cad968ae1e329"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo5-5.0.0~pre1.tar.bz2"
+  version "5.0.0~pre1"
+  sha256 "c8c0e4763c05e5ee94a15a1e8e228afc8a8fa45fd540d1c83d14f631edb7a213"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
 
