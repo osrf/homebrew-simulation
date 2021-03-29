@@ -3,19 +3,18 @@ class IgnitionEdifice < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-edifice"
-  url "https://github.com/ignitionrobotics/ign-edifice/archive/fa1d69f55ced450aca095d55105eea2f04f6857e.tar.gz"
-  version "0.999.999~0~20210122~fa1d69"
-  sha256 "8b252a9034489c4ede8bdfc9e7688c0b7165744d8aa650d41ffe9a4baf930217"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-edifice/releases/ignition-edifice-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "e38d07aa9ef361fcad284c8ba841c8ddd22cf05a52023bf9fc01bb53aebb476b"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "daeeb329592598b8c7e93a6ad4b27fa613d6d0c0076d6240825fb2c7a2871124"
-    sha256 cellar: :any, mojave:   "f53faa7ad8d45d0ec44ef04b95fae4e412e52e5c8714731e7380bf888af142ce"
+    sha256 cellar: :any, catalina: "97168c3ca84041f31dd6f01691a90e550250c548c3280c0ceaa1034f2339c3b3"
+    sha256 cellar: :any, mojave:   "209170e9849f00dcdcb9cf7553ec9de4d602ad7824fc768a740e6c9af8f9df3f"
   end
 
   depends_on "cmake" => :build
