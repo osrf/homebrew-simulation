@@ -1,9 +1,8 @@
 class IgnitionTools < Formula
   desc "Entry point for ignition command-line tools"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.1.0~pre1.tar.bz2"
-  version "1.1.0~pre1"
-  sha256 "fd10f8ab35a5d6e88f1e5c5b64422cf306a52a012d0b8547f83e20c7d4bd0aa9"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.1.0.tar.bz2"
+  sha256 "ac5d8e0740cc38dad9f8df015c932df9cf11a5266e81defc6c59642788cd466d"
   license "Apache-2.0"
   head "https://github.com/ignitionrobotics/ign-tools.git", branch: "ign-tools1"
 
