@@ -1,15 +1,14 @@
 class IgnitionUtils1 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.0.0~pre2.tar.bz2"
-  version "1.0.0~pre2"
-  sha256 "d51e18d3745ca17f387f0a384ce250b0262f2479e4e945e4e93c83767652730f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.0.0.tar.bz2"
+  sha256 "e916dc70b96d8131d37866f0cc583f87bd4c168fb7e63ea532ded96547dc7a2c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "a185bc0b68938eeadac2aa8a7fbea8a88665658a6df3e4a92056371495bf46f5"
-    sha256 cellar: :any, mojave:   "06016cec51c30b3e60cd73c79078474bd04a9edc2a4eda85c8f254f10c4c7c79"
+    sha256 cellar: :any, catalina: "5460f3243bd28c203fbd50db14892ba6bd566949774dd0f8c851497494f1ff3f"
+    sha256 cellar: :any, mojave:   "6e7bc53dfed9288be12f2cbe53edd0acffb8090c00a86989cc13ee02320bbb01"
   end
 
   depends_on "cmake" => [:build, :test]
