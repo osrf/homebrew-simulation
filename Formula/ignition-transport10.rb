@@ -1,9 +1,8 @@
 class IgnitionTransport10 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport10-10.0.0~pre2.tar.bz2"
-  version "10.0.0~pre2"
-  sha256 "235728ba715313a70e925551da6019061f95981fda079b8a3e2b2315c3ec0744"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport10-10.0.0.tar.bz2"
+  sha256 "50f7ad844bc5184f67cd1fb804ffa4c5a35a9afcf0616515fa105bb8d47daa5a"
   license "Apache-2.0"
   version_scheme 1
 
