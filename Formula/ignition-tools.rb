@@ -1,16 +1,15 @@
 class IgnitionTools < Formula
   desc "Entry point for ignition command-line tools"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.1.0~pre1.tar.bz2"
-  version "1.1.0~pre1"
-  sha256 "fd10f8ab35a5d6e88f1e5c5b64422cf306a52a012d0b8547f83e20c7d4bd0aa9"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.1.0.tar.bz2"
+  sha256 "ac5d8e0740cc38dad9f8df015c932df9cf11a5266e81defc6c59642788cd466d"
   license "Apache-2.0"
   head "https://github.com/ignitionrobotics/ign-tools.git", branch: "ign-tools1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, catalina: "97345cf27a2118f8e713ec838f5ed148a3c20acf505fc3e31618b0208dd1531b"
-    sha256 cellar: :any_skip_relocation, mojave:   "f7ca39784a280b4eff12b73f966eb7940e2f723cc89189b6f74449cd977f97ad"
+    sha256 cellar: :any_skip_relocation, catalina: "1859763181f5ba6ad80c80033dd3648489533365ebd758586d224c91d575761b"
+    sha256 cellar: :any_skip_relocation, mojave:   "5e4307ac279027e6802ebcc2763d3cf39a4a551e7984065a9edd7cdfe84fc5d8"
   end
 
   depends_on "cmake" => :build
