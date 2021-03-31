@@ -1,9 +1,8 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.8.0~pre3.tar.bz2"
-  version "6.8.0~pre3"
-  sha256 "d0ffd2f7ccc22641e52be3457544f458e0a88cdde8b4e58b67a42cb1a64ea361"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.8.0.tar.bz2"
+  sha256 "b4d9721d9eaada23d9f787241f1519d086946ebe195be373bdfb021ee625494f"
   license "Apache-2.0"
 
   bottle do
