@@ -1,17 +1,16 @@
 class IgnitionSensors5 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.0.0~pre2.tar.bz2"
-  version "5.0.0~pre2"
-  sha256 "ebcde2b32efb68d82a04cdfb7c480ad8d35eb24bf18e78658a4438e65288b143"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.0.0.tar.bz2"
+  sha256 "33c6c062418ac325be6143c494ad8f6187deaae95af8f77f9978582a67bd6e9d"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "7caaaffe731953058b48ab68539e07e2e8bfca1a8711315416f289a5d56e65b7"
-    sha256 mojave:   "782728a5ec624fd39b0bafa9fb3795597c07296ee35a9e981eaac43f0ba59ddd"
+    sha256 catalina: "ff952149d6dcb6c0ff049fad0172a99f4df822ca65e18eb48ddead01d9108c4f"
+    sha256 mojave:   "202132c85e5ca7dc1a26ebe7d636449c1327f3b03932546e8cc175a0be422696"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,17 +1,16 @@
 class IgnitionGui5 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.0.0~pre1.tar.bz2"
-  version "5.0.0~pre1"
-  sha256 "635fac7d597b7ce7cbd998e3e2e714af500964d26b1ea55c27497430641e61f5"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.0.0.tar.bz2"
+  sha256 "738701bf8c0c96ad3f961c52319171d24916e59a7eaa4c347753159a9376e648"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "aecd46fc085fe2031de94651d76d62c1e82bc8e212ff6b9b318469deafb43ac4"
-    sha256 mojave:   "fa4a83c2516aa8fedee13af8d7ae65d3a94233c2189987fcece47e4bae699392"
+    sha256 catalina: "0a2d53354e64c0fbafd422abcaf44d950b3dbb386fde4b9df1cd03da2dddc5a1"
+    sha256 mojave:   "b68997b2ac63ed577ad2e803c435f9cb364a0c01c53c830de47661b88afea73e"
   end
 
   depends_on "cmake" => [:build, :test]
