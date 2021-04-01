@@ -25,7 +25,4 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      # Needed for X11Requirement (i.e: ignition-sensors)
-      - run: brew install --cask xquartz
-
       - run: brew test-bot --fail-fast --tap=osrf/simulation --only-tap-syntax
