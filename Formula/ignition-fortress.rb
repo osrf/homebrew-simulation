@@ -1,10 +1,10 @@
-class IgnitionEdifice < Formula
+class IgnitionFortress < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-edifice"
   url "https://github.com/ignitionrobotics/ign-fortress/archive/04ec53d31ad5133a65ab8bcdcd0fdf7beb2e8ced.tar.gz"
-  version "-1.999.999~0~20210413~04ec53"
+  version "0.999.999~0~20210413~04ec53"
   sha256 "98bb853cd84224e5f63584ab3220e0b9b779f0e466f44a04bd8fb2623fab0ba5"
   license "Apache-2.0"
   version_scheme 1
@@ -32,7 +32,7 @@ class IgnitionEdifice < Formula
 
   resource "PyYAML" do
     url "https://github.com/ignitionrobotics/ign-fortress/archive/04ec53d31ad5133a65ab8bcdcd0fdf7beb2e8ced.tar.gz"
-  version "-1.999.999~0~20210413~04ec53"
+  version "0.999.999~0~20210413~04ec53"
     sha256 "98bb853cd84224e5f63584ab3220e0b9b779f0e466f44a04bd8fb2623fab0ba5"
   end
 
