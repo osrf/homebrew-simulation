@@ -1,4 +1,4 @@
-class Sdformat11 < Formula
+class Sdformat12 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
   url "https://github.com/osrf/sdformat/archive/54e34994e940568cc434d50e890dd738201410ca.tar.gz"
