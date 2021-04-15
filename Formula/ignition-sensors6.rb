@@ -8,6 +8,12 @@ class IgnitionSensors6 < Formula
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "09130ac8d35ed918dffd0358115e06fb7d60c2f83595fe4089dea27906283036"
+    sha256 mojave:   "cce4847a8ec2cb8332ac26a6555bcef263f22b5a07c6eb2e36199990bf705d8b"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
