@@ -2,14 +2,14 @@ class IgnitionFortress < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
-  homepage "https://github.com/ignitionrobotics/ign-edifice"
+  homepage "https://github.com/ignitionrobotics/ign-fortress"
   url "https://github.com/ignitionrobotics/ign-fortress/archive/04ec53d31ad5133a65ab8bcdcd0fdf7beb2e8ced.tar.gz"
   version "0.999.999~0~20210413~04ec53"
   sha256 "98bb853cd84224e5f63584ab3220e0b9b779f0e466f44a04bd8fb2623fab0ba5"
   license "Apache-2.0"
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-fortress.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
@@ -32,7 +32,6 @@ class IgnitionFortress < Formula
 
   resource "PyYAML" do
     url "https://github.com/ignitionrobotics/ign-fortress/archive/04ec53d31ad5133a65ab8bcdcd0fdf7beb2e8ced.tar.gz"
-  version "0.999.999~0~20210413~04ec53"
     sha256 "98bb853cd84224e5f63584ab3220e0b9b779f0e466f44a04bd8fb2623fab0ba5"
   end
 
@@ -49,7 +48,7 @@ class IgnitionFortress < Formula
   end
 
   test do
-    yaml_file = share/"ignition/ignition-edifice/gazebodistro/collection-edifice.yaml"
+    yaml_file = share/"ignition/ignition-fortress/gazebodistro/collection-fortress.yaml"
     system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
