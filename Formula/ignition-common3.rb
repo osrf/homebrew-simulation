@@ -1,8 +1,8 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.12.0.tar.bz2"
-  sha256 "b5420bdca27a4553e55b88917bffa9a74f3b6348ab29ee9afda80e8102cc9c4f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.13.0.tar.bz2"
+  sha256 "2a2eecb1ae3635191ea1aa3d4d54f3bd53411b38572fd90ae2fc92121867d161"
   license "Apache-2.0"
 
   bottle do
