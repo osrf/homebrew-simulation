@@ -1,16 +1,16 @@
 class IgnitionMsgs7 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs7-7.0.0.tar.bz2"
-  sha256 "bb53fde2d98de1e032081e240b532408d7128c4d38ddad4f2ad8c5cd1420fc31"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs7-7.1.0.tar.bz2"
+  sha256 "0e1ddb73327a863eac027b5e430277e9fa121053aa108cc3d8b9c43c1698af23"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "08fff05e34c69222f90d00612294fb0caf860e1ac63579a85e96dc81c0277be0"
-    sha256 cellar: :any, mojave:   "984157b3e80a5996f42b3ac09ca3e1ae10986c7e0d7c5e1d0337867fede584d8"
+    sha256 cellar: :any, catalina: "a200adbbcaf699b6ed48edfdb3e713e63a4ea7687686935cd39b60f74d96757d"
+    sha256 cellar: :any, mojave:   "d14263734a550e927038bddf1800348641c8ad0302f398651c47b628f4fb5ba7"
   end
 
   depends_on "protobuf-c" => :build
