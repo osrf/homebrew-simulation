@@ -1,16 +1,16 @@
 class IgnitionLaunch3 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch3-3.2.1.tar.bz2"
-  sha256 "f23516c6ed6dd87b54ffd0b5364f38256c4a4efd54374013dc5e85b4cc9e3f9e"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch3-3.3.0.tar.bz2"
+  sha256 "fb556e23a5dd9132164c237de0295d1bbffa692d2245d6edca93df68ab214eeb"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "7f4f3c136caaa785c1bbd5fe61af06ee23203f316a6f7ada9fb2dc1b3573ddba"
-    sha256 mojave:   "87d927f0db0047598ac22e108b6064e983368b83fd0baf3f154e3bdfdce6f450"
+    sha256 catalina: "c30e5777bc57f1da4858b41a1b159a1aca71b3d626ebf8031089b5da655c93e7"
+    sha256 mojave:   "8a5c4d3287d8fa41398aa8292b91bce5aeeaf08457a7ff7a648093d130b977dc"
   end
 
   depends_on "cmake" => :build
