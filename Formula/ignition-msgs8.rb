@@ -1,9 +1,9 @@
 class IgnitionMsgs8 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://github.com/ignitionrobotics/ign-msgs/archive/9fb08e926cd3a7b75cdd5706ccc9ae3ca4dfc457.tar.gz"
-  version "7.999.999~0~20210413~9fb08e"
-  sha256 "1493d7024f0615bc147bf6b79c3e959b2ac4cd81362ae63ea9266f3166a47177"
+  url "https://github.com/ignitionrobotics/ign-msgs/archive/0a195fb52fce04efa5986ca7e46ed823a26c28c1.tar.gz"
+  version "7.999.999~0~20210512~0a195f"
+  sha256 "6fba8fd3b363dd48003ccdbf50c03a1a67298bd70e1967d2ff87da083b423d09"
   license "Apache-2.0"
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
