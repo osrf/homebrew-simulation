@@ -6,7 +6,7 @@ class DartsimAT6100 < Formula
   version "6.10.0~20200916~1673b0be51fb370023df7490dc49706b590d8f72"
   sha256 "ec2e833d3225ac3f4365cc6d8b2f5511170a47d140ff43dcc7d63a50fbb6bfd5"
   license "BSD-2-Clause"
-  revision 7
+  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
