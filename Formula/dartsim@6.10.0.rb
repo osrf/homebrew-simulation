@@ -6,11 +6,12 @@ class DartsimAT6100 < Formula
   version "6.10.0~20200916~1673b0be51fb370023df7490dc49706b590d8f72"
   sha256 "ec2e833d3225ac3f4365cc6d8b2f5511170a47d140ff43dcc7d63a50fbb6bfd5"
   license "BSD-2-Clause"
-  revision 7
+  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 mojave: "e91ee8164b6caafc7714e852adc1d8ae1080413dc239c7e789f82c8c75ddc882"
+    sha256 catalina: "f93b80579485cc2046854bc89a00a7b058b4a96cdad4986b65ad4532a8c23f6c"
+    sha256 mojave:   "745f09fce44d4bebcfd807c123251d917da409caac58816d27aaebc89f07ffd1"
   end
 
   keg_only "open robotics fork of dart HEAD + custom changes"
@@ -37,12 +38,23 @@ class DartsimAT6100 < Formula
     sha256 "3c85f594b477ff2357017364a55cdc7b3ffa25ab53f08bd910ed5db71083ed6d"
   end
 
+  patch do
+    # Fix syntax error in glut_human_joint_limits/CMakeLists.txt
+    url "https://github.com/dartsim/dart/commit/47274b551bd48a31a702b4ddc7c1f8061daef3d9.patch?full_index=1"
+    sha256 "030e16a5728e856d0cc1788494da50272c52a7efec5c2a93e95de2cda7407f23"
+  end
+
   def install
     ENV.cxx11
+    args = std_cmake_args
 
-    # Force to link to system GLUT (see: https://cmake.org/Bug/view.php?id=16045)
-    system "cmake", ".", "-DGLUT_glut_LIBRARY=/System/Library/Frameworks/GLUT.framework",
-                         *std_cmake_args
+    on_macos do
+      # Force to link to system GLUT (see: https://cmake.org/Bug/view.php?id=16045)
+      glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
+      args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
+    end
+
+    system "cmake", ".", *args
     system "make", "install"
 
     # Add rpath to shared libraries
