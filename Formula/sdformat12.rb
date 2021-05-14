@@ -5,6 +5,12 @@ class Sdformat12 < Formula
   version "11.999.999~1"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "8ec4d52c3a1c947e6baed0426ba812c5f565a67a2669b385d11f2091eb02cb04"
+    sha256 mojave:   "f7f12a2cc038a1ed046381b4789675f149ce1982970fdf0ba798bd45cb4017eb"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
