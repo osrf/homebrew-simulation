@@ -4,7 +4,6 @@ class IgnitionPhysics5 < Formula
   url "https://github.com/ignitionrobotics/ign-physics.git", branch: "main"
   version "4.999.999~1"
   license "Apache-2.0"
-  revision 1
 
   depends_on "cmake" => :build
 
