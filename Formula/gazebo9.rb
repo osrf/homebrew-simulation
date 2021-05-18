@@ -8,7 +8,6 @@ class Gazebo9 < Formula
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 

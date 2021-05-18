@@ -8,7 +8,6 @@ class IgnitionTransport4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport4"
 
-
   depends_on "doxygen" => [:build, :optional]
 
   depends_on "protobuf-c" => :build

@@ -7,7 +7,6 @@ class IgnitionFuelTools6 < Formula
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
 
-
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"

@@ -7,7 +7,6 @@ class IgnitionGazebo3 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo3"
 
-
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "google-benchmark"

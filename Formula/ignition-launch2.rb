@@ -8,7 +8,6 @@ class IgnitionLaunch2 < Formula
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch2"
 
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 

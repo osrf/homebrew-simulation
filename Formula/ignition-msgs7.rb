@@ -7,7 +7,6 @@ class IgnitionMsgs7 < Formula
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
 
-
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake2"

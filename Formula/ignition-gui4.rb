@@ -7,7 +7,6 @@ class IgnitionGui4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui4"
 
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"

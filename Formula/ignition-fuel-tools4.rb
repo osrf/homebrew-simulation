@@ -6,7 +6,6 @@ class IgnitionFuelTools4 < Formula
   license "Apache-2.0"
   revision 1
 
-
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"

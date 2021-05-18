@@ -6,7 +6,6 @@ class IgnitionTransport8 < Formula
   license "Apache-2.0"
   revision 1
 
-
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
 

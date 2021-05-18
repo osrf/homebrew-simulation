@@ -5,7 +5,6 @@ class IgnitionMsgs5 < Formula
   sha256 "a4dc07d8000b63de618231c382e6d1169b15cd6911c2ab1e2f7db10b2689fe5a"
   license "Apache-2.0"
 
-
   depends_on "protobuf-c" => :build
 
   depends_on "cmake"

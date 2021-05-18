@@ -8,7 +8,6 @@ class IgnitionSensors4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "ign-sensors4"
 
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
