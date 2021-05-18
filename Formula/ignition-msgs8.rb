@@ -8,12 +8,6 @@ class IgnitionMsgs8 < Formula
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "069cec2b157de1e1f52eace5dd60bb5a81418253c512f56a4501b7cdb9ac24f2"
-    sha256 cellar: :any, mojave:   "1a78dda135569cc8381bc88d407fe18f38c08fbc4f14f9df2a62f84c538ddbd3"
-  end
-
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake2"
