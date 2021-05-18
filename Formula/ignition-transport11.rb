@@ -9,12 +9,6 @@ class IgnitionTransport11 < Formula
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "038b2b5547bf6f649b2c3094d2177ff6caad566893fdf436819549e13ad8e241"
-    sha256 mojave:   "e5e497cb704e24b91f20a7842352e88cf7154842c214b22d030c91e3b24df3ed"
-  end
-
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
 

@@ -7,12 +7,6 @@ class IgnitionFuelTools6 < Formula
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "22867ea3a4892b684da678fe397e3d3ded97332e1de6569457bed4179c09b710"
-    sha256 cellar: :any, mojave:   "77e8bf09197cb6ff04f1326a8f129cc6f4b501c12ea7f53a3b0282623d6a7950"
-  end
-
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
