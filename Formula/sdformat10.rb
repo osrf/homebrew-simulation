@@ -1,15 +1,14 @@
 class Sdformat10 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.4.0.tar.bz2"
-  sha256 "124611b5c729e89f6f360f9fff389eb95c576a65b0a29ca39c46be8d808f076f"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.5.0.tar.bz2"
+  sha256 "9153a62f6ab8b6497f58a780ae41c93b02b7b1f43d1d767bfcde8a91bf4a6d80"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "b3b3f03bcb6b04aa8f56f1b7ae8764d2adc25b137565bc498697facc8db992f4"
-    sha256 mojave:   "32babf2030e94c1c21a10d6f63e92ee521153874dbdbcac48d101c5c82b3009f"
+    sha256 catalina: "caee3073708481ff1453f2391248f83d0c732db54ce795901ec983be038d3fb5"
+    sha256 mojave:   "803081f9c618a691f75b14ead8679a95d20316dad22f24e3898279e1f043d695"
   end
 
   depends_on "cmake" => [:build, :test]
