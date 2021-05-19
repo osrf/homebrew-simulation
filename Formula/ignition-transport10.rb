@@ -4,7 +4,7 @@ class IgnitionTransport10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport10-10.0.0.tar.bz2"
   sha256 "50f7ad844bc5184f67cd1fb804ffa4c5a35a9afcf0616515fa105bb8d47daa5a"
   license "Apache-2.0"
-  version_scheme 1
+  version_scheme 2
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
 
