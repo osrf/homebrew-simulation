@@ -4,8 +4,15 @@ class IgnitionGui5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.0.0.tar.bz2"
   sha256 "738701bf8c0c96ad3f961c52319171d24916e59a7eaa4c347753159a9376e648"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "63bb990b4b4b2a845dcbd4369a6c6cf83219544fa576283392a4e06f0f5df636"
+    sha256 mojave:   "39d262ab48aa54a33dc23fbf4f6ff8a706a1acc52975b68d5495866888a08094"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
