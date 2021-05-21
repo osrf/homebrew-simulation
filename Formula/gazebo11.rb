@@ -4,7 +4,7 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.5.1.tar.bz2"
   sha256 "c7b378a72278d4b0a750970d13e757064a9dff76fe326b799047e45486b2303d"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
@@ -28,7 +28,7 @@ class Gazebo11 < Formula
   depends_on "qt@5"
   depends_on "qwt"
   depends_on "sdformat9"
-  depends_on "tbb"
+  depends_on "tbb@2020"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
@@ -75,7 +75,7 @@ class Gazebo11 < Formula
     # running this sample code seg-faults from boost filesystem
     # if a bottle rebuild is needed
     (testpath/"test.cpp").write <<-EOS
-      #include <gazebo/common/CommonIface.hh>
+      #include <gazebo/gazebo.hh>
       int main() {
         gazebo::common::copyDir(".", "./tmp");
         return 0;
@@ -101,6 +101,7 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
+    ENV.append_path "CPATH", Formula["tbb@2020"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
