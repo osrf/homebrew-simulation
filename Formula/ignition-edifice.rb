@@ -6,6 +6,7 @@ class IgnitionEdifice < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-edifice/releases/ignition-edifice-1.0.0.tar.bz2"
   sha256 "c53264893addb6873e0a614f84278e3008326c3483f5b413c35ebf24daad7c57"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
