@@ -4,8 +4,15 @@ class IgnitionSensors5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.0.0.tar.bz2"
   sha256 "33c6c062418ac325be6143c494ad8f6187deaae95af8f77f9978582a67bd6e9d"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "76655395bc385d1a58ee494a4f8024cbdfe244c8df1262ae95e6ddee5824e544"
+    sha256 mojave:   "c685fad1a931d227247f76e5a0c47e828b9a817d8bbd111698861d835255988b"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
