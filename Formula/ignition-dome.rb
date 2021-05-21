@@ -6,7 +6,7 @@ class IgnitionDome < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-dome/releases/ignition-dome-1.0.0.tar.bz2"
   sha256 "cb78ea2fc0f1cb83f2be3e9071d54693e830f715a93c839b8f2ac3692ff7e459"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/ignitionrobotics/ign-dome.git", branch: "main"
 
