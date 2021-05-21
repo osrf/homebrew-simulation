@@ -7,6 +7,7 @@ class IgnitionFortress < Formula
   version "0.999.999~0~20210413~04ec53"
   sha256 "98bb853cd84224e5f63584ab3220e0b9b779f0e466f44a04bd8fb2623fab0ba5"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-fortress.git", branch: "main"
