@@ -5,7 +5,6 @@ class IgnitionLaunch5 < Formula
   version "4.999.999~0~20210413~6fa092"
   sha256 "2ff7b619177887eccc4ec852ad0d1d0ba9d0ec422a5291e79bebb10eb73a002b"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
 
