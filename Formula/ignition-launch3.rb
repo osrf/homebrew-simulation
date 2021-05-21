@@ -4,8 +4,15 @@ class IgnitionLaunch3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch3-3.3.0.tar.bz2"
   sha256 "fb556e23a5dd9132164c237de0295d1bbffa692d2245d6edca93df68ab214eeb"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch3"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "11b4d1667194d573450e0d5be0b214419067a8d8a65b08481eec208706957064"
+    sha256 mojave:   "82738a5866f30e1cdbd53fffcf386ebf917187fb8eb362cfda9ab9443ac94697"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
