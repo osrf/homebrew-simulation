@@ -4,8 +4,15 @@ class IgnitionGazebo5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo5-5.0.0.tar.bz2"
   sha256 "6aded12a07508eccf8f0e638217b54e6a59af344f7d662a6c24885e8f6d79cde"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "f4bc11635ebae72406d9a3a8d8e040a42115ce1b0bcd3a92da116af9be28e4b0"
+    sha256 mojave:   "8e02cbd73965a54eb90de469c33d33ff37ec3ee15a481c8c4c11be9f31c5fb91"
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
