@@ -11,6 +11,12 @@ class IgnitionEdifice < Formula
 
   head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "4b1e077943fa287db8dd46b1726da9d36f273ce37c01387ec79b5d0b95e4432b"
+    sha256 cellar: :any, mojave:   "a614b41047c53862d42df8e57fe4caf7cb0df702495ffb3b456c01789b849bd1"
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
