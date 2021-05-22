@@ -1,12 +1,9 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://github.com/ignitionrobotics/ign-gui/archive/6c761b874d613f0a8a80018e20d18db88a0973f0.tar.gz"
-  version "5.999.999~0~20210413~6c761b"
-  sha256 "f0a6bed89c8a64590569369e67061dbdf4cf80d6d4b8ebb8a680ab12bda79042"
+  url "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
+  version "5.999.999~1~20210413~6c761b"
   license "Apache-2.0"
-
-  head "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

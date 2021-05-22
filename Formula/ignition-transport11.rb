@@ -1,13 +1,10 @@
 class IgnitionTransport11 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-transport/archive/36308c1cc2dd84e4ebf94449ea9d83a62662c555.tar.gz"
-  version "10.999.999~0~20210413~36308c"
-  sha256 "eaff16c64487debe2418c90f46d2f9fe020b671176b93ed547ebdf93f2c8a51b"
+  head "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
+  version "10.999.999~1~20210413~36308c"
   license "Apache-2.0"
   version_scheme 1
-
-  head "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
