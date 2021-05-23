@@ -4,9 +4,15 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.18.0.tar.bz2"
   sha256 "6d00de6e6e796285f844515ea9c774e10e2df8f554456d09bd439dfa172a2449"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "054e9a23be24b1ed2e5aa6e1ef939460b9c31182fd3fd8debdb82951fceee1b7"
+    sha256 mojave:   "a83d77ce2e53055d173754476229949e4cdd44d598874e95e360ef09056edb13"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -28,7 +34,7 @@ class Gazebo9 < Formula
   depends_on "qt@5"
   depends_on "qwt"
   depends_on "sdformat6"
-  depends_on "tbb"
+  depends_on "tbb@2020"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
@@ -77,7 +83,7 @@ class Gazebo9 < Formula
     # running this sample code seg-faults from boost filesystem
     # if a bottle rebuild is needed
     (testpath/"test.cpp").write <<-EOS
-      #include <gazebo/common/CommonIface.hh>
+      #include <gazebo/gazebo.hh>
       int main() {
         gazebo::common::copyDir(".", "./tmp");
         return 0;
@@ -103,6 +109,7 @@ class Gazebo9 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
+    ENV.append_path "CPATH", Formula["tbb@2020"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
