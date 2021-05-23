@@ -6,10 +6,16 @@ class IgnitionCitadel < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.1.tar.bz2"
   sha256 "1436ebb1b2497abb8f75599f2d8f2b79ec4c29b1d4d4ae6a264cae2f066e5702"
   license "Apache-2.0"
-  revision 2
+  revision 3
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-citadel.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "87b3693eeaea99a013333652f3d2a1dc906e8fda3dce55b0d21005a3d360bf6d"
+    sha256 cellar: :any, mojave:   "12d7438bf054f529f0d55fca3fde21a2349c4bf715fa56ebd647efef5ba32695"
+  end
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
