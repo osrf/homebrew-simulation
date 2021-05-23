@@ -1,12 +1,15 @@
 class IgnitionMsgs8 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://github.com/ignitionrobotics/ign-msgs/archive/0a195fb52fce04efa5986ca7e46ed823a26c28c1.tar.gz"
-  version "7.999.999~0~20210512~0a195f"
-  sha256 "6fba8fd3b363dd48003ccdbf50c03a1a67298bd70e1967d2ff87da083b423d09"
+  url "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
+  version "7.999.999~1~20210512~0a195f"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "aad6fc969b76031517dc5a9608c7607f65287e381f69aeb8369f16590ecbd523"
+    sha256 cellar: :any, mojave:   "7862048fe19fb15cb6a7066cc6abac1734239c6b6e76ef894084811ddeb869d8"
+  end
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
