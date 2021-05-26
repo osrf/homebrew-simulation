@@ -10,8 +10,9 @@ class Gazebo11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "5bbfbeb2e99dda5122afcf59a0bf8f3e24c6a537cb6782979398b113756b3ccc"
-    sha256 mojave:   "8dc183974fb0e1fd2d6ec6f25b6a026c3fb41fd6b4faa6552a30f1091d6dc7f8"
+    rebuild 1
+    sha256 catalina: "97274fc4d3f12f9349bb547c324eb2eb847575b7de00ee3da4a509577e7c0962"
+    sha256 mojave:   "174639fafbd99b3ba4f4cb78358dabfe83bb1e7e257371cd57fe5507c5a447b5"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +35,7 @@ class Gazebo11 < Formula
   depends_on "qt@5"
   depends_on "qwt"
   depends_on "sdformat9"
-  depends_on "tbb@2020"
+  depends_on "tbb@2020_u3"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
@@ -107,7 +108,7 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CPATH", Formula["tbb@2020"].opt_include
+    ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
