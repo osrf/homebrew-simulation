@@ -6,6 +6,12 @@ class TbbAT2020U3 < Formula
   sha256 "ebc4f6aa47972daed1f7bf71d100ae5bf6931c2e3144cf299c8cc7d041dca2f3"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "5b00ca36736e556f648841582f3af90d0f6f325169c986952b9681d408b794e3"
+    sha256 cellar: :any, mojave:   "1824b4a41adf38fce835e0f69fe6425eeefc41e9c0ecfa230677a7ea920c2fba"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
