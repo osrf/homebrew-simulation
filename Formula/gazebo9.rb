@@ -34,7 +34,7 @@ class Gazebo9 < Formula
   depends_on "qt@5"
   depends_on "qwt"
   depends_on "sdformat6"
-  depends_on "tbb@2020"
+  depends_on "tbb@2020_u3"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
@@ -109,7 +109,7 @@ class Gazebo9 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CPATH", Formula["tbb@2020"].opt_include
+    ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
