@@ -4,14 +4,14 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.18.0.tar.bz2"
   sha256 "6d00de6e6e796285f844515ea9c774e10e2df8f554456d09bd439dfa172a2449"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "054e9a23be24b1ed2e5aa6e1ef939460b9c31182fd3fd8debdb82951fceee1b7"
-    sha256 mojave:   "a83d77ce2e53055d173754476229949e4cdd44d598874e95e360ef09056edb13"
+    sha256 catalina: "12babd32940924f5ecb7299fd3b9dd10afc02108ef7fcb41005b985822289e97"
+    sha256 mojave:   "4e8b48f6c55342352b0d8c488b35d98ff22d620d3ebb7e5172faa044a043ad8f"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +34,7 @@ class Gazebo9 < Formula
   depends_on "qt@5"
   depends_on "qwt"
   depends_on "sdformat6"
-  depends_on "tbb@2020"
+  depends_on "tbb@2020_u3"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
@@ -109,7 +109,7 @@ class Gazebo9 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CPATH", Formula["tbb@2020"].opt_include
+    ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
