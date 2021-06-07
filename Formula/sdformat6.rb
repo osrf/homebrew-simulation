@@ -1,10 +1,9 @@
 class Sdformat6 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.2.0.tar.bz2"
-  sha256 "be818648f0a639a0c410231673e8c7ba043c2589586e43ef8c757070855898fa"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.0.tar.bz2"
+  sha256 "108c687d5c3a21b5ab8154f41f99d799d7b2e7632b4cc1914eda8c902581ee7f"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
