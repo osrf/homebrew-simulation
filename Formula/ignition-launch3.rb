@@ -1,10 +1,9 @@
 class IgnitionLaunch3 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch3-3.3.0.tar.bz2"
-  sha256 "fb556e23a5dd9132164c237de0295d1bbffa692d2245d6edca93df68ab214eeb"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch3-3.4.0.tar.bz2"
+  sha256 "6db15e028bf694f9456ee95cce9671d02778c91c99b1bbdef85adc96d2a9d197"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch3"
 
