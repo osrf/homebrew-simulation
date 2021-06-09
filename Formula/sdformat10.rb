@@ -4,6 +4,7 @@ class Sdformat10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.5.0.tar.bz2"
   sha256 "9153a62f6ab8b6497f58a780ae41c93b02b7b1f43d1d767bfcde8a91bf4a6d80"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
