@@ -4,6 +4,7 @@ class Sdformat12 < Formula
   url "https://github.com/osrf/sdformat.git", branch: "main"
   version "11.999.999~1"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
