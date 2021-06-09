@@ -6,11 +6,6 @@ class IgnitionPhysics1 < Formula
   license "Apache-2.0"
   revision 2
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, mojave: "4b8eba959f866f7a9c306736eab34f4795de8c1801603b64b21d4000593fd167"
-  end
-
   disable! date: "2021-01-31", because: "is past end-of-life date"
 
   deprecate! date: "2020-12-31", because: "is past end-of-life date"
