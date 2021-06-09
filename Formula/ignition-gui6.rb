@@ -5,12 +5,6 @@ class IgnitionGui6 < Formula
   version "5.999.999~1~20210413~6c761b"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "cdb70794dac0899688ab3c93fbeec3f956a8c58310100762228860898dc86cd4"
-    sha256 mojave:   "63b531ec15dcf55545ec45e23d922a8fd7f9162f7bcb940d2fd423c9c2ea2cca"
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
