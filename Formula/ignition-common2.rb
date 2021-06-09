@@ -7,13 +7,6 @@ class IgnitionCommon2 < Formula
 
   head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common2"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, mojave:      "e2d38882f31358078c82f84a85ace6e71d9405323ca8f26b7b35e3152e9d0335"
-    sha256 cellar: :any, high_sierra: "c7f3b475c669709f900b1f76ebbf4e1abbd02f97a4de693147cffd17baf106b0"
-    sha256 cellar: :any, sierra:      "fd86dcee981cb04ee1cee0ac9fd681b2292eb0d2b2e2efa13566e08c27dcaf6f"
-  end
-
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"
