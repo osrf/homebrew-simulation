@@ -4,6 +4,7 @@ class Sdformat11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.1.0.tar.bz2"
   sha256 "4c751159b83402a2c021cd95c2ec94e4f8bd53d118b00f2cafffb3d10510a156"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
