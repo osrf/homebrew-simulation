@@ -8,6 +8,12 @@ class Sdformat6 < Formula
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "180a87711cec092ebadf9ef4094d72173939d23103cb6cf5e290010cb2a3d920"
+    sha256 mojave:   "02ed3bd2a7f1146e3b42ccd852ada985061a8df07b278bccc583346e52ff84e1"
+  end
+
   depends_on "cmake" => :build
 
   depends_on "boost"
