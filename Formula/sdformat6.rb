@@ -4,14 +4,14 @@ class Sdformat6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.0.tar.bz2"
   sha256 "108c687d5c3a21b5ab8154f41f99d799d7b2e7632b4cc1914eda8c902581ee7f"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 mojave:      "4225b11d56c632106f4fb90de0458ba6dad24b981b619b115f38e9cf58278d07"
-    sha256 high_sierra: "ec07b9e4931703c0fbf9a7a915f8a7cdbb22c64537947d66a8b3da748a641228"
-    sha256 sierra:      "b198e8e1251fd267ab72886c480f288ef00a25e8d3c3ef79fa24c654807a02ff"
+    sha256 catalina: "180a87711cec092ebadf9ef4094d72173939d23103cb6cf5e290010cb2a3d920"
+    sha256 mojave:   "02ed3bd2a7f1146e3b42ccd852ada985061a8df07b278bccc583346e52ff84e1"
   end
 
   depends_on "cmake" => :build
