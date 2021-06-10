@@ -4,6 +4,7 @@ class IgnitionMsgs8 < Formula
   url "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
   version "7.999.999~1~20210512~0a195f"
   license "Apache-2.0"
+  revision 1
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
