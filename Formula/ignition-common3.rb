@@ -4,6 +4,7 @@ class IgnitionCommon3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.13.2.tar.bz2"
   sha256 "ea18919785677367223aa1c052945d69d0b7ce7a514208061cf657a09525002f"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake"
   depends_on "ffmpeg"
