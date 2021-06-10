@@ -6,6 +6,12 @@ class IgnitionCommon4 < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "029bfcb6f7b34d7dbb571bf5981ac5cb3efe6d467dd6fa8b8cfcd5d6f630bc5f"
+    sha256 cellar: :any, mojave:   "d0dda6f2582750c74041a2dcd61bcdd839844577eb9bfd4008e0d461f0d6a38b"
+  end
+
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"
