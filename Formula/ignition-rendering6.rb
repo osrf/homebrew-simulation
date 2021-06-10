@@ -4,6 +4,7 @@ class IgnitionRendering6 < Formula
   url "https://github.com/ignitionrobotics/ign-rendering.git", branch: "main"
   version "5.999.999~1"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
