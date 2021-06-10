@@ -5,6 +5,7 @@ class IgnitionCommon0 < Formula
   version "0.5.0~pre4"
   sha256 "4e9c5507a2f480a2e2dc8dd2aaa22e91905791f87745e69f918ab67304ef39a7"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common0"
 
