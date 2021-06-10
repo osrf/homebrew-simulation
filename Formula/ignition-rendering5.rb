@@ -4,6 +4,7 @@ class IgnitionRendering5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering5-5.0.0.tar.bz2"
   sha256 "ca905d07a11d8cb8f2291923f34b2b3e9323bb7cc3a3892f81abfd56881026e4"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
