@@ -4,6 +4,7 @@ class IgnitionCommon2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common2-2.0.0.tar.bz2"
   sha256 "f76ed5a7a86728391bc6d7fb13fb07b61a1106e39d8cb87f3053154432d4b0f6"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common2"
 
