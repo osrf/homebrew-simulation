@@ -4,7 +4,7 @@ class IgnitionFuelTools1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools1-1.2.0.tar.bz2"
   sha256 "6b1d631a095e8273dc09be7456758aeaa7582b74bebe983cc14da49063994473"
   license "Apache-2.0"
-  revision 5
+  revision 6
   version_scheme 1
 
   depends_on "cmake"
