@@ -4,6 +4,7 @@ class IgnitionFuelTools7 < Formula
   url "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
   version "6.999.999~1"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
