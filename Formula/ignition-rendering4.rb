@@ -6,6 +6,12 @@ class IgnitionRendering4 < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "bb1dee83a46114b282f1e80e571e098ce4f4ae22fa7dcb2694530f5ae75f1cca"
+    sha256 mojave:   "e5535d92ad31348bb59dd5ca0fdf6fbd01d1ee9b129111b95218955cf39cc3be"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
