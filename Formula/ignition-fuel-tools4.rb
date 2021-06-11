@@ -6,6 +6,12 @@ class IgnitionFuelTools4 < Formula
   license "Apache-2.0"
   revision 3
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "19a4a3893dfbeae3b51c2ca9859719b3c9cbf74528201269a4c2ed27988cc551"
+    sha256 cellar: :any, mojave:   "944863deb7dba697508fe9883ca431701275b47522e931546c084ea0ba252e16"
+  end
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
