@@ -6,6 +6,12 @@ class IgnitionPhysics3 < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "bdb34aecafb80328fe42f4a579c5f327dc14c702a695d5a75f891400bebd8eb3"
+    sha256 cellar: :any, mojave:   "7280761ffe3f726d6e9013f4e626ae401843bd909154696b70dff3898e0437a8"
+  end
+
   depends_on "cmake" => :build
 
   depends_on "bullet"
