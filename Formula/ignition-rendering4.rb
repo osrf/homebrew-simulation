@@ -4,6 +4,13 @@ class IgnitionRendering4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering4-4.7.0.tar.bz2"
   sha256 "9606d67274d689ccb94f3673bddfeec6b86cdd245532df036387c5b4d74ba6cb"
   license "Apache-2.0"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "bb1dee83a46114b282f1e80e571e098ce4f4ae22fa7dcb2694530f5ae75f1cca"
+    sha256 mojave:   "e5535d92ad31348bb59dd5ca0fdf6fbd01d1ee9b129111b95218955cf39cc3be"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
