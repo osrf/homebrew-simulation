@@ -2,14 +2,14 @@ class IgnitionTransport11 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
   url "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
-  version "10.999.999~1~20210413~36308c"
+  version "10.999.999~2"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "515e2c552db4320baf011eedfabbbf5821a7d139fecf768845497d35db954c69"
-    sha256 mojave:   "09fccd50aef8f69c19bfa43e72b3c3bcdaa070d92d59b88e5f2530c267cedf1f"
+    sha256 catalina: "14f8f6b9b9ee7e4eaaa98af4a6baa3f5ede1a902c4a5fdd6f82c9aaf45ee3293"
+    sha256 mojave:   "98b23440c4319292815c44ac4b347f9e49a4f98a7c3108594c28e7490ba2c3dd"
   end
 
   depends_on "doxygen" => [:build, :optional]
