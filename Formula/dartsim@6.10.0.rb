@@ -2,11 +2,10 @@ class DartsimAT6100 < Formula
   desc "Dynamic Animation and Robotics Toolkit (openrobotics port)"
   homepage "https://dartsim.github.io/"
   # OSRF's fork
-  url "https://github.com/ignition-forks/dart/archive/71c7cfb97e8b583aa1ada639b6d1cf9a1835c1da.tar.gz"
-  version "6.10.0~20210717~71c7cfb97e8b583aa1ada639b6d1cf9a1835c1da"
-  sha256 "ea51b7fc92b8d8714dfe01e3d200268326132bdedbb9bc6f80d2df3dc0447314"
+  url "https://github.com/ignition-forks/dart/archive/175596b511adb55d831c0c3401ef50e2cb96a6f3.tar.gz"
+  version "6.10.0~20210610~175596b511adb55d831c0c3401ef50e2cb96a6f3"
+  sha256 "e974479f01dde55bcef3680b300e1506bcf2f5f4c14ea7b096e7906a4cb1c85b"
   license "BSD-2-Clause"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
