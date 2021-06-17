@@ -1,17 +1,16 @@
 class DartsimAT6100 < Formula
   desc "Dynamic Animation and Robotics Toolkit (openrobotics port)"
   homepage "https://dartsim.github.io/"
-  # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
-  url "https://github.com/azeey/dart/archive/1673b0be51fb370023df7490dc49706b590d8f72.tar.gz"
-  version "6.10.0~20200916~1673b0be51fb370023df7490dc49706b590d8f72"
-  sha256 "ec2e833d3225ac3f4365cc6d8b2f5511170a47d140ff43dcc7d63a50fbb6bfd5"
+  # OSRF's fork
+  url "https://github.com/ignition-forks/dart/archive/175596b511adb55d831c0c3401ef50e2cb96a6f3.tar.gz"
+  version "6.10.0~20210610~175596b511adb55d831c0c3401ef50e2cb96a6f3"
+  sha256 "e974479f01dde55bcef3680b300e1506bcf2f5f4c14ea7b096e7906a4cb1c85b"
   license "BSD-2-Clause"
-  revision 9
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "bab6b8e11fb6f95276dd4c70623c90dbdcb761d622886f53d931c4077bef4cb3"
-    sha256 mojave:   "7e4cc7f2a57bd5dc4205e759439b618b77ef538d0c8664a53590dba702ce3328"
+    sha256 catalina: "152defbe737558195481111593d3d5b8663eaa4bf2211aef3f794fe98fd8e7c8"
+    sha256 mojave:   "321609071a168e54b5b298b0e2f0ce02461fbf92a4bf3c5f6c4b5c2f3d529a56"
   end
 
   keg_only "open robotics fork of dart HEAD + custom changes"
