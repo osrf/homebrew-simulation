@@ -4,6 +4,13 @@ class IgnitionCommon3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.13.2.tar.bz2"
   sha256 "ea18919785677367223aa1c052945d69d0b7ce7a514208061cf657a09525002f"
   license "Apache-2.0"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "9cec11403590deb77cdd2a946c6d436ba2346dd6eb450989d13baa9c1fa0a22b"
+    sha256 cellar: :any, mojave:   "f91e138f3c679ad2d88b660d6e6833cda0fbe851dc970bfd076e8e36d7a0eeba"
+  end
 
   depends_on "cmake"
   depends_on "ffmpeg"
