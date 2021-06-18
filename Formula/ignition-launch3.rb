@@ -7,6 +7,12 @@ class IgnitionLaunch3 < Formula
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch3"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "08e2f132ad51c22216ac4b704aa718ee4065bd123aa039e735e9653472ed3172"
+    sha256 mojave:   "3e0ff3f13eca33c9e3a36553efed8edd3e7da5263f1650e74509437f95c8a2e3"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
