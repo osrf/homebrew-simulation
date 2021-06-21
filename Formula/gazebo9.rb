@@ -46,14 +46,7 @@ class Gazebo9 < Formula
   depends_on "gdal" => :optional
   depends_on "player" => :optional
 
-  conflicts_with "gazebo2", because: "differing version of the same formula"
-  conflicts_with "gazebo3", because: "differing version of the same formula"
-  conflicts_with "gazebo4", because: "differing version of the same formula"
-  conflicts_with "gazebo5", because: "differing version of the same formula"
-  conflicts_with "gazebo6", because: "differing version of the same formula"
   conflicts_with "gazebo7", because: "differing version of the same formula"
-  conflicts_with "gazebo8", because: "differing version of the same formula"
-  conflicts_with "gazebo10", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do
