@@ -17,8 +17,6 @@ class IgnitionMath6 < Formula
   depends_on "ignition-cmake2"
   depends_on "ruby"
 
-  conflicts_with "ignition-math2", because: "symbols collision between the two libraries"
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
