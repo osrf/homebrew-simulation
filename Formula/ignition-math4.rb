@@ -19,8 +19,6 @@ class IgnitionMath4 < Formula
   depends_on "doxygen" => :build
   depends_on "ignition-cmake0"
 
-  conflicts_with "ignition-math2", because: "symbols collision between the two libraries"
-
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
