@@ -41,7 +41,6 @@ class Gazebo7 < Formula
   conflicts_with "gazebo6", because: "differing version of the same formula"
   conflicts_with "gazebo8", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
-  conflicts_with "gazebo10", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do
