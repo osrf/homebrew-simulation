@@ -1,12 +1,17 @@
 class IgnitionGui5 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.0.0.tar.bz2"
-  sha256 "738701bf8c0c96ad3f961c52319171d24916e59a7eaa4c347753159a9376e648"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.1.0.tar.bz2"
+  sha256 "969ba4f0e3478432ad52d53602f47e36be7190463efa2be457b8518778da7bef"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "7b3fc5548584ad5e19acc821eb7495da155ccde585a56dd855fb2bf9a5d47b25"
+    sha256 mojave:   "85afd25f615222bb1f6334cd025f258546bce38d75d73139469b0e5aa0d5672c"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
