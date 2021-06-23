@@ -1,10 +1,9 @@
 class Sdformat11 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.1.0.tar.bz2"
-  sha256 "4c751159b83402a2c021cd95c2ec94e4f8bd53d118b00f2cafffb3d10510a156"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.2.0.tar.bz2"
+  sha256 "07e716615ed2f25aaa308e0b10b9086688c95f16653a1054808d00a20239e010"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
