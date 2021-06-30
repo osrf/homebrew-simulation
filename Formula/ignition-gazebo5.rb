@@ -1,12 +1,17 @@
 class IgnitionGazebo5 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo5-5.0.0.tar.bz2"
-  sha256 "6aded12a07508eccf8f0e638217b54e6a59af344f7d662a6c24885e8f6d79cde"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo5-5.1.0.tar.bz2"
+  sha256 "6870be193911677ffd20f951c27f13ae08bb6c774da839f2b48ecd3262b7170e"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 catalina: "486efd2ac0093f5ecdb990c485ecc1dd139402cc297ed9cca4cecc1aa13e5fc7"
+    sha256 mojave:   "9573352cd9d89cf31913faa134ca519d87705103122c209ff762e7bed209c1a6"
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
