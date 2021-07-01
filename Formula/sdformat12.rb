@@ -2,7 +2,7 @@ class Sdformat12 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
   url "https://github.com/osrf/sdformat.git", branch: "main"
-  version "11.999.999~2"
+  version "11.999.999~1"
   license "Apache-2.0"
   revision 1
 
