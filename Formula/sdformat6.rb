@@ -1,17 +1,16 @@
 class Sdformat6 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.0.tar.bz2"
-  sha256 "108c687d5c3a21b5ab8154f41f99d799d7b2e7632b4cc1914eda8c902581ee7f"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.1.tar.bz2"
+  sha256 "24f8c314b14fd3e999eead5a9b788f98395cc861bf8b562d8bccca758eddecc1"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "180a87711cec092ebadf9ef4094d72173939d23103cb6cf5e290010cb2a3d920"
-    sha256 mojave:   "02ed3bd2a7f1146e3b42ccd852ada985061a8df07b278bccc583346e52ff84e1"
+    sha256 catalina: "0f22b36ec9c727706020029cee63a1027258f9838b08f1181d69013d681d3233"
+    sha256 mojave:   "806ec541bc295efbab6fb7331388e17d566ba73ff44b1203d057e8df084fc78b"
   end
 
   depends_on "cmake" => :build
