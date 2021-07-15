@@ -8,8 +8,8 @@ class IgnitionPhysics4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "378f8f403fe0995bd023788ff4c1e1f328cbf5fb0282ce7e454acc08d485f1e7"
-    sha256 cellar: :any, mojave:   "669b1d607d04921131d52f4a3919ff6302c5bfa7a0586886aed1fcc94c6c6dc2"
+    sha256 cellar: :any, catalina: "30ada6b434c8897c9b1419944d78b86e9d4f5c9836281c952e58cba0d1dcaa7a"
+    sha256 cellar: :any, mojave:   "13218a5ba02e48f3fa63c0f598fb652495b8249df82b5e27af21a30ba7bda6fb"
   end
 
   depends_on "cmake" => :build
