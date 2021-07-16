@@ -1,9 +1,8 @@
 class IgnitionPhysics4 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics4-4.2.0~pre1.tar.bz2"
-  version "4.2.0~pre1"
-  sha256 "66e87f950b9ef290dba7633ae40be6dc5bfbedfb84000ce7ff0eaae3fb985432"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics4-4.2.0.tar.bz2"
+  sha256 "e5739ac7c12c04027578a99cba901a4c0d3e9c5b0cf00d60b6b38a98a44fea76"
   license "Apache-2.0"
 
   bottle do
