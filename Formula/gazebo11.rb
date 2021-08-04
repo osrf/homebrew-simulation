@@ -4,6 +4,7 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.7.0.tar.bz2"
   sha256 "c3ede937e6a2130c191329df0e4080452070575b232a2d45291f429e0462a407"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
