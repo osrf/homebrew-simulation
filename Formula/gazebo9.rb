@@ -4,13 +4,14 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.19.0.tar.bz2"
   sha256 "1f3ca430824b120ae0c7c4c0037a1a56e7b6bf6c50731b148b5c75bfc46d7fe7"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "a5b3477c2a73a50313980eee7d2cb6f0242f549da6ceb73da3a399da4fd7b7e6"
-    sha256 mojave:   "26998e6bfe7cbd1922c417ec4420e09f983fd92150f802b8ae1cad245a6e2d69"
+    sha256 catalina: "c9934918730c848ecf0166dd84329ce5bb0e5b753cff366f9fe1a0860be80162"
+    sha256 mojave:   "4b18c84f846e7c91f0e202dfa01cfb5abea11bd2929de958876986297d3e2b7c"
   end
 
   depends_on "cmake" => :build
@@ -54,6 +55,12 @@ class Gazebo9 < Formula
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
+  end
+
+  patch do
+    # Fix for compatibility with qwt 6.2
+    url "https://github.com/osrf/gazebo/commit/9e7e9bfbace6e0cc3f06842bb1efd47eb0632b36.patch?full_index=1"
+    sha256 "625d7f990629e431ef160ac771b632f9007b72d0608e7bccd4a7e0987417a347"
   end
 
   def install
