@@ -56,12 +56,6 @@ class Gazebo11 < Formula
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
 
-  patch do
-    # Fix for compatibility with qwt 6.2
-    url "https://github.com/osrf/gazebo/commit/2fc9018c17cf44e28548d571b70f7543c1e3a5f3.patch?full_index=1"
-    sha256 "e0461bfeaae873cfa55465bdb0f5cc9c0e08d529f369a5b460d76e836904977d"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
