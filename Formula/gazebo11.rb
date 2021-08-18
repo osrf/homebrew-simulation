@@ -1,17 +1,16 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "http://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.7.0.tar.bz2"
-  sha256 "c3ede937e6a2130c191329df0e4080452070575b232a2d45291f429e0462a407"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.8.0.tar.bz2"
+  sha256 "6644caed53aeeae6083a25c3c7730d4236bedd721dba096777b132927a72d906"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "33306c0404ce55b5a4c4d8822cb7f19c68236c1d2e1ecaaf9c7988e329475a41"
-    sha256 mojave:   "5cf6e67ea810b24a3774cf1f298181375167db9ea44cec8cf002e4886dadd268"
+    sha256 catalina: "0126fb2f018ce96c8d1f76bb8c2f457a07ca1e58abb72a9f829ca73a1197c385"
+    sha256 mojave:   "a92e5e22111bb780687ad4cda6e8fefba8075b0df732a1e72c7d54fde4e88369"
   end
 
   depends_on "cmake" => :build
@@ -55,12 +54,6 @@ class Gazebo11 < Formula
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
-  end
-
-  patch do
-    # Fix for compatibility with qwt 6.2
-    url "https://github.com/osrf/gazebo/commit/2fc9018c17cf44e28548d571b70f7543c1e3a5f3.patch?full_index=1"
-    sha256 "e0461bfeaae873cfa55465bdb0f5cc9c0e08d529f369a5b460d76e836904977d"
   end
 
   def install
