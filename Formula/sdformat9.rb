@@ -7,8 +7,8 @@ class Sdformat9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "a81bc8079d871cded1b597eb60323210321cf51c4925a3752a32afc79f7684bb"
-    sha256 mojave:   "947813265ca698a2fa1b935d2faa4c0776683cf99a7b7316ddf4c14deb064c29"
+    sha256 catalina: "78bd54ae0606d9e5a34a025ef56013bf7aefcf722c35c4a18b02a39a6815f4d1"
+    sha256 mojave:   "2414f660ac65442ce4b0755827252ed8c43eb24690810e53dd6a7290b23b9458"
   end
 
   depends_on "cmake" => [:build, :test]
