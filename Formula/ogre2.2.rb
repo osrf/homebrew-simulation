@@ -1,9 +1,9 @@
 class Ogre22 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://github.com/OGRECave/ogre-next/archive/3aa42f57f77a52febf0aedfc14ac83be37aafd4c.tar.gz"
-  version "2.1.99999~pre0~0~20210319~3aa42f"
-  sha256 "393110ab7a12a2011be4c261b4acddcb00c9b538fae2898ec2705f3d61592767"
+  url "https://github.com/OGRECave/ogre-next/archive/ec3f70cb53a8a7e5d196855d0274ac03f90a2f4c.tar.gz"
+  version "2.2.5+20210824~ec3f70c"
+  sha256 "0bddbca05a8c5ca8a33eddeffdbce2aa1ca5a2035dbb7f2a1b67637a3851464f"
   license "MIT"
   revision 1
 
