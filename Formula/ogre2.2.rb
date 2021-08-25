@@ -20,8 +20,8 @@ class Ogre22 < Formula
 
   patch do
     # fix for cmake3 and c++11
-    url "https://gist.githubusercontent.com/j-rivero/9d800867870a0ca2a0e17949070f1f34/raw/4e412a58904df59d089957965214db1cfb5689ab/cmake3_c++11_ogre2.2_brew.patch"
-    sha256 "4a3d90b351819d81bc4c02f1adb98c85865a8bb7e0a8070a6e7f23e6f037fd73"
+    url "https://github.com/scpeters/ogre-next/commit/3486b772b35b3e5f8cf6da5b7a41e6c195408d7d.patch?full_index=1"
+    sha256 "30a60758401980260f3a5abdd6513505327028a983af9e911908b4f7da140625"
   end
 
   # patch do
