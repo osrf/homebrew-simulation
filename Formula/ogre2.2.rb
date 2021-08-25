@@ -5,13 +5,8 @@ class Ogre22 < Formula
   version "2.2.5+20210824~ec3f70c"
   sha256 "0bddbca05a8c5ca8a33eddeffdbce2aa1ca5a2035dbb7f2a1b67637a3851464f"
   license "MIT"
-  revision 1
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
