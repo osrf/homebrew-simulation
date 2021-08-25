@@ -1,16 +1,17 @@
 class Ogre22 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://github.com/OGRECave/ogre-next/archive/3aa42f57f77a52febf0aedfc14ac83be37aafd4c.tar.gz"
-  version "2.1.99999~pre0~0~20210319~3aa42f"
-  sha256 "393110ab7a12a2011be4c261b4acddcb00c9b538fae2898ec2705f3d61592767"
+  url "https://github.com/OGRECave/ogre-next/archive/ec3f70cb53a8a7e5d196855d0274ac03f90a2f4c.tar.gz"
+  version "2.2.5+20210824~ec3f70c"
+  sha256 "0bddbca05a8c5ca8a33eddeffdbce2aa1ca5a2035dbb7f2a1b67637a3851464f"
   license "MIT"
-  revision 1
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "656887a4da9407d87c2ad3d47054a213dead2ebd66cd5ee4734950f53b18234c"
+    sha256 cellar: :any, mojave:   "e16590ac4c338d0a05f30cc8cd58530609501ce88499f93f74eb9400a367fe61"
   end
 
   depends_on "cmake" => :build
@@ -25,8 +26,8 @@ class Ogre22 < Formula
 
   patch do
     # fix for cmake3 and c++11
-    url "https://gist.githubusercontent.com/j-rivero/9d800867870a0ca2a0e17949070f1f34/raw/4e412a58904df59d089957965214db1cfb5689ab/cmake3_c++11_ogre2.2_brew.patch"
-    sha256 "4a3d90b351819d81bc4c02f1adb98c85865a8bb7e0a8070a6e7f23e6f037fd73"
+    url "https://github.com/scpeters/ogre-next/commit/3486b772b35b3e5f8cf6da5b7a41e6c195408d7d.patch?full_index=1"
+    sha256 "30a60758401980260f3a5abdd6513505327028a983af9e911908b4f7da140625"
   end
 
   # patch do
@@ -61,6 +62,11 @@ class Ogre22 < Formula
     rmdir prefix/"CMake"
 
     # Support side-by-side OGRE installs
+    # Rename executables to avoid conflicts with ogre2.1
+    Dir[bin/"*"].each do |exe|
+      mv exe, "#{exe}-2.2"
+    end
+
     # Move headers
     (include/"OGRE-2.2").install Dir[include/"OGRE/*"]
     rmdir include/"OGRE"
@@ -79,8 +85,8 @@ class Ogre22 < Formula
     inreplace (lib/"pkgconfig/OGRE-2.2-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
     inreplace (lib/"pkgconfig/OGRE-2.2-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 
-    # Move versioned libraries (*.2.2.0.dylib) to standard location and remove symlinks
-    lib.install Dir[lib/"OGRE-2.2/lib*.2.2.0.dylib"]
+    # Move versioned libraries (*.2.2.6.dylib) to standard location and remove symlinks
+    lib.install Dir[lib/"OGRE-2.2/lib*.2.2.6.dylib"]
     rm Dir[lib/"OGRE-2.2/lib*"]
 
     # Move plugins to subfolder
@@ -88,7 +94,7 @@ class Ogre22 < Formula
 
     # Restore lib symlinks
     Dir[lib/"lib*"].each do |l|
-      (lib/"OGRE-2.2").install_symlink l => File.basename(l.sub(".2.2.0", ""))
+      (lib/"OGRE-2.2").install_symlink l => File.basename(l.sub(".2.2.6", ""))
     end
   end
 
