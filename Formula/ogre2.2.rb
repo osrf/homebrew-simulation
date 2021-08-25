@@ -56,6 +56,11 @@ class Ogre22 < Formula
     rmdir prefix/"CMake"
 
     # Support side-by-side OGRE installs
+    # Rename executables to avoid conflicts with ogre2.1
+    Dir[bin/"*"].each do |exe|
+      mv exe, "#{exe}-2.2"
+    end
+
     # Move headers
     (include/"OGRE-2.2").install Dir[include/"OGRE/*"]
     rmdir include/"OGRE"
@@ -74,8 +79,8 @@ class Ogre22 < Formula
     inreplace (lib/"pkgconfig/OGRE-2.2-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
     inreplace (lib/"pkgconfig/OGRE-2.2-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 
-    # Move versioned libraries (*.2.2.0.dylib) to standard location and remove symlinks
-    lib.install Dir[lib/"OGRE-2.2/lib*.2.2.0.dylib"]
+    # Move versioned libraries (*.2.2.6.dylib) to standard location and remove symlinks
+    lib.install Dir[lib/"OGRE-2.2/lib*.2.2.6.dylib"]
     rm Dir[lib/"OGRE-2.2/lib*"]
 
     # Move plugins to subfolder
@@ -83,7 +88,7 @@ class Ogre22 < Formula
 
     # Restore lib symlinks
     Dir[lib/"lib*"].each do |l|
-      (lib/"OGRE-2.2").install_symlink l => File.basename(l.sub(".2.2.0", ""))
+      (lib/"OGRE-2.2").install_symlink l => File.basename(l.sub(".2.2.6", ""))
     end
   end
 
