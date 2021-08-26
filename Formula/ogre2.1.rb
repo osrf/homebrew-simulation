@@ -36,6 +36,12 @@ class Ogre21 < Formula
     sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
   end
 
+  patch do
+    # [GL3+] add support for currentGLContext for macOS
+    url "https://github.com/OGRECave/ogre-next/commit/79be9e99991c61d39c52588f24443cf36d621f0b.patch?full_index=1"
+    sha256 "2e45ea3025062d6ac26946716318dd9e0f5625977513463a5c151d2049bf316c"
+  end
+
   def install
     cmake_args = [
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.1",
