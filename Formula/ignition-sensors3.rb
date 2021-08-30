@@ -9,8 +9,8 @@ class IgnitionSensors3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "67a15f60e8ac8fbe6c6a3ebe0d10dcf35c1ff7baf45d8c2cdec0dc788230586a"
-    sha256 mojave:   "298b8e11760ce3d6f403a983a79d5383d295bb8e769dc630834ce44dc7a2de98"
+    sha256 catalina: "5ce6ec88b8a848f158da5139fec94b43a8e63e44776577c452afc459e576cd46"
+    sha256 mojave:   "2d8398daed60050bd709000a0b6c830fd6909b16254c8fe494ff7f30c593a8da"
   end
 
   depends_on "cmake" => [:build, :test]
