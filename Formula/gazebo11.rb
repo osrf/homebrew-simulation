@@ -31,7 +31,7 @@ class Gazebo11 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt@5"
-  depends_on "qwt"
+  depends_on "qwt-qt5"
   depends_on "sdformat9"
   depends_on "tbb@2020_u3"
   depends_on "tinyxml"
@@ -58,8 +58,8 @@ class Gazebo11 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
+    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
+    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
