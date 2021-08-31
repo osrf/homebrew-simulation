@@ -23,13 +23,10 @@ class IgnitionGui4 < Formula
   depends_on "ignition-transport9"
   depends_on macos: :mojave # c++17
   depends_on "qt@5"
-  depends_on "qwt"
   depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
     cmake_args << "-DBUILD_TESTING=Off"
 
     mkdir "build" do
