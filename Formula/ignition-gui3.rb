@@ -4,6 +4,7 @@ class IgnitionGui3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.7.0.tar.bz2"
   sha256 "2b0f11cd3de51d5659016526c3858c930dff7c9aee2957a806c875ccf00da03e"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui3"
 
