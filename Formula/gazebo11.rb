@@ -4,13 +4,14 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.8.1.tar.bz2"
   sha256 "162163f640ccaed319ffd0adb1d766fc7190259f1f3ce507f7d4d86794c87a35"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "c9e7fce530a5ddadfa28f085b1aa3032d623d662de855fb0361afedc3786d174"
-    sha256 mojave:   "901faabf1743c2580d6d84cd3dfc31d99488d18e3caf8a01be8f456b0b4e32c5"
+    sha256 catalina: "4c86dadf5dac45b4da3ba9fcd42d5c98f975aa43a2d784f14cac3715c704255b"
+    sha256 mojave:   "fcd7c4827629736f538fe4cb75abdc14d9960818e15f04c232b6ddd22d88310b"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +32,7 @@ class Gazebo11 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt@5"
-  depends_on "qwt"
+  depends_on "qwt-qt5"
   depends_on "sdformat9"
   depends_on "tbb@2020_u3"
   depends_on "tinyxml"
@@ -58,8 +59,8 @@ class Gazebo11 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
+    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
+    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
