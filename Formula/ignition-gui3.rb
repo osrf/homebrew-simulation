@@ -4,13 +4,14 @@ class IgnitionGui3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.7.0.tar.bz2"
   sha256 "2b0f11cd3de51d5659016526c3858c930dff7c9aee2957a806c875ccf00da03e"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "01e3c08c28fc320e634ee46c890c319d083e80d6099071e994cd20685d9771e9"
-    sha256 mojave:   "922656b1a397e86023522e82d6727605621603daed23c99fede9bea04cd1e7f0"
+    sha256 catalina: "4839a832edbae59e80735e6e1eac0e6f86355e84ff919664452290e541e9e792"
+    sha256 mojave:   "6d3871242421e00a9968c57d1fa46bb6b8f902895d7a61b4022a6a8c564db333"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,13 +24,10 @@ class IgnitionGui3 < Formula
   depends_on "ignition-transport8"
   depends_on macos: :mojave # c++17
   depends_on "qt@5"
-  depends_on "qwt"
   depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
     cmake_args << "-DBUILD_TESTING=Off"
 
     mkdir "build" do
