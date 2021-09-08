@@ -4,23 +4,27 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.19.0.tar.bz2"
   sha256 "1f3ca430824b120ae0c7c4c0037a1a56e7b6bf6c50731b148b5c75bfc46d7fe7"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "c9c3e54521f234f715b9f6fccc5af2824cd65857ca7fe644a6dc7fd8ba9497fc"
-    sha256 mojave:   "da9a560da429f351e461f526093313e746bb797b42744e9307c0ec68088b7526"
+    sha256 catalina: "f74fd8c619d67b507812db7696f23e1aa6b175b93b328819265bc4e2abfcdcd8"
+    sha256 mojave:   "8edfe0347c7d73d3570c5e76438ed00a7584d8a8c04da577b154eed7615e27e6"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "bullet"
+  depends_on "dartsim"
   depends_on "doxygen"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "graphviz"
+  depends_on "gts"
   depends_on "ignition-fuel-tools1"
   depends_on "ignition-math4"
   depends_on "ignition-msgs1"
@@ -34,18 +38,14 @@ class Gazebo9 < Formula
   depends_on "qt@5"
   depends_on "qwt-qt5"
   depends_on "sdformat6"
+  depends_on "simbody"
   depends_on "tbb@2020_u3"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
-  depends_on "bullet" => :recommended
-  depends_on "dartsim" => :recommended
-  depends_on "ffmpeg" => :recommended
-  depends_on "gts" => :recommended
-  depends_on "simbody" => :recommended
-  depends_on "gdal" => :optional
-  depends_on "player" => :optional
+  # depends on "gdal" => :optional
+  # depends on "player" => :optional
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
