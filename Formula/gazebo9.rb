@@ -4,23 +4,27 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.19.0.tar.bz2"
   sha256 "1f3ca430824b120ae0c7c4c0037a1a56e7b6bf6c50731b148b5c75bfc46d7fe7"
   license "Apache-2.0"
-  revision 1
+  revision 3
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "c9934918730c848ecf0166dd84329ce5bb0e5b753cff366f9fe1a0860be80162"
-    sha256 mojave:   "4b18c84f846e7c91f0e202dfa01cfb5abea11bd2929de958876986297d3e2b7c"
+    sha256 catalina: "f74fd8c619d67b507812db7696f23e1aa6b175b93b328819265bc4e2abfcdcd8"
+    sha256 mojave:   "8edfe0347c7d73d3570c5e76438ed00a7584d8a8c04da577b154eed7615e27e6"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "bullet"
+  depends_on "dartsim"
   depends_on "doxygen"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "graphviz"
+  depends_on "gts"
   depends_on "ignition-fuel-tools1"
   depends_on "ignition-math4"
   depends_on "ignition-msgs1"
@@ -32,20 +36,16 @@ class Gazebo9 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt@5"
-  depends_on "qwt"
+  depends_on "qwt-qt5"
   depends_on "sdformat6"
+  depends_on "simbody"
   depends_on "tbb@2020_u3"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
-  depends_on "bullet" => :recommended
-  depends_on "dartsim" => :recommended
-  depends_on "ffmpeg" => :recommended
-  depends_on "gts" => :recommended
-  depends_on "simbody" => :recommended
-  depends_on "gdal" => :optional
-  depends_on "player" => :optional
+  # depends on "gdal" => :optional
+  # depends on "player" => :optional
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
@@ -65,8 +65,8 @@ class Gazebo9 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
+    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
+    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
