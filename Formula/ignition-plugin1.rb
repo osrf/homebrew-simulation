@@ -1,8 +1,9 @@
 class IgnitionPlugin1 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.2.0.tar.bz2"
-  sha256 "0f5e1fe9b4807dbf7e0d4924e5f76bdb1d604ad3c6912abb3e5e9bcf80531a4a"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.2.1~pre1.tar.bz2"
+  version "1.2.1~pre1"
+  sha256 "cd2d2e6a926fce5d019c5c66c47ac5337573ec830cd475f0a03aa3450cd6bfc8"
   license "Apache-2.0"
 
   bottle do
