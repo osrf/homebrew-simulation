@@ -16,7 +16,7 @@ class IgnitionRendering6 < Formula
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
-  depends_on "ogre2.1"
+  depends_on "ogre2.2"
 
   def install
     cmake_args = std_cmake_args
