@@ -1,8 +1,9 @@
 class IgnitionTransport11 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
-  version "10.999.999~2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.0.0~pre1.tar.bz2"
+  sha256 "5ed30ac3228e6f63d627768bddf4a634919db38cae9ce7b4619f18aa20bd7d0e"
+  version "11.0.0~pre1"
   license "Apache-2.0"
   version_scheme 1
 
