@@ -9,8 +9,8 @@ class IgnitionGazebo4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "cb4d9d5b2676619b5baa3514390253b64cd4d994dddfc0714cbccbb191ffef2d"
-    sha256 mojave:   "432e50f6aea44db5a8474d5e37ec2182ecdfc29aabe7e2b5e01c40d0d2838bad"
+    sha256 catalina: "df6a16209035881657d5366211499811f9ccff884d597699b359884ab35d823a"
+    sha256 mojave:   "4e3d410ae24d0f35b44e7326af5ac2cb83c1ba726c24725974dea0aaafdf1d34"
   end
 
   depends_on "cmake" => :build
