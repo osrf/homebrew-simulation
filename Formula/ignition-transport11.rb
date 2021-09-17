@@ -3,7 +3,7 @@ class IgnitionTransport11 < Formula
   homepage "https://ignitionrobotics.org"
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.0.0~pre1.tar.bz2"
   version "11.0.0~pre1"
-  sha256 "5ed30ac3228e6f63d627768bddf4a634919db38cae9ce7b4619f18aa20bd7d0e"
+  sha256 "b6c624a4e8f75db285d29df2abd44d6f981717a8649062b1c4bb7f5574acee71"
   license "Apache-2.0"
   version_scheme 1
 
