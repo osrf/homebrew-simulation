@@ -1,10 +1,10 @@
 class IgnitionMsgs8 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
-  version "7.999.999~1~20210512~0a195f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.0.0~pre1.tar.bz2"
+  version "8.0.0~pre1"
+  sha256 "6d4c27d064a498b83ce9bcb6ca0408eaf03c21fc24549a86c699b6626c199ecb"
   license "Apache-2.0"
-  revision 1
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
