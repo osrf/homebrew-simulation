@@ -1,10 +1,16 @@
 class IgnitionFuelTools7 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
-  version "6.999.999~1"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools7-7.0.0~pre1.tar.bz2"
+  version "7.0.0~pre1"
+  sha256 "8cb5443a46be3fbc6b231b304535a48891e1f50925d8a91ec4e8a9e7c68cd54a"
   license "Apache-2.0"
-  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina: "c5da37e1a20b7fb91c58bd4b70413b2f065375b2062c3fc1931c6c227cf2186f"
+    sha256 cellar: :any, mojave:   "63a71195d28bc4ae935c21408bb9fc222d67df05df012e6e15ca9dc16b44e476"
+  end
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
