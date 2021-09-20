@@ -1,10 +1,10 @@
 class Sdformat12 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/osrf/sdformat.git", branch: "main"
-  version "11.999.999~1"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.0.0~pre1.tar.bz2"
+  version "12.0.0~pre1"
+  sha256 "b6185fb12348f5e021230b320fca2d11a5a971273ba33dde5213bba7a427b5be"
   license "Apache-2.0"
-  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
