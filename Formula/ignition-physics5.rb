@@ -1,10 +1,10 @@
 class IgnitionPhysics5 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
-  url "https://github.com/ignitionrobotics/ign-physics.git", branch: "main"
-  version "4.999.999~1"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.0.0~pre1.tar.bz2"
+  version "5.0.0~pre1"
+  sha256 "7d6730ae4224f0b810942773ac893f49e66a90055972960f510836f930c9e9de"
   license "Apache-2.0"
-  revision 1
 
   depends_on "cmake" => :build
 
