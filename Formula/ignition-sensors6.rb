@@ -6,6 +6,12 @@ class IgnitionSensors6 < Formula
   sha256 "c47064d7c0c2e39d7ec8e0ae8e3c059591f2a40a920767ed7cd6ffd8751f6a7a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "04049cfbe685cf5ee0b45c9fd0953ee575e115321ff84df27b022bda30286c1d"
+    sha256 cellar: :any, catalina: "8149cb3fdc9dce98af27f1255e590fe636492e75101323278e9cab63901c19c2"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
