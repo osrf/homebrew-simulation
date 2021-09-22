@@ -1,8 +1,9 @@
 class IgnitionSensors6 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
-  version "5.999.999~1~20210413~61f612"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.0.0~pre1.tar.bz2"
+  version "6.0.0~pre1"
+  sha256 "c47064d7c0c2e39d7ec8e0ae8e3c059591f2a40a920767ed7cd6ffd8751f6a7a"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
