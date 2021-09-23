@@ -1,8 +1,9 @@
 class IgnitionLaunch5 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
-  version "4.999.999~1~20210413~6fa092"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.0.0~pre1.tar.bz2"
+  version "5.0.0~pre1"
+  sha256 "389997746439bd4b065ea91f8569cb9c1c5b43454bee163a740ac83709e94f91"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
