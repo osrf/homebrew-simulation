@@ -1,9 +1,16 @@
 class IgnitionGazebo6 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
-  version "5.999.999~1"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.0.0~pre1.tar.bz2"
+  version "6.0.0~pre1"
+  sha256 "524b739fd0b47c66db88a5ed1b0a4756be7c675dbf3a58c73c69ed44f12fe1d0"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "fa9dd50af98237fa52bc1f4fff3c2c69ba0ec574cf27db72f47dd447a3f1bc1f"
+    sha256 catalina: "5cb28f43c53c7d5968b5fc8ef738d14f21f920237b5d58bfbe389b6e9e5bfa13"
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
