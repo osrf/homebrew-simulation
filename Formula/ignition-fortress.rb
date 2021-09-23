@@ -11,6 +11,12 @@ class IgnitionFortress < Formula
 
   head "https://github.com/ignitionrobotics/ign-fortress.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "fa1b2d3d8a87d4ec48e5d886608d2b6533aabca6c8251284598939436a23a3b2"
+    sha256 cellar: :any, catalina: "a940e3d9ea9ca93c19097869f1689daddcc01c559a417a491a29d5215307ec2b"
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
