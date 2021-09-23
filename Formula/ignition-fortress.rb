@@ -3,13 +3,19 @@ class IgnitionFortress < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-fortress"
-  url "https://github.com/ignitionrobotics/ign-fortress/archive/04ec53d31ad5133a65ab8bcdcd0fdf7beb2e8ced.tar.gz"
-  version "0.999.999~0~20210413~04ec53"
-  sha256 "98bb853cd84224e5f63584ab3220e0b9b779f0e466f44a04bd8fb2623fab0ba5"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fortress/releases/ignition-fortress-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "d56c14462561af53f4e2d3d9639a793d5547fb8a8264e98171417e4ffa22fa35"
   license "Apache-2.0"
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-fortress.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "fa1b2d3d8a87d4ec48e5d886608d2b6533aabca6c8251284598939436a23a3b2"
+    sha256 cellar: :any, catalina: "a940e3d9ea9ca93c19097869f1689daddcc01c559a417a491a29d5215307ec2b"
+  end
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
