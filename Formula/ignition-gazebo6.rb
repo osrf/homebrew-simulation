@@ -3,7 +3,7 @@ class IgnitionGazebo6 < Formula
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.0.0~pre1.tar.bz2"
   version "6.0.0~pre1"
-  sha256 "ab808c65b3d52513351d8e5373185af8057830adff53b326db9b68713ad2b25e"
+  sha256 "524b739fd0b47c66db88a5ed1b0a4756be7c675dbf3a58c73c69ed44f12fe1d0"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
