@@ -1,15 +1,14 @@
 class IgnitionPlugin1 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.2.1~pre1.tar.bz2"
-  version "1.2.1~pre1"
-  sha256 "cd2d2e6a926fce5d019c5c66c47ac5337573ec830cd475f0a03aa3450cd6bfc8"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.2.1.tar.bz2"
+  sha256 "821507a035f875f88ca29d2f4daa6bcbce447cb9a1e4b1da7acd1a23cc6fa0b7"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "d1010600a7220e2cdf7cc6025189e4e056f416e04b993f32faa3e547f18bb1a6"
-    sha256 cellar: :any, mojave:   "e636687b0ecce07dbe7e5acb4df47cc910b36723f8fc0b20a99b9d809fda84e7"
+    sha256 cellar: :any, big_sur:  "4ff57b247c0252e650c31b046be18f8ca7c21d975982d27a1c3fe2b8632c89e0"
+    sha256 cellar: :any, catalina: "ec20b6c186a3c067e47857c4ce5b875d1ba82d7d1676d64903d0ab5615364b0d"
   end
 
   depends_on "cmake"
