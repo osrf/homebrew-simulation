@@ -3,7 +3,7 @@ class IgnitionGui6 < Formula
   homepage "https://github.com/ignitionrobotics/ign-gui"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.0.0~pre1.tar.bz2"
   version "6.0.0~pre1"
-  sha256 "939f949c7f5beb7ab228d8709071cccedc891a933e248f170f75709f737808d1"
+  sha256 "1a82e04d65eba0d0024d0d310f46227784270d1b1722751b037517003ec5cafb"
   license "Apache-2.0"
 
   bottle do
