@@ -1,15 +1,14 @@
 class IgnitionLaunch5 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.0.0~pre1.tar.bz2"
-  version "5.0.0~pre1"
-  sha256 "389997746439bd4b065ea91f8569cb9c1c5b43454bee163a740ac83709e94f91"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.0.0.tar.bz2"
+  sha256 "0c6b2ca8c9aa49f05af524a55b6068ad9b77ef2f5af8cddaec234bb047857354"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "86b9cd20a3e28da7d5759f83a5b1fc0917a77806fba00598a440d5f1eef0a377"
-    sha256 catalina: "4d4a529c9641787ceed3a9c59b8ac1a54272e7f245d1bf611ab4338ea4f5a0af"
+    sha256 big_sur:  "fc3faa04908d949997c2e30e1d0161ebb5b921e5105e85ab916a1ad36fa4c9ce"
+    sha256 catalina: "fea77def3c59d4c60a3cae7f1d466f1e3c25f2059fa060b563bf11fc035ba352"
   end
 
   depends_on "cmake" => :build
