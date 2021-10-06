@@ -3,7 +3,7 @@ class DartsimAT6100 < Formula
   homepage "https://dartsim.github.io/"
   # OSRF's fork
   url "https://github.com/ignition-forks/dart/archive/d2b6ee08a60d0dbf71b0f008cd8fed1f611f6e24.tar.gz"
-  version "6.10.0~20210610~d2b6ee08a60d0dbf71b0f008cd8fed1f611f6e24"
+  version "6.10.0~20211005~d2b6ee08a60d0dbf71b0f008cd8fed1f611f6e24"
   sha256 "372af181024452418eec95f8a9cd723ceb1ada979208add66c9a4330b9c0fa32"
   license "BSD-2-Clause"
 
