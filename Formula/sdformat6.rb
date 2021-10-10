@@ -4,6 +4,7 @@ class Sdformat6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.1.tar.bz2"
   sha256 "24f8c314b14fd3e999eead5a9b788f98395cc861bf8b562d8bccca758eddecc1"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
