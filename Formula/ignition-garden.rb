@@ -4,9 +4,9 @@ class IgnitionGarden < Formula
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-garden"
   url "https://github.com/ignitionrobotics/ign-garden/archive/a4732212255ef447f102587a346086fc11c1846c.tar.gz"
+  version "0.999.999~0~20211008~a47322"
   sha256 "2f0fa319ba90f3840521b2d8544bd4528e3a2cf39c9899638e6ec3b6a6231226"
   license "Apache-2.0"
-  version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-garden.git", branch: "main"
 
