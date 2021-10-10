@@ -4,6 +4,7 @@ class Sdformat9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.6.1.tar.bz2"
   sha256 "b13cacbeac8f8eb7e7330f813a01683e3aee29bf896406367cf226ba10b35971"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
