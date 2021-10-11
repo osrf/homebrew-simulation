@@ -4,11 +4,12 @@ class Sdformat11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.3.0.tar.bz2"
   sha256 "9575176d95f0bbfba55796c06e0a1a0ff35f75ed87236df5d21cf1dfc77bd7e2"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "276dec533ef157ba7a7c6efa188a448c55c304959ba93e38cb85e7d37ab0880e"
-    sha256 mojave:   "d37ae86ef67d783bb6cfb02891b1d1eee2ea076c973694e3135e8585654d12f0"
+    sha256 big_sur:  "995887d47804d17b9fda57aa4d44a1e35cfc6b4066ea0f02949075457753df0f"
+    sha256 catalina: "6356028ba97727fa8947c013cfe5362e991855198499e0da8b70fb838baaad85"
   end
 
   depends_on "cmake" => [:build, :test]
