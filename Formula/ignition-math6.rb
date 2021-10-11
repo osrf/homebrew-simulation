@@ -1,15 +1,14 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.8.0~pre1.tar.bz2"
-  version "6.8.0~pre1"
-  sha256 "b4c0b5a29acfdb5a52ea7863de7179cda44169b0dc838083881d4c6988fb6e24"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.9.1.tar.bz2"
+  sha256 "1fd56c5f17727d3e5c8a96285df9c126f96784929eb182c3e8bfdaddb77baf49"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "63305ba42f3433a612cbfdc3109b26309c897e3b1cf7026fabaa5beb03496082" => :mojave
+    sha256 cellar: :any, big_sur:  "e186346b19c8a5fd71a43484680d219045ea094c413d9e28925e3eb6faa8c814"
+    sha256 cellar: :any, catalina: "e7e1dae9a514ced3c7353ec2c5fc31ed80dafe0c1852a764160624034d88b7bc"
   end
 
   depends_on "cmake" => :build
@@ -17,8 +16,6 @@ class IgnitionMath6 < Formula
   depends_on "eigen"
   depends_on "ignition-cmake2"
   depends_on "ruby"
-
-  conflicts_with "ignition-math2", because: "symbols collision between the two libraries"
 
   def install
     cmake_args = std_cmake_args

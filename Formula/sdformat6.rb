@@ -1,18 +1,17 @@
 class Sdformat6 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.2.0.tar.bz2"
-  sha256 "be818648f0a639a0c410231673e8c7ba043c2589586e43ef8c757070855898fa"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.1.tar.bz2"
+  sha256 "24f8c314b14fd3e999eead5a9b788f98395cc861bf8b562d8bccca758eddecc1"
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/osrf/sdformat", branch: "sdf6", using: :git
+  head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "4225b11d56c632106f4fb90de0458ba6dad24b981b619b115f38e9cf58278d07" => :mojave
-    sha256 "ec07b9e4931703c0fbf9a7a915f8a7cdbb22c64537947d66a8b3da748a641228" => :high_sierra
-    sha256 "b198e8e1251fd267ab72886c480f288ef00a25e8d3c3ef79fa24c654807a02ff" => :sierra
+    sha256 big_sur:  "8b88cbd182009a89cc4961cab5ad5b091ba9a22d920b936a01abe2b57b3854bd"
+    sha256 catalina: "cb3a8b80a5d0b242c17ea7cf80cdc4c27005fd9a72c3ebbcf4bd165ddb149f9c"
   end
 
   depends_on "cmake" => :build
@@ -25,8 +24,6 @@ class Sdformat6 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", because: "differing version of the same formula"
-  conflicts_with "sdformat3", because: "differing version of the same formula"
   conflicts_with "sdformat4", because: "differing version of the same formula"
   conflicts_with "sdformat5", because: "differing version of the same formula"
   conflicts_with "sdformat7", because: "differing version of the same formula"

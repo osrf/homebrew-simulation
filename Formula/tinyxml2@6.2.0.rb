@@ -8,10 +8,9 @@ class Tinyxml2AT620 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "a16e13fc6ceac3a8ffcbe45488a4470bba3c952ce0b4276fe0d9ff5e1aa1b88a" => :mojave
-    sha256 "637f0aa44b20a917a9beb4df3936fab769522bb51120d8a7c169afc178bbfe2b" => :high_sierra
-    sha256 "2506e3cc7884679407cda212db6a920cb2df68276fcf80f42657faa89873556c" => :sierra
+    sha256 cellar: :any, mojave:      "a16e13fc6ceac3a8ffcbe45488a4470bba3c952ce0b4276fe0d9ff5e1aa1b88a"
+    sha256 cellar: :any, high_sierra: "637f0aa44b20a917a9beb4df3936fab769522bb51120d8a7c169afc178bbfe2b"
+    sha256 cellar: :any, sierra:      "2506e3cc7884679407cda212db6a920cb2df68276fcf80f42657faa89873556c"
   end
 
   keg_only "temporary version until tinyxml2.pc is fixed"

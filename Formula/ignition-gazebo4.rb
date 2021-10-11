@@ -1,15 +1,16 @@
 class IgnitionGazebo4 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.1.0.tar.bz2"
-  sha256 "976e9bfa70d8ae0fae7976d12efdc9b39d61957ab24db8a8f13daa6833398646"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.11.0.tar.bz2"
+  sha256 "3a7492debdc8ae1e83696a51246bf1c8306717d2262297a8d3900fd83763f2c7"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo4"
+  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "ab52ae093305f856fd0f16041f59517d4bd26ba7b2a323dd6f00501304b64bb3" => :mojave
+    sha256 big_sur:  "32c2f385c9720caf335ea9cd30d59ecc3b65d5cfe23f423b07eb974eeb1380e3"
+    sha256 catalina: "4eaa4f01590d78e56e8cc4a94c5170293d8556224dbffc83709007662de9c11c"
   end
 
   depends_on "cmake" => :build
@@ -87,7 +88,7 @@ class IgnitionGazebo4 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gazebo4::core)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo4"
     # cflags   = `pkg-config --cflags ignition-gazebo4`.split
     # ldflags  = `pkg-config --libs ignition-gazebo4`.split
@@ -98,7 +99,7 @@ class IgnitionGazebo4 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

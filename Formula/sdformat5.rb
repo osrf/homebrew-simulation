@@ -6,13 +6,13 @@ class Sdformat5 < Formula
   license "Apache-2.0"
   revision 5
 
-  head "https://github.com/osrf/sdformat", branch: "sdf5", using: :git
+  head "https://github.com/osrf/sdformat.git", branch: "sdf5", using: :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "2f8ad2df0a00ef492d8336f30c839139972e94ab5b4ddb72a14dc7d78bede658" => :mojave
-    sha256 "4873b0683399a7e7237642c4fd37fb2229d87c146f955f1c6e067571f391f63a" => :high_sierra
-    sha256 "491df711abe40a502245af24bc20a1d4c3e0a181fa6c45469b3e5534f4e4cd9b" => :sierra
+    sha256 mojave:      "2f8ad2df0a00ef492d8336f30c839139972e94ab5b4ddb72a14dc7d78bede658"
+    sha256 high_sierra: "4873b0683399a7e7237642c4fd37fb2229d87c146f955f1c6e067571f391f63a"
+    sha256 sierra:      "491df711abe40a502245af24bc20a1d4c3e0a181fa6c45469b3e5534f4e4cd9b"
   end
 
   depends_on "cmake" => :build

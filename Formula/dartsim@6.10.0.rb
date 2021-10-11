@@ -1,16 +1,17 @@
 class DartsimAT6100 < Formula
   desc "Dynamic Animation and Robotics Toolkit (openrobotics port)"
   homepage "https://dartsim.github.io/"
-  # osrc custom nightly built from commit fdde7e7894ebc36bae8811f7a63e5b1c899bb4af
-  url "https://github.com/azeey/dart/archive/1673b0be51fb370023df7490dc49706b590d8f72.tar.gz"
-  version "6.10.0~20200916~1673b0be51fb370023df7490dc49706b590d8f72"
-  sha256 "ec2e833d3225ac3f4365cc6d8b2f5511170a47d140ff43dcc7d63a50fbb6bfd5"
+  # OSRF's fork
+  url "https://github.com/ignition-forks/dart/archive/d2b6ee08a60d0dbf71b0f008cd8fed1f611f6e24.tar.gz"
+  version "6.10.0~20211005~d2b6ee08a60d0dbf71b0f008cd8fed1f611f6e24"
+  sha256 "372af181024452418eec95f8a9cd723ceb1ada979208add66c9a4330b9c0fa32"
   license "BSD-2-Clause"
-  revision 6
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "c6fb7fba4f30d1837df5202de130456becdd7cdcd7d50ed8061f1c32675fdc91" => :mojave
+    sha256 big_sur:  "eee85bb657f199c515d1003fed6e3198a61e228a33dacc542cda642f4b0ef7c6"
+    sha256 catalina: "8b7b7ef8ac86be90b1b7e0882c4294893e24fefbab3d6d6425fbc5588fa77dea"
   end
 
   keg_only "open robotics fork of dart HEAD + custom changes"
@@ -37,13 +38,26 @@ class DartsimAT6100 < Formula
     sha256 "3c85f594b477ff2357017364a55cdc7b3ffa25ab53f08bd910ed5db71083ed6d"
   end
 
+  patch do
+    # Fix syntax error in glut_human_joint_limits/CMakeLists.txt
+    url "https://github.com/dartsim/dart/commit/47274b551bd48a31a702b4ddc7c1f8061daef3d9.patch?full_index=1"
+    sha256 "030e16a5728e856d0cc1788494da50272c52a7efec5c2a93e95de2cda7407f23"
+  end
+
   def install
     ENV.cxx11
+    args = std_cmake_args
 
-    # Force to link to system GLUT (see: https://cmake.org/Bug/view.php?id=16045)
-    system "cmake", ".", "-DGLUT_glut_LIBRARY=/System/Library/Frameworks/GLUT.framework",
-                         *std_cmake_args
-    system "make", "install"
+    if OS.mac?
+      # Force to link to system GLUT (see: https://cmake.org/Bug/view.php?id=16045)
+      glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
+      args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
+    end
+
+    mkdir "build" do
+      system "cmake", "..", *args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+      system "make", "install"
+    end
 
     # Add rpath to shared libraries
     Dir[lib/"libdart*.6.10.0.dylib"].each do |l|

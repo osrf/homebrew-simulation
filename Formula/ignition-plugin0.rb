@@ -9,11 +9,10 @@ class IgnitionPlugin0 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases"
-    cellar :any
-    sha256 "8bab9824aa1e5a1bd6e11e9b9408fe6ff911cb33db3e201936d3f0e27e883398" => :mojave
-    sha256 "4c9f8cb01899c3871237e36c0394f513d3c5209104d821b87cbe1170860dc4a4" => :high_sierra
-    sha256 "1488ce3c65c2131d8e46aae8cccbefa0fe6836a8b164c3db9cd126dfd091fa13" => :sierra
-    sha256 "813f6a21a9f722cb1ca605e4d1703e77ea753ae2c9e43ed0c3393b69ec902719" => :el_capitan
+    sha256 cellar: :any, mojave:      "8bab9824aa1e5a1bd6e11e9b9408fe6ff911cb33db3e201936d3f0e27e883398"
+    sha256 cellar: :any, high_sierra: "4c9f8cb01899c3871237e36c0394f513d3c5209104d821b87cbe1170860dc4a4"
+    sha256 cellar: :any, sierra:      "1488ce3c65c2131d8e46aae8cccbefa0fe6836a8b164c3db9cd126dfd091fa13"
+    sha256 cellar: :any, el_capitan:  "813f6a21a9f722cb1ca605e4d1703e77ea753ae2c9e43ed0c3393b69ec902719"
   end
 
   depends_on "cmake"

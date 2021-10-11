@@ -6,14 +6,14 @@ class IgnitionDome < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-dome/releases/ignition-dome-1.0.0.tar.bz2"
   sha256 "cb78ea2fc0f1cb83f2be3e9071d54693e830f715a93c839b8f2ac3692ff7e459"
   license "Apache-2.0"
-  revision 1
+  revision 4
 
-  head "https://github.com/ignitionrobotics/ign-dome", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-dome.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "70e25e1b8551dc73da374565ffde84e8727b5b4859e70e17a6664f2287cf154f" => :mojave
+    sha256 cellar: :any, catalina: "13956323918b292270b211ae5e131c7aa5ce64109ffd379d2b1b6feba995e4ff"
+    sha256 cellar: :any, mojave:   "25f52cf2b4893b2e98c3a9da733c33c434aa6eb9565f34bead4fb4eb725d6854"
   end
 
   depends_on "cmake" => :build

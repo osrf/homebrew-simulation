@@ -5,12 +5,7 @@ class IgnitionSensors2 < Formula
   sha256 "a48644f58126526e787aeec89014062adc3dd918a4da35ad43f23fcd3ff97069"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-sensors", branch: "ign-sensors2"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "7ee748d0bce398e8a649568050eedd224d3dbe2b05236f8575dfabbe0e2a32a9" => :mojave
-  end
+  head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "ign-sensors2"
 
   disable! date: "2021-01-31", because: "is past end-of-life date"
 

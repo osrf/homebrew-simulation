@@ -6,22 +6,19 @@ class IgnitionMath5 < Formula
   license "Apache-2.0"
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-math", branch: "ign-math5"
+  head "https://github.com/ignitionrobotics/ign-math.git", branch: "ign-math5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "08a8d27d961fba37b980e3ecdd87d7416429807402ddaf38d3d616808d578371" => :mojave
-    sha256 "43dc2a329a12fed49066bc08d0fd788ffa346b936c7d683f8b936e86b3404b88" => :high_sierra
-    sha256 "606c4dfb580402e4cfb7ac1a5d7ccd99a7eeded41c974df618e067c1e51fd423" => :sierra
+    sha256 cellar: :any, mojave:      "08a8d27d961fba37b980e3ecdd87d7416429807402ddaf38d3d616808d578371"
+    sha256 cellar: :any, high_sierra: "43dc2a329a12fed49066bc08d0fd788ffa346b936c7d683f8b936e86b3404b88"
+    sha256 cellar: :any, sierra:      "606c4dfb580402e4cfb7ac1a5d7ccd99a7eeded41c974df618e067c1e51fd423"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "eigen"
   depends_on "ignition-cmake1"
-
-  conflicts_with "ignition-math2", because: "symbols collision between the two libraries"
 
   def install
     system "cmake", ".", *std_cmake_args

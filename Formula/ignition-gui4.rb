@@ -1,15 +1,17 @@
 class IgnitionGui4 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui4-4.1.1.tar.bz2"
-  sha256 "90c66f3ac1c634d865bb6846c5d320013eed1aa9a6672a6aae74927851c5b620"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui4-4.5.0.tar.bz2"
+  sha256 "6b1e96fe502813df10d05569218bc2c64919c879122539b133489b7b5895f2cc"
   license "Apache-2.0"
+  revision 1
 
-  head "https://github.com/ignitionrobotics/ign-gui", branch: "ign-gui4"
+  head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "5a434ccfe6dbfb03eed51a39e48e2542c070e84cc73ef14dd5b5f76bcdc36cbc" => :mojave
+    sha256 catalina: "b6bc9e87243fab42c034670b92c5425752e1c3f6e4d471b646f776e8efc03587"
+    sha256 mojave:   "2da199bc1ec38f3b80c764192097f40ba1a46afb86370befb1a0ce16b92afbaf"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -22,13 +24,10 @@ class IgnitionGui4 < Formula
   depends_on "ignition-transport9"
   depends_on macos: :mojave # c++17
   depends_on "qt@5"
-  depends_on "qwt"
   depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
     cmake_args << "-DBUILD_TESTING=Off"
 
     mkdir "build" do

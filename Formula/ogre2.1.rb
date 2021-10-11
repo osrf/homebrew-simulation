@@ -7,12 +7,13 @@ class Ogre21 < Formula
   license "MIT"
   revision 1
 
-  head "https://github.com/OGRECave/ogre-next", branch: "v2-1"
+  head "https://github.com/OGRECave/ogre-next.git", branch: "v2-1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "4641e0d611d87f9c063b26cb11d61c7ad32be62448c6fcd6fc75339c42f563ba" => :mojave
+    rebuild 1
+    sha256 cellar: :any, catalina: "d29874b82f0f942bd7d2453e145cd74382734a1d4161b25d7ac0e8efd4b41928"
+    sha256 cellar: :any, mojave:   "f0b505985d282e7dd8b1aecc7daf51ff15c8fbb58b4b30c556fbc139ec878075"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +36,12 @@ class Ogre21 < Formula
     # fix GL3+ compilation with Xcode 10
     url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.patch?full_index=1"
     sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
+  end
+
+  patch do
+    # fix GL3+ cocoa window and useCurrentGLContext
+    url "https://github.com/ignition-forks/ogre-2.1-release/compare/b4c4fa785c03c2d4ba2a1d28d94394c7ca000358..81632330e3ab041345c7fa1075022cf6af30c658.diff"
+    sha256 "9a855a9e60bc81874e3d1501094e1fcc46d296ac964ca8985ddeb1035fe05cd2"
   end
 
   def install
@@ -75,7 +82,7 @@ class Ogre21 < Formula
     inreplace Dir[lib/"pkgconfig/*"] do |s|
       s.gsub! prefix, opt_prefix
       s.sub! "Name: OGRE", "Name: OGRE-2.1"
-      s.sub! /^includedir=.*$/, "includedir=${prefix}/include/OGRE-2.1"
+      s.sub!(/^includedir=.*$/, "includedir=${prefix}/include/OGRE-2.1")
     end
     inreplace (lib/"pkgconfig/OGRE-2.1.pc"), " -I${includedir}\/OGRE", ""
     inreplace (lib/"pkgconfig/OGRE-2.1-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"

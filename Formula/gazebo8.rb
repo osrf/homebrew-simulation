@@ -7,7 +7,7 @@ class Gazebo8 < Formula
   revision 5
   version_scheme 1
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo8"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo8"
 
   deprecate! because: "is past end-of-life date", date: "2019-01-25"
 

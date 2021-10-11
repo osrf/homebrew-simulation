@@ -6,12 +6,7 @@ class Gazebo10 < Formula
   license "Apache-2.0"
   revision 7
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo10"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "1cc8e89ebfb482ff5f1a90537d4d82073733802d0f806ff92a1514e9028d4f48" => :mojave
-  end
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo10"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -45,16 +40,6 @@ class Gazebo10 < Formula
   depends_on "simbody" => :recommended
   depends_on "gdal" => :optional
   depends_on "player" => :optional
-
-  conflicts_with "gazebo2", because: "differing version of the same formula"
-  conflicts_with "gazebo3", because: "differing version of the same formula"
-  conflicts_with "gazebo4", because: "differing version of the same formula"
-  conflicts_with "gazebo5", because: "differing version of the same formula"
-  conflicts_with "gazebo6", because: "differing version of the same formula"
-  conflicts_with "gazebo7", because: "differing version of the same formula"
-  conflicts_with "gazebo8", because: "differing version of the same formula"
-  conflicts_with "gazebo9", because: "differing version of the same formula"
-  conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do
     # set CMP0100

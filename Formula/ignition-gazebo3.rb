@@ -1,15 +1,16 @@
 class IgnitionGazebo3 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.6.0.tar.bz2"
-  sha256 "c58ce324d74013505723a4c82c086bdbaf3acb543f785e5e7b5c81e4f611716b"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.9.0.tar.bz2"
+  sha256 "cf9fd70731434a4adecd06f0bc0dcd600186516a45790b64d852e3d07ad08dc8"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo3"
+  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "0cb80b9659c7cf8fab26e69a0f236754146e92196a7b3d69e95f168fa7c6da10" => :mojave
+    sha256 catalina: "6c0f4f3e9963b424db61dca681a123ccc6f2a205213a2cd28f722e4969f157e5"
+    sha256 mojave:   "446f1adc0f232a40bcf7455ebdde2072b426c5074a85816bb310b68d364f0919"
   end
 
   depends_on "cmake" => :build
@@ -31,12 +32,6 @@ class IgnitionGazebo3 < Formula
   depends_on "pkg-config"
   depends_on "ruby"
   depends_on "sdformat9"
-
-  patch do
-    # Disable doxygen until due to seg-fault with 1.9.0
-    url "https://github.com/ignitionrobotics/ign-gazebo/commit/0798029c0e5d3d4c475cc524512cdce46c40500a.patch?full_index=1"
-    sha256 "cba5706b85b9d5c160dea0836aecf11070b1c1c6fa3d93e06a6b8a4b4583d0fb"
-  end
 
   def install
     cmake_args = std_cmake_args
@@ -93,7 +88,7 @@ class IgnitionGazebo3 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gazebo3::core)
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo3"
     # cflags   = `pkg-config --cflags ignition-gazebo3`.split
     # ldflags  = `pkg-config --libs ignition-gazebo3`.split
@@ -104,7 +99,7 @@ class IgnitionGazebo3 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

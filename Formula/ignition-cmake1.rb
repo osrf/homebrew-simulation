@@ -5,12 +5,11 @@ class IgnitionCmake1 < Formula
   sha256 "1d9cad25b61774e0cb131fa244cc09b082166c2644b6aeaaa1f20d0d060cc30c"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-cmake", branch: "ign-cmake1"
+  head "https://github.com/ignitionrobotics/ign-cmake.git", branch: "ign-cmake1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any_skip_relocation
-    sha256 "10cdf432ef40bbcdaee901763a457467710d3007bca99250fda5ac49cbd0bfae" => :sierra
+    sha256 cellar: :any_skip_relocation, sierra: "10cdf432ef40bbcdaee901763a457467710d3007bca99250fda5ac49cbd0bfae"
   end
 
   depends_on "cmake"

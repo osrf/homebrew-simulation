@@ -4,15 +4,14 @@ class IgnitionCommon2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common2-2.0.0.tar.bz2"
   sha256 "f76ed5a7a86728391bc6d7fb13fb07b61a1106e39d8cb87f3053154432d4b0f6"
   license "Apache-2.0"
+  revision 1
 
-  head "https://github.com/ignitionrobotics/ign-common", branch: "ign-common2"
+  head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "e2d38882f31358078c82f84a85ace6e71d9405323ca8f26b7b35e3152e9d0335" => :mojave
-    sha256 "c7f3b475c669709f900b1f76ebbf4e1abbd02f97a4de693147cffd17baf106b0" => :high_sierra
-    sha256 "fd86dcee981cb04ee1cee0ac9fd681b2292eb0d2b2e2efa13566e08c27dcaf6f" => :sierra
+    sha256 cellar: :any, catalina: "7b56734b816d905ac6bbf1428bf0cbe7b034bbc550b6e2ffb6cf5da7e0c05137"
+    sha256 cellar: :any, mojave:   "ba20967b0c64bc1eef5475d427bf252a348903fe7ea7dec92153cf70b89459b2"
   end
 
   depends_on "cmake"

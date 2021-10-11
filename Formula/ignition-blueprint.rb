@@ -7,13 +7,7 @@ class IgnitionBlueprint < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-blueprint/releases/ignition-blueprint-1.1.0.tar.bz2"
   sha256 "51e224efc51ce5ff7ef164883a5b7428e169409386900b82f7ef6b84b611d7aa"
 
-  head "https://github.com/ignitionrobotics/ign-blueprint", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "c0667f15a6db2bafaebf0e23110b2260f5830d524a5216d327dbdabe627050ed" => :mojave
-  end
+  head "https://github.com/ignitionrobotics/ign-blueprint.git", branch: "main"
 
   disable! date: "2021-01-31", because: "is past end-of-life date"
 

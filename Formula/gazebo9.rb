@@ -1,25 +1,30 @@
 class Gazebo9 < Formula
   desc "Gazebo robot simulator"
-  homepage "http://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.16.0.tar.bz2"
-  sha256 "8cf2805f254a32896002d4b6a24578c9dc1c5628123a5c30b7c6cb443461d15b"
+  homepage "https://gazebosim.org"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.19.0.tar.bz2"
+  sha256 "1f3ca430824b120ae0c7c4c0037a1a56e7b6bf6c50731b148b5c75bfc46d7fe7"
   license "Apache-2.0"
-  revision 1
+  revision 5
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo9"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "54dfa3cedec6e3261f365f9cb39936e017c25aebdf138bba2eb1d16bae55bc28" => :mojave
+    sha256 big_sur:  "d37ce2662cf5bc3320b82a78a7988e4d77ee49526844672f8c3eea954bdcb41b"
+    sha256 catalina: "0f9df74bd35cedf9c16bf319e35a8102e11660b9dacd3df8950e2da58ebb7706"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "bullet"
+  depends_on "dartsim"
   depends_on "doxygen"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "graphviz"
+  depends_on "gts"
   depends_on "ignition-fuel-tools1"
   depends_on "ignition-math4"
   depends_on "ignition-msgs1"
@@ -30,30 +35,19 @@ class Gazebo9 < Formula
   depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
   depends_on "protobuf-c"
-  depends_on "qt"
-  depends_on "qwt"
+  depends_on "qt@5"
+  depends_on "qwt-qt5"
   depends_on "sdformat6"
-  depends_on "tbb"
+  depends_on "simbody"
+  depends_on "tbb@2020_u3"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
-  depends_on "bullet" => :recommended
-  depends_on "dartsim" => :recommended
-  depends_on "ffmpeg" => :recommended
-  depends_on "gts" => :recommended
-  depends_on "simbody" => :recommended
-  depends_on "gdal" => :optional
-  depends_on "player" => :optional
+  # depends on "gdal" => :optional
+  # depends on "player" => :optional
 
-  conflicts_with "gazebo2", because: "differing version of the same formula"
-  conflicts_with "gazebo3", because: "differing version of the same formula"
-  conflicts_with "gazebo4", because: "differing version of the same formula"
-  conflicts_with "gazebo5", because: "differing version of the same formula"
-  conflicts_with "gazebo6", because: "differing version of the same formula"
   conflicts_with "gazebo7", because: "differing version of the same formula"
-  conflicts_with "gazebo8", because: "differing version of the same formula"
-  conflicts_with "gazebo10", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do
@@ -63,10 +57,16 @@ class Gazebo9 < Formula
     sha256 "c4774f64c490fa03236564312bd24a8630963762e25d98d072e747f0412df18e"
   end
 
+  patch do
+    # Fix for compatibility with qwt 6.2
+    url "https://github.com/osrf/gazebo/commit/9e7e9bfbace6e0cc3f06842bb1efd47eb0632b36.patch?full_index=1"
+    sha256 "625d7f990629e431ef160ac771b632f9007b72d0608e7bccd4a7e0987417a347"
+  end
+
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
+    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
+    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -82,7 +82,7 @@ class Gazebo9 < Formula
     # running this sample code seg-faults from boost filesystem
     # if a bottle rebuild is needed
     (testpath/"test.cpp").write <<-EOS
-      #include <gazebo/common/CommonIface.hh>
+      #include <gazebo/gazebo.hh>
       int main() {
         gazebo::common::copyDir(".", "./tmp");
         return 0;
@@ -108,6 +108,7 @@ class Gazebo9 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
+    ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"

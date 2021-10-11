@@ -6,7 +6,7 @@ class Gazebo7 < Formula
   license "Apache-2.0"
   revision 3
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo7"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo7"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -41,7 +41,6 @@ class Gazebo7 < Formula
   conflicts_with "gazebo6", because: "differing version of the same formula"
   conflicts_with "gazebo8", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
-  conflicts_with "gazebo10", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
 
   patch do

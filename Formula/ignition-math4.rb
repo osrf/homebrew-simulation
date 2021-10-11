@@ -5,22 +5,19 @@ class IgnitionMath4 < Formula
   sha256 "5533d1aca0a87450a6ec4770e489bfe24860e6da843b005e594be264c2d6faa0"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-math", branch: "ign-math4"
+  head "https://github.com/ignitionrobotics/ign-math.git", branch: "ign-math4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases"
-    cellar :any
-    sha256 "b8976152550094ee7a006e6932133eabbf7a200fb3f9fec44c976ada9965e334" => :mojave
-    sha256 "0a012fad519f0e726f6090c5b7e4fef128a8b66c346109f392f8109f37a14af2" => :high_sierra
-    sha256 "a2152c21135fc7e7d887ecfbdf0cb17e612780a6088e5c81c639bdcaaf529fdd" => :sierra
-    sha256 "e7c3f313b025c4733bd79cb3a27f54846e910e11c34e12d78e1c054eb06bbd48" => :el_capitan
+    sha256 cellar: :any, mojave:      "b8976152550094ee7a006e6932133eabbf7a200fb3f9fec44c976ada9965e334"
+    sha256 cellar: :any, high_sierra: "0a012fad519f0e726f6090c5b7e4fef128a8b66c346109f392f8109f37a14af2"
+    sha256 cellar: :any, sierra:      "a2152c21135fc7e7d887ecfbdf0cb17e612780a6088e5c81c639bdcaaf529fdd"
+    sha256 cellar: :any, el_capitan:  "e7c3f313b025c4733bd79cb3a27f54846e910e11c34e12d78e1c054eb06bbd48"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "ignition-cmake0"
-
-  conflicts_with "ignition-math2", because: "symbols collision between the two libraries"
 
   def install
     system "cmake", ".", *std_cmake_args

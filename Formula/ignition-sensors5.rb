@@ -1,29 +1,29 @@
 class IgnitionSensors5 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://github.com/ignitionrobotics/ign-sensors/archive/c02cd052f263373d630eb8e1a2714d9965cb48d2.tar.gz"
-  version "4.999.999~0~20201028~c02cd0"
-  sha256 "fdd953c50aa814f52ec4c769c74c83755ec5056c9b53cd4a899bbd12004e5481"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.0.0.tar.bz2"
+  sha256 "33c6c062418ac325be6143c494ad8f6187deaae95af8f77f9978582a67bd6e9d"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
-  head "https://github.com/ignitionrobotics/ign-sensors", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "c2f72851d667d8ba4d114dddcd6deb1cdcffbb0112815ee7be35a71129186757" => :mojave
+    sha256 catalina: "fddefb7a86e570f96d04cc846f82951415606cb40dda4123a689cab458106a63"
+    sha256 mojave:   "ed54512f04894ed76ef458395ec39d358093e7a726083b2aed998e5185acecf1"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs6"
+  depends_on "ignition-msgs7"
   depends_on "ignition-rendering5"
-  depends_on "ignition-transport9"
-  depends_on "sdformat10"
+  depends_on "ignition-transport10"
+  depends_on "sdformat11"
 
   def install
     cmake_args = std_cmake_args

@@ -4,13 +4,7 @@ class IgnitionMsgs4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs4-4.9.0.tar.bz2"
   sha256 "3a75aabd1f39bf0e48f0c99070e210154d62c35b3571f20d47348e08ac3015f6"
   license "Apache-2.0"
-  revision 5
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    cellar :any
-    sha256 "24b32ba1a5344dce35629e3c4b1b48455c596a2be10ed52dac1da5ce77cb455d" => :mojave
-  end
+  revision 6
 
   disable! date: "2021-01-31", because: "is past end-of-life date"
 

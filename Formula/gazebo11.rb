@@ -1,25 +1,30 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
-  homepage "http://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.3.0.tar.bz2"
-  sha256 "09462946a1841256c57aa2635cbebd9b625a744533603b81b693ee2e370082f4"
+  homepage "https://gazebosim.org"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.8.1.tar.bz2"
+  sha256 "162163f640ccaed319ffd0adb1d766fc7190259f1f3ce507f7d4d86794c87a35"
   license "Apache-2.0"
-  revision 1
+  revision 4
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo11"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "3f5b55dd0a6f887653e3027fc63f7ab9638fba345a6768bfcdb6cd0f9a66529f" => :mojave
+    sha256 big_sur:  "7fb66bd569df7cf55dec080e6a2b41c9d7a4dba9daa0c14bd7a24599a69af0b9"
+    sha256 catalina: "51cd92f8e480562ecb21b1254f154869dd23eeb23b00f7c18251b33ce80e68ff"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
+  depends_on "bullet"
+  depends_on "dartsim"
   depends_on "doxygen"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "graphviz"
+  depends_on "gts"
   depends_on "ignition-common3"
   depends_on "ignition-fuel-tools4"
   depends_on "ignition-math6"
@@ -31,30 +36,19 @@ class Gazebo11 < Formula
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt@5"
-  depends_on "qwt"
+  depends_on "qwt-qt5"
   depends_on "sdformat9"
-  depends_on "tbb"
+  depends_on "simbody"
+  depends_on "tbb@2020_u3"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
-  depends_on "bullet" => :recommended
-  depends_on "dartsim" => :recommended
-  depends_on "ffmpeg" => :recommended
-  depends_on "gts" => :recommended
-  depends_on "simbody" => :recommended
-  depends_on "gdal" => :optional
-  depends_on "player" => :optional
+  # depends on "gdal" => :optional
+  # depends on "player" => :optional
 
-  conflicts_with "gazebo2", because: "differing version of the same formula"
-  conflicts_with "gazebo3", because: "differing version of the same formula"
-  conflicts_with "gazebo4", because: "differing version of the same formula"
-  conflicts_with "gazebo5", because: "differing version of the same formula"
-  conflicts_with "gazebo6", because: "differing version of the same formula"
   conflicts_with "gazebo7", because: "differing version of the same formula"
-  conflicts_with "gazebo8", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
-  conflicts_with "gazebo10", because: "differing version of the same formula"
 
   patch do
     # Fix build when homebrew python is installed
@@ -65,8 +59,8 @@ class Gazebo11 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
+    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
+    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -80,7 +74,7 @@ class Gazebo11 < Formula
     # running this sample code seg-faults from boost filesystem
     # if a bottle rebuild is needed
     (testpath/"test.cpp").write <<-EOS
-      #include <gazebo/common/CommonIface.hh>
+      #include <gazebo/gazebo.hh>
       int main() {
         gazebo::common::copyDir(".", "./tmp");
         return 0;
@@ -106,6 +100,7 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
+    ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"

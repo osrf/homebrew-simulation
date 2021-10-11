@@ -1,36 +1,33 @@
 class IgnitionGui5 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://github.com/ignitionrobotics/ign-gui/archive/225d8b66171abe8d0a6be4988cd1bd93020200ea.tar.gz"
-  version "4.999.999~0~20201028~225d8b"
-  sha256 "5d51b169ce8b3e4553c512fba15a10419d36c28dd525db64a4b7060049332715"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.2.0.tar.bz2"
+  sha256 "386661dea3517919fcf3124ec5791666f561c98a4b0c4b7ec649789d473d4938"
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-gui", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "f3da22c295f2ce57716f2bfc5f533c57b143e1c6c093a4d9d343d315e490fb25" => :mojave
+    sha256 catalina: "e6a8e5cb3de5a43e948c30a75b1697ddb07ba06e8ce18975719f97935f85560f"
+    sha256 mojave:   "85123b88f23fdbd53cae081ebe3cf17d2f964ea7dd60f5b53a8824892a06bc59"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
-  depends_on "ignition-msgs6"
+  depends_on "ignition-common4"
+  depends_on "ignition-msgs7"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering5"
-  depends_on "ignition-transport9"
+  depends_on "ignition-transport10"
   depends_on macos: :mojave # c++17
   depends_on "qt@5"
-  depends_on "qwt"
   depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
     cmake_args << "-DBUILD_TESTING=Off"
 
     mkdir "build" do

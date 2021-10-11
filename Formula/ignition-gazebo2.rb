@@ -5,12 +5,7 @@ class IgnitionGazebo2 < Formula
   sha256 "71820ea9ecd541331645dd6feb75a6e62a8339e788ef43ffcd8f0c3890e33361"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "ign-gazebo2"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e523e84e70436612410f55ec29a2ac3dc0641f6d1fdb52906f5eedac11e7d629" => :mojave
-  end
+  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo2"
 
   disable! date: "2021-01-31", because: "is past end-of-life date"
 

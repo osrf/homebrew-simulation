@@ -1,15 +1,14 @@
 class IgnitionRendering5 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://github.com/ignitionrobotics/ign-rendering/archive/d4406e1d98fba7b1362ce8ee52056cfd4ecb0bdb.tar.gz"
-  version "4.999.999~0~20201130~d4406e"
-  sha256 "781a633371a2525ff6f622a275456b72ec40467726dd452deba82aa28422be94"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering5-5.1.0.tar.bz2"
+  sha256 "d32ef33b3bf4b5ce01d04be0b3a450df8070341d5a55c47afe43b41e40edf54e"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "e0c2d1e10adb832d946831a519a920e6e27c95ee410ea3fd7bf9fd8f4d1f761a" => :mojave
+    sha256 catalina: "585b1f4c434866143557b9d563f0e4e0195a7063f7ecb5f5ab0b5c7c4d3511c3"
+    sha256 mojave:   "cb712f121f28b230911f558e69796f7c12b316f4984c448bbeb60fd16db0450d"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -17,7 +16,7 @@ class IgnitionRendering5 < Formula
 
   depends_on "freeimage"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
+  depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17
@@ -32,9 +31,7 @@ class IgnitionRendering5 < Formula
   end
 
   test do
-    azure = ENV["HOMEBREW_AZURE_PIPELINES"].present?
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-    travis = ENV["HOMEBREW_TRAVIS_CI"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/rendering/RenderEngine.hh>
       #include <ignition/rendering/RenderingIface.hh>
@@ -60,12 +57,12 @@ class IgnitionRendering5 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" unless azure || github_actions || travis
+    system "./test" unless github_actions
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
       system "make"
-      system "./test_cmake" unless azure || github_actions || travis
+      system "./test_cmake" unless github_actions
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"

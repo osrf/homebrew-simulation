@@ -1,13 +1,15 @@
 class Sdformat10 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.1.0.tar.bz2"
-  sha256 "12a9e757e8c4b48558701f155f4d41dd6860a9b1d83b03dd241e9bc8c0c5b964"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-10.6.0.tar.bz2"
+  sha256 "127f330fc08fa7ad94b430ea6f54e1f3c1e1f0aaa1187fc5c3023cd924f11192"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "ce4ed25c040a2a90a20db64b56d24ad1afb8c8a7f6739dc679bf1e7837fc4ea8" => :mojave
+    sha256 big_sur:  "be0ad9ab17d36bd540582be7baef43f35736e874221deaff8623ccffabd98f5d"
+    sha256 catalina: "37df6b0d16b06c4448938eb60f46c48dd904bda31fbedc11d3ff46bb63899589"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -15,6 +17,7 @@ class Sdformat10 < Formula
 
   depends_on "doxygen"
   depends_on "ignition-math6"
+  depends_on "ignition-tools"
   depends_on macos: :mojave # c++17
   depends_on "tinyxml2"
   depends_on "urdfdom"

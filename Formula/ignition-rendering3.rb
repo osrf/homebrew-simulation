@@ -1,14 +1,15 @@
 class IgnitionRendering3 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.2.0.tar.bz2"
-  sha256 "425ecc78fae067f9e1b97208f84eb36803881c26c6fd464bcacd9321d529c992"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.5.0.tar.bz2"
+  sha256 "e56638bdee4156e74abf23ff641f1c62c31b4247f54cb67559fdceb618fbdec3"
   license "Apache-2.0"
-  revision 2
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "f14def506cd46dee2f30fe76c558833983792e2d87b70f90dbf0e80e47357433" => :mojave
+    sha256 catalina: "aa879b6b217ec466543ed4174a2e70f259bc92ab9db0f9e6c28cedcc1aa2fb07"
+    sha256 mojave:   "4550fd43279ea83c79212a67342a573a03fd8bb3b322838b455bd01d56d57729"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -59,12 +60,12 @@ class IgnitionRendering3 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" unless azure || github_actions || travis
+    system "./test" if !(azure || github_actions) && !travis
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
       system "make"
-      system "./test_cmake" unless azure || github_actions || travis
+      system "./test_cmake" if !(azure || github_actions) && !travis
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"

@@ -1,38 +1,38 @@
 class IgnitionGazebo5 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://github.com/ignitionrobotics/ign-gazebo/archive/e43f7610859fdd2fcc89047483044f86f067ca0e.tar.gz"
-  version "4.999.999~0~20201028~e43f76"
-  sha256 "41e860861a22040892cdbd6c3cf69d10f59ce693eb8078f233fde63c3b16f9bd"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo5-5.1.0.tar.bz2"
+  sha256 "6870be193911677ffd20f951c27f13ae08bb6c774da839f2b48ecd3262b7170e"
   license "Apache-2.0"
-  revision 2
 
-  head "https://github.com/ignitionrobotics/ign-gazebo", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "a81d0dbc3219e1f6f6b6c1dd66ff4fb5939ea36ad96f7db155f363a96ea031af" => :mojave
+    sha256 catalina: "486efd2ac0093f5ecdb990c485ecc1dd139402cc297ed9cca4cecc1aa13e5fc7"
+    sha256 mojave:   "9573352cd9d89cf31913faa134ca519d87705103122c209ff762e7bed209c1a6"
   end
 
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
-  depends_on "ignition-fuel-tools5"
+  depends_on "ignition-common4"
+  depends_on "ignition-fuel-tools6"
   depends_on "ignition-gui5"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs6"
-  depends_on "ignition-physics3"
+  depends_on "ignition-msgs7"
+  depends_on "ignition-physics4"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering5"
   depends_on "ignition-sensors5"
   depends_on "ignition-tools"
-  depends_on "ignition-transport9"
+  depends_on "ignition-transport10"
+  depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "ruby"
-  depends_on "sdformat10"
+  depends_on "sdformat11"
 
   def install
     cmake_args = std_cmake_args
@@ -89,7 +89,7 @@ class IgnitionGazebo5 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gazebo5::core)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo5"
     # cflags   = `pkg-config --cflags ignition-gazebo5`.split
     # ldflags  = `pkg-config --libs ignition-gazebo5`.split
@@ -100,7 +100,7 @@ class IgnitionGazebo5 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

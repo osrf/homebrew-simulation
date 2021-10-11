@@ -6,14 +6,7 @@ class Sdformat7 < Formula
   sha256 "f6b67acabb22194ef33df5ef95646ad717f59d737e9e8d473b0d9b674d4c199f"
   license "Apache-2.0"
 
-  head "https://github.com/osrf/sdformat", branch: "sdf7", using: :git
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 "88c59fe865c964a20675dbcbb1837ff2294dfaa5eba8f14eeb8be319eecd4e81" => :mojave
-    sha256 "b8f2b76bad1c9e70b6485b6303ddb0b03883465895174dd45e6aa7b8352e2560" => :high_sierra
-    sha256 "7196965b2e2771a43d71217372194836e41cbf9768bbbc4eed32de09a91f9135" => :sierra
-  end
+  head "https://github.com/osrf/sdformat.git", branch: "sdf7", using: :git
 
   depends_on "cmake" => :build
 
@@ -25,8 +18,6 @@ class Sdformat7 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", because: "differing version of the same formula"
-  conflicts_with "sdformat3", because: "differing version of the same formula"
   conflicts_with "sdformat4", because: "differing version of the same formula"
   conflicts_with "sdformat5", because: "differing version of the same formula"
   conflicts_with "sdformat6", because: "differing version of the same formula"

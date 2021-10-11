@@ -6,7 +6,7 @@ class Gazebo5 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/osrf/gazebo", branch: "gazebo5"
+  head "https://github.com/osrf/gazebo.git", branch: "gazebo5"
 
   deprecate! because: "is past end-of-life date", date: "2017-01-25"
 
