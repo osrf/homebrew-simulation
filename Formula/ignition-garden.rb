@@ -10,6 +10,12 @@ class IgnitionGarden < Formula
 
   head "https://github.com/ignitionrobotics/ign-garden.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "67e6a3f6c421969c0a14070889cf30cf3e3bc8b05733683e04c6b2df5f67d5ca"
+    sha256 cellar: :any, catalina: "d148602e0dbe37b1212997f44420b335c6ab2c044b946727bcecf1e39b7315c5"
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
