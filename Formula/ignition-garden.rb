@@ -1,20 +1,19 @@
-class IgnitionFortress < Formula
+class IgnitionGarden < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
-  homepage "https://github.com/ignitionrobotics/ign-fortress"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fortress/releases/ignition-fortress-1.0.0.tar.bz2"
-  sha256 "0cce1b5676b32e8363efae4ab59cca0fcf4314b996977195737adb317530e735"
+  homepage "https://github.com/ignitionrobotics/ign-garden"
+  url "https://github.com/ignitionrobotics/ign-garden/archive/a4732212255ef447f102587a346086fc11c1846c.tar.gz"
+  version "0.999.999~0~20211008~a47322"
+  sha256 "2f0fa319ba90f3840521b2d8544bd4528e3a2cf39c9899638e6ec3b6a6231226"
   license "Apache-2.0"
-  revision 1
-  version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-fortress.git", branch: "main"
+  head "https://github.com/ignitionrobotics/ign-garden.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "70e77714bed8cef0bd3d07a52d6ea33095371a6c8d07ffa85aca7ad85f2f504b"
-    sha256 cellar: :any, catalina: "936c4aff9505f47c79e20fc88baf1c0ac3796e8737202b6d9027fa16fdbf0a5f"
+    sha256 cellar: :any, big_sur:  "67e6a3f6c421969c0a14070889cf30cf3e3bc8b05733683e04c6b2df5f67d5ca"
+    sha256 cellar: :any, catalina: "d148602e0dbe37b1212997f44420b335c6ab2c044b946727bcecf1e39b7315c5"
   end
 
   depends_on "cmake" => :build
@@ -54,7 +53,7 @@ class IgnitionFortress < Formula
   end
 
   test do
-    yaml_file = share/"ignition/ignition-fortress/gazebodistro/collection-fortress.yaml"
+    yaml_file = share/"ignition/ignition-garden/gazebodistro/collection-garden.yaml"
     system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
