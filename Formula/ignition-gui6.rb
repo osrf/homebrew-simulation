@@ -4,6 +4,7 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.0.0.tar.bz2"
   sha256 "df0e6f592dcd05a88b0fbb8eb8a34c2fe0125c93a65b58c3b8aeff2f42059971"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
