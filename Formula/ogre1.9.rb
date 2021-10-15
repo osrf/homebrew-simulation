@@ -5,7 +5,7 @@ class Ogre19 < Formula
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
   license "MIT"
-  revision 9
+  revision 10
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -76,6 +76,12 @@ class Ogre19 < Formula
     # fix for boost 1.67
     url "https://github.com/OGRECave/ogre/commit/2371c8d001725190a9cda62dc5df282cde78f951.patch?full_index=1"
     sha256 "28d418f7c978bedcf26c7a53c0f621fd5d9a2f27e5b838ea03af00e062f65470"
+  end
+
+  # fix for finding ZZip
+  patch do
+    url "https://github.com/scpeters/ogre/commit/8fcfe0885e6bd98d971250d4a3fb9a23e3743dfd.patch?full_index=1"
+    sha256 "3a69a4ed9e86887d3a23b0882c9868e994ab710205bb2e4b87204a8c89f1a3c5"
   end
 
   def install
