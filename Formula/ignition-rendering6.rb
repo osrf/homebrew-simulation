@@ -4,11 +4,12 @@ class IgnitionRendering6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.0.1.tar.bz2"
   sha256 "e25ad3a84f997d048bcf758a6d0be248579c5b68bff977b2329b023e0a59e55d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "ed1fda39d5a476bf1f80b9b805c30772543dab03911ab30e7ac82ab0440e1e34"
-    sha256 catalina: "2f24532be19e8d159abc0382d7ccf12ef068c4e2392dbc2ac4abdc8c786aade7"
+    sha256 big_sur:  "ca0459988f52e871f55503a1d69ebadaa74a6d44a565195cc9418e95f10e60ad"
+    sha256 catalina: "3140a24cfac77808593618af3f76be7a0739ffd766d7df9dfa8ff0cc8e91c4b4"
   end
 
   depends_on "cmake" => [:build, :test]
