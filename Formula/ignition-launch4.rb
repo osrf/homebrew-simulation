@@ -1,12 +1,17 @@
 class IgnitionLaunch4 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch4-4.0.0.tar.bz2"
-  sha256 "55d93fee15b1d2d5d18d7160d89a58e1da325bbab109289f6168fd91ac1a3720"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch4-4.1.0.tar.bz2"
+  sha256 "fd1e5a535bafb197360b168bce573bed3c4d7804b76c098d93afc5b17b2bdcef"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "6d1dce9b9ad60e873cc8488f5f467e2d613e8176e7504c21b38752f2fd3d6e89"
+    sha256 catalina: "4dc759ef8874c21565a8cf7b01bb285bdd954bfafd29da48b20c80d81da3d00b"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
