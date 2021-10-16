@@ -8,8 +8,8 @@ class IgnitionTools < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, big_sur:  "1bf3f18776ffbb7192a3d8f67c52ed4f4bcce6557505006a884dc97fcfef7631"
-    sha256 cellar: :any_skip_relocation, catalina: "20f39c9650ad55df6f62257257c58c97e067c83f10db2ba5ffcf2028e77dc4ca"
+    sha256 cellar: :any, big_sur:  "d7d0cbf2ec0ca969a755d76a1bd517b57ef98ad78a937832d1b207862e5282c7"
+    sha256 cellar: :any, catalina: "296deab03804929c647db6e06b15332217ae0a6b7c9558726c4d58185ab25db9"
   end
 
   depends_on "cmake" => :build
