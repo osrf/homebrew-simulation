@@ -1,17 +1,17 @@
 class Ogre22 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://github.com/OGRECave/ogre-next/archive/ec3f70cb53a8a7e5d196855d0274ac03f90a2f4c.tar.gz"
-  version "2.2.5+20210824~ec3f70c"
-  sha256 "0bddbca05a8c5ca8a33eddeffdbce2aa1ca5a2035dbb7f2a1b67637a3851464f"
+  url "https://github.com/OGRECave/ogre-next/archive/312bf406a77244afe230930e67e3e5d52a119507.tar.gz"
+  version "2.2.6+20211021~312bf40"
+  sha256 "b9dbd84ef0c1731d0d1abc55499532358b9a9e5f0b3dc2b8e02ba76db0a112fd"
   license "MIT"
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "656887a4da9407d87c2ad3d47054a213dead2ebd66cd5ee4734950f53b18234c"
-    sha256 cellar: :any, mojave:   "e16590ac4c338d0a05f30cc8cd58530609501ce88499f93f74eb9400a367fe61"
+    sha256 cellar: :any, big_sur:  "3683309a6e4e5e4d2dd8de1bce25508624b537634c0dab4fc49df494a6ba9c6f"
+    sha256 cellar: :any, catalina: "a02bd13e69b1c29744f617725bd70038cfde7695f3f55c66ac1545ab94c7b948"
   end
 
   depends_on "cmake" => :build
