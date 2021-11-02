@@ -1,8 +1,8 @@
 class IgnitionMsgs8 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.0.0.tar.bz2"
-  sha256 "8fa3dc1fc56e2f7f5e42a7c4adca75bca47e7c86d461485684b7c17cd6e2613b"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.1.0.tar.bz2"
+  sha256 "8e79f51bf4150bfbc4ece1b797d14e1730ec0b1cbbbb00c548a928552610416b"
   license "Apache-2.0"
 
   bottle do
