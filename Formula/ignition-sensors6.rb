@@ -1,8 +1,8 @@
 class IgnitionSensors6 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.0.0.tar.bz2"
-  sha256 "6366c03ccb2564e8ab1e660f0661f0de45f1b9ca9d6bf7882cc2a1f770c9adbf"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.0.1.tar.bz2"
+  sha256 "d1a5d4a7fdebd82e0763fe76d58590a72f2852e42342c3310e3af8cd09b86cec"
   license "Apache-2.0"
 
   bottle do
