@@ -3,10 +3,9 @@ class IgnitionCitadel < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-citadel"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.1.tar.bz2"
-  sha256 "1436ebb1b2497abb8f75599f2d8f2b79ec4c29b1d4d4ae6a264cae2f066e5702"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.2.tar.bz2"
+  sha256 "2b99e7476093e78841c63d4ec348c6cf7c9d650a2e5787011723142c9f917659"
   license "Apache-2.0"
-  revision 3
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-citadel.git", branch: "main"
