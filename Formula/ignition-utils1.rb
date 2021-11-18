@@ -7,6 +7,7 @@ class IgnitionUtils1 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "4271cea149fce242e9ba5f9ebb2e60087962ea7228df802ec836a0f36128e7fa"
     sha256 cellar: :any, catalina: "f155a5550db50d1114c5dfe7890520a715ac81adf27a94371399061c1e0394b5"
     sha256 cellar: :any, mojave:   "7d4d913c69dc96c2a14aae07f50dfb8a9d611c28016a43b05e774a8844c13808"
   end
@@ -19,8 +20,12 @@ class IgnitionUtils1 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
