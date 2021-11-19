@@ -1,36 +1,30 @@
-class IgnitionGazebo4 < Formula
+class IgnitionGazebo7 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo4-4.13.0.tar.bz2"
-  sha256 "8f38fd3f9fbd9d0a115553022b2dc6a40bd286e30d23a32669ae5c59b52f17e7"
+  url "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
+  version "6.999.999~0~20211116"
   license "Apache-2.0"
-
-  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo4"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "0ca7639886ba05a84ce95820227c4a730c85858bd838ba73a348cd883d6ef623"
-  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common3"
-  depends_on "ignition-fuel-tools5"
-  depends_on "ignition-gui4"
+  depends_on "ignition-common4"
+  depends_on "ignition-fuel-tools7"
+  depends_on "ignition-gui7"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs6"
-  depends_on "ignition-physics3"
+  depends_on "ignition-msgs8"
+  depends_on "ignition-physics5"
   depends_on "ignition-plugin1"
-  depends_on "ignition-rendering4"
-  depends_on "ignition-sensors4"
+  depends_on "ignition-rendering7"
+  depends_on "ignition-sensors7"
   depends_on "ignition-tools"
-  depends_on "ignition-transport9"
+  depends_on "ignition-transport11"
+  depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "ruby"
-  depends_on "sdformat10"
+  depends_on "sdformat12"
 
   def install
     cmake_args = std_cmake_args
@@ -84,14 +78,14 @@ class IgnitionGazebo4 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-gazebo4 QUIET REQUIRED)
+      find_package(ignition-gazebo7 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-gazebo4::core)
+      target_link_libraries(test_cmake ignition-gazebo7::core)
     EOS
     # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    # system "pkg-config", "--cflags", "ignition-gazebo4"
-    # cflags   = `pkg-config --cflags ignition-gazebo4`.split
-    # ldflags  = `pkg-config --libs ignition-gazebo4`.split
+    # system "pkg-config", "--cflags", "ignition-gazebo7"
+    # cflags   = `pkg-config --cflags ignition-gazebo7`.split
+    # ldflags  = `pkg-config --libs ignition-gazebo7`.split
     # system ENV.cc, "test.cpp",
     #                *cflags,
     #                *ldflags,
