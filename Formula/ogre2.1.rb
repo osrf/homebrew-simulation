@@ -111,6 +111,7 @@ class Ogre21 < Formula
         return 0;
       }
     EOS
+    # test build with pkg-config
     system "pkg-config", "OGRE-2.1"
     cflags = `pkg-config --cflags OGRE-2.1`.split
     libs = `pkg-config --libs OGRE-2.1`.split
