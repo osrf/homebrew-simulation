@@ -119,16 +119,11 @@ Bottle builds are not triggered automatically for every pull request for several
   a bottle build.
     - This process differs from the approach taken by
       [homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core)
-      whose bottles are hosted at Bintray, which has a
-      [different publishing mechanism](https://www.jfrog.com/confluence/display/BT/Managing+Uploaded+Content#ManagingUploadedContent-Publishing)
-      than s3.
-      Files uploaded to Bintray are not immediately available for public download;
-      they must first be published.
-      If they are not published within 7 days of upload, they are automatically deleted.
+      whose bottles are hosted at GitHub Packages, which hosts files
+      according to the hash of their contents rather than by filename.
       The homebrew-core CI jobs will build bottles for any incoming pull request,
-      which will upload bottles directly to bintray, but these bottles will not be
-      publicly available unless the pull request is merged by a homebrew maintainer
-      within 7 days.
+      which will upload bottles directly to GitHub Packages, but the SHA hash associated with these bottles will not be
+      easily available unless the pull request is merged by a homebrew maintainer.
 
 ## Troubleshooting
 
