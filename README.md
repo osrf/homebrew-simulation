@@ -192,7 +192,7 @@ using [this script](https://github.com/ignition-tooling/release-tools/blob/maste
 When we add support for a new version of macOS, we need to build bottles for that formula,
 while ideally keeping the existing bottles. This can be done by using the `--keep-old`
 parameter with `brew test-bot` and `brew bottle`.
-Since [ignition-tooling/release-tools#556](https://github.com/ignition-tooling/release-tools/pull/556)
+Since [ignition-tooling/release-tools#556](https://github.com/ignition-tooling/release-tools/pull/556),
 bottle builds can be triggered for a specified version of macOS using `--keep-old`
 by adding special tags to the `build bottle` comment.
 Use `brew-bot-tag:` along with `build-for-new-distro-{distro}` in the comment,
