@@ -186,3 +186,17 @@ job that uploads the bottles to s3
 and a [generic-release-homebrew\_pr\_bottle\_hash\_updater](https://build.osrfoundation.org/job/generic-release-homebrew_pr_bottle_hash_updater/)
 job that commits the changes in bottle `sha256` values to the pull request branch
 using [this script](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_pullrequest.bash).
+
+## Building bottles for newly supported macOS distributions
+
+When we add support for a new version of macOS, we need to build bottles for that formula,
+while ideally keeping the existing bottles. This can be done by using the `--keep-old`
+parameter with `brew test-bot` and `brew bottle`.
+Since [ignition-tooling/release-tools#556](https://github.com/ignition-tooling/release-tools/pull/556)
+bottle builds can be triggered for a specified version of macOS using `--keep-old`
+by adding special tags to the `build bottle` comment.
+Use `brew-bot-tag:` along with `build-for-new-distro-{distro}` in the comment,
+where `{distro}` is the version string used in homebrew bottle blocks
+(such as `catalina` or `big_sur`). See [this comment](https://github.com/osrf/homebrew-simulation/pull/1694#issuecomment-978507608)
+in [osrf/homebrew-simulation#1694](https://github.com/osrf/homebrew-simulation/pull/1694)
+as an example that triggered a bottle build for `big_sur` only.
