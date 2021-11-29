@@ -30,6 +30,12 @@ class Ogre22 < Formula
     sha256 "30a60758401980260f3a5abdd6513505327028a983af9e911908b4f7da140625"
   end
 
+  patch do
+    # implement override for MetalTextureGpu::getCustomAttribute
+    url "https://github.com/OGRECave/ogre-next/commit/b7187a55a9ad5ba65ed24d1c212d1749833923ac.patch?full_index=1"
+    sha256 "38975001bfa903194565ed0bf411cf29857cd5b2f0f71a651d64543f610c4ff6"
+  end
+
   # patch do
   # fix GL3+ compilation with Xcode 10
   #  url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.patch?full_index=1"
