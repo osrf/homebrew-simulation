@@ -3,8 +3,8 @@ class IgnitionEdifice < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-edifice"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-edifice/releases/ignition-edifice-1.0.1.tar.bz2"
-  sha256 "3b2181036682515a3d2a96f4219252572af01fb87e4138a2014396747eb3a163"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-edifice/releases/ignition-edifice-1.0.2.tar.bz2"
+  sha256 "310ad495da96a3d88e3a7bbff99a2054485675e0c094a1e8d79e571c5e8a69f9"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,8 +12,7 @@ class IgnitionEdifice < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "d61a1cd479117a5906e61790b05166d3d6debea8ca6a6b176c01e3196417aba0"
-    sha256 cellar: :any, catalina: "2883402132b45684b66568eee8e9f477b2c914f156d5d576d14a80fa4646963a"
+    sha256 cellar: :any, catalina: "d724223c7bb4701704e4cd4d307659f273841099fc9ee266a0a25be6da460529"
   end
 
   depends_on "cmake" => :build
