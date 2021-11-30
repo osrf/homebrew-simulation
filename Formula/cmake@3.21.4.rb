@@ -15,6 +15,12 @@ class CmakeAT3214 < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any_skip_relocation, big_sur:  "e4da0b3c1ae8a96ce62d25f6ccb854bed2c2bcf9b02f1b89c884e4bf8f976cc7"
+    sha256 cellar: :any_skip_relocation, catalina: "abad60e38212e1fd6502c3a4dc90ccb21f2f91fef510888f7c78d427b0441f7f"
+  end
+
   keg_only :versioned_formula
 
   uses_from_macos "ncurses"
