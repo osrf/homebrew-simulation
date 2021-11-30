@@ -8,11 +8,12 @@ class Gazebo9 < Formula
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
 
-  depends_on "cmake@3.21.4" => :build
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
   depends_on "bullet"
+  depends_on "cmake@3.21.4"
   depends_on "dartsim"
   depends_on "doxygen"
   depends_on "ffmpeg"

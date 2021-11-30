@@ -13,11 +13,12 @@ class Gazebo11 < Formula
     sha256 catalina: "f67625c2257946aae8cc094dd20b80e45acb597f3e3f920cce0b2f1861048096"
   end
 
-  depends_on "cmake@3.21.4" => :build
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "boost"
   depends_on "bullet"
+  depends_on "cmake@3.21.4"
   depends_on "dartsim"
   depends_on "doxygen"
   depends_on "ffmpeg"
