@@ -18,6 +18,7 @@ class Gazebo11 < Formula
 
   depends_on "boost"
   depends_on "bullet"
+  depends_on "cmake@3.21.4"
   depends_on "dartsim"
   depends_on "doxygen"
   depends_on "ffmpeg"
