@@ -30,8 +30,12 @@ class IgnitionTransport4 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
