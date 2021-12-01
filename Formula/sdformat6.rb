@@ -8,12 +8,6 @@ class Sdformat6 < Formula
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "8b88cbd182009a89cc4961cab5ad5b091ba9a22d920b936a01abe2b57b3854bd"
-    sha256 catalina: "cb3a8b80a5d0b242c17ea7cf80cdc4c27005fd9a72c3ebbcf4bd165ddb149f9c"
-  end
-
   depends_on "cmake" => :build
 
   depends_on "boost"
@@ -22,7 +16,6 @@ class Sdformat6 < Formula
   depends_on "ignition-tools"
   depends_on "pkg-config"
   depends_on "tinyxml"
-  depends_on "urdfdom" => :optional
 
   conflicts_with "sdformat4", because: "differing version of the same formula"
   conflicts_with "sdformat5", because: "differing version of the same formula"
@@ -30,7 +23,6 @@ class Sdformat6 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
     cmake_args << ".."
 
     mkdir "build" do
