@@ -9,6 +9,7 @@ class IgnitionMath4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, catalina:    "a116a4f098b544ae4dd10802eb10bbe056d9373d3062d2376c56470d5032657f"
     sha256 cellar: :any, mojave:      "b8976152550094ee7a006e6932133eabbf7a200fb3f9fec44c976ada9965e334"
     sha256 cellar: :any, high_sierra: "0a012fad519f0e726f6090c5b7e4fef128a8b66c346109f392f8109f37a14af2"
     sha256 cellar: :any, sierra:      "a2152c21135fc7e7d887ecfbdf0cb17e612780a6088e5c81c639bdcaaf529fdd"
