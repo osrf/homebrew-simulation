@@ -44,6 +44,7 @@ class Gazebo5 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
     cmake_args << "-DFORCE_GRAPHIC_TESTS_COMPILATION:BOOL=True"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
