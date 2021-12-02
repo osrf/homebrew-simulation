@@ -4,7 +4,7 @@ class Sdformat6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.1.tar.bz2"
   sha256 "24f8c314b14fd3e999eead5a9b788f98395cc861bf8b562d8bccca758eddecc1"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
@@ -23,10 +23,11 @@ class Sdformat6 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << ".."
+    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
-      system "cmake", *cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end
