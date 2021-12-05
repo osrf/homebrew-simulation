@@ -2,7 +2,7 @@ class IgnitionSensors7 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-sensors"
   url "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
-  version "6.999.999~0~20211116"
+  version "6.999.999~0~20211204"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
@@ -11,9 +11,9 @@ class IgnitionSensors7 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs8"
+  depends_on "ignition-msgs9"
   depends_on "ignition-rendering7"
-  depends_on "ignition-transport11"
+  depends_on "ignition-transport12"
   depends_on "sdformat12"
 
   def install
