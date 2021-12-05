@@ -2,7 +2,7 @@ class IgnitionGazebo7 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
   url "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
-  version "6.999.999~0~20211116"
+  version "6.999.999~0~20211205"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
@@ -10,16 +10,16 @@ class IgnitionGazebo7 < Formula
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
-  depends_on "ignition-fuel-tools7"
+  depends_on "ignition-fuel-tools8"
   depends_on "ignition-gui7"
   depends_on "ignition-math6"
-  depends_on "ignition-msgs8"
+  depends_on "ignition-msgs9"
   depends_on "ignition-physics5"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering7"
   depends_on "ignition-sensors7"
   depends_on "ignition-tools"
-  depends_on "ignition-transport11"
+  depends_on "ignition-transport12"
   depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
