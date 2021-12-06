@@ -1,28 +1,21 @@
-class IgnitionTransport4 < Formula
+class IgnitionTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport4-4.0.0.tar.bz2"
-  sha256 "b0d8d3d4b0d4fbb06ed293955f5dfe2f840fe510daec867422676b41fc3824b4"
+  url "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
+  version "11.999.999~0~20211203"
   license "Apache-2.0"
-  revision 11
-
-  head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport4"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "6043c6ee6a07a7924f8de9059d73c36bf15fe82c56c2a86b07979807daa11d86"
-    sha256 cellar: :any, catalina: "920b18d964c3375c78ec73eb6f481cb1c1496b86edc4cb8a5df030dc72236a01"
-    sha256 cellar: :any, mojave:   "a8d131361c5fc6e4f013c32d835752ea74dafe6e71923c75e8f67c8d85739159"
-  end
+  version_scheme 1
 
   depends_on "doxygen" => [:build, :optional]
-
   depends_on "protobuf-c" => :build
+
   depends_on "cmake"
   depends_on "cppzmq"
-  depends_on "ignition-cmake0"
-  depends_on "ignition-msgs1"
+  depends_on "ignition-cmake2"
+  depends_on "ignition-msgs9"
   depends_on "ignition-tools"
+  depends_on "ignition-utils1"
+  depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
@@ -33,10 +26,8 @@ class IgnitionTransport4 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    mkdir "build" do
-      system "cmake", "..", *cmake_args
-      system "make", "install"
-    end
+    system "cmake", ".", *cmake_args
+    system "make", "install"
   end
 
   test do
@@ -49,17 +40,17 @@ class IgnitionTransport4 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-      find_package(ignition-transport4 QUIET REQUIRED)
+      cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      find_package(ignition-transport12 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-transport4::ignition-transport4)
+      target_link_libraries(test_cmake ignition-transport12::ignition-transport12)
     EOS
-    system "pkg-config", "ignition-transport4"
-    cflags = `pkg-config --cflags ignition-transport4`.split
+    system "pkg-config", "ignition-transport12"
+    cflags = `pkg-config --cflags ignition-transport12`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-transport4",
+                   "-lignition-transport12",
                    "-lc++",
                    "-o", "test"
     ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s

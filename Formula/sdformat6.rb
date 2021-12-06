@@ -4,14 +4,14 @@ class Sdformat6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-6.3.1.tar.bz2"
   sha256 "24f8c314b14fd3e999eead5a9b788f98395cc861bf8b562d8bccca758eddecc1"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf6", using: :git
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "8b88cbd182009a89cc4961cab5ad5b091ba9a22d920b936a01abe2b57b3854bd"
-    sha256 catalina: "cb3a8b80a5d0b242c17ea7cf80cdc4c27005fd9a72c3ebbcf4bd165ddb149f9c"
+    sha256 big_sur:  "df8b61db5555e72c9a0863a7182041621272f94adb5bbb4d0ecdafe259ca1def"
+    sha256 catalina: "06b6bf07eca09d4fdfff48e006747adc6d9f7f50d075f551322ead27513c6e9b"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,6 @@ class Sdformat6 < Formula
   depends_on "ignition-tools"
   depends_on "pkg-config"
   depends_on "tinyxml"
-  depends_on "urdfdom" => :optional
 
   conflicts_with "sdformat4", because: "differing version of the same formula"
   conflicts_with "sdformat5", because: "differing version of the same formula"
@@ -30,11 +29,11 @@ class Sdformat6 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DUSE_EXTERNAL_URDF:BOOL=True" if build.with? "urdfdom"
-    cmake_args << ".."
+    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
-      system "cmake", *cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end

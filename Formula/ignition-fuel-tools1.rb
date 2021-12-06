@@ -9,6 +9,7 @@ class IgnitionFuelTools1 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "9e1b0dde9dd9a357b92764a84ababcf0f1c873d2a1dd3a8baec38126ea212688"
     sha256 catalina: "abfe0156b787bf4278932b5ad18c8e7408587d4cc51111bf656bb02859cc7c36"
     sha256 mojave:   "76142e0cfbd80d5090b8e4b0258b6f4bde8d04e960345a232f064cfd68eda5e2"
   end
@@ -22,8 +23,12 @@ class IgnitionFuelTools1 < Formula
   depends_on "pkg-config"
 
   def install
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end

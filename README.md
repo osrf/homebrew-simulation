@@ -119,16 +119,11 @@ Bottle builds are not triggered automatically for every pull request for several
   a bottle build.
     - This process differs from the approach taken by
       [homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core)
-      whose bottles are hosted at Bintray, which has a
-      [different publishing mechanism](https://www.jfrog.com/confluence/display/BT/Managing+Uploaded+Content#ManagingUploadedContent-Publishing)
-      than s3.
-      Files uploaded to Bintray are not immediately available for public download;
-      they must first be published.
-      If they are not published within 7 days of upload, they are automatically deleted.
+      whose bottles are hosted at GitHub Packages, which hosts files
+      according to the hash of their contents rather than by filename.
       The homebrew-core CI jobs will build bottles for any incoming pull request,
-      which will upload bottles directly to bintray, but these bottles will not be
-      publicly available unless the pull request is merged by a homebrew maintainer
-      within 7 days.
+      which will upload bottles directly to GitHub Packages, but the SHA hash associated with these bottles will not be
+      easily available unless the pull request is merged by a homebrew maintainer.
 
 ## Troubleshooting
 
@@ -177,13 +172,13 @@ The `sha256` will be printed to the console, which can then be used to update th
 ## Jenkins implementation details
 
 The [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
-jenkins job currently builds bottles for macOS 10.13 `high_sierra` and 10.14 `mojave`
+jenkins job currently builds bottles for macOS 10.15 `catalina` and 10.16 `big_sur`
 using the following job configurations and the
 [homebrew\_bottle\_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
 script:
 
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_highsierra)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_highsierra/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_highsierra
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_mojave)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_mojave/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_mojave
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_catalina)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_catalina/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_catalina
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_bigsur)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_bigsur/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_bigsur
 
 If the bottle building job finishes without errors for each build configuration,
 it will trigger a subsequent [repository\_uploader\_packages](https://build.osrfoundation.org/job/repository_uploader_packages/)
@@ -191,3 +186,21 @@ job that uploads the bottles to s3
 and a [generic-release-homebrew\_pr\_bottle\_hash\_updater](https://build.osrfoundation.org/job/generic-release-homebrew_pr_bottle_hash_updater/)
 job that commits the changes in bottle `sha256` values to the pull request branch
 using [this script](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_pullrequest.bash).
+
+## Building bottles for newly supported macOS distributions
+
+When we add support for a new version of macOS, we need to build bottles for that formula,
+while ideally keeping the existing bottles. This can be done by using the `--keep-old`
+parameter with `brew test-bot` and `brew bottle`.
+Since [ignition-tooling/release-tools#556](https://github.com/ignition-tooling/release-tools/pull/556),
+bottle builds can be triggered for a specified version of macOS using `--keep-old`
+by adding special tags to the `build bottle` comment in a homebrew-simulation pull request.
+Use `brew-bot-tag:` along with `build-for-new-distro-{distro}` in the comment,
+where `{distro}` is the version string used in homebrew bottle blocks
+(such as `catalina` or `big_sur`). See [this comment](https://github.com/osrf/homebrew-simulation/pull/1694#issuecomment-978507608)
+in [osrf/homebrew-simulation#1694](https://github.com/osrf/homebrew-simulation/pull/1694)
+as an example that triggered a bottle build for `big_sur` only.
+Note that the `--keep-old` flag only works if the pull request does not change the
+formula version. Adding a comment to a formula (as in
+[osrf/homebrew-simulation#1694](https://github.com/osrf/homebrew-simulation/pull/1694))
+is sufficient.

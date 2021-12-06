@@ -1,16 +1,15 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.9.0.tar.bz2"
-  sha256 "57dfc5e778a820a435baa050b4888f95cd968fdcb071d417c4c5453691b81f2e"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.9.1.tar.bz2"
+  sha256 "2959f4bed5fa8b5aa7f86bcd518e74a65402fe21b91a8d125807117827731be6"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "f67625c2257946aae8cc094dd20b80e45acb597f3e3f920cce0b2f1861048096"
+    sha256 catalina: "435a7537739d7f53e1180b0014415141004bfda59b7ee66bf0938e52b7d36831"
   end
 
   depends_on "cmake" => :build
@@ -18,6 +17,7 @@ class Gazebo11 < Formula
 
   depends_on "boost"
   depends_on "bullet"
+  depends_on "cmake@3.21.4"
   depends_on "dartsim"
   depends_on "doxygen"
   depends_on "ffmpeg"

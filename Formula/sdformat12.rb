@@ -1,13 +1,14 @@
 class Sdformat12 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.1.0.tar.bz2"
-  sha256 "7e10000af4eb16eec20848f0c2521e3dc26c16f4c55ea7d3155cf580817e44cf"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.3.0.tar.bz2"
+  sha256 "03b1980968be1a460db90aab6b1cd75f742028b31e600b873c210de09c63e55e"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "708403c835106fa4d12a39a7227e20c854f1a8c00ab8dfe984a3f1eae945c8ae"
+    sha256 big_sur:  "768c096d52f222da45c6aa5acdc7a0cebac4c98277808a16df566563d3d1e5ad"
+    sha256 catalina: "367801954807cfa88cd78be7327ce745c55804cdc6900078e8c36d3591ce3a48"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -22,8 +23,12 @@ class Sdformat12 < Formula
   depends_on "urdfdom"
 
   def install
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end
