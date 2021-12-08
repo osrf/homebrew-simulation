@@ -7,6 +7,7 @@ class IgnitionFuelTools4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "82a8d1f488de17c83f9ddb7a9b3bb79f0953ae99b5b40d995224df695ce8b8cd"
     sha256 cellar: :any, catalina: "814a025147c1c53c0afe810d88681889d7c4e8bbc712095cf7d33ee8a1b0d848"
     sha256 cellar: :any, mojave:   "6cc755f3737155250979bd179da742f3f64385cc5b21864347f7331d0c6ae190"
   end
@@ -25,6 +26,7 @@ class IgnitionFuelTools4 < Formula
     mkdir "build" do
       cmake_args = std_cmake_args
       cmake_args << "-DBUILD_TESTING=Off"
+      cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
