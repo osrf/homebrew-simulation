@@ -18,7 +18,7 @@ class TbbAT2020U3 < Formula
   depends_on "swig" => :build
   depends_on "python@3.9"
 
-  # Remove when upstream fix is released
+  # Remove when upstream fix has been released
   # https://github.com/oneapi-src/oneTBB/pull/258
   patch do
     url "https://github.com/oneapi-src/oneTBB/commit/86f6dcdc17a8f5ef2382faaef860cfa5243984fe.patch?full_index=1"
