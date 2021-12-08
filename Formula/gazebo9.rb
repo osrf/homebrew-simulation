@@ -4,9 +4,15 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.19.0.tar.bz2"
   sha256 "1f3ca430824b120ae0c7c4c0037a1a56e7b6bf6c50731b148b5c75bfc46d7fe7"
   license "Apache-2.0"
-  revision 7
+  revision 8
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "ce55c103d0a412751e64a0ca4e545e3404407b9284c6b061afcff5a3b9def4e5"
+    sha256 catalina: "c87edfc58a672bef7aff919d4845eb7a4abd2c117531a5f5b24440179a9d8fa9"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -62,6 +68,7 @@ class Gazebo9 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
