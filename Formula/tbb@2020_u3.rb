@@ -8,6 +8,7 @@ class TbbAT2020U3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "a38b3b1af909bec7b3c2e2e0966c10b96bf0bf228264faa176be64092980994f"
     sha256 cellar: :any, catalina: "5b00ca36736e556f648841582f3af90d0f6f325169c986952b9681d408b794e3"
     sha256 cellar: :any, mojave:   "1824b4a41adf38fce835e0f69fe6425eeefc41e9c0ecfa230677a7ea920c2fba"
   end
@@ -18,7 +19,7 @@ class TbbAT2020U3 < Formula
   depends_on "swig" => :build
   depends_on "python@3.9"
 
-  # Remove when upstream fix is released
+  # Remove when upstream fix has been released
   # https://github.com/oneapi-src/oneTBB/pull/258
   patch do
     url "https://github.com/oneapi-src/oneTBB/commit/86f6dcdc17a8f5ef2382faaef860cfa5243984fe.patch?full_index=1"
