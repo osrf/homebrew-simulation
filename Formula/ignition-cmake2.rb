@@ -1,15 +1,15 @@
 class IgnitionCmake2 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.9.0.tar.bz2"
-  sha256 "ea06a2c246a7bda9e74ce6cce16d2609a6690b34e66dc44160517dff343d79a9"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.10.0~pre1.tar.bz2"
+  version "2.10.0~pre1"
+  sha256 "7598a6222859d0e709a5fbbc7679c8297f5160e019b8740090f95b450e7b7b8f"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, big_sur:  "681be5d6739f0dce5438ab66f27fab9dd5a8a25fc7aca3bbdebdfe04fadb0939"
-    sha256 cellar: :any_skip_relocation, catalina: "29081ead9ffa2c6a917261f5a224a665df160a014c86c70c5e0f539d484e43d1"
-    sha256 cellar: :any_skip_relocation, mojave:   "ff8dc081f33a8f1d39c04b397fec6a4ca1329ff06aa99629c76bc9db36227841"
+    sha256 cellar: :any_skip_relocation, big_sur:  "05bc0ee11e07bbbd5a3d2c972606b7417931a1f8e88a143eb36b83b06f36b4e1"
+    sha256 cellar: :any_skip_relocation, catalina: "3f37778c0dbe953706ee76c3e1cdf8f937e43080083b47e56655491a51f51e05"
   end
 
   depends_on "cmake"
