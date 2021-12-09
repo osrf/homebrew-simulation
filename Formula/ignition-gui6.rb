@@ -1,8 +1,8 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.1.0.tar.bz2"
-  sha256 "8ad46b7535c46d4da929ea6a7d100e545a2cef79a00f26f372da202f6ede804a"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.2.0.tar.bz2"
+  sha256 "efd8bbd717a6173f7134a1010595045df2a2e4adc13d979a04c02bc7ff48a89f"
   license "Apache-2.0"
 
   bottle do
