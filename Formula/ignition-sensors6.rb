@@ -7,6 +7,7 @@ class IgnitionSensors6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "96fc66aefc47207ab94cd930f9707a973164d37797151975abaca98e7b1e1c59"
     sha256 cellar: :any, catalina: "8bf707ebb93299e45490bd9e29abcb8cbefde855562f123c7d97e8edc4e2c1cc"
   end
 
@@ -26,8 +27,10 @@ class IgnitionSensors6 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
