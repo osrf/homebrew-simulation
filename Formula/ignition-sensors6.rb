@@ -26,8 +26,10 @@ class IgnitionSensors6 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
