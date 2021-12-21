@@ -1,17 +1,15 @@
 class IgnitionFuelTools5 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools5-5.1.1.tar.bz2"
-  sha256 "d3f360e31d910504f956231ce86cc0e4f90607e345dd22f497dcf73ce94267b9"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools5-5.2.0.tar.bz2"
+  sha256 "857b944aaf3bd205ae51f3629186b044776a10b5ce597f5413d2e0cf5df7e5a1"
   license "Apache-2.0"
-  revision 3
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "ign-fuel-tools5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "e30e6f35e29d4174835c0ffdd9ead1bc08de2ccd18cac9902c8001ed7511ca28"
-    sha256 cellar: :any, mojave:   "0444aaab657834d3ebaf9f09913a68ec30481d41ca57627cb5fde24b71d02365"
+    sha256 cellar: :any, catalina: "48a8c69e606bc9bafd473d328bd6217f484f77a994eb881d28174ca07bc44010"
   end
 
   disable! date: "2022-01-31", because: "is past end-of-life date"
