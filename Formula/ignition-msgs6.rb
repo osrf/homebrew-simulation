@@ -13,6 +13,10 @@ class IgnitionMsgs6 < Formula
     sha256 cellar: :any, mojave:   "60e062e0730b2f5b04cbaf59b92b2c393d11e88c93b6e90d789997675633eb9e"
   end
 
+  disable! date: "2022-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
+
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake2"

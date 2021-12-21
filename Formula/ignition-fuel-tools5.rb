@@ -14,6 +14,10 @@ class IgnitionFuelTools5 < Formula
     sha256 cellar: :any, mojave:   "0444aaab657834d3ebaf9f09913a68ec30481d41ca57627cb5fde24b71d02365"
   end
 
+  disable! date: "2022-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
