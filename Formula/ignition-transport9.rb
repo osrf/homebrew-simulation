@@ -1,8 +1,8 @@
 class IgnitionTransport9 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport9-9.1.1.tar.bz2"
-  sha256 "db8e312316898aae6b297171e840be102e5bb4ce91934ada10bf920cdf55f9c8"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport9-9.1.2.tar.bz2"
+  sha256 "db2453cd7104de7ba86803d5f746d6b28598ba00698f264ffa4a3b5f891a52e3"
   license "Apache-2.0"
   version_scheme 1
 
@@ -10,8 +10,7 @@ class IgnitionTransport9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "c16bebd35bc18cd9eeea5769372d5a9eb9099d4df2e589ca212c904792b18561"
-    sha256 mojave:   "b37de99385676f342e8616ab930bf2dd257cfc57569bada8eb7de9dc2b0a5ab6"
+    sha256 catalina: "24a2c6f11663c095019c26e2fe12f83d8231f9e23d578f21086100161628b5a2"
   end
 
   disable! date: "2022-01-31", because: "is past end-of-life date"
