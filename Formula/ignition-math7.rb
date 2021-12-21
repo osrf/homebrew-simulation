@@ -9,6 +9,7 @@ class IgnitionMath7 < Formula
   depends_on "doxygen" => :build
   depends_on "eigen"
   depends_on "ignition-cmake2"
+  depends_on "ignition-utils1"
   depends_on "ruby"
 
   def install
