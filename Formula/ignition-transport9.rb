@@ -14,6 +14,10 @@ class IgnitionTransport9 < Formula
     sha256 mojave:   "b37de99385676f342e8616ab930bf2dd257cfc57569bada8eb7de9dc2b0a5ab6"
   end
 
+  disable! date: "2022-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
+
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
 

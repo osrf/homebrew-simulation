@@ -14,6 +14,10 @@ class IgnitionGui4 < Formula
     sha256 mojave:   "2da199bc1ec38f3b80c764192097f40ba1a46afb86370befb1a0ce16b92afbaf"
   end
 
+  disable! date: "2022-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
