@@ -12,8 +12,6 @@ class IgnitionGazebo4 < Formula
     sha256 catalina: "0ca7639886ba05a84ce95820227c4a730c85858bd838ba73a348cd883d6ef623"
   end
 
-  disable! date: "2022-01-31", because: "is past end-of-life date"
-
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

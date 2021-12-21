@@ -13,8 +13,6 @@ class IgnitionLaunch3 < Formula
     sha256 catalina: "85267cf4d3b8682dacbb3ace2aa8e4bccf596ed7b6d679fd22eecd251950f5d2"
   end
 
-  disable! date: "2022-01-31", because: "is past end-of-life date"
-
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

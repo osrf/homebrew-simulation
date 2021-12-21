@@ -12,8 +12,6 @@ class IgnitionSensors4 < Formula
     sha256 catalina: "4ad7f646d35af41ee2ce3abce607daba91ab8219534ddd181f3466760810d195"
   end
 
-  disable! date: "2022-01-31", because: "is past end-of-life date"
-
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]

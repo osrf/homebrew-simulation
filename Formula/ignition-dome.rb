@@ -16,8 +16,6 @@ class IgnitionDome < Formula
     sha256 cellar: :any, mojave:   "25f52cf2b4893b2e98c3a9da733c33c434aa6eb9565f34bead4fb4eb725d6854"
   end
 
-  disable! date: "2022-01-31", because: "is past end-of-life date"
-
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
