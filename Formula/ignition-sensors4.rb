@@ -13,6 +13,10 @@ class IgnitionSensors4 < Formula
     sha256 mojave:   "ffebcbb87d9b87c45df455ae6162f6adbf68479f0a22f7704d02990047349c11"
   end
 
+  disable! date: "2022-01-31", because: "is past end-of-life date"
+
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
