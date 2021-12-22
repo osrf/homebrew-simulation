@@ -4,14 +4,9 @@ class IgnitionGui3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.8.0.tar.bz2"
   sha256 "a4b36eae36e7f629e4e92f32a8d04dd2b2d31a87a0631cdbecfc6f7fe98f4daa"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui3"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "05284f7219376dc997ed449b2bc1cd70e822fc72d64eeeaf5192cc1ee00ffd95"
-    sha256 catalina: "dc8294bd875e9bff639207007b5343dcd53258831cc5ea7103e2ab74b24c5982"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

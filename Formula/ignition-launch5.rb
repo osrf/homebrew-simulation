@@ -4,12 +4,7 @@ class IgnitionLaunch5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.0.0.tar.bz2"
   sha256 "0c6b2ca8c9aa49f05af524a55b6068ad9b77ef2f5af8cddaec234bb047857354"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "fc3faa04908d949997c2e30e1d0161ebb5b921e5105e85ab916a1ad36fa4c9ce"
-    sha256 catalina: "fea77def3c59d4c60a3cae7f1d466f1e3c25f2059fa060b563bf11fc035ba352"
-  end
+  revision 1
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

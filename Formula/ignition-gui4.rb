@@ -4,13 +4,9 @@ class IgnitionGui4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui4-4.6.0.tar.bz2"
   sha256 "597d8e55115d3b36e6ae3659249efa4eb12e2183fc4399993ada0c7b56617313"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui4"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 catalina: "034e246c6635e57cbe8b9c94418fd8740c6ded1f118dd8913dfaa54348b73f51"
-  end
 
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 

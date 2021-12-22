@@ -4,14 +4,9 @@ class IgnitionMsgs6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs6-6.6.1.tar.bz2"
   sha256 "bf6fa40f482c1c035c8e34c9d427472556c0bb1c6eccbb764e5ce3b0faaa8157"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs6"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, catalina: "6f8721f02c705549e88478073c11e06a13f29315f22611bdce082b1c41a736d2"
-    sha256 cellar: :any, mojave:   "60e062e0730b2f5b04cbaf59b92b2c393d11e88c93b6e90d789997675633eb9e"
-  end
 
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
