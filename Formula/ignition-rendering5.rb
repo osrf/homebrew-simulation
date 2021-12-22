@@ -7,6 +7,7 @@ class IgnitionRendering5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "6596a22ea4a2e63bf48462768aeb56d3328d13117c9e4d3d8946bc2e1e21e877"
     sha256 catalina: "0dfb2316c57405b44f96e707663646ee4898bfb2cc33951998c0cf81161dcb87"
   end
 
