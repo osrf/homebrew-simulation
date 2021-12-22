@@ -4,17 +4,10 @@ class IgnitionMsgs1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs-1.0.0.tar.bz2"
   sha256 "fed54d079a58087fa83cc871f01ba2919866292ba949b6b8f37a0cb3d7186b4b"
   license "Apache-2.0"
-  revision 13
+  revision 14
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs1"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "6891d74abae29c789e189ab411989865190d372416ad133e36f5c7bdc608e462"
-    sha256 cellar: :any, catalina: "bec2fac6c397e4a0675ac98aa815c65669557788a4e1589c1a6371a2a9613ca6"
-    sha256 cellar: :any, mojave:   "56691b09d2cca99a718eaf9eb9ca2353c35efcf55ad4acc5b0a41b6545e65907"
-  end
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"

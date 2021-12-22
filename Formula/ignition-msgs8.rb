@@ -4,12 +4,7 @@ class IgnitionMsgs8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.1.0.tar.bz2"
   sha256 "8e79f51bf4150bfbc4ece1b797d14e1730ec0b1cbbbb00c548a928552610416b"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "0ef464bc829cf82b7cfa7b0d58f365b17178fe098f8d1f2d1ef8a60ed4bc793e"
-    sha256 cellar: :any, catalina: "dfbc00b78790e8e70860cc64544be781d1abe07abf68795fa75881e06f0cb17c"
-  end
+  revision 1
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
