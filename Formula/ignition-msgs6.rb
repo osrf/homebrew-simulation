@@ -7,6 +7,12 @@ class IgnitionMsgs6 < Formula
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs6"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "58c4a9dba6b8c2325df19efcf08a152adb836d477383171d2a6cd0588620f250"
+    sha256 cellar: :any, catalina: "1244317ffbdea667518027909a2a5064465e1c83236591017f325010fc299b42"
+  end
+
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "protobuf-c" => :build
