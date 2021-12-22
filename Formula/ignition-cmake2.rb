@@ -1,15 +1,14 @@
 class IgnitionCmake2 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.10.0~pre3.tar.bz2"
-  version "2.10.0~pre3"
-  sha256 "a58fada9670806e51a0fdac78ed0cdc41455c5b71f132303e2fd62babca5277f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.10.0.tar.bz2"
+  sha256 "a3bc6c52b8950f927f3d0ca4443945e4e20996daaa7354217177598c65196af0"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, big_sur:  "b282e6e7c8b0ed6e079d33d6a3ef79a1fc243f047b14bd8f69c32497726bb005"
-    sha256 cellar: :any_skip_relocation, catalina: "1780fafafc130a9b3f9c36f8c128d0a70c2fec6668e0ffbc6e7d913467478fcb"
+    sha256 cellar: :any_skip_relocation, big_sur:  "b73afa3bd7679338b513e9087ff48a21e8ced1dec83c20425209f2bce299a6aa"
+    sha256 cellar: :any_skip_relocation, catalina: "4d7731740d3f38079e286cafaafdd5f85eadc16438bf14452c6c9a0ae080304f"
   end
 
   depends_on "cmake"
