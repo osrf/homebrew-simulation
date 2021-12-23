@@ -8,6 +8,12 @@ class IgnitionFuelTools5 < Formula
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "ign-fuel-tools5"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "ec679e5e115471cea3196e1b69bdaf0d0099d22d82c63778e2ddbde5f0a9541b"
+    sha256 cellar: :any, catalina: "d2011b1cb045968f4d6d8e9a6774ae3fe5a8ea1203d40f7dff1450871c1cc81a"
+  end
+
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake"
