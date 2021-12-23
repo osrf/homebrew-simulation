@@ -6,6 +6,12 @@ class IgnitionMsgs5 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "ecfa68cdbf7ed6b562fcbcf40281b2ad48b5ea2f5d9a59476b521757604b1d5b"
+    sha256 cellar: :any, catalina: "7266b67967918b2b72eba266b850445a386305852acb151a2943aa85fc2913f6"
+  end
+
   depends_on "protobuf-c" => :build
 
   depends_on "cmake"
