@@ -70,6 +70,7 @@ class Gazebo10 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{HOMEBREW_PREFIX}/lib/qwt.framework"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args

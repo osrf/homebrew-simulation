@@ -44,6 +44,7 @@ class Gazebo6 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
