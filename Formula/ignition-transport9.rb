@@ -4,7 +4,7 @@ class IgnitionTransport9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport9-9.1.2.tar.bz2"
   sha256 "db2453cd7104de7ba86803d5f746d6b28598ba00698f264ffa4a3b5f891a52e3"
   license "Apache-2.0"
-  revision 1
+  revision 2
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport9"
