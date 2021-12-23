@@ -9,6 +9,12 @@ class IgnitionTransport9 < Formula
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport9"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "1621567963d334ce7e2200193cf4a0f77aaede2d6261a04e30acc849636c7c91"
+    sha256 catalina: "bf07264b532c74fb4824612761c25b1f40f080e73242d320902cf3a407758d90"
+  end
+
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "doxygen" => [:build, :optional]
