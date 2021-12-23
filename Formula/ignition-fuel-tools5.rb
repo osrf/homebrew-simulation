@@ -4,9 +4,15 @@ class IgnitionFuelTools5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools5-5.2.0.tar.bz2"
   sha256 "857b944aaf3bd205ae51f3629186b044776a10b5ce597f5413d2e0cf5df7e5a1"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "ign-fuel-tools5"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "ec679e5e115471cea3196e1b69bdaf0d0099d22d82c63778e2ddbde5f0a9541b"
+    sha256 cellar: :any, catalina: "d2011b1cb045968f4d6d8e9a6774ae3fe5a8ea1203d40f7dff1450871c1cc81a"
+  end
 
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
