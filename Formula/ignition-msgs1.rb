@@ -4,7 +4,7 @@ class IgnitionMsgs1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs-1.0.0.tar.bz2"
   sha256 "fed54d079a58087fa83cc871f01ba2919866292ba949b6b8f37a0cb3d7186b4b"
   license "Apache-2.0"
-  revision 14
+  revision 15
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs1"
