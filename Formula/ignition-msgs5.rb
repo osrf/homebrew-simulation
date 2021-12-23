@@ -4,7 +4,7 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.8.1.tar.bz2"
   sha256 "4d984d9f5b28629c8e8d7f764e8ea84d755dfbcf9492f1775ef1fa3a85c9add0"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   depends_on "protobuf-c" => :build
 
