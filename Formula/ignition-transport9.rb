@@ -4,10 +4,16 @@ class IgnitionTransport9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport9-9.1.2.tar.bz2"
   sha256 "db2453cd7104de7ba86803d5f746d6b28598ba00698f264ffa4a3b5f891a52e3"
   license "Apache-2.0"
-  revision 1
+  revision 2
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "1621567963d334ce7e2200193cf4a0f77aaede2d6261a04e30acc849636c7c91"
+    sha256 catalina: "bf07264b532c74fb4824612761c25b1f40f080e73242d320902cf3a407758d90"
+  end
 
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
