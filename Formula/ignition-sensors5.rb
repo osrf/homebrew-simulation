@@ -4,7 +4,7 @@ class IgnitionSensors5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.1.0.tar.bz2"
   sha256 "03fc956b4747071ec3d1a9142b37a350c056eaf3caff1cab0abf0bbec1673f91"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
 
