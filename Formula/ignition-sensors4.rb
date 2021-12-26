@@ -8,6 +8,12 @@ class IgnitionSensors4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "ign-sensors4"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "2fc6dbc3b5caf3781ba11c142761d325e2b6a958049041ee5105beab9aa288ce"
+    sha256 catalina: "fd01e86235ee16dde0090fc20ee7271e6f3a5259b06aef12420614af83c5eb81"
+  end
+
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
