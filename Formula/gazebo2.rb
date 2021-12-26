@@ -55,6 +55,7 @@ class Gazebo2 < Formula
     cmake_args << "-DENABLE_TESTS_COMPILATION:BOOL=False"
     cmake_args << "-DFORCE_GRAPHIC_TESTS_COMPILATION:BOOL=True"
     cmake_args << "-DDARTCore_FOUND:BOOL=False"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
