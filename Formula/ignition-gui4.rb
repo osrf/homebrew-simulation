@@ -8,6 +8,12 @@ class IgnitionGui4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui4"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "adce58f79d6ae84621e416b75f83923c84e7fbaf4bfd37fc0fe49a21c1eeff6d"
+    sha256 catalina: "41b564ff41bcbeab3b6fe22bec331fc22c8fb46439bf99477e009a4b0bcf8517"
+  end
+
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]

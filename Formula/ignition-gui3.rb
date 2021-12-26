@@ -8,6 +8,12 @@ class IgnitionGui3 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui3"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "c3f7079cd043ded033e89248ef9470fcc8b367f073df2a4adb13ba017c8baaf3"
+    sha256 catalina: "cfc3682cbfb5e3f119bf3821fb4a6c7bbadf56fd7e21c1ce1c100259eefff23a"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "ignition-cmake2"
