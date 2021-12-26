@@ -7,6 +7,12 @@ class IgnitionGazebo4 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo4"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "d6c20fb47c16e385714e832ffb23d9dcb5af92093335ed054ca01d8061798ace"
+    sha256 catalina: "b70835ae70f5eebf72e8a2412c4adfec7041c56910f5ebcd82c05e2f61bee2ea"
+  end
+
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
