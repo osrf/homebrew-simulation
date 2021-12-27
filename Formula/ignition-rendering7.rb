@@ -2,7 +2,7 @@ class IgnitionRendering7 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
   url "https://github.com/ignitionrobotics/ign-rendering.git", branch: "main"
-  version "6.999.999~0~20211116"
+  version "6.999.999~0~20211227"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
@@ -10,8 +10,8 @@ class IgnitionRendering7 < Formula
 
   depends_on "freeimage"
   depends_on "ignition-cmake2"
-  depends_on "ignition-common4"
-  depends_on "ignition-math6"
+  depends_on "ignition-common5"
+  depends_on "ignition-math7"
   depends_on "ignition-plugin1"
   depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
