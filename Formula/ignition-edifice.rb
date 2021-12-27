@@ -6,10 +6,16 @@ class IgnitionEdifice < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-edifice/releases/ignition-edifice-1.0.2.tar.bz2"
   sha256 "310ad495da96a3d88e3a7bbff99a2054485675e0c094a1e8d79e571c5e8a69f9"
   license "Apache-2.0"
-  revision 1
+  revision 2
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "4673030dffa55e1844e706b2ffbd3eb1c6038442fc5f764c46ac3a9c429ece3a"
+    sha256 cellar: :any, catalina: "5e01ce4fad534470a6b5977e20f2d16424abda3715730d43d2dcd8b6bfcd3747"
+  end
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"

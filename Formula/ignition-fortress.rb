@@ -6,10 +6,16 @@ class IgnitionFortress < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fortress/releases/ignition-fortress-1.0.2.tar.bz2"
   sha256 "b54fa1afe86aa713e3e0768b5d607b89d0f6ca9ac273633faf58907b676c9fe4"
   license "Apache-2.0"
-  revision 1
+  revision 2
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-fortress.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "6001907517abe455c6e628bab6ff3001486afe053697b8663aa96cb018ae489e"
+    sha256 cellar: :any, catalina: "0d500e465b59b844d01aeb6504d51604553eb5dd0c9a8164f6b6a8df6a9ebd5e"
+  end
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
