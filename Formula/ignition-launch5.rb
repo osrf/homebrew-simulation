@@ -6,6 +6,12 @@ class IgnitionLaunch5 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "3f3405a9b4c9cbda2ba974c314897a1eae203c46c76c2d4b27ace8815422637c"
+    sha256 catalina: "5216593413775fa1318cb5a5a99f1749f5b73b29b1f29e9ea148d7196f797226"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
