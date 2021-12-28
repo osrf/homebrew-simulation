@@ -11,8 +11,8 @@ class IgnitionDome < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "466b1e471a0c733d8553402e9cc38e72cbef01f4de1658f1ea377159522915df"
-    sha256 cellar: :any, catalina: "33c5e47cd9459f6816c76e8db221646ffb4037b7450bcadb6c5a8adcb7fb0bca"
+    sha256 cellar: :any, big_sur:  "48afc6c5e95861b6ceedb789085cb470cbb66ecf5c00517f4a3072a9888c1f5a"
+    sha256 cellar: :any, catalina: "38c6d11f6790d3f17f9832e8216d3eee22b1aaff41a3a4709d4513bab1b5dcee"
   end
 
   deprecate! date: "2021-12-31", because: "is past end-of-life date"
