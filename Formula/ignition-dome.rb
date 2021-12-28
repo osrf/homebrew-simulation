@@ -3,10 +3,9 @@ class IgnitionDome < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-dome"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-dome/releases/ignition-dome-1.0.0.tar.bz2"
-  sha256 "cb78ea2fc0f1cb83f2be3e9071d54693e830f715a93c839b8f2ac3692ff7e459"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-dome/releases/ignition-dome-1.0.1.tar.bz2"
+  sha256 "6ac1f2ebc2fe82779a5d1dda321063680ba59a6ea358fa7235a8ec7a1fd0c3cd"
   license "Apache-2.0"
-  revision 6
 
   head "https://github.com/ignitionrobotics/ign-dome.git", branch: "main"
 
