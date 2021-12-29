@@ -2,14 +2,14 @@ class Sdformat13 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
   url "https://github.com/ignitionrobotics/sdformat.git", branch: "main"
-  version "12.999.999~0~20211217"
+  version "12.999.999~0~20211227"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
   depends_on "doxygen"
-  depends_on "ignition-math6"
+  depends_on "ignition-math7"
   depends_on "ignition-tools"
   depends_on "ignition-utils1"
   depends_on macos: :mojave # c++17
