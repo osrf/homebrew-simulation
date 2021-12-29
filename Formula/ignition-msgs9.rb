@@ -2,13 +2,13 @@ class IgnitionMsgs9 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
   url "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
-  version "8.999.999~0~20211203"
+  version "8.999.999~0~20211227"
   license "Apache-2.0"
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake2"
-  depends_on "ignition-math6"
+  depends_on "ignition-math7"
   depends_on "ignition-tools"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
