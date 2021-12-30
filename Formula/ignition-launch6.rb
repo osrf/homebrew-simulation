@@ -2,14 +2,14 @@ class IgnitionLaunch6 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-launch"
   url "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
-  version "5.999.999~0~20211206"
+  version "5.999.999~0~20211227"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   depends_on "ignition-cmake2"
-  depends_on "ignition-common4"
+  depends_on "ignition-common5"
   depends_on "ignition-gazebo7"
   depends_on "ignition-gui7"
   depends_on "ignition-msgs9"
