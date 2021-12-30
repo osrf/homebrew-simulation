@@ -26,6 +26,13 @@ class IgnitionCommon3 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
+    if Hardware::CPU.arm?
+      # REVISIT: this works around a crash on Apple M1 processors
+      # https://github.com/osrf/homebrew-simulation/pull/1698#discussion_r774674536
+      cmake_args << "-DIGN_PROFILER_REMOTERY=Off"
+    end
+
     system "cmake", ".", *cmake_args
     system "make", "install"
   end
