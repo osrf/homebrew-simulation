@@ -106,6 +106,28 @@ Bottle builds are not triggered automatically for every pull request for several
       which will upload bottles directly to GitHub Packages, but the SHA hash associated with these bottles will not be
       easily available unless the pull request is merged by a homebrew maintainer.
 
+## To disable broken bottles
+
+When a new major or minor version of a formula is merged to homebrew-core that is a dependency of formulae
+in this tap, it may break our bottles, requiring a rebuild (see
+[#1728](https://github.com/osrf/homebrew-simulation/issues/1728) or
+[#1708](https://github.com/osrf/homebrew-simulation/issues/1709) for example).
+As the osrf/simulation bottles will be broken immediately upon the merge in homebrew-core,
+it can be useful to disable the broken bottles while waiting for new bottles to be rebuilt.
+The `--remove-bottle-block` parameter to `brew bump-revision` can be used in this instance.
+For example, the bottle removals from
+[8ca61f3d](https://github.com/osrf/homebrew-simulation/commit/8ca61f3dce52e93d3472450e33d9dc2c59523591)
+in [#1742](https://github.com/osrf/homebrew-simulation/pull/1742) could be repeated with
+the following commands:
+
+~~~
+brew bump-revision --remove-bottle-block ignition-msgs1
+brew bump-revision --remove-bottle-block ignition-msgs5
+brew bump-revision --remove-bottle-block ignition-msgs6
+brew bump-revision --remove-bottle-block ignition-msgs7
+brew bump-revision --remove-bottle-block ignition-msgs8
+~~~
+
 ## Troubleshooting
 
 * Does a new bottle need to be built for every homebrew pull request?
