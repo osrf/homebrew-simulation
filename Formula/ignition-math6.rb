@@ -16,7 +16,9 @@ class IgnitionMath6 < Formula
   depends_on "doxygen" => :build
   depends_on "eigen"
   depends_on "ignition-cmake2"
+  depends_on "pybind11" => :optional
   depends_on "ruby"
+  depends_on "swig" => :optional
 
   def install
     cmake_args = std_cmake_args
