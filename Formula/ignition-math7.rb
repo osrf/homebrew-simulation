@@ -10,7 +10,9 @@ class IgnitionMath7 < Formula
   depends_on "eigen"
   depends_on "ignition-cmake2"
   depends_on "ignition-utils1"
+  depends_on "pybind11"
   depends_on "ruby"
+  depends_on "swig"
 
   def install
     cmake_args = std_cmake_args
