@@ -7,8 +7,8 @@ class IgnitionSensors6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "1ddc5103c1152e270ca5feb15b7f899a1f20d3fca862e32e67dcbbb3647112c3"
-    sha256 cellar: :any, catalina: "dc74fb2e98c59ad11a43e503e05cd820febf73d22696acfdc76d5891c0d24bc8"
+    sha256 cellar: :any, big_sur:  "1796184a728a3a94dc674d7b6ff0cec21ffc88b95d7e8422a5f552d12f9d2f7d"
+    sha256 cellar: :any, catalina: "b77d948134eaf806ee3f0b44ddeea1f83d138dee8755e89a6313ca0e2fed3ed0"
   end
 
   depends_on "cmake" => [:build, :test]
