@@ -8,6 +8,9 @@ class IgnitionGui0 < Formula
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui0"
 
+  disable! date: "2020-03-06", because: "is past end-of-life date"
+  deprecate! date: "2019-03-06", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
