@@ -4,7 +4,7 @@ class IgnitionFuelTools6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools6-6.1.0.tar.bz2"
   sha256 "68264a13588f068f2f81ce444c4c6f7b75582a5e8263da7b90f23eea04247a03"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
 
