@@ -14,6 +14,8 @@ class IgnitionFuelTools6 < Formula
     sha256 cellar: :any, catalina: "7de21ed5d5a49349b148859e4426224ebc80ce921c7eb6252ac29f8d2984b387"
   end
 
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
