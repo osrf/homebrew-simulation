@@ -6,6 +6,7 @@ class Gazebo3 < Formula
   license "Apache-2.0"
   head "https://github.com/osrf/gazebo.git", branch: "gazebo_3.1"
 
+  disable! because: "is past end-of-life date", date: "2022-02-28"
   deprecate! because: "is past end-of-life date", date: "2015-07-27"
 
   depends_on "cmake" => :build
