@@ -14,6 +14,8 @@ class IgnitionMsgs7 < Formula
     sha256 cellar: :any, catalina: "805d1fac4ba7f15a7d2fe54d65a33f4a96894c0a9c22d8bc35114224cbaa232e"
   end
 
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
+
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake2"

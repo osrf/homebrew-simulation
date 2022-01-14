@@ -14,6 +14,8 @@ class IgnitionGazebo5 < Formula
     sha256 catalina: "9cb18b427caa8669eae5a05ddd5749229e767ce4d8370bcf15a0f08f28e0b15f"
   end
 
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "google-benchmark"

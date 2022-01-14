@@ -8,6 +8,8 @@ class IgnitionFuelTools6 < Formula
 
   head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
 
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
