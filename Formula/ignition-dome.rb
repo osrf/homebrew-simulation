@@ -15,8 +15,8 @@ class IgnitionDome < Formula
     sha256 cellar: :any, catalina: "38c6d11f6790d3f17f9832e8216d3eee22b1aaff41a3a4709d4513bab1b5dcee"
   end
 
-  deprecate! date: "2021-12-31", because: "is past end-of-life date"
   disable! date: "2022-02-28", because: "is past end-of-life date"
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"

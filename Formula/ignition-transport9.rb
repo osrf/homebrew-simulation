@@ -15,8 +15,8 @@ class IgnitionTransport9 < Formula
     sha256 catalina: "bf07264b532c74fb4824612761c25b1f40f080e73242d320902cf3a407758d90"
   end
 
-  deprecate! date: "2021-12-31", because: "is past end-of-life date"
   disable! date: "2022-02-28", because: "is past end-of-life date"
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build

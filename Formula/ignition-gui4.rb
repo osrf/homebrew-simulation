@@ -14,8 +14,8 @@ class IgnitionGui4 < Formula
     sha256 catalina: "41b564ff41bcbeab3b6fe22bec331fc22c8fb46439bf99477e009a4b0bcf8517"
   end
 
-  deprecate! date: "2021-12-31", because: "is past end-of-life date"
   disable! date: "2022-02-28", because: "is past end-of-life date"
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

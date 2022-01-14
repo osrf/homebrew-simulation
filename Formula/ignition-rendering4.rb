@@ -11,8 +11,8 @@ class IgnitionRendering4 < Formula
     sha256 catalina: "78019b2a3b9ed853c7aa31cbd36a3c74feb303ba4b6bebedc7982294ec6b9133"
   end
 
-  deprecate! date: "2021-12-31", because: "is past end-of-life date"
   disable! date: "2022-02-28", because: "is past end-of-life date"
+  deprecate! date: "2021-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
