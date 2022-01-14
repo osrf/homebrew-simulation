@@ -7,6 +7,12 @@ class IgnitionFuelTools1 < Formula
   revision 8
   version_scheme 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "70bcedd13d9c43650889dd279079ef5ae64900033b534a3569fbeed76e13625a"
+    sha256 catalina: "9e18e3dacb064c6a0f2c8a4ba8fa92f90123ab9589c2a3fee4b3c3414d02f0cb"
+  end
+
   depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-common1"
