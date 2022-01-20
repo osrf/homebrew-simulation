@@ -14,6 +14,8 @@ class IgnitionSensors3 < Formula
     sha256 catalina: "59f35ae1faa32e6a88be50574b13fa8fd6991ecd84f33f24407214dd5f2eae94"
   end
 
+  deprecate! date: "2024-12-31", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 

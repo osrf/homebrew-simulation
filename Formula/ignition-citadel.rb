@@ -17,6 +17,8 @@ class IgnitionCitadel < Formula
     sha256 cellar: :any, catalina: "77128ee99e7547c05a9bb619a9d382278ca6ba087857ad6805a807e3e1a6d0b3"
   end
 
+  deprecate! date: "2024-12-31", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
