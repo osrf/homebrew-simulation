@@ -2,7 +2,7 @@ class IgnitionCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-common"
   url "https://github.com/ignitionrobotics/ign-common.git", branch: "main"
-  version "4.999.999~0~20211227"
+  version "4.999.999~0~20220119"
   license "Apache-2.0"
 
   depends_on "cmake"
