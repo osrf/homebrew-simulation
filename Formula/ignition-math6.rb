@@ -18,7 +18,6 @@ class IgnitionMath6 < Formula
   depends_on "ignition-cmake2"
   depends_on "pybind11"
   depends_on "ruby"
-  depends_on "swig"
 
   def install
     cmake_args = std_cmake_args
