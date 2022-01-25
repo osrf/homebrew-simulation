@@ -17,6 +17,8 @@ class IgnitionEdifice < Formula
     sha256 cellar: :any, catalina: "5e01ce4fad534470a6b5977e20f2d16424abda3715730d43d2dcd8b6bfcd3747"
   end
 
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"

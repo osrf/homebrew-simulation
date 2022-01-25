@@ -14,6 +14,8 @@ class IgnitionSensors5 < Formula
     sha256 catalina: "f222ab32aa3e94f9558f244905c3269858a12b72cfce667edd478b3632f0b6c0"
   end
 
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 

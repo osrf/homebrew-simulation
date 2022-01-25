@@ -12,6 +12,8 @@ class IgnitionPhysics4 < Formula
     sha256 cellar: :any, catalina: "7bd9b00ec3c566c93c8c703ed167bab9da4d52634d3e41daec6dae9054003a5a"
   end
 
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
 
   depends_on "bullet"

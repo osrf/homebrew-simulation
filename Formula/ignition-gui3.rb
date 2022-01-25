@@ -1,18 +1,19 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.8.0.tar.bz2"
-  sha256 "a4b36eae36e7f629e4e92f32a8d04dd2b2d31a87a0631cdbecfc6f7fe98f4daa"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.9.0.tar.bz2"
+  sha256 "02d510cbd676eefc117bbea28c9f3f8b904b4c399b915aa03be8ae65136feb1b"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "c3f7079cd043ded033e89248ef9470fcc8b367f073df2a4adb13ba017c8baaf3"
-    sha256 catalina: "cfc3682cbfb5e3f119bf3821fb4a6c7bbadf56fd7e21c1ce1c100259eefff23a"
+    sha256 big_sur:  "728b83b979522bf004413c857bb3c9456c0d308feef64a5c9fb7e2c575a28409"
+    sha256 catalina: "20670140abf9199b813d13b02473bfd559048efda70aef268510d7af21d4db80"
   end
+
+  deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
