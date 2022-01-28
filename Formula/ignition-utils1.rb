@@ -1,15 +1,14 @@
 class IgnitionUtils1 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.1.0.tar.bz2"
-  sha256 "8eb36554db7673b782c0f4f982cd6d5ca164a51594623fadc83718c60e8aae18"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.2.0.tar.bz2"
+  sha256 "c03b2df2247ac10b6905f9da96f7d77d150c3b5c234936006cf66c6bdce76db2"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "4271cea149fce242e9ba5f9ebb2e60087962ea7228df802ec836a0f36128e7fa"
-    sha256 cellar: :any, catalina: "f155a5550db50d1114c5dfe7890520a715ac81adf27a94371399061c1e0394b5"
-    sha256 cellar: :any, mojave:   "7d4d913c69dc96c2a14aae07f50dfb8a9d611c28016a43b05e774a8844c13808"
+    sha256 cellar: :any, big_sur:  "a4eb7e0ef2c6c23a6ad651425b004e617089d306c540f44edb8c232bcb1a3691"
+    sha256 cellar: :any, catalina: "06a419000da2a92cdbccbe9e867c6fe2f7f1f6fddcd171d6574a60d6d986c9a9"
   end
 
   depends_on "cmake" => [:build, :test]
