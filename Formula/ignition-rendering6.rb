@@ -1,15 +1,14 @@
 class IgnitionRendering6 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.2.0~pre1.tar.bz2"
-  version "6.2.0~pre1"
-  sha256 "302b0d099f00450f58904f6c4c1a75cae9f6eb854e494577cbe89aa611a54ff0"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.2.0.tar.bz2"
+  sha256 "c1ab8e42bdc0deb3dc4c508c426f027715066388e9b7ed344000733520827ccc"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "69b0241e87f299943021b00f1373cf0104ece18469fdb68973424779db667397"
-    sha256 catalina: "18515f0778653c92af89401845b91c8585d64aad6647c758a903510c5c08c9ed"
+    sha256 big_sur:  "04fe08c886d7a62e58f57d4fc6e5445c9f10bf661d3635d39f7535ad08a66dd9"
+    sha256 catalina: "8b591e9bee0e104a685ec37487ee10e5d6d5f2f41123a22d8a9a06ad5cd2424a"
   end
 
   depends_on "cmake" => [:build, :test]
