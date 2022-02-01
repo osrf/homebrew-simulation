@@ -1,17 +1,16 @@
 class IgnitionGui5 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.3.0.tar.bz2"
-  sha256 "759cbacf205af2e78f79902952f1a48ed46891534f788c425cf3a0f028479061"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui5-5.4.0.tar.bz2"
+  sha256 "53e0127a048651c320c73a020d30fe0c0fa285cc062837681d62abdff8896684"
   license "Apache-2.0"
-  revision 3
 
   head "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "2dfc6daee7ad5b6735a1d725a447f61891f8a0ce104971c2b339c3d99d01f740"
-    sha256 catalina: "e00efbd2f9a92306d10d6d612c25838f09cc895b9e2db58f6cf949c183d71b0d"
+    sha256 big_sur:  "0d465f75f7399b9c5a75bc317d88b700fced29b3a799cd61f16e7f85d5c67a35"
+    sha256 catalina: "9b5a8761f47bba1dbe8d7d6edb43bc3f180eac560377de47e8023d72a0efc9a1"
   end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
