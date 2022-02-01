@@ -1,14 +1,14 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.3.0.tar.bz2"
-  sha256 "6b50c6292108dff3ce7b1d099e15e70f50bd197499536922b7309313a02d2109"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.4.0.tar.bz2"
+  sha256 "ae6422ae78faa321df55e18fa436cfd2a85d19106460ea68eeb454d2e48f5b97"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "9eae0a2360e4cacf793cd2a87278aec940893c42b231b927768437386fee5e48"
-    sha256 catalina: "576a8a68ca64c8739be90b78e7be74ba253279daef6f4de5a0efed625294fb83"
+    sha256 big_sur:  "1bafc71366dd0cdef01f8decb88778752b5bb008e7ec7c1e9828fbaff657cd72"
+    sha256 catalina: "7cd21aa5f75d906df2731b9d54af4c3e6f027f86213fbebe540360a4f4329327"
   end
 
   depends_on "cmake" => [:build, :test]
