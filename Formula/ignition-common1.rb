@@ -9,7 +9,6 @@ class IgnitionCommon1 < Formula
   head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common1"
 
   depends_on "cmake"
-  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
   depends_on "ignition-math4"
