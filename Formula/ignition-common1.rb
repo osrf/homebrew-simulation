@@ -4,16 +4,9 @@ class IgnitionCommon1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common1"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "49c473752f0a529286009fa1e98003baff02fc0adf410c9f5a99ba157f65a5e6"
-    sha256 cellar: :any, catalina: "dd9ee5aeb6a3954ab254f064f12a8e69b31ebe2866b2d66a9d15ccf2e0f4be29"
-    sha256 cellar: :any, mojave:   "2b26f65d10eec66e6a95bdc062893f1c75651a2bb3a8e511be4e10b13929e7f6"
-  end
 
   depends_on "cmake"
   depends_on "ffmpeg"
