@@ -4,15 +4,9 @@ class IgnitionCommon4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.5.0.tar.bz2"
   sha256 "d01471b1abdbf5617d1bc1c0842fa9323094170e500f409b435049ec13fb19a2"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "bf37ea7497b9809862ab771a6b18e19d9093080cccb5bc1035b0bd4550f4ad76"
-    sha256 cellar: :any, catalina: "468f02075b0dec46ca3b69ec82d5e1c2557ecdd861dccbd2814bdd8b69b5dfd4"
-  end
+  revision 1
 
   depends_on "cmake"
-  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
   depends_on "ignition-cmake2"
