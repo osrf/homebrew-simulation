@@ -4,12 +4,7 @@ class IgnitionGazebo6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.4.0.tar.bz2"
   sha256 "722dadfcfdc09f2e9fb97e71182a9db46ebd8f6f25f45868b830b26c7f0a97cb"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "725d9251835188b76cc35a082ecc0a1b1616dfaa3dd16aab26ef69737f76bc20"
-    sha256 catalina: "130f8258018010b2b5c66c003640d01c8355d559144ff7b94b60424d32deecba"
-  end
+  revision 1
 
   depends_on "cmake" => :build
   depends_on "gflags"
