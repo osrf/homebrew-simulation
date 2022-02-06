@@ -4,7 +4,7 @@ class IgnitionCommon1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common1"
 
@@ -53,6 +53,7 @@ class IgnitionCommon1 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-COMMON_LIBRARIES})
     EOS
+    ENV.append_path "PKG_CONFIG_PATH", Formula["ffmpeg@4"].opt_lib/"pkgconfig"
     system "pkg-config", "ignition-common1"
     cflags = `pkg-config --cflags ignition-common1`.split
     system ENV.cc, "test.cpp",
