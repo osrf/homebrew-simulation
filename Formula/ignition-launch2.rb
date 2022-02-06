@@ -8,6 +8,12 @@ class IgnitionLaunch2 < Formula
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch2"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "8f4136b7aa762efca4eeb581b007d549f6804e8aa80673fc1689f32a30a32676"
+    sha256 catalina: "52f51393cce9a1538d1d42ddfc69789f8f9ed862057f7270759330b9553c0be9"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
