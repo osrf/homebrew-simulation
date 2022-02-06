@@ -8,6 +8,12 @@ class IgnitionCommon1 < Formula
 
   head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common1"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "79fdd71bed4003a3b3b374bed25a975f257f72f782d965edb3060f1b86ddfa85"
+    sha256 cellar: :any, catalina: "ffd94f0a4c2c7272f39a6f5e871cd72f67075c3cda408650496554ea0f99ea40"
+  end
+
   depends_on "cmake"
   depends_on "ffmpeg@4"
   depends_on "freeimage"
