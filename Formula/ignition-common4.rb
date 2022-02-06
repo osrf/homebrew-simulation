@@ -7,6 +7,7 @@ class IgnitionCommon4 < Formula
   revision 1
 
   depends_on "cmake"
+  depends_on "ffmpeg@4"
   depends_on "freeimage"
   depends_on "gts"
   depends_on "ignition-cmake2"

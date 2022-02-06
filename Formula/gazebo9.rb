@@ -16,6 +16,7 @@ class Gazebo9 < Formula
   depends_on "cmake@3.21.4"
   depends_on "dartsim"
   depends_on "doxygen"
+  depends_on "ffmpeg@4"
   depends_on "freeimage"
   depends_on "graphviz"
   depends_on "gts"
