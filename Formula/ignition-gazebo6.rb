@@ -4,7 +4,13 @@ class IgnitionGazebo6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.4.0.tar.bz2"
   sha256 "722dadfcfdc09f2e9fb97e71182a9db46ebd8f6f25f45868b830b26c7f0a97cb"
   license "Apache-2.0"
-  revision 1
+  revision 2
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "e8701e0130894722722d3b1849d9ea47e0ba0fcfeb1e68ed82d4a4f0c14313ef"
+    sha256 catalina: "8602db281b7d56af3af2d32a114c8185d2d8f38b9fdfc780cc65eefd2d50181e"
+  end
 
   depends_on "cmake" => :build
   depends_on "gflags"
@@ -94,6 +100,7 @@ class IgnitionGazebo6 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["ffmpeg@4"].opt_prefix
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."

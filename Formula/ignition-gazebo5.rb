@@ -4,9 +4,15 @@ class IgnitionGazebo5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo5-5.3.0.tar.bz2"
   sha256 "dabe0f2c8eadb164ab85aa2184fb58aa69b137369f04863e539bb6a7e8e5c689"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "009a23be1c9b26bd61121cec873527d258dfbd48e38aa3f49ccf6afb1b895406"
+    sha256 catalina: "25b1ac6e210237d175fb84ef9e87623bd58ac0618cd5baa84ade6e279c4ccaf9"
+  end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 
@@ -98,6 +104,7 @@ class IgnitionGazebo5 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["ffmpeg@4"].opt_prefix
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."

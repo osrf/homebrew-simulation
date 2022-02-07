@@ -4,9 +4,15 @@ class IgnitionLaunch4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch4-4.1.0.tar.bz2"
   sha256 "fd1e5a535bafb197360b168bce573bed3c4d7804b76c098d93afc5b17b2bdcef"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "1bb2fb9fd115b8002ae9f922bc448fe96f746d4940b48744ed0b2599da109cdd"
+    sha256 catalina: "ab6766858e167b2391c7fc9e1ecd1f0336c7341a71c93626360972e9e65ed88a"
+  end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 
