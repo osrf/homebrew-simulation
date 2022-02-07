@@ -6,6 +6,12 @@ class IgnitionGazebo6 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "e8701e0130894722722d3b1849d9ea47e0ba0fcfeb1e68ed82d4a4f0c14313ef"
+    sha256 catalina: "8602db281b7d56af3af2d32a114c8185d2d8f38b9fdfc780cc65eefd2d50181e"
+  end
+
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "google-benchmark"
