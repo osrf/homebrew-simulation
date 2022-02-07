@@ -4,7 +4,7 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.1.tar.bz2"
   sha256 "349cbd73965f6e71784283f9b9b69f2cd43162c613642fd388d3f648f9caccf2"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
@@ -96,6 +96,7 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["ffmpeg@4"].opt_prefix
     ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
