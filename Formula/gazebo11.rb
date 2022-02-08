@@ -4,9 +4,15 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.1.tar.bz2"
   sha256 "349cbd73965f6e71784283f9b9b69f2cd43162c613642fd388d3f648f9caccf2"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "a7b7aab1bf649ded8f0d181ca85e409632543785cacf8e995ff4e6b8b024848f"
+    sha256 catalina: "341a517561e4c49ef62468a52b13217c928509b7dbbd94fa303fe62d04c4dd87"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -96,6 +102,7 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
+    ENV.append_path "CPATH", Formula["ffmpeg@4"].opt_include
     ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
