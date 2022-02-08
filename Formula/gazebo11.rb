@@ -96,7 +96,7 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["ffmpeg@4"].opt_prefix
+    ENV.append_path "CPATH", Formula["ffmpeg@4"].opt_include
     ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
