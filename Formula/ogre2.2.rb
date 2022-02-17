@@ -5,13 +5,14 @@ class Ogre22 < Formula
   version "2.2.6+20211021~312bf40"
   sha256 "b9dbd84ef0c1731d0d1abc55499532358b9a9e5f0b3dc2b8e02ba76db0a112fd"
   license "MIT"
+  revision 1
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "3683309a6e4e5e4d2dd8de1bce25508624b537634c0dab4fc49df494a6ba9c6f"
-    sha256 cellar: :any, catalina: "a02bd13e69b1c29744f617725bd70038cfde7695f3f55c66ac1545ab94c7b948"
+    sha256 cellar: :any, big_sur:  "fae5da6d6bb34344f04e4f78f162f3872124e915fbd50d883e6509c6f1640cbd"
+    sha256 cellar: :any, catalina: "222487899f723c60367694395875898f742cd2247e54eaa348f99fcb023c6ebc"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +29,12 @@ class Ogre22 < Formula
     # fix for cmake3 and c++11
     url "https://github.com/scpeters/ogre-next/commit/3486b772b35b3e5f8cf6da5b7a41e6c195408d7d.patch?full_index=1"
     sha256 "30a60758401980260f3a5abdd6513505327028a983af9e911908b4f7da140625"
+  end
+
+  patch do
+    # implement override for MetalTextureGpu::getCustomAttribute
+    url "https://github.com/OGRECave/ogre-next/commit/b7187a55a9ad5ba65ed24d1c212d1749833923ac.patch?full_index=1"
+    sha256 "38975001bfa903194565ed0bf411cf29857cd5b2f0f71a651d64543f610c4ff6"
   end
 
   # patch do
