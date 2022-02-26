@@ -43,6 +43,18 @@ class Ogre22 < Formula
   #  sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
   # end
 
+  patch do
+    # fix for m1 arch -- adapted from OGRECave/ogre-next@ff01338
+    url "https://gist.githubusercontent.com/iche033/5685dcbb3efc14bb263718a91039bab8/raw/dd3ccbefda8abf1b9ff7b5a4898e3e63cbe06b4b/ogre2.2-m1-platform.patch"
+    sha256 "edacb1992550c78e746d9bd545c8f5b278c2f987533349a0db56d7b13ebab480"
+  end
+
+  # fix for m1 arch -- adapted from OGRECave/ogre-next@23d8261
+  patch do
+    url "https://github.com/OGRECave/ogre-next/commit/23d82616a785f6aa26f58d5bf38a7114e2c00f88.patch?full_index=1"
+    sha256 "ade27e55e7be5510f5eeb95f17c9ba90e61575ad610cc35f24179d061b1756a1"
+  end
+
   def install
     cmake_args = [
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.2",
