@@ -52,6 +52,12 @@ class Gazebo11 < Formula
   conflicts_with "gazebo9", because: "differing version of the same formula"
 
   patch do
+    # patch needed for the following tbb patch to apply
+    url "https://github.com/osrf/gazebo/commit/34ebf4e4ee48d1a4e4f08d2f76fdb0a471717019.patch?full_index=1"
+    sha256 "4984b897365c3c3bffd0a35df706621d822f61c1cf7ca6c0ac4f11f1cab7e108"
+  end
+
+  patch do
     # Fix build with new tbb
     # remove with next release
     url "https://github.com/osrf/gazebo/commit/ea956014ed45906dda21e1ee682d297189cb4a7b.patch?full_index=1"
