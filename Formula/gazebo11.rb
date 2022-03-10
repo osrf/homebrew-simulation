@@ -4,7 +4,7 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.1.tar.bz2"
   sha256 "349cbd73965f6e71784283f9b9b69f2cd43162c613642fd388d3f648f9caccf2"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
@@ -40,7 +40,7 @@ class Gazebo11 < Formula
   depends_on "qwt-qt5"
   depends_on "sdformat9"
   depends_on "simbody"
-  depends_on "tbb@2020_u3"
+  depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
@@ -50,6 +50,13 @@ class Gazebo11 < Formula
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
+
+  patch do
+    # Fix build with new tbb
+    # remove with next release
+    url "https://github.com/osrf/gazebo/commit/ea956014ed45906dda21e1ee682d297189cb4a7b.patch?full_index=1"
+    sha256 "24af2fc83aaf6816d289d588d7aa9142c9bd28eb9819f344d55770ee4fe9fd4c"
+  end
 
   patch do
     # Fix build when homebrew python is installed
@@ -103,7 +110,6 @@ class Gazebo11 < Formula
     #                "-o", "test"
     # system "./test"
     ENV.append_path "CPATH", Formula["ffmpeg@4"].opt_include
-    ENV.append_path "CPATH", Formula["tbb@2020_u3"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
