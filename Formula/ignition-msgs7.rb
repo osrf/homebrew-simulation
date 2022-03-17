@@ -1,17 +1,16 @@
 class IgnitionMsgs7 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/ignitionrobotics/ign-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs7-7.2.0.tar.bz2"
-  sha256 "02b41a692c99328ca706d2a2d731e35ef9626e42e0948b51af10a26a80eb529b"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs7-7.3.0.tar.bz2"
+  sha256 "eed26fb10cb80212e5198d98a98d3ebe852ebf7ed993786f8d22a5c01802d607"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "4a99de692f65202b0d544d1da896a82b8f9a09958bf14a965558783176e89fa4"
-    sha256 cellar: :any, catalina: "805d1fac4ba7f15a7d2fe54d65a33f4a96894c0a9c22d8bc35114224cbaa232e"
+    sha256 cellar: :any, big_sur:  "e7aad9c736b37e23ad3bc97e7c3bdaf29d95211cae51de4d2abce95fd33ce767"
+    sha256 cellar: :any, catalina: "cfd22dd4e4093aecfe393c68f2ac86fc9472a7954c5f5b6389d9d842453d0a0b"
   end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
