@@ -51,19 +51,6 @@ class Gazebo11 < Formula
   conflicts_with "gazebo9", because: "differing version of the same formula"
 
   patch do
-    # patch needed for the following tbb patch to apply
-    url "https://github.com/osrf/gazebo/commit/34ebf4e4ee48d1a4e4f08d2f76fdb0a471717019.patch?full_index=1"
-    sha256 "4984b897365c3c3bffd0a35df706621d822f61c1cf7ca6c0ac4f11f1cab7e108"
-  end
-
-  patch do
-    # Fix build with new tbb
-    # remove with next release
-    url "https://github.com/osrf/gazebo/commit/ea956014ed45906dda21e1ee682d297189cb4a7b.patch?full_index=1"
-    sha256 "24af2fc83aaf6816d289d588d7aa9142c9bd28eb9819f344d55770ee4fe9fd4c"
-  end
-
-  patch do
     # Fix build when homebrew python is installed
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
