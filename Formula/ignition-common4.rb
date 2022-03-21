@@ -4,7 +4,7 @@ class IgnitionCommon4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.5.0.tar.bz2"
   sha256 "d01471b1abdbf5617d1bc1c0842fa9323094170e500f409b435049ec13fb19a2"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -13,7 +13,7 @@ class IgnitionCommon4 < Formula
   end
 
   depends_on "cmake"
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gts"
   depends_on "ignition-cmake2"
@@ -23,6 +23,13 @@ class IgnitionCommon4 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for compatibility with ffmpeg 5.0
+    # remove with next release
+    url "https://github.com/ignitionrobotics/ign-common/commit/a11287ba5b213ffc90992f9ef972cd7acee11259.patch?full_index=1"
+    sha256 "ad264b7c8bb3774fcb7d59d67ae33963f3d44e0018c23861c7fd8d86c3e057ab"
+  end
 
   def install
     cmake_args = std_cmake_args
