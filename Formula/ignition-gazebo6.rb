@@ -4,6 +4,7 @@ class IgnitionGazebo6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.7.0.tar.bz2"
   sha256 "8e1643c25a41abfb6de31c7f453b4a64a5adef4d36be7c6b63b2cedc7df4135b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -12,6 +13,7 @@ class IgnitionGazebo6 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"

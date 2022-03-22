@@ -4,7 +4,7 @@ class IgnitionLaunch4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch4-4.1.0.tar.bz2"
   sha256 "fd1e5a535bafb197360b168bce573bed3c4d7804b76c098d93afc5b17b2bdcef"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
 
@@ -19,6 +19,7 @@ class IgnitionLaunch4 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "ffmpeg"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
   depends_on "ignition-gazebo5"
