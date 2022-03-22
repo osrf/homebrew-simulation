@@ -4,6 +4,7 @@ class IgnitionMsgs8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.2.0.tar.bz2"
   sha256 "4cacdb1411280e7d2e269437c7bfddc530618e8512438903b9b15a740fb1d20f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -24,6 +25,7 @@ class IgnitionMsgs8 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     system "cmake", ".", *cmake_args
     system "make", "install"
