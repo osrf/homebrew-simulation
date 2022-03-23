@@ -4,11 +4,12 @@ class IgnitionMsgs8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.2.0.tar.bz2"
   sha256 "4cacdb1411280e7d2e269437c7bfddc530618e8512438903b9b15a740fb1d20f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "ab93a44b854ef00bc70ba5d56e2f7ada5a8465a1e0637525ee36c27eed8b6413"
-    sha256 cellar: :any, catalina: "0210f08ec65bc1dc5cf623083f550e3a9ea614e38911213d66d288c2369d0fae"
+    sha256 cellar: :any, big_sur:  "43c8a7d5e4db55fa5f269b0a68c52b73886cff8117c0a260a36a75eb35674357"
+    sha256 cellar: :any, catalina: "87d6884e1641947b7fc92066069ac562c4a263bf10f1d42794af5f0b7eb5689a"
   end
 
   depends_on "protobuf-c" => :build
@@ -24,6 +25,7 @@ class IgnitionMsgs8 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     system "cmake", ".", *cmake_args
     system "make", "install"
