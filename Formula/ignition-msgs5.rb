@@ -4,6 +4,7 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.9.0.tar.bz2"
   sha256 "42f7cb0afa62130f0e1a45a0bf8be7b633594152257fc8dfa72d6d5dd13770f4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -25,6 +26,8 @@ class IgnitionMsgs5 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
     system "cmake", ".", *cmake_args
     system "make", "install"
   end

@@ -4,6 +4,7 @@ class Sdformat9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.7.0.tar.bz2"
   sha256 "dcfa6faa2a12a6814e8cf020539c351d69c3a1b82092645d0dee3ec7c968b8f0"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -22,8 +23,12 @@ class Sdformat9 < Formula
   depends_on "urdfdom"
 
   def install
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", *cmake_args
       system "make", "install"
     end
   end
