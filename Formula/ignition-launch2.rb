@@ -4,14 +4,14 @@ class IgnitionLaunch2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.2.2.tar.bz2"
   sha256 "121c1a63c519709c057bb2b6d2688b9e8ebe07aa5de2d62205857a7028339779"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "8f4136b7aa762efca4eeb581b007d549f6804e8aa80673fc1689f32a30a32676"
-    sha256 catalina: "52f51393cce9a1538d1d42ddfc69789f8f9ed862057f7270759330b9553c0be9"
+    sha256 big_sur:  "fbe07312364ad2f6455f017b5656910691a0efc6f07996339c5c7c00a48d2194"
+    sha256 catalina: "39f112249a7ad4c311474fb7b77eff96713ea4f04ffe26206a99001990df568a"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -19,6 +19,7 @@ class IgnitionLaunch2 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "ffmpeg"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-gazebo3"
@@ -31,8 +32,14 @@ class IgnitionLaunch2 < Formula
   depends_on "tinyxml2"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

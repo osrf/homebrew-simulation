@@ -4,19 +4,20 @@ class IgnitionGazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.12.0.tar.bz2"
   sha256 "cc89eb24ff7c6177814f44b6b0aeef9efcbec0a242798200ae4d7c44ccec9513"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "f98b48c1b51ba9a3f53b982553fb1a17b6f150d4bbd7845e861b1d28c797080b"
-    sha256 catalina: "4be7429207b23fa59da0c667389e6bd8739defc490123e2763dd12681867f77d"
+    sha256 big_sur:  "01ebae8ea00a61dd28316defe1576692b2523a233bf698ef1d6984a8495fd8ad"
+    sha256 catalina: "43c2a0cfa0b21be0773851d499215414c356a26e3eede82af480911eeab62ef0"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
+  depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
