@@ -4,7 +4,7 @@ class IgnitionGazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.12.0.tar.bz2"
   sha256 "cc89eb24ff7c6177814f44b6b0aeef9efcbec0a242798200ae4d7c44ccec9513"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo3"
 
@@ -17,6 +17,7 @@ class IgnitionGazebo3 < Formula
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
+  depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
