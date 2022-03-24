@@ -6,7 +6,7 @@ class IgnitionCommon5 < Formula
   license "Apache-2.0"
 
   depends_on "cmake"
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gdal"
   depends_on "gts"
