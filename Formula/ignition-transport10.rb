@@ -10,8 +10,8 @@ class IgnitionTransport10 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "9da2be9047e00802569335f5c701fb767da1d34f4e7055fe57dc5555750effb3"
-    sha256 catalina: "a058d592f6b6d473b3506ae26b749638dd12cc03cae8b19cb99327f9ca35868c"
+    sha256 big_sur:  "b95b5741779b396eb84d68625b987420103805ba977a35ba01db039df528642a"
+    sha256 catalina: "aa34650614c04282f5870246c08a953cc67070f42eaadeff734eba068cc71189"
   end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
