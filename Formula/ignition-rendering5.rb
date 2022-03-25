@@ -1,8 +1,8 @@
 class IgnitionRendering5 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering5-5.2.0.tar.bz2"
-  sha256 "0925ade4a6af5d5addebe148c752d4e4562d12a0eee68e5d58859bfc34a4e2f4"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering5-5.2.1.tar.bz2"
+  sha256 "a0ae9ee1c2a89c099220f185fc89a756c19c25ee37102721b16412951c49f250"
   license "Apache-2.0"
 
   bottle do
