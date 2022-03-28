@@ -8,6 +8,7 @@ class IgnitionLaunch6 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "ffmpeg"
   depends_on "ignition-cmake2"
   depends_on "ignition-common5"
   depends_on "ignition-gazebo7"
@@ -20,8 +21,14 @@ class IgnitionLaunch6 < Formula
   depends_on "tinyxml2"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

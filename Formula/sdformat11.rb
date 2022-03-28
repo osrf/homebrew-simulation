@@ -1,15 +1,14 @@
 class Sdformat11 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.3.0.tar.bz2"
-  sha256 "9575176d95f0bbfba55796c06e0a1a0ff35f75ed87236df5d21cf1dfc77bd7e2"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-11.4.1.tar.bz2"
+  sha256 "32be7c224c2b57a2abd3b23a044664dd9d895623fe7e672201f424f8b023436d"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "995887d47804d17b9fda57aa4d44a1e35cfc6b4066ea0f02949075457753df0f"
-    sha256 catalina: "6356028ba97727fa8947c013cfe5362e991855198499e0da8b70fb838baaad85"
+    sha256 big_sur:  "95b61b006e41224e9e40635e75b27c5fe506d2cd2a2d6ff1e91bc30dbdec0fde"
+    sha256 catalina: "e263b2b657003c565b34d71dc9e993b57fc518b37b65c6ba034087f521415fb8"
   end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"

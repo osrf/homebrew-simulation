@@ -1,17 +1,16 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.1.tar.bz2"
-  sha256 "349cbd73965f6e71784283f9b9b69f2cd43162c613642fd388d3f648f9caccf2"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.2.tar.bz2"
+  sha256 "f6c4ea8cd8730c90b14760b3f84d4f362d3786b510fb43a0b77b2c06b8bdd2b6"
   license "Apache-2.0"
-  revision 5
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "0b78de4cf8e8f82b6309ff5ae2051a69b9b4211aaf70ef5f7bd5e71a12c80dc3"
-    sha256 catalina: "0ab42c6f33ce0eaf8290662ce28b4d131ad2219bf1110258dcbf081b95eb6d1f"
+    sha256 big_sur:  "03528c304a832dba761d25b93d5e5d24d5b161ecb2145970bb0085c9637a7a13"
+    sha256 catalina: "8abe5d4ac0a9a7134319c00a554f2b5a42c2471d0a81415d8cd14cdc3199cbb2"
   end
 
   depends_on "cmake" => :build
@@ -50,19 +49,6 @@ class Gazebo11 < Formula
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
-
-  patch do
-    # patch needed for the following tbb patch to apply
-    url "https://github.com/osrf/gazebo/commit/34ebf4e4ee48d1a4e4f08d2f76fdb0a471717019.patch?full_index=1"
-    sha256 "4984b897365c3c3bffd0a35df706621d822f61c1cf7ca6c0ac4f11f1cab7e108"
-  end
-
-  patch do
-    # Fix build with new tbb
-    # remove with next release
-    url "https://github.com/osrf/gazebo/commit/ea956014ed45906dda21e1ee682d297189cb4a7b.patch?full_index=1"
-    sha256 "24af2fc83aaf6816d289d588d7aa9142c9bd28eb9819f344d55770ee4fe9fd4c"
-  end
 
   patch do
     # Fix build when homebrew python is installed

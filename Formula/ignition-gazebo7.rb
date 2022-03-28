@@ -6,6 +6,7 @@ class IgnitionGazebo7 < Formula
   license "Apache-2.0"
 
   depends_on "cmake" => :build
+  depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
