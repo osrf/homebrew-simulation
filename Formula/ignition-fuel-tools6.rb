@@ -9,8 +9,8 @@ class IgnitionFuelTools6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "4c2bb417c321629831156a3bf994c9816872ef6d5de5ed2ead2d2587e64e2aa9"
-    sha256 cellar: :any, catalina: "7de21ed5d5a49349b148859e4426224ebc80ce921c7eb6252ac29f8d2984b387"
+    sha256 cellar: :any, big_sur:  "d2f15cd22d922a1cf12b5550ebb86d28549cd6c58958b100f958db1fcdd187ac"
+    sha256 cellar: :any, catalina: "4947147436124840eba3567d4cfc1b7f958e735878a0b71dfbe4327820d7b3ce"
   end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
