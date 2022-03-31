@@ -32,7 +32,6 @@ class Gazebo11 < Formula
   depends_on "ignition-transport8"
   depends_on "libtar"
   depends_on "ogre1.9"
-  depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt@5"
