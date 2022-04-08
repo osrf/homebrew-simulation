@@ -2,13 +2,13 @@ class IgnitionPlugin2 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-plugin"
   url "https://github.com/ignitionrobotics/ign-plugin.git", branch: "main"
-  version "1.999.999~1"
+  version "1.999.999~0~20220406"
   license "Apache-2.0"
 
   depends_on "cmake"
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
   depends_on "ignition-tools"
-  depends_on "ignition-utils1"
+  depends_on "ignition-utils2"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
 
