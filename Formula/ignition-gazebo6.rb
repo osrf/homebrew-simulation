@@ -1,18 +1,18 @@
 class IgnitionGazebo6 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.7.0.tar.bz2"
-  sha256 "8e1643c25a41abfb6de31c7f453b4a64a5adef4d36be7c6b63b2cedc7df4135b"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.8.0.tar.bz2"
+  sha256 "d02639ff28a520d41272da854beecbfdbaa249f724a3b1a7858c1ca6839689d8"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "3b7dba1e670f82df950824d07b40a965cebee559ba08f38b52819ee29d93c40b"
-    sha256 catalina: "48cb2399688f5f19fc4f78ab773c29c10dbca4e37639fb25bc767d5a0902ff0d"
+    sha256 big_sur:  "b901a346a5725c3ca2b53950a64f15119dbe09a769bd65bf27ac21cdd880fa1b"
+    sha256 catalina: "662340e8f42aefac043c8b61605fa19a06e010171e10c65073b43270c75a4c12"
   end
 
   depends_on "cmake" => :build
+  depends_on "pybind11" => :build
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
