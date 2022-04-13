@@ -2,7 +2,7 @@ class IgnitionMath7 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
   url "https://github.com/ignitionrobotics/ign-math.git", branch: "main"
-  version "6.999.999~0~20211217"
+  version "6.999.999~0~20220412"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
@@ -10,7 +10,7 @@ class IgnitionMath7 < Formula
   depends_on "pybind11" => :build
   depends_on "eigen"
   depends_on "ignition-cmake2"
-  depends_on "ignition-utils1"
+  depends_on "ignition-utils2"
   depends_on "ruby"
 
   def install
