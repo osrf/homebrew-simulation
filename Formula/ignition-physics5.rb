@@ -4,7 +4,7 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.1.0.tar.bz2"
   sha256 "653942e8b92b1038ef654995366ce70c57f7a387c6aef5ded443c8855ad1f45a"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -15,7 +15,7 @@ class IgnitionPhysics5 < Formula
   depends_on "cmake" => :build
 
   depends_on "bullet"
-  depends_on "dartsim@6.10.0"
+  depends_on "dartsim"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
