@@ -8,7 +8,7 @@ class IgnitionPhysics6 < Formula
   depends_on "cmake" => :build
 
   depends_on "bullet"
-  depends_on "dartsim@6.10.0"
+  depends_on "dartsim"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
   depends_on "ignition-common5"
