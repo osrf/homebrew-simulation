@@ -11,7 +11,7 @@ class Sdformat13 < Formula
   depends_on "doxygen"
   depends_on "ignition-math7"
   depends_on "ignition-tools"
-  depends_on "ignition-utils1"
+  depends_on "ignition-utils2"
   depends_on macos: :mojave # c++17
   depends_on "tinyxml2"
   depends_on "urdfdom"
