@@ -4,7 +4,6 @@ class IgnitionTools2 < Formula
   url "https://github.com/ignitionrobotics/ign-tools.git", branch: "main"
   version "1.999.999~0~20220414"
   license "Apache-2.0"
-  head "https://github.com/ignitionrobotics/ign-tools.git", branch: "ign-tools2"
 
   depends_on "cmake" => :build
   depends_on "libyaml" => :test
