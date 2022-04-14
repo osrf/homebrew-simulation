@@ -2,7 +2,7 @@ class IgnitionPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-physics"
   url "https://github.com/ignitionrobotics/ign-physics.git", branch: "main"
-  version "5.999.999~0~20220412"
+  version "5.999.999~0~20220414"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
@@ -10,7 +10,7 @@ class IgnitionPhysics6 < Formula
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "google-benchmark"
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
   depends_on "ignition-common5"
   depends_on "ignition-math7"
   depends_on "ignition-plugin2"
