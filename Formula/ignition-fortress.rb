@@ -3,10 +3,9 @@ class IgnitionFortress < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/ignitionrobotics/ign-fortress"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fortress/releases/ignition-fortress-1.0.2.tar.bz2"
-  sha256 "b54fa1afe86aa713e3e0768b5d607b89d0f6ca9ac273633faf58907b676c9fe4"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fortress/releases/ignition-fortress-1.0.3.tar.bz2"
+  sha256 "eedbfb01e18038756eb596fa8f1c8aa955ca2be029fe40bb842ffee4d4452323"
   license "Apache-2.0"
-  revision 2
   version_scheme 1
 
   head "https://github.com/ignitionrobotics/ign-fortress.git", branch: "main"
