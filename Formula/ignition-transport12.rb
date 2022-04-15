@@ -2,7 +2,7 @@ class IgnitionTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
   url "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
-  version "11.999.999~0~20220412"
+  version "11.999.999~0~20220414"
   license "Apache-2.0"
   version_scheme 1
 
@@ -11,9 +11,9 @@ class IgnitionTransport12 < Formula
 
   depends_on "cmake"
   depends_on "cppzmq"
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
   depends_on "ignition-msgs9"
-  depends_on "ignition-tools"
+  depends_on "ignition-tools2"
   depends_on "ignition-utils2"
   depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
