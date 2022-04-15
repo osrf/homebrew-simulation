@@ -10,7 +10,7 @@ class IgnitionGazebo7 < Formula
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
   depends_on "ignition-common5"
   depends_on "ignition-fuel-tools8"
   depends_on "ignition-gui7"
@@ -20,7 +20,7 @@ class IgnitionGazebo7 < Formula
   depends_on "ignition-plugin2"
   depends_on "ignition-rendering7"
   depends_on "ignition-sensors7"
-  depends_on "ignition-tools"
+  depends_on "ignition-tools2"
   depends_on "ignition-transport12"
   depends_on "ignition-utils2"
   depends_on macos: :mojave # c++17
@@ -42,7 +42,7 @@ class IgnitionGazebo7 < Formula
   test do
     ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
     system Formula["ruby"].opt_bin/"ruby",
-           Formula["ignition-tools"].opt_bin/"ign",
+           Formula["ignition-tools2"].opt_bin/"ign",
            "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
