@@ -4,13 +4,7 @@ class IgnitionPhysics4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics4-4.3.0.tar.bz2"
   sha256 "66efb3f4e4f9f10b591200fea52f4d44297c596d26f8a88f951bb645c6fab7c2"
   license "Apache-2.0"
-  revision 1
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "8b88318ef686a9dc28a6bc8189ba0390715e142a46fdac30678ace947bcb2dd6"
-    sha256 cellar: :any, catalina: "7bd9b00ec3c566c93c8c703ed167bab9da4d52634d3e41daec6dae9054003a5a"
-  end
+  revision 2
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 
