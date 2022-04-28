@@ -4,7 +4,7 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.1.0.tar.bz2"
   sha256 "653942e8b92b1038ef654995366ce70c57f7a387c6aef5ded443c8855ad1f45a"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   depends_on "cmake" => :build
 
