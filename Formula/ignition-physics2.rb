@@ -4,7 +4,7 @@ class IgnitionPhysics2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.5.0.tar.bz2"
   sha256 "a15f1e2c6f23cd3ce6dd284a2d1b9a6317dc188b62d960aec4c26112abcdfcaf"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
