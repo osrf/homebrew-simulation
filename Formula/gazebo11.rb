@@ -4,7 +4,7 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.2.tar.bz2"
   sha256 "f6c4ea8cd8730c90b14760b3f84d4f362d3786b510fb43a0b77b2c06b8bdd2b6"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
@@ -19,7 +19,6 @@ class Gazebo11 < Formula
 
   depends_on "boost"
   depends_on "bullet"
-  depends_on "cmake@3.21.4"
   depends_on "dartsim"
   depends_on "doxygen"
   depends_on "ffmpeg@4"
