@@ -16,6 +16,7 @@ class IgnitionMath6 < Formula
   depends_on "pybind11" => :build
   depends_on "eigen"
   depends_on "ignition-cmake2"
+  depends_on "python@3.9"
   depends_on "ruby"
 
   # needed to fix build
@@ -26,6 +27,8 @@ class IgnitionMath6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DPython3_ROOT_DIR=#{Formula["python@3.9"].opt_prefix}"
+    cmake_args << "-DPython3_FIND_STRATEGY=LOCATION"
     system "cmake", ".", *cmake_args
     system "make", "install"
   end
