@@ -18,6 +18,10 @@ class IgnitionMath6 < Formula
   depends_on "ignition-cmake2"
   depends_on "ruby"
 
+  # needed to fix build
+  # see https://github.com/ignitionrobotics/ign-math/pull/402
+  patch :DATA
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
@@ -62,3 +66,26 @@ class IgnitionMath6 < Formula
     system cmd_not_grep_xcode
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1f8ed5f..6403a71 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -71,13 +71,12 @@ endif()
+ 
+ ########################################
+ # Python bindings
+-include(IgnPython)
+-find_package(PythonLibs QUIET)
+-if (NOT PYTHONLIBS_FOUND)
++find_package(Python3 COMPONENTS Interpreter Development)
++if (NOT Python3_FOUND)
+   IGN_BUILD_WARNING("Python is missing: Python interfaces are disabled.")
+   message (STATUS "Searching for Python - not found.")
+ else()
+-  message (STATUS "Searching for Python - found version ${PYTHONLIBS_VERSION_STRING}.")
++  message (STATUS "Searching for Python - found version ${Python3_VERSION}.")
+ 
+   set(PYBIND11_PYTHON_VERSION 3)
+   find_package(pybind11 2.2 QUIET)
