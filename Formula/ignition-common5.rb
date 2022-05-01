@@ -2,7 +2,7 @@ class IgnitionCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/ignitionrobotics/ign-common"
   url "https://github.com/ignitionrobotics/ign-common.git", branch: "main"
-  version "4.999.999~0~20220119"
+  version "4.999.999~0~20220414"
   license "Apache-2.0"
 
   depends_on "cmake"
@@ -10,9 +10,9 @@ class IgnitionCommon5 < Formula
   depends_on "freeimage"
   depends_on "gdal"
   depends_on "gts"
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
   depends_on "ignition-math7"
-  depends_on "ignition-utils1"
+  depends_on "ignition-utils2"
   depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"

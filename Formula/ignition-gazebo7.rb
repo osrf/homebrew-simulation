@@ -2,26 +2,27 @@ class IgnitionGazebo7 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/ignitionrobotics/ign-gazebo"
   url "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
-  version "6.999.999~0~20211227"
+  version "6.999.999~0~20220412"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
+  depends_on "pybind11" => :build
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
   depends_on "ignition-common5"
   depends_on "ignition-fuel-tools8"
   depends_on "ignition-gui7"
   depends_on "ignition-math7"
   depends_on "ignition-msgs9"
   depends_on "ignition-physics6"
-  depends_on "ignition-plugin1"
+  depends_on "ignition-plugin2"
   depends_on "ignition-rendering7"
   depends_on "ignition-sensors7"
-  depends_on "ignition-tools"
+  depends_on "ignition-tools2"
   depends_on "ignition-transport12"
-  depends_on "ignition-utils1"
+  depends_on "ignition-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "ruby"
@@ -41,7 +42,7 @@ class IgnitionGazebo7 < Formula
   test do
     ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
     system Formula["ruby"].opt_bin/"ruby",
-           Formula["ignition-tools"].opt_bin/"ign",
+           Formula["ignition-tools2"].opt_bin/"ign",
            "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>

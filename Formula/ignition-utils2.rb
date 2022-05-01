@@ -1,19 +1,13 @@
-class IgnitionUtils1 < Formula
+class IgnitionUtils2 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.4.0.tar.bz2"
-  sha256 "2b895878a1e80e8df560c80366aeaa846588dd2670ffa0432b4472e81c65ce58"
+  url "https://github.com/ignitionrobotics/ign-utils.git", branch: "main"
+  version "1.999.999~0~20220406"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "837853e0c7387464c7ac15c8f5a2a5f7aa21debc7f2e5d87dbbe790c21e722f7"
-    sha256 cellar: :any, catalina: "dd74cfaee528c3878c9aaa0865488e742bf1716bf7c15d6c2f701c6a531573b2"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
 
   def install
     cmake_args = std_cmake_args
@@ -45,13 +39,13 @@ class IgnitionUtils1 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-utils1 QUIET REQUIRED)
+      find_package(ignition-utils2 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-UTILS_LIBRARIES})
     EOS
-    system "pkg-config", "ignition-utils1"
-    cflags = `pkg-config --cflags ignition-utils1`.split
-    ldflags = `pkg-config --libs ignition-utils1`.split
+    system "pkg-config", "ignition-utils2"
+    cflags = `pkg-config --cflags ignition-utils2`.split
+    ldflags = `pkg-config --libs ignition-utils2`.split
     system ENV.cxx, "test.cpp",
                     *cflags,
                     *ldflags,

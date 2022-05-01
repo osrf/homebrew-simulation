@@ -1,15 +1,9 @@
-class IgnitionCmake2 < Formula
+class IgnitionCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.12.1.tar.bz2"
-  sha256 "8ac9a26852eaad70980a54b60141fb3697ea11ce56fdba69a2151a8f5896edcf"
+  url "https://github.com/ignitionrobotics/ign-cmake.git", branch: "main"
+  version "2.999.999~0~20220406"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, big_sur:  "e0b18e2ba9eb920400a449793dd06032f47869db07502986959796b797865004"
-    sha256 cellar: :any_skip_relocation, catalina: "24eb034ba444fbf0a5a2b2c3bb7e92730b1ffa6259a1cfe6bfa5b3f5b05959e3"
-  end
 
   depends_on "cmake"
   depends_on "pkg-config"
@@ -29,7 +23,7 @@ class IgnitionCmake2 < Formula
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
       project(ignition-test VERSION 0.1.0)
-      find_package(ignition-cmake2 REQUIRED)
+      find_package(ignition-cmake3 REQUIRED)
       ign_configure_project()
       ign_configure_build(QUIT_IF_BUILD_ERRORS)
     EOS

@@ -4,13 +4,14 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.2.tar.bz2"
   sha256 "f6c4ea8cd8730c90b14760b3f84d4f362d3786b510fb43a0b77b2c06b8bdd2b6"
   license "Apache-2.0"
+  revision 2
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "03528c304a832dba761d25b93d5e5d24d5b161ecb2145970bb0085c9637a7a13"
-    sha256 catalina: "8abe5d4ac0a9a7134319c00a554f2b5a42c2471d0a81415d8cd14cdc3199cbb2"
+    sha256 big_sur:  "8e9329b678ba542a318ceb4e55aab15c940902197a2ea1491492a6a89c0fd9d1"
+    sha256 catalina: "46dd8fb6f27e058fde771762e472e6d1b1666041f27e83c2e5a37c90a928608d"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +33,6 @@ class Gazebo11 < Formula
   depends_on "ignition-transport8"
   depends_on "libtar"
   depends_on "ogre1.9"
-  depends_on "ossp-uuid" => :linked
   depends_on "protobuf"
   depends_on "protobuf-c"
   depends_on "qt@5"

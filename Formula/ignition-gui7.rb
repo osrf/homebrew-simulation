@@ -2,15 +2,15 @@ class IgnitionGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/ignitionrobotics/ign-gui"
   url "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
-  version "6.999.999~0~20211227"
+  version "6.999.999~0~20220414"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
-  depends_on "ignition-cmake2"
+  depends_on "ignition-cmake3"
   depends_on "ignition-common5"
   depends_on "ignition-msgs9"
-  depends_on "ignition-plugin1"
+  depends_on "ignition-plugin2"
   depends_on "ignition-rendering7"
   depends_on "ignition-transport12"
   depends_on macos: :mojave # c++17
