@@ -6,13 +6,7 @@ class DartsimAT6100 < Formula
   version "6.10.0~20211005~d2b6ee08a60d0dbf71b0f008cd8fed1f611f6e24"
   sha256 "372af181024452418eec95f8a9cd723ceb1ada979208add66c9a4330b9c0fa32"
   license "BSD-2-Clause"
-  revision 4
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "7b732f24d5aa7e15aa3d102b10c7bed9ace1c8c44a359dede2135c1abbc19134"
-    sha256 catalina: "9aa0b21202695f3a569c398fcf8539332581021ec36c9bf1bf0a346ce8542271"
-  end
+  revision 5
 
   keg_only "open robotics fork of dart HEAD + custom changes"
 
