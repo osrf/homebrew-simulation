@@ -4,7 +4,13 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.1.0.tar.bz2"
   sha256 "653942e8b92b1038ef654995366ce70c57f7a387c6aef5ded443c8855ad1f45a"
   license "Apache-2.0"
-  revision 5
+  revision 6
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "511422260cb4a3622ffd5791bd012cf831497f7e83f5d111099c6b686414cfa4"
+    sha256 cellar: :any, catalina: "04acb78ec27101312592b99f28051c4501616e92e550d4453b702dcf3202e86c"
+  end
 
   depends_on "cmake" => :build
 
