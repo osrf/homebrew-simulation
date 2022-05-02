@@ -6,6 +6,12 @@ class IgnitionPhysics2 < Formula
   license "Apache-2.0"
   revision 5
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "d27fdda92b2603834ec13fae6ffec6dca1647d1b6d182a76f9d855472ff62c8b"
+    sha256 cellar: :any, catalina: "d4e77f828470063213d90c7052e778abdab2f4b60129755b43f4e448c2381e41"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
