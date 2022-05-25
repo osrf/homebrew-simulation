@@ -1,7 +1,7 @@
 class IgnitionCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-cmake.git", branch: "main"
+  url "https://github.com/gazebosim/gz-cmake.git", branch: "main"
   version "2.999.999~0~20220406"
   license "Apache-2.0"
 

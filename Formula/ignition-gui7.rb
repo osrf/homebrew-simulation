@@ -1,7 +1,7 @@
 class IgnitionGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
-  homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://github.com/ignitionrobotics/ign-gui.git", branch: "main"
+  homepage "https://github.com/gazebosim/gz-gui"
+  url "https://github.com/gazebosim/gz-gui.git", branch: "main"
   version "6.999.999~0~20220414"
   license "Apache-2.0"
 

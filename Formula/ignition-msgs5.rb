@@ -1,6 +1,6 @@
 class IgnitionMsgs5 < Formula
   desc "Middleware protobuf messages for robotics"
-  homepage "https://github.com/ignitionrobotics/ign-msgs"
+  homepage "https://github.com/gazebosim/gz-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.9.0.tar.bz2"
   sha256 "42f7cb0afa62130f0e1a45a0bf8be7b633594152257fc8dfa72d6d5dd13770f4"
   license "Apache-2.0"

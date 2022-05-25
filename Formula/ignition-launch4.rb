@@ -1,12 +1,12 @@
 class IgnitionLaunch4 < Formula
   desc "Launch libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-launch"
+  homepage "https://github.com/gazebosim/gz-launch"
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch4-4.1.0.tar.bz2"
   sha256 "fd1e5a535bafb197360b168bce573bed3c4d7804b76c098d93afc5b17b2bdcef"
   license "Apache-2.0"
   revision 6
 
-  head "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
+  head "https://github.com/gazebosim/gz-launch.git", branch: "main"
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 

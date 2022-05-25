@@ -1,11 +1,11 @@
 class IgnitionSensors5 < Formula
   desc "Sensors library for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-sensors"
+  homepage "https://github.com/gazebosim/gz-sensors"
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.1.1.tar.bz2"
   sha256 "92943c50e92b02cfef71671939a90f0a35ea17a9237c2ac95b3b2d683c2aa180"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
+  head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
