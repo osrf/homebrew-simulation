@@ -1,7 +1,7 @@
 class IgnitionLaunch6 < Formula
   desc "Launch libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://github.com/ignitionrobotics/ign-launch.git", branch: "main"
+  homepage "https://github.com/gazebosim/gz-launch"
+  url "https://github.com/gazebosim/gz-launch.git", branch: "main"
   version "5.999.999~0~20220414"
   license "Apache-2.0"
 

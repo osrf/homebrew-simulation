@@ -1,12 +1,12 @@
 class IgnitionLaunch2 < Formula
   desc "Launch libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-launch"
+  homepage "https://github.com/gazebosim/gz-launch"
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.2.2.tar.bz2"
   sha256 "121c1a63c519709c057bb2b6d2688b9e8ebe07aa5de2d62205857a7028339779"
   license "Apache-2.0"
   revision 5
 
-  head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch2"
+  head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

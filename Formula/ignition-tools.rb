@@ -4,7 +4,7 @@ class IgnitionTools < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-tools/releases/ignition-tools-1.4.1.tar.bz2"
   sha256 "2aa1f7999068ff9e01ad8029899fd00d575a95a2b7bd16c59e47f832eb47b1c6"
   license "Apache-2.0"
-  head "https://github.com/ignitionrobotics/ign-tools.git", branch: "ign-tools1"
+  head "https://github.com/gazebosim/gz-tools.git", branch: "ign-tools1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

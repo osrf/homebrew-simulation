@@ -1,7 +1,7 @@
 class IgnitionUtils2 < Formula
   desc "General purpose classes and functions designed for robotic applications"
-  homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://github.com/ignitionrobotics/ign-utils.git", branch: "main"
+  homepage "https://github.com/gazebosim/gz-utils"
+  url "https://github.com/gazebosim/gz-utils.git", branch: "main"
   version "1.999.999~0~20220406"
   license "Apache-2.0"
 

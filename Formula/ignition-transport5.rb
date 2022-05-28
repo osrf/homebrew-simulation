@@ -1,7 +1,7 @@
 class IgnitionTransport5 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-transport/archive/c559f4db5ea6fe6e800a2d9ce36942e3f2ffcaec.tar.gz"
+  url "https://github.com/gazebosim/gz-transport/archive/c559f4db5ea6fe6e800a2d9ce36942e3f2ffcaec.tar.gz"
   version "5.0.0.999~20190711~f2402ae2"
   sha256 "4f84e852f48843bd226b397d2c49384fa7f9709df8fee3ba76688ac24040ba04"
   license "Apache-2.0"

@@ -1,6 +1,6 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-common"
+  homepage "https://github.com/gazebosim/gz-common"
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.14.0.tar.bz2"
   sha256 "ab8f1cbb3bb62649cbe096bbccac43c240dad197f3d5df3360e9eac8f04a9cda"
   license "Apache-2.0"
@@ -25,7 +25,7 @@ class IgnitionCommon3 < Formula
 
   patch do
     # Fix for compatibility with ffmpeg 5.0
-    url "https://github.com/ignitionrobotics/ign-common/commit/a11287ba5b213ffc90992f9ef972cd7acee11259.patch?full_index=1"
+    url "https://github.com/gazebosim/gz-common/commit/a11287ba5b213ffc90992f9ef972cd7acee11259.patch?full_index=1"
     sha256 "ad264b7c8bb3774fcb7d59d67ae33963f3d44e0018c23861c7fd8d86c3e057ab"
   end
 

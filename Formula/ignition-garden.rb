@@ -2,12 +2,12 @@ class IgnitionGarden < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
-  homepage "https://github.com/ignitionrobotics/ign-garden"
-  url "https://github.com/ignitionrobotics/ign-garden.git", branch: "main"
+  homepage "https://github.com/gazebosim/gz-garden"
+  url "https://github.com/gazebosim/gz-garden.git", branch: "main"
   version "0.999.999~0~20220414"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-garden.git", branch: "main"
+  head "https://github.com/gazebosim/gz-garden.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "ignition-cmake3"

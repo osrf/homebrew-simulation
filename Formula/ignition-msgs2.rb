@@ -1,12 +1,12 @@
 class IgnitionMsgs2 < Formula
   desc "Middleware protobuf messages for robotics"
-  homepage "https://github.com/ignitionrobotics/ign-msgs"
+  homepage "https://github.com/gazebosim/gz-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs2-2.1.0.tar.bz2"
   sha256 "fd70b8d9b57066b008be85afad04fbe14f6c6399133f16485ba1ef5f572943d6"
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "ign-msgs2"
+  head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs2"
 
   depends_on "protobuf-c" => :build
 

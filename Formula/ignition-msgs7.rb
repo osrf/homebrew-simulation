@@ -1,11 +1,11 @@
 class IgnitionMsgs7 < Formula
   desc "Middleware protobuf messages for robotics"
-  homepage "https://github.com/ignitionrobotics/ign-msgs"
+  homepage "https://github.com/gazebosim/gz-msgs"
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs7-7.3.0.tar.bz2"
   sha256 "eed26fb10cb80212e5198d98a98d3ebe852ebf7ed993786f8d22a5c01802d607"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-msgs.git", branch: "main"
+  head "https://github.com/gazebosim/gz-msgs.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
