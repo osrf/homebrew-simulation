@@ -1,17 +1,16 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.2.tar.bz2"
-  sha256 "f6c4ea8cd8730c90b14760b3f84d4f362d3786b510fb43a0b77b2c06b8bdd2b6"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.11.0.tar.bz2"
+  sha256 "0c2637a873ed14e848e79d3edc8672c8fb39001073287ce94e9991aae76dd958"
   license "Apache-2.0"
-  revision 6
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "0fff248f7e55aac0bf3d09973331cc086ba8fba0a21e1428e5d1fe484808cbda"
-    sha256 catalina: "0a20b34b3616d55820be2ac8f5b71ba5bed34a547393ca8a096af26bf5bf94f4"
+    sha256 big_sur:  "821ad4f5c82f3aad33940954fd2eae28124b2fc0af23f9ddb3f06765676f83a2"
+    sha256 catalina: "1782e69365f1f5fda19b687824b2f016957795a90d1d0e4a59cdb4d26a20ea59"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +20,7 @@ class Gazebo11 < Formula
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "doxygen"
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "graphviz"
   depends_on "gts"
@@ -100,7 +99,6 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CPATH", Formula["ffmpeg@4"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
