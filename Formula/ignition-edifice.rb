@@ -2,14 +2,14 @@ class IgnitionEdifice < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
-  homepage "https://github.com/ignitionrobotics/ign-edifice"
+  homepage "https://github.com/gazebosim/gz-edifice"
   url "https://osrf-distributions.s3.amazonaws.com/ign-edifice/releases/ignition-edifice-1.0.3.tar.bz2"
   sha256 "2a8208cc80a8934e64ffa9c79c352ff86c51d0b78ff69931259e3d86cf72fea7"
   license "Apache-2.0"
   revision 1
   version_scheme 1
 
-  head "https://github.com/ignitionrobotics/ign-edifice.git", branch: "main"
+  head "https://github.com/gazebosim/gz-edifice.git", branch: "main"
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 

@@ -1,7 +1,7 @@
 class IgnitionTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-transport.git", branch: "main"
+  url "https://github.com/gazebosim/gz-transport.git", branch: "main"
   version "11.999.999~0~20220414"
   license "Apache-2.0"
   version_scheme 1

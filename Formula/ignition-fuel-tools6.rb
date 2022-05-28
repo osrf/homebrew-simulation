@@ -5,7 +5,7 @@ class IgnitionFuelTools6 < Formula
   sha256 "c96101981122956ca501493c3415f22b4b4e24ae85b05585e728729c8dbc042f"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
+  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
