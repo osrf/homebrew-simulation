@@ -1,12 +1,12 @@
 class IgnitionRendering0 < Formula
   desc "Rendering library for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-rendering"
+  homepage "https://github.com/gazebosim/gz-rendering"
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering0-0.2.0.tar.bz2"
   sha256 "2935ec21e61d40e93d89540843d0317527b25a28b8cd750658edd619db45ff03"
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-rendering.git", branch: "ign-rendering0"
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering0"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => [:build, :test]
@@ -19,7 +19,7 @@ class IgnitionRendering0 < Formula
 
   patch do
     # Don't conflict with ignition-rendering1
-    url "https://github.com/ignitionrobotics/ign-rendering/commit/ba788c7261d367e3f1d72d62ee57ad8a32602bc1.patch?full_index=1"
+    url "https://github.com/gazebosim/gz-rendering/commit/ba788c7261d367e3f1d72d62ee57ad8a32602bc1.patch?full_index=1"
     sha256 "c7780dd7afddc384b7ffea151eacd3cd9981dec06d10de2b64ad7e9a079cf40b"
   end
 

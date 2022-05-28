@@ -6,7 +6,7 @@ class IgnitionTransport4 < Formula
   license "Apache-2.0"
   revision 13
 
-  head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport4"
+  head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

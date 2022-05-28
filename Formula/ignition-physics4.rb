@@ -1,6 +1,6 @@
 class IgnitionPhysics4 < Formula
   desc "Physics library for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-physics"
+  homepage "https://github.com/gazebosim/gz-physics"
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics4-4.3.0.tar.bz2"
   sha256 "66efb3f4e4f9f10b591200fea52f4d44297c596d26f8a88f951bb645c6fab7c2"
   license "Apache-2.0"

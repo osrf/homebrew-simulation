@@ -1,7 +1,7 @@
 class IgnitionSensors7 < Formula
   desc "Sensors library for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://github.com/ignitionrobotics/ign-sensors.git", branch: "main"
+  homepage "https://github.com/gazebosim/gz-sensors"
+  url "https://github.com/gazebosim/gz-sensors.git", branch: "main"
   version "6.999.999~0~20220414"
   license "Apache-2.0"
 

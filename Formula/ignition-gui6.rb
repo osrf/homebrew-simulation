@@ -1,6 +1,6 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
-  homepage "https://github.com/ignitionrobotics/ign-gui"
+  homepage "https://github.com/gazebosim/gz-gui"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.4.0.tar.bz2"
   sha256 "ae6422ae78faa321df55e18fa436cfd2a85d19106460ea68eeb454d2e48f5b97"
   license "Apache-2.0"

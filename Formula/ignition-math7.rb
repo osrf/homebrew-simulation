@@ -1,7 +1,7 @@
 class IgnitionMath7 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-math.git", branch: "main"
+  url "https://github.com/gazebosim/gz-math.git", branch: "main"
   version "6.999.999~0~20220414"
   license "Apache-2.0"
 

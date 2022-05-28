@@ -1,7 +1,7 @@
 class IgnitionCommon5 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://github.com/ignitionrobotics/ign-common.git", branch: "main"
+  homepage "https://github.com/gazebosim/gz-common"
+  url "https://github.com/gazebosim/gz-common.git", branch: "main"
   version "4.999.999~0~20220414"
   license "Apache-2.0"
 

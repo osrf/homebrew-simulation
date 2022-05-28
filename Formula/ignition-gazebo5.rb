@@ -1,12 +1,12 @@
 class IgnitionGazebo5 < Formula
   desc "Ignition Gazebo robot simulator"
-  homepage "https://github.com/ignitionrobotics/ign-gazebo"
+  homepage "https://github.com/gazebosim/gz-sim"
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo5-5.4.0.tar.bz2"
   sha256 "05ce86304e1ba435e87aa07c6fc7efebe03ea6a022243d6c0da5a91a409ac9f8"
   license "Apache-2.0"
   revision 1
 
-  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "main"
+  head "https://github.com/gazebosim/gz-sim.git", branch: "main"
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 

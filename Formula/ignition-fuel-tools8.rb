@@ -1,7 +1,7 @@
 class IgnitionFuelTools8 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://github.com/ignitionrobotics/ign-fuel-tools.git", branch: "main"
+  url "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
   version "7.999.999~0~20220414"
   license "Apache-2.0"
 
