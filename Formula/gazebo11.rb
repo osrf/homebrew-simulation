@@ -20,7 +20,7 @@ class Gazebo11 < Formula
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "doxygen"
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "graphviz"
   depends_on "gts"
@@ -99,7 +99,6 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CPATH", Formula["ffmpeg@4"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"
