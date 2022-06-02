@@ -22,12 +22,6 @@ class IgnitionCommon3 < Formula
   depends_on "pkg-config"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with ffmpeg 5.0
-    url "https://github.com/gazebosim/gz-common/commit/a11287ba5b213ffc90992f9ef972cd7acee11259.patch?full_index=1"
-    sha256 "ad264b7c8bb3774fcb7d59d67ae33963f3d44e0018c23861c7fd8d86c3e057ab"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
