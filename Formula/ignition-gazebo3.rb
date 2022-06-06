@@ -1,17 +1,16 @@
 class IgnitionGazebo3 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.12.0.tar.bz2"
-  sha256 "cc89eb24ff7c6177814f44b6b0aeef9efcbec0a242798200ae4d7c44ccec9513"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.13.0.tar.bz2"
+  sha256 "dabce27f6507f3fd7e97cc1818d2982c8490258a504fa2f1a18b5195b075c1c8"
   license "Apache-2.0"
-  revision 5
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "01ebae8ea00a61dd28316defe1576692b2523a233bf698ef1d6984a8495fd8ad"
-    sha256 catalina: "43c2a0cfa0b21be0773851d499215414c356a26e3eede82af480911eeab62ef0"
+    sha256 big_sur:  "a765cdfb560f871a13b22172f33410b4aa7cb1285cd33ce0e17b202ce1aae84e"
+    sha256 catalina: "f5b33978d66ec4e2b24151d6446b85b0b0317fa59033214867ddc67af68cfa4f"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
