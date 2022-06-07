@@ -1,16 +1,15 @@
 class IgnitionTransport11 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.0.0.tar.bz2"
-  sha256 "1a40c7ba00c4d8ff0a9d6bc5f1c6e678e32985dccd032b4e6d9f8b60cff9dbd5"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.1.0.tar.bz2"
+  sha256 "e02d65374817db971ac46e2a49eae2799fb00bffae9db65cc847a33046746ec6"
   license "Apache-2.0"
-  revision 2
   version_scheme 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "4dcf0828a8b489b9a7d507918d0dd89b54faa61df6142040a736fef20d169ac4"
-    sha256 catalina: "828827c044797ded30d5f679e6531b6801bc2e99e732bf1d9e6ec2271dad9260"
+    sha256 big_sur:  "2d55d68050b239d712ed04727b7dbb836b4f95b956e14bbf897e02a216641201"
+    sha256 catalina: "8c43f4a473ae10a83296d4dc9883e1d625547a6c6e66bea8431ff74a1fc892d5"
   end
 
   depends_on "doxygen" => [:build, :optional]
