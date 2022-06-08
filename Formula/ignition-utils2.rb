@@ -7,7 +7,7 @@ class IgnitionUtils2 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
-  depends_on "ignition-cmake3"
+  depends_on "gz-cmake3"
 
   def install
     cmake_args = std_cmake_args
