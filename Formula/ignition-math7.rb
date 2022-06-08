@@ -1,6 +1,6 @@
 class IgnitionMath7 < Formula
   desc "Math API for robotic applications"
-  homepage "https://ignitionrobotics.org"
+  homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-math.git", branch: "main"
   version "6.999.999~0~20220414"
   license "Apache-2.0"
@@ -23,9 +23,9 @@ class IgnitionMath7 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include "ignition/math/SignalStats.hh"
+      #include "gz/math/SignalStats.hh"
       int main() {
-        ignition::math::SignalMean mean;
+        gz::math::SignalMean mean;
         mean.InsertData(1.0);
         mean.InsertData(-1.0);
         return static_cast<int>(mean.Value());
@@ -33,14 +33,14 @@ class IgnitionMath7 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-math7 QUIET REQUIRED)
+      find_package(gz-math7 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-math7::ignition-math7)
+      target_link_libraries(test_cmake gz-math7::gz-math7)
     EOS
     # test building with manual compiler flags
     system ENV.cc, "test.cpp",
                    "--std=c++14",
-                   "-I#{include}/ignition/math7",
+                   "-I#{include}/gz/math7",
                    "-L#{lib}",
                    "-lignition-math7",
                    "-lc++",
