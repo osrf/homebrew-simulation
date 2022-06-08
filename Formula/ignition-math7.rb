@@ -9,8 +9,8 @@ class IgnitionMath7 < Formula
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build
   depends_on "eigen"
-  depends_on "ignition-cmake3"
-  depends_on "ignition-utils2"
+  depends_on "gz-cmake3"
+  depends_on "gz-utils2"
   depends_on "ruby"
 
   def install
