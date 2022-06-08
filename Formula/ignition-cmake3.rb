@@ -23,7 +23,7 @@ class IgnitionCmake3 < Formula
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
       project(ignition-test VERSION 0.1.0)
-      find_package(ignition-cmake3 REQUIRED)
+      find_package(gz-cmake3 REQUIRED)
       ign_configure_project()
       ign_configure_build(QUIT_IF_BUILD_ERRORS)
     EOS
