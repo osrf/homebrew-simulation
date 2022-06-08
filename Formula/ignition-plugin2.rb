@@ -6,9 +6,9 @@ class IgnitionPlugin2 < Formula
   license "Apache-2.0"
 
   depends_on "cmake"
-  depends_on "ignition-cmake3"
-  depends_on "ignition-tools2"
-  depends_on "ignition-utils2"
+  depends_on "gz-cmake3"
+  depends_on "gz-tools2"
+  depends_on "gz-utils2"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
 
@@ -22,15 +22,15 @@ class IgnitionPlugin2 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/plugin/Loader.hh>
+      #include <gz/plugin/Loader.hh>
       int main() {
-        ignition::plugin::Loader loader;
+        gz::plugin::Loader loader;
         return loader.InterfacesImplemented().size();
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-plugin2 QUIET REQUIRED COMPONENTS loader)
+      find_package(gz-plugin2 QUIET REQUIRED COMPONENTS loader)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${IGNITION-PLUGIN_LIBRARIES})
     EOS
