@@ -41,11 +41,11 @@ class IgnitionUtils2 < Formula
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(gz-utils2 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-UTILS_LIBRARIES})
+      target_link_libraries(test_cmake gz-utils2::gz-utils2)
     EOS
-    system "pkg-config", "ignition-utils2"
-    cflags = `pkg-config --cflags ignition-utils2`.split
-    ldflags = `pkg-config --libs ignition-utils2`.split
+    system "pkg-config", "gz-utils2"
+    cflags = `pkg-config --cflags gz-utils2`.split
+    ldflags = `pkg-config --libs gz-utils2`.split
     system ENV.cxx, "test.cpp",
                     *cflags,
                     *ldflags,
