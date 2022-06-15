@@ -42,7 +42,7 @@ class IgnitionMath7 < Formula
                    "--std=c++14",
                    "-I#{include}/gz/math7",
                    "-L#{lib}",
-                   "-lignition-math7",
+                   "-lgz-math7",
                    "-lc++",
                    "-o", "test"
     system "./test"
