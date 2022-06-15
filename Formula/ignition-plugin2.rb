@@ -32,14 +32,14 @@ class IgnitionPlugin2 < Formula
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(gz-plugin2 QUIET REQUIRED COMPONENTS loader)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-PLUGIN_LIBRARIES})
+      target_link_libraries(test_cmake gz-plugin2::loader)
     EOS
-    system "pkg-config", "ignition-plugin2-loader"
-    cflags = `pkg-config --cflags ignition-plugin2-loader`.split
+    system "pkg-config", "gz-plugin2-loader"
+    cflags = `pkg-config --cflags gz-plugin2-loader`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-plugin2-loader",
+                   "-lgz-plugin2-loader",
                    "-lc++",
                    "-o", "test"
     system "./test"
