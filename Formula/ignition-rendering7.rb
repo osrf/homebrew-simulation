@@ -1,6 +1,6 @@
 class IgnitionRendering7 < Formula
   desc "Rendering library for robotics applications"
-  homepage "https://github.com/gazebosim/gz-rendering"
+  homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-rendering.git", branch: "main"
   version "6.999.999~0~20220414"
   license "Apache-2.0"
@@ -9,11 +9,11 @@ class IgnitionRendering7 < Formula
   depends_on "pkg-config" => [:build, :test]
 
   depends_on "freeimage"
-  depends_on "ignition-cmake3"
-  depends_on "ignition-common5"
-  depends_on "ignition-math7"
-  depends_on "ignition-plugin2"
-  depends_on "ignition-utils2"
+  depends_on "gz-cmake3"
+  depends_on "gz-common5"
+  depends_on "gz-math7"
+  depends_on "gz-plugin2"
+  depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.2"
@@ -29,25 +29,25 @@ class IgnitionRendering7 < Formula
   test do
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/rendering/RenderEngine.hh>
-      #include <ignition/rendering/RenderingIface.hh>
+      #include <gz/rendering/RenderEngine.hh>
+      #include <gz/rendering/RenderingIface.hh>
       int main(int _argc, char** _argv)
       {
-        ignition::rendering::RenderEngine *engine =
-            ignition::rendering::engine("ogre");
+        gz::rendering::RenderEngine *engine =
+            gz::rendering::engine("ogre");
         return engine == nullptr;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(ignition-rendering7 QUIET REQUIRED)
+      find_package(gz-rendering7 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-rendering7::ignition-rendering7)
+      target_link_libraries(test_cmake gz-rendering7::gz-rendering7)
     EOS
     # test building with pkg-config
-    system "pkg-config", "ignition-rendering7"
-    cflags   = `pkg-config --cflags ignition-rendering7`.split
-    ldflags  = `pkg-config --libs ignition-rendering7`.split
+    system "pkg-config", "gz-rendering7"
+    cflags   = `pkg-config --cflags gz-rendering7`.split
+    ldflags  = `pkg-config --libs gz-rendering7`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
