@@ -1,7 +1,7 @@
 class Sdformat13 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/ignitionrobotics/sdformat.git", branch: "main"
+  url "https://github.com/gazebosim/sdformat.git", branch: "main"
   version "12.999.999~0~20220414"
   license "Apache-2.0"
 
@@ -9,10 +9,10 @@ class Sdformat13 < Formula
   depends_on "pkg-config" => [:build, :test]
 
   depends_on "doxygen"
-  depends_on "ignition-cmake3"
-  depends_on "ignition-math7"
-  depends_on "ignition-tools2"
-  depends_on "ignition-utils2"
+  depends_on "gz-cmake3"
+  depends_on "gz-math7"
+  depends_on "gz-tools2"
+  depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "tinyxml2"
   depends_on "urdfdom"
