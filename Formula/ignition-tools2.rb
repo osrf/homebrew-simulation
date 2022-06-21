@@ -1,11 +1,12 @@
 class IgnitionTools2 < Formula
-  desc "Entry point for ignition command-line tools"
-  homepage "https://ignitionrobotics.org"
+  desc "Entry point for Gazebo command-line tools"
+  homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-tools.git", branch: "main"
   version "1.999.999~0~20220414"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
+  depends_on "gz-cmake3"
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
 
@@ -28,7 +29,7 @@ class IgnitionTools2 < Formula
           - test  : Test utility
       ---
     EOS
-    ENV["IGN_CONFIG_PATH"] = testpath/"config/"
-    system "#{bin}/ign", "test", "--versions"
+    ENV["GZ_CONFIG_PATH"] = testpath/"config/"
+    system "#{bin}/gz", "test", "--versions"
   end
 end
