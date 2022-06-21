@@ -6,9 +6,9 @@ class IgnitionTools2 < Formula
   license "Apache-2.0"
 
   depends_on "cmake" => :build
-  depends_on "gz-cmake3"
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
+  depends_on "gz-cmake3"
 
   def install
     mkdir "build" do
