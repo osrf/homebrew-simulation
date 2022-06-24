@@ -7,12 +7,12 @@ class IgnitionGui7 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
-  depends_on "ignition-cmake3"
-  depends_on "ignition-common5"
-  depends_on "ignition-msgs9"
-  depends_on "ignition-plugin2"
-  depends_on "ignition-rendering7"
-  depends_on "ignition-transport12"
+  depends_on "gz-cmake3"
+  depends_on "gz-common5"
+  depends_on "gz-msgs9"
+  depends_on "gz-plugin2"
+  depends_on "gz-rendering7"
+  depends_on "gz-transport12"
   depends_on macos: :mojave # c++17
   depends_on "qt@5"
   depends_on "tinyxml2"
@@ -33,9 +33,9 @@ class IgnitionGui7 < Formula
     #include <iostream>
 
     #ifndef Q_MOC_RUN
-      #include <ignition/gui/qt.h>
-      #include <ignition/gui/Application.hh>
-      #include <ignition/gui/MainWindow.hh>
+      #include <gz/gui/qt.h>
+      #include <gz/gui/Application.hh>
+      #include <gz/gui/MainWindow.hh>
     #endif
 
     //////////////////////////////////////////////////
@@ -44,10 +44,10 @@ class IgnitionGui7 < Formula
       std::cout << "Hello, GUI!" << std::endl;
 
       // Increase verboosity so we see all messages
-      ignition::common::Console::SetVerbosity(4);
+      gz::common::Console::SetVerbosity(4);
 
       // Create app
-      ignition::gui::Application app(_argc, _argv);
+      gz::gui::Application app(_argc, _argv);
 
       // Load plugins / config
       if (!app.LoadPlugin("Publisher"))
@@ -56,7 +56,7 @@ class IgnitionGui7 < Formula
       }
 
       // Customize main window
-      auto win = app.findChild<ignition::gui::MainWindow *>()->QuickWindow();
+      auto win = app.findChild<gz::gui::MainWindow *>()->QuickWindow();
       win->setProperty("title", "Hello Window!");
 
       // Run window
@@ -69,20 +69,20 @@ class IgnitionGui7 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-gui7 QUIET REQUIRED)
+      find_package(gz-gui7 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-gui7::ignition-gui7)
+      target_link_libraries(test_cmake gz-gui7::gz-gui7)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    system "pkg-config", "ignition-gui7"
-    cflags   = `pkg-config --cflags ignition-gui7`.split
-    ldflags  = `pkg-config --libs ignition-gui7`.split
+    system "pkg-config", "gz-gui7"
+    cflags   = `pkg-config --cflags gz-gui7`.split
+    ldflags  = `pkg-config --libs gz-gui7`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
+    ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix

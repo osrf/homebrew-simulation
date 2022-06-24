@@ -10,11 +10,11 @@ class IgnitionPhysics6 < Formula
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "google-benchmark"
-  depends_on "ignition-cmake3"
-  depends_on "ignition-common5"
-  depends_on "ignition-math7"
-  depends_on "ignition-plugin2"
-  depends_on "ignition-utils2"
+  depends_on "gz-cmake3"
+  depends_on "gz-common5"
+  depends_on "gz-math7"
+  depends_on "gz-plugin2"
+  depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat13"
@@ -29,28 +29,28 @@ class IgnitionPhysics6 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include "ignition/plugin/Loader.hh"
-      #include "ignition/physics/ConstructEmpty.hh"
-      #include "ignition/physics/RequestEngine.hh"
+      #include "gz/plugin/Loader.hh"
+      #include "gz/physics/ConstructEmpty.hh"
+      #include "gz/physics/RequestEngine.hh"
       int main()
       {
-        ignition::plugin::Loader loader;
-        loader.LoadLib("#{opt_lib}/libignition-physics6-dartsim-plugin.dylib");
-        ignition::plugin::PluginPtr dartsim =
-            loader.Instantiate("ignition::physics::dartsim::Plugin");
-        using featureList = ignition::physics::FeatureList<
-            ignition::physics::ConstructEmptyWorldFeature>;
+        gz::plugin::Loader loader;
+        loader.LoadLib("#{opt_lib}/libgz-physics6-dartsim-plugin.dylib");
+        gz::plugin::PluginPtr dartsim =
+            loader.Instantiate("gz::physics::dartsim::Plugin");
+        using featureList = gz::physics::FeatureList<
+            gz::physics::ConstructEmptyWorldFeature>;
         auto engine =
-            ignition::physics::RequestEngine3d<featureList>::From(dartsim);
+            gz::physics::RequestEngine3d<featureList>::From(dartsim);
         return engine == nullptr;
       }
     EOS
-    system "pkg-config", "ignition-physics6"
-    cflags   = `pkg-config --cflags ignition-physics6`.split
-    ldflags  = `pkg-config --libs ignition-physics6`.split
-    system "pkg-config", "ignition-plugin2-loader"
-    loader_cflags   = `pkg-config --cflags ignition-plugin2-loader`.split
-    loader_ldflags  = `pkg-config --libs ignition-plugin2-loader`.split
+    system "pkg-config", "gz-physics6"
+    cflags   = `pkg-config --cflags gz-physics6`.split
+    ldflags  = `pkg-config --libs gz-physics6`.split
+    system "pkg-config", "gz-plugin2-loader"
+    loader_cflags   = `pkg-config --cflags gz-plugin2-loader`.split
+    loader_ldflags  = `pkg-config --libs gz-plugin2-loader`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
