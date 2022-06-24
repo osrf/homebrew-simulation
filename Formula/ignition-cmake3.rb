@@ -1,6 +1,6 @@
 class IgnitionCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
-  homepage "https://ignitionrobotics.org"
+  homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-cmake.git", branch: "main"
   version "2.999.999~0~20220406"
   license "Apache-2.0"
@@ -22,10 +22,10 @@ class IgnitionCmake3 < Formula
   test do
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
-      project(ignition-test VERSION 0.1.0)
-      find_package(ignition-cmake3 REQUIRED)
-      ign_configure_project()
-      ign_configure_build(QUIT_IF_BUILD_ERRORS)
+      project(gz-test VERSION 0.1.0)
+      find_package(gz-cmake3 REQUIRED)
+      gz_configure_project()
+      gz_configure_build(QUIT_IF_BUILD_ERRORS)
     EOS
     %w[doc include src test].each do |dir|
       mkdir dir do
