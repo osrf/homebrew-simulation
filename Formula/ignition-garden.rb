@@ -13,7 +13,7 @@ class IgnitionGarden < Formula
   depends_on "gz-cmake3"
   depends_on "gz-common5"
   depends_on "gz-fuel-tools8"
-  depends_on "gz-gazebo7"
+  depends_on "gz-sim7"
   depends_on "gz-gui7"
   depends_on "gz-launch6"
   depends_on "gz-math7"
