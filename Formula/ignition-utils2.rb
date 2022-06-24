@@ -7,7 +7,7 @@ class IgnitionUtils2 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
-  depends_on "ignition-cmake3"
+  depends_on "gz-cmake3"
 
   def install
     cmake_args = std_cmake_args
@@ -23,14 +23,14 @@ class IgnitionUtils2 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/utils/ImplPtr.hh>
+      #include <gz/utils/ImplPtr.hh>
       class SomeClassPrivate
       {
       };
       class SomeClass
       {
-        private: ignition::utils::ImplPtr<SomeClassPrivate> dataPtr =
-            ignition::utils::MakeImpl<SomeClassPrivate>();
+        private: gz::utils::ImplPtr<SomeClassPrivate> dataPtr =
+            gz::utils::MakeImpl<SomeClassPrivate>();
       };
       int main() {
         SomeClass object;
@@ -39,13 +39,13 @@ class IgnitionUtils2 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-utils2 QUIET REQUIRED)
+      find_package(gz-utils2 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-UTILS_LIBRARIES})
+      target_link_libraries(test_cmake gz-utils2::gz-utils2)
     EOS
-    system "pkg-config", "ignition-utils2"
-    cflags = `pkg-config --cflags ignition-utils2`.split
-    ldflags = `pkg-config --libs ignition-utils2`.split
+    system "pkg-config", "gz-utils2"
+    cflags = `pkg-config --cflags gz-utils2`.split
+    ldflags = `pkg-config --libs gz-utils2`.split
     system ENV.cxx, "test.cpp",
                     *cflags,
                     *ldflags,

@@ -1,5 +1,5 @@
 class IgnitionTools2 < Formula
-  desc "Entry point for gz command-line tools"
+  desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-tools.git", branch: "main"
   version "1.999.999~0~20220414"
@@ -8,6 +8,7 @@ class IgnitionTools2 < Formula
   depends_on "cmake" => :build
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
+  depends_on "gz-cmake3"
 
   def install
     mkdir "build" do
