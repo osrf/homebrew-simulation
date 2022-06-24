@@ -9,14 +9,14 @@ class IgnitionLaunch6 < Formula
   depends_on "pkg-config" => :build
 
   depends_on "ffmpeg"
-  depends_on "ignition-cmake3"
-  depends_on "ignition-common5"
-  depends_on "ignition-gazebo7"
-  depends_on "ignition-gui7"
-  depends_on "ignition-msgs9"
-  depends_on "ignition-plugin2"
-  depends_on "ignition-tools2"
-  depends_on "ignition-transport12"
+  depends_on "gz-cmake3"
+  depends_on "gz-common5"
+  depends_on "gz-gazebo7"
+  depends_on "gz-gui7"
+  depends_on "gz-msgs9"
+  depends_on "gz-plugin2"
+  depends_on "gz-tools2"
+  depends_on "gz-transport12"
   depends_on "qt@5"
   depends_on "tinyxml2"
 
@@ -32,8 +32,8 @@ class IgnitionLaunch6 < Formula
   end
 
   test do
-    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
-    system "ign", "launch", "--versions"
+    ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
+    system "gz", "launch", "--versions"
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode

@@ -8,12 +8,12 @@ class IgnitionSensors7 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
-  depends_on "ignition-cmake3"
-  depends_on "ignition-common5"
-  depends_on "ignition-math7"
-  depends_on "ignition-msgs9"
-  depends_on "ignition-rendering7"
-  depends_on "ignition-transport12"
+  depends_on "gz-cmake3"
+  depends_on "gz-common5"
+  depends_on "gz-math7"
+  depends_on "gz-msgs9"
+  depends_on "gz-rendering7"
+  depends_on "gz-transport12"
   depends_on "sdformat13"
 
   def install
@@ -27,25 +27,25 @@ class IgnitionSensors7 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/sensors/Noise.hh>
+      #include <gz/sensors/Noise.hh>
 
       int main()
       {
-        ignition::sensors::Noise noise(ignition::sensors::NoiseType::NONE);
+        gz::sensors::Noise noise(gz::sensors::NoiseType::NONE);
 
         return 0;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(ignition-sensors7 QUIET REQUIRED)
+      find_package(gz-sensors7 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ignition-sensors7::ignition-sensors7)
+      target_link_libraries(test_cmake gz-sensors7::gz-sensors7)
     EOS
     # test building with pkg-config
-    system "pkg-config", "ignition-sensors7"
-    cflags   = `pkg-config --cflags ignition-sensors7`.split
-    ldflags  = `pkg-config --libs ignition-sensors7`.split
+    system "pkg-config", "gz-sensors7"
+    cflags   = `pkg-config --cflags gz-sensors7`.split
+    ldflags  = `pkg-config --libs gz-sensors7`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,

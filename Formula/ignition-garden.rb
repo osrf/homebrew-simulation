@@ -10,21 +10,21 @@ class IgnitionGarden < Formula
   head "https://github.com/gazebosim/gz-garden.git", branch: "main"
 
   depends_on "cmake" => :build
-  depends_on "ignition-cmake3"
-  depends_on "ignition-common5"
-  depends_on "ignition-fuel-tools8"
-  depends_on "ignition-gazebo7"
-  depends_on "ignition-gui7"
-  depends_on "ignition-launch6"
-  depends_on "ignition-math7"
-  depends_on "ignition-msgs9"
-  depends_on "ignition-physics6"
-  depends_on "ignition-plugin2"
-  depends_on "ignition-rendering7"
-  depends_on "ignition-sensors7"
-  depends_on "ignition-tools2"
-  depends_on "ignition-transport12"
-  depends_on "ignition-utils2"
+  depends_on "gz-cmake3"
+  depends_on "gz-common5"
+  depends_on "gz-fuel-tools8"
+  depends_on "gz-gazebo7"
+  depends_on "gz-gui7"
+  depends_on "gz-launch6"
+  depends_on "gz-math7"
+  depends_on "gz-msgs9"
+  depends_on "gz-physics6"
+  depends_on "gz-plugin2"
+  depends_on "gz-rendering7"
+  depends_on "gz-sensors7"
+  depends_on "gz-tools2"
+  depends_on "gz-transport12"
+  depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat13"
@@ -47,7 +47,7 @@ class IgnitionGarden < Formula
   end
 
   test do
-    yaml_file = share/"ignition/ignition-garden/gazebodistro/collection-garden.yaml"
+    yaml_file = share/"gz/gz-garden/gazebodistro/collection-garden.yaml"
     system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
