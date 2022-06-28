@@ -47,7 +47,8 @@ class IgnitionGarden < Formula
   end
 
   test do
-    yaml_file = share/"gz/gz-garden/gazebodistro/collection-garden.yaml"
+    # TODO: migrate ignition to gz when IGN_DATA_INSTALL_DIR is migrated
+    yaml_file = share/"ignition/gz-garden/gazebodistro/collection-garden.yaml"
     system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
