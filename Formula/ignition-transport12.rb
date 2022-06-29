@@ -2,9 +2,8 @@ class IgnitionTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-transport.git", branch: "main"
-  version "11.999.999~0~20220414"
+  version "11.999.999~0~20220629"
   license "Apache-2.0"
-  version_scheme 1
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
