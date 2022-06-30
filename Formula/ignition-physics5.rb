@@ -1,15 +1,14 @@
 class IgnitionPhysics5 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.1.0.tar.bz2"
-  sha256 "653942e8b92b1038ef654995366ce70c57f7a387c6aef5ded443c8855ad1f45a"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.2.0.tar.bz2"
+  sha256 "7343caec347c00794c0a6066b99728c77315da6750fa899e6ff06d3bd0a02cd3"
   license "Apache-2.0"
-  revision 6
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "511422260cb4a3622ffd5791bd012cf831497f7e83f5d111099c6b686414cfa4"
-    sha256 cellar: :any, catalina: "04acb78ec27101312592b99f28051c4501616e92e550d4453b702dcf3202e86c"
+    sha256 cellar: :any, big_sur:  "8e32bff557518e1edd2367779559902e1e62908461a3504c23ee884f24756422"
+    sha256 cellar: :any, catalina: "2ff067ca255df12762264eea4c6eacaa8311ccc56a82c7fcb567e3113c824a84"
   end
 
   depends_on "cmake" => :build
