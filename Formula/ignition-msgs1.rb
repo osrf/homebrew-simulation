@@ -4,16 +4,10 @@ class IgnitionMsgs1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs-1.0.0.tar.bz2"
   sha256 "fed54d079a58087fa83cc871f01ba2919866292ba949b6b8f37a0cb3d7186b4b"
   license "Apache-2.0"
-  revision 15
+  revision 16
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs1"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "c0f8f11c0ab513762c77608d5c440671cae9e0979a7d4ebb4d65de0ba385731d"
-    sha256 cellar: :any, catalina: "70280492fcfe5fc24d58f96cd2596395a8fae62d4422fc765f9bbcf6227b4d3d"
-  end
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
