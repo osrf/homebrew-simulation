@@ -4,12 +4,7 @@ class IgnitionFuelTools4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools4-4.5.0.tar.bz2"
   sha256 "70d7c48009b1406726b3844ea746cd50cf6dde5c784e90775c2dfe28cd29d62e"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "66fbb431ec9f85466894c04e2eb9e576e73a0d0592c0f2e1332d56dbf878b4b1"
-    sha256 cellar: :any, catalina: "fd386a54fefe7e8e073516f05a0eff29222b65840a709b1ee7668a7312cb53c5"
-  end
+  revision 1
 
   depends_on "cmake"
   depends_on "ignition-cmake2"

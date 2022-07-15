@@ -4,14 +4,9 @@ class IgnitionSensors5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors5-5.1.1.tar.bz2"
   sha256 "92943c50e92b02cfef71671939a90f0a35ea17a9237c2ac95b3b2d683c2aa180"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "bf36e8a6220c5cee9beae83c8ae52f431c7c07ca2d725a44d68fb7fc81f81ce6"
-    sha256 catalina: "834eef78970c07ad11453ac967f240413ed091006bbc90ff51405e0458dc7063"
-  end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 
