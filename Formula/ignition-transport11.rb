@@ -4,13 +4,8 @@ class IgnitionTransport11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.1.0.tar.bz2"
   sha256 "e02d65374817db971ac46e2a49eae2799fb00bffae9db65cc847a33046746ec6"
   license "Apache-2.0"
+  revision 1
   version_scheme 1
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "2d55d68050b239d712ed04727b7dbb836b4f95b956e14bbf897e02a216641201"
-    sha256 catalina: "8c43f4a473ae10a83296d4dc9883e1d625547a6c6e66bea8431ff74a1fc892d5"
-  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
