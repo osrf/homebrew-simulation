@@ -4,13 +4,7 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.4.0.tar.bz2"
   sha256 "ae6422ae78faa321df55e18fa436cfd2a85d19106460ea68eeb454d2e48f5b97"
   license "Apache-2.0"
-  revision 1
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "0fcb958351137d96e5318707d9e8975c6fc2a646ea3d40573c2771ded624e089"
-    sha256 catalina: "3f408467686918e895940a88b4fccb690852ea160c221af421411301ce4714cd"
-  end
+  revision 2
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
