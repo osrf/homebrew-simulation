@@ -4,7 +4,7 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.4.0.tar.bz2"
   sha256 "ae6422ae78faa321df55e18fa436cfd2a85d19106460ea68eeb454d2e48f5b97"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
