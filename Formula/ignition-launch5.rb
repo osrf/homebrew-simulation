@@ -4,7 +4,7 @@ class IgnitionLaunch5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.1.0.tar.bz2"
   sha256 "910f46ecb50503f86ec5753e367108c26bf9d74e9457d01c4099150c982b3e87"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
