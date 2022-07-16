@@ -11,6 +11,12 @@ class IgnitionFortress < Formula
 
   head "https://github.com/gazebosim/gz-fortress.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "fa5f4afc3f351b3dd4aaa7ed75f46ba9547a5c23e0100307ac2906fb607a3cc7"
+    sha256 cellar: :any, catalina: "c99f3a4c56ecbaf7b0fe6584e79dd7520be8094f890200ddef292e22c5e7790f"
+  end
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"

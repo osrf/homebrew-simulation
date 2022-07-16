@@ -6,6 +6,12 @@ class IgnitionGazebo6 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "a872526fa1a1a3acb48000e2c13d8226f045e4c7030a7b9664219cc7257184a0"
+    sha256 catalina: "a738d36fb9ae22b92c099ad51d6e73aa8d91f393756a52e45ad41f65f9f95eac"
+  end
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "ffmpeg"
