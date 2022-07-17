@@ -4,7 +4,7 @@ class IgnitionTransport8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.2.1.tar.bz2"
   sha256 "bf7e1a06034f180d4e8f97a72219f8bfb73693685cc61ee788821e47612dcab9"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
