@@ -9,6 +9,12 @@ class IgnitionMsgs1 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs1"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "477b93c40f062c1908c4dce3d486dea4176b3b21e7cfd5cd40628f7a37f55ac5"
+    sha256 cellar: :any, catalina: "0376b7541f4d714b40edc7c588c97ee00bb9bfaf2c3fa646a34c26baa40f12ae"
+  end
+
   depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "ignition-cmake0"
