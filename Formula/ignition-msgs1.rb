@@ -17,6 +17,14 @@ class IgnitionMsgs1 < Formula
   depends_on "protobuf"
   depends_on "ignition-tools" => :recommended
 
+  patch do
+    # Fix compilation: add missing std namespace
+    # https://github.com/gazebosim/gz-msgs/pull/242
+    # TODO: remove with next major release
+    url "https://github.com/gazebosim/gz-msgs/commit/88386e4e7a38d0ccb0a96f9774ba5339bc7e5440.patch?full_index=1"
+    sha256 "2cc0cb1887a1c9f945f80f7fcee5f4f1719d914e1134b44254b5718383ff6263"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
