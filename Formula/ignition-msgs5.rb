@@ -22,14 +22,6 @@ class IgnitionMsgs5 < Formula
   depends_on "protobuf"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix compilation: add missing std namespace
-    # https://github.com/gazebosim/gz-msgs/pull/242
-    # TODO: remove with next major release
-    url "https://github.com/gazebosim/gz-msgs/commit/914e7a3b5988d64824805a36877baad87474a81a.patch?full_index=1"
-    sha256 "077c5bb2eb678817a933b9a8b14b89881f61c8a84969fd3534eb1e4e090183ad"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
