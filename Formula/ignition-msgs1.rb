@@ -4,10 +4,16 @@ class IgnitionMsgs1 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs-1.0.0.tar.bz2"
   sha256 "fed54d079a58087fa83cc871f01ba2919866292ba949b6b8f37a0cb3d7186b4b"
   license "Apache-2.0"
-  revision 16
+  revision 17
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs1"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "477b93c40f062c1908c4dce3d486dea4176b3b21e7cfd5cd40628f7a37f55ac5"
+    sha256 cellar: :any, catalina: "0376b7541f4d714b40edc7c588c97ee00bb9bfaf2c3fa646a34c26baa40f12ae"
+  end
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
@@ -16,6 +22,14 @@ class IgnitionMsgs1 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "ignition-tools" => :recommended
+
+  patch do
+    # Fix compilation: add missing std namespace
+    # https://github.com/gazebosim/gz-msgs/pull/242
+    # TODO: remove with next major release
+    url "https://github.com/gazebosim/gz-msgs/commit/88386e4e7a38d0ccb0a96f9774ba5339bc7e5440.patch?full_index=1"
+    sha256 "2cc0cb1887a1c9f945f80f7fcee5f4f1719d914e1134b44254b5718383ff6263"
+  end
 
   def install
     cmake_args = std_cmake_args
