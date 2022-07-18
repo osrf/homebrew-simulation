@@ -1,15 +1,14 @@
 class IgnitionMsgs5 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/gazebosim/gz-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.9.0.tar.bz2"
-  sha256 "42f7cb0afa62130f0e1a45a0bf8be7b633594152257fc8dfa72d6d5dd13770f4"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.10.0.tar.bz2"
+  sha256 "4d83468ba00c9a3a7a01b1dfa6924873d2e0c7c6ccbe0311660965d0aee5cde5"
   license "Apache-2.0"
-  revision 3
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "6b04187365040646837a4dc4dea2d1bfd5f5c8507f520dcb2f01b1c42205c4be"
-    sha256 cellar: :any, catalina: "8b3dcd6b05832b747fb15ef583fbc9a694f88f3aac137c0d78f324b9ee3456b8"
+    sha256 cellar: :any, big_sur:  "c15644a3a47467d595175aa329e5b108e654997f7b9e0677de90874dd18f6582"
+    sha256 cellar: :any, catalina: "77558070d66c1b98863d4b265226199056c896f09623ea1c4bc4afa33d710dac"
   end
 
   depends_on "protobuf-c" => :build
@@ -22,14 +21,6 @@ class IgnitionMsgs5 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix compilation: add missing std namespace
-    # https://github.com/gazebosim/gz-msgs/pull/242
-    # TODO: remove with next major release
-    url "https://github.com/gazebosim/gz-msgs/commit/914e7a3b5988d64824805a36877baad87474a81a.patch?full_index=1"
-    sha256 "077c5bb2eb678817a933b9a8b14b89881f61c8a84969fd3534eb1e4e090183ad"
-  end
 
   def install
     cmake_args = std_cmake_args
