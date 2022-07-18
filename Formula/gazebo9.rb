@@ -58,6 +58,14 @@ class Gazebo9 < Formula
     sha256 "625d7f990629e431ef160ac771b632f9007b72d0608e7bccd4a7e0987417a347"
   end
 
+  patch do
+    # Fix compilation: add missing std namespace
+    # https://github.com/gazebosim/gz-msgs/pull/242
+    # TODO: remove with next major release
+    url "https://github.com/osrf/gazebo/commit/2f0f7af4868883d1a6fea30086b3fcd703d583fc.patch?full_index=1"
+    sha256 "08082b1c7ff191e6b28472a9eead708d21e56124f2672ac3d12a577734572101"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
