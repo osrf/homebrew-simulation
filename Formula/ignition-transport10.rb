@@ -4,15 +4,10 @@ class IgnitionTransport10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport10-10.2.0.tar.bz2"
   sha256 "cb9b304a18438f714691385810edb5627f7aedf6e606bdb00f639c57a3b52d9f"
   license "Apache-2.0"
+  revision 1
   version_scheme 2
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "b95b5741779b396eb84d68625b987420103805ba977a35ba01db039df528642a"
-    sha256 catalina: "aa34650614c04282f5870246c08a953cc67070f42eaadeff734eba068cc71189"
-  end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 

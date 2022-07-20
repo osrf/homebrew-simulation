@@ -4,14 +4,9 @@ class IgnitionFuelTools6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools6-6.2.0.tar.bz2"
   sha256 "c96101981122956ca501493c3415f22b4b4e24ae85b05585e728729c8dbc042f"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "d2f15cd22d922a1cf12b5550ebb86d28549cd6c58958b100f958db1fcdd187ac"
-    sha256 cellar: :any, catalina: "4947147436124840eba3567d4cfc1b7f958e735878a0b71dfbe4327820d7b3ce"
-  end
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
 
