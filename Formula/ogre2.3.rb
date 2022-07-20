@@ -1,9 +1,9 @@
 class Ogre23 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://github.com/OGRECave/ogre-next/archive/9fba78104b7bda8a2b49b118dd63b73834d41faf.tar.gz"
-  version "2.3.0+20220715~9fba781"
-  sha256 "270366ef419e320e4ff1c3f3b7ab04b75eed2406c379f2f405da6c465a339269"
+  url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.1.tar.gz"
+  version "2.3.1"
+  sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
   license "MIT"
   revision 1
 
@@ -21,6 +21,9 @@ class Ogre23 < Formula
 
   def install
     cmake_args = [
+      "-DCMAKE_CXX_STANDARD=11",
+      "-DCMAKE_CXX_STANDARD_REQUIRED:BOOL=ON",
+      "-DCMAKE_CXX_EXTNEIONS:BOOL=ON",
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.3",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",
@@ -69,7 +72,7 @@ class Ogre23 < Formula
     inreplace (lib/"pkgconfig/OGRE-2.3-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 
     # Move versioned libraries (*.2.2.6.dylib) to standard location and remove symlinks
-    lib.install Dir[lib/"OGRE-2.3/lib*.2.3.0.dylib"]
+    lib.install Dir[lib/"OGRE-2.3/lib*.2.3.1.dylib"]
     rm Dir[lib/"OGRE-2.3/lib*"]
 
     # Move plugins to subfolder
@@ -77,7 +80,7 @@ class Ogre23 < Formula
 
     # Restore lib symlinks
     Dir[lib/"lib*"].each do |l|
-      (lib/"OGRE-2.3").install_symlink l => File.basename(l.sub(".2.3.0", ""))
+      (lib/"OGRE-2.3").install_symlink l => File.basename(l.sub(".2.3.1", ""))
     end
   end
 
@@ -106,3 +109,4 @@ class Ogre23 < Formula
     system cmd_not_grep_xcode
   end
 end
+
