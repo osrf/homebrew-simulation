@@ -109,4 +109,3 @@ class Ogre23 < Formula
     system cmd_not_grep_xcode
   end
 end
-
