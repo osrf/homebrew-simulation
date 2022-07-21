@@ -2,12 +2,10 @@ class Ogre23 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.1.tar.gz"
-  version "2.3.1"
   sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
   license "MIT"
-  revision 1
 
-  head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
+  head "https://github.com/OGRECave/ogre-next.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
