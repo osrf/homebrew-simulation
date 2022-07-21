@@ -5,7 +5,7 @@ class Ogre23 < Formula
   sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
   license "MIT"
 
-  head "https://github.com/OGRECave/ogre-next.git", branch: "main"
+  head "https://github.com/OGRECave/ogre-next.git", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
