@@ -7,6 +7,12 @@ class Ogre23 < Formula
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "master"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "43fc1092ed1ff54cccd92068d59fd98e3c02072fc7e402c5e6743c10b6ebb876"
+    sha256 cellar: :any, catalina: "2678081ce809e3e5574ed57c92356cdcf93a083f5f1832b0379ec1accc0cace3"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
   depends_on "doxygen"
