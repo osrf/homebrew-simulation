@@ -10,8 +10,8 @@ class Ogre23 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "43fc1092ed1ff54cccd92068d59fd98e3c02072fc7e402c5e6743c10b6ebb876"
-    sha256 cellar: :any, catalina: "2678081ce809e3e5574ed57c92356cdcf93a083f5f1832b0379ec1accc0cace3"
+    sha256 cellar: :any, big_sur:  "d1a6802fc6866492073fa56800424c01e232820f3ab7b00031a1ec00115a73f4"
+    sha256 cellar: :any, catalina: "51d97c4d9a057983863425cce7df566fd2665ef81aa1bf7ac4600ecacd1c0252"
   end
 
   depends_on "cmake" => :build
