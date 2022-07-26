@@ -4,13 +4,14 @@ class Ogre23 < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
   license "MIT"
+  revision 1
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "master"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "43fc1092ed1ff54cccd92068d59fd98e3c02072fc7e402c5e6743c10b6ebb876"
-    sha256 cellar: :any, catalina: "2678081ce809e3e5574ed57c92356cdcf93a083f5f1832b0379ec1accc0cace3"
+    sha256 cellar: :any, big_sur:  "d1a6802fc6866492073fa56800424c01e232820f3ab7b00031a1ec00115a73f4"
+    sha256 cellar: :any, catalina: "51d97c4d9a057983863425cce7df566fd2665ef81aa1bf7ac4600ecacd1c0252"
   end
 
   depends_on "cmake" => :build
@@ -27,13 +28,18 @@ class Ogre23 < Formula
     cmake_args = [
       "-DCMAKE_CXX_STANDARD=11",
       "-DCMAKE_CXX_STANDARD_REQUIRED:BOOL=ON",
-      "-DCMAKE_CXX_EXTNEIONS:BOOL=ON",
+      "-DCMAKE_CXX_EXTENSIONS:BOOL=ON",
+      "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=TRUE",
+      "-DOGRE_BUILD_RENDERSYSTEM_METAL:BOOL=TRUE",
+      "-DOGRE_BUILD_COMPONENT_HLMS:BOOL=TRUE",
+      "-DOGRE_BUILD_COMPONENT_HLMS_PBS:BOOL=ON",
+      "-DOGRE_BUILD_COMPONENT_HLMS_UNLIT:BOOL=ON",
+      "-DOGRE_BUILD_COMPONENT_OVERLAY:BOOL=ON",
+      "-DOGRE_BUILD_COMPONENT_PLANAR_REFLECTIONS:BOOL=ON",
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.3",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",
-      "-DOGRE_BUILD_DOCS:BOOL=FALSE",
       "-DOGRE_INSTALL_DOCS:BOOL=FALSE",
-      "-DOGRE_BUILD_SAMPLES:BOOL=FALSE",
       "-DOGRE_BUILD_SAMPLES2:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES_SOURCE:BOOL=FALSE",
