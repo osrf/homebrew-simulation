@@ -5,6 +5,7 @@ class IgnitionCommon5 < Formula
   version "4.999.999~0~20220414"
   license "Apache-2.0"
 
+  depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"
