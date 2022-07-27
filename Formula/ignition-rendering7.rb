@@ -16,7 +16,7 @@ class IgnitionRendering7 < Formula
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
-  depends_on "ogre2.2"
+  depends_on "ogre2.3"
 
   def install
     cmake_args = std_cmake_args
