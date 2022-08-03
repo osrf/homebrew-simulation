@@ -1,10 +1,9 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.4.0.tar.bz2"
-  sha256 "ae6422ae78faa321df55e18fa436cfd2a85d19106460ea68eeb454d2e48f5b97"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.5.0.tar.bz2"
+  sha256 "f7c28c70d00c5571a35ebb42be3709dbc0f9d4465bca38c54ec6e83b997a4c8d"
   license "Apache-2.0"
-  revision 3
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
