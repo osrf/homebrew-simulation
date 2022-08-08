@@ -1,7 +1,7 @@
 class IgnitionMsgs9 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-msgs.git", branch: "main"
+  url "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
   version "8.999.999~0~20220414"
   license "Apache-2.0"
 

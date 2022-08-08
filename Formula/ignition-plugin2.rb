@@ -1,7 +1,7 @@
 class IgnitionPlugin2 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://github.com/gazebosim/gz-plugin.git", branch: "main"
+  url "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin2"
   version "1.999.999~0~20220406"
   license "Apache-2.0"
 

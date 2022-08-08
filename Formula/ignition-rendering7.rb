@@ -1,7 +1,7 @@
 class IgnitionRendering7 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-rendering.git", branch: "main"
+  url "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering7"
   version "6.999.999~0~20220414"
   license "Apache-2.0"
 
