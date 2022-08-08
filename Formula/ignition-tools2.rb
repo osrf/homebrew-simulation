@@ -1,7 +1,7 @@
 class IgnitionTools2 < Formula
   desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-tools.git", branch: "main"
+  url "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
   version "1.999.999~0~20220414"
   license "Apache-2.0"
 

@@ -1,7 +1,7 @@
 class IgnitionPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://github.com/gazebosim/gz-physics.git", branch: "main"
+  url "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
   version "5.999.999~0~20220414"
   license "Apache-2.0"
 
