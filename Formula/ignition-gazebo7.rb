@@ -1,7 +1,7 @@
 class IgnitionGazebo7 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://github.com/gazebosim/gz-sim.git", branch: "main"
+  url "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
   version "6.999.999~0~20220412"
   license "Apache-2.0"
 
