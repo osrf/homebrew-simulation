@@ -1,8 +1,8 @@
 class IgnitionPlugin1 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.2.1.tar.bz2"
-  sha256 "821507a035f875f88ca29d2f4daa6bcbce447cb9a1e4b1da7acd1a23cc6fa0b7"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.3.0.tar.bz2"
+  sha256 "07f41e0750f4791ffd0c7984257c40b38f266005ad83c0c05a9f17bf48ce3737"
   license "Apache-2.0"
 
   bottle do
