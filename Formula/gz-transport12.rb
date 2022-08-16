@@ -1,4 +1,4 @@
-class IgnitionTransport12 < Formula
+class GzTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
