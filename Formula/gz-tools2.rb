@@ -1,4 +1,4 @@
-class IgnitionTools2 < Formula
+class GzTools2 < Formula
   desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
