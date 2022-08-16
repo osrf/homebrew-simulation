@@ -1,4 +1,4 @@
-class IgnitionPlugin2 < Formula
+class GzPlugin2 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
   url "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin2"
