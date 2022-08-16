@@ -1,4 +1,4 @@
-class IgnitionLaunch6 < Formula
+class GzLaunch6 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
   url "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch6"
