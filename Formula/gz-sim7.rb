@@ -1,4 +1,4 @@
-class IgnitionGazebo7 < Formula
+class GzSim7 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
   url "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
