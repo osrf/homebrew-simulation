@@ -1,4 +1,4 @@
-class IgnitionSensors7 < Formula
+class GzSensors7 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
   url "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
