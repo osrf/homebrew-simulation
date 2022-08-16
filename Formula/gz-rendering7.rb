@@ -1,4 +1,4 @@
-class IgnitionRendering7 < Formula
+class GzRendering7 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering7"
