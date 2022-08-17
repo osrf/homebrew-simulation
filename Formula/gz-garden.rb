@@ -1,4 +1,4 @@
-class IgnitionGarden < Formula
+class GzGarden < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
