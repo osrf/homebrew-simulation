@@ -1,19 +1,14 @@
-class IgnitionPlugin1 < Formula
+class GzPlugin2 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.3.0.tar.bz2"
-  sha256 "07f41e0750f4791ffd0c7984257c40b38f266005ad83c0c05a9f17bf48ce3737"
+  url "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin2"
+  version "1.999.999~0~20220406"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "5fbf58660d93f35416b9779859b196d9c0df0c7f2106536b9cbae9b74117f2b8"
-    sha256 cellar: :any, catalina: "376288ed35530e63d78bf5e9b5f255860bcce4b1808acdd13b2e08f19617d584"
-  end
-
   depends_on "cmake"
-  depends_on "ignition-cmake2"
-  depends_on "ignition-tools"
+  depends_on "gz-cmake3"
+  depends_on "gz-tools2"
+  depends_on "gz-utils2"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
 
@@ -27,24 +22,24 @@ class IgnitionPlugin1 < Formula
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/plugin/Loader.hh>
+      #include <gz/plugin/Loader.hh>
       int main() {
-        ignition::plugin::Loader loader;
+        gz::plugin::Loader loader;
         return loader.InterfacesImplemented().size();
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(ignition-plugin1 QUIET REQUIRED COMPONENTS loader)
+      find_package(gz-plugin2 QUIET REQUIRED COMPONENTS loader)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake ${IGNITION-PLUGIN_LIBRARIES})
+      target_link_libraries(test_cmake gz-plugin2::loader)
     EOS
-    system "pkg-config", "ignition-plugin1-loader"
-    cflags = `pkg-config --cflags ignition-plugin1-loader`.split
+    system "pkg-config", "gz-plugin2-loader"
+    cflags = `pkg-config --cflags gz-plugin2-loader`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lignition-plugin1-loader",
+                   "-lgz-plugin2-loader",
                    "-lc++",
                    "-o", "test"
     system "./test"
