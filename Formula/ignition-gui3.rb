@@ -1,8 +1,8 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.11.1.tar.bz2"
-  sha256 "ac5a908d498e07163d0018f6380f76e8e1b027910fac2187e9bbb7689ea9fe2f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.11.2.tar.bz2"
+  sha256 "a8349a44e5b1df8ff25d33747b053a396e06739b66495c206257142270fcad64"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui3"
