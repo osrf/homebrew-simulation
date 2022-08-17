@@ -1,10 +1,9 @@
 class IgnitionTransport11 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.1.0.tar.bz2"
-  sha256 "e02d65374817db971ac46e2a49eae2799fb00bffae9db65cc847a33046746ec6"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.2.0.tar.bz2"
+  sha256 "e95cdc0b75ca23ebf975c4f88948eb4c3e96ad90a726fdda9610a4d3e0b26dcb"
   license "Apache-2.0"
-  revision 2
   version_scheme 1
 
   bottle do
