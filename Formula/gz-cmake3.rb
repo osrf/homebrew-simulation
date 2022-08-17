@@ -1,4 +1,4 @@
-class IgnitionCmake3 < Formula
+class GzCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"

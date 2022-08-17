@@ -1,4 +1,4 @@
-class IgnitionCommon5 < Formula
+class GzCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"

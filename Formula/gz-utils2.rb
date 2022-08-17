@@ -1,4 +1,4 @@
-class IgnitionUtils2 < Formula
+class GzUtils2 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
   url "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils2"

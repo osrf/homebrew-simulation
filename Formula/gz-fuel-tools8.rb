@@ -1,4 +1,4 @@
-class IgnitionFuelTools8 < Formula
+class GzFuelTools8 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"

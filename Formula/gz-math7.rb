@@ -1,4 +1,4 @@
-class IgnitionMath7 < Formula
+class GzMath7 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"

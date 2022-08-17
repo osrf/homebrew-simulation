@@ -1,4 +1,4 @@
-class IgnitionPhysics6 < Formula
+class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
   url "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"

@@ -1,45 +1,52 @@
-class IgnitionPlugin2 < Formula
-  desc "Plugin libraries for robotics applications"
-  homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin2"
-  version "1.999.999~0~20220406"
+class GzMsgs9 < Formula
+  desc "Middleware protobuf messages for robotics"
+  homepage "https://gazebosim.org"
+  url "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
+  version "8.999.999~0~20220414"
   license "Apache-2.0"
 
+  depends_on "protobuf-c" => :build
   depends_on "cmake"
   depends_on "gz-cmake3"
+  depends_on "gz-math7"
   depends_on "gz-tools2"
-  depends_on "gz-utils2"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
     (testpath/"test.cpp").write <<-EOS
-      #include <gz/plugin/Loader.hh>
+      #include <gz/msgs.hh>
       int main() {
-        gz::plugin::Loader loader;
-        return loader.InterfacesImplemented().size();
+        gz::msgs::UInt32;
+        return 0;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-      find_package(gz-plugin2 QUIET REQUIRED COMPONENTS loader)
+      cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      find_package(gz-msgs9 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake gz-plugin2::loader)
+      target_link_libraries(test_cmake gz-msgs9::gz-msgs9)
     EOS
-    system "pkg-config", "gz-plugin2-loader"
-    cflags = `pkg-config --cflags gz-plugin2-loader`.split
+    # test building with pkg-config
+    system "pkg-config", "gz-msgs9"
+    cflags = `pkg-config --cflags gz-msgs9`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lgz-plugin2-loader",
+                   "-lgz-msgs9",
                    "-lc++",
                    "-o", "test"
     system "./test"

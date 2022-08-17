@@ -1,4 +1,4 @@
-class IgnitionGui7 < Formula
+class GzGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
   url "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
