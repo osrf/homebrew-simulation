@@ -1,10 +1,9 @@
 class IgnitionFuelTools7 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools7-7.0.0.tar.bz2"
-  sha256 "c2952b974d3337140b4fc25523a1b79b69b3b089129bc97675e088307e2dcc37"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools7-7.1.0.tar.bz2"
+  sha256 "69e7a27d49187776eb9bc3fb646a2d73f598e808a70a03af5c41673da18b66a5"
   license "Apache-2.0"
-  revision 7
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
