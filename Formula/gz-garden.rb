@@ -1,4 +1,4 @@
-class IgnitionGarden < Formula
+class GzGarden < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
@@ -41,7 +41,7 @@ class IgnitionGarden < Formula
       system "make", "install"
     end
 
-    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_bin/"python3")
+    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_libexec/"bin/python3")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
     end
