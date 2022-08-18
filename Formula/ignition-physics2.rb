@@ -1,15 +1,14 @@
 class IgnitionPhysics2 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.5.0.tar.bz2"
-  sha256 "a15f1e2c6f23cd3ce6dd284a2d1b9a6317dc188b62d960aec4c26112abcdfcaf"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.5.1.tar.bz2"
+  sha256 "c3f7605805770aeaa7108ac9309d0a551816cae5df983520a1e6eafbe1fe8eac"
   license "Apache-2.0"
-  revision 5
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "d27fdda92b2603834ec13fae6ffec6dca1647d1b6d182a76f9d855472ff62c8b"
-    sha256 cellar: :any, catalina: "d4e77f828470063213d90c7052e778abdab2f4b60129755b43f4e448c2381e41"
+    sha256 cellar: :any, big_sur:  "0244c9165c4f1bc16accc2bc6af0ea698c5c76cae8c943fc50ed74b037061954"
+    sha256 cellar: :any, catalina: "69ca64ec688d6ac842aa8f87cf4cfc77479227b38afbf5f32692bdb91421b852"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
