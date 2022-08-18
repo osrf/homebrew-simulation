@@ -1,16 +1,16 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.11.0.tar.bz2"
-  sha256 "376009975db9381cdfa678e60ba3393df7c41c7b27f9b50c43ec9ffb8bfd3f5f"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.11.2.tar.bz2"
+  sha256 "a8349a44e5b1df8ff25d33747b053a396e06739b66495c206257142270fcad64"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "c8af003c4b12aa9b12ef8a3a4b09e2972216511406d63aedb172b05b0f0ba3ce"
-    sha256 catalina: "431a8a66e0fae2377429081f3b86d1b47dc975201d2d0d91e22880735ad32c4e"
+    sha256 big_sur:  "6f8c09fde83038788691da475e948317c62ef56c2d410dcbebaa6c5b1ee5b7f1"
+    sha256 catalina: "45c370441807a4d283bd3b94561b0536e707ad885d0ae0098b934ef209220e30"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
