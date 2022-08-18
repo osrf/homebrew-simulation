@@ -1,15 +1,14 @@
 class IgnitionLaunch5 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.1.0.tar.bz2"
-  sha256 "910f46ecb50503f86ec5753e367108c26bf9d74e9457d01c4099150c982b3e87"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.2.0.tar.bz2"
+  sha256 "30fbddd115423c8d6ba22d754f9a569dabc79f05316feb0347b72b55884be5de"
   license "Apache-2.0"
-  revision 4
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "4fc04d4a1b7aa7cb3c62934c5156b96ec6bc60043ecb2d937fd31deb1b8a45a8"
-    sha256 catalina: "5a8b7c71e8b6bc596cf0849b3133edf9273f98ba9774cc6930c0b3e26fbc0b2e"
+    sha256 big_sur:  "0338761c4de92399ec293d3aeb1040be23724d05cf4254fa8942a8850285d15f"
+    sha256 catalina: "2ffbf9b7d23f542259c72f2d20d3c2de6d0d7918714ba6d0ed66a716a0340fb8"
   end
 
   depends_on "cmake" => :build
