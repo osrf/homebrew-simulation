@@ -11,6 +11,7 @@ class GzMath7 < Formula
   depends_on "eigen"
   depends_on "gz-cmake3"
   depends_on "gz-utils2"
+  depends_on "python"
   depends_on "ruby"
 
   def install
