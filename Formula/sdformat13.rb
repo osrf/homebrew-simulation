@@ -14,6 +14,7 @@ class Sdformat13 < Formula
   depends_on "gz-tools2"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
+  depends_on "python"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
