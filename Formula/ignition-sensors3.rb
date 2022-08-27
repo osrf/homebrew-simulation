@@ -10,8 +10,8 @@ class IgnitionSensors3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "4249bdb2682c9f6a8508d972593929b5ec61d8ac92eceb5aa04a5729b0cbf8b6"
-    sha256 catalina: "8642b8eef0ea866a6de0f42a279b946d1d3238e78ccba9caca697a7cb9849d05"
+    sha256 big_sur:  "c7a64ee809dcb4a43af6b9f7b16384e2ddf64ccc7dfdf1b5b4005ee42c24f755"
+    sha256 catalina: "7fe94be738d4dbf0681a83a1dd8064f33807c25fd163febe2c341ff0c1f80643"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
