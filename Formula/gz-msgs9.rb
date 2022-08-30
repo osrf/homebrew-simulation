@@ -1,8 +1,9 @@
 class GzMsgs9 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
-  version "8.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-9.0.0~pre1.tar.bz2"
+  version "9.0.0~pre1"
+  sha256 "b095da08d82d9945a9ddb4cdfccdae6caf0160c5d6fa18aade0805c450a2b146"
   license "Apache-2.0"
 
   depends_on "protobuf-c" => :build
