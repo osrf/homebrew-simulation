@@ -6,6 +6,12 @@ class GzTools2 < Formula
   sha256 "a44ca627f6ce0f74a19b79c0fbc9dc61e366af315d12f8342aedb0f817d85db0"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "29e95a97c94fdb1a9b597f87b290029cb06124732aaa876d7e270d74e3fdeb3d"
+    sha256 cellar: :any, catalina: "e27470a65492b765f853723faa398c88b706e27d258b0fd9cbaf21bb86a9cb35"
+  end
+
   depends_on "cmake" => :build
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
