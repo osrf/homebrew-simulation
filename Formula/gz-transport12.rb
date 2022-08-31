@@ -6,6 +6,12 @@ class GzTransport12 < Formula
   sha256 "83d98c3c2fafbec20e770806ef87eac74f64f9e0eafbf4162a4b53b2f57b5446"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "5a873f8f4041ab8637d5215b2ddf48f4b8a9b814db8f5655e670d9903bcdbacc"
+    sha256 catalina: "5209b02918c7db95536b9f572638cf5a06adfcdec0e090c7025cd566618e6cf8"
+  end
+
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
 
