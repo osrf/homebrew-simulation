@@ -6,6 +6,12 @@ class GzMath7 < Formula
   sha256 "0a8c1184a87a71f8a6a91fa1cec08e7f5f8d5df992abcbceb247226e0e6a20b3"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "2dee018ae1e3157ce027cd9f68a133b28851df9f95a34f582cd260e302f0ccdd"
+    sha256 cellar: :any, catalina: "9fa84203302250efbb48ef3b63b3bded9307cfb46f67af4f287565ef35806d5d"
+  end
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build
