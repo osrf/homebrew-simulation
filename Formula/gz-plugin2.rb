@@ -6,6 +6,12 @@ class GzPlugin2 < Formula
   sha256 "e3260857900cf50c104414d6efd68e9e3d75418469b3e022607db278c438b576"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "affbcf922610ef0a15e511d6808ced5ad8a53ed8c61bfd3a2e5649d2b8af5836"
+    sha256 cellar: :any, catalina: "7d6d2d987a97438aa9b7cafac2b17af2fe5ae13e389fbb6b7f6934dfef693765"
+  end
+
   depends_on "cmake"
   depends_on "gz-cmake3"
   depends_on "gz-tools2"
