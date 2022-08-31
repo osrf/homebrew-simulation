@@ -6,6 +6,12 @@ class GzRendering7 < Formula
   sha256 "7f04560e32e833880de8cfd10bdfc9e060aa7265ff84fcaf3460ac96cc67eb7b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "cdd1222891da7d42169faf7aad4520d27c8cd313ad859783696aee80b3b89e73"
+    sha256 catalina: "80cba12f1ab7859d8d8ce01a88260fffdd43a7ee742969a4267b11c36f55aaed"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
