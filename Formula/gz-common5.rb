@@ -6,6 +6,12 @@ class GzCommon5 < Formula
   sha256 "1a33926ab3996af977dbb3c65e1193705ced33701835025a3d8b0b59286e8ab5"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "a2581c97b675091f24658edd0e97188994601a26f434c075f12ef6cf7f092002"
+    sha256 cellar: :any, catalina: "2068514261ad1f79640558cd33232545a822d02d5444e4fc72d8218b48d29d7d"
+  end
+
   depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"
