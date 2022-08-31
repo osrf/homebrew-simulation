@@ -1,8 +1,9 @@
 class Sdformat13 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/gazebosim/sdformat.git", branch: "sdf13"
-  version "12.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.0.0~pre1.tar.bz2"
+  version "13.0.0~pre1"
+  sha256 "742afdd8c2eaaf5c2d339c238726258ece4109851a97812874a9b8823a6304a6"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
