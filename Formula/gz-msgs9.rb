@@ -1,9 +1,16 @@
 class GzMsgs9 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
-  version "8.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-9.0.0~pre1.tar.bz2"
+  version "9.0.0~pre1"
+  sha256 "b095da08d82d9945a9ddb4cdfccdae6caf0160c5d6fa18aade0805c450a2b146"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "b4abd39c9a73098055ce1e23d3c5222f95ece90925c594edce65c169ae03ecb0"
+    sha256 cellar: :any, catalina: "a52671aafaf9a4ceef2dce2ac957cb1e312149b9a8bae2bd6b82b14d692f453f"
+  end
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"

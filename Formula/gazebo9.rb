@@ -50,6 +50,7 @@ class Gazebo9 < Formula
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
+  conflicts_with "gz-tools2", because: "both install bin/gz"
 
   patch do
     # Fix build when homebrew python is installed
