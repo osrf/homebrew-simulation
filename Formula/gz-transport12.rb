@@ -1,8 +1,9 @@
 class GzTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
-  version "11.999.999~0~20220629"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.0.0~pre1.tar.bz2"
+  version "12.0.0~pre1"
+  sha256 "83d98c3c2fafbec20e770806ef87eac74f64f9e0eafbf4162a4b53b2f57b5446"
   license "Apache-2.0"
 
   depends_on "doxygen" => [:build, :optional]
