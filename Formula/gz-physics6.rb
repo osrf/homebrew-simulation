@@ -1,8 +1,9 @@
 class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
-  version "5.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.0.0~pre1.tar.bz2"
+  version "6.0.0~pre1"
+  sha256 "d08af0bfd69a5201b1442722d6a50bb7a5e9285e374ab3e4dfce706f5622a7d9"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
