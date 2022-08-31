@@ -1,8 +1,9 @@
 class GzPlugin2 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin2"
-  version "1.999.999~0~20220406"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-2.0.0~pre1.tar.bz2"
+  version "2.0.0~pre1"
+  sha256 "e3260857900cf50c104414d6efd68e9e3d75418469b3e022607db278c438b576"
   license "Apache-2.0"
 
   depends_on "cmake"
