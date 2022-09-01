@@ -1,8 +1,9 @@
 class GzLaunch6 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch6"
-  version "5.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0~pre1.tar.bz2"
+  version "6.0.0~pre1"
+  sha256 "27d22e1a50af09d698dfe5c169915f0684c1aba0560564c81f713b8637684ca2"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
