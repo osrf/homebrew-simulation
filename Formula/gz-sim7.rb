@@ -1,8 +1,9 @@
 class GzSim7 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
-  version "6.999.999~0~20220412"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.0.0~pre1.tar.bz2"
+  version "7.0.0~pre1"
+  sha256 "7534f8d03dee7d96965d7efa2467e16ec61526946dcdbc62e61b820559af4b5b"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
