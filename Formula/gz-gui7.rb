@@ -6,6 +6,12 @@ class GzGui7 < Formula
   sha256 "6a063ff2c7c772e15dd48d37c579937b04019d4444e03966683ea8247ed22e9a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "6cb70eb7338f3d76221d8d444cd888aaac2693ed8ea8a0943d690077a1ee21bb"
+    sha256 catalina: "5230dbd690f26b13ae0587a8dcd9a1743d370a7fc633ad43853d1d226927e321"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "gz-cmake3"
