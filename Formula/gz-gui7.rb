@@ -1,8 +1,9 @@
 class GzGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
-  version "6.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.0.0~pre1.tar.bz2"
+  version "7.0.0~pre1"
+  sha256 "6a063ff2c7c772e15dd48d37c579937b04019d4444e03966683ea8247ed22e9a"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
