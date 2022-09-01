@@ -1,9 +1,16 @@
 class GzSensors7 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
-  version "6.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.0.0~pre1.tar.bz2"
+  version "7.0.0~pre1"
+  sha256 "4f98d3cead6b55eb07cc9199d8adbf473c24467577bc9213397daff0e1aefadd"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "9d8e15540e2f02a162fd975c87be61a580299afa30fae13e093a0ac3c9449aa4"
+    sha256 cellar: :any, catalina: "609782fa582e2c302651c7eed13c5d317e9dc1f3930462959fba6982742c89ce"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
