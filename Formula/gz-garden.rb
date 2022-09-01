@@ -3,8 +3,9 @@ class GzGarden < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/gazebosim/gz-garden"
-  url "https://github.com/gazebosim/gz-garden.git", branch: "main"
-  version "0.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-garden/releases/gz-garden-1.0.0~pre1.tar.bz2"
+  version "1.0.0~pre1"
+  sha256 "79c4c8eef036445a54649568c8a0af8ce9a905a6b7b43dfb4f7fad5527c23a71"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-garden.git", branch: "main"
