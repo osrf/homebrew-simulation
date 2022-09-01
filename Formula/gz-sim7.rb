@@ -6,6 +6,12 @@ class GzSim7 < Formula
   sha256 "7534f8d03dee7d96965d7efa2467e16ec61526946dcdbc62e61b820559af4b5b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "25167fa285aa513c9a371eaa084a19709035bbcd736f8715f8a33aad39e047db"
+    sha256 catalina: "9caa49f0497d848414d9e34255e5eb01063de6bc081f37501b9efa35df250dff"
+  end
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "ffmpeg"
