@@ -1,9 +1,16 @@
 class GzGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
-  version "6.999.999~0~20220414"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.0.0~pre1.tar.bz2"
+  version "7.0.0~pre1"
+  sha256 "6a063ff2c7c772e15dd48d37c579937b04019d4444e03966683ea8247ed22e9a"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "6cb70eb7338f3d76221d8d444cd888aaac2693ed8ea8a0943d690077a1ee21bb"
+    sha256 catalina: "5230dbd690f26b13ae0587a8dcd9a1743d370a7fc633ad43853d1d226927e321"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
