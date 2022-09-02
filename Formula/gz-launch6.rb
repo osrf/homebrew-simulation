@@ -6,6 +6,12 @@ class GzLaunch6 < Formula
   sha256 "27d22e1a50af09d698dfe5c169915f0684c1aba0560564c81f713b8637684ca2"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 big_sur:  "d28451779cec3c180f815e3f038a6106a2da884d5b2d97eb420096b7201e4a5d"
+    sha256 catalina: "edec49c94318e11b89cc0cafa254b20ebb453eef9b29a23d70165d19dc0be3ab"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
