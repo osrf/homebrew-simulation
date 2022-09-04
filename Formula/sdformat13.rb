@@ -36,7 +36,8 @@ class Sdformat13 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.10").install Dir[lib/"python/site-packages"]
+    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do

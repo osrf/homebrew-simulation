@@ -29,7 +29,8 @@ class GzMath7 < Formula
     system "cmake", ".", *cmake_args
     system "make", "install"
 
-    (lib/"python3.10").install Dir[lib/"python/site-packages"]
+    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
