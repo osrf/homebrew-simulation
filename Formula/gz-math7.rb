@@ -5,6 +5,7 @@ class GzMath7 < Formula
   version "7.0.0~pre1"
   sha256 "0a8c1184a87a71f8a6a91fa1cec08e7f5f8d5df992abcbceb247226e0e6a20b3"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
