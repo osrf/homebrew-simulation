@@ -18,7 +18,7 @@ class GzMath7 < Formula
   depends_on "eigen"
   depends_on "gz-cmake3"
   depends_on "gz-utils2"
-  depends_on "python"
+  depends_on "python@3.10"
   depends_on "ruby"
 
   def install
@@ -27,6 +27,8 @@ class GzMath7 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", ".", *cmake_args
     system "make", "install"
+
+    (lib/"python3.10").install Dir[lib/"python/site-packages"]
   end
 
   test do
@@ -63,5 +65,7 @@ class GzMath7 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import gz.math"
   end
 end
