@@ -5,6 +5,7 @@ class Sdformat13 < Formula
   version "13.0.0~pre1"
   sha256 "742afdd8c2eaaf5c2d339c238726258ece4109851a97812874a9b8823a6304a6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
