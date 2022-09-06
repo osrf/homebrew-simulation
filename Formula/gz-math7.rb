@@ -22,6 +22,12 @@ class GzMath7 < Formula
   depends_on "python@3.10"
   depends_on "ruby"
 
+  patch do
+    # Don't link to python libraries
+    url "https://github.com/gazebosim/gz-math/commit/bedd27bf88b33693fe2592ee758957479af857de.patch?full_index=1"
+    sha256 "7c4129fe1f99ed60f2d18deef38fcc958a303616b1323dfc22e58e557d481d61"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
