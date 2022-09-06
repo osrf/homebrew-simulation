@@ -15,6 +15,7 @@ class Sdformat13 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
+  depends_on "pybind11" => :build
 
   depends_on "doxygen"
   depends_on "gz-cmake3"
