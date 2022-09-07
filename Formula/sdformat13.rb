@@ -5,15 +5,17 @@ class Sdformat13 < Formula
   version "13.0.0~pre1"
   sha256 "742afdd8c2eaaf5c2d339c238726258ece4109851a97812874a9b8823a6304a6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "b4939109fd145ee3cdf1785ad1590aed9b2f2ec0569c1cd1fd56b96dcd12b8fc"
-    sha256 catalina: "6d897a784ddd7b6d20ed4a81668cbe6e8b189d60ab0c6b530ef098143f224e7f"
+    sha256 big_sur:  "f46b6232c1dcded2128aa2753ac3dfbb4cf51f82f618d55442a75e4f92848f79"
+    sha256 catalina: "a5310f21f9be0337d8556bf794af5451336f3e6ddcf41ff37ca77f9216c93539"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
+  depends_on "pybind11" => :build
 
   depends_on "doxygen"
   depends_on "gz-cmake3"
@@ -21,9 +23,15 @@ class Sdformat13 < Formula
   depends_on "gz-tools2"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
-  depends_on "python"
+  depends_on "python@3.10"
   depends_on "tinyxml2"
   depends_on "urdfdom"
+
+  patch do
+    # Don't link to python libraries
+    url "https://github.com/gazebosim/sdformat/commit/3b66e510386a5f0dc05f8255aa7f51ebb8463a3e.patch?full_index=1"
+    sha256 "e87d3339bc296670dd90a896b81590a0741ce4bc00b4fae9428d04c616048931"
+  end
 
   def install
     cmake_args = std_cmake_args
@@ -34,6 +42,9 @@ class Sdformat13 < Formula
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -78,5 +89,7 @@ class Sdformat13 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import sdformat"
   end
 end

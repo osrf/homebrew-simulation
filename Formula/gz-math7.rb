@@ -5,11 +5,12 @@ class GzMath7 < Formula
   version "7.0.0~pre1"
   sha256 "0a8c1184a87a71f8a6a91fa1cec08e7f5f8d5df992abcbceb247226e0e6a20b3"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "2dee018ae1e3157ce027cd9f68a133b28851df9f95a34f582cd260e302f0ccdd"
-    sha256 cellar: :any, catalina: "9fa84203302250efbb48ef3b63b3bded9307cfb46f67af4f287565ef35806d5d"
+    sha256 cellar: :any, big_sur:  "80e4c86faa6c669a393198a8ed294528c6868ffca808af2faa95e48781b155f1"
+    sha256 cellar: :any, catalina: "b1ac6faa95684fa51e759a57c9f12209f1501d2831db3bdd5f61b05ebdb8bbe6"
   end
 
   depends_on "cmake" => :build
@@ -18,8 +19,14 @@ class GzMath7 < Formula
   depends_on "eigen"
   depends_on "gz-cmake3"
   depends_on "gz-utils2"
-  depends_on "python"
+  depends_on "python@3.10"
   depends_on "ruby"
+
+  patch do
+    # Don't link to python libraries
+    url "https://github.com/gazebosim/gz-math/commit/bedd27bf88b33693fe2592ee758957479af857de.patch?full_index=1"
+    sha256 "7c4129fe1f99ed60f2d18deef38fcc958a303616b1323dfc22e58e557d481d61"
+  end
 
   def install
     cmake_args = std_cmake_args
@@ -27,6 +34,9 @@ class GzMath7 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", ".", *cmake_args
     system "make", "install"
+
+    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -63,5 +73,7 @@ class GzMath7 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import gz.math"
   end
 end
