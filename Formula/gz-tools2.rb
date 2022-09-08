@@ -20,6 +20,8 @@ class GzTools2 < Formula
   conflicts_with "gazebo9", because: "both install bin/gz"
   conflicts_with "gazebo11", because: "both install bin/gz"
 
+  patch :DATA
+
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
@@ -43,3 +45,12 @@ class GzTools2 < Formula
     system "#{bin}/gz", "test", "--versions"
   end
 end
+
+__END__
+diff --git a/src/gz.in b/src/gz.in
+index 14e456f..947c424 100755
+--- a/src/gz.in
++++ b/src/gz.in
+@@ -50 +50 @@ yaml_found = false
+-conf_dirs = '@CMAKE_INSTALL_PREFIX@/share/gz/'
++conf_dirs = 'HOMEBREW_PREFIX/share/gz/'
