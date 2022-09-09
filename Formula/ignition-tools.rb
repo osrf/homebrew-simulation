@@ -17,6 +17,10 @@ class IgnitionTools < Formula
   depends_on "ruby" => :test
 
   def install
+    inreplace "src/ign.in" do |s|
+      s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
+    end
+
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
