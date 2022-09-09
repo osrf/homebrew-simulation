@@ -5,11 +5,12 @@ class GzTools2 < Formula
   version "2.0.0~pre1"
   sha256 "a44ca627f6ce0f74a19b79c0fbc9dc61e366af315d12f8342aedb0f817d85db0"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "29e95a97c94fdb1a9b597f87b290029cb06124732aaa876d7e270d74e3fdeb3d"
-    sha256 cellar: :any, catalina: "e27470a65492b765f853723faa398c88b706e27d258b0fd9cbaf21bb86a9cb35"
+    sha256 cellar: :any, big_sur:  "23c5d6395ec4e6731fb38566ec20b1e660b2709ebb0297c60b269f94f18da6a1"
+    sha256 cellar: :any, catalina: "066db84a748e52106547297424612fede81ce7bde56611c82cda319541e2ed1e"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +22,10 @@ class GzTools2 < Formula
   conflicts_with "gazebo11", because: "both install bin/gz"
 
   def install
+    inreplace "src/gz.in" do |s|
+      s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
+    end
+
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
