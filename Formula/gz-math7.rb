@@ -67,6 +67,6 @@ class GzMath7 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import gz.math"
+    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import gz.math7"
   end
 end
