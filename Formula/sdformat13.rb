@@ -26,12 +26,6 @@ class Sdformat13 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
-  patch do
-    # Don't link to python libraries
-    url "https://github.com/gazebosim/sdformat/commit/3b66e510386a5f0dc05f8255aa7f51ebb8463a3e.patch?full_index=1"
-    sha256 "e87d3339bc296670dd90a896b81590a0741ce4bc00b4fae9428d04c616048931"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
@@ -89,6 +83,6 @@ class Sdformat13 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import sdformat"
+    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import sdformat13"
   end
 end
