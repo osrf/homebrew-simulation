@@ -1,16 +1,15 @@
 class Sdformat13 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.0.0~pre1.tar.bz2"
-  version "13.0.0~pre1"
-  sha256 "742afdd8c2eaaf5c2d339c238726258ece4109851a97812874a9b8823a6304a6"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.0.0~pre2.tar.bz2"
+  version "13.0.0~pre2"
+  sha256 "ca64c79263147f88685f265b948c6f57758e3c4ad09541850a55a14268d9f87d"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "f46b6232c1dcded2128aa2753ac3dfbb4cf51f82f618d55442a75e4f92848f79"
-    sha256 catalina: "a5310f21f9be0337d8556bf794af5451336f3e6ddcf41ff37ca77f9216c93539"
+    sha256 big_sur:  "91e2eb84e4fd354e128fbf97c2ef6802e89c9e72e2ba77de562726d2b368e50d"
+    sha256 catalina: "b02446153c1104440ee384af1dca97c2a219f25bcbc3e633cac1cd7e237399a7"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,12 +25,6 @@ class Sdformat13 < Formula
   depends_on "python@3.10"
   depends_on "tinyxml2"
   depends_on "urdfdom"
-
-  patch do
-    # Don't link to python libraries
-    url "https://github.com/gazebosim/sdformat/commit/3b66e510386a5f0dc05f8255aa7f51ebb8463a3e.patch?full_index=1"
-    sha256 "e87d3339bc296670dd90a896b81590a0741ce4bc00b4fae9428d04c616048931"
-  end
 
   def install
     cmake_args = std_cmake_args
@@ -90,6 +83,6 @@ class Sdformat13 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import sdformat"
+    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import sdformat13"
   end
 end
