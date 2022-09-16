@@ -1,17 +1,16 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.11.0.tar.bz2"
-  sha256 "0c2637a873ed14e848e79d3edc8672c8fb39001073287ce94e9991aae76dd958"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.12.0.tar.bz2"
+  sha256 "c40ca1ec71b6ab427e7feb83c922bfb262e84e11ebf6bb91f99bc3cca75bcd97"
   license "Apache-2.0"
-  revision 4
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "f9a79e921e4eb75a50a26a23466c181185e0069c8ca3c7dd551d748c01e71851"
-    sha256 catalina: "f3d4740ec6c5dcbb46c30f8834ca044dee08dc10dbac6a498c6e9eec6219888a"
+    sha256 big_sur:  "162bde14cb6cd01cbc23d53e15791159cd6797668c6d06109f81a51d299afd72"
+    sha256 catalina: "8b417c22346ba8a6b1db764dea05d8329942e7ac1248d83e5939b70f1eddf197"
   end
 
   depends_on "cmake" => :build
