@@ -1,15 +1,14 @@
 class GzCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.0.0~pre1.tar.bz2"
-  version "3.0.0~pre1"
-  sha256 "278b2045418edd70fd7a75dfcd5a94d2ae2a5925c317b1e8c6d312cb0bef23c4"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.0.0.tar.bz2"
+  sha256 "234d96f47391659141e633e1aa01912769639a6110a7c52caa90f8f26117db69"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, big_sur:  "e4d254cbb892628e99bc27bde57524231e3a1f5db04df337c86bc0be49b2b1bb"
-    sha256 cellar: :any_skip_relocation, catalina: "959e6362de0dc9e50060800115360273c5d0beca6e6d67ff203ce4027ecb3683"
+    sha256 cellar: :any_skip_relocation, big_sur:  "89667b8ceaf98f78f8dd450d49a81b34778db0d90f7f63fadc5ac9f7a0dd4d1b"
+    sha256 cellar: :any_skip_relocation, catalina: "a30ca7a951fc0e16caa6ce493e5d18ba53e1aed2e14966663f364d4fccd21949"
   end
 
   depends_on "cmake"
