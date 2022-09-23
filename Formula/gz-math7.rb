@@ -1,15 +1,14 @@
 class GzMath7 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.0.0~pre2.tar.bz2"
-  version "7.0.0~pre2"
-  sha256 "18dd3e6bb76cd1c2a9ca7a2b21ba9cce8d15e68f2561207609fb29466105d615"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.0.1.tar.bz2"
+  sha256 "5bb069a4adeda4cb0b90f27d509d2f0cf9cc7c9c3f70ebd86ad436980d275e7c"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "a9437dd6753c1443fc043a6b86378fd4c7c65bb1ac1ed6e7b4083d0f33274b3c"
-    sha256 cellar: :any, catalina: "f6938d9500c92e144d2e66a2017e573999178a3591789f45d03b204b480eec5c"
+    sha256 cellar: :any, big_sur:  "a2e7dad683340a163ab9a00494996a7177af6608ff9a0505dc02799f890293dd"
+    sha256 cellar: :any, catalina: "4b2648ef53f56a403ca41790c4d1649d790796532f60d769ea6c0d1da126adaf"
   end
 
   depends_on "cmake" => :build
