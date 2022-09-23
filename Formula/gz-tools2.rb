@@ -1,16 +1,14 @@
 class GzTools2 < Formula
   desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.0~pre1.tar.bz2"
-  version "2.0.0~pre1"
-  sha256 "a44ca627f6ce0f74a19b79c0fbc9dc61e366af315d12f8342aedb0f817d85db0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.0.tar.bz2"
+  sha256 "bcbba3e4d902d7612267c1b6186dc6a84e6f034e6f44679d4bc1bcdc560955cb"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "23c5d6395ec4e6731fb38566ec20b1e660b2709ebb0297c60b269f94f18da6a1"
-    sha256 cellar: :any, catalina: "066db84a748e52106547297424612fede81ce7bde56611c82cda319541e2ed1e"
+    sha256 cellar: :any, big_sur:  "9519599bc5aa05866fe561eda915bcc83543f64be48a90c7ba6d304ce8a2cc42"
+    sha256 cellar: :any, catalina: "effc20690e226877faf1f2674528a73d22604be503dc25b85c9705355a2ab1d5"
   end
 
   depends_on "cmake" => :build
