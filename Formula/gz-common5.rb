@@ -1,9 +1,8 @@
 class GzCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.0.0~pre1.tar.bz2"
-  version "5.0.0~pre1"
-  sha256 "1a33926ab3996af977dbb3c65e1193705ced33701835025a3d8b0b59286e8ab5"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.0.0.tar.bz2"
+  sha256 "2b1ef73d22e672bed80d1356d49e85c3e043206e3b274f6f52c6a5fc335ac22d"
   license "Apache-2.0"
 
   bottle do
