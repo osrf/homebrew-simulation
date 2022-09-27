@@ -1,9 +1,8 @@
 class GzGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.0.0~pre1.tar.bz2"
-  version "7.0.0~pre1"
-  sha256 "6a063ff2c7c772e15dd48d37c579937b04019d4444e03966683ea8247ed22e9a"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.0.0.tar.bz2"
+  sha256 "da1b431991a7ddf803ffd454007ba2c114747882f502c2c9d1066636b1480bf4"
   license "Apache-2.0"
 
   bottle do
