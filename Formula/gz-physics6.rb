@@ -1,15 +1,14 @@
 class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.0.0~pre1.tar.bz2"
-  version "6.0.0~pre1"
-  sha256 "d08af0bfd69a5201b1442722d6a50bb7a5e9285e374ab3e4dfce706f5622a7d9"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.0.0.tar.bz2"
+  sha256 "e11d001ed3f3f898e93387dda493269e14621b0fe05e18da437036ee2377fb0a"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "7ca33ce0257061cc1fb90fbc9ddb86d9c90e85451cb636e34e7bc1a7a310d0af"
-    sha256 cellar: :any, catalina: "cf8fe51ca003c51151749ba87137101b07e7ffeb4c56f53fb20a5be30219c727"
+    sha256 cellar: :any, big_sur:  "0d2410e753318b0ae6f6ed0ce9fe531c9351af20dcd910d948d3c66a09d0586b"
+    sha256 cellar: :any, catalina: "1ed3ced0939504b039d28a664ce91592b22e1e0073d9b26d1e6935cdce5b6556"
   end
 
   depends_on "cmake" => :build
