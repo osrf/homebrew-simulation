@@ -1,9 +1,8 @@
 class GzSensors7 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.0.0~pre1.tar.bz2"
-  version "7.0.0~pre1"
-  sha256 "4f98d3cead6b55eb07cc9199d8adbf473c24467577bc9213397daff0e1aefadd"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.0.0.tar.bz2"
+  sha256 "1ce2bfcdc3893db9240d1d9f6def00fe920405cae82a903851f7f210fc1373ae"
   license "Apache-2.0"
 
   bottle do
