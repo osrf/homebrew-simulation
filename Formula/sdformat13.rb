@@ -1,8 +1,8 @@
 class Sdformat13 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.0.0.tar.bz2"
-  sha256 "ee1092132ad736dcab572c79ab80aa113892d85d0d03b6f5d0c8dc31bc252853"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.0.1.tar.bz2"
+  sha256 "60b77d9844b48349b97e12a555614463a42f601efaad51052d6b9d2c67476b5d"
   license "Apache-2.0"
 
   bottle do
