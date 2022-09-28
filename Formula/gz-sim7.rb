@@ -4,7 +4,7 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.0.0.tar.bz2"
   sha256 "6d7352328e28c5dad288f87de55cc28fde7e973c3d817f376f47f1d439957549"
   license "Apache-2.0"
-  revision "1"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
