@@ -7,8 +7,8 @@ class GzGui7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "6cb70eb7338f3d76221d8d444cd888aaac2693ed8ea8a0943d690077a1ee21bb"
-    sha256 catalina: "5230dbd690f26b13ae0587a8dcd9a1743d370a7fc633ad43853d1d226927e321"
+    sha256 big_sur:  "a720f9aaa07802aa930123a3aa6e9bf24b195d6644fecd4104e5d8a6f534e79d"
+    sha256 catalina: "af618c1a74b9da56dba4a10b193f95cb650e96fa1e29aec18eb50bfc9dbb72a5"
   end
 
   depends_on "cmake" => [:build, :test]
