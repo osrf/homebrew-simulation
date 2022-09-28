@@ -4,11 +4,12 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.0.0.tar.bz2"
   sha256 "6d7352328e28c5dad288f87de55cc28fde7e973c3d817f376f47f1d439957549"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "25167fa285aa513c9a371eaa084a19709035bbcd736f8715f8a33aad39e047db"
-    sha256 catalina: "9caa49f0497d848414d9e34255e5eb01063de6bc081f37501b9efa35df250dff"
+    sha256 big_sur:  "e2db53342e720365f5f2b4081407bcf7eaa35b892a651dbbe485ac130409a92e"
+    sha256 catalina: "d28e71f5274eddf96991402a076c2bacd3b17c6870b3543940b52d4dd2d744ac"
   end
 
   depends_on "cmake" => :build
