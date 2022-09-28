@@ -1,9 +1,8 @@
 class GzLaunch6 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0~pre1.tar.bz2"
-  version "6.0.0~pre1"
-  sha256 "27d22e1a50af09d698dfe5c169915f0684c1aba0560564c81f713b8637684ca2"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0.tar.bz2"
+  sha256 "e59e988c8a454cacc9f8f5727d1ab0d2c7fc8476083ec96065a0f89913957b0a"
   license "Apache-2.0"
 
   bottle do
