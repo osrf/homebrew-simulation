@@ -1,15 +1,15 @@
 class GzLaunch6 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0~pre1.tar.bz2"
-  version "6.0.0~pre1"
-  sha256 "27d22e1a50af09d698dfe5c169915f0684c1aba0560564c81f713b8637684ca2"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0.tar.bz2"
+  sha256 "e59e988c8a454cacc9f8f5727d1ab0d2c7fc8476083ec96065a0f89913957b0a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "d28451779cec3c180f815e3f038a6106a2da884d5b2d97eb420096b7201e4a5d"
-    sha256 catalina: "edec49c94318e11b89cc0cafa254b20ebb453eef9b29a23d70165d19dc0be3ab"
+    sha256 big_sur:  "c536b1ffabdc5032d8eb15bea5ff402ed8dd7261abcf6f433e29923603741892"
+    sha256 catalina: "109b1875e105519d453188742765ddeee31728c59f5df0d1e911f33366fa060b"
   end
 
   depends_on "cmake" => :build

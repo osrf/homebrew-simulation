@@ -3,17 +3,16 @@ class GzGarden < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/gazebosim/gz-garden"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-garden/releases/gz-garden-1.0.0~pre1.tar.bz2"
-  version "1.0.0~pre1"
-  sha256 "79c4c8eef036445a54649568c8a0af8ce9a905a6b7b43dfb4f7fad5527c23a71"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-garden/releases/gz-garden-1.0.0.tar.bz2"
+  sha256 "438e2c55aaeb28f827bb48464c83f49d81ab3a3486b4453a2ad30f8fa5edf95d"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-garden.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "c66ab1dd56b89f1fd95258b7988e3e4d63d32d95a0c038ce1fddcf0485f36f8e"
-    sha256 cellar: :any, catalina: "61be516965a8c0e8d4674d45fced25d8e44947de09d5d70cfc1aac634e57b428"
+    sha256 cellar: :any, big_sur:  "4452076f47fc8f63e224fdb7032854ba3f44f6312eb25908f0ca2fab73242704"
+    sha256 cellar: :any, catalina: "3242a7dd3549e9a2496a6de4b5722f6542216e635cd4ebe2d955a98177f6bae2"
   end
 
   depends_on "cmake" => :build
