@@ -6,8 +6,8 @@ class ChronoEngine < Formula
   license "BSD-3-Clause"
   head "https://github.com/projectchrono/chrono.git", branch: "main"
 
-  depends_on "cmake" => :build
-  depends_on "eigen" => :build
+  depends_on "cmake" => [:build, :test]
+  depends_on "eigen" => [:build, :test]
   depends_on "irrlicht"
 
   def install
@@ -21,6 +21,8 @@ class ChronoEngine < Formula
     end
 
     # Put cmake config file in easier to find location
+    # Remove these lines after the following PR is merged and released
+    # https://github.com/projectchrono/chrono/pull/421
     (lib/"cmake/Chrono").install Dir[lib/"cmake/*.cmake"]
     rm Dir[lib/"cmake/*.cmake"]
   end
