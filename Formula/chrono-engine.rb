@@ -6,6 +6,12 @@ class ChronoEngine < Formula
   license "BSD-3-Clause"
   head "https://github.com/projectchrono/chrono.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, big_sur:  "eed9074244be5f8a1ba35aa3924bf2c739fae5e97a69bf2cfdbc924d26ad98d6"
+    sha256 cellar: :any, catalina: "079fe5fa4d3ec345cd8b51fd54f0ed4124e09aff7d059c48b43e9656b67b2675"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "eigen" => [:build, :test]
   depends_on "irrlicht"
