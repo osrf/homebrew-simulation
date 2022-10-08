@@ -35,6 +35,10 @@ class IgnitionCommon3 < Formula
 
     system "cmake", ".", *cmake_args
     system "make", "install"
+
+    # Remove an accidentally installed CMakeLists.txt file
+    # remove this at next release
+    rm Dir[include/"ignition/common3/CMakeLists.txt"]
   end
 
   test do
