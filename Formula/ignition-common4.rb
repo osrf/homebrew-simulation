@@ -1,8 +1,8 @@
 class IgnitionCommon4 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.5.2.tar.bz2"
-  sha256 "209bcff2480c3f98e4726e302719112fe70b1807a6d0506f1f42114859538d41"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.6.0.tar.bz2"
+  sha256 "d59df062039b572c69a62b959604fcdf1d1a019202f93e7523166ee6bf813c4e"
   license "Apache-2.0"
 
   bottle do
