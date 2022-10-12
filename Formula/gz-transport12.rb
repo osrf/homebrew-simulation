@@ -33,7 +33,6 @@ class GzTransport12 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-
     # Use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
