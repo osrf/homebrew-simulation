@@ -5,6 +5,8 @@ class GzCmake3 < Formula
   sha256 "234d96f47391659141e633e1aa01912769639a6110a7c52caa90f8f26117db69"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any_skip_relocation, big_sur:  "89667b8ceaf98f78f8dd450d49a81b34778db0d90f7f63fadc5ac9f7a0dd4d1b"
