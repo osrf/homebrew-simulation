@@ -1,14 +1,14 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.15.0.tar.bz2"
-  sha256 "ea4b53e1a58457da14acd274c83bd917026b57164b819001295d572361078576"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.15.1.tar.bz2"
+  sha256 "8c0ac36b97160ecfcb8eeae116fd0a6f07b62bf19004b0992ad2f3c7bc271294"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "39fa99f30a41b73cc292ce2635a1c12f2a37bfc7aed2dd7ae0e201bc724a384c"
-    sha256 cellar: :any, catalina: "b133b87634c99e905d63132172c323b79e5f2dc0ec36d48c6f49dca837a94dda"
+    sha256 cellar: :any, big_sur:  "caabc4409cc085c30028d399b3be03078623fad7fda59f1b300f014636062697"
+    sha256 cellar: :any, catalina: "9988cafca7832805d630d959348e308c7b6e6b9969c216fc2a7206292206e926"
   end
 
   depends_on "cmake"
