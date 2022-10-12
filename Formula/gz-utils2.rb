@@ -5,8 +5,11 @@ class GzUtils2 < Formula
   sha256 "a2fb092f49310c1d61cbdecc4d75d3ffbd4475352d510b8733cde8bc06555e46"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils2"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "5e3b750887a113b4775d05e6b15a14d3d915f9f0f4029c92109460d837ea0b49"
     sha256 cellar: :any, big_sur:  "06232e41bb86374561a8b325429be785770fa108644286329f4453f429612d1d"
     sha256 cellar: :any, catalina: "b59cfd89d536d1d5c6635f460a61f65649970718798ec2269c3c848be5456443"
   end

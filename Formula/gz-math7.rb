@@ -5,8 +5,11 @@ class GzMath7 < Formula
   sha256 "007711649c5f419f2b902f32afc126d791d90dbccc8cc9a0a8ea43874fea2e6a"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "3eee0dd0dca86b510c8133e2425ab24dd5e6e3847f303c52649cc80a2416d81e"
     sha256 cellar: :any, big_sur:  "168bdcf7acd3bccb5380d160bcb2b87c905ba78a2afaaf00e76ad9cd7f64cfae"
     sha256 cellar: :any, catalina: "5122a24c64b8797c61b811defc451cb8c46080555a5dc058ee3e2590e6593fde"
   end
@@ -24,8 +27,12 @@ class GzMath7 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
 
     (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
