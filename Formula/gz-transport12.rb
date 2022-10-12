@@ -5,8 +5,11 @@ class GzTransport12 < Formula
   sha256 "5b49397cb4d31aa870f3c837f8c7393301ddc03ff7b45240b67570fd9c634f1a"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "7b69d65349fd0087646f6545a18f2ae6827eb9367e745861662a54ebb171b5d8"
     sha256 big_sur:  "b2c7fa076bfa48e2de6bd5e7e427bc8728bc0fdf8da570f91d620f3994cacfa8"
     sha256 catalina: "3ea54104a57c49eb1f1f9620887729189b357838cf32e30d38c738bfdf28bdee"
   end
@@ -31,8 +34,11 @@ class GzTransport12 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

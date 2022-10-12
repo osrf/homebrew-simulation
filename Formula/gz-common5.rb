@@ -5,8 +5,11 @@ class GzCommon5 < Formula
   sha256 "2b1ef73d22e672bed80d1356d49e85c3e043206e3b274f6f52c6a5fc335ac22d"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "c35d710ee066a1b67abba357733d649acfaa78e20034685e807e18753d31c064"
     sha256 cellar: :any, big_sur:  "a362fbac6778758ba023675c08780bddedd25a4f1d52eea3b13ef8b6caf7a2fc"
     sha256 cellar: :any, catalina: "ee69b523fb2846d93571f6191439031ed0f29b00489f634a59bb59073d358bcb"
   end
@@ -29,8 +32,12 @@ class GzCommon5 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

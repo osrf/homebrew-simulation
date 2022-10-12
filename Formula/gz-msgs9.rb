@@ -5,8 +5,11 @@ class GzMsgs9 < Formula
   sha256 "f53db2fc9fec5473515cc82f62f415a5963a28485bdb37dbfe2a322bd0cf17b8"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "ae5ed5223aae116d8fd2a0fe4bc48ce939d9d8bc4144c63290d201b1b1ec71cd"
     sha256 cellar: :any, big_sur:  "1c170c88ab483149748016650542336c34c29b247552f7c4e8ba6f90f98a4946"
     sha256 cellar: :any, catalina: "f969d1ad6a6bb056b9f1ef2e6a551da5294a1e072f69a2be2f762865048cfc4d"
   end
