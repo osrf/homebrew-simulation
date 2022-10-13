@@ -5,8 +5,11 @@ class GzRendering7 < Formula
   sha256 "f8f50717ff687eead0967c8478313194a66d8c0fc8564539815218782cdfe349"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering7"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "7fa3ef272de9abacdccf93d99716e5e6297128d8b5f84c876c32ce385914d3b1"
     sha256 big_sur:  "0aacd27855d7d469e52d9cb7b9d8faee38eb1a5ae376c992af0b6277825517e9"
     sha256 catalina: "52d12014696c4bc5d3dcca563979f96c8d32478cb0e5bd09d2f317fcfeb583da"
   end
@@ -28,8 +31,11 @@ class GzRendering7 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

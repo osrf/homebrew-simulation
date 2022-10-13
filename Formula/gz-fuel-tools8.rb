@@ -5,8 +5,11 @@ class GzFuelTools8 < Formula
   sha256 "8bc7d92e4944359fe429fdaa59819c76a6d718e58d237aa153c960768553af90"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "53d3eb337bb9259fcc586fc74c90ce6aa89174ba8e9fd9aeada4f40c7a8f7f83"
     sha256 cellar: :any, big_sur:  "939d83b11996e22338befb47031f43acdc70c94276abcd69c7b00ef690dd2a03"
     sha256 cellar: :any, catalina: "6a7049eae76bd6da7a439fb7cd58516e2700e10d63c8945fa3b4f6129dccd01d"
   end

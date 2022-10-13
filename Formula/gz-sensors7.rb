@@ -5,8 +5,11 @@ class GzSensors7 < Formula
   sha256 "1ce2bfcdc3893db9240d1d9f6def00fe920405cae82a903851f7f210fc1373ae"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "c68b368e29b379702fcfbce8d9c66218d36350210236d91f5c667cec8e56ab37"
     sha256 cellar: :any, big_sur:  "c3a886834684ae5a3b86de9c16b17b7f01e93b9c5a6503858be1dc4034be0926"
     sha256 cellar: :any, catalina: "921397a3c1ad14f3ab799e1ce6156d9193624d3248842a420ab3818e3a4a6ae1"
   end
@@ -27,8 +30,10 @@ class GzSensors7 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
