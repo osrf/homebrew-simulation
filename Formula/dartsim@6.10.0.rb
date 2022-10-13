@@ -10,6 +10,7 @@ class DartsimAT6100 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "3ef1a5626d845f7393496c1a370be54da4bdb47c35777b37df2c00f6e19ea450"
     sha256 big_sur:  "2d6fa500451ddde92be8e7ae4ac3e7261612eca95584748f894d161d93798f76"
     sha256 catalina: "baa069907b662f2986120cdf59984fa7307574050dd7866531a634c045f38394"
   end
