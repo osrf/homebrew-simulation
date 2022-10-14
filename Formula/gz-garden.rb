@@ -17,6 +17,7 @@ class GzGarden < Formula
 
   depends_on "cmake" => :build
   depends_on "python@3.9" => [:build, :test]
+
   depends_on "gz-cmake3"
   depends_on "gz-common5"
   depends_on "gz-fuel-tools8"

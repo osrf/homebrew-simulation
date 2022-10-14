@@ -6,6 +6,8 @@ class GzLaunch6 < Formula
   license "Apache-2.0"
   revision 1
 
+  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 big_sur:  "c536b1ffabdc5032d8eb15bea5ff402ed8dd7261abcf6f433e29923603741892"

@@ -5,6 +5,8 @@ class GzPhysics6 < Formula
   sha256 "e11d001ed3f3f898e93387dda493269e14621b0fe05e18da437036ee2377fb0a"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, big_sur:  "0d2410e753318b0ae6f6ed0ce9fe531c9351af20dcd910d948d3c66a09d0586b"
@@ -29,8 +31,12 @@ class GzPhysics6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

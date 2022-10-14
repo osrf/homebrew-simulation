@@ -6,6 +6,8 @@ class GzSim7 < Formula
   license "Apache-2.0"
   revision 1
 
+  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 big_sur:  "e2db53342e720365f5f2b4081407bcf7eaa35b892a651dbbe485ac130409a92e"
