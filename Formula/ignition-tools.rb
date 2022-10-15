@@ -5,6 +5,7 @@ class IgnitionTools < Formula
   sha256 "00cf5d2eb6222784d6db4de6baffc068013b1fd71d733f496c9f99addc12117d"
   license "Apache-2.0"
   revision 1
+
   head "https://github.com/gazebosim/gz-tools.git", branch: "ign-tools1"
 
   bottle do

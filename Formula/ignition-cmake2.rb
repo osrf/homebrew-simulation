@@ -5,6 +5,8 @@ class IgnitionCmake2 < Formula
   sha256 "20a7b0c9e223db65fd3ed3c0a8e57ddafd93282c81badbf8bc3d493eeb5f37e6"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any_skip_relocation, big_sur:  "162492daef1fa6a733344efda48f06686f08410c31b32dae28fbdd3828cb6452"
