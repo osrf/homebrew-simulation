@@ -17,6 +17,7 @@ class IgnitionGui3 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-msgs5"

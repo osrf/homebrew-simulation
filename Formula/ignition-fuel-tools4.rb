@@ -5,6 +5,8 @@ class IgnitionFuelTools4 < Formula
   sha256 "8451bdcb040a463f74863cc688e8164dcdd4646b42604a96774ce5d8adee7f9d"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools4"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, big_sur:  "742db8c5778c335999d950b6e24dffff155391c26adc5c294a56e03e042cc67c"
@@ -22,10 +24,11 @@ class IgnitionFuelTools4 < Formula
   depends_on "pkg-config"
 
   def install
+    cmake_args = std_cmake_args
+    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
     mkdir "build" do
-      cmake_args = std_cmake_args
-      cmake_args << "-DBUILD_TESTING=Off"
-      cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
