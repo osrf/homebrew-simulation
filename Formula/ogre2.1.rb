@@ -19,6 +19,7 @@ class Ogre21 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
+
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
