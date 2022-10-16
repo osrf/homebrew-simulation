@@ -10,6 +10,7 @@ class IgnitionSensors3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "b49287640d42399a17895b878399835bf4501edd9567d6923248b39bfcf77d18"
     sha256 big_sur:  "c7a64ee809dcb4a43af6b9f7b16384e2ddf64ccc7dfdf1b5b4005ee42c24f755"
     sha256 catalina: "7fe94be738d4dbf0681a83a1dd8064f33807c25fd163febe2c341ff0c1f80643"
   end

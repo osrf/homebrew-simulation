@@ -9,6 +9,7 @@ class IgnitionGui3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "899a5304fd2f56a5c5585ef7f21a68491619fce3203c7ef13c93c0b053eddd3a"
     sha256 big_sur:  "6f8c09fde83038788691da475e948317c62ef56c2d410dcbebaa6c5b1ee5b7f1"
     sha256 catalina: "45c370441807a4d283bd3b94561b0536e707ad885d0ae0098b934ef209220e30"
   end

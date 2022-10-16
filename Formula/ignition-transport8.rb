@@ -9,6 +9,7 @@ class IgnitionTransport8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "74cf9455350f55a88eb394d492c9d10af10d407276e2f3d78be6872d21f9a35e"
     sha256 big_sur:  "de3fcfd97c18f5753df1644656afaab6f923178a4442d5e0868cc3ecd4d95ebb"
     sha256 catalina: "2f830ac3228681f634c06c62f392076b035cbe874602ba2dca4244e4e58149da"
   end
