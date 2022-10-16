@@ -10,6 +10,7 @@ class IgnitionTransport10 < Formula
   head "https://github.com/gazebosim/gz-transport.git", branch: "main"
 
   deprecate! date: "2022-03-31", because: "is past end-of-life date"
+  disable! date: "2022-11-01", because: "is past end-of-life date"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
