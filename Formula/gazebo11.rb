@@ -43,8 +43,8 @@ class Gazebo11 < Formula
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
-  # depends on "gdal" => :optional
-  # depends on "player" => :optional
+  # depends on "gdal"
+  # depends on "player"
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
