@@ -8,13 +8,13 @@ class IgnitionCommon2 < Formula
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common2"
 
-  deprecate! date: "2019-09-01", because: "is past end-of-life date"
-
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, catalina: "7b56734b816d905ac6bbf1428bf0cbe7b034bbc550b6e2ffb6cf5da7e0c05137"
     sha256 cellar: :any, mojave:   "ba20967b0c64bc1eef5475d427bf252a348903fe7ea7dec92153cf70b89459b2"
   end
+
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
 
   depends_on "cmake"
   depends_on "ffmpeg"
