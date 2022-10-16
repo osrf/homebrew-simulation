@@ -5,6 +5,8 @@ class IgnitionGui6 < Formula
   sha256 "4b77e740d7e76a84b44751eb9c8744c9a4ecbfffee2a175f8fbaab2450e0b779"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 big_sur:  "2f2d63ed784260ddcf8f078e2eeeceeac0df43a7b912c3f087980e44299fc06c"

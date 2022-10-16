@@ -5,6 +5,8 @@ class IgnitionMsgs8 < Formula
   sha256 "b17a8e16fe56a84891bd0654a2ac09427e9a567b9cd2255bb2cfa830f8e1af45"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs8"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, big_sur:  "6a506d51c89f032b7f6c0d923c107d36d84d9bbce711ff6139686ef863ec3272"
@@ -26,8 +28,10 @@ class IgnitionMsgs8 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

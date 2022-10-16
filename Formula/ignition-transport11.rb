@@ -6,6 +6,8 @@ class IgnitionTransport11 < Formula
   license "Apache-2.0"
   version_scheme 1
 
+  head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport11"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 big_sur:  "4a9df6dac5980c48177b9ef7868e4fa28d0ef2c272cc784a0d5bc51c98f3b8d4"
@@ -32,8 +34,10 @@ class IgnitionTransport11 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

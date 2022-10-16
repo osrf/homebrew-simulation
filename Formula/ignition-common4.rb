@@ -5,6 +5,8 @@ class IgnitionCommon4 < Formula
   sha256 "a53cb85e4624ca2f3f171e7a78f582d21b089fe32d12219b9b38a9a196efe419"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, big_sur:  "96bef83125dc96830ffab8e2a0ec81a5cab54a928c9241a45024de1404558a96"
@@ -27,8 +29,12 @@ class IgnitionCommon4 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
