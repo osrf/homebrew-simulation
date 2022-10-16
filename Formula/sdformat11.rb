@@ -11,8 +11,8 @@ class Sdformat11 < Formula
     sha256 catalina: "e263b2b657003c565b34d71dc9e993b57fc518b37b65c6ba034087f521415fb8"
   end
 
-  deprecate! date: "2022-03-31", because: "is past end-of-life date"
   disable! date: "2022-11-01", because: "is past end-of-life date"
+  deprecate! date: "2022-03-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
