@@ -4,10 +4,12 @@ class ChronoEngine < Formula
   url "https://github.com/projectchrono/chrono/archive/7.0.3.tar.gz"
   sha256 "335923458fc75024baf2458c94d9d227da6ee91f989f5603b2d13498e2db0a81"
   license "BSD-3-Clause"
+
   head "https://github.com/projectchrono/chrono.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "94b34bcbec8cd55e261c8bdaee60fb9ea46b1351fff05c35408736bb155d1468"
     sha256 cellar: :any, big_sur:  "eed9074244be5f8a1ba35aa3924bf2c739fae5e97a69bf2cfdbc924d26ad98d6"
     sha256 cellar: :any, catalina: "079fe5fa4d3ec345cd8b51fd54f0ed4124e09aff7d059c48b43e9656b67b2675"
   end
