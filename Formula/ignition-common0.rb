@@ -8,6 +8,8 @@ class IgnitionCommon0 < Formula
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common0"
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"

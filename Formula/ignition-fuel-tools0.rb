@@ -6,6 +6,8 @@ class IgnitionFuelTools0 < Formula
   sha256 "dce9a2816c797392a3a0c94f0c09bbb8dedd37969d1a9990dc37c61f767bb3e2"
   license "Apache-2.0"
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-common1"
