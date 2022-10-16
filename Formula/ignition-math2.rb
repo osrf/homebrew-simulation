@@ -16,6 +16,8 @@ class IgnitionMath2 < Formula
     sha256 cellar: :any, yosemite:    "401ecbcc6c53af2ba8161790115a0df3cefbe393cafa72358fd92441bccdb633"
   end
 
+  deprecate! date: "2021-01-25", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 
