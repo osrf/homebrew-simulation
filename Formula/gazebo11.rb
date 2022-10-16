@@ -10,6 +10,7 @@ class Gazebo11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "2a469011e3be3d778591d1fe4a294c398a11e3002395f6dbc30e5906f2eb7c97"
     sha256 big_sur:  "a2391bd29c5fb888c25e5ca1c787d7639a414b24adcb5114cbe90e7d32c1e63e"
     sha256 catalina: "4f9dfd328070560276a3aee083017ca91f45a7c515841b6d87e0d7f0bc5e6850"
   end
