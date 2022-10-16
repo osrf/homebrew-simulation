@@ -8,6 +8,8 @@ class IgnitionMath5 < Formula
 
   head "https://github.com/gazebosim/gz-math.git", branch: "ign-math5"
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, mojave:      "08a8d27d961fba37b980e3ecdd87d7416429807402ddaf38d3d616808d578371"
