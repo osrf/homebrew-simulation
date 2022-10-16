@@ -8,6 +8,8 @@ class IgnitionTransport2 < Formula
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transort2"
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
   depends_on "protobuf-c" => :build
