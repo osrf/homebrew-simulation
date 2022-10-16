@@ -15,6 +15,8 @@ class IgnitionMath5 < Formula
     sha256 cellar: :any, sierra:      "606c4dfb580402e4cfb7ac1a5d7ccd99a7eeded41c974df618e067c1e51fd423"
   end
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "eigen"
