@@ -14,7 +14,7 @@ class Gazebo9 < Formula
     sha256 catalina: "2aa5271dbb33b284612efae859e3b37983f19d357af2485b346b62c165d5a520"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => :build
 
   depends_on "boost"
