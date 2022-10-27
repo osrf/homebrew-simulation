@@ -5,8 +5,11 @@ class IgnitionRendering3 < Formula
   sha256 "535779f122710e8821785707cdec277e87497f16c002918b61396616d33ec6e2"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering3"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "43bd98867840cf891ef547378eb546b56bab61a74b7221cbfdf33ae0389ce406"
     sha256 big_sur:  "6dc95605d68ee5c1472b62c220e3517ddc06771fec29a70c7070d5b25488e4e4"
     sha256 catalina: "a451162b2a081f5c3a53bf40ab69840bd564dbd62f7838eab68e3cf7edec2705"
   end
@@ -29,8 +32,11 @@ class IgnitionRendering3 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

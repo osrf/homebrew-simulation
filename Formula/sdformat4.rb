@@ -15,6 +15,8 @@ class Sdformat4 < Formula
     sha256 sierra:      "d0b28be274c293fd1c5395fcae0be37f43f6c16ef129a171d39a020564e6b7f9"
   end
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
 
   depends_on "boost"

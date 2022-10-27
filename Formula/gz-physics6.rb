@@ -1,16 +1,17 @@
 class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.0.0.tar.bz2"
-  sha256 "e11d001ed3f3f898e93387dda493269e14621b0fe05e18da437036ee2377fb0a"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.1.0.tar.bz2"
+  sha256 "04f30a98208b6941096fdb262353452e2326cee9624b63cb4c2389765881e52b"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "0d2410e753318b0ae6f6ed0ce9fe531c9351af20dcd910d948d3c66a09d0586b"
-    sha256 cellar: :any, catalina: "1ed3ced0939504b039d28a664ce91592b22e1e0073d9b26d1e6935cdce5b6556"
+    sha256 cellar: :any, monterey: "101ef48460311088d5a0eb736a76b21325b80c8a4c7434e5fc1453dbbf2425f9"
+    sha256 cellar: :any, big_sur:  "c318c688c3cc21776f62ddd9cc2a3077c1d25056d39cbbd4fe39cedb77dd5522"
+    sha256 cellar: :any, catalina: "e3a51e3719e4c67b07fe6a5b8716aa1c5c688862f41c7e702b84f23dfca2eede"
   end
 
   depends_on "cmake" => :build
@@ -70,7 +71,8 @@ class GzPhysics6 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test"
+    # Disable test due to gazebosim/gz-physics#442
+    # system "./test"
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode

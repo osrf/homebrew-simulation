@@ -5,8 +5,11 @@ class IgnitionPlugin1 < Formula
   sha256 "07f41e0750f4791ffd0c7984257c40b38f266005ad83c0c05a9f17bf48ce3737"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-plugin.git", branch: "ign-plugin1"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "37f25dd0d8c9aada54fee3f5885bad4114dc28dae7c48d2f42e7e7b03cb94d47"
     sha256 cellar: :any, big_sur:  "5fbf58660d93f35416b9779859b196d9c0df0c7f2106536b9cbae9b74117f2b8"
     sha256 cellar: :any, catalina: "376288ed35530e63d78bf5e9b5f255860bcce4b1808acdd13b2e08f19617d584"
   end
@@ -21,8 +24,12 @@ class IgnitionPlugin1 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

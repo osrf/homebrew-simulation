@@ -9,6 +9,7 @@ class Simbody < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey:    "4550130d4b54cfdd6c6f3bef8c376c0cf4c86f4cb5a1d07332a4200766a39ba5"
     sha256 big_sur:     "e78642e3e328773da2dca9faf741fd7b620501213046017eab1d117b890a373d"
     sha256 catalina:    "4d758a8363a28cbc8d9700a5d66a80b0d55a3470bc6406b7ed36453fa44724a3"
     sha256 mojave:      "2ea952e21afc83d111acacc70af126f0ae5845b270b100451f17400fad0a47df"
@@ -17,7 +18,7 @@ class Simbody < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "pkg-config"
+  depends_on "pkg-config" => [:build, :test]
 
   def install
     # Don't use 10.11 SDK frameworks on 10.10 with xcode7

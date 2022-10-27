@@ -5,8 +5,11 @@ class IgnitionUtils1 < Formula
   sha256 "2b895878a1e80e8df560c80366aeaa846588dd2670ffa0432b4472e81c65ce58"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "ef7e847022760f728b5e83e8d321eabcf894c7d43aa291e20c76eb1941ee6ab1"
     sha256 cellar: :any, big_sur:  "837853e0c7387464c7ac15c8f5a2a5f7aa21debc7f2e5d87dbbe790c21e722f7"
     sha256 cellar: :any, catalina: "dd74cfaee528c3878c9aaa0865488e742bf1716bf7c15d6c2f701c6a531573b2"
   end

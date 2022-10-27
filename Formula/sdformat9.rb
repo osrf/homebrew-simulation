@@ -5,8 +5,11 @@ class Sdformat9 < Formula
   sha256 "fd57fbc6459f7a12732dc012e890d39391ee0b8b4bd29dc89867eaeff3aeb59c"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/sdformat.git", branch: "sdf9"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "1215831a04c83239716c3c125fbc4aa0d0d935bfccff618a9d911d1504f3f778"
     sha256 big_sur:  "a19265f4a3565989e0d8843429aaa751abab6319c264c714b0bab601f66dadb4"
     sha256 catalina: "5721b846942561d8c348778dc3f378de75cb74ea90422c385902b0f03c3e7bab"
   end

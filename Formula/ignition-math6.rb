@@ -5,8 +5,11 @@ class IgnitionMath6 < Formula
   sha256 "4d412a53644ecb984a0f64ca5df6e7043514673a406cd6228173278ce4eaf924"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "454848e5baaa89e55aeed4099745cfd7f8f664f37bc1a60c794d131ef7e989fc"
     sha256 cellar: :any, big_sur:  "f0a2c4558bbba2e7d5decf2ca2cdece0126638c50074d29b4f46ae302b5bf0ee"
     sha256 cellar: :any, catalina: "e1b5423ca61a04d4275c60a22f466175bb077addb8c9aef74656b74f46b56997"
   end
@@ -23,8 +26,12 @@ class IgnitionMath6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

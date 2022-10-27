@@ -8,6 +8,8 @@ class Sdformat7 < Formula
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf7", using: :git
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
 
   depends_on "boost"

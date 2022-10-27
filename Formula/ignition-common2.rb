@@ -14,6 +14,8 @@ class IgnitionCommon2 < Formula
     sha256 cellar: :any, mojave:   "ba20967b0c64bc1eef5475d427bf252a348903fe7ea7dec92153cf70b89459b2"
   end
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"

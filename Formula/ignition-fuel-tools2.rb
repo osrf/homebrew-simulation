@@ -6,6 +6,8 @@ class IgnitionFuelTools2 < Formula
   license "Apache-2.0"
   revision 2
 
+  deprecate! date: "2019-09-01", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-common1"

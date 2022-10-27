@@ -5,8 +5,11 @@ class IgnitionCommon3 < Formula
   sha256 "8c0ac36b97160ecfcb8eeae116fd0a6f07b62bf19004b0992ad2f3c7bc271294"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-common.git", branch: "ign-common3"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "d40677aa261fd5acb29bdcb42fe4c36224892beb9c810befa82f8d3d3337562a"
     sha256 cellar: :any, big_sur:  "caabc4409cc085c30028d399b3be03078623fad7fda59f1b300f014636062697"
     sha256 cellar: :any, catalina: "9988cafca7832805d630d959348e308c7b6e6b9969c216fc2a7206292206e926"
   end
@@ -33,8 +36,10 @@ class IgnitionCommon3 < Formula
       cmake_args << "-DIGN_PROFILER_REMOTERY=Off"
     end
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
 
     # Remove an accidentally installed CMakeLists.txt file
     # remove this at next release
