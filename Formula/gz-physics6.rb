@@ -5,6 +5,8 @@ class GzPhysics6 < Formula
   sha256 "04f30a98208b6941096fdb262353452e2326cee9624b63cb4c2389765881e52b"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, monterey: "101ef48460311088d5a0eb736a76b21325b80c8a4c7434e5fc1453dbbf2425f9"
@@ -12,7 +14,7 @@ class GzPhysics6 < Formula
     sha256 cellar: :any, catalina: "e3a51e3719e4c67b07fe6a5b8716aa1c5c688862f41c7e702b84f23dfca2eede"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
 
   depends_on "bullet"
   depends_on "dartsim"
@@ -30,8 +32,12 @@ class GzPhysics6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
@@ -52,6 +58,15 @@ class GzPhysics6 < Formula
         return engine == nullptr;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(gz-physics6 REQUIRED)
+      find_package(gz-plugin2 REQUIRED COMPONENTS all)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake
+          gz-physics6::gz-physics6
+          gz-plugin2::loader)
+    EOS
     system "pkg-config", "gz-physics6"
     cflags   = `pkg-config --cflags gz-physics6`.split
     ldflags  = `pkg-config --libs gz-physics6`.split
@@ -67,6 +82,13 @@ class GzPhysics6 < Formula
                    "-o", "test"
     # Disable test due to gazebosim/gz-physics#442
     # system "./test"
+    # test building with cmake
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      # Disable test due to gazebosim/gz-physics#442
+      # system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
