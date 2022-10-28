@@ -11,12 +11,14 @@ class GzGarden < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "f34f77dac43e0a1d6b86e9daaa408e6de91bd920f6d0ccbaa485e7f0c6917020"
     sha256 cellar: :any, big_sur:  "4452076f47fc8f63e224fdb7032854ba3f44f6312eb25908f0ca2fab73242704"
     sha256 cellar: :any, catalina: "3242a7dd3549e9a2496a6de4b5722f6542216e635cd4ebe2d955a98177f6bae2"
   end
 
   depends_on "cmake" => :build
   depends_on "python@3.9" => [:build, :test]
+
   depends_on "gz-cmake3"
   depends_on "gz-common5"
   depends_on "gz-fuel-tools8"
