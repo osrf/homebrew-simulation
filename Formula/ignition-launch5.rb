@@ -5,6 +5,8 @@ class IgnitionLaunch5 < Formula
   sha256 "30fbddd115423c8d6ba22d754f9a569dabc79f05316feb0347b72b55884be5de"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch5"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 big_sur:  "0338761c4de92399ec293d3aeb1040be23724d05cf4254fa8942a8850285d15f"

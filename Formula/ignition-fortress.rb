@@ -19,6 +19,7 @@ class IgnitionFortress < Formula
 
   depends_on "cmake" => :build
   depends_on "python@3.9" => [:build, :test]
+
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
   depends_on "ignition-fuel-tools7"

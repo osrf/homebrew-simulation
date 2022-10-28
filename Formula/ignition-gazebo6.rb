@@ -5,6 +5,8 @@ class IgnitionGazebo6 < Formula
   sha256 "60981620087f02bb7da103d36120106697f98ee7e0a703e270bb34afda31ad88"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 big_sur:  "b7609e138b25ddf574eab009e4fe8fb02c784bb01e14abef4b90e5e9354ea615"
