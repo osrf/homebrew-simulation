@@ -17,7 +17,6 @@ class IgnitionLaunch2 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-
   depends_on "ffmpeg"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
