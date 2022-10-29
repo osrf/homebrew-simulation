@@ -5,8 +5,11 @@ class IgnitionPhysics5 < Formula
   sha256 "7343caec347c00794c0a6066b99728c77315da6750fa899e6ff06d3bd0a02cd3"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "1f46e147b6c5bc981ee06e8af76a25e52769e1838930015f2bab5af676920c95"
     sha256 cellar: :any, big_sur:  "8e32bff557518e1edd2367779559902e1e62908461a3504c23ee884f24756422"
     sha256 cellar: :any, catalina: "2ff067ca255df12762264eea4c6eacaa8311ccc56a82c7fcb567e3113c824a84"
   end
@@ -29,8 +32,11 @@ class IgnitionPhysics5 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
@@ -64,7 +70,8 @@ class IgnitionPhysics5 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test"
+    # Disable test due to gazebosim/gz-physics#442
+    # system "./test"
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
