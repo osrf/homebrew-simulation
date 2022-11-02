@@ -55,7 +55,7 @@ class IgnitionRendering3 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(ignition-rendering3 QUIET REQUIRED)
+      find_package(ignition-rendering3 REQUIRED COMPONENTS ogre ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-rendering3::ignition-rendering3)
     EOS
