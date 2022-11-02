@@ -15,7 +15,6 @@ class IgnitionRendering6 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
-
   depends_on "freeimage"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
