@@ -52,7 +52,7 @@ class GzRendering7 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(gz-rendering7 QUIET REQUIRED)
+      find_package(gz-rendering7 REQUIRED COMPONENTS ogre ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-rendering7::gz-rendering7)
     EOS
