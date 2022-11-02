@@ -4,6 +4,7 @@ class IgnitionRendering6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.5.1.tar.bz2"
   sha256 "7f38992d15e6942cb548b625545d03589482e347328c87063ec80779f9a3a6ff"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
 
