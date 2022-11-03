@@ -4,6 +4,7 @@ class IgnitionCmake2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.15.0.tar.bz2"
   sha256 "20a7b0c9e223db65fd3ed3c0a8e57ddafd93282c81badbf8bc3d493eeb5f37e6"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
 
@@ -16,6 +17,12 @@ class IgnitionCmake2 < Formula
 
   depends_on "cmake"
   depends_on "pkg-config"
+
+  patch do
+    # fix for PKG_CONFIG_PATH in FindIgnOGRE2
+    url "https://github.com/gazebosim/gz-cmake/commit/038178552e56054c8908524df894dd818c50aa98.patch?full_index=1"
+    sha256 "1fcc06ca3345f713aa38b2b2ccad3feb572817de468c2de3e660ab99f162def7"
+  end
 
   def install
     cmake_args = std_cmake_args
