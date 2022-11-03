@@ -4,14 +4,15 @@ class IgnitionRendering6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.5.1.tar.bz2"
   sha256 "7f38992d15e6942cb548b625545d03589482e347328c87063ec80779f9a3a6ff"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "55b266320b9b8c8c97e35d50384dc008cc1484997f998e5b017b9672a622c7ed"
-    sha256 big_sur:  "26e267f4dab2f92fe903964e29a27366686fae895d55732b95c2865082907d8b"
-    sha256 catalina: "ce0bbe299a38b856a7b185f827aa2ffb8c6dcf506dbf653a9d5ebb97295d73fd"
+    sha256 monterey: "90559ed1b98bb9686a3388ba151cdd3c414437beeefb0a36f2eccedfaee53a85"
+    sha256 big_sur:  "eda5584fd0d2ec958d9dae6bdafc92dbf58a313633412ced4ddeb5ac46536922"
+    sha256 catalina: "d6bec6b86203640c61774f7533257c48672618ea75d88541dcec2f72c35dc083"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -51,7 +52,7 @@ class IgnitionRendering6 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(ignition-rendering6 QUIET REQUIRED)
+      find_package(ignition-rendering6 REQUIRED COMPONENTS ogre ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-rendering6::ignition-rendering6)
     EOS
