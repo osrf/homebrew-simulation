@@ -1,8 +1,8 @@
 class IgnitionGazebo6 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.12.0.tar.bz2"
-  sha256 "60981620087f02bb7da103d36120106697f98ee7e0a703e270bb34afda31ad88"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.13.0.tar.bz2"
+  sha256 "630675cb36013e0900a720d744650537c7483565831e5db2380c9edf26beb35a"
   license "Apache-2.0"
 
   bottle do
