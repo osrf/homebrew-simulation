@@ -1,17 +1,17 @@
 class Sdformat9 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.9.0.tar.bz2"
-  sha256 "fd57fbc6459f7a12732dc012e890d39391ee0b8b4bd29dc89867eaeff3aeb59c"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.9.1.tar.bz2"
+  sha256 "2d3203b9d726e142f24f93f6d83d6dd2a7a386053da948a753b4b9e9434fd122"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "1215831a04c83239716c3c125fbc4aa0d0d935bfccff618a9d911d1504f3f778"
-    sha256 big_sur:  "a19265f4a3565989e0d8843429aaa751abab6319c264c714b0bab601f66dadb4"
-    sha256 catalina: "5721b846942561d8c348778dc3f378de75cb74ea90422c385902b0f03c3e7bab"
+    sha256 monterey: "e859ffec75c21a65ddc97f0a76d15ff24f6cc37ea283c3e844092603dac0a30a"
+    sha256 big_sur:  "89f9f035e432d97e426352106b51dddf91d99439b450a242fdd6a468419b01b7"
+    sha256 catalina: "0b900f155c5445eea54827e8ffa93a85503a9427eaaf406936963290a898c4b4"
   end
 
   depends_on "cmake" => [:build, :test]
