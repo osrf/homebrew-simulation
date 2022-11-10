@@ -17,12 +17,6 @@ class IgnitionCmake2 < Formula
   depends_on "cmake"
   depends_on "pkg-config"
 
-  patch do
-    # fix for PKG_CONFIG_PATH in FindIgnOGRE2
-    url "https://github.com/gazebosim/gz-cmake/commit/038178552e56054c8908524df894dd818c50aa98.patch?full_index=1"
-    sha256 "1fcc06ca3345f713aa38b2b2ccad3feb572817de468c2de3e660ab99f162def7"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
