@@ -1,10 +1,9 @@
 class IgnitionCmake2 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.15.0.tar.bz2"
-  sha256 "20a7b0c9e223db65fd3ed3c0a8e57ddafd93282c81badbf8bc3d493eeb5f37e6"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.16.0.tar.bz2"
+  sha256 "db1839df02ea0cd42fe0e2d266a96a747fcb1a354c50de91cbe5469525293335"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
 
