@@ -1,17 +1,17 @@
 class IgnitionRendering3 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/gazebosim/gz-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.6.0.tar.bz2"
-  sha256 "535779f122710e8821785707cdec277e87497f16c002918b61396616d33ec6e2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.6.1.tar.bz2"
+  sha256 "1daba25b5cb2717d2f7ac1c65e334dcde62e5b1bebdebc804b49b2fb1dd66c03"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "43bd98867840cf891ef547378eb546b56bab61a74b7221cbfdf33ae0389ce406"
-    sha256 big_sur:  "6dc95605d68ee5c1472b62c220e3517ddc06771fec29a70c7070d5b25488e4e4"
-    sha256 catalina: "a451162b2a081f5c3a53bf40ab69840bd564dbd62f7838eab68e3cf7edec2705"
+    sha256 monterey: "beeb7303172219ff28425a93579f03bef1103c604343caca0a32f6b13802f855"
+    sha256 big_sur:  "0c7266215511a77fb35115a06529907b0c30954a8d2a02b0041d07ef9182bb9b"
+    sha256 catalina: "a0cce90685082e15da8965a5dc1444e83012d0f82d80f26de73cebd879e4e5ed"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
