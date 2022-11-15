@@ -1,17 +1,17 @@
 class GzCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.2.2.tar.bz2"
-  sha256 "3a720118594ec2324cc2265fcf46b1fb8f5c1c687eacfa95458f544d9217a126"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.3.0.tar.bz2"
+  sha256 "222d7ee59d094de5ab6e3f2c577482ed454c4ba46f0f3770b6082bc7adda2f3c"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "490f707a7c02c5f8d2d776b8c8dedd72f9bf1a8decdcd935cb7095da0e017cdc"
-    sha256 cellar: :any, big_sur:  "e00b8e3514079de6fe6d50b2c65311250dc950e04f34e85492c77d433b037986"
-    sha256 cellar: :any, catalina: "ee1394a7c1099061212a8c3486dcb52baf2e24e22dadba603c4ce154d4098515"
+    sha256 cellar: :any, monterey: "09a1861c2d686b2900405cf5eb76f53936ddc953b6a006a18ee7f9b051e8a41f"
+    sha256 cellar: :any, big_sur:  "083831f14ad542d7e055f18b94b751ffce3b27760c51f4c9a24fba7a57d6ac52"
+    sha256 cellar: :any, catalina: "a09f56c0accfe9d7c866838d8d85f515659fb5252b1265217e443e9981655a94"
   end
 
   depends_on "assimp"
