@@ -1,8 +1,8 @@
 class GzCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.0.0.tar.bz2"
-  sha256 "234d96f47391659141e633e1aa01912769639a6110a7c52caa90f8f26117db69"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.0.1.tar.bz2"
+  sha256 "f4cb8ec10ceea783f1d0e1bf4634e62b83429798537ae846de487fcd8319c0d3"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
