@@ -1,8 +1,8 @@
 class IgnitionFuelTools7 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools7-7.1.0.tar.bz2"
-  sha256 "69e7a27d49187776eb9bc3fb646a2d73f598e808a70a03af5c41673da18b66a5"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools7-7.2.0.tar.bz2"
+  sha256 "1e7f5f0f721dbdf301efcf2415bcd3c40e775b61883609456a2e1bb250714052"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools7"
