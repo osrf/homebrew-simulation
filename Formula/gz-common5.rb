@@ -9,9 +9,9 @@ class GzCommon5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "09a1861c2d686b2900405cf5eb76f53936ddc953b6a006a18ee7f9b051e8a41f"
-    sha256 cellar: :any, big_sur:  "083831f14ad542d7e055f18b94b751ffce3b27760c51f4c9a24fba7a57d6ac52"
-    sha256 cellar: :any, catalina: "a09f56c0accfe9d7c866838d8d85f515659fb5252b1265217e443e9981655a94"
+    sha256 cellar: :any, monterey: "57b081b5ff51f19685c457fcb4ead2b627523dadd3c8130b6844cb10584666b4"
+    sha256 cellar: :any, big_sur:  "1e49745037f8c6088ed85a5d27f367c405a4b25a17a1b7654c96eef03e43700c"
+    sha256 cellar: :any, catalina: "e4a303c07595ea0bf2351f7d42a8623d246be1ecaec83d87c997964e58c10af3"
   end
 
   depends_on "assimp"
