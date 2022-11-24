@@ -6,6 +6,8 @@ on:
 jobs:
   test-bot:
     runs-on: macos-11
+    env:
+      HOMEBREW_FORCE_VENDOR_RUBY: 1
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
