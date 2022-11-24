@@ -5,7 +5,7 @@ on:
   pull_request: []
 jobs:
   test-bot:
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
