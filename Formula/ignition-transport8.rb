@@ -1,17 +1,17 @@
 class IgnitionTransport8 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.3.0.tar.bz2"
-  sha256 "bb12422a0563b9804e34074c6bfd3890505485c5e7d20a8f6f57fcd7beb57c9d"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.4.0.tar.bz2"
+  sha256 "deac1e04f08e3bebd70d587de54054beacf205a05aaac2db0dc1926fa35bf2a2"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "74cf9455350f55a88eb394d492c9d10af10d407276e2f3d78be6872d21f9a35e"
-    sha256 big_sur:  "de3fcfd97c18f5753df1644656afaab6f923178a4442d5e0868cc3ecd4d95ebb"
-    sha256 catalina: "2f830ac3228681f634c06c62f392076b035cbe874602ba2dca4244e4e58149da"
+    sha256 monterey: "3046f93d354250aea0a5e33d3e3ec8a68dbcb71b96842a37b1df36095d76ddbd"
+    sha256 big_sur:  "fff8a26d5022f3ad5a491e8f98ada7163b881868ac58b4a07fdf6dfcbd48c428"
+    sha256 catalina: "4c1dd1405268c3060b3754f91a1682decf2b46690cf6698b35432893656eeaf6"
   end
 
   depends_on "doxygen" => [:build, :optional]
