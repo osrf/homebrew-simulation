@@ -1,8 +1,8 @@
 class IgnitionPhysics2 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.5.1.tar.bz2"
-  sha256 "c3f7605805770aeaa7108ac9309d0a551816cae5df983520a1e6eafbe1fe8eac"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.6.0.tar.bz2"
+  sha256 "89ae8d396b5f31179339b4fd1e01ef22bcca19073ab4422637917660862f7867"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics2"
