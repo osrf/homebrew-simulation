@@ -27,14 +27,6 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-transport8"
   depends_on "sdformat9"
 
-  patch do
-    # Add missing DEPENDS_ON_COMPONENTS parameters to fix ignition-gazebo3 build
-    # https://github.com/gazebosim/gz-sensors/pull/262
-    # TODO: remove with next release
-    url "https://github.com/gazebosim/gz-sensors/commit/da66843e251c6ee2e82c96dd691dc2cd0cd9d32d.patch?full_index=1"
-    sha256 "801dc8c8a906b6964d13fcfe753b843820d20508ecb1f8bbc7dc49ae18d1309c"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
