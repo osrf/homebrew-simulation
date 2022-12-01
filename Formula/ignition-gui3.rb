@@ -9,9 +9,8 @@ class IgnitionGui3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "899a5304fd2f56a5c5585ef7f21a68491619fce3203c7ef13c93c0b053eddd3a"
-    sha256 big_sur:  "6f8c09fde83038788691da475e948317c62ef56c2d410dcbebaa6c5b1ee5b7f1"
-    sha256 catalina: "45c370441807a4d283bd3b94561b0536e707ad885d0ae0098b934ef209220e30"
+    sha256 monterey: "958287e1c8eacb59738188cc053976ec2446024e9040a1192fff3aa47aaefa1d"
+    sha256 big_sur:  "7f21b5cca242dd1db92a82973fcc1ceeec9c738ea9d3882f9976ee46886b555c"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
