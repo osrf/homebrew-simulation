@@ -1,17 +1,16 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.6.1.tar.bz2"
-  sha256 "4b77e740d7e76a84b44751eb9c8744c9a4ecbfffee2a175f8fbaab2450e0b779"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.7.0.tar.bz2"
+  sha256 "cd9311658bbfd1d1fbfc3d9563930c009eab153cdda2e2d1686e5e2a18d95ffc"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "22b7f97d84cfcddf4058785ab02068b67191397381dcaf7bc3b25342ffabe2ad"
-    sha256 big_sur:  "2f2d63ed784260ddcf8f078e2eeeceeac0df43a7b912c3f087980e44299fc06c"
-    sha256 catalina: "9ccea55db45a939c05e792a3578ab0572b57f2f25a617108528e69973d0647c1"
+    sha256 monterey: "9ae1e7de781aa7f2e4c5cd2229bc25826232d5ef523374579b201f17964f57f3"
+    sha256 big_sur:  "841eb9bd4ca2e857e6d034ccf5e1b0b1d6677af1e8bd19974086e2d49e2936e4"
   end
 
   depends_on "cmake" => [:build, :test]
