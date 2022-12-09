@@ -1,7 +1,7 @@
 class GzLaunch7 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://github.com/gazebosim/gz-launch.git"
+  url "https://github.com/gazebosim/gz-launch.git", branch: "main"
   version "7.999.999~0~20221117"
   license "Apache-2.0"
 

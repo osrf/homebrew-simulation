@@ -1,7 +1,7 @@
 class GzSensors8 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://github.com/gazebosim/gz-sensors.git"
+  url "https://github.com/gazebosim/gz-sensors.git", branch: "main"
   version "7.999.999~0~20221114"
   license "Apache-2.0"
 
