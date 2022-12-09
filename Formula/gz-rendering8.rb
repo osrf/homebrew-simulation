@@ -1,7 +1,7 @@
 class GzRendering8 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-rendering.git"
+  url "https://github.com/gazebosim/gz-rendering.git", branch: "main"
   version "7.999.999~0~20221208"
   license "Apache-2.0"
 

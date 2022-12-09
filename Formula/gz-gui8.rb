@@ -1,7 +1,7 @@
 class GzGui8 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://github.com/gazebosim/gz-gui.git"
+  url "https://github.com/gazebosim/gz-gui.git", branch: "main"
   version "7.999.999~0~20221116"
   license "Apache-2.0"
 
