@@ -87,7 +87,7 @@ class Ogre21 < Formula
       s.sub! "Name: OGRE", "Name: OGRE-2.1"
       s.sub!(/^includedir=.*$/, "includedir=${prefix}/include/OGRE-2.1")
     end
-    inreplace (lib/"pkgconfig/OGRE-2.1.pc"), " -I${includedir}\/OGRE", ""
+    inreplace (lib/"pkgconfig/OGRE-2.1.pc"), " -I${includedir}/OGRE", ""
     inreplace (lib/"pkgconfig/OGRE-2.1-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
     inreplace (lib/"pkgconfig/OGRE-2.1-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 
