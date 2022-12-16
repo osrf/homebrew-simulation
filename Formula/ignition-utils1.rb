@@ -1,16 +1,16 @@
 class IgnitionUtils1 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.5.0.tar.bz2"
-  sha256 "09235eb8730e9f06686aa9712a62b82587a413ef041c92a5b2004e75edb93f29"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.5.1.tar.bz2"
+  sha256 "0a34a05d0acee29d6571437c60bb7ca9012fc5f4ed9c445dfa65765702468bdb"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "e82af2825df9d730b7cffe3b765254810b4903d3c6b46040fb73764c3fdcdf7f"
-    sha256 cellar: :any, big_sur:  "07ce5ab56343982dba9ea6e6ba32c3f3629dab56925b48942c5dafc936658729"
+    sha256 cellar: :any, monterey: "f7a68cade6eef655b58433c502758c7361221cadf1df46af611f094db817ef10"
+    sha256 cellar: :any, big_sur:  "dfbfdd2ad1aa2b2915d80104a89eaf23f05efc6317b70a53896ba1aa2f46a579"
   end
 
   depends_on "cmake" => [:build, :test]
