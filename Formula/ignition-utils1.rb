@@ -1,8 +1,8 @@
 class IgnitionUtils1 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.5.0.tar.bz2"
-  sha256 "09235eb8730e9f06686aa9712a62b82587a413ef041c92a5b2004e75edb93f29"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.5.1.tar.bz2"
+  sha256 "0a34a05d0acee29d6571437c60bb7ca9012fc5f4ed9c445dfa65765702468bdb"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
