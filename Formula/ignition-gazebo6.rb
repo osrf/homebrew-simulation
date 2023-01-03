@@ -1,17 +1,16 @@
 class IgnitionGazebo6 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.13.0.tar.bz2"
-  sha256 "630675cb36013e0900a720d744650537c7483565831e5db2380c9edf26beb35a"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.14.0.tar.bz2"
+  sha256 "7c516f826c1214dd5079a96975004910ad91a09c53afc14e1f308cdaa4b8e918"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "e832a083015380402f888e24b0e3ab2701a482e894555dda9ea5bf995c05b24b"
-    sha256 big_sur:  "8289f0cbcf809dd779f829206bc86656cc9b391b4d21a2731984fada55627f85"
-    sha256 catalina: "faa2aed4a429b1e9e33933e05a740ffe245fa33521c9dda17d5c77b369bb2e71"
+    sha256 monterey: "1ddbbcf904f891435904102565bbc73578fa5a63a99b758d3cd2817387f185ec"
+    sha256 big_sur:  "4640bc087561268b5b34d7a9a96cd46e968ce7e1a35526b78f2adfbb0cf9fa58"
   end
 
   depends_on "cmake" => :build
