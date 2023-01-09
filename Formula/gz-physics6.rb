@@ -4,7 +4,13 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.2.0.tar.bz2"
   sha256 "5a9a126039ddd357c3f61da6e9e1553310ff139aada5e838dd485bfcb73439ad"
   license "Apache-2.0"
-  revision 1
+  revision 2
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "58df5f22193fe22a938fec5825d7a58495887b4b6a3cd21b72d0ad8be4006c77"
+    sha256 cellar: :any, big_sur:  "64c37b8356c291b773aa1aae8c67eca74c7d0f3cdab63eb21f7de34d6e0c2dce"
+  end
 
   depends_on "cmake" => :build
 
@@ -19,6 +25,13 @@ class GzPhysics6 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat13"
+
+  # Remove patch with next release
+  patch do
+    # Fix for compatibility with dartsim 6.13.0
+    url "https://github.com/gazebosim/gz-physics/commit/38db8ec0574d4a0db64ff5ba89ed7153f5b31201.patch?full_index=1"
+    sha256 "e12f5e67919d7f0fb02402ff849e6fa827f74b08a8f234aa13239a14714d092d"
+  end
 
   def install
     cmake_args = std_cmake_args
