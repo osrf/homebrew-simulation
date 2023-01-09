@@ -23,8 +23,8 @@ class GzPhysics6 < Formula
   # Remove patch with next release
   patch do
     # Fix for compatibility with dartsim 6.13.0
-    url "https://github.com/gazebosim/gz-physics/commit/79e0aefe872fb641e8b29e546601126d92769d29.patch?full_index=1"
-    sha256 "b29b3406bc230b609be4edce2b2166ca65db8a4dd09d15fb65695e563ee125ed"
+    url "https://github.com/gazebosim/gz-physics/commit/38db8ec0574d4a0db64ff5ba89ed7153f5b31201.patch?full_index=1"
+    sha256 "e12f5e67919d7f0fb02402ff849e6fa827f74b08a8f234aa13239a14714d092d"
   end
 
   def install
