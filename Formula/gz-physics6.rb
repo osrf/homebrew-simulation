@@ -4,7 +4,7 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.2.0.tar.bz2"
   sha256 "5a9a126039ddd357c3f61da6e9e1553310ff139aada5e838dd485bfcb73439ad"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   depends_on "cmake" => :build
 
@@ -19,6 +19,13 @@ class GzPhysics6 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat13"
+
+  # Remove patch with next release
+  patch do
+    # Fix for compatibility with dartsim 6.13.0
+    url "https://github.com/gazebosim/gz-physics/commit/79e0aefe872fb641e8b29e546601126d92769d29.patch?full_index=1"
+    sha256 "b29b3406bc230b609be4edce2b2166ca65db8a4dd09d15fb65695e563ee125ed"
+  end
 
   def install
     cmake_args = std_cmake_args
