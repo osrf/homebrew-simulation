@@ -7,6 +7,12 @@ class IgnitionPhysics2 < Formula
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics2"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "037bc7c71a4d03c537a185110594cdec370918e62f115008f1f9124dededdd9c"
+    sha256 cellar: :any, big_sur:  "8b68316f0ef92a97f030d8b0e2e1e59fa069f0f53f8fbb99d2be3248afc373dd"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
