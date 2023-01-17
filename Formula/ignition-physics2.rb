@@ -1,12 +1,17 @@
 class IgnitionPhysics2 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.6.0.tar.bz2"
-  sha256 "89ae8d396b5f31179339b4fd1e01ef22bcca19073ab4422637917660862f7867"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics2-2.6.1.tar.bz2"
+  sha256 "036c2b4effec9eefcdc94ac4ae0c6caec15d802db2e20665d76fcf69b7934643"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics2"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "037bc7c71a4d03c537a185110594cdec370918e62f115008f1f9124dededdd9c"
+    sha256 cellar: :any, big_sur:  "8b68316f0ef92a97f030d8b0e2e1e59fa069f0f53f8fbb99d2be3248afc373dd"
+  end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
