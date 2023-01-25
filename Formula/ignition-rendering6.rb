@@ -1,18 +1,16 @@
 class IgnitionRendering6 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/gazebosim/gz-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.5.1.tar.bz2"
-  sha256 "7f38992d15e6942cb548b625545d03589482e347328c87063ec80779f9a3a6ff"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.5.2.tar.bz2"
+  sha256 "b8ba0a7ba0e01a2a3ccc15984dd7296c1dce90bba520c648bbeaaff8c4c30ff7"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "90559ed1b98bb9686a3388ba151cdd3c414437beeefb0a36f2eccedfaee53a85"
-    sha256 big_sur:  "eda5584fd0d2ec958d9dae6bdafc92dbf58a313633412ced4ddeb5ac46536922"
-    sha256 catalina: "d6bec6b86203640c61774f7533257c48672618ea75d88541dcec2f72c35dc083"
+    sha256 monterey: "89d401f2ff8f46dc4a0ee35afdc511f76cd0fa0e2e76d3f4618748b762efbb12"
+    sha256 big_sur:  "7a5890a42c3e3d8ae66326e3803c5c97af3c857ce0d9298475cf16f68330d828"
   end
 
   depends_on "cmake" => [:build, :test]
