@@ -4,9 +4,15 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.12.0.tar.bz2"
   sha256 "c40ca1ec71b6ab427e7feb83c922bfb262e84e11ebf6bb91f99bc3cca75bcd97"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "b0e0742b37f3d2bebbcb75d4cb15953cb5163fd783778bec0f093b2777301d85"
+    sha256 big_sur:  "774c35193f61dc3b9a1b11b2067484a05b39eb8287d07bec8b56ef6ed0697fa7"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -43,6 +49,13 @@ class Gazebo11 < Formula
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
+
+  patch do
+    # Fix compilation
+    # Remove with next release
+    url "https://github.com/gazebosim/gazebo-classic/commit/728840d8b4e820a9a43b73d9f6fd407e3412d36c.patch?full_index=1"
+    sha256 "e83efcc5e55095ce5f52f21c579a296ade829702e54ae767fc488e5205fc5c9c"
+  end
 
   patch do
     # Fix build when homebrew python is installed
