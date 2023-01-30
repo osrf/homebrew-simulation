@@ -4,15 +4,9 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.12.0.tar.bz2"
   sha256 "c40ca1ec71b6ab427e7feb83c922bfb262e84e11ebf6bb91f99bc3cca75bcd97"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "b0e0742b37f3d2bebbcb75d4cb15953cb5163fd783778bec0f093b2777301d85"
-    sha256 big_sur:  "774c35193f61dc3b9a1b11b2067484a05b39eb8287d07bec8b56ef6ed0697fa7"
-  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
