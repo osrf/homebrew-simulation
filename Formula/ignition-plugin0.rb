@@ -14,6 +14,7 @@ class IgnitionPlugin0 < Formula
     sha256 cellar: :any, el_capitan:  "813f6a21a9f722cb1ca605e4d1703e77ea753ae2c9e43ed0c3393b69ec902719"
   end
 
+  disable! date: "2023-02-28", because: "is past end-of-life date"
   deprecate! date: "2019-09-01", because: "is past end-of-life date"
 
   depends_on "cmake"
