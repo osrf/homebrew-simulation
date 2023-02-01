@@ -8,6 +8,12 @@ class DartsimAT6100 < Formula
   license "BSD-2-Clause"
   revision 8
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "f34d5dd73ebd398d29fee127aefffa5393967a87b487e538ba6222d83e9f20b6"
+    sha256 big_sur:  "7639a0c81e5b02e4b2a12563c56503ed8a3b0f0482f45d5c02887a9e1a3282d3"
+  end
+
   keg_only "open robotics fork of dart HEAD + custom changes"
 
   depends_on "cmake" => :build

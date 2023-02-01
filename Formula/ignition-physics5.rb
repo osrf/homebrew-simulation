@@ -8,6 +8,12 @@ class IgnitionPhysics5 < Formula
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "cab3b9cd1e1ca6bbd72d4d498d94b5b0a7544b5800638e4c214c720d3e3cb7e2"
+    sha256 cellar: :any, big_sur:  "ca5108ace8bf93b32f399a0720dbce7beb63fb22237ab6e968f1cf9dd100dd21"
+  end
+
   depends_on "cmake" => :build
 
   depends_on "bullet"

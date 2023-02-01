@@ -6,6 +6,12 @@ class GzPhysics6 < Formula
   license "Apache-2.0"
   revision 4
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "3db18e53291924191548aa916e1beb9761c0882d3fa525c8eb313161460c5122"
+    sha256 cellar: :any, big_sur:  "0ea09fc330c3b1516d3b0f9e05702c155af3a16372ee06cc947d76ee80a57462"
+  end
+
   depends_on "cmake" => :build
 
   depends_on "bullet"
