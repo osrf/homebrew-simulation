@@ -6,6 +6,7 @@ class IgnitionMathAT1 < Formula
   license "Apache-2.0"
   head "https://github.com/gazebosim/gz-math.git", branch: "master"
 
+  disable! date: "2023-02-28", because: "is past end-of-life date"
   deprecate! date: "2019-09-01", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
