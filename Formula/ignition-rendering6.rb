@@ -1,8 +1,8 @@
 class IgnitionRendering6 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/gazebosim/gz-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.5.2.tar.bz2"
-  sha256 "b8ba0a7ba0e01a2a3ccc15984dd7296c1dce90bba520c648bbeaaff8c4c30ff7"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.6.0.tar.bz2"
+  sha256 "df4a9bb14edcefca94bef74e64b0f4b274dbe559437ccdbe089438634bff0531"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
