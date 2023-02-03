@@ -1,16 +1,16 @@
 class GzSim7 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.2.0.tar.bz2"
-  sha256 "03e3ea2753efa3cc0d21bc5466efaa9fb658b11a2786a3b6363f356f39f5dd2f"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.3.0.tar.bz2"
+  sha256 "d2f6be1ab8727c74cee46e87fb68bd9320cf2d7c7f21292ad4492aac533fde40"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "17285243f605af6ad4b7ea8d49b86852b8ee72fd52d369256e7c071bc37a2d31"
-    sha256 big_sur:  "34be24043fe29c8bf5a0de5776b55ccdaa7c80dfd3b11e7b89609a77d4e2312f"
+    sha256 monterey: "4c710a5d1c153406bfbae5016bbaf8008c06fd930fbe7718c20276d8c3d2be07"
+    sha256 big_sur:  "8828cbd35104411d1484a2adf0b4f0e1cfc5dc55ddc9abd76797ab88b4d36ec1"
   end
 
   depends_on "cmake" => :build
