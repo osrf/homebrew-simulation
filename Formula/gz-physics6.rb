@@ -1,15 +1,14 @@
 class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.2.0.tar.bz2"
-  sha256 "5a9a126039ddd357c3f61da6e9e1553310ff139aada5e838dd485bfcb73439ad"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.3.0.tar.bz2"
+  sha256 "7c9892ab7a01c8586068ff80fb17e9282ac8057f34d6660553f473704c6bbdc3"
   license "Apache-2.0"
-  revision 4
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "3db18e53291924191548aa916e1beb9761c0882d3fa525c8eb313161460c5122"
-    sha256 cellar: :any, big_sur:  "0ea09fc330c3b1516d3b0f9e05702c155af3a16372ee06cc947d76ee80a57462"
+    sha256 cellar: :any, monterey: "22355b080ce069c562ec99246d582b9487fd182acdc01dedb72782a07b0aa637"
+    sha256 cellar: :any, big_sur:  "74fca004f5554d70cb2bf9c826542e6df3a4cc81dc675f9d2ed16901cbd2f8c0"
   end
 
   depends_on "cmake" => :build
@@ -25,13 +24,6 @@ class GzPhysics6 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat13"
-
-  # Remove patch with next release
-  patch do
-    # Fix for compatibility with dartsim 6.13.0
-    url "https://github.com/gazebosim/gz-physics/commit/38db8ec0574d4a0db64ff5ba89ed7153f5b31201.patch?full_index=1"
-    sha256 "e12f5e67919d7f0fb02402ff849e6fa827f74b08a8f234aa13239a14714d092d"
-  end
 
   def install
     cmake_args = std_cmake_args
