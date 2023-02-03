@@ -1,11 +1,11 @@
-class GzTransport12 < Formula
+class Gztransport13 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.1.0.tar.bz2"
   sha256 "0d9ddaae23eb78fa28a8ce1a70048243e0d180de13e51a29b1a85317602bb4f9"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
+  head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -51,16 +51,16 @@ class GzTransport12 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
-      find_package(gz-transport12 QUIET REQUIRED)
+      find_package(gz-transport13 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake gz-transport12::gz-transport12)
+      target_link_libraries(test_cmake gz-transport13::gz-transport13)
     EOS
-    system "pkg-config", "gz-transport12"
-    cflags = `pkg-config --cflags gz-transport12`.split
+    system "pkg-config", "gz-transport13"
+    cflags = `pkg-config --cflags gz-transport13`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lgz-transport12",
+                   "-lgz-transport13",
                    "-lc++",
                    "-o", "test"
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
