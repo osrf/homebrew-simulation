@@ -25,13 +25,6 @@ class GzPhysics6 < Formula
   depends_on "pkg-config"
   depends_on "sdformat13"
 
-  # Remove patch with next release
-  patch do
-    # Fix for compatibility with dartsim 6.13.0
-    url "https://github.com/gazebosim/gz-physics/commit/38db8ec0574d4a0db64ff5ba89ed7153f5b31201.patch?full_index=1"
-    sha256 "e12f5e67919d7f0fb02402ff849e6fa827f74b08a8f234aa13239a14714d092d"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
