@@ -1,4 +1,4 @@
-class Gztransport13 < Formula
+class GzTransport13 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-transport.git", branch: "main"
