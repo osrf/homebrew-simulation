@@ -1,17 +1,16 @@
 class GzMsgs9 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-9.2.0.tar.bz2"
-  sha256 "9ae769c288202a97cd6f7054720d832d6caf5535bd830e532576342a2cda1f29"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-9.3.0.tar.bz2"
+  sha256 "79ad9244d3fd48f99b97c54b91bcdb930e43ef70105d2c279c4c98fdb4e780a5"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "dd954fe8454b087b939d20435729402996ebe38697181b11ad008407859ce458"
-    sha256 cellar: :any, big_sur:  "a6b6ca49be8fa1f27b5e27cb95aff22c7bf978a00e6f68c44ef68d30cdc0aa4f"
-    sha256 cellar: :any, catalina: "342a26c45b1384fa47c0551599a74aba000477728dea04bedf9d23ea9ab25118"
+    sha256 cellar: :any, monterey: "dcf1788a229d5a4811bac404499dce8528dd63002e03f7301b510a9c8e40115d"
+    sha256 cellar: :any, big_sur:  "c3343caa263de1b11258edf1d2ba1bc7d0cc614f5dc5b146596bae553e354541"
   end
 
   depends_on "protobuf-c" => :build
