@@ -1,17 +1,16 @@
 class GzSensors7 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.0.0.tar.bz2"
-  sha256 "1ce2bfcdc3893db9240d1d9f6def00fe920405cae82a903851f7f210fc1373ae"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.1.0.tar.bz2"
+  sha256 "d02c2b1fae287264b833bf9db77628dfb797d0d4999616c2e6857f371cf6a4c5"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "c68b368e29b379702fcfbce8d9c66218d36350210236d91f5c667cec8e56ab37"
-    sha256 cellar: :any, big_sur:  "c3a886834684ae5a3b86de9c16b17b7f01e93b9c5a6503858be1dc4034be0926"
-    sha256 cellar: :any, catalina: "921397a3c1ad14f3ab799e1ce6156d9193624d3248842a420ab3818e3a4a6ae1"
+    sha256 cellar: :any, monterey: "382a73ef751728a34e05d14b2ba1d9eacc2d395b10d426670267128eb468f19a"
+    sha256 cellar: :any, big_sur:  "9f12325ae3471bfdca61d13acd7385adb8ce03facd0a9582bace7c7fdbaed608"
   end
 
   depends_on "cmake" => [:build, :test]
