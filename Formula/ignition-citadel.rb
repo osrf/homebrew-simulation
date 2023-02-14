@@ -6,7 +6,7 @@ class IgnitionCitadel < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.2.tar.bz2"
   sha256 "2b99e7476093e78841c63d4ec348c6cf7c9d650a2e5787011723142c9f917659"
   license "Apache-2.0"
-  revision 4
+  revision 5
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-citadel.git", branch: "main"
@@ -38,7 +38,7 @@ class IgnitionCitadel < Formula
   depends_on "ignition-transport8"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
-  depends_on "python@3.9"
+  depends_on "python@3.11"
   depends_on "sdformat9"
 
   resource "PyYAML" do
@@ -52,7 +52,7 @@ class IgnitionCitadel < Formula
       system "make", "install"
     end
 
-    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_libexec/"bin/python3")
+    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python3")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
     end
