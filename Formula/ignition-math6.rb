@@ -4,7 +4,7 @@ class IgnitionMath6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.13.0.tar.bz2"
   sha256 "4d412a53644ecb984a0f64ca5df6e7043514673a406cd6228173278ce4eaf924"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
 
@@ -13,7 +13,7 @@ class IgnitionMath6 < Formula
   depends_on "pybind11" => :build
   depends_on "eigen"
   depends_on "ignition-cmake2"
-  depends_on "python"
+  depends_on "python@3.11"
   depends_on "ruby"
 
   def install
