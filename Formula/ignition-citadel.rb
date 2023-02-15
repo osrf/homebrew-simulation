@@ -52,7 +52,7 @@ class IgnitionCitadel < Formula
       system "make", "install"
     end
 
-    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python3")
+    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
     end
