@@ -3,7 +3,7 @@ class IgnitionSensors6 < Formula
   homepage "https://github.com/gazebosim/gz-sensors"
   url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.7.0~pre1.tar.bz2"
   version "6.7.0~pre1"
-  sha256 "90465f4e3093610eb74341e68078be9c5a205da8b6e5dea15d0cf38343581af6"
+  sha256 "e81c3fdb9aab5089a9a3a20dfa03a8f6b1d0426d0b2b131f80cf5d84b9f3237f"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors6"
