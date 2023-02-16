@@ -13,9 +13,9 @@ class GzSensors8 < Formula
   depends_on "gz-cmake3"
   depends_on "gz-common5"
   depends_on "gz-math7"
-  depends_on "gz-msgs9"
+  depends_on "gz-msgs10"
   depends_on "gz-rendering8"
-  depends_on "gz-transport12"
+  depends_on "gz-transport13"
   depends_on "sdformat13"
 
   def install
