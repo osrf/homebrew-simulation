@@ -4,6 +4,7 @@ class GzMath7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.1.0.tar.bz2"
   sha256 "b8a1c52ac736e2b2ae006326dde65177479023b0c06653782a7b794b106a3f00"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
@@ -20,7 +21,7 @@ class GzMath7 < Formula
   depends_on "eigen"
   depends_on "gz-cmake3"
   depends_on "gz-utils2"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "ruby"
 
   def install
@@ -34,7 +35,7 @@ class GzMath7 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -73,6 +74,6 @@ class GzMath7 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import gz.math7"
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.math7"
   end
 end
