@@ -4,13 +4,14 @@ class Sdformat13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.3.0.tar.bz2"
   sha256 "10704b640414894daac0e5f5608f17f216a5cf9098ae0ec3c12cd8205647d067"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "e9f966402bb0e03e6ca6bef23f0d014e3b0baedcd9e449c27efa1b01af0204de"
-    sha256 big_sur:  "1e657b253f9ae404fb399ee6a38863f4939ff5688b57e1cfbb93420af33ec9b4"
+    sha256 monterey: "d93e39fdee472203d393655d5439fa501ec71fef36ff1b90dd6a42039bae70f9"
+    sha256 big_sur:  "0e09593e42bd4587a95beb8eaa9af07aa2e0d84cf7e18dd94ebbcddde9ca9126"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,7 +24,7 @@ class Sdformat13 < Formula
   depends_on "gz-tools2"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
@@ -37,7 +38,7 @@ class Sdformat13 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -84,6 +85,6 @@ class Sdformat13 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import sdformat13"
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import sdformat13"
   end
 end
