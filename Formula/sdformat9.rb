@@ -23,6 +23,13 @@ class Sdformat9 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom"
 
+  patch do
+    # Fix ruby syntax
+    # Remove with next release
+    url "https://github.com/gazebosim/sdformat/commit/6890d65de952b37a6d8935c0f6d823d26ff8aa86.patch?full_index=1"
+    sha256 "f0524bbc4d40de81024a9ac804fdb43683d974919dfe46cb583f920640a8da3a"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"

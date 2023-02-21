@@ -11,10 +11,10 @@ class GzGui8 < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "gz-cmake3"
   depends_on "gz-common5"
-  depends_on "gz-msgs9"
+  depends_on "gz-msgs10"
   depends_on "gz-plugin2"
   depends_on "gz-rendering8"
-  depends_on "gz-transport12"
+  depends_on "gz-transport13"
   depends_on macos: :mojave # c++17
   depends_on "qt@5"
   depends_on "tinyxml2"
