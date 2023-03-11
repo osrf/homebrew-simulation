@@ -1,17 +1,16 @@
 class GzGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.0.0.tar.bz2"
-  sha256 "da1b431991a7ddf803ffd454007ba2c114747882f502c2c9d1066636b1480bf4"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.1.0.tar.bz2"
+  sha256 "bec0fece2a6a711ed745b678ce5aaebb5c2ffbcefe886c99781542adb36fe523"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "b4057dbf892c6e1b49a2df741f82d1d87409997c3953dc7c6ed37fbfafe51819"
-    sha256 big_sur:  "a720f9aaa07802aa930123a3aa6e9bf24b195d6644fecd4104e5d8a6f534e79d"
-    sha256 catalina: "af618c1a74b9da56dba4a10b193f95cb650e96fa1e29aec18eb50bfc9dbb72a5"
+    sha256 monterey: "cb839f5ff6643bf1ae72b642d56722974cbf183b29dfe8b0d6b6ac2750f38690"
+    sha256 big_sur:  "7906a2efdacd5b5a94bdd1c7866e8cbf253576ff2c672d1a2324eb5f4f96c733"
   end
 
   depends_on "cmake" => [:build, :test]
