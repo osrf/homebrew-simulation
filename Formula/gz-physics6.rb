@@ -1,8 +1,8 @@
 class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.3.0.tar.bz2"
-  sha256 "7c9892ab7a01c8586068ff80fb17e9282ac8057f34d6660553f473704c6bbdc3"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.3.1.tar.bz2"
+  sha256 "3c8545f5bfd97a15b2e746c0c7ecf24e354a8dfd887f0295dd3f05eb91d98c41"
   license "Apache-2.0"
 
   bottle do
