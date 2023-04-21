@@ -19,6 +19,13 @@ class IgnitionCommon3 < Formula
   depends_on "pkg-config"
   depends_on "tinyxml2"
 
+  patch do
+    # Fix for ffmpeg 6
+    # Remove with next release
+    url "https://github.com/gazebosim/gz-common/commit/d6024ce4acd3a961e3d026e5bc1bfbcb1e4b99e6.patch?full_index=1"
+    sha256 "020d8b2c2f2a1e8be1e09772b86b6936d17dd311daa6fc037d590f6092acd218"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
