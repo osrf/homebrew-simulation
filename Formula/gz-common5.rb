@@ -4,7 +4,7 @@ class GzCommon5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.3.1.tar.bz2"
   sha256 "607b8c409464362e29d2ff1ac2979b6c1784eb6e583627a6503320e1e7024601"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
