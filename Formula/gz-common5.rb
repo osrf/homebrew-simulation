@@ -4,14 +4,14 @@ class GzCommon5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.3.1.tar.bz2"
   sha256 "607b8c409464362e29d2ff1ac2979b6c1784eb6e583627a6503320e1e7024601"
   license "Apache-2.0"
-  revision 2
+  revision 4
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "81d1a023fe87b0863ece72abbb5bbe5219a1d69ec1834946df81385831c67604"
-    sha256 cellar: :any, big_sur:  "6f9af685f16e90844e3a188c455cad974a31e3a913e9addad8d011286fec44a6"
+    sha256 cellar: :any, monterey: "0819e24628a6b7fb62312876f3a24378769d9cc3dcbaf71000bd41437a91568e"
+    sha256 cellar: :any, big_sur:  "8ab4aaf47cb3b29be4d66db2a838ad5adb999a8483d78bffc93719459bd9c1c1"
   end
 
   depends_on "assimp"
@@ -27,6 +27,13 @@ class GzCommon5 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for ffmpeg 6
+    # Remove with next release
+    url "https://github.com/gazebosim/gz-common/commit/6f5ee941536e5c781bd826f6ce35360347d581ba.patch?full_index=1"
+    sha256 "3831fb073a9ff45d26d05d12972fdad473d4572e802297ca1b150511a06b1b2e"
+  end
 
   def install
     cmake_args = std_cmake_args
