@@ -10,9 +10,8 @@ class IgnitionLaunch2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "2a9882bb53af10f3809bbaa1655b0a69c5bcdaa28ab387150c7d409794ffec49"
-    sha256 big_sur:  "80eaa35ae4c7a54a018bb58f6b0ec9d106d8c01b125d67c829421e9ed1f460db"
-    sha256 catalina: "2c9af05c97f2774ff566b2cc7b081ff1510a2cbe8fa88661acbaff6645dd4a14"
+    sha256 monterey: "0b9dd415d316016c001fe33cabec589c566cb8bfd9b9565dce5ca3f79bef5300"
+    sha256 big_sur:  "50961d1a80e5f75282dca913014743ce39c0d5cc0ce21034955dcb710bd78dc3"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
