@@ -9,8 +9,8 @@ class IgnitionMath6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "9808b1f5f6c9025b9c6e1c380f47e79ec9676ef73626fe0dcdd3d66ed10f440d"
-    sha256 cellar: :any, big_sur:  "68cab5f97939475aff552292653dd202e82f0be2562e20d1162dfec09e80a8b0"
+    sha256 cellar: :any, monterey: "2aff9d73a5febd3240329bd6bb1052b454987848e419031f4c412ff8e0786918"
+    sha256 cellar: :any, big_sur:  "07522fbb858c6ada7d2926867eb736b9ea997d2be28f019c5355c0415832d73d"
   end
 
   depends_on "cmake" => :build
