@@ -45,6 +45,13 @@ class Gazebo11 < Formula
   conflicts_with "gz-tools2", because: "both install bin/gz"
 
   patch do
+    # Fix for ffmpeg 6
+    # Remove with next release
+    url "https://github.com/gazebosim/gazebo-classic/commit/a6bc813723e40cc699612c8703181b8868f826c9.patch?full_index=1"
+    sha256 "03073c96b1962a38154fc5d1f59dd1f2dd9394d7212389a0c9cbc348bbd1693e"
+  end
+
+  patch do
     # Fix compilation
     # Remove with next release
     url "https://github.com/gazebosim/gazebo-classic/commit/728840d8b4e820a9a43b73d9f6fd407e3412d36c.patch?full_index=1"
