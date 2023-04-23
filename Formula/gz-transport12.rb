@@ -1,16 +1,16 @@
 class GzTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.1.0.tar.bz2"
-  sha256 "0d9ddaae23eb78fa28a8ce1a70048243e0d180de13e51a29b1a85317602bb4f9"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.2.0.tar.bz2"
+  sha256 "731ec9f87fd815c62486ed4e2c3ecbeff5b8b4a8f09cc5e7abf4d8758cebe048"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "c28ab9f8afb2dd92907092d27e1b23cb65a0942ce39552866bb211631734521f"
-    sha256 big_sur:  "272d40cb3f32cbb8ce7fcc2426e8d27a3ac4a6976702ceb276ea53210f7a34aa"
+    sha256 monterey: "67607fb4db43a9dbc9803f53201f342209c5db4030be9a77763de461604fd6d9"
+    sha256 big_sur:  "83504efcd39642f0c4ce1410419e1e338159cc07eb07ef8d0e27dd0cfbc79b2c"
   end
 
   depends_on "doxygen" => [:build, :optional]

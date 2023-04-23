@@ -4,9 +4,15 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.12.0.tar.bz2"
   sha256 "c40ca1ec71b6ab427e7feb83c922bfb262e84e11ebf6bb91f99bc3cca75bcd97"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "294c87304efc24358ff0d422d62675c3414dffd1bf4ca19825893ca05a3c040e"
+    sha256 big_sur:  "864bf9a19b7a12fd6cb9d02a3e9de2cb8758e205679be67b058a6d85954da901"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -43,6 +49,13 @@ class Gazebo11 < Formula
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
+
+  patch do
+    # Fix for ffmpeg 6
+    # Remove with next release
+    url "https://github.com/gazebosim/gazebo-classic/commit/a6bc813723e40cc699612c8703181b8868f826c9.patch?full_index=1"
+    sha256 "03073c96b1962a38154fc5d1f59dd1f2dd9394d7212389a0c9cbc348bbd1693e"
+  end
 
   patch do
     # Fix compilation
