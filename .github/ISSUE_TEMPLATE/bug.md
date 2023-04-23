@@ -1,3 +1,16 @@
+---
+name: Bug report
+about: Report a bug
+labels: bug
+---
+
+Please supply your brew configuration:
+
+~~~
+$ brew config
+
+~~~
+
 If you are reporting a build failure, please supply the build logs
 with the `--verbose` flag:
 

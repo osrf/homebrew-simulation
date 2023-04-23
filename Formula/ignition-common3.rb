@@ -4,14 +4,14 @@ class IgnitionCommon3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.15.1.tar.bz2"
   sha256 "8c0ac36b97160ecfcb8eeae116fd0a6f07b62bf19004b0992ad2f3c7bc271294"
   license "Apache-2.0"
+  revision 2
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "d40677aa261fd5acb29bdcb42fe4c36224892beb9c810befa82f8d3d3337562a"
-    sha256 cellar: :any, big_sur:  "caabc4409cc085c30028d399b3be03078623fad7fda59f1b300f014636062697"
-    sha256 cellar: :any, catalina: "9988cafca7832805d630d959348e308c7b6e6b9969c216fc2a7206292206e926"
+    sha256 cellar: :any, monterey: "897e54d1baa8c8e9e59314aa45a1bedacd3e36870e7877dc295e9c86c0c88c11"
+    sha256 cellar: :any, big_sur:  "dfff80eb55a7fa2de23b2eb91aaf81d9728db7dec9a9382c990f2f8234ef310e"
   end
 
   depends_on "cmake"
@@ -24,6 +24,13 @@ class IgnitionCommon3 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for ffmpeg 6
+    # Remove with next release
+    url "https://github.com/gazebosim/gz-common/commit/d6024ce4acd3a961e3d026e5bc1bfbcb1e4b99e6.patch?full_index=1"
+    sha256 "020d8b2c2f2a1e8be1e09772b86b6936d17dd311daa6fc037d590f6092acd218"
+  end
 
   def install
     cmake_args = std_cmake_args
