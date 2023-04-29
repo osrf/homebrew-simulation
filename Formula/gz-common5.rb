@@ -1,17 +1,16 @@
 class GzCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.3.1.tar.bz2"
-  sha256 "607b8c409464362e29d2ff1ac2979b6c1784eb6e583627a6503320e1e7024601"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.4.0.tar.bz2"
+  sha256 "6e6ded3f5139f6fe9e30109ef2569c17caeaf5fbff170766d5e7c6d6b2f3b562"
   license "Apache-2.0"
-  revision 4
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "0819e24628a6b7fb62312876f3a24378769d9cc3dcbaf71000bd41437a91568e"
-    sha256 cellar: :any, big_sur:  "8ab4aaf47cb3b29be4d66db2a838ad5adb999a8483d78bffc93719459bd9c1c1"
+    sha256 cellar: :any, monterey: "84b328bccb7dbd2b584bd6efbe76a57937334690ba6abac25cd5cfc100d4e4e9"
+    sha256 cellar: :any, big_sur:  "0a0ac9b16463f8d440a729e4390c7c7a7f34df9c8083dbfd2b8a71371f9ec5d1"
   end
 
   depends_on "assimp"
@@ -27,13 +26,6 @@ class GzCommon5 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for ffmpeg 6
-    # Remove with next release
-    url "https://github.com/gazebosim/gz-common/commit/6f5ee941536e5c781bd826f6ce35360347d581ba.patch?full_index=1"
-    sha256 "3831fb073a9ff45d26d05d12972fdad473d4572e802297ca1b150511a06b1b2e"
-  end
 
   def install
     cmake_args = std_cmake_args
