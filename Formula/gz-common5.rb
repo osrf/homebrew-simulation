@@ -27,13 +27,6 @@ class GzCommon5 < Formula
   depends_on "pkg-config"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for ffmpeg 6
-    # Remove with next release
-    url "https://github.com/gazebosim/gz-common/commit/6f5ee941536e5c781bd826f6ce35360347d581ba.patch?full_index=1"
-    sha256 "3831fb073a9ff45d26d05d12972fdad473d4572e802297ca1b150511a06b1b2e"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
