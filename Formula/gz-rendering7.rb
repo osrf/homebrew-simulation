@@ -26,6 +26,13 @@ class GzRendering7 < Formula
   depends_on "ogre1.9"
   depends_on "ogre2.3"
 
+  patch do
+    # Fix for pkg-config
+    # Remove with next release
+    url "https://github.com/gazebosim/gz-rendering/commit/7091c94772686fefb5e17d245b40585b5515bd0e.patch?full_index=1"
+    sha256 "065366eada1462d0a3fc504db198df6cb68aad9397a5753122913f6d9330c2c4"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
@@ -56,18 +63,15 @@ class GzRendering7 < Formula
       target_link_libraries(test_cmake gz-rendering7::gz-rendering7)
     EOS
     # test building with pkg-config
-    # there is a problem finding gl.pc
-    # disable this test for now
-    #
-    # system "pkg-config", "gz-rendering7"
-    # cflags   = `pkg-config --cflags gz-rendering7`.split
-    # ldflags  = `pkg-config --libs gz-rendering7`.split
-    # system ENV.cc, "test.cpp",
-    #                *cflags,
-    #                *ldflags,
-    #                "-lc++",
-    #                "-o", "test"
-    # system "./test" unless github_actions
+    system "pkg-config", "gz-rendering7"
+    cflags   = `pkg-config --cflags gz-rendering7`.split
+    ldflags  = `pkg-config --libs gz-rendering7`.split
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   *ldflags,
+                   "-lc++",
+                   "-o", "test"
+    system "./test" unless github_actions
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
