@@ -26,6 +26,13 @@ class GzRendering7 < Formula
   depends_on "ogre1.9"
   depends_on "ogre2.3"
 
+  patch do
+    # Fix for pkg-config
+    # Remove with next release
+    url "https://github.com/gazebosim/gz-rendering/commit/7091c94772686fefb5e17d245b40585b5515bd0e.patch?full_index=1"
+    sha256 "065366eada1462d0a3fc504db198df6cb68aad9397a5753122913f6d9330c2c4"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
