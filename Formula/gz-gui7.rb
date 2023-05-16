@@ -82,7 +82,7 @@ class GzGui7 < Formula
       target_link_libraries(test_cmake gz-gui7::gz-gui7)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    system "pkg-config", "gz-gui7"
+    system "pkg-config", "gz-gui7", "--cflags"
     cflags   = `pkg-config --cflags gz-gui7`.split
     ldflags  = `pkg-config --libs gz-gui7`.split
     system ENV.cc, "test.cpp",
