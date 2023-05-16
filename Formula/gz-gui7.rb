@@ -1,16 +1,16 @@
 class GzGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.1.0.tar.bz2"
-  sha256 "bec0fece2a6a711ed745b678ce5aaebb5c2ffbcefe886c99781542adb36fe523"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.2.0.tar.bz2"
+  sha256 "d44ca605165d296205995a6d5fe3c5bcc58436699fdeae455839b703430b2023"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "cb839f5ff6643bf1ae72b642d56722974cbf183b29dfe8b0d6b6ac2750f38690"
-    sha256 big_sur:  "7906a2efdacd5b5a94bdd1c7866e8cbf253576ff2c672d1a2324eb5f4f96c733"
+    sha256 monterey: "3ba38f5a79701cc98e5fb9d102859a1666a108646a8d34b9d60677dc81e17985"
+    sha256 big_sur:  "7d7a8ee7f7aa10ad147e2faaecf31049ec5b6386246da7d2e663fee0d67a219f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -82,7 +82,7 @@ class GzGui7 < Formula
       target_link_libraries(test_cmake gz-gui7::gz-gui7)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    system "pkg-config", "gz-gui7"
+    system "pkg-config", "gz-gui7", "--cflags"
     cflags   = `pkg-config --cflags gz-gui7`.split
     ldflags  = `pkg-config --libs gz-gui7`.split
     system ENV.cc, "test.cpp",
