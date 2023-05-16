@@ -9,8 +9,8 @@ class GzGui7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "cb839f5ff6643bf1ae72b642d56722974cbf183b29dfe8b0d6b6ac2750f38690"
-    sha256 big_sur:  "7906a2efdacd5b5a94bdd1c7866e8cbf253576ff2c672d1a2324eb5f4f96c733"
+    sha256 monterey: "3ba38f5a79701cc98e5fb9d102859a1666a108646a8d34b9d60677dc81e17985"
+    sha256 big_sur:  "7d7a8ee7f7aa10ad147e2faaecf31049ec5b6386246da7d2e663fee0d67a219f"
   end
 
   depends_on "cmake" => [:build, :test]
