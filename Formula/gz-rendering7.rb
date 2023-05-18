@@ -1,17 +1,16 @@
 class GzRendering7 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-7.3.1.tar.bz2"
-  sha256 "1fe69821ef29bcd6929fbb61262b8dc108add1bae31abcb80d5b13f7a71a1fea"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-7.4.0.tar.bz2"
+  sha256 "b931bfdd4f856ce87d8bacdd685011a71c49eb9466ab022efcc48d2491887e45"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "d9533fb6d95111d9b3b08b623a0d997eeb014bba76027fcf6e3e9a3d132a6848"
-    sha256 big_sur:  "9f4638655485e27e7b1ed3cd42bff4aaabb072bbf11285a7530d56f1142122d4"
+    sha256 monterey: "4e88975c7f25888dc43046e5f7f46208e3dee7f1de460d93cf4af4cb4ca12071"
+    sha256 big_sur:  "a56eaba57c00cf1242fb757cbdcaf954ccb7a50ff6469d6deb50ae3ed6b01173"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,13 +25,6 @@ class GzRendering7 < Formula
   depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.3"
-
-  patch do
-    # Fix for pkg-config
-    # Remove with next release
-    url "https://github.com/gazebosim/gz-rendering/commit/7091c94772686fefb5e17d245b40585b5515bd0e.patch?full_index=1"
-    sha256 "065366eada1462d0a3fc504db198df6cb68aad9397a5753122913f6d9330c2c4"
-  end
 
   def install
     cmake_args = std_cmake_args
