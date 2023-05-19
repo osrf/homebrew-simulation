@@ -1,17 +1,16 @@
 class IgnitionCommon4 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.6.2.tar.bz2"
-  sha256 "d4bbf013c861a138c47a835c6d27403359c05b21d3b5a2c17a339c29ceb350ca"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.7.0.tar.bz2"
+  sha256 "ec9bb68be9f6323f3a3a12b23259c567f9a2478951719573e1b7c906bd7e68cb"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "8c3ea0bc07bfc6d84cbe73f8ce01eadce6409ce5815eea0684a4950ca5a76781"
-    sha256 cellar: :any, big_sur:  "44abe3d3e415e27ba7998de3938531e1a182c0711eb6a5db1a568b73a5b7a44c"
+    sha256 cellar: :any, monterey: "f83c51a0ace19ed6a45fbccccc2e94b2ed68198e16684033df565561f48ef500"
+    sha256 cellar: :any, big_sur:  "02fa82a28eb2855d965f5b185410b829bf6fb625fed27e578aaa6dc6a6bde6bd"
   end
 
   depends_on "cmake"
@@ -25,13 +24,6 @@ class IgnitionCommon4 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for ffmpeg 6
-    # Remove with next release
-    url "https://github.com/gazebosim/gz-common/commit/d6024ce4acd3a961e3d026e5bc1bfbcb1e4b99e6.patch?full_index=1"
-    sha256 "020d8b2c2f2a1e8be1e09772b86b6936d17dd311daa6fc037d590f6092acd218"
-  end
 
   def install
     cmake_args = std_cmake_args
