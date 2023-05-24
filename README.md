@@ -30,9 +30,9 @@ To use:
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_rendering7-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_rendering7-install_bottle-homebrew-amd64/)   [ignition_rendering7](https://build.osrfoundation.org/view/ign-garden/job/ignition_rendering7-install_bottle-homebrew-amd64/)
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_gui7-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_gui7-install_bottle-homebrew-amd64/)               [ignition_gui7](https://build.osrfoundation.org/view/ign-garden/job/ignition_gui7-install_bottle-homebrew-amd64/)
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_sensors7-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_sensors7-install_bottle-homebrew-amd64/)       [ignition_sensors7](https://build.osrfoundation.org/view/ign-garden/job/ignition_sensors7-install_bottle-homebrew-amd64/)
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_gazebo7-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_gazebo7-install_bottle-homebrew-amd64/)         [ignition_gazebo7](https://build.osrfoundation.org/view/ign-garden/job/ignition_gazebo7-install_bottle-homebrew-amd64/)
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_sim7-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_sim7-install_bottle-homebrew-amd64/)               [ignition_sim7](https://build.osrfoundation.org/view/ign-garden/job/ignition_sim7-install_bottle-homebrew-amd64/)
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_launch6-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_launch6-install_bottle-homebrew-amd64/)         [ignition_launch6](https://build.osrfoundation.org/view/ign-garden/job/ignition_launch6-install_bottle-homebrew-amd64/)
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_garden-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_garden-install_bottle-homebrew-amd64/)       [ignition_garden](https://build.osrfoundation.org/view/ign-garden/job/ignition_garden-install_bottle-homebrew-amd64/)
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_garden-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_garden-install_bottle-homebrew-amd64/)           [ignition_garden](https://build.osrfoundation.org/view/ign-garden/job/ignition_garden-install_bottle-homebrew-amd64/)
 
 ### Gazebo Fortress
 
@@ -72,6 +72,10 @@ To use:
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_gazebo3-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-citadel/job/ignition_gazebo3-install_bottle-homebrew-amd64/)         [ignition_gazebo3](https://build.osrfoundation.org/view/ign-citadel/job/ignition_gazebo3-install_bottle-homebrew-amd64/)
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_launch2-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-citadel/job/ignition_launch2-install_bottle-homebrew-amd64/)         [ignition_launch2](https://build.osrfoundation.org/view/ign-citadel/job/ignition_launch2-install_bottle-homebrew-amd64/)
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_citadel-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-citadel/job/ignition_citadel-install_bottle-homebrew-amd64/)         [ignition_citadel](https://build.osrfoundation.org/view/ign-citadel/job/ignition_citadel-install_bottle-homebrew-amd64/)
+
+### Gazebo Classic
+
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=gazebo-install-one_liner-homebrew-amd64)](https://build.osrfoundation.org/view/ign-citadel/job/gazebo-install-one_liner-homebrew-amd64/)         [gazebo-classic11](https://build.osrfoundation.org/view/ign-citadel/job/gazebo-install-one_liner-homebrew-amd64/)
 
 ## To build bottles
 
