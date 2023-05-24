@@ -4,6 +4,7 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.3.1.tar.bz2"
   sha256 "64cccd920b302e78316b7c3508eaf94db2ad1018f31646a5eaeba48a117b18a4"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
 
