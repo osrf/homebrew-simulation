@@ -6,7 +6,6 @@ class GzPhysics6 < Formula
   license "Apache-2.0"
   revision 1
 
-
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, monterey: "acb86b3e7ea9832b139d0a6ca0fcbab9fd816a231ca70f63b7e4fcb7a6b315a3"
