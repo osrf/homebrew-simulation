@@ -1,17 +1,16 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.12.0.tar.bz2"
-  sha256 "c40ca1ec71b6ab427e7feb83c922bfb262e84e11ebf6bb91f99bc3cca75bcd97"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.13.0.tar.bz2"
+  sha256 "2f65b98fe652a574e01b7cae6cf12e14a9dd29343fde99e066ac5193a8d03e71"
   license "Apache-2.0"
-  revision 10
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "dfca53e5a658e7326ef9d03e2e395c88395dc961889ae6b0641639689cc0b32b"
-    sha256 big_sur:  "4e20e4181358f634045909b8e7e33d2455a3486975537caf59712eeba9c00f40"
+    sha256 monterey: "f1cae4d299c66fd9bd1c6e67ff8505e9bbf18ac39b9b60958d4b968954ea8f9b"
+    sha256 big_sur:  "92c74c2c637da7b762dad2c0c834c1d389e0280aafa8418fba8627649df7bc35"
   end
 
   depends_on "cmake" => :build
@@ -49,20 +48,6 @@ class Gazebo11 < Formula
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
-
-  patch do
-    # Fix for ffmpeg 6
-    # Remove with next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/a6bc813723e40cc699612c8703181b8868f826c9.patch?full_index=1"
-    sha256 "03073c96b1962a38154fc5d1f59dd1f2dd9394d7212389a0c9cbc348bbd1693e"
-  end
-
-  patch do
-    # Fix compilation
-    # Remove with next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/728840d8b4e820a9a43b73d9f6fd407e3412d36c.patch?full_index=1"
-    sha256 "e83efcc5e55095ce5f52f21c579a296ade829702e54ae767fc488e5205fc5c9c"
-  end
 
   patch do
     # Fix build when homebrew python is installed
