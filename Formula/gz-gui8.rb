@@ -22,7 +22,7 @@ class GzGui8 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath};/opt/homebrew/lib"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
