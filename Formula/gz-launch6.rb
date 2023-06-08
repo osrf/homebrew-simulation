@@ -4,7 +4,7 @@ class GzLaunch6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0.tar.bz2"
   sha256 "e59e988c8a454cacc9f8f5727d1ab0d2c7fc8476083ec96065a0f89913957b0a"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch6"
 
@@ -36,7 +36,7 @@ class GzLaunch6 < Formula
 
   test do
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system "gz", "launch", "--versions"
+    system Formula["gz-tools2"].opt_bin/"gz", "launch", "--versions"
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
