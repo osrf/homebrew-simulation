@@ -4,7 +4,7 @@ class GzGui7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.2.0.tar.bz2"
   sha256 "d44ca605165d296205995a6d5fe3c5bcc58436699fdeae455839b703430b2023"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
 
@@ -76,6 +76,7 @@ class GzGui7 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-gui7::gz-gui7)
     EOS
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib/"pkgconfig"
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-gui7", "--cflags"
     cflags   = `pkg-config --cflags gz-gui7`.split
@@ -88,6 +89,7 @@ class GzGui7 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@21"].opt_prefix
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
