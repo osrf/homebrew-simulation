@@ -10,6 +10,7 @@ class Gazebo11 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "protobuf-c" => :build
 
   depends_on "boost"
   depends_on "bullet"
@@ -26,8 +27,7 @@ class Gazebo11 < Formula
   depends_on "ignition-transport8"
   depends_on "libtar"
   depends_on "ogre1.9"
-  depends_on "protobuf"
-  depends_on "protobuf-c"
+  depends_on "protobuf@21"
   depends_on "qt@5"
   depends_on "qwt-qt5"
   depends_on "sdformat9"

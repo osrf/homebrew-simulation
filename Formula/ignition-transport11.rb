@@ -21,7 +21,7 @@ class IgnitionTransport11 < Formula
   depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "zeromq"
 
   def install
