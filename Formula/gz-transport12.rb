@@ -4,7 +4,7 @@ class GzTransport12 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.2.0.tar.bz2"
   sha256 "731ec9f87fd815c62486ed4e2c3ecbeff5b8b4a8f09cc5e7abf4d8758cebe048"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
 
@@ -50,6 +50,7 @@ class GzTransport12 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-transport12::gz-transport12)
     EOS
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-transport12"
     cflags = `pkg-config --cflags gz-transport12`.split
     system ENV.cc, "test.cpp",
@@ -60,6 +61,7 @@ class GzTransport12 < Formula
                    "-o", "test"
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@21"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
