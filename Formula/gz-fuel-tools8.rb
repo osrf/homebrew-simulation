@@ -4,7 +4,7 @@ class GzFuelTools8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-8.0.2.tar.bz2"
   sha256 "63e482b063bab7169de81630f644f844f0f2c96e911c331dcb9ea3a82129a363"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"
 
@@ -44,6 +44,7 @@ class GzFuelTools8 < Formula
       target_link_libraries(test_cmake gz-fuel_tools8::gz-fuel_tools8)
     EOS
     # test building with pkg-config
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-fuel_tools8"
     cflags = `pkg-config --cflags gz-fuel_tools8`.split
     system ENV.cc, "test.cpp",
@@ -54,6 +55,7 @@ class GzFuelTools8 < Formula
                    "-o", "test"
     system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@21"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
