@@ -6,16 +6,10 @@ class IgnitionCitadel < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.2.tar.bz2"
   sha256 "2b99e7476093e78841c63d4ec348c6cf7c9d650a2e5787011723142c9f917659"
   license "Apache-2.0"
-  revision 5
+  revision 6
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-citadel.git", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "a4c31520970ccaf2cc44c1eee16cce0a28e34e70afc5b945c93c3f940c8cc501"
-    sha256 cellar: :any, big_sur:  "8e461419dbbf538aed70e42d6f1e00ae88719c3b7dd73f38324f915973baf491"
-  end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 

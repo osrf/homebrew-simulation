@@ -12,7 +12,7 @@ class GzMsgs10 < Formula
   depends_on "gz-tools2"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "tinyxml2"
 
   def install

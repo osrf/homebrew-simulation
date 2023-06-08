@@ -4,14 +4,9 @@ class GzMsgs9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-9.4.0.tar.bz2"
   sha256 "6690ea3ab938afa4980373008dcc4119da43e4c51763a46948f6fd549144e993"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "0bf4a7554091e946669d3bfcba552dfbfd971999c5f3b8bc7895d6fe6590e275"
-    sha256 cellar: :any, big_sur:  "36c21eeca408489fbc6419c9174808781a724b4c336d947d18e52f8f7f323c9b"
-  end
 
   depends_on "protobuf-c" => :build
   depends_on "cmake"
@@ -20,7 +15,7 @@ class GzMsgs9 < Formula
   depends_on "gz-tools2"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "tinyxml2"
 
   def install
