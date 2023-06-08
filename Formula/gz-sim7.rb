@@ -4,7 +4,7 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.5.0.tar.bz2"
   sha256 "e4a641bef1a747dd9a35c01beee3a1ac08f95bdaae06aa23b115e0b1a4ee42f8"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
@@ -103,6 +103,7 @@ class GzSim7 < Formula
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["ffmpeg@4"].opt_prefix
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@21"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
