@@ -4,7 +4,7 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.11.0.tar.bz2"
   sha256 "59a03770c27b4cdb6d0b0f3de9f10f1c748a47b45376a297e1f30900edb893fd"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs5"
 
@@ -53,8 +53,8 @@ class IgnitionMsgs5 < Formula
     EOS
     # test building with pkg-config
     system "pkg-config", "ignition-msgs5"
-    cflags = `pkg-config --cflags ignition-msgs5`.split
-    ldflags = `pkg-config --libs ignition-msgs5`.split
+    # cflags = `pkg-config --cflags ignition-msgs5`.split
+    # ldflags = `pkg-config --libs ignition-msgs5`.split
     # compilation is broken with pkg-config, disable for now
     # system ENV.cc, "test.cpp",
     #                *cflags,
