@@ -21,6 +21,12 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-transport8"
   depends_on "sdformat9"
 
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-sensors/commit/e6dcb527a70f154704c0fe62e6393f471136afcb.patch?full_index=1"
+    sha256 "1e5a91f97f4f770c07fc33bae433c3dfebd590fa441f7f2f11ce750b25879971"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
