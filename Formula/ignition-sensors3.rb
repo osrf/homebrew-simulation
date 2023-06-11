@@ -8,6 +8,12 @@ class IgnitionSensors3 < Formula
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors3"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "05643e11ba1c4688a9dde16926edf8fda9a5291a4ceddcb89767c4d39872c0e9"
+    sha256 big_sur:  "20da66854a5c3025970382aaa94f08445a2f7829d3e7cc220273b711427cd0a6"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
