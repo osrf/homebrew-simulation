@@ -50,8 +50,8 @@ class GzMsgs9 < Formula
     EOS
     # test building with pkg-config
     system "pkg-config", "gz-msgs9"
-    cflags = `pkg-config --cflags gz-msgs9`.split
-    ldflags = `pkg-config --libs gz-msgs9`.split
+    # cflags = `pkg-config --cflags gz-msgs9`.split
+    # ldflags = `pkg-config --libs gz-msgs9`.split
     # system ENV.cc, "test.cpp",
     #                *cflags,
     #                *ldflags,
