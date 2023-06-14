@@ -32,6 +32,12 @@ class IgnitionGazebo3 < Formula
   depends_on "ruby"
   depends_on "sdformat9"
 
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-sim/commit/dfb70396bdb426f68f3858ba40bbfb0fe73408be.patch?full_index=1"
+    sha256 "c8fa5280d11efc8bd8780ec5e74142c71e8417f7ed5e9ad610aeb827b5c3e08d"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
