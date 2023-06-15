@@ -8,6 +8,12 @@ class IgnitionLaunch2 < Formula
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch2"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "616d5c58eca99b19bea3013b5625719b9d7925664840db0a08e8259096883aa2"
+    sha256 big_sur:  "cb60fc388201d3936a6fb1caad427898fa506d96e7cac5575f2252449aa405fe"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

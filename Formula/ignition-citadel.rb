@@ -11,6 +11,12 @@ class IgnitionCitadel < Formula
 
   head "https://github.com/gazebosim/gz-citadel.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "39c496abc944d0ecf30f10489095d0beafa7cb794e4f88d2436c2c4fccd00deb"
+    sha256 cellar: :any, big_sur:  "dfc3b855fc80378130a975dc3a05783ed5efd4e1e8a89a14cbec9d970182e544"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
