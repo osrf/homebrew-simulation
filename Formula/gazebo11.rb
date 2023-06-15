@@ -10,7 +10,6 @@ class Gazebo11 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "protobuf-c" => :build
 
   depends_on "boost"
   depends_on "bullet"
@@ -27,7 +26,7 @@ class Gazebo11 < Formula
   depends_on "ignition-transport8"
   depends_on "libtar"
   depends_on "ogre1.9"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "qwt-qt5"
   depends_on "sdformat9"
@@ -43,6 +42,12 @@ class Gazebo11 < Formula
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
+
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gazebo-classic/commit/17e09f574a4f39caff279cd70364cd1a3ea46f70.patch?full_index=1"
+    sha256 "b50f4cbfe92d3ded2dd7117696cf6a049f0bbdcdb9ef8f54bbc6bde7670f51b3"
+  end
 
   patch do
     # Fix build when homebrew python is installed
