@@ -20,6 +20,12 @@ class GzGui7 < Formula
   depends_on "qt@5"
   depends_on "tinyxml2"
 
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-gui/commit/0992b7c9899878f49a8d597d791988bf196ede08.patch?full_index=1"
+    sha256 "45792c649f8a1fe048956f442b03987ea418525223364a12770a913ee2e8b2bf"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
