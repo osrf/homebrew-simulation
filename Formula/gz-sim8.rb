@@ -27,6 +27,7 @@ class GzSim8 < Formula
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
   depends_on "ruby"
   depends_on "sdformat13"
 

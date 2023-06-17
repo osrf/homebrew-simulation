@@ -17,6 +17,7 @@ class IgnitionSensors6 < Formula
   depends_on "ignition-msgs8"
   depends_on "ignition-rendering6"
   depends_on "ignition-transport11"
+  depends_on "protobuf"
   depends_on "sdformat12"
 
   patch do
