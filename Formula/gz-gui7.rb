@@ -17,6 +17,7 @@ class GzGui7 < Formula
   depends_on "gz-rendering7"
   depends_on "gz-transport12"
   depends_on macos: :mojave # c++17
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
 
