@@ -16,6 +16,7 @@ class GzSensors8 < Formula
   depends_on "gz-msgs10"
   depends_on "gz-rendering8"
   depends_on "gz-transport13"
+  depends_on "protobuf"
   depends_on "sdformat13"
 
   def install

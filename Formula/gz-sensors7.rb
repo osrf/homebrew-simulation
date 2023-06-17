@@ -17,6 +17,7 @@ class GzSensors7 < Formula
   depends_on "gz-msgs9"
   depends_on "gz-rendering7"
   depends_on "gz-transport12"
+  depends_on "protobuf"
   depends_on "sdformat13"
 
   patch do
