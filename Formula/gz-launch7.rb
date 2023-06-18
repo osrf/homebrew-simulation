@@ -19,6 +19,7 @@ class GzLaunch7 < Formula
   depends_on "gz-sim8"
   depends_on "gz-tools2"
   depends_on "gz-transport13"
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
 
