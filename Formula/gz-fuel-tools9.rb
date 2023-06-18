@@ -16,6 +16,7 @@ class GzFuelTools9 < Formula
   depends_on "libzip"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
 
   def install
     cmake_args = std_cmake_args
