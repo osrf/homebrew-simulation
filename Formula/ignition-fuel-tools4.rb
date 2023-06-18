@@ -4,15 +4,9 @@ class IgnitionFuelTools4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools4-4.9.0.tar.bz2"
   sha256 "6834b959cb7cc1d90ea86042bc29e41d12ad68b8f3029f5ebd8b6ae73649420e"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools4"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "210e801a841245e245b7a7812ab179a6f0e5b9184828af980d03abd6ccf7a929"
-    sha256 cellar: :any, big_sur:  "a991f433e1c3135be16c380244a770867e15a22391b21b5d7b85960c9379ec0a"
-  end
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
@@ -23,6 +17,7 @@ class IgnitionFuelTools4 < Formula
   depends_on "libzip"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
 
   def install
     cmake_args = std_cmake_args
