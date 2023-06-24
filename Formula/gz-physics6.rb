@@ -4,13 +4,7 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.4.0.tar.bz2"
   sha256 "20c47b96d430eee05c3f3ef24606e798a922077b099e9796713d2e7d8a893cf3"
   license "Apache-2.0"
-  revision 1
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "64fa5335f0d0e52c48837173f1ed2b1964f1ff332ad62bcb3be5ca7f37511e14"
-    sha256 cellar: :any, big_sur:  "0c9525f3636ad7c451d191f886264e046bcc0a088e8a90bb584fc414991c6cd9"
-  end
+  revision 2
 
   depends_on "cmake" => :build
 
@@ -25,6 +19,12 @@ class GzPhysics6 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat13"
+
+  patch do
+    # Fix for building without gdal
+    url "https://github.com/gazebosim/gz-physics/commit/67d008fb4c8860d1293ecb50c743b70107567c1b.patch?full_index=1"
+    sha256 "1746b1f3115f328b1b0ee6207aca7b531508326a0ccbd4d3f1335bf9f7af00a0"
+  end
 
   def install
     cmake_args = std_cmake_args
