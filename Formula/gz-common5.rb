@@ -12,8 +12,7 @@ class GzCommon5 < Formula
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"
-  # Disable gdal dependency until apache-arrow uses unversioned protobuf
-  # depends on "gdal"
+  depends_on "gdal"
   depends_on "gts"
   depends_on "gz-cmake3"
   depends_on "gz-math7"

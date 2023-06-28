@@ -20,12 +20,6 @@ class GzPhysics6 < Formula
   depends_on "pkg-config"
   depends_on "sdformat13"
 
-  patch do
-    # Fix for building without gdal
-    url "https://github.com/gazebosim/gz-physics/commit/67d008fb4c8860d1293ecb50c743b70107567c1b.patch?full_index=1"
-    sha256 "1746b1f3115f328b1b0ee6207aca7b531508326a0ccbd4d3f1335bf9f7af00a0"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
