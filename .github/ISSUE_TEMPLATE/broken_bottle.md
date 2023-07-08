@@ -32,4 +32,4 @@ $ brew linkage --test gz-common5
 - [ ] Identify list of affected formulae
     - [ ] gz-*
 - [ ] Remove broken bottles: for each affected formula, run `brew bump-revision --remove-bottle-block`
-- [ ] Rebuild btoken bottles
+- [ ] Rebuild broken bottles
