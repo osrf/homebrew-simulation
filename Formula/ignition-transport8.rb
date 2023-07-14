@@ -8,6 +8,12 @@ class IgnitionTransport8 < Formula
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport8"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "3e976da702f64362dce7f4eae456bc6b85a90e9c5c49773befc28b02fa68a340"
+    sha256 big_sur:  "218a1a72b639399e6c8195dad8de9178fd225a232824294a2aff160819f284c1"
+  end
+
   depends_on "doxygen" => [:build, :optional]
 
   depends_on "cmake"
