@@ -2,7 +2,7 @@ class GzSim8 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
   url "https://github.com/gazebosim/gz-sim.git", branch: "main"
-  version "7.999.999~0~20221116"
+  version "7.999.999~0~20230728"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "main"
@@ -18,7 +18,7 @@ class GzSim8 < Formula
   depends_on "gz-gui8"
   depends_on "gz-math7"
   depends_on "gz-msgs10"
-  depends_on "gz-physics6"
+  depends_on "gz-physics7"
   depends_on "gz-plugin2"
   depends_on "gz-rendering8"
   depends_on "gz-sensors8"
@@ -29,7 +29,7 @@ class GzSim8 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "ruby"
-  depends_on "sdformat13"
+  depends_on "sdformat14"
 
   def install
     cmake_args = std_cmake_args
