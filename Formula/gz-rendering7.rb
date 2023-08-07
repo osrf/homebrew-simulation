@@ -8,6 +8,12 @@ class GzRendering7 < Formula
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering7"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 monterey: "fac492cea7eb3175511e1af2232519ab031365f5589f56ec36c20e013c730d7d"
+    sha256 big_sur:  "07d9a4d23cbf031e4b3fea3f0ab0d04b791977288954167a3a9c11eefd14235d"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
