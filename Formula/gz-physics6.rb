@@ -4,7 +4,7 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.4.0.tar.bz2"
   sha256 "20c47b96d430eee05c3f3ef24606e798a922077b099e9796713d2e7d8a893cf3"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   depends_on "cmake" => :build
 
