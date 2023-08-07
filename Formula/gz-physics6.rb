@@ -4,7 +4,13 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.4.0.tar.bz2"
   sha256 "20c47b96d430eee05c3f3ef24606e798a922077b099e9796713d2e7d8a893cf3"
   license "Apache-2.0"
-  revision 4
+  revision 5
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, monterey: "1e103be3df7461f1794f78a8ef3d62b9d7e68fdb59277021e7c7bd162f33a5b2"
+    sha256 cellar: :any, big_sur:  "c09e34bcea880205692db2c911084f09cbce67eacae9ee75d7f2e75200f3f2ec"
+  end
 
   depends_on "cmake" => :build
 
