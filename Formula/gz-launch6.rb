@@ -4,14 +4,14 @@ class GzLaunch6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0.tar.bz2"
   sha256 "e59e988c8a454cacc9f8f5727d1ab0d2c7fc8476083ec96065a0f89913957b0a"
   license "Apache-2.0"
-  revision 5
+  revision 7
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "29d2a8fa83a08327d36d45cec9704e31b84b38deb60d7bf8fa75b44b26ed89a6"
-    sha256 big_sur:  "534a23ef2c59af72262f8ad122667ef2431a139e6201690b0fffb707ca7234f6"
+    sha256 monterey: "d6693845d1e57ee23640bf64edfba382687f87c514884322d10c17640ab2fee8"
+    sha256 big_sur:  "bb89952705d19e4ce8890d6b6a5014a0c6f8c75bfe061f19209b968fe2c3a689"
   end
 
   depends_on "cmake" => :build

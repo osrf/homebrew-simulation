@@ -2,7 +2,7 @@ class GzSensors8 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
   url "https://github.com/gazebosim/gz-sensors.git", branch: "main"
-  version "7.999.999~0~20221114"
+  version "7.999.999~0~20230728"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
@@ -17,7 +17,7 @@ class GzSensors8 < Formula
   depends_on "gz-rendering8"
   depends_on "gz-transport13"
   depends_on "protobuf"
-  depends_on "sdformat13"
+  depends_on "sdformat14"
 
   def install
     cmake_args = std_cmake_args

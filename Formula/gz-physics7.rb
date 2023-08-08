@@ -1,16 +1,9 @@
-class GzPhysics6 < Formula
+class GzPhysics7 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.4.0.tar.bz2"
-  sha256 "20c47b96d430eee05c3f3ef24606e798a922077b099e9796713d2e7d8a893cf3"
+  url "https://github.com/gazebosim/gz-physics.git", branch: "main"
+  version "6.999.999~0~20230728"
   license "Apache-2.0"
-  revision 5
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "1e103be3df7461f1794f78a8ef3d62b9d7e68fdb59277021e7c7bd162f33a5b2"
-    sha256 cellar: :any, big_sur:  "c09e34bcea880205692db2c911084f09cbce67eacae9ee75d7f2e75200f3f2ec"
-  end
 
   depends_on "cmake" => :build
 
@@ -24,7 +17,7 @@ class GzPhysics6 < Formula
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
-  depends_on "sdformat13"
+  depends_on "sdformat14"
 
   def install
     cmake_args = std_cmake_args
@@ -42,7 +35,7 @@ class GzPhysics6 < Formula
       int main()
       {
         gz::plugin::Loader loader;
-        loader.LoadLib("#{opt_lib}/libgz-physics6-dartsim-plugin.dylib");
+        loader.LoadLib("#{opt_lib}/libgz-physics7-dartsim-plugin.dylib");
         gz::plugin::PluginPtr dartsim =
             loader.Instantiate("gz::physics::dartsim::Plugin");
         using featureList = gz::physics::FeatureList<
@@ -52,9 +45,9 @@ class GzPhysics6 < Formula
         return engine == nullptr;
       }
     EOS
-    system "pkg-config", "gz-physics6"
-    cflags   = `pkg-config --cflags gz-physics6`.split
-    ldflags  = `pkg-config --libs gz-physics6`.split
+    system "pkg-config", "gz-physics7"
+    cflags   = `pkg-config --cflags gz-physics7`.split
+    ldflags  = `pkg-config --libs gz-physics7`.split
     system "pkg-config", "gz-plugin2-loader"
     loader_cflags   = `pkg-config --cflags gz-plugin2-loader`.split
     loader_ldflags  = `pkg-config --libs gz-plugin2-loader`.split
