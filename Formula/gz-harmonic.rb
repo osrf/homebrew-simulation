@@ -1,31 +1,31 @@
-class GzGarden < Formula
+class GzHarmonic < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
-  homepage "https://github.com/gazebosim/gz-garden"
+  homepage "https://github.com/gazebosim/gz-harmonic"
   url "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
   version "0.999.999~0~20230728"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-garden.git", branch: "main"
+  head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "python@3.11" => [:build, :test]
 
   depends_on "gz-cmake3"
   depends_on "gz-common5"
-  depends_on "gz-fuel-tools8"
-  depends_on "gz-gui7"
+  depends_on "gz-fuel-tools9"
+  depends_on "gz-gui8"
   depends_on "gz-launch7"
   depends_on "gz-math7"
-  depends_on "gz-msgs9"
+  depends_on "gz-msgs10"
   depends_on "gz-physics7"
   depends_on "gz-plugin2"
-  depends_on "gz-rendering7"
+  depends_on "gz-rendering8"
   depends_on "gz-sensors8"
   depends_on "gz-sim8"
   depends_on "gz-tools2"
-  depends_on "gz-transport12"
+  depends_on "gz-transport13"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
@@ -49,7 +49,7 @@ class GzGarden < Formula
   end
 
   test do
-    yaml_file = share/"gz/gz-garden/gazebodistro/collection-garden.yaml"
+    yaml_file = share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml"
     system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
