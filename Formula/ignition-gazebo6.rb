@@ -1,17 +1,16 @@
 class IgnitionGazebo6 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.14.0.tar.bz2"
-  sha256 "7c516f826c1214dd5079a96975004910ad91a09c53afc14e1f308cdaa4b8e918"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.15.0.tar.bz2"
+  sha256 "897c8823054d504272dd8312509fb09baa6f042a131d348de2020ebd80bbf780"
   license "Apache-2.0"
-  revision 9
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "3b26df27e7eceb075758399d4e4b9cdfc23f960999c055be6731b3296878e788"
-    sha256 big_sur:  "64e14f723128d78203eb06e1e5ba9427bb9bbaf9bbcc1c76dda844a1806f8c57"
+    sha256 monterey: "f6ddd0b7a06b4f9ae6214904cf76115c78f1e660f19aec47c3e5aa428c82d492"
+    sha256 big_sur:  "e140a1bc7b2edf68c9cf278937a805a01815dbcd3c4e9f195a39d300695c60b0"
   end
 
   depends_on "cmake" => :build
@@ -38,12 +37,6 @@ class IgnitionGazebo6 < Formula
   depends_on "python@3.11"
   depends_on "ruby"
   depends_on "sdformat12"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sim/commit/dfb70396bdb426f68f3858ba40bbfb0fe73408be.patch?full_index=1"
-    sha256 "c8fa5280d11efc8bd8780ec5e74142c71e8417f7ed5e9ad610aeb827b5c3e08d"
-  end
 
   def install
     cmake_args = std_cmake_args
