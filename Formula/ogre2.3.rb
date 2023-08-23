@@ -60,7 +60,7 @@ class Ogre23 < Formula
     rmdir prefix/"CMake"
 
     # Support side-by-side OGRE installs
-    # Rename executables to avoid conflicts with ogre2.1
+    # Rename executables to avoid conflicts with ogre2.1 and ogre2.2
     Dir[bin/"*"].each do |exe|
       mv exe, "#{exe}-2.3"
     end
