@@ -9,6 +9,7 @@ class GzRendering7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "b79e201679fd148c68065f77092498413a18c5d0ecff03646f027e0c3498d108"
     sha256 monterey: "1c586df54e9f6139cf168b090bb4f1c5beb0e7f49ea1af163cb39e31398aac41"
     sha256 big_sur:  "1067c6d25e463b3c30f06aaba1d41040750b1422493113b549c07f892dd586d8"
   end
@@ -28,7 +29,7 @@ class GzRendering7 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do

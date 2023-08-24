@@ -10,6 +10,7 @@ class GzMsgs9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "5ec1c25e309e5a5bbf9286ae76670e2ba85d70a96421407a7510cb6992b2df25"
     sha256 cellar: :any, monterey: "8eab28c1eaadb266ed5494549c642883ec5cce62b2c69fda8193c515150a25fe"
     sha256 cellar: :any, big_sur:  "9373239a837f13aed4ddaaec421febee126280f3901aba3af07698164d6072d5"
   end
@@ -31,7 +32,7 @@ class GzMsgs9 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do

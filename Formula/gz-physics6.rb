@@ -8,6 +8,7 @@ class GzPhysics6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "e079c3c24956c2cd612ae46eeefbee3376662fccad46587ec3fb84027d6b47f2"
     sha256 cellar: :any, monterey: "1e103be3df7461f1794f78a8ef3d62b9d7e68fdb59277021e7c7bd162f33a5b2"
     sha256 cellar: :any, big_sur:  "c09e34bcea880205692db2c911084f09cbce67eacae9ee75d7f2e75200f3f2ec"
   end
@@ -28,7 +29,7 @@ class GzPhysics6 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", ".", *cmake_args
     system "make", "install"

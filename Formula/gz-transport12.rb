@@ -10,6 +10,7 @@ class GzTransport12 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "ad3edea8b9115db1f121d5fce89f524ca2e3ede704964d456d80be2e18dcd86a"
     sha256 monterey: "104e28bfd97ccff18ecdc945f227a956f99baef68396c2f146f3d97f2aaeb22b"
     sha256 big_sur:  "7a79cda09e46569edcf479f516d766f9a1e46dfb9364eaf9c3e0839feccbfb3a"
   end
@@ -36,7 +37,7 @@ class GzTransport12 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     # Use build folder

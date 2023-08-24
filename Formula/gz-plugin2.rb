@@ -9,6 +9,7 @@ class GzPlugin2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "0cccfc4e784821706358e8e91655d231c5378fa950ee02775d2917522f9da41f"
     sha256 cellar: :any, monterey: "f5a33572b7400a2948ae1c988be41ee08f9c3f0a4217e7361fcca263b8290ed0"
     sha256 cellar: :any, big_sur:  "696b7c7ed4768f14eb5ba56fa393f087571f238873c4681caac6ac6c711169d5"
     sha256 cellar: :any, catalina: "c7faa3c09ae61b955b32e2c959a586fd61fb73a03f90282f5d3f29a2e8af71b1"
@@ -23,7 +24,7 @@ class GzPlugin2 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     # Use build folder
