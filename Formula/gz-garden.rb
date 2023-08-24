@@ -44,6 +44,7 @@ class GzGarden < Formula
   end
 
   def install
+    # Use build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
