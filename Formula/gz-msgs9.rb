@@ -23,12 +23,6 @@ class GzMsgs9 < Formula
   depends_on "protobuf"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-msgs/commit/87a9235cd14d65b26428d6905c83a6269d82d741.patch?full_index=1"
-    sha256 "a3493afdd6a0e606459ee2c8d0a101775cdbb403d38056d626d2801191a29e7d"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
