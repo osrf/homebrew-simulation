@@ -8,6 +8,7 @@ class GzTransport13 < Formula
   head "https://github.com/gazebosim/gz-transport.git", branch: "main"
 
   depends_on "doxygen" => [:build, :optional]
+  depends_on "pybind11" => :build
 
   depends_on "cmake"
   depends_on "cppzmq"
