@@ -2,7 +2,7 @@ class GzMsgs10 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-msgs.git", branch: "main"
-  version "9.999.999~0~20230125"
+  version "9.999.999~0~20230828"
   license "Apache-2.0"
 
   depends_on "cmake"
@@ -12,6 +12,7 @@ class GzMsgs10 < Formula
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "python@3.11"
   depends_on "tinyxml2"
 
   def install
@@ -23,6 +24,9 @@ class GzMsgs10 < Formula
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -58,5 +62,7 @@ class GzMsgs10 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.msgs10"
   end
 end
