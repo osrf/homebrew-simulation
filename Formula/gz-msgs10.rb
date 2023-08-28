@@ -2,7 +2,7 @@ class GzMsgs10 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-msgs.git", branch: "main"
-  version "9.999.999~0~20230125"
+  version "9.999.999~0~20230828"
   license "Apache-2.0"
 
   depends_on "cmake"
