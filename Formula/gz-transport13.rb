@@ -1,13 +1,22 @@
 class GzTransport13 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-transport.git", branch: "main"
-  version "12.999.999~0~20230203"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.0.0~pre1.tar.bz2"
+  version "13.0.0~pre1"
+  sha256 "1f5785c70d4e0740490c372436fe06a724544e1b323525e39edf981168c89101"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "b39b32278228372fd3ea7fa5a48c3d717f8a34704f9ea7580d9a70d2c8195d55"
+    sha256 monterey: "84e01fce8d7a113894557fe3e7c298f3188238eb0614dbfb13bccdfe61c2bc7d"
+    sha256 big_sur:  "792234982745497698d8ba5abd58edff0ec7a038eb383ae5f883e428a5459d11"
+  end
+
   depends_on "doxygen" => [:build, :optional]
+  depends_on "pybind11" => :build
 
   depends_on "cmake"
   depends_on "cppzmq"
@@ -19,6 +28,7 @@ class GzTransport13 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "python@3.11"
   depends_on "zeromq"
 
   def install
@@ -31,6 +41,9 @@ class GzTransport13 < Formula
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -66,5 +79,7 @@ class GzTransport13 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.transport13"
   end
 end

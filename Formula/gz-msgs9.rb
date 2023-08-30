@@ -1,18 +1,18 @@
 class GzMsgs9 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-9.4.0.tar.bz2"
-  sha256 "6690ea3ab938afa4980373008dcc4119da43e4c51763a46948f6fd549144e993"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-9.5.0.tar.bz2"
+  sha256 "693f403fca86e9956b393a86fd46505d94e27b7b2c1d39bc631ba9c3029b91f9"
   license "Apache-2.0"
-  revision 6
+  revision 2
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "5ec1c25e309e5a5bbf9286ae76670e2ba85d70a96421407a7510cb6992b2df25"
-    sha256 cellar: :any, monterey: "8eab28c1eaadb266ed5494549c642883ec5cce62b2c69fda8193c515150a25fe"
-    sha256 cellar: :any, big_sur:  "9373239a837f13aed4ddaaec421febee126280f3901aba3af07698164d6072d5"
+    sha256 cellar: :any, ventura:  "add487eef7f5f37c27c0e58a76942a01b6a36b054e2b8700bc4ca910180d89e1"
+    sha256 cellar: :any, monterey: "b5cfe7ed5c48e38ce52615e0d746630d3f0759ca3206bff0ad540b96a3797924"
+    sha256 cellar: :any, big_sur:  "8b30c0ff782130a500a5a5dcc030be6c76597c4c4edaff1d8b87fa88ee81a324"
   end
 
   depends_on "cmake"
@@ -23,12 +23,6 @@ class GzMsgs9 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-msgs/commit/87a9235cd14d65b26428d6905c83a6269d82d741.patch?full_index=1"
-    sha256 "a3493afdd6a0e606459ee2c8d0a101775cdbb403d38056d626d2801191a29e7d"
-  end
 
   def install
     cmake_args = std_cmake_args

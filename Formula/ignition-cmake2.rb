@@ -9,6 +9,7 @@ class IgnitionCmake2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any_skip_relocation, ventura:  "12777ebc41414783c5f7950539fd00ae68e188fdfcd45c0713eeae9a3b7ed2a6"
     sha256 cellar: :any_skip_relocation, monterey: "435c9652a8babe216da87d176185f4bd21f54dfdd5a7039f16837e707c86605b"
     sha256 cellar: :any_skip_relocation, big_sur:  "b3652d54d1d32c62e2af34f8d5e537c59d07afee81798deea7151364007eee87"
   end
@@ -18,7 +19,7 @@ class IgnitionCmake2 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
 
     # Use build folder
     mkdir "build" do
