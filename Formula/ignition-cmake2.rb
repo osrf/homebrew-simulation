@@ -18,7 +18,7 @@ class IgnitionCmake2 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
 
     # Use build folder
     mkdir "build" do

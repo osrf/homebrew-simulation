@@ -24,6 +24,7 @@ class IgnitionTools < Formula
       s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
     end
 
+    # Use build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
