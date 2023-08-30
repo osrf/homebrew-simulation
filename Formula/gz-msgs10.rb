@@ -8,9 +8,9 @@ class GzMsgs10 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "75d591a06e0c1f8923cd19dbee614f455a1ca90f267496bc262ba7143a5fdbb2"
-    sha256 monterey: "f78bd5c26ee745c176eabc81dfd119c8c21750b711769fc321018835d29747fe"
-    sha256 big_sur:  "7383c05a79ac2b40a9496e09664a0f9de87ec7a56c601796bf016a648ac10838"
+    sha256 ventura:  "e2e44b6d0962b88922d77339d6b00a19ba098c1c55860734fc25299c2e007cf7"
+    sha256 monterey: "e8cd8a210b304880324be5979713d6c1b7b12e889714e093c7314f599ef614ac"
+    sha256 big_sur:  "39bcc22808acf014941b953580a96b4f6d37099fdcee95a9e50e45c28d2a5bd1"
   end
 
   depends_on "cmake"
