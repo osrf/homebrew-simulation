@@ -1,9 +1,9 @@
 class GzMsgs10 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.0.0~pre1.tar.bz2"
-  version "10.0.0~pre1"
-  sha256 "d439f0834ee08e1e9f10eb55cd709f38035daf792502b77d568f43afbe3b01b5"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.0.0~pre2.tar.bz2"
+  version "10.0.0~pre2"
+  sha256 "4dd05d1c0cd9f91e60ecd79b128a1343e7a8632754d8524bf21c4418adec857e"
   license "Apache-2.0"
 
   bottle do
