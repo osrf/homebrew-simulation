@@ -1,11 +1,17 @@
 class GzMsgs10 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.0.0~pre2.tar.bz2"
-  version "10.0.0~pre2"
-  sha256 "4dd05d1c0cd9f91e60ecd79b128a1343e7a8632754d8524bf21c4418adec857e"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.0.0~pre3.tar.bz2"
+  version "10.0.0~pre3"
+  sha256 "88bb9cb14251d91d30a2ff1d65672a83420eeca5527aa5cb14a7714f41ba6bc5"
   license "Apache-2.0"
-  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "901bb8e349b9381ca9e42eb25911f6e3d9e6103214d1ba25080ca11c1facc771"
+    sha256 monterey: "4ae6136225809eb06e0027445da71d9d6fac278bf3e6653852b7a7f1d7cd6344"
+    sha256 big_sur:  "a871ad3c3de810dcc01ad4507f473715dd3eedc185839c1575f771526c6d063d"
+  end
 
   depends_on "cmake"
   depends_on "gz-cmake3"
