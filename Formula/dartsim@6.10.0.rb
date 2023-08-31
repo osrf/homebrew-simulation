@@ -39,7 +39,7 @@ class DartsimAT6100 < Formula
   end
 
   patch do
-    # Fix syntax error in glut_human_joint_limits/CMakeLists.txt
+    # fix syntax error in glut_human_joint_limits/CMakeLists.txt
     url "https://github.com/dartsim/dart/commit/47274b551bd48a31a702b4ddc7c1f8061daef3d9.patch?full_index=1"
     sha256 "030e16a5728e856d0cc1788494da50272c52a7efec5c2a93e95de2cda7407f23"
   end
