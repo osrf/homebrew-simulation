@@ -27,11 +27,7 @@ class Sdformat4 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", because: "differing version of the same formula"
-  conflicts_with "sdformat3", because: "differing version of the same formula"
-  conflicts_with "sdformat5", because: "differing version of the same formula"
   conflicts_with "sdformat6", because: "differing version of the same formula"
-  conflicts_with "sdformat7", because: "differing version of the same formula"
 
   def install
     cmake_args = std_cmake_args
