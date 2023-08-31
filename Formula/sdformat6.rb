@@ -24,8 +24,6 @@ class Sdformat6 < Formula
   depends_on "tinyxml"
 
   conflicts_with "sdformat4", because: "differing version of the same formula"
-  conflicts_with "sdformat5", because: "differing version of the same formula"
-  conflicts_with "sdformat7", because: "differing version of the same formula"
 
   def install
     cmake_args = std_cmake_args
