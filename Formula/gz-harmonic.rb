@@ -10,6 +10,13 @@ class GzHarmonic < Formula
 
   head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "22aee85eabfb01f5a12ec9f5c2b0bf5c67d7451bb598fb0a43b63b24baa73f25"
+    sha256 cellar: :any, monterey: "647647ff655c30b9b5f7e83ff2d857cebe5a6ff058ea8e680a11fc3bc1d47299"
+    sha256 cellar: :any, big_sur:  "bbf7076d1eecc69cd9ce6cf0bfa06c9bfac402b8f05494d8d66c08ebe6c0a483"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.11" => [:build, :test]
 
