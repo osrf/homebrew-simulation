@@ -1,9 +1,17 @@
 class GzPhysics7 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://github.com/gazebosim/gz-physics.git", branch: "main"
-  version "6.999.999~0~20230728"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-7.0.0~pre1.tar.bz2"
+  version "7.0.0~pre1"
+  sha256 "eb43dca784895f21b16d1dcb6fe084f8cf23d2e80fd9556c0c34bc57cb29645d"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "51e810b26b65d0c448847381b23069d8517aaabdb6bece371c018ce165399dd8"
+    sha256 cellar: :any, monterey: "c1d0004b6d5b9a726751554fb33bf6ffcd9f50c0b131bcdbd1cdb5de6daad880"
+    sha256 cellar: :any, big_sur:  "67bebe5954c764ae391b453c9bff61a85b040ee3ec7e034f5d27aff992515b9f"
+  end
 
   depends_on "cmake" => :build
 
