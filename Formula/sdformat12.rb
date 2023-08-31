@@ -9,6 +9,7 @@ class Sdformat12 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "51de6fba6a240ba0602e3f37a6b2224ae3bebc651378528bf1fba6cd393c4fe9"
     sha256 monterey: "d369bf85dfff4f57215887d0981c0e858bdced31c6b117826c5bbea8c6207476"
     sha256 big_sur:  "e5bc3cc89ba0f4ac14da625f73aee59716420e9b6c931498688adef35a868c48"
   end
@@ -27,7 +28,7 @@ class Sdformat12 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
