@@ -10,6 +10,7 @@ class IgnitionPhysics5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "417c91300b7935df325577656797f2a6f434ee627e502778d47da0a7dd9c5396"
     sha256 cellar: :any, monterey: "a4264c703711027d595034d22f1251b4a73f9008b2ec4e7770cb4e55d614e21c"
     sha256 cellar: :any, big_sur:  "721debc4e299d2e2af04146c8898a4cfe9adc672da6d68a6584f24fcb3c77d76"
   end
@@ -30,7 +31,7 @@ class IgnitionPhysics5 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
