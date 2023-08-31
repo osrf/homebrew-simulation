@@ -27,7 +27,7 @@ class Ogre22 < Formula
   depends_on "tbb"
 
   patch do
-    # fix for cmake3 and c++11
+    # Fix for cmake3 and c++11
     url "https://github.com/scpeters/ogre-next/commit/3486b772b35b3e5f8cf6da5b7a41e6c195408d7d.patch?full_index=1"
     sha256 "30a60758401980260f3a5abdd6513505327028a983af9e911908b4f7da140625"
   end
