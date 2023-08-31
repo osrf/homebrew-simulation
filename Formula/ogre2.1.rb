@@ -30,7 +30,7 @@ class Ogre21 < Formula
   depends_on "tbb"
 
   patch do
-    # fix for cmake3 and c++11
+    # Fix for cmake3 and c++11
     url "https://gist.github.com/scpeters/4a7516b52c6e918ac02cbacabfeda4b3/raw/c515f8f313c444b306dfff9d437ec7cf3622ab12/cmake3.diff"
     sha256 "99d76e023cd5740da66c76ced40ce85e7da7b811ea99d9015d1293fc454badc0"
   end
