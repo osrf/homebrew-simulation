@@ -10,6 +10,7 @@ class DartsimAT6100 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "c3f503bc10e6dd087b28f214d03fd4c891057e72ea63075a46ded2e2ded4c979"
     sha256 monterey: "f34d5dd73ebd398d29fee127aefffa5393967a87b487e538ba6222d83e9f20b6"
     sha256 big_sur:  "7639a0c81e5b02e4b2a12563c56503ed8a3b0f0482f45d5c02887a9e1a3282d3"
   end
@@ -39,7 +40,7 @@ class DartsimAT6100 < Formula
   end
 
   patch do
-    # Fix syntax error in glut_human_joint_limits/CMakeLists.txt
+    # fix syntax error in glut_human_joint_limits/CMakeLists.txt
     url "https://github.com/dartsim/dart/commit/47274b551bd48a31a702b4ddc7c1f8061daef3d9.patch?full_index=1"
     sha256 "030e16a5728e856d0cc1788494da50272c52a7efec5c2a93e95de2cda7407f23"
   end
