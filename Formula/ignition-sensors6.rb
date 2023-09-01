@@ -1,18 +1,17 @@
 class IgnitionSensors6 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.7.0.tar.bz2"
-  sha256 "c53a5f077dbf59b1ecc1d0527f54f2a5690ab1cc7f23fdc690aaa6bdd6c67c4c"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.7.1.tar.bz2"
+  sha256 "5b01cb99ff8b1effc0bdaa0309f4378894ace2640644ee3f2b96d44ff3aa10f0"
   license "Apache-2.0"
-  revision 8
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "08df276b4e821ec482ec86668d39c33768f6d90929b182ccab65d8f46c2d4eb8"
-    sha256 cellar: :any, monterey: "3e0dfc1941ec4efa11cdf493b388ed0d60a42fe0fbcb6e8fe622629d582bb280"
-    sha256 cellar: :any, big_sur:  "05e9a26b96ebf5b78a7b4a0c0361ad4ea40f3c76d7b5947b3af56795b2eb5da2"
+    sha256 cellar: :any, ventura:  "9bb05d2ecb041615fb8f1c8d43b32252b028c669aa3e2c235b911b7460ad492d"
+    sha256 cellar: :any, monterey: "735fe4621bf5097655c3aaf58526cc1553d16859457e366d8888c3973cddf243"
+    sha256 cellar: :any, big_sur:  "ec8e0a253366e8dc7784ede578401d48febb33faa29eef6b822dff0f8764a1d7"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,12 +25,6 @@ class IgnitionSensors6 < Formula
   depends_on "ignition-transport11"
   depends_on "protobuf"
   depends_on "sdformat12"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sensors/commit/e6dcb527a70f154704c0fe62e6393f471136afcb.patch?full_index=1"
-    sha256 "1e5a91f97f4f770c07fc33bae433c3dfebd590fa441f7f2f11ce750b25879971"
-  end
 
   def install
     cmake_args = std_cmake_args
