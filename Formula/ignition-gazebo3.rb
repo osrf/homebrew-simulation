@@ -10,6 +10,7 @@ class IgnitionGazebo3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "8d9a4f7e8268322e00427b6111927c0ab8a87df8205b6647d4c33f71c7a8e6a0"
     sha256 monterey: "eb3ac3b71e6d1fd411862a73a5ab544f03cb78de5a15e9cec2d27c2e7eceb0b3"
     sha256 big_sur:  "63d61c5255395ecbdbd30b4960ffc9a0f5326e2a53accff7e6e92520ed66faf2"
   end
@@ -50,6 +51,7 @@ class IgnitionGazebo3 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # Use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
