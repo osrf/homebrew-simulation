@@ -132,6 +132,18 @@ brew bump-revision --remove-bottle-block ignition-msgs7
 brew bump-revision --remove-bottle-block ignition-msgs8
 ~~~
 
+If all broken formulae properly list an explicit dependency on the breaking formula, the following
+shell script loop can be used to remove all broken bottles. For example, the following
+snippet was used to remove broken protobuf bottles in https://github.com/osrf/homebrew-simulation/issues/2314#issuecomment-1626396384:
+
+~~~
+cd `brew --repo osrf/simulation`/Formula
+for f in $(grep -l '^ *bottle do' $(grep -rlI depend.*protobuf .) | sort)
+do
+  brew bump-revision --remove-bottle-block --message="broken bottle" $f
+done
+~~~
+
 ## Troubleshooting
 
 * Does a new bottle need to be built for every homebrew pull request?
