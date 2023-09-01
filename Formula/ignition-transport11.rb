@@ -4,7 +4,7 @@ class IgnitionTransport11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.4.0.tar.bz2"
   sha256 "504310cec3c097abb8d9a45e694924a70fadbf785c9e679545f85cb72cfdc434"
   license "Apache-2.0"
-  revision 7
+  revision 8
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport11"
