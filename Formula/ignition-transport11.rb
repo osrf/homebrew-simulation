@@ -29,12 +29,6 @@ class IgnitionTransport11 < Formula
   depends_on "protobuf"
   depends_on "zeromq"
 
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-transport/commit/e35a697b619dbcecec0ae0c8b8f0a644d368abf3.patch?full_index=1"
-    sha256 "6bbc6da4245b57f12112695914f58160f093691967c3bbe2fbc9b75eafc0886a"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
