@@ -10,6 +10,7 @@ class IgnitionLaunch2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "6453289a1875d0ae1c0c198332af439de2edb7188b36c149f2f79c305d5c1fc9"
     sha256 monterey: "ef282a967162e73efc83c7700ce7f0ae15951a3a7ae800b2c81e3771490bb77c"
     sha256 big_sur:  "2518981af53f198a85273f435e33f8b46fdcf66be250ba8cd3077030a9ed283f"
   end
