@@ -5,6 +5,7 @@ class IgnitionTransport11 < Formula
   sha256 "f18501cbd5c78b584b3db1960a3049d6ae416bab7f0289af64eadda13d1c5da5"
   license "Apache-2.0"
   version_scheme 1
+  revision 1
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport11"
 
