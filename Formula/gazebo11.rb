@@ -10,6 +10,7 @@ class Gazebo11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "cb6cd01191a6f639ec5fe95f48c292609c25d28d9964b2263ca5011670653726"
     sha256 monterey: "7c4dad34e889053bac46ceff36794864b3c233419616b61337aa9dceb6f4d92b"
     sha256 big_sur:  "e3ce6a0828781255a152068176bcf0281a5bddc5422d18d45adb7824a342fb7e"
   end
@@ -68,6 +69,7 @@ class Gazebo11 < Formula
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
