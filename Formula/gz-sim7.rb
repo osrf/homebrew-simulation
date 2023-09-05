@@ -57,13 +57,10 @@ class GzSim7 < Formula
   end
 
   test do
-    # Disable failing test on Monterey
-    if MacOS.version != :monterey
-      ENV["IGN_CONFIG_PATH"] = "#{opt_share}/gz"
-      system Formula["ruby"].opt_bin/"ruby",
-             Formula["gz-tools2"].opt_bin/"gz",
-             "sim", "-s", "--iterations", "5", "-r", "-v", "4"
-    end
+    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/gz"
+    system Formula["ruby"].opt_bin/"ruby",
+           Formula["gz-tools2"].opt_bin/"gz",
+           "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <gz/sim/Entity.hh>
