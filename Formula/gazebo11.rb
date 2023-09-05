@@ -68,6 +68,7 @@ class Gazebo11 < Formula
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"

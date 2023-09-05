@@ -25,7 +25,7 @@ class Simbody < Formula
     ENV.delete("MACOSX_DEPLOYMENT_TARGET")
     ENV.delete("SDKROOT")
 
-    # Use build folder
+    # use build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "make", "doxygen"
