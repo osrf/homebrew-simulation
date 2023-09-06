@@ -51,7 +51,7 @@ class GzSim8 < Formula
   end
 
   test do
-    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/gz"
+    ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
     system Formula["ruby"].opt_bin/"ruby",
            Formula["gz-tools2"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
