@@ -49,6 +49,7 @@ class GzGarden < Formula
       system "make", "install"
     end
 
+    # install vcstool for use in the test
     venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
