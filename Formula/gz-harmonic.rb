@@ -4,7 +4,7 @@ class GzHarmonic < Formula
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/gazebosim/gz-harmonic"
   url "https://osrf-distributions.s3.amazonaws.com/gz-harmonic/releases/gz-harmonic-1.0.0~pre2.tar.bz2"
-  version "1.0.0~pre2"
+  version "1.0.0-pre3"
   sha256 "1397b757805afcd1dc468b0ea2449288673bfe64ecf09393f948fc2cf1caa9a6"
   license "Apache-2.0"
 
