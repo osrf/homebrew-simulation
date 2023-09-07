@@ -4,6 +4,7 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.3.2.tar.bz2"
   sha256 "4262512fbb6952712234c5cbeed69cdabca338931bb6c587a1ef7d487a5f262b"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
 
@@ -27,6 +28,12 @@ class IgnitionPhysics5 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat12"
+
+  patch do
+    # Fix for unregistering dartsim collision detector
+    url "https://github.com/gazebosim/gz-physics/commit/2c238fe87b7c5ebd3d1ba37784db39ce93a6f143.patch?full_index=1"
+    sha256 "396557d48ae665c9a99ea0d9f60308a9ebb08198098df88a7f8497619ffb15d2"
+  end
 
   def install
     cmake_args = std_cmake_args
