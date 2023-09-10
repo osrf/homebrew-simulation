@@ -5,7 +5,7 @@ class GzMsgs10 < Formula
   version "10.0.0~pre3"
   sha256 "88bb9cb14251d91d30a2ff1d65672a83420eeca5527aa5cb14a7714f41ba6bc5"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   depends_on "cmake"
   depends_on "gz-cmake3"
