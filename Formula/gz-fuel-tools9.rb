@@ -5,7 +5,7 @@ class GzFuelTools9 < Formula
   version "9.0.0~pre1"
   sha256 "30324b1b89944c827595be858a3b827de4ee71eedac3a8ca6e75f49c54648ed7"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
 
