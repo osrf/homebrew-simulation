@@ -5,7 +5,7 @@ class GzSensors8 < Formula
   version "8.0.0~pre1"
   sha256 "08727c2e048f4013deeed32b808323b96855c6e849ca3e86a578c26129e996c0"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
 
