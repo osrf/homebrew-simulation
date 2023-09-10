@@ -5,7 +5,7 @@ class GzSim8 < Formula
   version "8.0.0~pre1"
   sha256 "acf6d851cb8570bb978b3a56a4c5d0c11f6f75056b163311aa6dfc7fd9833ff4"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "main"
 
