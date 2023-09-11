@@ -5,9 +5,16 @@ class GzGui8 < Formula
   version "8.0.0~pre1"
   sha256 "30af47eb3fb9e83406a5d5dd921c9e6798a1b7abe636ccc364233f68b54187cb"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "337c2aa55a231cca0f2aea892283dc0bfd2ce2fdaca7dc85a4728a308a276c79"
+    sha256 monterey: "059952e15f8b0b6a9eaec93380bfe35852b21328034aa67365fe57dee2024b17"
+    sha256 big_sur:  "db5696cb83a5f41bace4fd7fdd66c3a253736327cd7c0e1bbcc5dfb2ac225c42"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]

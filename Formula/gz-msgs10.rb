@@ -5,7 +5,14 @@ class GzMsgs10 < Formula
   version "10.0.0~pre3"
   sha256 "88bb9cb14251d91d30a2ff1d65672a83420eeca5527aa5cb14a7714f41ba6bc5"
   license "Apache-2.0"
-  revision 1
+  revision 2
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "a9a96caa802ef2f1d934787647b0e57f3fbe93fcc3f7895c95fe2828d5f556d0"
+    sha256 monterey: "a1d26e0c141d80dc2e986fac7ab124ecec5dcf0ade19adc90af035e322d2e982"
+    sha256 big_sur:  "b3293701ab2cb15a4107a1988ac34b8b46b2336aff3bb38c7c3f08ad0944c315"
+  end
 
   depends_on "cmake"
   depends_on "gz-cmake3"
