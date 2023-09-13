@@ -23,9 +23,13 @@ class GzPlugin2 < Formula
   depends_on "pkg-config"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/plugin2", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use build folder
     mkdir "build" do
