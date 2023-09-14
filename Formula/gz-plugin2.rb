@@ -39,7 +39,9 @@ class GzPlugin2 < Formula
   end
 
   test do
-    system "#{libexec}/gz/plugin2/gz-plugin"
+    # test CLI executable
+    system libexec/"gz/plugin2/gz-plugin"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <gz/plugin/Loader.hh>
       int main() {

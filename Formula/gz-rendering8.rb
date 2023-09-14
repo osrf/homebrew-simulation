@@ -29,9 +29,13 @@ class GzRendering8 < Formula
   depends_on "ogre2.3"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-rendering-8/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -40,6 +44,12 @@ class GzRendering8 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
+           "--plugin", lib/"gz-rendering-8/engine-plugins/libgz-rendering-ogre.dylib"
+    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
+           "--plugin", lib/"gz-rendering-8/engine-plugins/libgz-rendering-ogre2.dylib"
+    # build against API
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <gz/rendering/RenderEngine.hh>

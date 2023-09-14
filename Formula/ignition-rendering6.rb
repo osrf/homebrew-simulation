@@ -17,6 +17,8 @@ class IgnitionRendering6 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
+  depends_on "gz-plugin2" => :test
+
   depends_on "freeimage"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
@@ -27,9 +29,13 @@ class IgnitionRendering6 < Formula
   depends_on "ogre2.2"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-rendering-6/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -38,6 +44,12 @@ class IgnitionRendering6 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
+           "--plugin", lib/"ign-rendering-6/engine-plugins/libignition-rendering-ogre.dylib"
+    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
+           "--plugin", lib/"ign-rendering-6/engine-plugins/libignition-rendering-ogre2.dylib"
+    # build against API
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/rendering/RenderEngine.hh>

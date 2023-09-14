@@ -19,6 +19,8 @@ class IgnitionRendering3 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
+  depends_on "gz-plugin2" => :test
+
   depends_on "freeimage"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
@@ -29,9 +31,13 @@ class IgnitionRendering3 < Formula
   depends_on "ogre2.1"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-rendering-3/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -40,9 +46,13 @@ class IgnitionRendering3 < Formula
   end
 
   test do
-    azure = ENV["HOMEBREW_AZURE_PIPELINES"].present?
+    # test plugins in subfolders
+    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
+           "--plugin", lib/"ign-rendering-3/engine-plugins/libignition-rendering-ogre.dylib"
+    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
+           "--plugin", lib/"ign-rendering-3/engine-plugins/libignition-rendering-ogre2.dylib"
+    # build against API
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-    travis = ENV["HOMEBREW_TRAVIS_CI"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/rendering/RenderEngine.hh>
       #include <ignition/rendering/RenderingIface.hh>
@@ -68,12 +78,12 @@ class IgnitionRendering3 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" if !(azure || github_actions) && !travis
+    system "./test" unless github_actions
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
       system "make"
-      system "./test_cmake" if !(azure || github_actions) && !travis
+      system "./test_cmake" unless github_actions
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
