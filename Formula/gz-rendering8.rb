@@ -3,7 +3,7 @@ class GzRendering8 < Formula
   homepage "https://gazebosim.org"
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.0.0~pre2.tar.bz2"
   version "8.0.0~pre2"
-  sha256 "45b94d4c30501672dfa8fccb20cb863c655b326e63085efb427f4b40eff12184"
+  sha256 "2e828c5c0754d082d97a01b5ef6f47d3baae2749f7c638b18259c4673c11be7b"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "main"
