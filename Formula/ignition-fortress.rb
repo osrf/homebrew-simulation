@@ -13,6 +13,7 @@ class IgnitionFortress < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "62324f2e3a3cb45386447e9e9b6ff4158f98cf908b09039e26d56f34bcc3bd87"
     sha256 cellar: :any, monterey: "ce7adf2c9fea64c9ca1a307e0787c2ccdb9387032959b8b899866778f8e42406"
     sha256 cellar: :any, big_sur:  "a745f123d272e680227ca493c830638ef74cfb38603cdd6e3af51a36778cc35a"
   end
@@ -49,6 +50,7 @@ class IgnitionFortress < Formula
       system "make", "install"
     end
 
+    # install vcstool so it can be used in the test
     venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
