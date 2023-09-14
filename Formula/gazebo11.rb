@@ -44,6 +44,12 @@ class Gazebo11 < Formula
   conflicts_with "gz-tools2", because: "both install bin/gz"
 
   patch do
+    # Fix for compatibility with graphviz 9.0
+    url "https://github.com/gazebosim/gazebo-classic/commit/ba2cbd532a8ba47972cf9f0c3dbc32a5757cab2a.patch?full_index=1"
+    sha256 "a9cca7d59663fd45bab74e044c817600d24028e80ad2871107a34e8a3bebab2a"
+  end
+
+  patch do
     # Fix for compatibility with protobuf 23.2
     url "https://github.com/gazebosim/gazebo-classic/commit/17e09f574a4f39caff279cd70364cd1a3ea46f70.patch?full_index=1"
     sha256 "b50f4cbfe92d3ded2dd7117696cf6a049f0bbdcdb9ef8f54bbc6bde7670f51b3"
