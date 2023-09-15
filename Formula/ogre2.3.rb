@@ -17,6 +17,7 @@ class Ogre23 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gz-plugin2" => :test
   depends_on "pkg-config" => :test
   depends_on "doxygen"
   depends_on "freeimage"
@@ -27,11 +28,16 @@ class Ogre23 < Formula
   depends_on "tbb"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"OGRE-2.3", target: lib),
+      rpath(source: lib/"OGRE-2.3/OGRE", target: lib),
+    ]
     cmake_args = [
       "-DCMAKE_CXX_STANDARD=11",
       "-DCMAKE_CXX_STANDARD_REQUIRED:BOOL=ON",
       "-DCMAKE_CXX_EXTENSIONS:BOOL=ON",
-      "-DCMAKE_INSTALL_RPATH=#{rpath}",
+      "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
       "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=TRUE",
       "-DOGRE_BUILD_RENDERSYSTEM_METAL:BOOL=TRUE",
       "-DOGRE_BUILD_COMPONENT_HLMS:BOOL=TRUE",
@@ -98,6 +104,20 @@ class Ogre23 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    ["libOgreMain", "libOgreOverlay", "libOgrePlanarReflections", "OGRE/RenderSystem_Metal"].each do |plugin|
+      p = lib/"OGRE-2.3/#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <Ogre.h>
       int main()
