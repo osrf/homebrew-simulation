@@ -47,10 +47,18 @@ class IgnitionRendering3 < Formula
 
   test do
     # test plugins in subfolders
-    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
-           "--plugin", lib/"ign-rendering-3/engine-plugins/libignition-rendering-ogre.dylib"
-    system Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin", "--info",
-           "--plugin", lib/"ign-rendering-3/engine-plugins/libignition-rendering-ogre2.dylib"
+    ["ogre", "ogre2"].each do |engine|
+      p = lib/"ign-rendering-3/engine-plugins/libignition-rendering-#{engine}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
     # build against API
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
