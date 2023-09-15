@@ -62,7 +62,7 @@ class GzSim7 < Formula
 
   test do
     # test some plugins in subfolders
-    ["altimeter", "log", "physics", "sensors"].each do |system|
+    %w[altimeter log physics sensors].each do |system|
       p = lib/"gz-sim-7/plugins/libgz-sim-#{system}-system.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"

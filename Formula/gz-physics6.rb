@@ -44,7 +44,7 @@ class GzPhysics6 < Formula
 
   test do
     # test plugins in subfolders
-    ["bullet-featherstone", "bullet", "dartsim", "tpe"].each do |engine|
+    %w[bullet-featherstone bullet dartsim tpe].each do |engine|
       p = lib/"gz-physics-6/engine-plugins/libgz-physics-#{engine}-plugin.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
@@ -57,7 +57,6 @@ class GzPhysics6 < Formula
       assert stderr.exclude?(error_string), error_string
     end
     # build against API
-    github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include "gz/plugin/Loader.hh"
       #include "gz/physics/ConstructEmpty.hh"
