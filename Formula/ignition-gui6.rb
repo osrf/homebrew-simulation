@@ -35,9 +35,13 @@ class IgnitionGui6 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-gui-6/plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -46,6 +50,20 @@ class IgnitionGui6 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    ["Grid3D", "MinimalScene", "Publisher", "TopicViewer"].each do |plugin|
+      p = lib/"ign-gui-6/plugins/lib#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <iostream>
 
