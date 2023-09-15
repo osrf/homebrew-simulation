@@ -32,9 +32,14 @@ class IgnitionLaunch5 < Formula
   depends_on "tinyxml2"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ignition/launch5", target: lib),
+      rpath(source: lib/"ign-launch-5/plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -43,6 +48,21 @@ class IgnitionLaunch5 < Formula
   end
 
   test do
+    # test CLI executable
+    system lib/"ignition/launch5/ign-launch"
+    # test plugins in subfolders
+    ["joytotwist", "gazebo-factory", "gazebo", "gazebogui"].each do |plugin|
+      p = lib/"ign-launch-5/plugins/libignition-launch-#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
     ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
     system "ign", "launch", "--versions"
     # check for Xcode frameworks in bottle
