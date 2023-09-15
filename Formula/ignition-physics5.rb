@@ -36,9 +36,13 @@ class IgnitionPhysics5 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-physics-5/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -47,6 +51,21 @@ class IgnitionPhysics5 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    ["bullet", "dartsim", "tpe"].each do |engine|
+      p = lib/"ign-physics-5/engine-plugins/libignition-physics-#{engine}-plugin.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
+    github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include "ignition/plugin/Loader.hh"
       #include "ignition/physics/ConstructEmpty.hh"
