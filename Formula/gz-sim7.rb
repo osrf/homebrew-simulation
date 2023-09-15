@@ -46,9 +46,13 @@ class GzSim7 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-sim-7/plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -57,10 +61,24 @@ class GzSim7 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    ["altimeter", "log", "physics", "sensors"].each do |system|
+      p = lib/"gz-sim-7/plugins/libgz-sim-#{system}-system.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
     system Formula["ruby"].opt_bin/"ruby",
            Formula["gz-tools2"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <gz/sim/Entity.hh>

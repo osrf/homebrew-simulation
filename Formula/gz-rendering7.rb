@@ -27,10 +27,20 @@ class GzRendering7 < Formula
   depends_on "ogre1.9"
   depends_on "ogre2.3"
 
+  patch do
+    # use CMAKE_INSTALL_RPATH values in ogre2 library
+    url "https://github.com/gazebosim/gz-rendering/commit/65ffacb49e5c5477e2ee5241bb45fdfd2273a5ae.patch?full_index=1"
+    sha256 "ed13b1d5e74d3a4e66c33a52149eb6be581b5f97014e2745d9e18ad216913fd8"
+  end
+
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-rendering-7/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -39,6 +49,20 @@ class GzRendering7 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    ["ogre", "ogre2"].each do |engine|
+      p = lib/"gz-rendering-7/engine-plugins/libgz-rendering-#{engine}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <gz/rendering/RenderEngine.hh>
