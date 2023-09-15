@@ -4,6 +4,7 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.5.0.tar.bz2"
   sha256 "807345b1e8ca3b33678cd5424331f50d7e609be453491247c88267ec8af0adee"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
