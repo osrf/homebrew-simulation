@@ -4,15 +4,15 @@ class GzLaunch6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-6.0.0.tar.bz2"
   sha256 "e59e988c8a454cacc9f8f5727d1ab0d2c7fc8476083ec96065a0f89913957b0a"
   license "Apache-2.0"
-  revision 12
+  revision 11
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "2f96f79801cc21752c16a6df71ccfe6f996bb4c68848243dbaf309cd8e2c6056"
-    sha256 monterey: "495fbcf7ed3c849d0e2a16af7e727916ae130ec016036e6a8164b1ad40295606"
-    sha256 big_sur:  "454cb15efa59ab3a2344e90b91b7f950a7636f48db5d8951e94826a6ab545862"
+    sha256 ventura:  "d5a96d60b2b517a0f23dde7e6ac4999b989b757e40423b5dcd793c34cb7e701a"
+    sha256 monterey: "58433548d9a79aecc23936ded43294bd5daa28a4c7264e7940c2d825f4a1fd93"
+    sha256 big_sur:  "abbb98550806133ba6dc130ce896d32a7e0c2a24d05d7790f884e61810c55911"
   end
 
   depends_on "cmake" => :build
@@ -32,14 +32,9 @@ class GzLaunch6 < Formula
   depends_on "tinyxml2"
 
   def install
-    rpaths = [
-      rpath,
-      rpath(source: lib/"gz/launch6", target: lib),
-      rpath(source: lib/"gz-launch-6/plugins", target: lib),
-    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -48,21 +43,6 @@ class GzLaunch6 < Formula
   end
 
   test do
-    # test CLI executable
-    system lib/"gz/launch6/gz-launch"
-    # test plugins in subfolders
-    %w[joytotwist sim-factory sim simgui].each do |plugin|
-      p = lib/"gz-launch-6/plugins/libgz-launch-#{plugin}.dylib"
-      # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
-      args = ["--info", "--plugin"] << p
-      # print command and check return code
-      system cmd, *args
-      # check that library was loaded properly
-      _, stderr = system_command(cmd, args: args)
-      error_string = "Error while loading the library"
-      assert stderr.exclude?(error_string), error_string
-    end
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
     system "gz", "launch", "--versions"
     # check for Xcode frameworks in bottle

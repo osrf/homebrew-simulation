@@ -4,15 +4,15 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.5.0.tar.bz2"
   sha256 "e4a641bef1a747dd9a35c01beee3a1ac08f95bdaae06aa23b115e0b1a4ee42f8"
   license "Apache-2.0"
-  revision 11
+  revision 10
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "a6550306b8e8211e744fffe6a0849972637da52768f748ca94ef0260f44fd7f0"
-    sha256 monterey: "738dcd3db6ca3eaf46b42a74d8d0fd803fdf3dfdafab44bb8390d6ad2b48c520"
-    sha256 big_sur:  "cbc4fd2f193867faae7ae38bb764d2ce66e29ef49026293e68b28684ed1493e8"
+    sha256 ventura:  "3395622e43f32b5bb8de8682ad8bea440ad45ba3e20c8d7c326f74f8b832c34e"
+    sha256 monterey: "b840164058f7b1088222227820a42e72078a7e3f481ae8417bd8081d852d8029"
+    sha256 big_sur:  "7677b7a0b8828ca7f3e1de697d2fb80eb7144f10c8fcd3913774503eab86b6d1"
   end
 
   depends_on "cmake" => :build
@@ -46,13 +46,9 @@ class GzSim7 < Formula
   end
 
   def install
-    rpaths = [
-      rpath,
-      rpath(source: lib/"gz-sim-7/plugins", target: lib),
-    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -61,24 +57,10 @@ class GzSim7 < Formula
   end
 
   test do
-    # test some plugins in subfolders
-    %w[altimeter log physics sensors].each do |system|
-      p = lib/"gz-sim-7/plugins/libgz-sim-#{system}-system.dylib"
-      # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
-      args = ["--info", "--plugin"] << p
-      # print command and check return code
-      system cmd, *args
-      # check that library was loaded properly
-      _, stderr = system_command(cmd, args: args)
-      error_string = "Error while loading the library"
-      assert stderr.exclude?(error_string), error_string
-    end
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
     system Formula["ruby"].opt_bin/"ruby",
            Formula["gz-tools2"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
-    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <gz/sim/Entity.hh>
