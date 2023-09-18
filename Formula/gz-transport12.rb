@@ -4,15 +4,15 @@ class GzTransport12 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.2.0.tar.bz2"
   sha256 "731ec9f87fd815c62486ed4e2c3ecbeff5b8b4a8f09cc5e7abf4d8758cebe048"
   license "Apache-2.0"
-  revision 12
+  revision 13
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "e2277d2560c81e2478f865359b45a9e0a61c30841fc29a1540d6923270832070"
-    sha256 monterey: "4cd9f47d9db13508c172e3c8fcb9dce8f3563018db1ae862aa6be2850760e727"
-    sha256 big_sur:  "898238b0bf771ba7420f0190b4f7e615e8899a8bc6120b328d4267caee7d5d79"
+    sha256 ventura:  "3e3a928f9dd36f8c97fc7b2fff27142f5d7e1c10e9194bf747c3841955d2d99b"
+    sha256 monterey: "250cf7691f8794722b1283971af31073b7f462fcd24bcda7f65a1d7c06c460ac"
+    sha256 big_sur:  "277dcbdc9d2af2325d16dbd24917a0ea5901acb4ef3ea5ee461c3b631697369a"
   end
 
   depends_on "doxygen" => [:build, :optional]
@@ -36,9 +36,13 @@ class GzTransport12 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/transport12", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use build folder
     mkdir "build" do
@@ -48,6 +52,10 @@ class GzTransport12 < Formula
   end
 
   test do
+    # test CLI executables
+    system libexec/"gz/transport12/gz-transport-service"
+    system libexec/"gz/transport12/gz-transport-topic"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include <gz/transport.hh>
