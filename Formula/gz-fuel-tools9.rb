@@ -7,7 +7,7 @@ class GzFuelTools9 < Formula
   license "Apache-2.0"
   revision 4
 
-  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
+  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
