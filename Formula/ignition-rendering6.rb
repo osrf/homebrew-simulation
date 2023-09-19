@@ -1,17 +1,17 @@
 class IgnitionRendering6 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/gazebosim/gz-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.5.1.tar.bz2"
-  sha256 "7f38992d15e6942cb548b625545d03589482e347328c87063ec80779f9a3a6ff"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.6.1.tar.bz2"
+  sha256 "b7f3a85d51028dca06b8e4e5ab2ef61c54b2791787566e8ea002cbd3c92be80a"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "55b266320b9b8c8c97e35d50384dc008cc1484997f998e5b017b9672a622c7ed"
-    sha256 big_sur:  "26e267f4dab2f92fe903964e29a27366686fae895d55732b95c2865082907d8b"
-    sha256 catalina: "ce0bbe299a38b856a7b185f827aa2ffb8c6dcf506dbf653a9d5ebb97295d73fd"
+    sha256 ventura:  "171316235ff45dc8144a82b446065219ac7657396daafc1b65b540429d4a44f5"
+    sha256 monterey: "959b2d7750264423382ca53e53f8dda1ec6cfa5e0ad08fa7ec695259d6dd9606"
+    sha256 big_sur:  "93e0295b2f7874b2260ed0176097955f382356b3235fa9399960d81875ffdb63"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -28,7 +28,7 @@ class IgnitionRendering6 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
@@ -51,7 +51,7 @@ class IgnitionRendering6 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(ignition-rendering6 QUIET REQUIRED)
+      find_package(ignition-rendering6 REQUIRED COMPONENTS ogre ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-rendering6::ignition-rendering6)
     EOS

@@ -1,17 +1,17 @@
 class Sdformat13 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.2.0.tar.bz2"
-  sha256 "eb8faaf79ab68fca0646550146247549bae4696cff3f2a13af094bdf5ac73d0a"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.6.0.tar.bz2"
+  sha256 "5845c9c0da66bb30b209ed8421f5b4805bf6e8863fd58a790a59f856902e67f3"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "353002803af7cb59f2d0d21a90b47236093f7a93274a13d22235ffaf2c986a5c"
-    sha256 big_sur:  "b80e530e5d3d8eb876f2c955406eb370b28391cd6790e616c8467d35a6234e6f"
-    sha256 catalina: "b4a8ee501f6fd752ff67418d266967039319046061f58e5b1541b8091da13c5f"
+    sha256 ventura:  "1ccf65cf3a90b31bfe26eef6c08acae3037fde038e8da2f7d7a6a962416c5f40"
+    sha256 monterey: "79f5088682b11bb1266ab6eef2f9818862c94875ce76f28c89602722ac661054"
+    sha256 big_sur:  "20245a996496b38662582fd68d65927897c0afb0d32ab2079cce81d7dc1bdf3c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -24,13 +24,13 @@ class Sdformat13 < Formula
   depends_on "gz-tools2"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
@@ -38,7 +38,7 @@ class Sdformat13 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -85,6 +85,6 @@ class Sdformat13 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import sdformat13"
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import sdformat13"
   end
 end

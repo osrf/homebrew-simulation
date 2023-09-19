@@ -6,20 +6,22 @@ class IgnitionCitadel < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.2.tar.bz2"
   sha256 "2b99e7476093e78841c63d4ec348c6cf7c9d650a2e5787011723142c9f917659"
   license "Apache-2.0"
-  revision 4
+  revision 7
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-citadel.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "a2b790950443868760c93dfbc5a11947cb93700d17de10759ea7fb3553300c0a"
-    sha256 cellar: :any, catalina: "1e4633e16412dd6da75fc290cc6bd4c6aaba5d314e089fa0b67f245230bdd247"
+    sha256 cellar: :any, ventura:  "9d36689233cee3bb6016793002ab5fa0574a986d3787ef46c8c2d6c76d7b53a7"
+    sha256 cellar: :any, monterey: "39c496abc944d0ecf30f10489095d0beafa7cb794e4f88d2436c2c4fccd00deb"
+    sha256 cellar: :any, big_sur:  "dfc3b855fc80378130a975dc3a05783ed5efd4e1e8a89a14cbec9d970182e544"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
+
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-fuel-tools4"
@@ -36,7 +38,7 @@ class IgnitionCitadel < Formula
   depends_on "ignition-transport8"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
-  depends_on "python@3.9"
+  depends_on "python@3.11"
   depends_on "sdformat9"
 
   resource "PyYAML" do
@@ -50,7 +52,8 @@ class IgnitionCitadel < Formula
       system "make", "install"
     end
 
-    venv = virtualenv_create(libexec, Formula["python@3.9"].opt_libexec/"bin/python3")
+    # install vcstool so it can be used in the test
+    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
     end

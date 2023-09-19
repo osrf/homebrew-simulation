@@ -1,18 +1,18 @@
 class IgnitionSensors3 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.4.0.tar.bz2"
-  sha256 "0a9ad4a074ec4c52b6a3a2b3c0f5450cfb9f3d6f8252d4a3b3a00156c9427d6c"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.5.0.tar.bz2"
+  sha256 "904297a8deea7f3bff79a4a1fa24aee9c208a72013e29147c3087ca07fc41788"
   license "Apache-2.0"
-  revision 1
+  revision 10
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "b49287640d42399a17895b878399835bf4501edd9567d6923248b39bfcf77d18"
-    sha256 big_sur:  "c7a64ee809dcb4a43af6b9f7b16384e2ddf64ccc7dfdf1b5b4005ee42c24f755"
-    sha256 catalina: "7fe94be738d4dbf0681a83a1dd8064f33807c25fd163febe2c341ff0c1f80643"
+    sha256 ventura:  "4495468fa97c7aa6e38bca8ce1e431a4455a097fe8d8bb40caf14e005144c0b4"
+    sha256 monterey: "6bab9b7a7854da5dc73922f6a37356ade4c144ff2cc8f5b0d8199cd390aa9dae"
+    sha256 big_sur:  "22164c6aca5865c5d6e2db21b0bfe2d46af2527fa261175b046f774ffd765813"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -26,14 +26,13 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-msgs5"
   depends_on "ignition-rendering3"
   depends_on "ignition-transport8"
+  depends_on "protobuf"
   depends_on "sdformat9"
 
   patch do
-    # Add missing DEPENDS_ON_COMPONENTS parameters to fix ignition-gazebo3 build
-    # https://github.com/gazebosim/gz-sensors/pull/262
-    # TODO: remove with next release
-    url "https://github.com/gazebosim/gz-sensors/commit/da66843e251c6ee2e82c96dd691dc2cd0cd9d32d.patch?full_index=1"
-    sha256 "801dc8c8a906b6964d13fcfe753b843820d20508ecb1f8bbc7dc49ae18d1309c"
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-sensors/commit/e6dcb527a70f154704c0fe62e6393f471136afcb.patch?full_index=1"
+    sha256 "1e5a91f97f4f770c07fc33bae433c3dfebd590fa441f7f2f11ce750b25879971"
   end
 
   def install

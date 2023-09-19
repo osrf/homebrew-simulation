@@ -1,17 +1,18 @@
 class GzGui7 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.0.0.tar.bz2"
-  sha256 "da1b431991a7ddf803ffd454007ba2c114747882f502c2c9d1066636b1480bf4"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.2.0.tar.bz2"
+  sha256 "d44ca605165d296205995a6d5fe3c5bcc58436699fdeae455839b703430b2023"
   license "Apache-2.0"
+  revision 13
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "b4057dbf892c6e1b49a2df741f82d1d87409997c3953dc7c6ed37fbfafe51819"
-    sha256 big_sur:  "a720f9aaa07802aa930123a3aa6e9bf24b195d6644fecd4104e5d8a6f534e79d"
-    sha256 catalina: "af618c1a74b9da56dba4a10b193f95cb650e96fa1e29aec18eb50bfc9dbb72a5"
+    sha256 ventura:  "658b921f85bbd8e135ecb1e48fb9a72baf8065741bb242a7862eee0da3cb8e2c"
+    sha256 monterey: "facbe9636dc631f98b37aeefdba4ba7b3ca32821b2080517ce9e23f4b0963cb5"
+    sha256 big_sur:  "ffe297c1e835d7d1241622d3e4fbba6cf375b45fe174560a91d81f0f3302ae33"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,13 +24,24 @@ class GzGui7 < Formula
   depends_on "gz-rendering7"
   depends_on "gz-transport12"
   depends_on macos: :mojave # c++17
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
 
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-gui/commit/0992b7c9899878f49a8d597d791988bf196ede08.patch?full_index=1"
+    sha256 "45792c649f8a1fe048956f442b03987ea418525223364a12770a913ee2e8b2bf"
+  end
+
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-gui-7/plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -38,6 +50,20 @@ class GzGui7 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
+      p = lib/"gz-gui-7/plugins/lib#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <iostream>
 
@@ -83,7 +109,7 @@ class GzGui7 < Formula
       target_link_libraries(test_cmake gz-gui7::gz-gui7)
     EOS
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    system "pkg-config", "gz-gui7"
+    system "pkg-config", "gz-gui7", "--cflags"
     cflags   = `pkg-config --cflags gz-gui7`.split
     ldflags  = `pkg-config --libs gz-gui7`.split
     system ENV.cc, "test.cpp",

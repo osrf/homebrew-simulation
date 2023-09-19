@@ -15,6 +15,7 @@ class Sdformat4 < Formula
     sha256 sierra:      "d0b28be274c293fd1c5395fcae0be37f43f6c16ef129a171d39a020564e6b7f9"
   end
 
+  disable! date: "2023-02-28", because: "is past end-of-life date"
   deprecate! date: "2019-09-01", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
@@ -26,11 +27,7 @@ class Sdformat4 < Formula
   depends_on "tinyxml"
   depends_on "urdfdom" => :optional
 
-  conflicts_with "sdformat", because: "differing version of the same formula"
-  conflicts_with "sdformat3", because: "differing version of the same formula"
-  conflicts_with "sdformat5", because: "differing version of the same formula"
   conflicts_with "sdformat6", because: "differing version of the same formula"
-  conflicts_with "sdformat7", because: "differing version of the same formula"
 
   def install
     cmake_args = std_cmake_args

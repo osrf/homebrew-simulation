@@ -1,0 +1,62 @@
+class GzHarmonic < Formula
+  include Language::Python::Virtualenv
+
+  desc "Collection of gazebo simulation software"
+  homepage "https://github.com/gazebosim/gz-harmonic"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-harmonic/releases/gz-harmonic-1.0.0~pre2.tar.bz2"
+  version "1.0.0~pre2"
+  sha256 "1397b757805afcd1dc468b0ea2449288673bfe64ecf09393f948fc2cf1caa9a6"
+  license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "22aee85eabfb01f5a12ec9f5c2b0bf5c67d7451bb598fb0a43b63b24baa73f25"
+    sha256 cellar: :any, monterey: "647647ff655c30b9b5f7e83ff2d857cebe5a6ff058ea8e680a11fc3bc1d47299"
+    sha256 cellar: :any, big_sur:  "bbf7076d1eecc69cd9ce6cf0bfa06c9bfac402b8f05494d8d66c08ebe6c0a483"
+  end
+
+  depends_on "cmake" => :build
+  depends_on "python@3.11" => [:build, :test]
+
+  depends_on "gz-cmake3"
+  depends_on "gz-common5"
+  depends_on "gz-fuel-tools9"
+  depends_on "gz-gui8"
+  depends_on "gz-launch7"
+  depends_on "gz-math7"
+  depends_on "gz-msgs10"
+  depends_on "gz-physics7"
+  depends_on "gz-plugin2"
+  depends_on "gz-rendering8"
+  depends_on "gz-sensors8"
+  depends_on "gz-sim8"
+  depends_on "gz-tools2"
+  depends_on "gz-transport13"
+  depends_on "gz-utils2"
+  depends_on "pkg-config"
+  depends_on "sdformat14"
+
+  resource "PyYAML" do
+    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
+    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
+  end
+
+  def install
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make", "install"
+    end
+
+    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python")
+    %w[PyYAML vcstool].each do |pkg|
+      venv.pip_install pkg
+    end
+  end
+
+  test do
+    yaml_file = share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml"
+    system libexec/"bin/vcs", "validate", "--input", yaml_file
+  end
+end

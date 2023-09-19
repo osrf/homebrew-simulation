@@ -1,17 +1,18 @@
 class GzPlugin2 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-2.0.0.tar.bz2"
-  sha256 "53ed6739275943dfbc5390f437ea12fdbeaa6dd5ec80347f59e7b4c6f11f3131"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-2.0.1.tar.bz2"
+  sha256 "92b5c9a99b611887b40c271bf47300b4e8a5d006aa80902bd705d36f1d8508f5"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "b1f61cb72cf96edc1008a9ad8b3375440cc45a5df8c4d7cbf23584c4c9242af6"
-    sha256 cellar: :any, big_sur:  "d8411a99175713a605030f848755154ad8d3c12ad023333e44e243cf2bfa1723"
-    sha256 cellar: :any, catalina: "cbb92efd156493eeab4eac4f26f504659b1b2b73906529539acd10d70b035a1d"
+    sha256 cellar: :any, ventura:  "657a4ddc17e9b96a49b3abfc74a12e2d1cc32cb9157d1db3698f74abe3c013aa"
+    sha256 cellar: :any, monterey: "80a2063bba46c16fb1a7137176c97709503402d82bbcac6de4f2937a71bdba43"
+    sha256 cellar: :any, big_sur:  "46ef3900833388ac27a78cacf6e063807429b7600933bf8ed5f2e7c5ae4c6cec"
   end
 
   depends_on "cmake"
@@ -22,9 +23,13 @@ class GzPlugin2 < Formula
   depends_on "pkg-config"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/plugin2", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use build folder
     mkdir "build" do
@@ -34,6 +39,9 @@ class GzPlugin2 < Formula
   end
 
   test do
+    # test CLI executable
+    system libexec/"gz/plugin2/gz-plugin"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <gz/plugin/Loader.hh>
       int main() {

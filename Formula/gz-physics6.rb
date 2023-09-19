@@ -1,17 +1,18 @@
 class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.1.0.tar.bz2"
-  sha256 "04f30a98208b6941096fdb262353452e2326cee9624b63cb4c2389765881e52b"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.5.0.tar.bz2"
+  sha256 "807345b1e8ca3b33678cd5424331f50d7e609be453491247c88267ec8af0adee"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "101ef48460311088d5a0eb736a76b21325b80c8a4c7434e5fc1453dbbf2425f9"
-    sha256 cellar: :any, big_sur:  "c318c688c3cc21776f62ddd9cc2a3077c1d25056d39cbbd4fe39cedb77dd5522"
-    sha256 cellar: :any, catalina: "e3a51e3719e4c67b07fe6a5b8716aa1c5c688862f41c7e702b84f23dfca2eede"
+    sha256 ventura:  "2a2ddc047ebbb1d413ae87844572d6be59e657e76f7ef4d3ac5da66f21f9acd5"
+    sha256 monterey: "0f0aefaddd5545fcc3b7eb0f01ec278466f0d32f0ebdcea187a7967750ed26cd"
+    sha256 big_sur:  "3da98f2f48f3e0f0a94fe9c405803e1ad54419041f3fed61b3f8d46969c913fc"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -29,9 +30,13 @@ class GzPhysics6 < Formula
   depends_on "sdformat13"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-physics-6/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use build folder
     mkdir "build" do
@@ -41,6 +46,20 @@ class GzPhysics6 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    %w[bullet-featherstone bullet dartsim tpe].each do |engine|
+      p = lib/"gz-physics-6/engine-plugins/libgz-physics-#{engine}-plugin.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include "gz/plugin/Loader.hh"
       #include "gz/physics/ConstructEmpty.hh"
@@ -80,14 +99,12 @@ class GzPhysics6 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    # Disable test due to gazebosim/gz-physics#442
-    # system "./test"
+    system "./test"
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
       system "make"
-      # Disable test due to gazebosim/gz-physics#442
-      # system "./test_cmake"
+      system "./test_cmake"
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"

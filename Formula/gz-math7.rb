@@ -1,17 +1,17 @@
 class GzMath7 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.0.2.tar.bz2"
-  sha256 "007711649c5f419f2b902f32afc126d791d90dbccc8cc9a0a8ea43874fea2e6a"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.3.0.tar.bz2"
+  sha256 "cc9d677b9f231cd5efde357375c862756f68c21acfb59bfc1e4f9133cf1fccc0"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "3eee0dd0dca86b510c8133e2425ab24dd5e6e3847f303c52649cc80a2416d81e"
-    sha256 cellar: :any, big_sur:  "168bdcf7acd3bccb5380d160bcb2b87c905ba78a2afaaf00e76ad9cd7f64cfae"
-    sha256 cellar: :any, catalina: "5122a24c64b8797c61b811defc451cb8c46080555a5dc058ee3e2590e6593fde"
+    sha256 cellar: :any, ventura:  "061d0e22944431ba655a164d1375d34925f835d60672606112978d4cbcc5f606"
+    sha256 cellar: :any, monterey: "c607797c0b45ec6e649905f927ae533a5cedfc4c9b7057588c3ab3ccd7a8f211"
+    sha256 cellar: :any, big_sur:  "6e433994b71f051ba69f85c4e6e9e7424191618696429ba812e37ef21dec3a0f"
   end
 
   depends_on "cmake" => :build
@@ -20,12 +20,12 @@ class GzMath7 < Formula
   depends_on "eigen"
   depends_on "gz-cmake3"
   depends_on "gz-utils2"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "ruby"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     # Use build folder
@@ -34,7 +34,7 @@ class GzMath7 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.10/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -73,6 +73,6 @@ class GzMath7 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import gz.math7"
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.math7"
   end
 end

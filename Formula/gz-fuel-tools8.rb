@@ -1,17 +1,18 @@
 class GzFuelTools8 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-8.0.0.tar.bz2"
-  sha256 "8bc7d92e4944359fe429fdaa59819c76a6d718e58d237aa153c960768553af90"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-8.1.0.tar.bz2"
+  sha256 "18a25e2bc31e61539c890bdd377068b5192646a6647267e76d9b0bb0d0349545"
   license "Apache-2.0"
+  revision 6
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "53d3eb337bb9259fcc586fc74c90ce6aa89174ba8e9fd9aeada4f40c7a8f7f83"
-    sha256 cellar: :any, big_sur:  "939d83b11996e22338befb47031f43acdc70c94276abcd69c7b00ef690dd2a03"
-    sha256 cellar: :any, catalina: "6a7049eae76bd6da7a439fb7cd58516e2700e10d63c8945fa3b4f6129dccd01d"
+    sha256 cellar: :any, ventura:  "fadd85fe530959efd6661ee2cd196f56b772c9c2ee89d91ee18f09e17021ac7f"
+    sha256 cellar: :any, monterey: "6a58175208d93b4b8964b7464634f87045f4fbaab186a4338e9ce2d352942686"
+    sha256 cellar: :any, big_sur:  "c3e1cd33ed2a7c59036b2c90e017fffc74c368ba0e55bfbd475d31836623411f"
   end
 
   depends_on "cmake"
@@ -23,10 +24,11 @@ class GzFuelTools8 < Formula
   depends_on "libzip"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do

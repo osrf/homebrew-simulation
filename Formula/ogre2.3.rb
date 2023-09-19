@@ -4,18 +4,19 @@ class Ogre23 < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
   license "MIT"
-  revision 1
+  revision 2
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "c7bc82c7ffed7af79d74e7a9fc84c7c174869bbd797bfb8f818b55a05b36af86"
-    sha256 cellar: :any, big_sur:  "d1a6802fc6866492073fa56800424c01e232820f3ab7b00031a1ec00115a73f4"
-    sha256 cellar: :any, catalina: "51d97c4d9a057983863425cce7df566fd2665ef81aa1bf7ac4600ecacd1c0252"
+    sha256 cellar: :any, ventura:  "a99ca4c5adc6c3455d9df29aa00c944f3dddb2ff64c176cb37efc759b8bc1498"
+    sha256 cellar: :any, monterey: "58e4f7a6d4e1ae1a70b2f449801b4335deb378dc982f38f2bc3cfc6393a5e0b0"
+    sha256 cellar: :any, big_sur:  "2cd52cc99ea96660c7a83e2c5458c900f0abd4af3fdd7b69117ad87b407d0a2a"
   end
 
   depends_on "cmake" => :build
+  depends_on "gz-plugin2" => :test
   depends_on "pkg-config" => :test
   depends_on "doxygen"
   depends_on "freeimage"
@@ -26,10 +27,16 @@ class Ogre23 < Formula
   depends_on "tbb"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"OGRE-2.3", target: lib),
+      rpath(source: lib/"OGRE-2.3/OGRE", target: lib),
+    ]
     cmake_args = [
       "-DCMAKE_CXX_STANDARD=11",
       "-DCMAKE_CXX_STANDARD_REQUIRED:BOOL=ON",
       "-DCMAKE_CXX_EXTENSIONS:BOOL=ON",
+      "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
       "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=TRUE",
       "-DOGRE_BUILD_RENDERSYSTEM_METAL:BOOL=TRUE",
       "-DOGRE_BUILD_COMPONENT_HLMS:BOOL=TRUE",
@@ -59,7 +66,7 @@ class Ogre23 < Formula
     rmdir prefix/"CMake"
 
     # Support side-by-side OGRE installs
-    # Rename executables to avoid conflicts with ogre2.1
+    # Rename executables to avoid conflicts with ogre2.1 and ogre2.2
     Dir[bin/"*"].each do |exe|
       mv exe, "#{exe}-2.3"
     end
@@ -78,7 +85,7 @@ class Ogre23 < Formula
       s.sub! "Name: OGRE", "Name: OGRE-2.3"
       s.sub!(/^includedir=.*$/, "includedir=${prefix}/include/OGRE-2.3")
     end
-    inreplace (lib/"pkgconfig/OGRE-2.3.pc"), " -I${includedir}\/OGRE", ""
+    inreplace (lib/"pkgconfig/OGRE-2.3.pc"), " -I${includedir}/OGRE", ""
     inreplace (lib/"pkgconfig/OGRE-2.3-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
     inreplace (lib/"pkgconfig/OGRE-2.3-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 
@@ -96,6 +103,20 @@ class Ogre23 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    ["libOgreMain", "libOgreOverlay", "libOgrePlanarReflections", "OGRE/RenderSystem_Metal"].each do |plugin|
+      p = lib/"OGRE-2.3/#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <Ogre.h>
       int main()

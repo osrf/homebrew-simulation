@@ -1,17 +1,17 @@
 class GzCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.2.2.tar.bz2"
-  sha256 "3a720118594ec2324cc2265fcf46b1fb8f5c1c687eacfa95458f544d9217a126"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.4.1.tar.bz2"
+  sha256 "2a50d70c33c1e845aee2035a550430fb4668e6f4c09446a3492145b22ddb1347"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "490f707a7c02c5f8d2d776b8c8dedd72f9bf1a8decdcd935cb7095da0e017cdc"
-    sha256 cellar: :any, big_sur:  "e00b8e3514079de6fe6d50b2c65311250dc950e04f34e85492c77d433b037986"
-    sha256 cellar: :any, catalina: "ee1394a7c1099061212a8c3486dcb52baf2e24e22dadba603c4ce154d4098515"
+    sha256 cellar: :any, ventura:  "146085f4a97cf0307b0fd769223cb1eb54785265a8d6c5740a4df467bae336de"
+    sha256 cellar: :any, monterey: "71402f4723db3ac15d8c56d90378dc947f54fe512c36fe2beb1ad165173da8ae"
+    sha256 cellar: :any, big_sur:  "78a039d38e2e3e9cb8bd0c42323d3112500b09767c6e9a28b16d73bbc1032209"
   end
 
   depends_on "assimp"
@@ -30,7 +30,7 @@ class GzCommon5 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     # Use build folder

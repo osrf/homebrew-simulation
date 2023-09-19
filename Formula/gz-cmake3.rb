@@ -1,17 +1,17 @@
 class GzCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.0.0.tar.bz2"
-  sha256 "234d96f47391659141e633e1aa01912769639a6110a7c52caa90f8f26117db69"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.4.0.tar.bz2"
+  sha256 "a1bc2575e41bc2480528290365d769307feb76508bb84a2c3201e3c0a01918b2"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, monterey: "ba17b1572f2b1bb279136895016acc93ce6bd44aebadeacdc0d35562f41b60cb"
-    sha256 cellar: :any_skip_relocation, big_sur:  "89667b8ceaf98f78f8dd450d49a81b34778db0d90f7f63fadc5ac9f7a0dd4d1b"
-    sha256 cellar: :any_skip_relocation, catalina: "a30ca7a951fc0e16caa6ce493e5d18ba53e1aed2e14966663f364d4fccd21949"
+    sha256 cellar: :any_skip_relocation, ventura:  "a3504208c227a394388e387a4357470fe6a4d69417c604384dfad852bb58411f"
+    sha256 cellar: :any_skip_relocation, monterey: "adbbbceb7ab6600b46ddb1d9c15d54a735c65ae3a6531789d90c972302dbf344"
+    sha256 cellar: :any_skip_relocation, big_sur:  "67d08d44776e17e7f227c8463b5b6a652711766012307ea21ec9da23968e3697"
   end
 
   depends_on "cmake"
@@ -19,7 +19,7 @@ class GzCmake3 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
 
     # Use build folder
     mkdir "build" do

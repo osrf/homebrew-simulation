@@ -1,14 +1,18 @@
 class IgnitionPhysics5 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.2.0.tar.bz2"
-  sha256 "7343caec347c00794c0a6066b99728c77315da6750fa899e6ff06d3bd0a02cd3"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.3.2.tar.bz2"
+  sha256 "4262512fbb6952712234c5cbeed69cdabca338931bb6c587a1ef7d487a5f262b"
   license "Apache-2.0"
+  revision 1
+
+  head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "8e32bff557518e1edd2367779559902e1e62908461a3504c23ee884f24756422"
-    sha256 cellar: :any, catalina: "2ff067ca255df12762264eea4c6eacaa8311ccc56a82c7fcb567e3113c824a84"
+    sha256 cellar: :any, ventura:  "3493a87d1120ffbf9214263f3bf2db615f932b72a75984d2d95011860e81cb8d"
+    sha256 cellar: :any, monterey: "58beb1a2a04067bd51db1f412ca0e02360ad7f1ed737aab980d5441f2c0b9db1"
+    sha256 cellar: :any, big_sur:  "c9b119681bdf174676192cfdc86a7bc628f3a1b55e97546ed4c58d6a1c2048b3"
   end
 
   depends_on "cmake" => :build
@@ -25,12 +29,21 @@ class IgnitionPhysics5 < Formula
   depends_on "pkg-config"
   depends_on "sdformat12"
 
+  patch do
+    # Fix for unregistering dartsim collision detector
+    url "https://github.com/gazebosim/gz-physics/commit/2c238fe87b7c5ebd3d1ba37784db39ce93a6f143.patch?full_index=1"
+    sha256 "396557d48ae665c9a99ea0d9f60308a9ebb08198098df88a7f8497619ffb15d2"
+  end
+
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
@@ -64,7 +77,8 @@ class IgnitionPhysics5 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test"
+    # Disable test due to gazebosim/gz-physics#442
+    # system "./test"
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode

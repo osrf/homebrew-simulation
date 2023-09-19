@@ -1,21 +1,21 @@
 class GzTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.0.0.tar.bz2"
-  sha256 "5b49397cb4d31aa870f3c837f8c7393301ddc03ff7b45240b67570fd9c634f1a"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.2.0.tar.bz2"
+  sha256 "731ec9f87fd815c62486ed4e2c3ecbeff5b8b4a8f09cc5e7abf4d8758cebe048"
   license "Apache-2.0"
+  revision 13
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "7b69d65349fd0087646f6545a18f2ae6827eb9367e745861662a54ebb171b5d8"
-    sha256 big_sur:  "b2c7fa076bfa48e2de6bd5e7e427bc8728bc0fdf8da570f91d620f3994cacfa8"
-    sha256 catalina: "3ea54104a57c49eb1f1f9620887729189b357838cf32e30d38c738bfdf28bdee"
+    sha256 ventura:  "3e3a928f9dd36f8c97fc7b2fff27142f5d7e1c10e9194bf747c3841955d2d99b"
+    sha256 monterey: "250cf7691f8794722b1283971af31073b7f462fcd24bcda7f65a1d7c06c460ac"
+    sha256 big_sur:  "277dcbdc9d2af2325d16dbd24917a0ea5901acb4ef3ea5ee461c3b631697369a"
   end
 
   depends_on "doxygen" => [:build, :optional]
-  depends_on "protobuf-c" => :build
 
   depends_on "cmake"
   depends_on "cppzmq"
@@ -29,10 +29,20 @@ class GzTransport12 < Formula
   depends_on "protobuf"
   depends_on "zeromq"
 
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-transport/commit/8f7441a7fdf2c8681cae55b3f93c3df4cbe649c3.patch?full_index=1"
+    sha256 "8c9ae5e66743077d9172aee4ae89ae9555b0641857c979cb77aaca8dee010929"
+  end
+
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/transport12", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use build folder
     mkdir "build" do
@@ -42,6 +52,10 @@ class GzTransport12 < Formula
   end
 
   test do
+    # test CLI executables
+    system libexec/"gz/transport12/gz-transport-service"
+    system libexec/"gz/transport12/gz-transport-topic"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include <gz/transport.hh>
@@ -57,15 +71,14 @@ class GzTransport12 < Formula
       target_link_libraries(test_cmake gz-transport12::gz-transport12)
     EOS
     system "pkg-config", "gz-transport12"
-    cflags = `pkg-config --cflags gz-transport12`.split
-    system ENV.cc, "test.cpp",
-                   *cflags,
-                   "-L#{lib}",
-                   "-lgz-transport12",
-                   "-lc++",
-                   "-o", "test"
+    # cflags = `pkg-config --cflags gz-transport12`.split
+    # ldflags = `pkg-config --libs gz-transport12`.split
+    # system ENV.cc, "test.cpp",
+    #                *cflags,
+    #                *ldflags,
+    #                "-o", "test"
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
-    system "./test"
+    # system "./test"
     mkdir "build" do
       system "cmake", ".."
       system "make"

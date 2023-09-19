@@ -1,15 +1,18 @@
 class GzSim7 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.0.0.tar.bz2"
-  sha256 "6d7352328e28c5dad288f87de55cc28fde7e973c3d817f376f47f1d439957549"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.5.0.tar.bz2"
+  sha256 "e4a641bef1a747dd9a35c01beee3a1ac08f95bdaae06aa23b115e0b1a4ee42f8"
   license "Apache-2.0"
-  revision 1
+  revision 11
+
+  head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "e2db53342e720365f5f2b4081407bcf7eaa35b892a651dbbe485ac130409a92e"
-    sha256 catalina: "d28e71f5274eddf96991402a076c2bacd3b17c6870b3543940b52d4dd2d744ac"
+    sha256 ventura:  "13bfba603836f7bea8ffdd0b8783b2792bd74274ec156ab3604db0afaf0a0d37"
+    sha256 monterey: "c0a30d465e613896b1bb2dc300790d121cb6b4da568cc013b0430d4f4c549712"
+    sha256 big_sur:  "789e4a2d6016a0c4773d9cd571adf92182dc45875063aaf76a083047e0cf0d55"
   end
 
   depends_on "cmake" => :build
@@ -32,13 +35,26 @@ class GzSim7 < Formula
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
   depends_on "ruby"
   depends_on "sdformat13"
 
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-sim/commit/001dd9b829eb8e8b4465d87c6c70ccf4ee2e6b6a.patch?full_index=1"
+    sha256 "c3bdd4ceb64cfa6735be87dd6d58e82fdfe9c34499a5d795f1058fe42d6d9360"
+  end
+
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-sim-7/plugins", target: lib),
+      rpath(source: lib/"gz-sim-7/plugins/gui", target: lib),
+      rpath(source: lib/"gz-sim-7/plugins/gui/GzSim", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -47,10 +63,29 @@ class GzSim7 < Formula
   end
 
   test do
-    ENV["IGN_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["ruby"].opt_bin/"ruby",
-           Formula["gz-tools2"].opt_bin/"gz",
+    # test some plugins in subfolders
+    plugin_info = lambda { |p|
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    }
+    %w[altimeter log physics sensors].each do |system|
+      plugin_info.call lib/"gz-sim-7/plugins/libgz-sim-#{system}-system.dylib"
+    end
+    ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
+      plugin_info.call lib/"gz-sim-7/plugins/gui/#{p}.dylib"
+    end
+    # test gz sim CLI tool
+    ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
+    system Formula["gz-tools2"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <gz/sim/Entity.hh>
