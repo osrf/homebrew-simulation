@@ -6,6 +6,8 @@ class GzPhysics6 < Formula
   license "Apache-2.0"
   revision 1
 
+  head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 ventura:  "2a2ddc047ebbb1d413ae87844572d6be59e657e76f7ef4d3ac5da66f21f9acd5"
@@ -13,7 +15,7 @@ class GzPhysics6 < Formula
     sha256 big_sur:  "3da98f2f48f3e0f0a94fe9c405803e1ad54419041f3fed61b3f8d46969c913fc"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
 
   depends_on "bullet"
   depends_on "dartsim"
@@ -36,6 +38,7 @@ class GzPhysics6 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
+    # Use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
@@ -74,6 +77,15 @@ class GzPhysics6 < Formula
         return engine == nullptr;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(gz-physics6 REQUIRED)
+      find_package(gz-plugin2 REQUIRED COMPONENTS all)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake
+          gz-physics6::gz-physics6
+          gz-plugin2::loader)
+    EOS
     system "pkg-config", "gz-physics6"
     cflags   = `pkg-config --cflags gz-physics6`.split
     ldflags  = `pkg-config --libs gz-physics6`.split
@@ -87,8 +99,13 @@ class GzPhysics6 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    # Disable test due to gazebosim/gz-physics#442
-    # system "./test"
+    system "./test"
+    # test building with cmake
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
