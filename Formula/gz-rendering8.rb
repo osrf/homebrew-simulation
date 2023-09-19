@@ -5,14 +5,15 @@ class GzRendering8 < Formula
   version "8.0.0~pre2"
   sha256 "2e828c5c0754d082d97a01b5ef6f47d3baae2749f7c638b18259c4673c11be7b"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "81f3c692236e1fc13e4c07879f9b32dd2c0435f098d4113e1a0ffd384bc45dfb"
-    sha256 monterey: "ccfd3d17b447223460edf896977317745a9a6babd6fcfd167ccb5d3c7dc6e92a"
-    sha256 big_sur:  "c36c019be012b3553226db1f8ba5aae05a35559ad66a0e45cef4c43742ea2f62"
+    sha256 ventura:  "2b29c8efc349b06ebe235a982c44ec4c8ecf5199e6aee6d115635909585bba77"
+    sha256 monterey: "9bbee41f78364d5e95eb98e762710bf4ae44dc1263f7a82394dd8253bcbe98f3"
+    sha256 big_sur:  "b24c5455c41e0b240fb1674660558b1883ca2790ef10dddd6a6138b5fa89d86c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -28,10 +29,20 @@ class GzRendering8 < Formula
   depends_on "ogre1.9"
   depends_on "ogre2.3"
 
+  patch do
+    # use CMAKE_INSTALL_RPATH values in ogre2 library
+    url "https://github.com/gazebosim/gz-rendering/commit/65ffacb49e5c5477e2ee5241bb45fdfd2273a5ae.patch?full_index=1"
+    sha256 "ed13b1d5e74d3a4e66c33a52149eb6be581b5f97014e2745d9e18ad216913fd8"
+  end
+
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-rendering-8/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -40,6 +51,20 @@ class GzRendering8 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    ["ogre", "ogre2"].each do |engine|
+      p = lib/"gz-rendering-8/engine-plugins/libgz-rendering-#{engine}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <gz/rendering/RenderEngine.hh>

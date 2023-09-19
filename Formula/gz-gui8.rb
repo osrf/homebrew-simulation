@@ -5,15 +5,15 @@ class GzGui8 < Formula
   version "8.0.0~pre1"
   sha256 "30af47eb3fb9e83406a5d5dd921c9e6798a1b7abe636ccc364233f68b54187cb"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "337c2aa55a231cca0f2aea892283dc0bfd2ce2fdaca7dc85a4728a308a276c79"
-    sha256 monterey: "059952e15f8b0b6a9eaec93380bfe35852b21328034aa67365fe57dee2024b17"
-    sha256 big_sur:  "db5696cb83a5f41bace4fd7fdd66c3a253736327cd7c0e1bbcc5dfb2ac225c42"
+    sha256 ventura:  "8abb2c13067e7441c7728bdd4247cab91e1afccd14fe7f1b73e4f2400bb77273"
+    sha256 monterey: "d9cd1ce8437bf04a7f8d55fc46900aba18288f46abea6a95ccad5c956347fc60"
+    sha256 big_sur:  "eb1051d2a68cdafc3443459ef6bf8d718a92a2471fe905dde4e8591858eb786a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -30,9 +30,13 @@ class GzGui8 < Formula
   depends_on "tinyxml2"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-gui-8/plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -41,6 +45,20 @@ class GzGui8 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
+      p = lib/"gz-gui-8/plugins/lib#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <iostream>
 

@@ -5,15 +5,15 @@ class GzSim8 < Formula
   version "8.0.0~pre1"
   sha256 "acf6d851cb8570bb978b3a56a4c5d0c11f6f75056b163311aa6dfc7fd9833ff4"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "51f5725b5c010dac2210fbfc9506d0aaa989b239f7ef2190d8d31d6c18f9b142"
-    sha256 monterey: "bd93c768dd24d6b41d34a4962ade40ecbbb10d320a2e949b9dbec53e3b9f60a0"
-    sha256 big_sur:  "1e8dba5053ea9174dbf644f718758c2237c7fc10ef8be69f807b1fb554cd750e"
+    sha256 ventura:  "7630d00cd473903e3aaba1ba472aea9d7f6adb49b5deedafd99d09d1058c6aa2"
+    sha256 monterey: "5d81376fb61007e273b247916b2e2f73ffb9b3ae9121badff2e6bc7822e5cf5d"
+    sha256 big_sur:  "9b6d8b36f6230dbba5eb54f6ef17bbb6b8e0e7c4a0e297c3e1315c845d409ad5"
   end
 
   depends_on "cmake" => :build
@@ -41,9 +41,15 @@ class GzSim8 < Formula
   depends_on "sdformat14"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-sim-8/plugins", target: lib),
+      rpath(source: lib/"gz-sim-8/plugins/gui", target: lib),
+      rpath(source: lib/"gz-sim-8/plugins/gui/GzSim", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -52,10 +58,29 @@ class GzSim8 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    plugin_info = lambda { |p|
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    }
+    %w[altimeter log physics sensors].each do |system|
+      plugin_info.call lib/"gz-sim-8/plugins/libgz-sim-#{system}-system.dylib"
+    end
+    ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
+      plugin_info.call lib/"gz-sim-8/plugins/gui/#{p}.dylib"
+    end
+    # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["ruby"].opt_bin/"ruby",
-           Formula["gz-tools2"].opt_bin/"gz",
+    system Formula["gz-tools2"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <gz/sim/Entity.hh>
