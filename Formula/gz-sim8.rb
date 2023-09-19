@@ -44,6 +44,8 @@ class GzSim8 < Formula
     rpaths = [
       rpath,
       rpath(source: lib/"gz-sim-8/plugins", target: lib),
+      rpath(source: lib/"gz-sim-8/plugins/gui", target: lib),
+      rpath(source: lib/"gz-sim-8/plugins/gui/GzSim", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -57,8 +59,7 @@ class GzSim8 < Formula
 
   test do
     # test some plugins in subfolders
-    ["altimeter", "log", "physics", "sensors"].each do |system|
-      p = lib/"gz-sim-8/plugins/libgz-sim-#{system}-system.dylib"
+    plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
@@ -68,10 +69,16 @@ class GzSim8 < Formula
       _, stderr = system_command(cmd, args: args)
       error_string = "Error while loading the library"
       assert stderr.exclude?(error_string), error_string
+    }
+    %w[altimeter log physics sensors].each do |system|
+      plugin_info.call lib/"gz-sim-8/plugins/libgz-sim-#{system}-system.dylib"
     end
+    ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
+      plugin_info.call lib/"gz-sim-8/plugins/gui/#{p}.dylib"
+    end
+    # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["ruby"].opt_bin/"ruby",
-           Formula["gz-tools2"].opt_bin/"gz",
+    system Formula["gz-tools2"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS
