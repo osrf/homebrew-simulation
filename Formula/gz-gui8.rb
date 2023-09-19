@@ -46,7 +46,7 @@ class GzGui8 < Formula
 
   test do
     # test some plugins in subfolders
-    ["Grid3D", "MinimalScene", "Publisher", "TopicViewer"].each do |plugin|
+    %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-8/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"

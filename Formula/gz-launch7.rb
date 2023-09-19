@@ -52,7 +52,7 @@ class GzLaunch7 < Formula
     # test CLI executable
     system lib/"gz/launch7/gz-launch"
     # test plugins in subfolders
-    ["joytotwist", "sim-factory", "sim", "simgui"].each do |plugin|
+    %w[joytotwist sim-factory sim simgui].each do |plugin|
       p = lib/"gz-launch-7/plugins/libgz-launch-#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
