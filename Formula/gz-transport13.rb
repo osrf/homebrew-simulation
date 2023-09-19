@@ -33,9 +33,13 @@ class GzTransport13 < Formula
   depends_on "zeromq"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/transport13", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use build folder
     mkdir "build" do
@@ -48,6 +52,10 @@ class GzTransport13 < Formula
   end
 
   test do
+    # test CLI executables
+    system libexec/"gz/transport13/gz-transport-service"
+    system libexec/"gz/transport13/gz-transport-topic"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include <gz/transport.hh>

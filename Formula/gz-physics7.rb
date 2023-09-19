@@ -30,14 +30,35 @@ class GzPhysics7 < Formula
   depends_on "sdformat14"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"gz-physics-7/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
+    # test plugins in subfolders
+    %w[bullet-featherstone bullet dartsim tpe].each do |engine|
+      p = lib/"gz-physics-7/engine-plugins/libgz-physics-#{engine}-plugin.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include "gz/plugin/Loader.hh"
       #include "gz/physics/ConstructEmpty.hh"
