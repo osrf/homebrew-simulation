@@ -7,7 +7,7 @@ class GzSensors8 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
+  head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
