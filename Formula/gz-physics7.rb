@@ -6,6 +6,8 @@ class GzPhysics7 < Formula
   sha256 "0b22a00e83959ca63ae4c4321ef5e1a6ca0ca95d9ba099d9623d803ee3afd5b9"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics7"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 ventura:  "138a13d619aa00fce5ab113bc85f2ee8c4c48652618645543683e3b8385ad855"
@@ -13,7 +15,7 @@ class GzPhysics7 < Formula
     sha256 big_sur:  "265a4de73a656256c5aecb1a0f63579fa9515d9f260a3688eed22240f1b4fa30"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
 
   depends_on "bullet"
   depends_on "dartsim"
@@ -75,6 +77,15 @@ class GzPhysics7 < Formula
         return engine == nullptr;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(gz-physics7 REQUIRED)
+      find_package(gz-plugin2 REQUIRED COMPONENTS all)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake
+          gz-physics7::gz-physics7
+          gz-plugin2::loader)
+    EOS
     system "pkg-config", "gz-physics7"
     cflags   = `pkg-config --cflags gz-physics7`.split
     ldflags  = `pkg-config --libs gz-physics7`.split
@@ -88,8 +99,13 @@ class GzPhysics7 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    # Disable test due to gazebosim/gz-physics#442
-    # system "./test"
+    system "./test"
+    # test building with cmake
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
