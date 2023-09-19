@@ -5,6 +5,7 @@ class GzPhysics7 < Formula
   version "7.0.0~pre2"
   sha256 "0b22a00e83959ca63ae4c4321ef5e1a6ca0ca95d9ba099d9623d803ee3afd5b9"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics7"
 
