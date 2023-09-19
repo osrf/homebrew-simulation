@@ -7,7 +7,7 @@ class GzLaunch7 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/gazebosim/gz-launch.git", branch: "main"
+  head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

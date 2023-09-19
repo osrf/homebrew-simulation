@@ -7,6 +7,8 @@ class GzMsgs10 < Formula
   license "Apache-2.0"
   revision 2
 
+  head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 ventura:  "a9a96caa802ef2f1d934787647b0e57f3fbe93fcc3f7895c95fe2828d5f556d0"

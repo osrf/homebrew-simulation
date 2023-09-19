@@ -4,15 +4,15 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.5.0.tar.bz2"
   sha256 "e4a641bef1a747dd9a35c01beee3a1ac08f95bdaae06aa23b115e0b1a4ee42f8"
   license "Apache-2.0"
-  revision 10
+  revision 11
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "3395622e43f32b5bb8de8682ad8bea440ad45ba3e20c8d7c326f74f8b832c34e"
-    sha256 monterey: "b840164058f7b1088222227820a42e72078a7e3f481ae8417bd8081d852d8029"
-    sha256 big_sur:  "7677b7a0b8828ca7f3e1de697d2fb80eb7144f10c8fcd3913774503eab86b6d1"
+    sha256 ventura:  "13bfba603836f7bea8ffdd0b8783b2792bd74274ec156ab3604db0afaf0a0d37"
+    sha256 monterey: "c0a30d465e613896b1bb2dc300790d121cb6b4da568cc013b0430d4f4c549712"
+    sha256 big_sur:  "789e4a2d6016a0c4773d9cd571adf92182dc45875063aaf76a083047e0cf0d55"
   end
 
   depends_on "cmake" => :build
@@ -49,6 +49,8 @@ class GzSim7 < Formula
     rpaths = [
       rpath,
       rpath(source: lib/"gz-sim-7/plugins", target: lib),
+      rpath(source: lib/"gz-sim-7/plugins/gui", target: lib),
+      rpath(source: lib/"gz-sim-7/plugins/gui/GzSim", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -62,8 +64,7 @@ class GzSim7 < Formula
 
   test do
     # test some plugins in subfolders
-    ["altimeter", "log", "physics", "sensors"].each do |system|
-      p = lib/"gz-sim-7/plugins/libgz-sim-#{system}-system.dylib"
+    plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
@@ -73,10 +74,16 @@ class GzSim7 < Formula
       _, stderr = system_command(cmd, args: args)
       error_string = "Error while loading the library"
       assert stderr.exclude?(error_string), error_string
+    }
+    %w[altimeter log physics sensors].each do |system|
+      plugin_info.call lib/"gz-sim-7/plugins/libgz-sim-#{system}-system.dylib"
     end
+    ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
+      plugin_info.call lib/"gz-sim-7/plugins/gui/#{p}.dylib"
+    end
+    # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["ruby"].opt_bin/"ruby",
-           Formula["gz-tools2"].opt_bin/"gz",
+    system Formula["gz-tools2"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS

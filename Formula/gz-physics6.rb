@@ -4,12 +4,13 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.5.0.tar.bz2"
   sha256 "807345b1e8ca3b33678cd5424331f50d7e609be453491247c88267ec8af0adee"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "11339ffc950754980e92302f2721784a7ad1d1cc76869ea13d1da61bc6fbc47f"
-    sha256 monterey: "6981b3711f914e88cdbf86464559adb0d5d146b4e3161385ced44789bb4447d5"
-    sha256 big_sur:  "fe19abc81ae3e805ce5fe4ff90fc071a24b11c1828f5b4acd5605821740f6df9"
+    sha256 ventura:  "2a2ddc047ebbb1d413ae87844572d6be59e657e76f7ef4d3ac5da66f21f9acd5"
+    sha256 monterey: "0f0aefaddd5545fcc3b7eb0f01ec278466f0d32f0ebdcea187a7967750ed26cd"
+    sha256 big_sur:  "3da98f2f48f3e0f0a94fe9c405803e1ad54419041f3fed61b3f8d46969c913fc"
   end
 
   depends_on "cmake" => :build
@@ -43,7 +44,7 @@ class GzPhysics6 < Formula
 
   test do
     # test plugins in subfolders
-    ["bullet-featherstone", "bullet", "dartsim", "tpe"].each do |engine|
+    %w[bullet-featherstone bullet dartsim tpe].each do |engine|
       p = lib/"gz-physics-6/engine-plugins/libgz-physics-#{engine}-plugin.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
@@ -56,7 +57,6 @@ class GzPhysics6 < Formula
       assert stderr.exclude?(error_string), error_string
     end
     # build against API
-    github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include "gz/plugin/Loader.hh"
       #include "gz/physics/ConstructEmpty.hh"

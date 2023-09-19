@@ -7,7 +7,7 @@ class GzTransport13 < Formula
   license "Apache-2.0"
   revision 4
 
-  head "https://github.com/gazebosim/gz-transport.git", branch: "main"
+  head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

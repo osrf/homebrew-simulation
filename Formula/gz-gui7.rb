@@ -4,15 +4,15 @@ class GzGui7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.2.0.tar.bz2"
   sha256 "d44ca605165d296205995a6d5fe3c5bcc58436699fdeae455839b703430b2023"
   license "Apache-2.0"
-  revision 12
+  revision 13
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "e167b99208d779c9cc114e24b6274141b59bd77a08cd17f6e297484729203659"
-    sha256 monterey: "212ba21ede9a5bfed23ec8eb7909da1bd673a715bdd77716b0f17a9554cb5493"
-    sha256 big_sur:  "6cbc1332d02e2d6ba7bb9e60a20eee3eb691bf974ab2488e0f80b6508084ff03"
+    sha256 ventura:  "658b921f85bbd8e135ecb1e48fb9a72baf8065741bb242a7862eee0da3cb8e2c"
+    sha256 monterey: "facbe9636dc631f98b37aeefdba4ba7b3ca32821b2080517ce9e23f4b0963cb5"
+    sha256 big_sur:  "ffe297c1e835d7d1241622d3e4fbba6cf375b45fe174560a91d81f0f3302ae33"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -51,7 +51,7 @@ class GzGui7 < Formula
 
   test do
     # test some plugins in subfolders
-    ["Grid3D", "MinimalScene", "Publisher", "TopicViewer"].each do |plugin|
+    %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-7/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
