@@ -17,6 +17,9 @@ class IgnitionGui6 < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
+
+  depends_on "gz-plugin2" => :test
+
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
   depends_on "ignition-msgs8"
@@ -40,7 +43,7 @@ class IgnitionGui6 < Formula
       rpath(source: lib/"ign-gui-6/plugins", target: lib),
     ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
@@ -51,7 +54,7 @@ class IgnitionGui6 < Formula
 
   test do
     # test some plugins in subfolders
-    ["Grid3D", "MinimalScene", "Publisher", "TopicViewer"].each do |plugin|
+    %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"ign-gui-6/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"

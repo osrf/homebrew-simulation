@@ -18,6 +18,8 @@ class IgnitionLaunch5 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "gz-plugin2" => :test
+
   depends_on "ffmpeg"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
@@ -51,7 +53,7 @@ class IgnitionLaunch5 < Formula
     # test CLI executable
     system lib/"ignition/launch5/ign-launch"
     # test plugins in subfolders
-    ["joytotwist", "gazebo-factory", "gazebo", "gazebogui"].each do |plugin|
+    %w[joytotwist gazebo-factory gazebo gazebogui].each do |plugin|
       p = lib/"ign-launch-5/plugins/libignition-launch-#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
