@@ -10,9 +10,9 @@ class IgnitionLaunch5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "03009f4bbecb8ca07df777c329fa4f1fad915ec27f28df82698941641d4a81ad"
-    sha256 monterey: "3579468be3c929957bd0b250a490e5eaebb9780ada8d20e90943c29759d1caa7"
-    sha256 big_sur:  "6b72248e6f4e0d8a7400a7455d16a09bf9eb3a8b9d38f0a2a32f0a4f40df9313"
+    sha256 ventura:  "35834d227840da92b6c84ebb125a5b8c73743c6ad629db99e32e45e1d147451e"
+    sha256 monterey: "b7996798a122b9431d6689ed3e4c6ecf8d56d11f136ab007598625e304725d3b"
+    sha256 big_sur:  "6e918d27795a6b33ba9b5035bf1c5393b722c7606820774ed4f0e8b7f6de1069"
   end
 
   depends_on "cmake" => :build
