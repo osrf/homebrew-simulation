@@ -1,14 +1,17 @@
 class IgnitionRendering6 < Formula
   desc "Rendering library for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.3.1.tar.bz2"
-  sha256 "41a8a78659ba45b0fdd52d5e0b4703e5b8b7f88aff5b368952afe52e1db8d9b8"
+  homepage "https://github.com/gazebosim/gz-rendering"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering6-6.6.1.tar.bz2"
+  sha256 "b7f3a85d51028dca06b8e4e5ab2ef61c54b2791787566e8ea002cbd3c92be80a"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "0a92b064fe02137818b6b68dfccb7b4cd8d7e37c0e0fb33d1e5bd78b3aecac75"
-    sha256 catalina: "7f6fceb279171e41d05e6ffed03493b608b1e03e8d0cade4d73a63251d9c1a15"
+    sha256 ventura:  "171316235ff45dc8144a82b446065219ac7657396daafc1b65b540429d4a44f5"
+    sha256 monterey: "959b2d7750264423382ca53e53f8dda1ec6cfa5e0ad08fa7ec695259d6dd9606"
+    sha256 big_sur:  "93e0295b2f7874b2260ed0176097955f382356b3235fa9399960d81875ffdb63"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -25,10 +28,13 @@ class IgnitionRendering6 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
@@ -45,7 +51,7 @@ class IgnitionRendering6 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-      find_package(ignition-rendering6 QUIET REQUIRED)
+      find_package(ignition-rendering6 REQUIRED COMPONENTS ogre ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-rendering6::ignition-rendering6)
     EOS

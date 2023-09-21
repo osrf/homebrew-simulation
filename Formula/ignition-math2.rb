@@ -5,7 +5,7 @@ class IgnitionMath2 < Formula
   sha256 "4c007af9efe42908a240895b2a9bcb5c4e570ac0e4ed152c4edd724f86171931"
   license "Apache-2.0"
 
-  head "https://github.com/ignitionrobotics/ign-math.git", branch: "ign-math2"
+  head "https://github.com/gazebosim/gz-math.git", branch: "ign-math2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases"
@@ -15,6 +15,8 @@ class IgnitionMath2 < Formula
     sha256 cellar: :any, el_capitan:  "59eb583fb73e998510a3571a794e96b57a49b68ddca4cd03119d748c6d51d655"
     sha256 cellar: :any, yosemite:    "401ecbcc6c53af2ba8161790115a0df3cefbe393cafa72358fd92441bccdb633"
   end
+
+  deprecate! date: "2021-01-25", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build

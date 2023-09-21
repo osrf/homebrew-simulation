@@ -12,6 +12,8 @@ class Ogre21 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     rebuild 1
+    sha256 cellar: :any, ventura:  "165c40d5f7aad925113c8c84549037b5bd285138a6160252aa8d8c6fe78c7a00"
+    sha256 cellar: :any, monterey: "84b8e64c2a4b28afadb0ac267a84fcc341bdb34ead89c41a67e7a173e4c004fa"
     sha256 cellar: :any, big_sur:  "7049b87b9bbd4406dd9d37c97e0fa15aa8c8752c54e67ba620b485a38c69e262"
     sha256 cellar: :any, catalina: "d29874b82f0f942bd7d2453e145cd74382734a1d4161b25d7ac0e8efd4b41928"
     sha256 cellar: :any, mojave:   "f0b505985d282e7dd8b1aecc7daf51ff15c8fbb58b4b30c556fbc139ec878075"
@@ -19,6 +21,7 @@ class Ogre21 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
+
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
@@ -28,7 +31,7 @@ class Ogre21 < Formula
   depends_on "tbb"
 
   patch do
-    # fix for cmake3 and c++11
+    # Fix for cmake3 and c++11
     url "https://gist.github.com/scpeters/4a7516b52c6e918ac02cbacabfeda4b3/raw/c515f8f313c444b306dfff9d437ec7cf3622ab12/cmake3.diff"
     sha256 "99d76e023cd5740da66c76ced40ce85e7da7b811ea99d9015d1293fc454badc0"
   end
@@ -85,7 +88,7 @@ class Ogre21 < Formula
       s.sub! "Name: OGRE", "Name: OGRE-2.1"
       s.sub!(/^includedir=.*$/, "includedir=${prefix}/include/OGRE-2.1")
     end
-    inreplace (lib/"pkgconfig/OGRE-2.1.pc"), " -I${includedir}\/OGRE", ""
+    inreplace (lib/"pkgconfig/OGRE-2.1.pc"), " -I${includedir}/OGRE", ""
     inreplace (lib/"pkgconfig/OGRE-2.1-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
     inreplace (lib/"pkgconfig/OGRE-2.1-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 

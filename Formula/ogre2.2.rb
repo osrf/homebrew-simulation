@@ -11,9 +11,10 @@ class Ogre22 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    rebuild 1
-    sha256 cellar: :any, big_sur:  "24bced30c90019acdf3d178d515b573d33bd819a264d3a99a3596e9b17b73568"
-    sha256 cellar: :any, catalina: "5ae131bc3829047223a197f1c09caf88c91eb451fb826a6083d4798594b4430f"
+    sha256 cellar: :any, ventura:  "e86e1900eaf778ede73fe10159721535cefaa1799f66038977468e111bc9ca34"
+    sha256 cellar: :any, monterey: "5cc89ae2a97c6e642f0fe9bbd3587ddeb8544dc278595cc602172fd7890e7e98"
+    sha256 cellar: :any, big_sur:  "fae5da6d6bb34344f04e4f78f162f3872124e915fbd50d883e6509c6f1640cbd"
+    sha256 cellar: :any, catalina: "222487899f723c60367694395875898f742cd2247e54eaa348f99fcb023c6ebc"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,7 @@ class Ogre22 < Formula
   depends_on "tbb"
 
   patch do
-    # fix for cmake3 and c++11
+    # Fix for cmake3 and c++11
     url "https://github.com/scpeters/ogre-next/commit/3486b772b35b3e5f8cf6da5b7a41e6c195408d7d.patch?full_index=1"
     sha256 "30a60758401980260f3a5abdd6513505327028a983af9e911908b4f7da140625"
   end
@@ -38,8 +39,8 @@ class Ogre22 < Formula
     sha256 "38975001bfa903194565ed0bf411cf29857cd5b2f0f71a651d64543f610c4ff6"
   end
 
-  # patch do
   # fix GL3+ compilation with Xcode 10
+  # patch do
   #  url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.patch?full_index=1"
   #  sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
   # end
@@ -101,7 +102,7 @@ class Ogre22 < Formula
       s.sub! "Name: OGRE", "Name: OGRE-2.2"
       s.sub!(/^includedir=.*$/, "includedir=${prefix}/include/OGRE-2.2")
     end
-    inreplace (lib/"pkgconfig/OGRE-2.2.pc"), " -I${includedir}\/OGRE", ""
+    inreplace (lib/"pkgconfig/OGRE-2.2.pc"), " -I${includedir}/OGRE", ""
     inreplace (lib/"pkgconfig/OGRE-2.2-MeshLodGenerator.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
     inreplace (lib/"pkgconfig/OGRE-2.2-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 

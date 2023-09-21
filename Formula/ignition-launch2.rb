@@ -1,24 +1,24 @@
 class IgnitionLaunch2 < Formula
   desc "Launch libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.2.2.tar.bz2"
-  sha256 "121c1a63c519709c057bb2b6d2688b9e8ebe07aa5de2d62205857a7028339779"
+  homepage "https://github.com/gazebosim/gz-launch"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.3.0.tar.bz2"
+  sha256 "6c341967a71d19a0a62fb5bf4ef0e2a40cd55096904b765738f981860055cd3d"
   license "Apache-2.0"
-  revision 5
+  revision 11
 
-  head "https://github.com/ignitionrobotics/ign-launch.git", branch: "ign-launch2"
+  head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "fbe07312364ad2f6455f017b5656910691a0efc6f07996339c5c7c00a48d2194"
-    sha256 catalina: "39f112249a7ad4c311474fb7b77eff96713ea4f04ffe26206a99001990df568a"
+    sha256 ventura:  "71b63790dd5438faed7ca33bd8c3fc630aa82f0cca91c5ed1ef092d108597e7a"
+    sha256 monterey: "375cd712af8f9321683ebf734b1d95ae46ebb82064f3b0e7a33cefc83a21a7ab"
+    sha256 big_sur:  "7473fc88e5168a37e2e98a6ed5cb9fab1ac8501b354aeb30f9ee266e524ec3ab"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-
   depends_on "ffmpeg"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
@@ -28,6 +28,7 @@ class IgnitionLaunch2 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-tools"
   depends_on "ignition-transport8"
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
 
@@ -36,6 +37,7 @@ class IgnitionLaunch2 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # Use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"

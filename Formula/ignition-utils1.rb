@@ -1,14 +1,17 @@
 class IgnitionUtils1 < Formula
   desc "General purpose classes and functions designed for robotic applications"
-  homepage "https://github.com/ignitionrobotics/ign-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.4.0.tar.bz2"
-  sha256 "2b895878a1e80e8df560c80366aeaa846588dd2670ffa0432b4472e81c65ce58"
+  homepage "https://github.com/gazebosim/gz-utils"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-utils/releases/ignition-utils1-1.5.1.tar.bz2"
+  sha256 "0a34a05d0acee29d6571437c60bb7ca9012fc5f4ed9c445dfa65765702468bdb"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "837853e0c7387464c7ac15c8f5a2a5f7aa21debc7f2e5d87dbbe790c21e722f7"
-    sha256 cellar: :any, catalina: "dd74cfaee528c3878c9aaa0865488e742bf1716bf7c15d6c2f701c6a531573b2"
+    sha256 cellar: :any, ventura:  "2d41a1fb2240d04e459bcadfb6154acd4b260d4b3f28951eac5513e644ea1aa1"
+    sha256 cellar: :any, monterey: "f7a68cade6eef655b58433c502758c7361221cadf1df46af611f094db817ef10"
+    sha256 cellar: :any, big_sur:  "dfbfdd2ad1aa2b2915d80104a89eaf23f05efc6317b70a53896ba1aa2f46a579"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -17,7 +20,7 @@ class IgnitionUtils1 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     # Use build folder

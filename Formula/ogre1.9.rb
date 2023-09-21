@@ -7,10 +7,14 @@ class Ogre19 < Formula
   license "MIT"
   revision 10
 
+  head "https://github.com/OGRECave/ogre.git", branch: "master"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "d9d4bc2177fda4189a1633a50766e727cfc3a13abbc64a913d08e92657b6ba49"
-    sha256 catalina: "c1e5e0bb08263e3acbf91d1350d02c8f1a9e0c8e124719bd885963b3f1b0a824"
+    sha256 cellar: :any, ventura:  "228302c760e8e34edcc209a8439e6462a9c45c4f5ce3018e523a22ab622f45ab"
+    sha256 cellar: :any, monterey: "c5fd218d8cfcacea10eabc54837570c4b2fc76024cbf8326e2a716e49096eefe"
+    sha256               big_sur:  "d9d4bc2177fda4189a1633a50766e727cfc3a13abbc64a913d08e92657b6ba49"
+    sha256               catalina: "c1e5e0bb08263e3acbf91d1350d02c8f1a9e0c8e124719bd885963b3f1b0a824"
   end
 
   option "with-cg"
@@ -85,7 +89,7 @@ class Ogre19 < Formula
     sha256 "3a69a4ed9e86887d3a23b0882c9868e994ab710205bb2e4b87204a8c89f1a3c5"
   end
 
-  # fix for m1 arch
+  # fix for m1 cpu arch
   patch do
     url "https://github.com/scpeters/ogre/commit/c39b6df49618773357da0b54437f351b57168d12.patch?full_index=1"
     sha256 "fa8dc20d5978d1ff1402a4df890a6fa0ca1fec6ec73f00154f7484820516b071"

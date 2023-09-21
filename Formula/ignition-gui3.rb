@@ -1,23 +1,25 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
-  homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.9.0.tar.bz2"
-  sha256 "02d510cbd676eefc117bbea28c9f3f8b904b4c399b915aa03be8ae65136feb1b"
+  homepage "https://github.com/gazebosim/gz-gui"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.12.0.tar.bz2"
+  sha256 "f53ee05d844449b900ecb30d5e1f812fd3f7e9e28630d309b7d8d11add3c3b1c"
   license "Apache-2.0"
-  revision 1
+  revision 12
 
-  head "https://github.com/ignitionrobotics/ign-gui.git", branch: "ign-gui3"
+  head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "c824ddd2dbb2a1fff3a972259dfb2a071fa0fc07fc9144a591d3230d7a054a9d"
-    sha256 catalina: "7f5c750138d660e191c0477a4531a8ee8dec4fb7018c869cde673490c0e21b5d"
+    sha256 ventura:  "ecb3e090af9bdbd4576f8c20980805e017ee6a8f9f1014274470fd5865308bfb"
+    sha256 monterey: "2dda31028ab3bf29692d965052a6f0cc639095988f0581242bc9b420ae4666f9"
+    sha256 big_sur:  "d16475a8064be41111c9323721e823b02f03b7637bfc9f1d8e5a08f3c4567ba2"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
+
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"
   depends_on "ignition-msgs5"
@@ -25,8 +27,15 @@ class IgnitionGui3 < Formula
   depends_on "ignition-rendering3"
   depends_on "ignition-transport8"
   depends_on macos: :mojave # c++17
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-gui/commit/f65395f734df81b22dcd10d68d2802b61d6b72bc.patch?full_index=1"
+    sha256 "50c63503ca4dc48c677e254b3a50a9cffd3ffbee9b6d85a60b36c78a3eb3ba05"
+  end
 
   def install
     cmake_args = std_cmake_args

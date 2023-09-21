@@ -1,17 +1,18 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.10.2.tar.bz2"
-  sha256 "f6c4ea8cd8730c90b14760b3f84d4f362d3786b510fb43a0b77b2c06b8bdd2b6"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.13.0.tar.bz2"
+  sha256 "2f65b98fe652a574e01b7cae6cf12e14a9dd29343fde99e066ac5193a8d03e71"
   license "Apache-2.0"
-  revision 2
+  revision 10
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "8e9329b678ba542a318ceb4e55aab15c940902197a2ea1491492a6a89c0fd9d1"
-    sha256 catalina: "46dd8fb6f27e058fde771762e472e6d1b1666041f27e83c2e5a37c90a928608d"
+    sha256 ventura:  "0e8dc76027a24af5abe12e7ccff9d5ce54e8b1bfb73b844d9129708ef156a9ba"
+    sha256 monterey: "919c1c1a409b364ad9e7339f95e4203b83918444adf1e0b4310fccf8ac485a05"
+    sha256 big_sur:  "36b520e1b998fd1801ae0ec9e4812e926bfc54133275a56336c3d49d06d83518"
   end
 
   depends_on "cmake" => :build
@@ -19,10 +20,9 @@ class Gazebo11 < Formula
 
   depends_on "boost"
   depends_on "bullet"
-  depends_on "cmake@3.21.4"
   depends_on "dartsim"
   depends_on "doxygen"
-  depends_on "ffmpeg@4"
+  depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "graphviz"
   depends_on "gts"
@@ -34,7 +34,6 @@ class Gazebo11 < Formula
   depends_on "libtar"
   depends_on "ogre1.9"
   depends_on "protobuf"
-  depends_on "protobuf-c"
   depends_on "qt@5"
   depends_on "qwt-qt5"
   depends_on "sdformat9"
@@ -44,11 +43,24 @@ class Gazebo11 < Formula
   depends_on "tinyxml2"
   depends_on "zeromq" => :linked
 
-  # depends on "gdal" => :optional
-  # depends on "player" => :optional
+  # depends on "gdal"
+  # depends on "player"
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
+  conflicts_with "gz-tools2", because: "both install bin/gz"
+
+  patch do
+    # Fix for compatibility with graphviz 9.0
+    url "https://github.com/gazebosim/gazebo-classic/commit/ba2cbd532a8ba47972cf9f0c3dbc32a5757cab2a.patch?full_index=1"
+    sha256 "a9cca7d59663fd45bab74e044c817600d24028e80ad2871107a34e8a3bebab2a"
+  end
+
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gazebo-classic/commit/17e09f574a4f39caff279cd70364cd1a3ea46f70.patch?full_index=1"
+    sha256 "b50f4cbfe92d3ded2dd7117696cf6a049f0bbdcdb9ef8f54bbc6bde7670f51b3"
+  end
 
   patch do
     # Fix build when homebrew python is installed
@@ -63,6 +75,7 @@ class Gazebo11 < Formula
     cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
@@ -101,7 +114,6 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CPATH", Formula["ffmpeg@4"].opt_include
     mkdir "build" do
       system "cmake", ".."
       system "make"

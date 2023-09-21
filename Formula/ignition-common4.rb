@@ -1,15 +1,17 @@
 class IgnitionCommon4 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.5.0.tar.bz2"
-  sha256 "d01471b1abdbf5617d1bc1c0842fa9323094170e500f409b435049ec13fb19a2"
+  homepage "https://github.com/gazebosim/gz-common"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.7.0.tar.bz2"
+  sha256 "ec9bb68be9f6323f3a3a12b23259c567f9a2478951719573e1b7c906bd7e68cb"
   license "Apache-2.0"
-  revision 3
+
+  head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "27965c0c658febb7ce1e0b59abf1bf65ef103fcbcaddf8692dd850f57b50c91c"
-    sha256 cellar: :any, catalina: "9d8b0a54e58cb5218382fdd92645547399249f49298be6c840b95b5a03a1b9d1"
+    sha256 cellar: :any, ventura:  "aa18a1f275373952271db06b9e16ef49fdd6f5c5dd2c327222e496dd75d342b6"
+    sha256 cellar: :any, monterey: "f83c51a0ace19ed6a45fbccccc2e94b2ed68198e16684033df565561f48ef500"
+    sha256 cellar: :any, big_sur:  "02fa82a28eb2855d965f5b185410b829bf6fb625fed27e578aaa6dc6a6bde6bd"
   end
 
   depends_on "cmake"
@@ -24,19 +26,16 @@ class IgnitionCommon4 < Formula
   depends_on "pkg-config"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with ffmpeg 5.0
-    # remove with next release
-    url "https://github.com/ignitionrobotics/ign-common/commit/a11287ba5b213ffc90992f9ef972cd7acee11259.patch?full_index=1"
-    sha256 "ad264b7c8bb3774fcb7d59d67ae33963f3d44e0018c23861c7fd8d86c3e057ab"
-  end
-
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

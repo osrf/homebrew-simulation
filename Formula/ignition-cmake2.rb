@@ -1,14 +1,17 @@
 class IgnitionCmake2 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.12.1.tar.bz2"
-  sha256 "8ac9a26852eaad70980a54b60141fb3697ea11ce56fdba69a2151a8f5896edcf"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.17.1.tar.bz2"
+  sha256 "3b678f90d2db79912cfbe4c93f3eed695b8a391847fe9e6454f1c6366370650c"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, big_sur:  "e0b18e2ba9eb920400a449793dd06032f47869db07502986959796b797865004"
-    sha256 cellar: :any_skip_relocation, catalina: "24eb034ba444fbf0a5a2b2c3bb7e92730b1ffa6259a1cfe6bfa5b3f5b05959e3"
+    sha256 cellar: :any_skip_relocation, ventura:  "44625e71e4193b80f9c5c6e807317b230c4d1615b29b10a904a130683d1f1eb8"
+    sha256 cellar: :any_skip_relocation, monterey: "9ab9104f67a88e53247d553cca31245ca8803d7e3997ade8a59e54c945fa238b"
+    sha256 cellar: :any_skip_relocation, big_sur:  "5624c8c1166c0afe0d978eeacd6fe17175b9d403f656cdba9c7003c8c007b3d1"
   end
 
   depends_on "cmake"
@@ -16,7 +19,7 @@ class IgnitionCmake2 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
 
     # Use build folder
     mkdir "build" do

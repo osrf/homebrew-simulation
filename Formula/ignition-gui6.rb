@@ -1,15 +1,18 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
-  homepage "https://github.com/ignitionrobotics/ign-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.4.0.tar.bz2"
-  sha256 "ae6422ae78faa321df55e18fa436cfd2a85d19106460ea68eeb454d2e48f5b97"
+  homepage "https://github.com/gazebosim/gz-gui"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.8.0.tar.bz2"
+  sha256 "dd4f26100f4d1343f068ba36f2b8394a0cddb337efde7b4a21c1b0f66ce496c9"
   license "Apache-2.0"
-  revision 1
+  revision 11
+
+  head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "0fcb958351137d96e5318707d9e8975c6fc2a646ea3d40573c2771ded624e089"
-    sha256 catalina: "3f408467686918e895940a88b4fccb690852ea160c221af421411301ce4714cd"
+    sha256 ventura:  "12ad1a1ea711a87226d9ff85a8c93a8331e7168cbf638fdd05eca528bf3ac49a"
+    sha256 monterey: "20443a073acc7141680e277f1e0ace5fbcb507be782f53161c6aa5f1415d0e67"
+    sha256 big_sur:  "9b36c3972a32ef7eaca19ef7106283f8cc39ca33f67a59b9d649e3ad4ef7a8d2"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -21,8 +24,15 @@ class IgnitionGui6 < Formula
   depends_on "ignition-rendering6"
   depends_on "ignition-transport11"
   depends_on macos: :mojave # c++17
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-gui/commit/f65395f734df81b22dcd10d68d2802b61d6b72bc.patch?full_index=1"
+    sha256 "50c63503ca4dc48c677e254b3a50a9cffd3ffbee9b6d85a60b36c78a3eb3ba05"
+  end
 
   def install
     cmake_args = std_cmake_args

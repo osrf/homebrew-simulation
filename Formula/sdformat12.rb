@@ -1,14 +1,17 @@
 class Sdformat12 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.4.0.tar.bz2"
-  sha256 "0a6e5beb4a24cde5c4ebc04e718fe9961dbb3aeba02b7ba8e2d57a475b7b4900"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.7.2.tar.bz2"
+  sha256 "f199f5ad8e4390024c0a2a7c619bee12c662b81f6758b2b50877397ad4f743c0"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/sdformat.git", branch: "sdf12"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "0339bedaef58635a79f8c92a5ce7189cbf54730818a739cae5a5cccc79c1182c"
-    sha256 catalina: "c3c8da507bb38a38bd92b57739fafe6f6ce1296b93ae1b8bfe53a620ce445ebe"
+    sha256 ventura:  "2922c994e95c278dcb6416bf42a111a6e427e337115a7dd940acc1bfab1ab167"
+    sha256 monterey: "fc1a07c0f89cdc6b16da7c0667e8c123d9dbb40cae4a8b3c949ad9dd1fdeb233"
+    sha256 big_sur:  "9cb3663bd4fb928cfb827813e68ba9d7a82c90da8cdc9b0edb2615a73c6b54a4"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -25,7 +28,7 @@ class Sdformat12 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do

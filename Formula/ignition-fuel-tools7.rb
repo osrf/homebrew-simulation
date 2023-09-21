@@ -1,15 +1,18 @@
 class IgnitionFuelTools7 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools7-7.0.0.tar.bz2"
-  sha256 "c2952b974d3337140b4fc25523a1b79b69b3b089129bc97675e088307e2dcc37"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools7-7.3.0.tar.bz2"
+  sha256 "59d06f23a054742e1f97c1f0f709e2a38c341ce96f560d6e09b3dba011dd79a5"
   license "Apache-2.0"
-  revision 5
+  revision 9
+
+  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "45c782fad020f0db78a0c017070330fb548e615badb1439e06ec0832a2f9c3dc"
-    sha256 cellar: :any, catalina: "ce93f9b1468e0a0196d11dd61b877c61bf4affd594ba94d8176470a7e3c711fe"
+    sha256 cellar: :any, ventura:  "6dc71ce7889abe2687571c8c052bad075f1475daee509615980703722f868c57"
+    sha256 cellar: :any, monterey: "396ca1c1965695afa6eff10e6c200f2a869d2c642abee09e18046172102ad6a4"
+    sha256 cellar: :any, big_sur:  "5a06ac35eb8ff173459765c0af68399a2858b4e874ca5ffa173937954aba0b49"
   end
 
   depends_on "cmake"
@@ -21,6 +24,7 @@ class IgnitionFuelTools7 < Formula
   depends_on "libzip"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
 
   def install
     cmake_args = std_cmake_args

@@ -1,17 +1,18 @@
 class IgnitionSensors3 < Formula
   desc "Sensors library for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.3.0.tar.bz2"
-  sha256 "a84ce934f2311f4619987d6c251670b478e914b8b0e1741979f96f5e3bf584c6"
+  homepage "https://github.com/gazebosim/gz-sensors"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.5.0.tar.bz2"
+  sha256 "904297a8deea7f3bff79a4a1fa24aee9c208a72013e29147c3087ca07fc41788"
   license "Apache-2.0"
-  revision 2
+  revision 10
 
-  head "https://github.com/ignitionrobotics/ign-sensors.git", branch: "ign-sensors3"
+  head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "bd33ee97f587867744a49bd4982f6dcd093f7373cfeec5ffaf7fd1dba50de312"
-    sha256 catalina: "59f35ae1faa32e6a88be50574b13fa8fd6991ecd84f33f24407214dd5f2eae94"
+    sha256 ventura:  "4495468fa97c7aa6e38bca8ce1e431a4455a097fe8d8bb40caf14e005144c0b4"
+    sha256 monterey: "6bab9b7a7854da5dc73922f6a37356ade4c144ff2cc8f5b0d8199cd390aa9dae"
+    sha256 big_sur:  "22164c6aca5865c5d6e2db21b0bfe2d46af2527fa261175b046f774ffd765813"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -25,15 +26,24 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-msgs5"
   depends_on "ignition-rendering3"
   depends_on "ignition-transport8"
+  depends_on "protobuf"
   depends_on "sdformat9"
+
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-sensors/commit/e6dcb527a70f154704c0fe62e6393f471136afcb.patch?full_index=1"
+    sha256 "1e5a91f97f4f770c07fc33bae433c3dfebd590fa441f7f2f11ce750b25879971"
+  end
 
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

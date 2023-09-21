@@ -1,15 +1,17 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.14.0.tar.bz2"
-  sha256 "ab8f1cbb3bb62649cbe096bbccac43c240dad197f3d5df3360e9eac8f04a9cda"
+  homepage "https://github.com/gazebosim/gz-common"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.16.0.tar.bz2"
+  sha256 "2f01e46ecef680b9bbab0be71f61aac46e9a1625084e3d3bdb70c526754730b4"
   license "Apache-2.0"
-  revision 3
+
+  head "https://github.com/gazebosim/gz-common.git", branch: "ign-common3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "232386f3670fb9f3c18bf2527ebc4477ffcfd9e2598bf4de3f623a537acd98e4"
-    sha256 cellar: :any, catalina: "82f836989d7944fdf1310b093c6cf61d272f105846123c2b8f5eda7e92c9c864"
+    sha256 cellar: :any, ventura:  "68a95bf32afccc4b773d268814976ca8e4b5b4de591edde70e3200cfa8aa546a"
+    sha256 cellar: :any, monterey: "3f6ca9d7fb45d95d6b9765329c98c15f5fa352477514591bf9e8f81a53da465f"
+    sha256 cellar: :any, big_sur:  "7f280c787e5990dc8affb4d760bcef6bef14ab050394db1ca2cb0b79151c99c6"
   end
 
   depends_on "cmake"
@@ -23,15 +25,9 @@ class IgnitionCommon3 < Formula
   depends_on "pkg-config"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with ffmpeg 5.0
-    url "https://github.com/ignitionrobotics/ign-common/commit/a11287ba5b213ffc90992f9ef972cd7acee11259.patch?full_index=1"
-    sha256 "ad264b7c8bb3774fcb7d59d67ae33963f3d44e0018c23861c7fd8d86c3e057ab"
-  end
-
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     if Hardware::CPU.arm?
@@ -40,8 +36,14 @@ class IgnitionCommon3 < Formula
       cmake_args << "-DIGN_PROFILER_REMOTERY=Off"
     end
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
+
+    # Remove an accidentally installed CMakeLists.txt file
+    # remove this at next release
+    rm Dir[include/"ignition/common3/CMakeLists.txt"]
   end
 
   test do

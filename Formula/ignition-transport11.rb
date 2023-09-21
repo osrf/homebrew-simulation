@@ -1,20 +1,22 @@
 class IgnitionTransport11 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.0.0.tar.bz2"
-  sha256 "1a40c7ba00c4d8ff0a9d6bc5f1c6e678e32985dccd032b4e6d9f8b60cff9dbd5"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.4.1.tar.bz2"
+  sha256 "f18501cbd5c78b584b3db1960a3049d6ae416bab7f0289af64eadda13d1c5da5"
   license "Apache-2.0"
-  revision 2
+  revision 3
   version_scheme 1
+
+  head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "4dcf0828a8b489b9a7d507918d0dd89b54faa61df6142040a736fef20d169ac4"
-    sha256 catalina: "828827c044797ded30d5f679e6531b6801bc2e99e732bf1d9e6ec2271dad9260"
+    sha256 ventura:  "b53196b78408ba553eeb7daa2474e9607d57417cbb8cb842b13f42d4a97c2c4a"
+    sha256 monterey: "0cb5f2a96834eb7eb40c718038864e29ea70618aaac56af82f79e9f8c2ee490c"
+    sha256 big_sur:  "cd33798169761ad6a6750bb6f5003c12b361c25ddba3a91412671e1f802f6f3c"
   end
 
   depends_on "doxygen" => [:build, :optional]
-  depends_on "protobuf-c" => :build
 
   depends_on "cmake"
   depends_on "cppzmq"
@@ -33,8 +35,10 @@ class IgnitionTransport11 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do
@@ -53,15 +57,14 @@ class IgnitionTransport11 < Formula
       target_link_libraries(test_cmake ignition-transport11::ignition-transport11)
     EOS
     system "pkg-config", "ignition-transport11"
-    cflags = `pkg-config --cflags ignition-transport11`.split
-    system ENV.cc, "test.cpp",
-                   *cflags,
-                   "-L#{lib}",
-                   "-lignition-transport11",
-                   "-lc++",
-                   "-o", "test"
-    ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
-    system "./test"
+    # cflags = `pkg-config --cflags ignition-transport11`.split
+    # ldflags = `pkg-config --libs ignition-transport11`.split
+    # system ENV.cc, "test.cpp",
+    #                *cflags,
+    #                *ldflags,
+    #                "-o", "test"
+    # ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
+    # system "./test"
     mkdir "build" do
       system "cmake", ".."
       system "make"

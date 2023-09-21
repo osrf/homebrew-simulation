@@ -1,14 +1,18 @@
 class IgnitionPlugin1 < Formula
   desc "Plugin libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.2.1.tar.bz2"
-  sha256 "821507a035f875f88ca29d2f4daa6bcbce447cb9a1e4b1da7acd1a23cc6fa0b7"
+  homepage "https://github.com/gazebosim/gz-plugin"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-plugin/releases/ignition-plugin-1.4.0.tar.bz2"
+  sha256 "72c4ad15c24c628cd0410f7f605eff762e864df19f6716de44e9b57ca8808743"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-plugin.git", branch: "ign-plugin1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "4ff57b247c0252e650c31b046be18f8ca7c21d975982d27a1c3fe2b8632c89e0"
-    sha256 cellar: :any, catalina: "ec20b6c186a3c067e47857c4ce5b875d1ba82d7d1676d64903d0ab5615364b0d"
+    sha256 cellar: :any, ventura:  "2c9887d57d32fb9c58d9497d38c12889039a554290b49bcd9d229a577cbb99eb"
+    sha256 cellar: :any, monterey: "c6e836c62b75fcfee2bdf7a1b7bdd232b351591efaceef0e05b37c483cbbef83"
+    sha256 cellar: :any, big_sur:  "712f0971c2fa85a07b4e5971d4801ad7f324cd644cd170a603e850c57c4a30cd"
+    sha256 cellar: :any, catalina: "fe41a0a740d6c61fc5dc145c89e43c9fc3476588c56b606786d7de122c3276f1"
   end
 
   depends_on "cmake"
@@ -19,10 +23,14 @@ class IgnitionPlugin1 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

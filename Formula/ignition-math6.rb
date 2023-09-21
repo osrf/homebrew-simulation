@@ -1,14 +1,17 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.10.0.tar.bz2"
-  sha256 "8de0f92a5a2bbce84695ba75ab798c22d32da54be454736af6bbcb6eed404902"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.15.0.tar.bz2"
+  sha256 "f89ff9d592a73365fbfed49a96c66535953b66bd0178a29963b6de7c6dc346db"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, big_sur:  "c362eab95b7b352adf03a55ba668ed2c02935cc6b78634213c6a069178c12c16"
-    sha256 cellar: :any, catalina: "c29fa4e877062bf5e4c6a6b27b429783239853bbe35ada9776160fe9000c181b"
+    sha256 cellar: :any, ventura:  "687fe7b6a211f04f8ceb5f08f5c440501186489ddc1d3798757946fa94a46120"
+    sha256 cellar: :any, monterey: "bdace1b47103f54ff409ed6042d2fff1dbaf805a437a1a663c60e1f788557a32"
+    sha256 cellar: :any, big_sur:  "b7509a791ba0931f7e4be7794546c277d6328a3dfc4a9f7cbd4a901b8d802c4b"
   end
 
   depends_on "cmake" => :build
@@ -16,14 +19,19 @@ class IgnitionMath6 < Formula
   depends_on "pybind11" => :build
   depends_on "eigen"
   depends_on "ignition-cmake2"
+  depends_on "python@3.11"
   depends_on "ruby"
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
+    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    # Use build folder
+    mkdir "build" do
+      system "cmake", "..", *cmake_args
+      system "make", "install"
+    end
   end
 
   test do

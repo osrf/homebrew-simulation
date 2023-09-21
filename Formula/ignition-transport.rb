@@ -6,7 +6,7 @@ class IgnitionTransport < Formula
   license "Apache-2.0"
   revision 10
 
-  head "https://github.com/ignitionrobotics/ign-transport.git", branch: "ign-transport1"
+  head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport1"
 
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]

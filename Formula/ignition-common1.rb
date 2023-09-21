@@ -1,12 +1,12 @@
 class IgnitionCommon1 < Formula
   desc "Common libraries for robotics applications"
-  homepage "https://github.com/ignitionrobotics/ign-common"
+  homepage "https://github.com/gazebosim/gz-common"
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common-1.1.1.tar.bz2"
   sha256 "2e8b65c9390bc78088865d95c0933c564b07b3b55b68c14e1c6d947ca8d9525a"
   license "Apache-2.0"
   revision 6
 
-  head "https://github.com/ignitionrobotics/ign-common.git", branch: "ign-common1"
+  head "https://github.com/gazebosim/gz-common.git", branch: "ign-common1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

@@ -1,22 +1,24 @@
 class IgnitionGazebo3 < Formula
   desc "Ignition Gazebo robot simulator"
-  homepage "https://github.com/ignitionrobotics/ign-gazebo"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.12.0.tar.bz2"
-  sha256 "cc89eb24ff7c6177814f44b6b0aeef9efcbec0a242798200ae4d7c44ccec9513"
+  homepage "https://github.com/gazebosim/gz-sim"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.15.0.tar.bz2"
+  sha256 "009a107afc4517caea609ab0b24eae65282faab808bda9aa0a22e600bc2b0088"
   license "Apache-2.0"
-  revision 5
+  revision 10
 
-  head "https://github.com/ignitionrobotics/ign-gazebo.git", branch: "ign-gazebo3"
+  head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "01ebae8ea00a61dd28316defe1576692b2523a233bf698ef1d6984a8495fd8ad"
-    sha256 catalina: "43c2a0cfa0b21be0773851d499215414c356a26e3eede82af480911eeab62ef0"
+    sha256 ventura:  "c1791efc2e4ff16fc505a715861959b2f2070fc801ce728394eaf59b7a59c849"
+    sha256 monterey: "46502f202943f38dcba95182f4498795c7086acc03f3f89ff371643acb59d592"
+    sha256 big_sur:  "b6bd66633b254ad7eda89c517cd600d636b086d859b136590cb0208b38f11763"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
+
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -34,14 +36,22 @@ class IgnitionGazebo3 < Formula
   depends_on "ignition-transport8"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
+  depends_on "protobuf"
   depends_on "ruby"
   depends_on "sdformat9"
+
+  patch do
+    # Fix for compatibility with protobuf 23.2
+    url "https://github.com/gazebosim/gz-sim/commit/dfb70396bdb426f68f3858ba40bbfb0fe73408be.patch?full_index=1"
+    sha256 "c8fa5280d11efc8bd8780ec5e74142c71e8417f7ed5e9ad610aeb827b5c3e08d"
+  end
 
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # Use build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"

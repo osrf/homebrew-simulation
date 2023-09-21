@@ -4,15 +4,9 @@ class Gazebo9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-9.19.0.tar.bz2"
   sha256 "1f3ca430824b120ae0c7c4c0037a1a56e7b6bf6c50731b148b5c75bfc46d7fe7"
   license "Apache-2.0"
-  revision 14
+  revision 23
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 big_sur:  "ea434ce36ce0661d7236682d125a52f797300a4339543ec4db42358f3b705399"
-    sha256 catalina: "1b7afc8f3d09d1c7048344508caee13719c57710579b819f8d6ca839a32e8c8b"
-  end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -50,6 +44,7 @@ class Gazebo9 < Formula
 
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
+  conflicts_with "gz-tools2", because: "both install bin/gz"
 
   patch do
     # Fix build when homebrew python is installed
@@ -62,6 +57,14 @@ class Gazebo9 < Formula
     # Fix for compatibility with qwt 6.2
     url "https://github.com/osrf/gazebo/commit/9e7e9bfbace6e0cc3f06842bb1efd47eb0632b36.patch?full_index=1"
     sha256 "625d7f990629e431ef160ac771b632f9007b72d0608e7bccd4a7e0987417a347"
+  end
+
+  patch do
+    # Fix compilation: add missing std namespace
+    # https://github.com/gazebosim/gz-msgs/pull/242
+    # TODO: remove with next major release
+    url "https://github.com/osrf/gazebo/commit/2f0f7af4868883d1a6fea30086b3fcd703d583fc.patch?full_index=1"
+    sha256 "08082b1c7ff191e6b28472a9eead708d21e56124f2672ac3d12a577734572101"
   end
 
   def install
