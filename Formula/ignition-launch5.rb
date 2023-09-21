@@ -33,6 +33,12 @@ class IgnitionLaunch5 < Formula
   depends_on "qt@5"
   depends_on "tinyxml2"
 
+  patch do
+    # Fix for m1 processor
+    url "https://github.com/gazebosim/gz-launch/commit/ae261dc1d8f8c1a1f868b21054ccda659df68a01.patch?full_index=1"
+    sha256 "eeb5a263154c9a946c9021eb847e0a01f9788daf3c1c31522c5115973c46710f"
+  end
+
   def install
     rpaths = [
       rpath,
