@@ -4,16 +4,16 @@ class IgnitionTransport11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.4.1.tar.bz2"
   sha256 "f18501cbd5c78b584b3db1960a3049d6ae416bab7f0289af64eadda13d1c5da5"
   license "Apache-2.0"
-  revision 3
+  revision 4
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "b53196b78408ba553eeb7daa2474e9607d57417cbb8cb842b13f42d4a97c2c4a"
-    sha256 monterey: "0cb5f2a96834eb7eb40c718038864e29ea70618aaac56af82f79e9f8c2ee490c"
-    sha256 big_sur:  "cd33798169761ad6a6750bb6f5003c12b361c25ddba3a91412671e1f802f6f3c"
+    sha256 ventura:  "adbac4b7cf0afc45d52fae7a6c3aef9c39764ace064d1a96687dc487bbd9ed30"
+    sha256 monterey: "084ee9a5ef1af37ae0640064294fdad9a87849f8254570de7bdfac0d8a377fa2"
+    sha256 big_sur:  "0edb3f21e239c71024a0b61dd92f16d0f20cdaab2b3f3723451bbf7bd1f5b0e6"
   end
 
   depends_on "doxygen" => [:build, :optional]
@@ -31,9 +31,13 @@ class IgnitionTransport11 < Formula
   depends_on "zeromq"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/transport11", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -42,6 +46,10 @@ class IgnitionTransport11 < Formula
   end
 
   test do
+    # test CLI executables
+    system libexec/"gz/transport11/ign-transport-service"
+    system libexec/"gz/transport11/ign-transport-topic"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include <ignition/transport.hh>
