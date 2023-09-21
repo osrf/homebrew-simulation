@@ -17,6 +17,8 @@ class IgnitionPhysics5 < Formula
 
   depends_on "cmake" => :build
 
+  depends_on "gz-plugin2" => :test
+
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "google-benchmark"
@@ -36,9 +38,13 @@ class IgnitionPhysics5 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-physics-5/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -47,6 +53,20 @@ class IgnitionPhysics5 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    %w[bullet dartsim tpe].each do |engine|
+      p = lib/"ign-physics-5/engine-plugins/libignition-physics-#{engine}-plugin.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include "ignition/plugin/Loader.hh"
       #include "ignition/physics/ConstructEmpty.hh"
@@ -64,6 +84,15 @@ class IgnitionPhysics5 < Formula
         return engine == nullptr;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(ignition-physics5 REQUIRED)
+      find_package(ignition-plugin1 REQUIRED COMPONENTS all)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake
+          ignition-physics5::ignition-physics5
+          ignition-plugin1::loader)
+    EOS
     system "pkg-config", "ignition-physics5"
     cflags   = `pkg-config --cflags ignition-physics5`.split
     ldflags  = `pkg-config --libs ignition-physics5`.split
@@ -77,8 +106,13 @@ class IgnitionPhysics5 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    # Disable test due to gazebosim/gz-physics#442
-    # system "./test"
+    system "./test"
+    # test building with cmake
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
