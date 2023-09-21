@@ -4,18 +4,20 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.3.2.tar.bz2"
   sha256 "4262512fbb6952712234c5cbeed69cdabca338931bb6c587a1ef7d487a5f262b"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "3493a87d1120ffbf9214263f3bf2db615f932b72a75984d2d95011860e81cb8d"
-    sha256 cellar: :any, monterey: "58beb1a2a04067bd51db1f412ca0e02360ad7f1ed737aab980d5441f2c0b9db1"
-    sha256 cellar: :any, big_sur:  "c9b119681bdf174676192cfdc86a7bc628f3a1b55e97546ed4c58d6a1c2048b3"
+    sha256 cellar: :any, ventura:  "ac9d10fedc61d2b9db49969c19e07c0687b4607d1916bab49be57a7a347e7a57"
+    sha256 cellar: :any, monterey: "2365a03533b6c0d30394f55b9d3686adb8b04df50de2186688b2fc41b57f18da"
+    sha256 cellar: :any, big_sur:  "4bb15f5e986a956abf3a9cc4a667eea5c01070a505c8a02028a62afb2a01d007"
   end
 
   depends_on "cmake" => :build
+
+  depends_on "gz-plugin2" => :test
 
   depends_on "bullet"
   depends_on "dartsim"
@@ -52,7 +54,7 @@ class IgnitionPhysics5 < Formula
 
   test do
     # test plugins in subfolders
-    ["bullet", "dartsim", "tpe"].each do |engine|
+    %w[bullet dartsim tpe].each do |engine|
       p = lib/"ign-physics-5/engine-plugins/libignition-physics-#{engine}-plugin.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
@@ -65,7 +67,6 @@ class IgnitionPhysics5 < Formula
       assert stderr.exclude?(error_string), error_string
     end
     # build against API
-    github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include "ignition/plugin/Loader.hh"
       #include "ignition/physics/ConstructEmpty.hh"
@@ -83,6 +84,15 @@ class IgnitionPhysics5 < Formula
         return engine == nullptr;
       }
     EOS
+    (testpath/"CMakeLists.txt").write <<-EOS
+      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      find_package(ignition-physics5 REQUIRED)
+      find_package(ignition-plugin1 REQUIRED COMPONENTS all)
+      add_executable(test_cmake test.cpp)
+      target_link_libraries(test_cmake
+          ignition-physics5::ignition-physics5
+          ignition-plugin1::loader)
+    EOS
     system "pkg-config", "ignition-physics5"
     cflags   = `pkg-config --cflags ignition-physics5`.split
     ldflags  = `pkg-config --libs ignition-physics5`.split
@@ -96,8 +106,13 @@ class IgnitionPhysics5 < Formula
                    *loader_ldflags,
                    "-lc++",
                    "-o", "test"
-    # Disable test due to gazebosim/gz-physics#442
-    # system "./test"
+    system "./test"
+    # test building with cmake
+    mkdir "build" do
+      system "cmake", ".."
+      system "make"
+      system "./test_cmake"
+    end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
