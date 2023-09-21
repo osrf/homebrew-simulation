@@ -10,9 +10,9 @@ class IgnitionRendering6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "171316235ff45dc8144a82b446065219ac7657396daafc1b65b540429d4a44f5"
-    sha256 monterey: "959b2d7750264423382ca53e53f8dda1ec6cfa5e0ad08fa7ec695259d6dd9606"
-    sha256 big_sur:  "93e0295b2f7874b2260ed0176097955f382356b3235fa9399960d81875ffdb63"
+    sha256 ventura:  "ac880da52d6a5d9c04e97c24fdfa8fb7865b6fb98ece7ccdb2a63967bcd5b922"
+    sha256 monterey: "068ced8bf3e04ffca0c6c7a438fbebe696531764f1d23b80a2f4e1fadb425506"
+    sha256 big_sur:  "3c5272e66bd15daf82d87ad0499165bf7ea655289a7966944721f2aa1023826f"
   end
 
   depends_on "cmake" => [:build, :test]
