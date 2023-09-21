@@ -5,19 +5,19 @@ class Ogre22 < Formula
   version "2.2.6+20211021~312bf40"
   sha256 "b9dbd84ef0c1731d0d1abc55499532358b9a9e5f0b3dc2b8e02ba76db0a112fd"
   license "MIT"
-  revision 1
+  revision 2
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "e86e1900eaf778ede73fe10159721535cefaa1799f66038977468e111bc9ca34"
-    sha256 cellar: :any, monterey: "5cc89ae2a97c6e642f0fe9bbd3587ddeb8544dc278595cc602172fd7890e7e98"
-    sha256 cellar: :any, big_sur:  "fae5da6d6bb34344f04e4f78f162f3872124e915fbd50d883e6509c6f1640cbd"
-    sha256 cellar: :any, catalina: "222487899f723c60367694395875898f742cd2247e54eaa348f99fcb023c6ebc"
+    sha256 cellar: :any, ventura:  "39ee442113fbe0e76dd71f6cd9b90fb3cbb16de3a771c32d6fe12a0a4679dbdc"
+    sha256 cellar: :any, monterey: "0bd7b3f41e27834ff7ac6ae7c0711e18cb64bb0d1795903e98335e8618e3eb22"
+    sha256 cellar: :any, big_sur:  "7d348ad79b4dc945b7305523d0826bb42d42747c921433fe792f4fe68d2e5191"
   end
 
   depends_on "cmake" => :build
+  depends_on "gz-plugin2" => :test
   depends_on "pkg-config" => :test
   depends_on "doxygen"
   depends_on "freeimage"
@@ -45,8 +45,26 @@ class Ogre22 < Formula
   #  sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
   # end
 
+  patch do
+    # fix for m1 arch -- adapted from OGRECave/ogre-next@ff01338
+    url "https://gist.githubusercontent.com/iche033/5685dcbb3efc14bb263718a91039bab8/raw/dd3ccbefda8abf1b9ff7b5a4898e3e63cbe06b4b/ogre2.2-m1-platform.patch"
+    sha256 "edacb1992550c78e746d9bd545c8f5b278c2f987533349a0db56d7b13ebab480"
+  end
+
+  # fix for m1 arch -- adapted from OGRECave/ogre-next@23d8261
+  patch do
+    url "https://github.com/OGRECave/ogre-next/commit/23d82616a785f6aa26f58d5bf38a7114e2c00f88.patch?full_index=1"
+    sha256 "ade27e55e7be5510f5eeb95f17c9ba90e61575ad610cc35f24179d061b1756a1"
+  end
+
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"OGRE-2.2", target: lib),
+      rpath(source: lib/"OGRE-2.2/OGRE", target: lib),
+    ]
     cmake_args = [
+      "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.2",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",
@@ -108,6 +126,20 @@ class Ogre22 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    ["libOgreMain", "libOgreOverlay", "libOgreSceneFormat", "OGRE/RenderSystem_Metal"].each do |plugin|
+      p = lib/"OGRE-2.2/#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <Ogre.h>
       int main()
