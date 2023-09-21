@@ -4,19 +4,20 @@ class IgnitionGazebo6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo6-6.15.0.tar.bz2"
   sha256 "897c8823054d504272dd8312509fb09baa6f042a131d348de2020ebd80bbf780"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "002c11ac8c1f52766fa803f25a0feb7a37a6ae9789a87015e6ce9617b6cfa81d"
-    sha256 monterey: "f474d4ef4f3881b114f78084f36e78352246212febfce504060ce1b950bd8363"
-    sha256 big_sur:  "609a698024fc6ef4533f04b3ecec1d3bf873adf6d3a1202b51ab866eb885c38d"
+    sha256 ventura:  "aefc939b2c4ddf44afaf12a50fd6919f5183afadba5ff7bddda1092fbacc7ff0"
+    sha256 monterey: "13b4c04462fed433a8801bc43c450dbb54e2ee1791ac166711e6b5a677facdd2"
+    sha256 big_sur:  "d05e40ef1e23e5903fc7be9f6587fb5aae9be91ad4f63803743bd3779cb21d11"
   end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
+  depends_on "gz-plugin2" => :test
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -41,9 +42,15 @@ class IgnitionGazebo6 < Formula
   depends_on "sdformat12"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-gazebo-6/plugins", target: lib),
+      rpath(source: lib/"ign-gazebo-6/plugins/gui", target: lib),
+      rpath(source: lib/"ign-gazebo-6/plugins/gui/GzSim", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -52,10 +59,28 @@ class IgnitionGazebo6 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    plugin_info = lambda { |p|
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    }
+    %w[altimeter log physics sensors].each do |system|
+      plugin_info.call lib/"ign-gazebo-6/plugins/libignition-gazebo-#{system}-system.dylib"
+    end
+    ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "IgnGazebo/libEntityContextMenu"].each do |p|
+      plugin_info.call lib/"ign-gazebo-6/plugins/gui/#{p}.dylib"
+    end
     ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
-    system Formula["ruby"].opt_bin/"ruby",
-           Formula["ignition-tools"].opt_bin/"ign",
+    system Formula["ignition-tools"].opt_bin/"ign",
            "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <ignition/gazebo/Entity.hh>

@@ -4,19 +4,22 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.8.0.tar.bz2"
   sha256 "dd4f26100f4d1343f068ba36f2b8394a0cddb337efde7b4a21c1b0f66ce496c9"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "12ad1a1ea711a87226d9ff85a8c93a8331e7168cbf638fdd05eca528bf3ac49a"
-    sha256 monterey: "20443a073acc7141680e277f1e0ace5fbcb507be782f53161c6aa5f1415d0e67"
-    sha256 big_sur:  "9b36c3972a32ef7eaca19ef7106283f8cc39ca33f67a59b9d649e3ad4ef7a8d2"
+    sha256 ventura:  "4577cc5c96570b80db04beefe8484c4a446fe653162a3c48bb3c8c0331d9bc67"
+    sha256 monterey: "ee75c69ff8022215f596b03ec29927e7d53f4f9b954fff5592c3a55733c51e5e"
+    sha256 big_sur:  "afa9ddf3774cece1b00c3777d2728d3ca2e50182012107dc08a1910118813508"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
+
+  depends_on "gz-plugin2" => :test
+
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
   depends_on "ignition-msgs8"
@@ -35,9 +38,13 @@ class IgnitionGui6 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-gui-6/plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DBUILD_TESTING=OFF"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -46,6 +53,20 @@ class IgnitionGui6 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
+      p = lib/"ign-gui-6/plugins/lib#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <iostream>
 
