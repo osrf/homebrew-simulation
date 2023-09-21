@@ -17,6 +17,7 @@ class IgnitionGazebo6 < Formula
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
+  depends_on "gz-plugin2" => :test
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -41,9 +42,15 @@ class IgnitionGazebo6 < Formula
   depends_on "sdformat12"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-gazebo-6/plugins", target: lib),
+      rpath(source: lib/"ign-gazebo-6/plugins/gui", target: lib),
+      rpath(source: lib/"ign-gazebo-6/plugins/gui/GzSim", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -52,10 +59,28 @@ class IgnitionGazebo6 < Formula
   end
 
   test do
+    # test some plugins in subfolders
+    plugin_info = lambda { |p|
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    }
+    %w[altimeter log physics sensors].each do |system|
+      plugin_info.call lib/"ign-gazebo-6/plugins/libignition-gazebo-#{system}-system.dylib"
+    end
+    ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "IgnGazebo/libEntityContextMenu"].each do |p|
+      plugin_info.call lib/"ign-gazebo-6/plugins/gui/#{p}.dylib"
+    end
     ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
-    system Formula["ruby"].opt_bin/"ruby",
-           Formula["ignition-tools"].opt_bin/"ign",
+    system Formula["ignition-tools"].opt_bin/"ign",
            "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
+    # build against API
     (testpath/"test.cpp").write <<-EOS
     #include <cstdint>
     #include <ignition/gazebo/Entity.hh>
