@@ -47,7 +47,7 @@ class IgnitionRendering6 < Formula
   test do
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
-      p = lib/"ign-rendering-6/engine-plugins/libgz-rendering-#{engine}.dylib"
+      p = lib/"ign-rendering-6/engine-plugins/libignition-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
