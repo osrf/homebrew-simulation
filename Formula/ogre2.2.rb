@@ -18,6 +18,7 @@ class Ogre22 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gz-plugin2" => :test
   depends_on "pkg-config" => :test
   depends_on "doxygen"
   depends_on "freeimage"
@@ -58,7 +59,13 @@ class Ogre22 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"OGRE-2.2", target: lib),
+      rpath(source: lib/"OGRE-2.2/OGRE", target: lib),
+    ]
     cmake_args = [
+      "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.2",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",
@@ -120,6 +127,20 @@ class Ogre22 < Formula
   end
 
   test do
+    # test plugins in subfolders
+    ["libOgreMain", "libOgreOverlay", "libOgreSceneFormat", "OGRE/RenderSystem_Metal"].each do |plugin|
+      p = lib/"OGRE-2.2/#{plugin}.dylib"
+      # Use gz-plugin --info command to check plugin linking
+      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      args = ["--info", "--plugin"] << p
+      # print command and check return code
+      system cmd, *args
+      # check that library was loaded properly
+      _, stderr = system_command(cmd, args: args)
+      error_string = "Error while loading the library"
+      assert stderr.exclude?(error_string), error_string
+    end
+    # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <Ogre.h>
       int main()
