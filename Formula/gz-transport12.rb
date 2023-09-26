@@ -28,12 +28,6 @@ class GzTransport12 < Formula
   depends_on "protobuf"
   depends_on "zeromq"
 
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-transport/commit/8f7441a7fdf2c8681cae55b3f93c3df4cbe649c3.patch?full_index=1"
-    sha256 "8c9ae5e66743077d9172aee4ae89ae9555b0641857c979cb77aaca8dee010929"
-  end
-
   def install
     rpaths = [
       rpath,
