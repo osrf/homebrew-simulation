@@ -26,12 +26,6 @@ class GzSensors7 < Formula
   depends_on "protobuf"
   depends_on "sdformat13"
 
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sensors/commit/0c00e0462d4babcc8df6f3e464eafb57dcc8a9df.patch?full_index=1"
-    sha256 "9b763d5791c70affbf110e5cdca7d5da46aaee1250fbb9bdbd2bf05689cd1d62"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
