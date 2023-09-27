@@ -9,9 +9,8 @@ class GzLaunch6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "d950332f45f28f730bbdd371d1ad7aa29002eaa3d383eeebabe9a74b92700dd4"
-    sha256 monterey: "ddcda32263a390b83bcc756bc1b8624ea10520bfd0c2a334e45146fbca2ac6e9"
-    sha256 big_sur:  "046b3131ea293b5bfb305ac163b069b5dd4b1474a816b5dacb45d80a24fec7d2"
+    sha256 ventura:  "d18a13ad223b2bb845652b39f611e7b4f237fc4dfd1d5fa582ca4819684d1b94"
+    sha256 monterey: "8d5ab9b483131ff16d37bea759b210320ea3cdae2abb73591e71d29ab68a39de"
   end
 
   depends_on "cmake" => :build
