@@ -1,18 +1,16 @@
 class GzRendering7 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-7.4.1.tar.bz2"
-  sha256 "fea3a6b06c8fab598ffbc56a60dba48779282ac828260251b9058a6b5a5b823a"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-7.4.2.tar.bz2"
+  sha256 "81101ddb26c630dd0292c34a83d7736596d8ee1ac5d7b8ec4980f485de8ba87d"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "553fc8ea77688fd97354525418814a0d0b3a0a29b85de011987e2b29417cb865"
-    sha256 monterey: "ea61caed7c72f4bce5d559f888f7baa3c368b56da165d9c08cdc836ea4a247e1"
-    sha256 big_sur:  "39844d2004e2e338d77556ad696c47de3ac39800132845c5ba39a3e57adae9d3"
+    sha256 ventura:  "dc3de36c7f18b9842f0b9f1636233b9219378ba5ece122e1d3514023f14eae29"
+    sha256 monterey: "d52ef33fc988d97c2dd3020e0f2245f06e322b1e2bf622bf2014f7323d96290e"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -27,12 +25,6 @@ class GzRendering7 < Formula
   depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.3"
-
-  patch do
-    # use CMAKE_INSTALL_RPATH values in ogre2 library
-    url "https://github.com/gazebosim/gz-rendering/commit/65ffacb49e5c5477e2ee5241bb45fdfd2273a5ae.patch?full_index=1"
-    sha256 "ed13b1d5e74d3a4e66c33a52149eb6be581b5f97014e2745d9e18ad216913fd8"
-  end
 
   def install
     rpaths = [

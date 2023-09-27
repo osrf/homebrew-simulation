@@ -1,17 +1,16 @@
 class GzCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.4.0.tar.bz2"
-  sha256 "a1bc2575e41bc2480528290365d769307feb76508bb84a2c3201e3c0a01918b2"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.4.1.tar.bz2"
+  sha256 "59f7b58487a38406302c208f149401ce36b1f19d63d0b0a593b5e082af303f52"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, ventura:  "a3504208c227a394388e387a4357470fe6a4d69417c604384dfad852bb58411f"
-    sha256 cellar: :any_skip_relocation, monterey: "adbbbceb7ab6600b46ddb1d9c15d54a735c65ae3a6531789d90c972302dbf344"
-    sha256 cellar: :any_skip_relocation, big_sur:  "67d08d44776e17e7f227c8463b5b6a652711766012307ea21ec9da23968e3697"
+    sha256 cellar: :any_skip_relocation, ventura:  "8aafd1b9f40fbf83c8c7dbe8dc58e90a99eac9a7b7d82cc7a5e142ecfa3047dd"
+    sha256 cellar: :any_skip_relocation, monterey: "9a492f2532f072c0f7bfb0bd01f4c049096ccf63ab0bcc0a3275817886504a5d"
   end
 
   depends_on "cmake"

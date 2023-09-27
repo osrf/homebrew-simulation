@@ -1,18 +1,16 @@
 class GzSim7 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.5.0.tar.bz2"
-  sha256 "e4a641bef1a747dd9a35c01beee3a1ac08f95bdaae06aa23b115e0b1a4ee42f8"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.6.0.tar.bz2"
+  sha256 "046ae2908cacc41252cdd773a38cfc89b13426ff70c34ec88605b28663de0c87"
   license "Apache-2.0"
-  revision 11
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "13bfba603836f7bea8ffdd0b8783b2792bd74274ec156ab3604db0afaf0a0d37"
-    sha256 monterey: "c0a30d465e613896b1bb2dc300790d121cb6b4da568cc013b0430d4f4c549712"
-    sha256 big_sur:  "789e4a2d6016a0c4773d9cd571adf92182dc45875063aaf76a083047e0cf0d55"
+    sha256 ventura:  "723ab4a3e3760be0cb89a3bbec913f7f63661a1c3cff0aba8addf45747f3d590"
+    sha256 monterey: "f7a3b11849ad78b1c37c602ba28c02322b7d450d8b688a623384605b97fa16c5"
   end
 
   depends_on "cmake" => :build
@@ -38,12 +36,6 @@ class GzSim7 < Formula
   depends_on "protobuf"
   depends_on "ruby"
   depends_on "sdformat13"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sim/commit/001dd9b829eb8e8b4465d87c6c70ccf4ee2e6b6a.patch?full_index=1"
-    sha256 "c3bdd4ceb64cfa6735be87dd6d58e82fdfe9c34499a5d795f1058fe42d6d9360"
-  end
 
   def install
     rpaths = [
