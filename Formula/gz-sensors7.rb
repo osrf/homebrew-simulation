@@ -1,18 +1,16 @@
 class GzSensors7 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.2.0.tar.bz2"
-  sha256 "bf158cb7bde71866a3bf70e649888fe8f6f8eb0b7b77d87e991385c3b8a565af"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.3.0.tar.bz2"
+  sha256 "92b9e0bf4707bdbf318142b0a17c1cd1ca8c94bfee9f8911bcd0b3a7c6cbd169"
   license "Apache-2.0"
-  revision 12
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "b60015a6179fb87fba3ff8550c1e89f8c674dac214bbc3a5861a139ee5ee3d4d"
-    sha256 cellar: :any, monterey: "e501ccb6bb2df164e8a1f8b56033955099dba8395d47b3c5434a2a7761fd40b7"
-    sha256 cellar: :any, big_sur:  "e81e941fb5ffea3b688ddf0158c8f8466b106c0bd8744ae82afb08ea6ab63473"
+    sha256 cellar: :any, ventura:  "4778d46af506059032752b7df7ed7cc5ab5a93169c9e8911f5de5396f8bb6d66"
+    sha256 cellar: :any, monterey: "3491bbd1fe0836706b87f78c0cc3990aef75decca56150b7bdbfec207c665c83"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,12 +24,6 @@ class GzSensors7 < Formula
   depends_on "gz-transport12"
   depends_on "protobuf"
   depends_on "sdformat13"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sensors/commit/0c00e0462d4babcc8df6f3e464eafb57dcc8a9df.patch?full_index=1"
-    sha256 "9b763d5791c70affbf110e5cdca7d5da46aaee1250fbb9bdbd2bf05689cd1d62"
-  end
 
   def install
     cmake_args = std_cmake_args

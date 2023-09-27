@@ -1,18 +1,16 @@
 class GzTransport12 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.2.0.tar.bz2"
-  sha256 "731ec9f87fd815c62486ed4e2c3ecbeff5b8b4a8f09cc5e7abf4d8758cebe048"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.2.1.tar.bz2"
+  sha256 "62fb97a722dea804da262610061688f675222d4e33a7a1a59868fdefe6ae2d92"
   license "Apache-2.0"
-  revision 13
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "3e3a928f9dd36f8c97fc7b2fff27142f5d7e1c10e9194bf747c3841955d2d99b"
-    sha256 monterey: "250cf7691f8794722b1283971af31073b7f462fcd24bcda7f65a1d7c06c460ac"
-    sha256 big_sur:  "277dcbdc9d2af2325d16dbd24917a0ea5901acb4ef3ea5ee461c3b631697369a"
+    sha256 ventura:  "6a17ce4dad2af2f80c504eaf24c912cb1e76710e13d10a3fdb42219f0a5f4f5d"
+    sha256 monterey: "1206c6c1dc219fa330cfbf1e803d04d93dc04232713c50eac2838e8daf198d22"
   end
 
   depends_on "doxygen" => [:build, :optional]
@@ -28,12 +26,6 @@ class GzTransport12 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "zeromq"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-transport/commit/8f7441a7fdf2c8681cae55b3f93c3df4cbe649c3.patch?full_index=1"
-    sha256 "8c9ae5e66743077d9172aee4ae89ae9555b0641857c979cb77aaca8dee010929"
-  end
 
   def install
     rpaths = [
