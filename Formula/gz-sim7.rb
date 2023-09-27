@@ -38,12 +38,6 @@ class GzSim7 < Formula
   depends_on "ruby"
   depends_on "sdformat13"
 
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sim/commit/001dd9b829eb8e8b4465d87c6c70ccf4ee2e6b6a.patch?full_index=1"
-    sha256 "c3bdd4ceb64cfa6735be87dd6d58e82fdfe9c34499a5d795f1058fe42d6d9360"
-  end
-
   def install
     rpaths = [
       rpath,
