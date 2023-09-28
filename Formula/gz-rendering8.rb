@@ -28,12 +28,6 @@ class GzRendering8 < Formula
   depends_on "ogre1.9"
   depends_on "ogre2.3"
 
-  patch do
-    # use CMAKE_INSTALL_RPATH values in ogre2 library
-    url "https://github.com/gazebosim/gz-rendering/commit/65ffacb49e5c5477e2ee5241bb45fdfd2273a5ae.patch?full_index=1"
-    sha256 "ed13b1d5e74d3a4e66c33a52149eb6be581b5f97014e2745d9e18ad216913fd8"
-  end
-
   def install
     rpaths = [
       rpath,
