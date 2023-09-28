@@ -1,9 +1,9 @@
 class Sdformat14 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.0.0~pre2.tar.bz2"
-  version "14.0.0~pre2"
-  sha256 "a838a21ec4754d3b1c67212cb17505cac7abeef2cead75c8baceda4bf2fbc905"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.0.0~pre3.tar.bz2"
+  version "14.0.0-pre3"
+  sha256 "ca6a6147469841c3f60eefa46b419f3740bd9ad6e97ffb2f36a54a38242ec0a6"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "main"
