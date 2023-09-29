@@ -1,11 +1,10 @@
 class GzLaunch7 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-7.0.0~pre1.tar.bz2"
-  version "7.0.0~pre1"
-  sha256 "efe15fd7201079612ce69bd6d7cdc3a5694f302928838b9bb48a40459085e1e0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-7.0.0~pre2.tar.bz2"
+  version "7.0.0-pre2"
+  sha256 "2e6fa4578ea694bfa799ff58e4373f3bb3b0be444d88bfbca7f36b415b8d1d3e"
   license "Apache-2.0"
-  revision 3
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch7"
 
