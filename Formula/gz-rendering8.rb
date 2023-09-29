@@ -1,19 +1,17 @@
 class GzRendering8 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.0.0~pre2.tar.bz2"
-  version "8.0.0~pre2"
-  sha256 "2e828c5c0754d082d97a01b5ef6f47d3baae2749f7c638b18259c4673c11be7b"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.0.0~pre3.tar.bz2"
+  version "8.0.0-pre3"
+  sha256 "2202d17ee7c6d48b029681b3f198dc68f87e07bb4bd6ae2945f9e6d520e510d9"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "2b29c8efc349b06ebe235a982c44ec4c8ecf5199e6aee6d115635909585bba77"
-    sha256 monterey: "9bbee41f78364d5e95eb98e762710bf4ae44dc1263f7a82394dd8253bcbe98f3"
-    sha256 big_sur:  "b24c5455c41e0b240fb1674660558b1883ca2790ef10dddd6a6138b5fa89d86c"
+    sha256 ventura:  "fb88f729a98a20ab22d3c1abf89163ef6db2ff06e4930656a17b9f3db7f4cb66"
+    sha256 monterey: "a4e01cb771e89b5415158f5b23c6b3fde152e4cd983a56908b53e08b158c2f2e"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -28,12 +26,6 @@ class GzRendering8 < Formula
   depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.3"
-
-  patch do
-    # use CMAKE_INSTALL_RPATH values in ogre2 library
-    url "https://github.com/gazebosim/gz-rendering/commit/65ffacb49e5c5477e2ee5241bb45fdfd2273a5ae.patch?full_index=1"
-    sha256 "ed13b1d5e74d3a4e66c33a52149eb6be581b5f97014e2745d9e18ad216913fd8"
-  end
 
   def install
     rpaths = [
