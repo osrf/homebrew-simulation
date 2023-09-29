@@ -1,19 +1,17 @@
 class GzMsgs10 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.0.0~pre3.tar.bz2"
-  version "10.0.0~pre3"
-  sha256 "88bb9cb14251d91d30a2ff1d65672a83420eeca5527aa5cb14a7714f41ba6bc5"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.0.0~pre4.tar.bz2"
+  version "10.0.0-pre4"
+  sha256 "3c5b847a0a2316196ff931d059afe0a8d378ca6e96f37784c9e227fe39f9a005"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "a9a96caa802ef2f1d934787647b0e57f3fbe93fcc3f7895c95fe2828d5f556d0"
-    sha256 monterey: "a1d26e0c141d80dc2e986fac7ab124ecec5dcf0ade19adc90af035e322d2e982"
-    sha256 big_sur:  "b3293701ab2cb15a4107a1988ac34b8b46b2336aff3bb38c7c3f08ad0944c315"
+    sha256 ventura:  "27c67859bf9c33fe847951cd47e329e6711ba8b746d4c227ef1394b5cf99c65d"
+    sha256 monterey: "707461321b8f1935ad135bf791df400ac1e34f785c22a6d58c13925821e9398f"
   end
 
   depends_on "cmake"
