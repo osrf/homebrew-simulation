@@ -9,8 +9,8 @@ class GzFuelTools9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "eaf4354817d8c5dcfe0fdca6e44c4f3daa93a87697921052d85c6f6c02bd4a59"
-    sha256 cellar: :any, monterey: "d778e6550a67fd3ec87b89ff0ed26448f6b53232f4eb0384dde91e6b7cc04f77"
+    sha256 cellar: :any, ventura:  "025e69cb55467de3e1775726b8faf0b46458098001549b414116c7af3ed2307a"
+    sha256 cellar: :any, monterey: "ab3b960410887f0d2a39aad02753387487742f8f191fe4c489334cae1f5935ae"
   end
 
   depends_on "cmake"
