@@ -1,17 +1,16 @@
 class GzGui8 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.0.0~pre2.tar.bz2"
-  version "8.0.0-pre2"
-  sha256 "a62ac36ef0e7ca5259291c89e781579ad5b702916e7ef8613a1aba08c9528ece"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.0.0.tar.bz2"
+  sha256 "50815c1e81f985a616068e9c3d425ee035edfa2e7a13bd14ce3de41d9500fa40"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "85d35f498277e00a61d60a0807db83e3725f35009a7c0cc55bacbb228cfeaf1b"
-    sha256 monterey: "a2f906278103827b13669519ba815be2981a6566721220a476bdcf37240ea340"
+    sha256 ventura:  "b89ca076cb34f4e5891a6f14e2ac37692c562527abd4a9cc126bd461cba539d1"
+    sha256 monterey: "51f3cbb8c7c1fb9af47588939d742edb2cd1bded6742308933fa9059368f645c"
   end
 
   depends_on "cmake" => [:build, :test]
