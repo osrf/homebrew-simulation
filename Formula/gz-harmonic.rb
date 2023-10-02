@@ -3,18 +3,16 @@ class GzHarmonic < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/gazebosim/gz-harmonic"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-harmonic/releases/gz-harmonic-1.0.0~pre2.tar.bz2"
-  version "1.0.0~pre2"
-  sha256 "1397b757805afcd1dc468b0ea2449288673bfe64ecf09393f948fc2cf1caa9a6"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-harmonic/releases/gz-harmonic-1.0.0.tar.bz2"
+  sha256 "50a60b775c7b9f21351667ec9912a3049129c49f89bfd1658af7381431e9d190"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "22aee85eabfb01f5a12ec9f5c2b0bf5c67d7451bb598fb0a43b63b24baa73f25"
-    sha256 cellar: :any, monterey: "647647ff655c30b9b5f7e83ff2d857cebe5a6ff058ea8e680a11fc3bc1d47299"
-    sha256 cellar: :any, big_sur:  "bbf7076d1eecc69cd9ce6cf0bfa06c9bfac402b8f05494d8d66c08ebe6c0a483"
+    sha256 cellar: :any, ventura:  "cef465681e1d0e1072f054a6f383d2e429c8616b8e5737294f77391561117ba8"
+    sha256 cellar: :any, monterey: "52f91070f1d85883ddb094d55f249769b8d693c9989080c49126b3c862f05d4e"
   end
 
   depends_on "cmake" => :build
