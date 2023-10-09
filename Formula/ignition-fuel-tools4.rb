@@ -4,7 +4,7 @@ class IgnitionFuelTools4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fuel-tools/releases/ignition-fuel-tools4-4.9.0.tar.bz2"
   sha256 "6834b959cb7cc1d90ea86042bc29e41d12ad68b8f3029f5ebd8b6ae73649420e"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools4"
 
