@@ -8,6 +8,12 @@ class IgnitionGui3 < Formula
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui3"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "b99247a174635d03d17092ad8fbfad9443f42c76fe2a583fd600a5d040395cff"
+    sha256 monterey: "62a050fbfed06a00bde0c71fb2007b63995db93cf447dd57638a38508c99a35a"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
