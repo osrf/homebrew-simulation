@@ -4,14 +4,9 @@ class GzTransport12 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-12.2.1.tar.bz2"
   sha256 "62fb97a722dea804da262610061688f675222d4e33a7a1a59868fdefe6ae2d92"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport12"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "6a17ce4dad2af2f80c504eaf24c912cb1e76710e13d10a3fdb42219f0a5f4f5d"
-    sha256 monterey: "1206c6c1dc219fa330cfbf1e803d04d93dc04232713c50eac2838e8daf198d22"
-  end
 
   depends_on "doxygen" => [:build, :optional]
 
