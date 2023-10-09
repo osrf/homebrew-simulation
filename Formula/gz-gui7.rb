@@ -4,14 +4,9 @@ class GzGui7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.2.1.tar.bz2"
   sha256 "d6a9d0a14fc535773b23e06106a58238b03c04f7551aa642d28768119272042f"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "c5686545e71e29615ea7cd07a725702f5620fd51e86cf5cb26331afecbd3341d"
-    sha256 monterey: "8225ad7f469dd61caf164132a637c2e1f3bbd46079d5bfe221edf0c9614502e8"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
