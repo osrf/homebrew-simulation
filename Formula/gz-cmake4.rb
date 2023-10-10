@@ -2,7 +2,7 @@ class GzCmake4 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-cmake.git", branch: "main"
-  version "3.999.999~0~20231006"
+  version "3.999.999-0-20231006"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake4"
