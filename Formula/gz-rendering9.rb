@@ -5,7 +5,7 @@ class GzRendering9 < Formula
   version "8.999.999-0-20231011"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
