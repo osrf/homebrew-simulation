@@ -2,7 +2,7 @@ class GzRendering9 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-rendering.git", branch: "main"
-  version "8.999.999-0-20231011"
+  version "8.999.999-0-20231012"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "main"
@@ -23,7 +23,7 @@ class GzRendering9 < Formula
   def install
     rpaths = [
       rpath,
-      rpath(source: lib/"gz-rendering-8/engine-plugins", target: lib),
+      rpath(source: lib/"gz-rendering-9/engine-plugins", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -38,7 +38,7 @@ class GzRendering9 < Formula
   test do
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
-      p = lib/"gz-rendering-8/engine-plugins/libgz-rendering-#{engine}.dylib"
+      p = lib/"gz-rendering-9/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
