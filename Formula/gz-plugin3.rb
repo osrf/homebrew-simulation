@@ -2,7 +2,7 @@ class GzPlugin3 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
   url "https://github.com/gazebosim/gz-plugin.git", branch: "main"
-  version "2.999.999~0~20231006"
+  version "2.999.999-0-20231006"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
