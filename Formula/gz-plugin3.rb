@@ -5,11 +5,11 @@ class GzPlugin3 < Formula
   version "2.999.999-0-20231006"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
+  head "https://github.com/gazebosim/gz-plugin.git", branch: "main"
 
   depends_on "cmake"
   depends_on "gz-cmake4"
-  depends_on "gz-tools3"
+  depends_on "gz-tools2"
   depends_on "gz-utils3"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
