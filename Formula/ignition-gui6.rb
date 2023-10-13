@@ -4,15 +4,14 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.8.0.tar.bz2"
   sha256 "dd4f26100f4d1343f068ba36f2b8394a0cddb337efde7b4a21c1b0f66ce496c9"
   license "Apache-2.0"
-  revision 12
+  revision 14
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "4577cc5c96570b80db04beefe8484c4a446fe653162a3c48bb3c8c0331d9bc67"
-    sha256 monterey: "ee75c69ff8022215f596b03ec29927e7d53f4f9b954fff5592c3a55733c51e5e"
-    sha256 big_sur:  "afa9ddf3774cece1b00c3777d2728d3ca2e50182012107dc08a1910118813508"
+    sha256 ventura:  "9ec47ba09ee94dc94e0ea9b8752c92304c88852c573121e43c3342dbef16c35a"
+    sha256 monterey: "6f60d80e2cb3b9ab0364bf3882550a9af385e2fd14d63ad9345721bf74ebeef6"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,18 +1,16 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.13.0.tar.bz2"
-  sha256 "2f65b98fe652a574e01b7cae6cf12e14a9dd29343fde99e066ac5193a8d03e71"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.14.0.tar.bz2"
+  sha256 "7e9842c046c9e0755355b274c240a8abbf4e962be7ce7b7f59194e5f4b584f45"
   license "Apache-2.0"
-  revision 10
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "0e8dc76027a24af5abe12e7ccff9d5ce54e8b1bfb73b844d9129708ef156a9ba"
-    sha256 monterey: "919c1c1a409b364ad9e7339f95e4203b83918444adf1e0b4310fccf8ac485a05"
-    sha256 big_sur:  "36b520e1b998fd1801ae0ec9e4812e926bfc54133275a56336c3d49d06d83518"
+    sha256 ventura:  "3a267f123ae273a9fbf49041bd50063001b9934ca55dd5862752fc70cb1ff625"
+    sha256 monterey: "e312b30bdfba329583462c1806623ee3d9a2b76b1ff477fb8651c456713dd0a7"
   end
 
   depends_on "cmake" => :build
@@ -49,18 +47,6 @@ class Gazebo11 < Formula
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
-
-  patch do
-    # Fix for compatibility with graphviz 9.0
-    url "https://github.com/gazebosim/gazebo-classic/commit/ba2cbd532a8ba47972cf9f0c3dbc32a5757cab2a.patch?full_index=1"
-    sha256 "a9cca7d59663fd45bab74e044c817600d24028e80ad2871107a34e8a3bebab2a"
-  end
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gazebo-classic/commit/17e09f574a4f39caff279cd70364cd1a3ea46f70.patch?full_index=1"
-    sha256 "b50f4cbfe92d3ded2dd7117696cf6a049f0bbdcdb9ef8f54bbc6bde7670f51b3"
-  end
 
   patch do
     # Fix build when homebrew python is installed
