@@ -2,19 +2,19 @@ class GzGui9 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
   url "https://github.com/gazebosim/gz-gui.git", branch: "main"
-  version "8.999.999-0-20231012"
+  version "8.999.999-0-20231016"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
-  depends_on "gz-cmake3"
-  depends_on "gz-common5"
-  depends_on "gz-msgs10"
+  depends_on "gz-cmake4"
+  depends_on "gz-common6"
+  depends_on "gz-msgs11"
   depends_on "gz-plugin2"
-  depends_on "gz-rendering8"
-  depends_on "gz-transport13"
+  depends_on "gz-rendering9"
+  depends_on "gz-transport14"
   depends_on macos: :mojave # c++17
   depends_on "protobuf"
   depends_on "qt@5"
