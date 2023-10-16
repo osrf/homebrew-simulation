@@ -16,7 +16,7 @@ class GzSim9 < Formula
   depends_on "gz-common6"
   depends_on "gz-fuel-tools10"
   depends_on "gz-gui9"
-  depends_on "gz-math7"
+  depends_on "gz-math8"
   depends_on "gz-msgs11"
   depends_on "gz-physics8"
   depends_on "gz-plugin2"
