@@ -2,7 +2,7 @@ class GzTransport14 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-transport.git", branch: "main"
-  version "13.999.999-0-20231012"
+  version "13.999.999-0-20231016"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "main"
@@ -12,8 +12,8 @@ class GzTransport14 < Formula
 
   depends_on "cmake"
   depends_on "cppzmq"
-  depends_on "gz-cmake3"
-  depends_on "gz-msgs10"
+  depends_on "gz-cmake4"
+  depends_on "gz-msgs11"
   depends_on "gz-tools2"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
