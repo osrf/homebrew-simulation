@@ -12,7 +12,7 @@ class GzGui9 < Formula
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-msgs11"
-  depends_on "gz-plugin2"
+  depends_on "gz-plugin3"
   depends_on "gz-rendering9"
   depends_on "gz-transport14"
   depends_on macos: :mojave # c++17
@@ -40,7 +40,7 @@ class GzGui9 < Formula
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-8/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
