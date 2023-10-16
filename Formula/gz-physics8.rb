@@ -16,7 +16,7 @@ class GzPhysics8 < Formula
   depends_on "gz-common6"
   depends_on "gz-math7"
   depends_on "gz-plugin2"
-  depends_on "gz-utils2"
+  depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat15"
