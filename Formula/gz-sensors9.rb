@@ -2,7 +2,7 @@ class GzSensors9 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
   url "https://github.com/gazebosim/gz-sensors.git", branch: "main"
-  version "8.999.999-0-20231012"
+  version "8.999.999-0-20231016"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
@@ -10,14 +10,14 @@ class GzSensors9 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
-  depends_on "gz-cmake3"
-  depends_on "gz-common5"
+  depends_on "gz-cmake4"
+  depends_on "gz-common6"
   depends_on "gz-math7"
-  depends_on "gz-msgs10"
-  depends_on "gz-rendering8"
-  depends_on "gz-transport13"
+  depends_on "gz-msgs11"
+  depends_on "gz-rendering9"
+  depends_on "gz-transport14"
   depends_on "protobuf"
-  depends_on "sdformat14"
+  depends_on "sdformat15"
 
   def install
     cmake_args = std_cmake_args
