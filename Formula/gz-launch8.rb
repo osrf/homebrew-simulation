@@ -15,7 +15,7 @@ class GzLaunch8 < Formula
   depends_on "gz-common6"
   depends_on "gz-gui9"
   depends_on "gz-msgs11"
-  depends_on "gz-plugin2"
+  depends_on "gz-plugin3"
   depends_on "gz-sim9"
   depends_on "gz-tools2"
   depends_on "gz-transport14"
@@ -46,7 +46,7 @@ class GzLaunch8 < Formula
     %w[joytotwist sim-factory sim simgui].each do |plugin|
       p = lib/"gz-launch-7/plugins/libgz-launch-#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
