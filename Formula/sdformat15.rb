@@ -13,7 +13,7 @@ class Sdformat15 < Formula
 
   depends_on "doxygen"
   depends_on "gz-cmake4"
-  depends_on "gz-math7"
+  depends_on "gz-math8"
   depends_on "gz-tools2"
   depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
