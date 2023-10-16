@@ -12,7 +12,7 @@ class GzSensors9 < Formula
 
   depends_on "gz-cmake4"
   depends_on "gz-common6"
-  depends_on "gz-math7"
+  depends_on "gz-math8"
   depends_on "gz-msgs11"
   depends_on "gz-rendering9"
   depends_on "gz-transport14"
