@@ -15,7 +15,7 @@ class GzPhysics8 < Formula
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
-  depends_on "gz-plugin2"
+  depends_on "gz-plugin3"
   depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
@@ -41,7 +41,7 @@ class GzPhysics8 < Formula
     %w[bullet-featherstone bullet dartsim tpe].each do |engine|
       p = lib/"gz-physics-8/engine-plugins/libgz-physics-#{engine}-plugin.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -71,18 +71,18 @@ class GzPhysics8 < Formula
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
       find_package(gz-physics8 REQUIRED)
-      find_package(gz-plugin2 REQUIRED COMPONENTS all)
+      find_package(gz-plugin3 REQUIRED COMPONENTS all)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake
           gz-physics8::gz-physics8
-          gz-plugin2::loader)
+          gz-plugin3::loader)
     EOS
     system "pkg-config", "gz-physics8"
     cflags   = `pkg-config --cflags gz-physics8`.split
     ldflags  = `pkg-config --libs gz-physics8`.split
-    system "pkg-config", "gz-plugin2-loader"
-    loader_cflags   = `pkg-config --cflags gz-plugin2-loader`.split
-    loader_ldflags  = `pkg-config --libs gz-plugin2-loader`.split
+    system "pkg-config", "gz-plugin3-loader"
+    loader_cflags   = `pkg-config --cflags gz-plugin3-loader`.split
+    loader_ldflags  = `pkg-config --libs gz-plugin3-loader`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    *ldflags,
