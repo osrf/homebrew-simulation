@@ -15,7 +15,7 @@ class GzTransport14 < Formula
   depends_on "gz-cmake4"
   depends_on "gz-msgs11"
   depends_on "gz-tools2"
-  depends_on "gz-utils2"
+  depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkg-config"
