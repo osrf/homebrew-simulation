@@ -19,7 +19,7 @@ class GzSim9 < Formula
   depends_on "gz-math8"
   depends_on "gz-msgs11"
   depends_on "gz-physics8"
-  depends_on "gz-plugin2"
+  depends_on "gz-plugin3"
   depends_on "gz-rendering9"
   depends_on "gz-sensors9"
   depends_on "gz-tools2"
@@ -52,7 +52,7 @@ class GzSim9 < Formula
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
