@@ -13,7 +13,7 @@ class GzRendering9 < Formula
   depends_on "freeimage"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
-  depends_on "gz-math7"
+  depends_on "gz-math8"
   depends_on "gz-plugin2"
   depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
