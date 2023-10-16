@@ -14,7 +14,7 @@ class GzRendering9 < Formula
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
-  depends_on "gz-plugin2"
+  depends_on "gz-plugin3"
   depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
@@ -40,7 +40,7 @@ class GzRendering9 < Formula
     ["ogre", "ogre2"].each do |engine|
       p = lib/"gz-rendering-9/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
