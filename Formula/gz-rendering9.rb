@@ -2,7 +2,7 @@ class GzRendering9 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-rendering.git", branch: "main"
-  version "8.999.999-0-20231012"
+  version "8.999.999-0-20231016"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "main"
@@ -11,8 +11,8 @@ class GzRendering9 < Formula
   depends_on "pkg-config" => [:build, :test]
 
   depends_on "freeimage"
-  depends_on "gz-cmake3"
-  depends_on "gz-common5"
+  depends_on "gz-cmake4"
+  depends_on "gz-common6"
   depends_on "gz-math7"
   depends_on "gz-plugin2"
   depends_on "gz-utils2"
