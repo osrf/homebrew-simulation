@@ -2,7 +2,7 @@ class GzPhysics8 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
   url "https://github.com/gazebosim/gz-physics.git", branch: "main"
-  version "7.999.999-0-20231012"
+  version "7.999.999-0-20231016"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "main"
@@ -12,14 +12,14 @@ class GzPhysics8 < Formula
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "google-benchmark"
-  depends_on "gz-cmake3"
-  depends_on "gz-common5"
+  depends_on "gz-cmake4"
+  depends_on "gz-common6"
   depends_on "gz-math7"
   depends_on "gz-plugin2"
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
-  depends_on "sdformat14"
+  depends_on "sdformat15"
 
   def install
     rpaths = [
