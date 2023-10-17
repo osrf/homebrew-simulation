@@ -2,7 +2,7 @@ class Sdformat15 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
   url "https://github.com/gazebosim/sdformat.git", branch: "main"
-  version "14.999.999-0-20231011"
+  version "14.999.999-0-20231016"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "main"
@@ -12,10 +12,10 @@ class Sdformat15 < Formula
   depends_on "pybind11" => :build
 
   depends_on "doxygen"
-  depends_on "gz-cmake3"
-  depends_on "gz-math7"
+  depends_on "gz-cmake4"
+  depends_on "gz-math8"
   depends_on "gz-tools2"
-  depends_on "gz-utils2"
+  depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
   depends_on "python@3.11"
   depends_on "tinyxml2"
