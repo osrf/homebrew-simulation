@@ -1,13 +1,13 @@
-class GzHarmonic < Formula
+class GzIonic < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
-  homepage "https://github.com/gazebosim/gz-harmonic"
+  homepage "https://github.com/gazebosim/gz-ionic"
   url "https://github.com/gazebosim/gz-ionic.git", branch: "main"
   version "0.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
+  head "https://github.com/gazebosim/gz-ionic.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "python@3.11" => [:build, :test]
@@ -48,7 +48,7 @@ class GzHarmonic < Formula
   end
 
   test do
-    yaml_file = share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml"
+    yaml_file = share/"gz/gz-ionic/gazebodistro/collection-ionic.yaml"
     system libexec/"bin/vcs", "validate", "--input", yaml_file
   end
 end
