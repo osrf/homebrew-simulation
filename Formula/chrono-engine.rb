@@ -1,7 +1,7 @@
 class ChronoEngine < Formula
   desc "Chrono physics engine"
   homepage "http://www.projectchrono.org"
-  url "https://github.com/projectchrono/chrono/archive/7.0.3.tar.gz"
+  url "https://github.com/projectchrono/chrono/archive/refs/tags/7.0.3.tar.gz"
   sha256 "335923458fc75024baf2458c94d9d227da6ee91f989f5603b2d13498e2db0a81"
   license "BSD-3-Clause"
 
