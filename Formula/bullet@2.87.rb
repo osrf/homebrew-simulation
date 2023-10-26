@@ -1,7 +1,7 @@
 class BulletAT287 < Formula
   desc "Physics SDK"
   homepage "https://bulletphysics.org/"
-  url "https://github.com/bulletphysics/bullet3/archive/2.87.tar.gz"
+  url "https://github.com/bulletphysics/bullet3/archive/refs/tags/2.87.tar.gz"
   sha256 "438c151c48840fe3f902ec260d9496f8beb26dba4b17769a4a53212903935f95"
   license "Zlib"
   head "https://github.com/bulletphysics/bullet3.git"
