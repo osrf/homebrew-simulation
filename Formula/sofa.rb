@@ -1,7 +1,7 @@
 class Sofa < Formula
   desc "Physics framework sofa"
   homepage "https://www.sofa-framework.org"
-  url "https://github.com/sofa-framework/sofa/archive/v19.12.00.tar.gz"
+  url "https://github.com/sofa-framework/sofa/archive/refs/tags/v19.12.00.tar.gz"
   sha256 "830f6cfe237feea545f2afb85d8797330db6712ce4581886d83e9c47372285ba"
   license "LGPL-2.1"
 
