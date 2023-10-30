@@ -10,7 +10,6 @@ class GzIonic < Formula
   head "https://github.com/gazebosim/gz-ionic.git", branch: "main"
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => [:build, :test]
 
   depends_on "gz-cmake4"
   depends_on "gz-common6"
