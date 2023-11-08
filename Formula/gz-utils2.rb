@@ -1,8 +1,8 @@
 class GzUtils2 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-2.1.0.tar.bz2"
-  sha256 "42342b83dcd80bcf4f71240da48f9c0b71e4adbf1c6a22e458f3286a453b70a7"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-2.2.0.tar.bz2"
+  sha256 "9de2263e9be949405b7b3fb113b9215b72c810644f99d2a5c9151edd3a478748"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils2"
