@@ -1,16 +1,16 @@
 class GzUtils2 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-2.1.0.tar.bz2"
-  sha256 "42342b83dcd80bcf4f71240da48f9c0b71e4adbf1c6a22e458f3286a453b70a7"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-2.2.0.tar.bz2"
+  sha256 "e53474ef1f8100415848bdad3c3bd17024643696605a584ce40b4df7740ab4fc"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "a3047cbc588580f096f5e1e4eb491e7873b9b3f8a77cee6d05f3983280007961"
-    sha256 cellar: :any, monterey: "d5f1c59bde721150077ce02180684c837aa35910a981710ba9654c0dcbfc2f53"
+    sha256 cellar: :any, ventura:  "434704186995b15e49035f74c68034bdcbfef772d0cf697113dfcfc0392d2716"
+    sha256 cellar: :any, monterey: "a2313fadab80f5867eaac4d8a6d0b7e1c8fb96218b78444d7a2c22fe32e6ab65"
   end
 
   depends_on "cmake" => [:build, :test]
