@@ -1,6 +1,6 @@
 Build | Status
 -- | --
-macOS 10.15 GitHub action | [![Build Status](![brew test-bot](https://github.com/osrf/homebrew-simulation/workflows/brew%20test-bot/badge.svg?branch=master&event=push))
+macOS 10.15 GitHub action | ![brew test-bot](https://github.com/osrf/homebrew-simulation/workflows/brew%20test-bot/badge.svg?branch=master&event=push)
 
 homebrew-simulation
 ===================
@@ -13,6 +13,10 @@ To use:
     brew install ignition-citadel
 
 ## Bottle status
+
+Status   | Citadel | Fortress | Garden | Harmonic
+-------- | ------- | -------- | ------ | --------
+gz-cmake | [![gz-cmake2](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake2-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-citadel/job/ignition_cmake2-install_bottle-homebrew-amd64/)  | [![gz-cmake2](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake2-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-fortress/job/ignition_cmake2-install_bottle-homebrew-amd64/)  | [![gz-cmake3](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake3-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_cmake3-install_bottle-homebrew-amd64/)  | [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake3-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-harmonic/job/ignition_cmake3-install_bottle-homebrew-amd64/)
 
 ### Gazebo Harmonic
 
