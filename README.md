@@ -10,13 +10,13 @@ Homebrew tap for osrf simulation software
 To use:
 
     brew tap osrf/simulation
-    brew install ignition-citadel
+    brew install gz-citadel
 
 ## Bottle status
 
 Status   | Citadel | Fortress | Garden | Harmonic
 -------- | ------- | -------- | ------ | --------
-gz-cmake | [![gz-cmake2](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake2-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-citadel/job/ignition_cmake2-install_bottle-homebrew-amd64/)  | [![gz-cmake2](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake2-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-fortress/job/ignition_cmake2-install_bottle-homebrew-amd64/)  | [![gz-cmake3](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake3-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-garden/job/ignition_cmake3-install_bottle-homebrew-amd64/)  | [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=ignition_cmake3-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/ign-harmonic/job/ignition_cmake3-install_bottle-homebrew-amd64/)
+gz-cmake | [![gz-cmake2](https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake2-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-citadel/job/gz_cmake2-install_bottle-homebrew-amd64/)  | [![gz-cmake2](https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake2-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-fortress/job/gz_cmake2-install_bottle-homebrew-amd64/)  | [![gz-cmake3](https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake3-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-garden/job/gz_cmake3-install_bottle-homebrew-amd64/)  | [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake3-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-harmonic/job/gz_cmake3-install_bottle-homebrew-amd64/)
 
 ### Gazebo Harmonic
 
