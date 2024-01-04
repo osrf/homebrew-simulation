@@ -35,7 +35,7 @@ sdformat      | [![sdformat9](https://build.osrfoundation.org/buildStatus/icon?j
 
 ### Gazebo Classic
 
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=gazebo-install-one_liner-homebrew-amd64)](https://build.osrfoundation.org/view/ign-citadel/job/gazebo-install-one_liner-homebrew-amd64/)         [gazebo-classic11](https://build.osrfoundation.org/view/ign-citadel/job/gazebo-install-one_liner-homebrew-amd64/)
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=gazebo-install-one_liner-homebrew-amd64)](https://build.osrfoundation.org/job/gazebo-install-one_liner-homebrew-amd64/)         [gazebo-classic11](https://build.osrfoundation.org/job/gazebo-install-one_liner-homebrew-amd64/)
 
 ## To build bottles
 
