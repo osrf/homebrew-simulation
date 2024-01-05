@@ -26,6 +26,7 @@ class GzPhysics6 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "sdformat13"
+  depends_on "urdfdom"
 
   def install
     rpaths = [
