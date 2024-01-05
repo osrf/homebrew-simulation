@@ -4,14 +4,9 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.5.1.tar.bz2"
   sha256 "6556a066f88e48eb3a5d9219245b988e02778ce8c1f90cceb9359e87cbced828"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "d1fc0671acdbd7336199290f2c5c0f39b020b0bc976ffad3c513f708674d1e46"
-    sha256 monterey: "b306397e44824117c1d0f1323cf1324a67ffacad20f03c9ad1c844a178a2c4ed"
-  end
 
   depends_on "cmake" => [:build, :test]
 
