@@ -4,16 +4,9 @@ class Sdformat4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-4.4.0.tar.bz2"
   sha256 "4424a984f69d3333f087e7aae1d8fa5aec61ad52e09be39e2f5e2cb69ade1527"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/osrf/sdformat.git", branch: "sdf4", using: :git
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 mojave:      "f4926ac28179ed217c034f7b69a42176b7a8290be7dd91bb87fcd5fe96f64daf"
-    sha256 high_sierra: "b727234177c477d3de90413ac7880ecca91e0c73acf69fcf6c2a2d3b099806b1"
-    sha256 sierra:      "d0b28be274c293fd1c5395fcae0be37f43f6c16ef129a171d39a020564e6b7f9"
-  end
 
   disable! date: "2023-02-28", because: "is past end-of-life date"
   deprecate! date: "2019-09-01", because: "is past end-of-life date"
