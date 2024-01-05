@@ -40,6 +40,7 @@ class Gazebo11 < Formula
   depends_on "tbb"
   depends_on "tinyxml"
   depends_on "tinyxml2"
+  depends_on "urdfdom"
   depends_on "zeromq" => :linked
 
   # depends on "gdal"
