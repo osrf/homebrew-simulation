@@ -1,8 +1,8 @@
 class IgnitionRendering3 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://github.com/gazebosim/gz-rendering"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.7.1.tar.bz2"
-  sha256 "a93bb5771e3097001e8ad6e83f8cf0c48afd3c554f7c3d3c116bb053fa1a8fc9"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.7.2.tar.bz2"
+  sha256 "531a153dc2353ee98c2fdcaf25f9550d7008f9dd93be5b53c7b95b780cb13fe1"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering3"
