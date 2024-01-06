@@ -8,6 +8,7 @@ class Gazebo7 < Formula
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo7"
 
+  disable! date: "2024-01-25", because: "is past end-of-life date"
   deprecate! date: "2021-01-25", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
