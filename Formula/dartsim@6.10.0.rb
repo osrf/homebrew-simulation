@@ -27,6 +27,12 @@ class DartsimAT6100 < Formula
   depends_on "urdfdom"
 
   patch do
+    # Fix for compatibility with urdfdom 4.0.0
+    url "https://github.com/gazebo-forks/dart/commit/9a6297e1fcc6373ad8f86a41c7ceba30efa0e0c3.patch?full_index=1"
+    sha256 "30af5d493d53fdb5a92fe4eedd2e2cd62b904cd8bc36c7f5b88601e6dafdc31f"
+  end
+
+  patch do
     # Fix for compatibility with ipopt 3.13
     url "https://github.com/scpeters/dart/commit/d8500b7ee4d672ede22fbbbd72ef66c003aa2b6f.patch?full_index=1"
     sha256 "3c85f594b477ff2357017364a55cdc7b3ffa25ab53f08bd910ed5db71083ed6d"
