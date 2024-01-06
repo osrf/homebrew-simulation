@@ -15,6 +15,8 @@ class TbbAT2020U3 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2023-01-25", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "swig" => :build
   depends_on "python@3.9"
