@@ -9,8 +9,8 @@ class IgnitionPhysics2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "8ba3a02300aae3763d8bcfb489ef1c34b7b13e07b7d4b8156f502ca94fd969aa"
-    sha256 cellar: :any, monterey: "51615f6f7bc658527aaa8df623f292856ddab3cde4920451fc0207706390c101"
+    sha256 cellar: :any, ventura:  "6661b85039d0885b0eb41fbf6d4dbaddbb5f5c985018040aa0019ce19a72eb74"
+    sha256 cellar: :any, monterey: "5341b000c6ae41a7bfe281a6251127de06df0cbd1bf6c4642a764dc042815b7e"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
