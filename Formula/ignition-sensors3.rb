@@ -1,10 +1,9 @@
 class IgnitionSensors3 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.5.0.tar.bz2"
-  sha256 "904297a8deea7f3bff79a4a1fa24aee9c208a72013e29147c3087ca07fc41788"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.6.0.tar.bz2"
+  sha256 "b64b187333907a9e866307ccc76649672e0df9b6bdfb4a390929ebbcaa83ce64"
   license "Apache-2.0"
-  revision 16
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors3"
 
