@@ -1,8 +1,8 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.16.0.tar.bz2"
-  sha256 "2f01e46ecef680b9bbab0be71f61aac46e9a1625084e3d3bdb70c526754730b4"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.17.0.tar.bz2"
+  sha256 "243aa94babb37c7f0d58575b31127cc49181cd96f1a24d91cfdb66ffbc5976ef"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common3"
