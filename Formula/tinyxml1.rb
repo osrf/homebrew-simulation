@@ -5,6 +5,12 @@ class Tinyxml1 < Formula
   sha256 "15bdfdcec58a7da30adc87ac2b078e4417dbe5392f3afb719f9ba6d062645593"
   license "Zlib"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "dfb19813b715788d17243281a131d24882cf33f921e2998819243e9676fa9af9"
+    sha256 cellar: :any, monterey: "99460c19db8e2b1e8512362b4bf504e62f5f9449e6fa8d8b4abdefdb89ca5db3"
+  end
+
   depends_on "cmake" => :build
 
   conflicts_with "tinyxml", because: "differing version of the same formula"
