@@ -6,6 +6,8 @@ class HaptixComm < Formula
   license "Apache-2.0"
   head "https://github.com/osrf/haptix-comm.git", branch: "master"
 
+  disable! date: "2024-01-24", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => [:build, :optional]
   depends_on "pkg-config" => :build
