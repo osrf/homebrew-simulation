@@ -1,10 +1,9 @@
 class IgnitionTransport8 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.4.0.tar.bz2"
-  sha256 "deac1e04f08e3bebd70d587de54054beacf205a05aaac2db0dc1926fa35bf2a2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.5.0.tar.bz2"
+  sha256 "5edd15699e35ade5ad2f814af1f5e96a866f7908e16b55333abb23978f44d4c6"
   license "Apache-2.0"
-  revision 16
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport8"
 
