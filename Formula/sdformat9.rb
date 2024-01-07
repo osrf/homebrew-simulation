@@ -4,6 +4,7 @@ class Sdformat9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.10.1.tar.bz2"
   sha256 "0b6af9955a94a22b077eb915f2b61b35f55963c12d0f1aecb5fbe5b51347a50d"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf9"
 
@@ -20,7 +21,7 @@ class Sdformat9 < Formula
   depends_on "ignition-math6"
   depends_on "ignition-tools"
   depends_on macos: :mojave # c++17
-  depends_on "tinyxml"
+  depends_on "tinyxml1"
   depends_on "urdfdom"
 
   def install
