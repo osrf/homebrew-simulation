@@ -12,8 +12,8 @@ class GzHarmonic < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "cef465681e1d0e1072f054a6f383d2e429c8616b8e5737294f77391561117ba8"
-    sha256 cellar: :any, monterey: "52f91070f1d85883ddb094d55f249769b8d693c9989080c49126b3c862f05d4e"
+    sha256 cellar: :any, ventura:  "6f719d3840fe3a4287eab5800ac21f844f4cdaa9dea1221b1c46ed4f41216fb3"
+    sha256 cellar: :any, monterey: "0ed91dbd27a86efd2b7d6655d8a5866638346374d5d92fbfa29fa46e76e09ff1"
   end
 
   depends_on "cmake" => :build
