@@ -23,6 +23,8 @@ class CmakeAT3214 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2023-01-25", because: "is past end-of-life date"
+
   uses_from_macos "ncurses"
 
   on_linux do

@@ -1,12 +1,17 @@
 class Sdformat9 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.10.0.tar.bz2"
-  sha256 "5660d4d1547f4e4039e3ad64830b29d2ebfc6aab2aa86ed86d8d8305ee4eb3c2"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.10.1.tar.bz2"
+  sha256 "0b6af9955a94a22b077eb915f2b61b35f55963c12d0f1aecb5fbe5b51347a50d"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "b18bfdf2040a3a5f443d69f5700ba9cdbede7665e2dac4b69b27dbcef5cda3e5"
+    sha256 monterey: "5539ec2b47bb260af07920e22c0fd506e9f9f8527b8609b200bddfcac14c4ceb"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -17,13 +22,6 @@ class Sdformat9 < Formula
   depends_on macos: :mojave # c++17
   depends_on "tinyxml"
   depends_on "urdfdom"
-
-  patch do
-    # Fix ruby syntax
-    # Remove with next release
-    url "https://github.com/gazebosim/sdformat/commit/6890d65de952b37a6d8935c0f6d823d26ff8aa86.patch?full_index=1"
-    sha256 "f0524bbc4d40de81024a9ac804fdb43683d974919dfe46cb583f920640a8da3a"
-  end
 
   def install
     cmake_args = std_cmake_args

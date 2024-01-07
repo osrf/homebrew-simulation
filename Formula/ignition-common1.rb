@@ -14,6 +14,8 @@ class IgnitionCommon1 < Formula
     sha256 cellar: :any, catalina: "ffd94f0a4c2c7272f39a6f5e871cd72f67075c3cda408650496554ea0f99ea40"
   end
 
+  deprecate! date: "2023-01-25", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ffmpeg@4"
   depends_on "freeimage"

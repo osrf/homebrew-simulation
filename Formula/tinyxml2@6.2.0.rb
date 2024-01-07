@@ -15,6 +15,8 @@ class Tinyxml2AT620 < Formula
 
   keg_only "temporary version until tinyxml2.pc is fixed"
 
+  disable! date: "2024-01-25", because: "is no longer needed"
+
   depends_on "cmake" => :build
 
   def install
