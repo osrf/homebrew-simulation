@@ -13,9 +13,8 @@ class IgnitionCitadel < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "9d36689233cee3bb6016793002ab5fa0574a986d3787ef46c8c2d6c76d7b53a7"
-    sha256 cellar: :any, monterey: "39c496abc944d0ecf30f10489095d0beafa7cb794e4f88d2436c2c4fccd00deb"
-    sha256 cellar: :any, big_sur:  "dfc3b855fc80378130a975dc3a05783ed5efd4e1e8a89a14cbec9d970182e544"
+    sha256 cellar: :any, ventura:  "6825681c5f253c09f7ed54e17eb2fe67eb987bf64deec82886abad2df0dbec16"
+    sha256 cellar: :any, monterey: "7b39ced8c09bee8c7defa80c7265f8af300a79c83f838beac48f7adc0e8589d4"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
