@@ -6,13 +6,14 @@ class GzHarmonic < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-harmonic/releases/gz-harmonic-1.0.0.tar.bz2"
   sha256 "50a60b775c7b9f21351667ec9912a3049129c49f89bfd1658af7381431e9d190"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "cef465681e1d0e1072f054a6f383d2e429c8616b8e5737294f77391561117ba8"
-    sha256 cellar: :any, monterey: "52f91070f1d85883ddb094d55f249769b8d693c9989080c49126b3c862f05d4e"
+    sha256 cellar: :any, ventura:  "6f719d3840fe3a4287eab5800ac21f844f4cdaa9dea1221b1c46ed4f41216fb3"
+    sha256 cellar: :any, monterey: "0ed91dbd27a86efd2b7d6655d8a5866638346374d5d92fbfa29fa46e76e09ff1"
   end
 
   depends_on "cmake" => :build
