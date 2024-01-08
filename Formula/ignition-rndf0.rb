@@ -7,6 +7,8 @@ class IgnitionRndf0 < Formula
 
   head "https://github.com/gazebosim/gz-rndf.git", branch: "master"
 
+  disable! date: "2024-01-24", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "ignition-cmake0"
   depends_on "ignition-math3"
