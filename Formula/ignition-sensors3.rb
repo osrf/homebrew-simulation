@@ -1,17 +1,16 @@
 class IgnitionSensors3 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.5.0.tar.bz2"
-  sha256 "904297a8deea7f3bff79a4a1fa24aee9c208a72013e29147c3087ca07fc41788"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors3-3.6.0.tar.bz2"
+  sha256 "b64b187333907a9e866307ccc76649672e0df9b6bdfb4a390929ebbcaa83ce64"
   license "Apache-2.0"
-  revision 17
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "22ebbeb4a1bc7de885489033241b890e370094323c3f9f51dedf0e534635695b"
-    sha256 monterey: "c241177714c4b2b5dbf1458eef54cbd814cc8b2df6d1cfe24a9d0c8ec4a1831d"
+    sha256 ventura:  "b1959adf1c23482d407bf4df68cfcefaf6319795bc69f80626851cccdc8b4916"
+    sha256 monterey: "7ffba93863632f698942f2737964dc03203ecb4b512d47e44504a1a8c14002c1"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -27,12 +26,6 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-transport8"
   depends_on "protobuf"
   depends_on "sdformat9"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sensors/commit/e6dcb527a70f154704c0fe62e6393f471136afcb.patch?full_index=1"
-    sha256 "1e5a91f97f4f770c07fc33bae433c3dfebd590fa441f7f2f11ce750b25879971"
-  end
 
   def install
     cmake_args = std_cmake_args
