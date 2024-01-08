@@ -4,13 +4,14 @@ class Sdformat9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-9.10.1.tar.bz2"
   sha256 "0b6af9955a94a22b077eb915f2b61b35f55963c12d0f1aecb5fbe5b51347a50d"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "b18bfdf2040a3a5f443d69f5700ba9cdbede7665e2dac4b69b27dbcef5cda3e5"
-    sha256 monterey: "5539ec2b47bb260af07920e22c0fd506e9f9f8527b8609b200bddfcac14c4ceb"
+    sha256 ventura:  "ac0f11dbdb6bfd75df7aa11b13d014bb2624febd625de524625f250198baa0b4"
+    sha256 monterey: "0d72b95fa548878ccb2272c1bf793e65a274af39ce0de5fb41c4b8a5a647b50d"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -20,7 +21,7 @@ class Sdformat9 < Formula
   depends_on "ignition-math6"
   depends_on "ignition-tools"
   depends_on macos: :mojave # c++17
-  depends_on "tinyxml"
+  depends_on "tinyxml1"
   depends_on "urdfdom"
 
   def install
