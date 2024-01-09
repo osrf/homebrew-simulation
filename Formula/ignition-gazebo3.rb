@@ -9,8 +9,8 @@ class IgnitionGazebo3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "d1d7e297e419c5de028f84c0a0e28277f8707b8ab569cd4406de72862fe292dd"
-    sha256 monterey: "843054223aa65ca4ffd93b26c28e5a4d6a1a0dc1396b1e8b0e8f8a5404c2b894"
+    sha256 ventura:  "c18299d5539e266328365ed4bf4d66b84c5f4d508b032506ea590363c2b6326e"
+    sha256 monterey: "5a4d7df6abeedcdab55c2bd8da188696051b1ccdd86598ba9942c84c9c6c0dd0"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
