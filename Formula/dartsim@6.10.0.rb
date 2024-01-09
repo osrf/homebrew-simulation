@@ -6,7 +6,13 @@ class DartsimAT6100 < Formula
   version "6.10.0~20211005~d2b6ee08a60d0dbf71b0f008cd8fed1f611f6e24"
   sha256 "372af181024452418eec95f8a9cd723ceb1ada979208add66c9a4330b9c0fa32"
   license "BSD-2-Clause"
-  revision 9
+  revision 10
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "4ea3d00ac47c820f3f1c70bd7d1b0a012da5c3cc274461ed908d168c2729889f"
+    sha256 monterey: "ba9733a6eb299e9e9c940dbe73e97e97081debdf0e0fead45f1362aa353ee109"
+  end
 
   keg_only "open robotics fork of dart HEAD + custom changes"
 
@@ -25,6 +31,12 @@ class DartsimAT6100 < Formula
   depends_on "open-scene-graph"
   depends_on "tinyxml2"
   depends_on "urdfdom"
+
+  patch do
+    # Fix for compatibility with urdfdom 4.0.0
+    url "https://github.com/gazebo-forks/dart/commit/9a6297e1fcc6373ad8f86a41c7ceba30efa0e0c3.patch?full_index=1"
+    sha256 "30af5d493d53fdb5a92fe4eedd2e2cd62b904cd8bc36c7f5b88601e6dafdc31f"
+  end
 
   patch do
     # Fix for compatibility with ipopt 3.13
