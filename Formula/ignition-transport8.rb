@@ -1,17 +1,16 @@
 class IgnitionTransport8 < Formula
   desc "Transport middleware for robotics"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.4.0.tar.bz2"
-  sha256 "deac1e04f08e3bebd70d587de54054beacf205a05aaac2db0dc1926fa35bf2a2"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport8-8.5.0.tar.bz2"
+  sha256 "5edd15699e35ade5ad2f814af1f5e96a866f7908e16b55333abb23978f44d4c6"
   license "Apache-2.0"
-  revision 16
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "aab4b656b72bee12c8108eef4676ed6fdfd99a16a9a4ce1c4f368adc1883b1a6"
-    sha256 monterey: "803ea51b6bab9576a09115de4499c2fd0a05311f6abedc7f9862def035d1728d"
+    sha256 ventura:  "ec2de8b9b3dd8fdc6055f1dbf6b4db0d9b10fe9b77af92f01927b030caef97d3"
+    sha256 monterey: "9691dc1652b26891366b2aa047e0c550cb3209e41ce46cff42fff736a981009f"
   end
 
   depends_on "doxygen" => [:build, :optional]
@@ -26,12 +25,6 @@ class IgnitionTransport8 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "zeromq"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-transport/commit/e35a697b619dbcecec0ae0c8b8f0a644d368abf3.patch?full_index=1"
-    sha256 "6bbc6da4245b57f12112695914f58160f093691967c3bbe2fbc9b75eafc0886a"
-  end
 
   def install
     cmake_args = std_cmake_args

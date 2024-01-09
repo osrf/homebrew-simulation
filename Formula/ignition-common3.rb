@@ -1,17 +1,16 @@
 class IgnitionCommon3 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-common"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.16.0.tar.bz2"
-  sha256 "2f01e46ecef680b9bbab0be71f61aac46e9a1625084e3d3bdb70c526754730b4"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.17.0.tar.bz2"
+  sha256 "243aa94babb37c7f0d58575b31127cc49181cd96f1a24d91cfdb66ffbc5976ef"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "68a95bf32afccc4b773d268814976ca8e4b5b4de591edde70e3200cfa8aa546a"
-    sha256 cellar: :any, monterey: "3f6ca9d7fb45d95d6b9765329c98c15f5fa352477514591bf9e8f81a53da465f"
-    sha256 cellar: :any, big_sur:  "7f280c787e5990dc8affb4d760bcef6bef14ab050394db1ca2cb0b79151c99c6"
+    sha256 cellar: :any, ventura:  "1687a81e7436b41ef38c6bcf50237f61f51312e9ebc01466c8521457a8887bc9"
+    sha256 cellar: :any, monterey: "2423f08ee33c0c06cf41ac55134dd0d92144e15f03db1fb14b9ae81eb0e0f9ce"
   end
 
   depends_on "cmake"
