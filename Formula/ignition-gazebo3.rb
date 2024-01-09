@@ -1,17 +1,16 @@
 class IgnitionGazebo3 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.15.0.tar.bz2"
-  sha256 "009a107afc4517caea609ab0b24eae65282faab808bda9aa0a22e600bc2b0088"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.15.1.tar.bz2"
+  sha256 "c801d4205f8f88fca813cbf699cf6a077536d430e6c312a85520d6f50a7052bd"
   license "Apache-2.0"
-  revision 17
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "d1d7e297e419c5de028f84c0a0e28277f8707b8ab569cd4406de72862fe292dd"
-    sha256 monterey: "843054223aa65ca4ffd93b26c28e5a4d6a1a0dc1396b1e8b0e8f8a5404c2b894"
+    sha256 ventura:  "c18299d5539e266328365ed4bf4d66b84c5f4d508b032506ea590363c2b6326e"
+    sha256 monterey: "5a4d7df6abeedcdab55c2bd8da188696051b1ccdd86598ba9942c84c9c6c0dd0"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -38,12 +37,6 @@ class IgnitionGazebo3 < Formula
   depends_on "protobuf"
   depends_on "ruby"
   depends_on "sdformat9"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-sim/commit/dfb70396bdb426f68f3858ba40bbfb0fe73408be.patch?full_index=1"
-    sha256 "c8fa5280d11efc8bd8780ec5e74142c71e8417f7ed5e9ad610aeb827b5c3e08d"
-  end
 
   def install
     cmake_args = std_cmake_args
