@@ -1,17 +1,16 @@
 class IgnitionSensors6 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.7.1.tar.bz2"
-  sha256 "5b01cb99ff8b1effc0bdaa0309f4378894ace2640644ee3f2b96d44ff3aa10f0"
+  url "https://osrf-distributions.s3.amazonaws.com/ign-sensors/releases/ignition-sensors6-6.8.0.tar.bz2"
+  sha256 "4bd5cd637dc624fe8d2a5244b3282ed74558c0fd50e040ba4770c312fcb8c1f5"
   license "Apache-2.0"
-  revision 10
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "08535aad7b79c436ea764033090acba0927f2a30fda3d1960cf677c7c2b08e64"
-    sha256 cellar: :any, monterey: "25c6419a8fbc6295f34fc7910552504548636fc20f2e853589125d20f1e295dd"
+    sha256 cellar: :any, ventura:  "451ff690cd4176b9dbaa375a56d620fc7e188be1ba7b891629a9a900b8a5eb37"
+    sha256 cellar: :any, monterey: "cdfc2bdfa18c309bb1e6e3eb62fea3e16a1d6501f1050add4ccb108264cbf8b6"
   end
 
   depends_on "cmake" => [:build, :test]
