@@ -4,7 +4,7 @@ class GzSim8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.0.0.tar.bz2"
   sha256 "2b9f422fbe87d0f215d4cb85559fbfadd36115b91e56515fa63ae1fd290d2012"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
