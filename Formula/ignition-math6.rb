@@ -18,7 +18,7 @@ class IgnitionMath6 < Formula
   depends_on "pybind11" => :build
   depends_on "eigen"
   depends_on "ignition-cmake2"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruby"
 
   def install
@@ -31,6 +31,9 @@ class IgnitionMath6 < Formula
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -67,5 +70,7 @@ class IgnitionMath6 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import ignition.math"
   end
 end
