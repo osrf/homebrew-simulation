@@ -4,13 +4,14 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.7.0.tar.bz2"
   sha256 "48d89b5e913eb8bb9925373eeb18616d512cd43f7e45be4413ce8c66bf1ca0d1"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "9b78de35ea74c4f02f9aa6d817b72d07dbde6562f076263ea3e03615ef3e09f3"
-    sha256 monterey: "bf23ea8a96d723085b81be023d679203442e3b3890f358e4e68aa997aca0e7e7"
+    sha256 ventura:  "8bc334ad26812cf3c17d8abfe309c0ff081935475f512b94280bcc8abc3b3409"
+    sha256 monterey: "87b59515c867e3d0ba38e3c1029400e91a742d3bdf63887d7dbefc51f4cc2945"
   end
 
   depends_on "cmake" => :build
@@ -34,6 +35,7 @@ class GzSim7 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "python@3.11"
   depends_on "ruby"
   depends_on "sdformat13"
 
@@ -47,11 +49,15 @@ class GzSim7 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << "-DPython3_EXECUTABLE=#{which("python3")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -138,5 +144,7 @@ class GzSim7 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.sim7"
   end
 end

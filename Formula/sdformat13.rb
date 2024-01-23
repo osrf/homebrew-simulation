@@ -4,14 +4,14 @@ class Sdformat13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.6.0.tar.bz2"
   sha256 "5845c9c0da66bb30b209ed8421f5b4805bf6e8863fd58a790a59f856902e67f3"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "081d930baa444220c51d5540254e945eb5a656421d5489738f129732e975e66f"
-    sha256 monterey: "d7239c13404045c74f68d4e88c05be75c9f56ed25231d5e28e158ffb297c6b46"
+    sha256 ventura:  "848982919f5bde647932a1e9717624339a2cca27151c8562d44a9f4534a00aad"
+    sha256 monterey: "ac1984c4463e4e82fbe4f0d6a57f11c270a7db5942af7a674baf6a8b863953c3"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -32,6 +32,7 @@ class Sdformat13 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DPython3_EXECUTABLE=#{which("python3")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
