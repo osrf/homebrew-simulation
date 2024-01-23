@@ -4,14 +4,14 @@ class GzMath7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.3.0.tar.bz2"
   sha256 "cc9d677b9f231cd5efde357375c862756f68c21acfb59bfc1e4f9133cf1fccc0"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "061d0e22944431ba655a164d1375d34925f835d60672606112978d4cbcc5f606"
-    sha256 cellar: :any, monterey: "c607797c0b45ec6e649905f927ae533a5cedfc4c9b7057588c3ab3ccd7a8f211"
-    sha256 cellar: :any, big_sur:  "6e433994b71f051ba69f85c4e6e9e7424191618696429ba812e37ef21dec3a0f"
+    sha256 cellar: :any, ventura:  "1412b5565632413e709af2d2f0c4f0a669df3f207dcff4bd9a551290aaafd539"
+    sha256 cellar: :any, monterey: "75c284b12d95a61019cb3bbdf762b8e356d400542f19579550196daef4267571"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +27,7 @@ class GzMath7 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DPython3_EXECUTABLE=#{which("python3")}"
 
     # Use build folder
     mkdir "build" do
