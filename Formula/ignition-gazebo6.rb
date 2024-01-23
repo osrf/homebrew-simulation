@@ -44,11 +44,15 @@ class IgnitionGazebo6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << "-DPython3_EXECUTABLE=#{which("python3")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -134,5 +138,7 @@ class IgnitionGazebo6 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import ignition.gazebo"
   end
 end
