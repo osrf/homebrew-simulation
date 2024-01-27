@@ -4,14 +4,14 @@ class GzTransport13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.0.0.tar.bz2"
   sha256 "d44b4ed089110a1a7dfc3b59f782e33f27668a980ededdbf3c21171f72a82968"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "3f8f51b25e6e5dff6afd3d9a568a6f67cea96d329651e53c24e2101b9da2ad56"
-    sha256 monterey: "aa51abfae7a1f67b651f1a99597b82261352d4cdcb87f1e0c913543a9fee373b"
+    sha256 ventura:  "8362b00e5b44bbd492b2acf85451fc7f178a9b5e8826f69577e4a9007a442096"
+    sha256 monterey: "b99f6f286519c3c3e5bd350f8219b35afeee99445beffa49b850d252e128cf92"
   end
 
   depends_on "doxygen" => [:build, :optional]
@@ -30,6 +30,10 @@ class GzTransport13 < Formula
   depends_on "python@3.11"
   depends_on "zeromq"
 
+  def python_cmake_arg
+    "-DPython3_EXECUTABLE=#{which("python3")}"
+  end
+
   def install
     rpaths = [
       rpath,
@@ -38,6 +42,7 @@ class GzTransport13 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << python_cmake_arg
 
     # Use build folder
     mkdir "build" do

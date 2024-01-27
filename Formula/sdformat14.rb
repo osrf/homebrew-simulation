@@ -4,14 +4,14 @@ class Sdformat14 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.0.0.tar.bz2"
   sha256 "88c0858a23ef4a4f36a9b3162e4b438878ae8670608af73d1797d67a3aaa4246"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "e9210be6515fa2a59d8dc0d2e426699099c813889ee5f560180bd349efbf84c4"
-    sha256 monterey: "07e2abfcb12659ac4412a095312372301c02b3b5324a54dc61c75d8412f1c047"
+    sha256 ventura:  "e4f8d9362d94b305d1a6d3d8c403e895b26f728ab646883367c682b045626808"
+    sha256 monterey: "a1e0ef45738e72783c5e21866d262fa00aa0a04964b5a1f7df8d4007a558e9fe"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -28,10 +28,15 @@ class Sdformat14 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
+  def python_cmake_arg
+    "-DPython3_EXECUTABLE=#{which("python3")}"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << python_cmake_arg
 
     mkdir "build" do
       system "cmake", "..", *cmake_args

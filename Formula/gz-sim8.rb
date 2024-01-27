@@ -4,14 +4,14 @@ class GzSim8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.0.0.tar.bz2"
   sha256 "2b9f422fbe87d0f215d4cb85559fbfadd36115b91e56515fa63ae1fd290d2012"
   license "Apache-2.0"
-  revision 9
+  revision 10
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "f7f7fd14e72da9d243a7cf5accdb56392d8c98ca682cd1df50a443cad45af1d3"
-    sha256 monterey: "ffc458313d9c0df385df7a06f85b973778fc065ea7b90eb91ab0549d9737afb2"
+    sha256 ventura:  "2987c42fd7852766cca430e8fea318f35c92985620bcd19db37237d998f3f23d"
+    sha256 monterey: "148ffeca069f0954fce580933ba8d1a817f648700cd3174c19f495832c1739b7"
   end
 
   depends_on "cmake" => :build
@@ -35,8 +35,13 @@ class GzSim8 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "python@3.11"
   depends_on "ruby"
   depends_on "sdformat14"
+
+  def python_cmake_arg
+    "-DPython3_EXECUTABLE=#{which("python3")}"
+  end
 
   def install
     rpaths = [
@@ -48,11 +53,15 @@ class GzSim8 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << python_cmake_arg
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -139,5 +148,7 @@ class GzSim8 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.sim8"
   end
 end
