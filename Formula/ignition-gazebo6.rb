@@ -8,6 +8,12 @@ class IgnitionGazebo6 < Formula
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "838cbda0266c783cd49a848474399d4b4aa2f078cbc3844055b92ec357bc2528"
+    sha256 monterey: "50b0f7f8f7ed3e005abf531c7c5f427392b9159ef4fc90a48050a8b5c493b619"
+  end
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "gz-plugin2" => :test
