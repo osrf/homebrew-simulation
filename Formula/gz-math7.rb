@@ -23,11 +23,15 @@ class GzMath7 < Formula
   depends_on "python@3.11"
   depends_on "ruby"
 
+  def python_cmake_arg
+    "-DPython3_EXECUTABLE=#{which("python3")}"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    cmake_args << "-DPython3_EXECUTABLE=#{which("python3")}"
+    cmake_args << python_cmake_arg
 
     # Use build folder
     mkdir "build" do

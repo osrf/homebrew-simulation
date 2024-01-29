@@ -39,6 +39,10 @@ class GzSim7 < Formula
   depends_on "ruby"
   depends_on "sdformat13"
 
+  def python_cmake_arg
+    "-DPython3_EXECUTABLE=#{which("python3")}"
+  end
+
   def install
     rpaths = [
       rpath,
@@ -49,7 +53,7 @@ class GzSim7 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
-    cmake_args << "-DPython3_EXECUTABLE=#{which("python3")}"
+    cmake_args << python_cmake_arg
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
