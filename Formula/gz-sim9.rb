@@ -34,9 +34,9 @@ class GzSim9 < Formula
   def install
     rpaths = [
       rpath,
-      rpath(source: lib/"gz-sim-8/plugins", target: lib),
-      rpath(source: lib/"gz-sim-8/plugins/gui", target: lib),
-      rpath(source: lib/"gz-sim-8/plugins/gui/GzSim", target: lib),
+      rpath(source: lib/"gz-sim-9/plugins", target: lib),
+      rpath(source: lib/"gz-sim-9/plugins/gui", target: lib),
+      rpath(source: lib/"gz-sim-9/plugins/gui/GzSim", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -62,10 +62,10 @@ class GzSim9 < Formula
       assert stderr.exclude?(error_string), error_string
     }
     %w[altimeter log physics sensors].each do |system|
-      plugin_info.call lib/"gz-sim-8/plugins/libgz-sim-#{system}-system.dylib"
+      plugin_info.call lib/"gz-sim-9/plugins/libgz-sim-#{system}-system.dylib"
     end
     ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
-      plugin_info.call lib/"gz-sim-8/plugins/gui/#{p}.dylib"
+      plugin_info.call lib/"gz-sim-9/plugins/gui/#{p}.dylib"
     end
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
