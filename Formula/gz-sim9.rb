@@ -28,24 +28,33 @@ class GzSim9 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "python@3.11"
   depends_on "ruby"
   depends_on "sdformat15"
+
+  def python_cmake_arg
+    "-DPython3_EXECUTABLE=#{which("python3")}"
+  end
 
   def install
     rpaths = [
       rpath,
-      rpath(source: lib/"gz-sim-8/plugins", target: lib),
-      rpath(source: lib/"gz-sim-8/plugins/gui", target: lib),
-      rpath(source: lib/"gz-sim-8/plugins/gui/GzSim", target: lib),
+      rpath(source: lib/"gz-sim-9/plugins", target: lib),
+      rpath(source: lib/"gz-sim-9/plugins/gui", target: lib),
+      rpath(source: lib/"gz-sim-9/plugins/gui/GzSim", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << python_cmake_arg
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+
+    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    rmdir prefix/"lib/python"
   end
 
   test do
@@ -62,10 +71,10 @@ class GzSim9 < Formula
       assert stderr.exclude?(error_string), error_string
     }
     %w[altimeter log physics sensors].each do |system|
-      plugin_info.call lib/"gz-sim-8/plugins/libgz-sim-#{system}-system.dylib"
+      plugin_info.call lib/"gz-sim-9/plugins/libgz-sim-#{system}-system.dylib"
     end
     ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
-      plugin_info.call lib/"gz-sim-8/plugins/gui/#{p}.dylib"
+      plugin_info.call lib/"gz-sim-9/plugins/gui/#{p}.dylib"
     end
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
@@ -132,5 +141,7 @@ class GzSim9 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
+    # check python import
+    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.sim9"
   end
 end
