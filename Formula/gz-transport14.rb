@@ -23,6 +23,10 @@ class GzTransport14 < Formula
   depends_on "python@3.11"
   depends_on "zeromq"
 
+  def python_cmake_arg
+    "-DPython3_EXECUTABLE=#{which("python3")}"
+  end
+
   def install
     rpaths = [
       rpath,
@@ -31,6 +35,7 @@ class GzTransport14 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+    cmake_args << python_cmake_arg
 
     # Use build folder
     mkdir "build" do
