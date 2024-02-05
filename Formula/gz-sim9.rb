@@ -32,8 +32,15 @@ class GzSim9 < Formula
   depends_on "ruby"
   depends_on "sdformat15"
 
-  def python_cmake_arg
-    "-DPython3_EXECUTABLE=#{which("python3")}"
+  def python_cmake_args
+    python_prefix = Formula["python@3.11"].opt_prefix
+    return [
+      "-DPython3_EXECUTABLE=#{python_prefix}/bin/python3",
+      "-DPython3_INCLUDE_DIR=#{python_prefix}/Frameworks/Python.framework/" \
+          "Versions/3.11/include/python3.11",
+      "-DPython3_LIBRARY=#{python_prefix}/Frameworks/Python.framework/" \
+          "Versions/3.11/lib/libpython3.11.dylib",
+    ]
   end
 
   def install
@@ -46,7 +53,7 @@ class GzSim9 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
-    cmake_args << python_cmake_arg
+    cmake_args += python_cmake_args
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
