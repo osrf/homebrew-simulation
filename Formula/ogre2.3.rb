@@ -103,6 +103,8 @@ class Ogre23 < Formula
   end
 
   test do
+    require "system_command"
+    extend SystemCommand::Mixin
     # test plugins in subfolders
     ["libOgreMain", "libOgreOverlay", "libOgrePlanarReflections", "OGRE/RenderSystem_Metal"].each do |plugin|
       p = lib/"OGRE-2.3/#{plugin}.dylib"
