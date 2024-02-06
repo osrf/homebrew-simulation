@@ -43,6 +43,8 @@ class IgnitionRendering6 < Formula
   end
 
   test do
+    require "system_command"
+    extend SystemCommand::Mixin
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
       p = lib/"ign-rendering-6/engine-plugins/libignition-rendering-#{engine}.dylib"

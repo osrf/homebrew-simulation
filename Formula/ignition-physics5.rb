@@ -53,6 +53,8 @@ class IgnitionPhysics5 < Formula
   end
 
   test do
+    require "system_command"
+    extend SystemCommand::Mixin
     # test plugins in subfolders
     %w[bullet dartsim tpe].each do |engine|
       p = lib/"ign-physics-5/engine-plugins/libignition-physics-#{engine}-plugin.dylib"
