@@ -55,6 +55,8 @@ class IgnitionLaunch5 < Formula
   end
 
   test do
+    require "system_command"
+    extend SystemCommand::Mixin
     # test CLI executable
     system lib/"ignition/launch5/ign-launch"
     # test plugins in subfolders
