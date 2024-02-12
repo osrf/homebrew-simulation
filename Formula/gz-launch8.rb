@@ -27,7 +27,7 @@ class GzLaunch8 < Formula
     rpaths = [
       rpath,
       rpath(source: lib/"gz/launch8", target: lib),
-      rpath(source: lib/"gz-launch-7/plugins", target: lib),
+      rpath(source: lib/"gz-launch-8/plugins", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -46,7 +46,7 @@ class GzLaunch8 < Formula
     system lib/"gz/launch8/gz-launch"
     # test plugins in subfolders
     %w[joytotwist sim-factory sim simgui].each do |plugin|
-      p = lib/"gz-launch-7/plugins/libgz-launch-#{plugin}.dylib"
+      p = lib/"gz-launch-8/plugins/libgz-launch-#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p

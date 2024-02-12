@@ -23,7 +23,7 @@ class GzGui9 < Formula
   def install
     rpaths = [
       rpath,
-      rpath(source: lib/"gz-gui-8/plugins", target: lib),
+      rpath(source: lib/"gz-gui-9/plugins", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
@@ -40,7 +40,7 @@ class GzGui9 < Formula
     extend SystemCommand::Mixin
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
-      p = lib/"gz-gui-8/plugins/lib#{plugin}.dylib"
+      p = lib/"gz-gui-9/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
