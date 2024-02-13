@@ -4,15 +4,9 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.7.0.tar.bz2"
   sha256 "48d89b5e913eb8bb9925373eeb18616d512cd43f7e45be4413ce8c66bf1ca0d1"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "8bc334ad26812cf3c17d8abfe309c0ff081935475f512b94280bcc8abc3b3409"
-    sha256 monterey: "87b59515c867e3d0ba38e3c1029400e91a742d3bdf63887d7dbefc51f4cc2945"
-  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -38,6 +32,7 @@ class GzSim7 < Formula
   depends_on "python@3.11"
   depends_on "ruby"
   depends_on "sdformat13"
+  depends_on "tinyxml2"
 
   def python_cmake_arg
     "-DPython3_EXECUTABLE=#{which("python3")}"

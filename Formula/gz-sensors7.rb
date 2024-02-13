@@ -4,15 +4,9 @@ class GzSensors7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.3.0.tar.bz2"
   sha256 "92b9e0bf4707bdbf318142b0a17c1cd1ca8c94bfee9f8911bcd0b3a7c6cbd169"
   license "Apache-2.0"
-  revision 9
+  revision 10
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "839c718ed992d61d8bb38adaee18a1421196b4f419d313ca468dd726cb66e44a"
-    sha256 cellar: :any, monterey: "2c306d9b43817182699df15816e740ab7a3aac2f139d2962dd81b26a43c5e7bf"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -25,6 +19,7 @@ class GzSensors7 < Formula
   depends_on "gz-transport12"
   depends_on "protobuf"
   depends_on "sdformat13"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args

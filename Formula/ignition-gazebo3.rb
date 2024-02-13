@@ -4,15 +4,9 @@ class IgnitionGazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.15.1.tar.bz2"
   sha256 "c801d4205f8f88fca813cbf699cf6a077536d430e6c312a85520d6f50a7052bd"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo3"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "2aaf656273339478d85e75af99e9aeb54dc0b241e49f7ddc5b48ab82139b3b59"
-    sha256 monterey: "006e206ebcb2ef86d437aa0830eefd0cebd8925b8e38753a8fbda0d125738068"
-  end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
@@ -38,6 +32,7 @@ class IgnitionGazebo3 < Formula
   depends_on "protobuf"
   depends_on "ruby"
   depends_on "sdformat9"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args

@@ -4,15 +4,9 @@ class GzSensors8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-8.0.0.tar.bz2"
   sha256 "17a3be4fbcc338a22928c7d5b96d4369f05be801470e37f580c0f83299609bf4"
   license "Apache-2.0"
-  revision 9
+  revision 10
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors8"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "4fc4eb070990610a7636143db5a795b26cadb644ecc90e7154fffe30ebebf806"
-    sha256 cellar: :any, monterey: "4b0269bca87c29b3c90936a5c0228ac19a9cbc66c006ea89376e22e1e0b237c4"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -25,6 +19,7 @@ class GzSensors8 < Formula
   depends_on "gz-transport13"
   depends_on "protobuf"
   depends_on "sdformat14"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args

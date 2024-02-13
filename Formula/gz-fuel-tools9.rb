@@ -4,15 +4,9 @@ class GzFuelTools9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-9.0.0.tar.bz2"
   sha256 "f6bff36311390bbdf169a767d94efd7657f6b44ee620dbe096ab122135f7c780"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "bb396d93885a4a0b433f8bb3682a86e38fa1fe57bfc108c48697ec47a1b4ddde"
-    sha256 cellar: :any, monterey: "a98f9a8e061a93b6e685ace78e11257b809b641143d75ad56dc7fb9dc0f6c45f"
-  end
 
   depends_on "cmake"
   depends_on "gz-cmake3"
@@ -24,6 +18,7 @@ class GzFuelTools9 < Formula
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
