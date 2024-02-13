@@ -38,6 +38,7 @@ class IgnitionGazebo3 < Formula
   depends_on "protobuf"
   depends_on "ruby"
   depends_on "sdformat9"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args

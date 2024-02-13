@@ -37,6 +37,7 @@ class GzSim8 < Formula
   depends_on "python@3.11"
   depends_on "ruby"
   depends_on "sdformat14"
+  depends_on "tinyxml2"
 
   def python_cmake_arg
     "-DPython3_EXECUTABLE=#{which("python3")}"

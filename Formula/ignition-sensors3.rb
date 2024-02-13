@@ -27,6 +27,7 @@ class IgnitionSensors3 < Formula
   depends_on "ignition-transport8"
   depends_on "protobuf"
   depends_on "sdformat9"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args

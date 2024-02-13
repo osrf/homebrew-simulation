@@ -39,6 +39,7 @@ class IgnitionGazebo6 < Formula
   depends_on "python@3.11"
   depends_on "ruby"
   depends_on "sdformat12"
+  depends_on "tinyxml2"
 
   def install
     rpaths = [

@@ -17,6 +17,7 @@ class GzFuelTools10 < Formula
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args

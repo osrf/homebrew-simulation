@@ -25,6 +25,7 @@ class GzSensors8 < Formula
   depends_on "gz-transport13"
   depends_on "protobuf"
   depends_on "sdformat14"
+  depends_on "tinyxml2"
 
   def install
     cmake_args = std_cmake_args
