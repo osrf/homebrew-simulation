@@ -4,9 +4,15 @@ class IgnitionCommon3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common3-3.17.0.tar.bz2"
   sha256 "243aa94babb37c7f0d58575b31127cc49181cd96f1a24d91cfdb66ffbc5976ef"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common3"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "42b4200807d3a3aa532a61b77e20b35abd1b7397ef83a82064d6e5a1d1355b6d"
+    sha256 cellar: :any, monterey: "d165757f10ab6b9a7b4ddbf281bf4e50e3615f594792766bc95230d9c0106358"
+  end
 
   depends_on "cmake"
   depends_on "ffmpeg"
