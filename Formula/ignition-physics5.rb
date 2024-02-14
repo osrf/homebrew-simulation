@@ -4,9 +4,15 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.3.2.tar.bz2"
   sha256 "4262512fbb6952712234c5cbeed69cdabca338931bb6c587a1ef7d487a5f262b"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "7c687c0b5697f37a41a31d105ba6dbb1e6deeb85dd76b43fdc18f1f323121533"
+    sha256 cellar: :any, monterey: "ac39406217886ddb31e90254b666e72c3ad8f8b63665a74d61b91d09d98b4d9a"
+  end
 
   depends_on "cmake" => :build
 
