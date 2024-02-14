@@ -10,6 +10,12 @@ class GzGarden < Formula
 
   head "https://github.com/gazebosim/gz-garden.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "122fe74ea3aa52a81b7ae9aaf53040b56768317bd88605064aa339d6519c7d82"
+    sha256 cellar: :any, monterey: "5f76fb92892aeb4eb51f49737ef3bec775c664a0945b6d98fcd2a0f4f32f656c"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.11" => [:build, :test]
 

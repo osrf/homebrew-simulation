@@ -8,6 +8,12 @@ class GzSensors7 < Formula
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "88fdafc75eae430806d956c3eb215fab43f3cad10c9bfc987b17f41fc7bad435"
+    sha256 cellar: :any, monterey: "91ad8c5205a665fdd50c582e38c5e2a916bdec51e6d1a0d06f751909dabc5b97"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
