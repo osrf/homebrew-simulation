@@ -6,7 +6,7 @@ class IgnitionCitadel < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-citadel/releases/ignition-citadel-1.0.2.tar.bz2"
   sha256 "2b99e7476093e78841c63d4ec348c6cf7c9d650a2e5787011723142c9f917659"
   license "Apache-2.0"
-  revision 9
+  revision 10
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-citadel.git", branch: "main"
