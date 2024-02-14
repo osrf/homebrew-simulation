@@ -8,6 +8,12 @@ class IgnitionLaunch5 < Formula
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch5"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "c27d8f1117999e775f8a23241e9735cdaec46bdf243157551a7c8f0bb84872ce"
+    sha256 monterey: "c008f9998e7d156d2a404c7c405331e426266e84cb1f466efdf2f9ee70629aa2"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
