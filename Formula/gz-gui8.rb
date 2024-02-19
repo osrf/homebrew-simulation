@@ -4,7 +4,7 @@ class GzGui8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.0.0.tar.bz2"
   sha256 "50815c1e81f985a616068e9c3d425ee035edfa2e7a13bd14ce3de41d9500fa40"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
