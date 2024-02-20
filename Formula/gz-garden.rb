@@ -6,14 +6,14 @@ class GzGarden < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-garden/releases/gz-garden-1.0.0.tar.bz2"
   sha256 "438e2c55aaeb28f827bb48464c83f49d81ab3a3486b4453a2ad30f8fa5edf95d"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   head "https://github.com/gazebosim/gz-garden.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "122fe74ea3aa52a81b7ae9aaf53040b56768317bd88605064aa339d6519c7d82"
-    sha256 cellar: :any, monterey: "5f76fb92892aeb4eb51f49737ef3bec775c664a0945b6d98fcd2a0f4f32f656c"
+    sha256 cellar: :any, ventura:  "79356636ea86e88c68b366833d73256a937426b8c0258665fc1e835713b741e7"
+    sha256 cellar: :any, monterey: "63ce64df137efa9dbd03d6e40544960205f2741891f99bd7c3725d0cb940c78b"
   end
 
   depends_on "cmake" => :build
