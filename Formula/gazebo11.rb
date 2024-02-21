@@ -45,6 +45,13 @@ class Gazebo11 < Formula
   conflicts_with "gz-tools2", because: "both install bin/gz"
 
   patch do
+    # Fix build with graphviz 10.0
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gazebo-classic/commit/3a9efee7ccdf552cbf22188131782f242f6c0542.patch?full_index=1"
+    sha256 "4c957a715263b11c91ceb9f1aed701257e8b67457abc00539a615b0b5b1c7ea2"
+  end
+
+  patch do
     # Fix build when homebrew python is installed
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
