@@ -4,15 +4,9 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.7.0.tar.bz2"
   sha256 "48d89b5e913eb8bb9925373eeb18616d512cd43f7e45be4413ce8c66bf1ca0d1"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "fb77f26f036778a19299a7cb873623a8723c7730c8040c792af6e857a424844f"
-    sha256 monterey: "bd4d0554c5a6322c519bd402eeb4a578f6c20bf887bcb71b89f534b34b9f6075"
-  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
