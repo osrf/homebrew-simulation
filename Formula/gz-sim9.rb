@@ -28,7 +28,7 @@ class GzSim9 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruby"
   depends_on "sdformat15"
   depends_on "tinyxml2"
@@ -54,7 +54,7 @@ class GzSim9 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -145,6 +145,6 @@ class GzSim9 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.sim9"
+    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import gz.sim9"
   end
 end

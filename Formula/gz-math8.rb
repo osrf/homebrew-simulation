@@ -13,7 +13,7 @@ class GzMath8 < Formula
   depends_on "eigen"
   depends_on "gz-cmake4"
   depends_on "gz-utils3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruby"
 
   def python_cmake_arg
@@ -32,7 +32,7 @@ class GzMath8 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -71,6 +71,6 @@ class GzMath8 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.math8"
+    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import gz.math8"
   end
 end
