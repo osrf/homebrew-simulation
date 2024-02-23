@@ -11,7 +11,7 @@ class GzGarden < Formula
   head "https://github.com/gazebosim/gz-garden.git", branch: "main"
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   depends_on "gz-cmake3"
   depends_on "gz-common5"
@@ -44,7 +44,7 @@ class GzGarden < Formula
     end
 
     # install vcstool for use in the test
-    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python")
+    venv = virtualenv_create(libexec, Formula["python@3.12"].opt_libexec/"bin/python")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
     end

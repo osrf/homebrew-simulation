@@ -15,7 +15,7 @@ class GzMsgs10 < Formula
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "tinyxml2"
 
   def python_cmake_arg
@@ -33,7 +33,7 @@ class GzMsgs10 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -71,6 +71,6 @@ class GzMsgs10 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.msgs10"
+    system Formula["python@3.12"].opt_bin/"python3", "-c", "import gz.msgs10"
   end
 end
