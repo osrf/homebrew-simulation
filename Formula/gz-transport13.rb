@@ -4,15 +4,9 @@ class GzTransport13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.0.0.tar.bz2"
   sha256 "d44b4ed089110a1a7dfc3b59f782e33f27668a980ededdbf3c21171f72a82968"
   license "Apache-2.0"
-  revision 13
+  revision 14
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "38d9cf54146c1a085b8f4c679b5fb54094c246b9f17045358cbd024fc03cb6c8"
-    sha256 monterey: "b6b222e66939a13c829633667efcf548a7061bd237c6ae2d313ec405750c4bb5"
-  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
@@ -27,7 +21,7 @@ class GzTransport13 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "tinyxml2"
   depends_on "zeromq"
 
@@ -57,7 +51,7 @@ class GzTransport13 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.11/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -99,6 +93,6 @@ class GzTransport13 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import gz.transport13"
+    system Formula["python@3.12"].opt_bin/"python3", "-c", "import gz.transport13"
   end
 end

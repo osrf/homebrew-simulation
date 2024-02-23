@@ -6,18 +6,12 @@ class GzHarmonic < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-harmonic/releases/gz-harmonic-1.0.0.tar.bz2"
   sha256 "50a60b775c7b9f21351667ec9912a3049129c49f89bfd1658af7381431e9d190"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "8cb5e0c952c044874b121cc74acd73548f797d39a46f9debb465557915da41a6"
-    sha256 cellar: :any, monterey: "90dbcdcd92921fe39c510a3d65b6a2241b113a92a6e46bde13cdbcb137266cec"
-  end
-
   depends_on "cmake" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   depends_on "gz-cmake3"
   depends_on "gz-common5"
@@ -48,7 +42,7 @@ class GzHarmonic < Formula
       system "make", "install"
     end
 
-    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_libexec/"bin/python")
+    venv = virtualenv_create(libexec, Formula["python@3.12"].opt_libexec/"bin/python")
     %w[PyYAML vcstool].each do |pkg|
       venv.pip_install pkg
     end
