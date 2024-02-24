@@ -4,9 +4,15 @@ class Sdformat13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.6.0.tar.bz2"
   sha256 "5845c9c0da66bb30b209ed8421f5b4805bf6e8863fd58a790a59f856902e67f3"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf13"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "1a9be9b7606383e3d5e9bb6c2faa54f9e712d569d1e8a9d12b2a9d50d25f7ebb"
+    sha256 monterey: "a6ca9e051d47bc06641e4248639db33c2bf111a875f41c4c54cde2138f195b01"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
