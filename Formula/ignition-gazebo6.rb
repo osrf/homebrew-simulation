@@ -63,7 +63,7 @@ class IgnitionGazebo6 < Formula
       # print command and check return code
       system cmd, *args
       # check that library was loaded properly
-      _, stderr = system_command(cmd, args: args)
+      _, stderr = system_command(cmd, args:)
       error_string = "Error while loading the library"
       assert stderr.exclude?(error_string), error_string
     }
