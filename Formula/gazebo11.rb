@@ -8,6 +8,12 @@ class Gazebo11 < Formula
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "911dd8dc25f14de47b35b9fa568329e71b5470e05bebae9ce2c412075df52118"
+    sha256 monterey: "2c22d87ea019e8c0046b73e0b8071acc176ba7a2c714d25db15eba456fec968a"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
