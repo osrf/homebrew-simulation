@@ -9,8 +9,8 @@ class GzCmake3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, ventura:  "8aafd1b9f40fbf83c8c7dbe8dc58e90a99eac9a7b7d82cc7a5e142ecfa3047dd"
-    sha256 cellar: :any_skip_relocation, monterey: "9a492f2532f072c0f7bfb0bd01f4c049096ccf63ab0bcc0a3275817886504a5d"
+    sha256 cellar: :any_skip_relocation, ventura:  "0f21d961becdb95566e95ae66b5d09d26172c9064f925761e11be05fd51d91e4"
+    sha256 cellar: :any_skip_relocation, monterey: "f8a2219b2e97da2eca5f9ac7e31ba9a1a2d82f37962983604cb37b0b8214bc54"
   end
 
   depends_on "cmake"
