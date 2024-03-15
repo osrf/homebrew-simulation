@@ -105,6 +105,21 @@ do
 done
 ~~~
 
+## To rebuild bottles after removing the bottle blocks
+
+It is enough to use the `brew bump-revision <file>`, create a new PR and use Jenkins to build
+bottles (see "To build bottles" above). To run it in all the bottles corresponding to a given Gazebo
+release, the following snippet can be used:
+
+~~~
+# Change ${release} by the Gazebo release
+cd $(brew --prefix osrf/simulation)/Formula
+for f in $(grep -L '^ *bottle do' $(grep -rnI 'depend.*"[gs][zd][-f]' gz-${release}.rb | sed -e 's@.* "@@' -e 's@"@.rb@'))
+do
+    brew bump-revision --message="rebuild bottle" $f
+done
+~~~
+
 ## Troubleshooting
 
 * Does a new bottle need to be built for every homebrew pull request?
