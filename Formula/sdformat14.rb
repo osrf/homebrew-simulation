@@ -27,12 +27,6 @@ class Sdformat14 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
-  patch do
-    # Fix for finding python
-    url "https://github.com/gazebosim/sdformat/commit/d374404cdeb5fd181b0a2ab5dd9d6400087634a1.patch?full_index=1"
-    sha256 "1f2eef54e5d2b3801b244b8d82e1bfc9357c1836e8230a6e2594ac8eb01eb988"
-  end
-
   def python_cmake_arg
     "-DPython3_EXECUTABLE=#{which("python3")}"
   end
