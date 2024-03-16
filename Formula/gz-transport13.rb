@@ -30,12 +30,6 @@ class GzTransport13 < Formula
   depends_on "tinyxml2"
   depends_on "zeromq"
 
-  patch do
-    # Fix for finding python
-    url "https://github.com/gazebosim/gz-transport/commit/502f5196063a88526f5c3e79d0d042e90cad81e2.patch?full_index=1"
-    sha256 "e710c2892bfd9ee67b2721ec2c2f3d25e6fd1a66a45f432d7fc4a50760432b4a"
-  end
-
   def python_cmake_arg
     "-DPython3_EXECUTABLE=#{which("python3")}"
   end
