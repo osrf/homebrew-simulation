@@ -1,12 +1,17 @@
 class GzTransport13 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.0.0.tar.bz2"
-  sha256 "d44b4ed089110a1a7dfc3b59f782e33f27668a980ededdbf3c21171f72a82968"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.1.0.tar.bz2"
+  sha256 "06b4ed68d89e00dcf5b13daeb7805893d832e9afbbe7a899beb9e6e560e9e6e4"
   license "Apache-2.0"
-  revision 16
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "2635e0db53b04321a876b4765595336d244ce89b0f3aeff413cd18d131486299"
+    sha256 monterey: "47c9c82eb0ebb9c01da331605b9bafcae321649db9bc416a19c6a14c0066aaeb"
+  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
@@ -24,12 +29,6 @@ class GzTransport13 < Formula
   depends_on "python@3.12"
   depends_on "tinyxml2"
   depends_on "zeromq"
-
-  patch do
-    # Fix for finding python
-    url "https://github.com/gazebosim/gz-transport/commit/502f5196063a88526f5c3e79d0d042e90cad81e2.patch?full_index=1"
-    sha256 "e710c2892bfd9ee67b2721ec2c2f3d25e6fd1a66a45f432d7fc4a50760432b4a"
-  end
 
   def python_cmake_arg
     "-DPython3_EXECUTABLE=#{which("python3")}"
