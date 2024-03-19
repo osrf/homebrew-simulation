@@ -1,17 +1,16 @@
 class GzSensors8 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-8.0.0.tar.bz2"
-  sha256 "17a3be4fbcc338a22928c7d5b96d4369f05be801470e37f580c0f83299609bf4"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-8.0.1.tar.bz2"
+  sha256 "fc67417da4b6675050e52789d64c4298f1088daca3eebd036dc3be732f428bce"
   license "Apache-2.0"
-  revision 15
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "aa25d0bccf9e951719569402c8fb4d31b18719fbeabe2aafd511381d72d16b6d"
-    sha256 cellar: :any, monterey: "bda8cc4bc26d0d466145a712059f9603b1f8b75e774b40fc54bc70ebdf7a0c07"
+    sha256 cellar: :any, ventura:  "714a0811b944c3b76ff989d764bee042e26575aaa963e9585cd4f9bf7467b318"
+    sha256 cellar: :any, monterey: "91f9419f9372c99d45d7afadee6caae75b7e14eddeef4254452f69176fe5a312"
   end
 
   depends_on "cmake" => [:build, :test]
