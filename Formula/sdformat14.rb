@@ -9,8 +9,8 @@ class Sdformat14 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "0e3d1863896a5bb17fbae93a1cbe86c0e4f59a35c5bb135a2e67eccc3ed1570b"
-    sha256 monterey: "47341824d5c2229b6ac741c3d729d10fb98376ed423f2380dc9e14771b46bbaa"
+    sha256 ventura:  "9f30b47530eee7969e6206da670bedbfce6cc1160b4c66ee43d06d79f8b566eb"
+    sha256 monterey: "8cdea8e9de967ce05e92fe338f9d05e0e6aac8f160d75d29ccbb142fe9b756f5"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -26,12 +26,6 @@ class Sdformat14 < Formula
   depends_on "python@3.12"
   depends_on "tinyxml2"
   depends_on "urdfdom"
-
-  patch do
-    # Fix for finding python
-    url "https://github.com/gazebosim/sdformat/commit/d374404cdeb5fd181b0a2ab5dd9d6400087634a1.patch?full_index=1"
-    sha256 "1f2eef54e5d2b3801b244b8d82e1bfc9357c1836e8230a6e2594ac8eb01eb988"
-  end
 
   def python_cmake_arg
     "-DPython3_EXECUTABLE=#{which("python3")}"
