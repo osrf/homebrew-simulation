@@ -1,0 +1,32 @@
+name: Trigger formula update
+# based on https://zenn.dev/uzimaru0000/articles/update-brew-tap
+on:
+  workflow_dispatch:
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Update formula
+        run: |
+          for file in Formula/*.rb; do
+          revision=$(cat $file | grep revision | sed -e 's/^.* \([0-9]\+\).*$/\1/')
+          echo "file = $file"
+          echo "revision = $revision"
+          sed -ie 's/revision [0-9]\+/revision $(($revision + 1))/' $file
+          done
+        shell: bash
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.REPO_SCOPED_TOKEN }}
+          commit-message: 'Update packages'
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: update-package
+          branch-suffix: timestamp
+          delete-branch: true
+          title: 'update formula'
+          body: ""
