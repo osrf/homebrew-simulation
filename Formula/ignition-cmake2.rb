@@ -4,6 +4,7 @@ class IgnitionCmake2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-cmake/releases/ignition-cmake2-2.17.1.tar.bz2"
   sha256 "3b678f90d2db79912cfbe4c93f3eed695b8a391847fe9e6454f1c6366370650c"
   license "Apache-2.0"
+  revision 0
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
 
