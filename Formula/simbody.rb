@@ -4,6 +4,7 @@ class Simbody < Formula
   url "https://github.com/simbody/simbody/archive/refs/tags/Simbody-3.7.tar.gz"
   sha256 "d371a92d440991400cb8e8e2473277a75307abb916e5aabc14194bea841b804a"
   license "Apache-2.0"
+  revision 0
 
   head "https://github.com/simbody/simbody.git", branch: "master"
 
