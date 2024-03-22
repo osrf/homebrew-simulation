@@ -5,6 +5,7 @@ class Ogre < Formula
   version "1.7.4"
   sha256 "afa475803d9e6980ddf3641dceaa53fcfbd348506ed67893c306766c166a4882"
   license "MIT"
+  revision 0
 
   option "with-cg"
 

@@ -5,7 +5,7 @@ class Tinyxml1 < Formula
   sha256 "15bdfdcec58a7da30adc87ac2b078e4417dbe5392f3afb719f9ba6d062645593"
   license "Zlib"
   revision 0
-  
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, ventura:  "dfb19813b715788d17243281a131d24882cf33f921e2998819243e9676fa9af9"
