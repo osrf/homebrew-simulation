@@ -1,8 +1,9 @@
 class GzTransport13 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.1.0.tar.bz2"
-  sha256 "06b4ed68d89e00dcf5b13daeb7805893d832e9afbbe7a899beb9e6e560e9e6e4"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.2.0~pre1.tar.bz2"
+  version "13.2.0-pre1"
+  sha256 "da548d92735c44bbd5929f18e0a3830ae65a3046c9b28ae27ec9033121d70743"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
