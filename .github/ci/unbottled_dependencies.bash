@@ -27,17 +27,18 @@
 
 FORMULA=${1}
 
-if [[ $# -ne 1 ]]; then
+if [ $# -ne 1 ]; then
   echo "./unbottled_dependencies.bash <formula>"
   exit 1
 fi
 
-for f in $(brew deps ${FORMULA} --full-name | grep osrf/simulation)
+for f in $(brew deps ${FORMULA} --full-name | grep ^osrf/simulation/)
 do
   # brew unbottled prints "already bottled" for bottled formulae
   # but has different output for formulae that are "ready to bottle" or
   # that have "unbottled deps". So just echo the name of any formula for which
   # `brew unbottled` doesn't print "already bottled"
-  brew unbottled $f | grep "already bottled" > /dev/null \
-    || echo $f
+  if ! brew unbottled $f | grep --quiet "already bottled"; then
+    echo $f
+  fi
 done
