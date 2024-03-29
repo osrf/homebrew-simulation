@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # Copyright (C) 2024 Open Source Robotics Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
