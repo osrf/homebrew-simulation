@@ -5,7 +5,7 @@ class GzTransport13 < Formula
   version "13.2.0-pre1"
   sha256 "da548d92735c44bbd5929f18e0a3830ae65a3046c9b28ae27ec9033121d70743"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
