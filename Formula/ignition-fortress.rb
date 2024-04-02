@@ -6,16 +6,10 @@ class IgnitionFortress < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-fortress/releases/ignition-fortress-1.0.3.tar.bz2"
   sha256 "eedbfb01e18038756eb596fa8f1c8aa955ca2be029fe40bb842ffee4d4452323"
   license "Apache-2.0"
-  revision 8
+  revision 9
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-fortress.git", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "c2df8137576ded962712d1ba4e80e6e5353dc1f7acfd967256226c2ee8937308"
-    sha256 cellar: :any, monterey: "74578c1c39490feabfb9ec68a8356ed77ccb1aeddb50019ca889a78db1d89dd4"
-  end
 
   depends_on "cmake" => :build
   depends_on "python@3.11" => [:build, :test]
