@@ -18,17 +18,17 @@
 # tap of a specified formula.
 #
 # Usage:
-# $ ./unbottled_dependencies.bash <formula>
+# $ ./unbottled_dependencies.sh <formula>
 #
 # For example, to print the unbottled dependencies of gz-harmonic from the
 # osrf/simulation tap:
 #
-# ./unbottled_dependencies.bash gz-harmonic
+# ./unbottled_dependencies.sh gz-harmonic
 
 FORMULA=${1}
 
 if [ $# -ne 1 ]; then
-  echo "./unbottled_dependencies.bash <formula>"
+  echo "unbottled_dependencies.sh <formula>"
   exit 1
 fi
 
