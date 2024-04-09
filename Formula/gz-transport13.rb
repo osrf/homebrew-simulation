@@ -9,8 +9,8 @@ class GzTransport13 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "f69eff60dc479d910943787ee9dad9fa43628d593f8158c987b965bbc776cbea"
-    sha256 monterey: "57a5f5780ee1312e205d71a1d14d073b64a8cd44d43cb41d47ad452fa3aa2ec9"
+    sha256 ventura:  "d27ba0cc0b614fc0ed90e1fcaaaa84b0c01d124b63e32313c14297d20035a12c"
+    sha256 monterey: "1ff415e3c527d42adc41f00209bbcd4698861a81e7aed0be9678ec725618d10e"
   end
 
   depends_on "doxygen" => [:build, :optional]
