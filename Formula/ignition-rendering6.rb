@@ -4,14 +4,9 @@ class IgnitionRendering6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/ignition-rendering-6.6.3.tar.bz2"
   sha256 "19fc7d23598701638e91febfcffff9258c8314723ad507f9893aa419efbae184"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "9cc0489a1543c1a3dd1d090602795b693f3b8e6231bc9d28120c0a7010580bd8"
-    sha256 monterey: "8e9b640bbd324e794709e01b2779a104f82a85f9d1dea0ab990445c25110a959"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
