@@ -1,8 +1,8 @@
 class GzRendering8 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.1.0.tar.bz2"
-  sha256 "50d90d922c51759b1bc433692afd4d14b6e61ef1ffc5661d622a4cb989023b66"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.1.1.tar.bz2"
+  sha256 "3d41b18ad2f9032d23f4d8742b8e32589ccb128c67b5826085893b4177b6a4de"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
