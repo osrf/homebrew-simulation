@@ -4,9 +4,15 @@ class GzRendering7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-7.4.2.tar.bz2"
   sha256 "81101ddb26c630dd0292c34a83d7736596d8ee1ac5d7b8ec4980f485de8ba87d"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering7"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "97d4bda4135f3948c027ae532f7e0a487c31cd4a3076b0af110a50f14f86e0f6"
+    sha256 monterey: "8ebe66a51400fc047925cc4a095f2eea65518aaa8608c5da8245c2546fc0a0b3"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
