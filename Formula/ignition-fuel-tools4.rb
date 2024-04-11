@@ -8,6 +8,12 @@ class IgnitionFuelTools4 < Formula
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools4"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "fe0b2ad30b78aee65539237202c0a6b08c957c14be7c4f58e7299ba78e31c08a"
+    sha256 cellar: :any, monterey: "5e08f7368f8af94e4edde6c62d901e5772d15e74edb209d26a0041b5da66b17f"
+  end
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"

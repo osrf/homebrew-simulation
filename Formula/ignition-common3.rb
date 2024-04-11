@@ -8,6 +8,12 @@ class IgnitionCommon3 < Formula
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common3"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "c695d8d2b29c77fb252d591fee117b7f1ec4cddcceb85f905ca35356bba83e16"
+    sha256 cellar: :any, monterey: "362c300cf97228d5656103f381b8cbddbf83888cf48cc68bd0ee892339e93386"
+  end
+
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"
