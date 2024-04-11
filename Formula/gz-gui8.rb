@@ -1,10 +1,9 @@
 class GzGui8 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.1.0.tar.bz2"
-  sha256 "a7fe8addd0e92770d73e099103bf98b0372842efa08bebaa27248e6a66eecb92"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.1.1.tar.bz2"
+  sha256 "039b8f1025e8a248ecb1875e0ab7fee978e3e282d80b1db7928ec8091ae6556f"
   license "Apache-2.0"
-  revision 3
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
