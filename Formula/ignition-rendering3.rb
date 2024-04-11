@@ -4,9 +4,15 @@ class IgnitionRendering3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.7.2.tar.bz2"
   sha256 "531a153dc2353ee98c2fdcaf25f9550d7008f9dd93be5b53c7b95b780cb13fe1"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering3"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "afb260e2afa5efde7772f78cc9cd7180a832bff0ff942eb9d52c4e89edcd4b6f"
+    sha256 monterey: "628f79e7fa05f722af90b575fba08116c04ed18f8dc80e9610f3255f3cec1503"
+  end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
