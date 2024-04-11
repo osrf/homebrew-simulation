@@ -7,6 +7,12 @@ class GzSim8 < Formula
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "b0355e1dc034b8e30cb9d48db41d512393a39cad2ec2831a7d42804c137676e7"
+    sha256 monterey: "bd4de5fd1b9e24ab1953bbc1a1a1971874ec1a58e0ce2c6e5d9ca941d7f65f08"
+  end
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "ffmpeg"
