@@ -4,7 +4,7 @@ class IgnitionRendering3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.7.2.tar.bz2"
   sha256 "531a153dc2353ee98c2fdcaf25f9550d7008f9dd93be5b53c7b95b780cb13fe1"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering3"
 
