@@ -15,7 +15,7 @@ class Gazebo11 < Formula
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "doxygen"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
   depends_on "freeimage"
   depends_on "graphviz"
   depends_on "gts"
