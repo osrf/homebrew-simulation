@@ -10,7 +10,6 @@ class GzSensors7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "8d0d49ae76c25ac7554c2a5ab3850f77768d02a49dbb7cd3abb6a6cbf4e4b86f"
     sha256 cellar: :any, monterey: "cd1a0ec0d39fe1ea0bce9a843c7ec9bab5becbf80563f3e9c4633336289cca00"
   end
 

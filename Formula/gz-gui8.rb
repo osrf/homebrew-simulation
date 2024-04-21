@@ -9,7 +9,6 @@ class GzGui8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "361c7f4172874d60e7c32634e534898b7baf317d89880ebef3ca56841d7fa663"
     sha256 monterey: "2e198bf3943307cc5154dde3a910f549a88595f097d9ff49f50f0474e2836d4b"
   end
 
