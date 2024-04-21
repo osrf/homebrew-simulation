@@ -10,7 +10,6 @@ class GzCommon5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "7802568e0720ddd8157bdda560f60daf584b9d7285d95fd5c0b9c35aef68042c"
     sha256 cellar: :any, monterey: "88d0a4fea6bf066fb95a80fcb1262f7d9fae29d8fa52e42db4a5259809a31c40"
   end
 

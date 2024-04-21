@@ -10,7 +10,6 @@ class GzLaunch6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "ba894457bb30783369b39c8fa811d119e42a9f2a62063f927157c3b3ec9102ad"
     sha256 monterey: "03f5969bd43398dc24b028c7501d363d55a5d374804476bcd1a746a0f12173b7"
   end
 

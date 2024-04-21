@@ -10,7 +10,6 @@ class GzPhysics6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "e28e8305b71511cb71b8c75c8131edac88612f113ddf3119bca5fc8b71ec4e70"
     sha256 monterey: "4ea95b9eeaed8c6f513f8daaa3bdfb6ea1ef16a24829425c267b8ca59121ef7f"
   end
 
