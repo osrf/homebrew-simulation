@@ -10,7 +10,8 @@ class GzPhysics7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 monterey: "f506c3c2f44cb0f8d345e90c7de65662b1b1969bcaf249e925e70cb352668506"
+    sha256 ventura:  "85154aafc9c75d65bf34e2948a728b0377eb5012827c0bcef25a50dd84f306f0"
+    sha256 monterey: "9b4b6dbc4c99c83213ef85abd2f56637131935a1c196d286a77b53a5cdfedba0"
   end
 
   depends_on "cmake" => [:build, :test]

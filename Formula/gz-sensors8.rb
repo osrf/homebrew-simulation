@@ -10,7 +10,8 @@ class GzSensors8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, monterey: "d19de80504f204dad50fbdb8efdac01b9cdee77f22602604edf4be31a528fa63"
+    sha256 cellar: :any, ventura:  "f12d9eae3ca8c665ec0f3d990b330095ffa2449ae9cd6832a8abe819bd1780c3"
+    sha256 cellar: :any, monterey: "9dba2c945bcd75345f59d64437c1bdeac2ef315e10b933c4ce6785b9bce326d3"
   end
 
   depends_on "cmake" => [:build, :test]
