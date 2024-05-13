@@ -4,14 +4,14 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.14.0.tar.bz2"
   sha256 "7e9842c046c9e0755355b274c240a8abbf4e962be7ce7b7f59194e5f4b584f45"
   license "Apache-2.0"
-  revision 18
+  revision 19
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "f8521a7a361a2f1a45c1a401ec9bf0deceff1f2fa87776af940c265e1b3c59e1"
-    sha256 monterey: "3bec8f39dc3216d95cd129a88faa2e7d6aba2f52181b4f5486adcf2fb7c93987"
+    sha256 ventura:  "422f6ebe4fbaf62d2ce2fd22d24940f0c2ea33ff9148c9d74e329e7e9e261521"
+    sha256 monterey: "072ba37bbe841cb13f9ef586666f5276ff1a2c57745cfeb7e07d19bcdfce47b6"
   end
 
   depends_on "cmake" => :build
@@ -49,6 +49,13 @@ class Gazebo11 < Formula
   conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
+
+  patch do
+    # Fix build with boost 1.85.0
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gazebo-classic/commit/e4b4d0fb752c7e43e34ab97d0e01a2a3eaca1ed4.patch?full_index=1"
+    sha256 "c00fdff58d8e65945d480cb58006ff28bf2c22043373d709705420dc59b70f62"
+  end
 
   patch do
     # Fix build with ffmpeg 7.0
