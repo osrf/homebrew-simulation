@@ -1,17 +1,17 @@
 class GzLaunch7 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-7.0.0.tar.bz2"
-  sha256 "252cb170fd97d074e9d13536cda736cd481c8c2e6df30a4ee225cfb9dcd92e77"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-7.1.0.tar.bz2"
+  sha256 "320606c71b6a2cbbcab683cd8569af9145ece157d5ebd23bc80218e8d148cd09"
   license "Apache-2.0"
-  revision 17
+  revision 3
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "fe559695a936da3da3e4a3a700e1da08319641b73261723569c67d11a90c7e5e"
-    sha256 monterey: "d20777bef625ab8a3db696479a70194c5bc4253b35da5e1bfa483f72d29dbe2f"
+    sha256 ventura:  "c86139aab12f8398d0714cd18fb3fd8d871c364db57837aed2b194cf135a88e2"
+    sha256 monterey: "3f48a1cdadee2c4ee71499e689ae000dfe3d1606676e749ea6499487969c1a3c"
   end
 
   depends_on "cmake" => :build

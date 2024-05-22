@@ -31,6 +31,11 @@ class Ogre19 < Formula
   conflicts_with "ogre", because: "differing version of the same formula"
 
   patch do
+    url "https://gist.githubusercontent.com/marvinosswald/0e981e918aeee4403e9a0790c6f32cdd/raw/5d295499255867064ace8c4c41b2f31fd48d4576/gistfile1.txt"
+    sha256 "62d33adbb3d46f9354ba9486226ee88649d7d7af0e26354f69c5cc777dd2ef86"
+  end
+
+  patch do
     url "https://gist.github.com/NikolausDemmel/2b11d1b49b35cd27a102/raw/bf4a4d16020821218f73db0d56aa111ab2fde679/fix-1.9-HEAD.diff"
     sha256 "15ecd1f12266918650ea789e2f96da4b0ef1a96076d7a671d3c56d98e2459712"
   end
@@ -97,6 +102,7 @@ class Ogre19 < Formula
 
   def install
     cmake_args = [
+      "-DCMAKE_CXX_STANDARD='14'",
       "-DCMAKE_OSX_ARCHITECTURES='x86_64'",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",

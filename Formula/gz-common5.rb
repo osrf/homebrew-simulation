@@ -1,16 +1,17 @@
 class GzCommon5 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.5.1.tar.bz2"
-  sha256 "c5014071bfcb421eb09ad07755087fef789e7fa383be9d63070f9ca91bd6af4c"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-5.6.0.tar.bz2"
+  sha256 "c2e0b3ca2c945d7ada377d780f1dbfc23338b169213e91814529ec6ac45dc70a"
   license "Apache-2.0"
+  revision 3
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "82562331a29202b73a02bfcf4f30bd5bf8150a4c63492e94a816e8b752744a02"
-    sha256 cellar: :any, monterey: "f2db16abe8cca655ba1592b1902a9f9ce5e3df1c2cdf5963800d886eb9863eaf"
+    sha256 cellar: :any, ventura:  "9dbabf09eda7c2917a9ded66c8fdfab8641ed0d7c1a11c1543aa9a00cc4959fc"
+    sha256 cellar: :any, monterey: "3e19b281adebb3023bdc32c739bb383925db6faf5fb8849dc6270789a442e2c0"
   end
 
   depends_on "assimp"
