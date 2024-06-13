@@ -1,10 +1,9 @@
 class GzPhysics6 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.5.1.tar.bz2"
-  sha256 "6556a066f88e48eb3a5d9219245b988e02778ce8c1f90cceb9359e87cbced828"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.6.0.tar.bz2"
+  sha256 "de870ef09753188a8c4a7b0ed449eb2357bd537e0b90f8a474f334e3e7a95a0f"
   license "Apache-2.0"
-  revision 11
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
 
