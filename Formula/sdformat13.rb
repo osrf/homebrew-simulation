@@ -1,17 +1,16 @@
 class Sdformat13 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.6.0.tar.bz2"
-  sha256 "5845c9c0da66bb30b209ed8421f5b4805bf6e8863fd58a790a59f856902e67f3"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-13.7.0.tar.bz2"
+  sha256 "f8e2a8742d89fe812ed9c90afef7a0d61fb8a1ef44e9841f2d65eb273f89de9b"
   license "Apache-2.0"
-  revision 7
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "1a9be9b7606383e3d5e9bb6c2faa54f9e712d569d1e8a9d12b2a9d50d25f7ebb"
-    sha256 monterey: "a6ca9e051d47bc06641e4248639db33c2bf111a875f41c4c54cde2138f195b01"
+    sha256 ventura:  "c00c6563990c9b68f7aaaa00667d9302e4457be75d0df012c741de7e1c6e8c6c"
+    sha256 monterey: "ea9897c0e1ae483cecbb80fd01b5a431470454b5bcca8cdee6b8754af05bdf8c"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -27,12 +26,6 @@ class Sdformat13 < Formula
   depends_on "python@3.12"
   depends_on "tinyxml2"
   depends_on "urdfdom"
-
-  patch do
-    # Fix for finding python
-    url "https://github.com/gazebosim/sdformat/commit/9a9e70d5f03859800a6c6acbd58310225a8b63b6.patch?full_index=1"
-    sha256 "6597f624dc430858e9b772550bc4f0f7b4f71ce8922dc158d89cbf28179a45bd"
-  end
 
   def python_cmake_arg
     "-DPython3_EXECUTABLE=#{which("python3")}"
