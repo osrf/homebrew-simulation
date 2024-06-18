@@ -1,8 +1,8 @@
 class GzMath7 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.4.0.tar.bz2"
-  sha256 "fd310adb66e5b4516c0527da4356bb6cae7be07324f7ea6aec6498679b30ab9c"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.5.0.tar.bz2"
+  sha256 "7481fc137c269a1ecfdc5cc22626d6fe7a49798f3b9e5afa4ac437c683086f04"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
