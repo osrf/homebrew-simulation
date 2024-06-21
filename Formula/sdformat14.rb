@@ -1,16 +1,16 @@
 class Sdformat14 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.3.0.tar.bz2"
-  sha256 "a85707e581c030e983b140335e4b73aed26aacddef6055d943e01f2b09b7a01e"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.4.0.tar.bz2"
+  sha256 "5352b60626a5255060ac40c3fb8ed4189e02b7abf5bdd2ee5f5af720eee1e129"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "fff96e94ff811fc45fba8a3aca449ab57f38e433286139956641a9f3377a5d37"
-    sha256 monterey: "26c134ec302082cd5df91668d4663ee57e627b016e20e0d19f9e7592e1e827aa"
+    sha256 ventura:  "16f31aab126713dfbf41b66659b206a931b8c7c432d54f6397de614e3be63cef"
+    sha256 monterey: "4e2f3ba1997b8cafcd66ee2fcc1619392273f7de5afa06b225255c074641c233"
   end
 
   depends_on "cmake" => [:build, :test]
