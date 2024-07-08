@@ -103,7 +103,6 @@ class Ogre19 < Formula
   def install
     cmake_args = [
       "-DCMAKE_CXX_STANDARD='14'",
-      "-DCMAKE_OSX_ARCHITECTURES='x86_64'",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",
       "-DOGRE_BUILD_DOCS:BOOL=FALSE",
