@@ -53,7 +53,7 @@ class BulletAT287 < Formula
       system "make", "install"
 
       if build.with? "demo"
-        rm_rf Dir["examples/**/Makefile", "examples/**/*.cmake", "examples/**/CMakeFiles"]
+        rm_r(Dir["examples/**/Makefile", "examples/**/*.cmake", "examples/**/CMakeFiles"])
         pkgshare.install "examples"
         (pkgshare/"examples").install "../data"
       end
