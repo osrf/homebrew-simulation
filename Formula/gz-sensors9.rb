@@ -16,6 +16,7 @@ class GzSensors9 < Formula
   depends_on "gz-msgs11"
   depends_on "gz-rendering9"
   depends_on "gz-transport14"
+  depends_on "gz-utils3"
   depends_on "protobuf"
   depends_on "sdformat15"
   depends_on "tinyxml2"

@@ -13,6 +13,7 @@ class GzTransport14 < Formula
   depends_on "cmake"
   depends_on "cppzmq"
   depends_on "gz-cmake4"
+  depends_on "gz-math8"
   depends_on "gz-msgs11"
   depends_on "gz-tools2"
   depends_on "gz-utils3"
