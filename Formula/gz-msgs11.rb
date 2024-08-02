@@ -7,6 +7,7 @@ class GzMsgs11 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "main"
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake4"
   depends_on "gz-math8"

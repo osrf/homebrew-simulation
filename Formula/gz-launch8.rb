@@ -10,6 +10,7 @@ class GzLaunch8 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gz-cmake4"
   depends_on "gz-common6"

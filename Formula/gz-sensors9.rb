@@ -10,6 +10,7 @@ class GzSensors9 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
+  depends_on "abseil"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
