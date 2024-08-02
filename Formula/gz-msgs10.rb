@@ -4,14 +4,9 @@ class GzMsgs10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.3.0.tar.bz2"
   sha256 "501e475f5602448428a11d16e3d11972a87d5212bd1655d9154e74aa80bd8454"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "27387692c3ec3338e86de95ddb6f04ec56646c3c0e143d5b6ee40bf50c725bc0"
-    sha256 monterey: "263adc1e9d13f7e5dcd086906228fc8c88ef6f436ca1944e0a67cf8166eba33d"
-  end
 
   depends_on "cmake"
   depends_on "gz-cmake3"
