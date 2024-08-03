@@ -14,7 +14,7 @@ class GzLaunch8 < Formula
   depends_on "ffmpeg"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
-  depends_on "gz-fueltools10"
+  depends_on "gz-fuel-tools10"
   depends_on "gz-gui9"
   depends_on "gz-math8"
   depends_on "gz-msgs11"
