@@ -10,17 +10,24 @@ class GzLaunch8 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
+  depends_on "gz-fuel-tools10"
   depends_on "gz-gui9"
+  depends_on "gz-math8"
   depends_on "gz-msgs11"
+  depends_on "gz-physics8"
   depends_on "gz-plugin3"
+  depends_on "gz-rendering8"
   depends_on "gz-sim9"
   depends_on "gz-tools2"
   depends_on "gz-transport14"
+  depends_on "gz-utils3"
   depends_on "protobuf"
   depends_on "qt@5"
+  depends_on "sdformat15"
   depends_on "tinyxml2"
 
   def install
