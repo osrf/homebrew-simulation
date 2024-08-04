@@ -23,6 +23,7 @@ class GzTransport14 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "python@3.12"
+  depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
 

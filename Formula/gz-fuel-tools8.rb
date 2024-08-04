@@ -8,10 +8,13 @@ class GzFuelTools8 < Formula
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"
   depends_on "gz-common5"
+  depends_on "gz-math7"
   depends_on "gz-msgs9"
+  depends_on "gz-utils2"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"

@@ -14,10 +14,13 @@ class GzFuelTools9 < Formula
     sha256 cellar: :any, monterey: "ba6acc08b80937851ef99402014388423b32cc89445a218b08009d95ca58491e"
   end
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"
   depends_on "gz-common5"
+  depends_on "gz-math7"
   depends_on "gz-msgs10"
+  depends_on "gz-utils2"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
