@@ -16,6 +16,7 @@ class GzSim8 < Formula
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -36,6 +37,7 @@ class GzSim8 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "python@3.12"
+  depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat14"
   depends_on "tinyxml2"

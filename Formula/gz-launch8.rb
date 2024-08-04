@@ -20,7 +20,7 @@ class GzLaunch8 < Formula
   depends_on "gz-msgs11"
   depends_on "gz-physics8"
   depends_on "gz-plugin3"
-  depends_on "gz-rendering8"
+  depends_on "gz-rendering9"
   depends_on "gz-sim9"
   depends_on "gz-tools2"
   depends_on "gz-transport14"

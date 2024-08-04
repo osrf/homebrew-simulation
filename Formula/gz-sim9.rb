@@ -30,6 +30,7 @@ class GzSim9 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "python@3.12"
+  depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat15"
   depends_on "tinyxml2"

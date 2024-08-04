@@ -17,9 +17,11 @@ class GzTransport13 < Formula
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "cppzmq"
   depends_on "gz-cmake3"
+  depends_on "gz-math7"
   depends_on "gz-msgs10"
   depends_on "gz-tools2"
   depends_on "gz-utils2"
@@ -28,6 +30,7 @@ class GzTransport13 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "python@3.12"
+  depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
 

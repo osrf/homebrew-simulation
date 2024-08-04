@@ -14,10 +14,12 @@ class GzMsgs10 < Formula
     sha256 monterey: "5e431b795eb79d1bdb52760d421cb8810cd58eb1087349ce9f2578a50bde1eb4"
   end
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"
   depends_on "gz-math7"
   depends_on "gz-tools2"
+  depends_on "gz-utils2"
   depends_on macos: :high_sierra # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
