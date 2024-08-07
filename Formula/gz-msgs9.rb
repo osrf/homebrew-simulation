@@ -10,8 +10,8 @@ class GzMsgs9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "1f50de0ebdd17757b651774d28373c5114486b1abbc081547506a5777c511e10"
-    sha256 cellar: :any, monterey: "9f9a84ead5c185f53030071084047f1ec030a81dc4440ae4bf92fedcfa40b762"
+    sha256 cellar: :any, ventura:  "b1b8eadcc613992a5b52c616c2adeac58280358d483fbe292e8240f4f6d5facf"
+    sha256 cellar: :any, monterey: "91e0227c9775f15f70a526ff4493c45f71f13751169f540758bc2a90bb8a960c"
   end
 
   depends_on "abseil"
