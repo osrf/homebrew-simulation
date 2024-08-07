@@ -8,6 +8,12 @@ class Sdformat14 < Formula
 
   head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura:  "356dd92e2367af5ddebce7d1708ac7c8982e80855d2dd5ef4cdea35f9386129c"
+    sha256 monterey: "6c4252571144290e9561d79393699940e5a1363a4cd4ee83d9607fd5b5c5c270"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "pybind11" => :build
