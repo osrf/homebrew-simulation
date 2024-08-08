@@ -8,6 +8,12 @@ class IgnitionSensors6 < Formula
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors6"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "33a3b327d23b2eb614d5f62966cade389f57ca3d6205e56f715f8921f264aa6b"
+    sha256 cellar: :any, monterey: "c1c7944ff574edf5bb353be0a129646a5a27347991857ecd925c5dd3d721d461"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
