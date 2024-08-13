@@ -55,10 +55,10 @@ class GzMath8 < Formula
     EOS
     system "pkg-config", "gz-math8"
     cflags = `pkg-config --cflags gz-math8`.split
+    ldflags = `pkg-config --libs gz-math8`.split
     system ENV.cc, "test.cpp",
                    *cflags,
-                   "-L#{lib}",
-                   "-lgz-math8",
+                   *ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
