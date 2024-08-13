@@ -4,14 +4,14 @@ class GzSensors8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-8.2.0.tar.bz2"
   sha256 "d3e041205d08ce29e5755a4afe1e5933c54cc11c6b07c78c8f34a1607d57f091"
   license "Apache-2.0"
-  revision 3
+  revision 5
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "6361224db9ea6f1d01bb65d1942b00311b54dab5785d8bb56ad15b3e6b10338b"
-    sha256 cellar: :any, monterey: "dee67e632f97420eb37804127bc3ef4052950f58a2e94248d76b79935abb30fe"
+    sha256 cellar: :any, ventura:  "20f24243284c7328d0a92e499fca4f6387d9ea451f29d5a528e3d00f4788eff3"
+    sha256 cellar: :any, monterey: "46003e709b4d785fde37bf5f1142110cb457c376b64b46b7c4186ea7d6730018"
   end
 
   depends_on "cmake" => [:build, :test]
