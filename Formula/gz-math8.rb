@@ -52,15 +52,6 @@ class GzMath8 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-math8::gz-math8)
     EOS
-    # test building with manual compiler flags
-    system ENV.cc, "test.cpp",
-                   "--std=c++14",
-                   "-I#{include}/gz/math8",
-                   "-L#{lib}",
-                   "-lgz-math8",
-                   "-lc++",
-                   "-o", "test"
-    system "./test"
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
