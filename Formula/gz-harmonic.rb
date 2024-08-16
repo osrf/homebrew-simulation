@@ -11,7 +11,6 @@ class GzHarmonic < Formula
   head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
   depends_on "cmake" => :build
-  depends_on "python@3.12" => [:build, :test]
 
   depends_on "gz-cmake3"
   depends_on "gz-common5"
@@ -31,25 +30,14 @@ class GzHarmonic < Formula
   depends_on "pkg-config"
   depends_on "sdformat14"
 
-  resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz"
-    sha256 "b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"
-  end
-
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
-
-    venv = virtualenv_create(libexec, Formula["python@3.12"].opt_libexec/"bin/python")
-    %w[PyYAML vcstool].each do |pkg|
-      venv.pip_install pkg
-    end
   end
 
   test do
-    yaml_file = share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml"
-    system libexec/"bin/vcs", "validate", "--input", yaml_file
+    assert_predicate share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml", :exist?
   end
 end
