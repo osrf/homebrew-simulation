@@ -12,7 +12,6 @@ class GzCommon6 < Formula
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gdal"
-  depends_on "gts"
   depends_on "gz-cmake4"
   depends_on "gz-math8"
   depends_on "gz-utils3"
