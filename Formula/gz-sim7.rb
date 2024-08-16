@@ -4,17 +4,19 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.8.0.tar.bz2"
   sha256 "8eea4251c4ab94b5085d5d3a91fea2b29fd068aa9a89f3745b6f082c52225b5b"
   license "Apache-2.0"
+  revision 2
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "d42e73413d8da33e25df39bb234bb451b74c526782d192739f4e12961d540baf"
-    sha256 monterey: "7370116fe902aaea27cc8fd53e822688d1df3878386b07838e80716630a317d0"
+    sha256 ventura:  "f83f55e51394f3319d75fda4f0a786d99f328788a4fa797f3becdec3634ce151"
+    sha256 monterey: "a8c131c3020ec81bbb211d6979fc6a14bfae076eb48cc07c058e8e94ee3b35a0"
   end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -35,6 +37,7 @@ class GzSim7 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "python@3.12"
+  depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat13"
   depends_on "tinyxml2"

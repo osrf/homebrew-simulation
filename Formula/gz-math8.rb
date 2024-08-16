@@ -10,6 +10,7 @@ class GzMath8 < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build
+  depends_on "pkg-config" => :test
   depends_on "eigen"
   depends_on "gz-cmake4"
   depends_on "gz-utils3"
@@ -52,12 +53,12 @@ class GzMath8 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-math8::gz-math8)
     EOS
-    # test building with manual compiler flags
+    system "pkg-config", "gz-math8"
+    cflags = `pkg-config --cflags gz-math8`.split
+    ldflags = `pkg-config --libs gz-math8`.split
     system ENV.cc, "test.cpp",
-                   "--std=c++14",
-                   "-I#{include}/gz/math8",
-                   "-L#{lib}",
-                   "-lgz-math8",
+                   *cflags,
+                   *ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"

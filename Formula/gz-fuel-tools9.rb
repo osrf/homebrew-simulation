@@ -1,23 +1,25 @@
 class GzFuelTools9 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-9.0.3.tar.bz2"
-  sha256 "242687de20af956485372a43f47a0fd093ecb17ee62d268211c6223e204f94cf"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-9.1.0.tar.bz2"
+  sha256 "6335f8c6906f052527c97fb1991afffcfe9991122bce3a7c7ffc02df7c8e4d8d"
   license "Apache-2.0"
-  revision 9
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "cbb6f65194692cc3f471f5862b186c343e5883e00d6c6270f4823c847c998e5f"
-    sha256 cellar: :any, monterey: "1aaac3a3f46de0a7a018be335f2e3171f211afbbb07c80879036bd1233c7fced"
+    sha256 cellar: :any, ventura:  "34106cdc8876a33c17a3c2e130014c531830fb59d8db1a52670fb49bde85db19"
+    sha256 cellar: :any, monterey: "71683cee2c2c98e9fe3ea00df5ece8e079f6ff65bec275662387ef7d15e9f3d3"
   end
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"
   depends_on "gz-common5"
+  depends_on "gz-math7"
   depends_on "gz-msgs10"
+  depends_on "gz-utils2"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"

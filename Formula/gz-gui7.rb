@@ -4,24 +4,27 @@ class GzGui7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-7.2.2.tar.bz2"
   sha256 "dbfdfbb5e588d0bc6e163c554b1b5dc5397c85dda0a696ffaa79052420eb5dc0"
   license "Apache-2.0"
-  revision 4
+  revision 6
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "e18e738755294791cd3a1c9f718c98eff8cc47c578170ae356f075066a81713b"
-    sha256 monterey: "3bcb1ae24527dd1f17833fd1fc44dc7ae6d12f4bf49a006c1d7bd11c5980a39d"
+    sha256 ventura:  "49d6fb8db44d487d6aaa46f0f71777830ce1dde6d498dc63e614b0b491ae5f8d"
+    sha256 monterey: "c3bd9ba897c911e614363d9b334518f0c12fda1eee7ec42c0c478ba37d6ac8d5"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
+  depends_on "abseil"
   depends_on "gz-cmake3"
   depends_on "gz-common5"
+  depends_on "gz-math7"
   depends_on "gz-msgs9"
   depends_on "gz-plugin2"
   depends_on "gz-rendering7"
   depends_on "gz-transport12"
+  depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "protobuf"
   depends_on "qt@5"

@@ -4,21 +4,24 @@ class GzTransport13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.4.0.tar.bz2"
   sha256 "bec7a13e2f40df963afcf8dc87a9c2e34369daec80f36636965c92d4c8bf5a46"
   license "Apache-2.0"
+  revision 4
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "7773e041481f233686e89fac0792bec9969a6083adb05b7db1c7557735ac861d"
-    sha256 monterey: "13138911bcb47ccd93024bbf9e3c9175b774e88ac325e691b7c8926ba009feee"
+    sha256 ventura:  "b2b8d22df6da1cb1613bf0748ed0edbb43ae13dac12a0893559d95792a907868"
+    sha256 monterey: "9a4c4f3a0b353058b641e5c5bcf922a1a93eef3b230fe6db5a06c5157b84d342"
   end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "cppzmq"
   depends_on "gz-cmake3"
+  depends_on "gz-math7"
   depends_on "gz-msgs10"
   depends_on "gz-tools2"
   depends_on "gz-utils2"
@@ -27,6 +30,7 @@ class GzTransport13 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "python@3.12"
+  depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
 

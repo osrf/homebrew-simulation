@@ -4,17 +4,19 @@ class GzSim8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.6.0.tar.bz2"
   sha256 "ceedc00bc884c6c1394d0cffa95bfc02303017835f02b438f205dd2f921f852a"
   license "Apache-2.0"
+  revision 4
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "cc3424f755e6df2e380b969a1273471de47ff56b0faf3423c2bccd64b73363f5"
-    sha256 monterey: "4d6ddd81132608e98e4462218169ef4398414abdb3639535c20990f700171a62"
+    sha256 ventura:  "058497397d53382fbb0f795e872f7dda38c13df9a963be17f0cc76ce1e7ce65b"
+    sha256 monterey: "1cce038e372c1c20d098c8847f0ef37319123e69ef3dc6884f9e30528d509b6e"
   end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -35,6 +37,7 @@ class GzSim8 < Formula
   depends_on "pkg-config"
   depends_on "protobuf"
   depends_on "python@3.12"
+  depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat14"
   depends_on "tinyxml2"

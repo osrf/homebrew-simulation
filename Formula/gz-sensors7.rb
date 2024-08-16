@@ -4,25 +4,27 @@ class GzSensors7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-7.3.0.tar.bz2"
   sha256 "92b9e0bf4707bdbf318142b0a17c1cd1ca8c94bfee9f8911bcd0b3a7c6cbd169"
   license "Apache-2.0"
-  revision 25
+  revision 27
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, ventura:  "cc89d035b33635d9fd765b6c744f2e83fae58b9850ebaa5d02fa9333ab59c1ff"
-    sha256 cellar: :any, monterey: "4639254c60012397ba38c84c944ab3cb99e2f94f843c9293b8ac6bb8e1c73607"
+    sha256 cellar: :any, ventura:  "761aa809b9e5adb21fdc62831062082e21763451bdbc7af0ee25563fff2e39ff"
+    sha256 cellar: :any, monterey: "429a2019eb1f7e77f329a804b865629038b636748c5c1265a858a70f68d378f4"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
+  depends_on "abseil"
   depends_on "gz-cmake3"
   depends_on "gz-common5"
   depends_on "gz-math7"
   depends_on "gz-msgs9"
   depends_on "gz-rendering7"
   depends_on "gz-transport12"
+  depends_on "gz-utils2"
   depends_on "protobuf"
   depends_on "sdformat13"
   depends_on "tinyxml2"

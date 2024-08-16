@@ -4,14 +4,14 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.14.0.tar.bz2"
   sha256 "7e9842c046c9e0755355b274c240a8abbf4e962be7ce7b7f59194e5f4b584f45"
   license "Apache-2.0"
-  revision 25
+  revision 27
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "c5ac39e86df16e9f256cec14cadbb196036524673c229018ae5df8ec60373ab7"
-    sha256 monterey: "f590bc4a1d5e6fb5fff85756bd4cd88a3a6ff89b04ad1e2b1e526dc0bb463204"
+    sha256 ventura:  "1cf9936789fb9fc0f667aba80239a85c61c4431c4d6aa3aceffa836be57c335c"
+    sha256 monterey: "106d27e0f38c7b7ba853d643f931bf2c5c0b02b7df4619240411f94ecf13e744"
   end
 
   depends_on "cmake" => :build
@@ -46,7 +46,6 @@ class Gazebo11 < Formula
   # depends on "gdal"
   # depends on "player"
 
-  conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
 
