@@ -25,8 +25,6 @@ class Sdformat6 < Formula
   depends_on "pkg-config"
   depends_on "tinyxml"
 
-  conflicts_with "sdformat4", because: "differing version of the same formula"
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"

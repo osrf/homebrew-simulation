@@ -44,7 +44,6 @@ class Gazebo9 < Formula
   # depends on "gdal" => :optional
   # depends on "player" => :optional
 
-  conflicts_with "gazebo7", because: "differing version of the same formula"
   conflicts_with "gazebo11", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
 
