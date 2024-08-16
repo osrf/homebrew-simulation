@@ -9,6 +9,7 @@ class IgnitionMsgs1 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs1"
 
+  disable! date: "2024-08-31", because: "is past end-of-life date"
   deprecate! date: "2023-01-25", because: "is past end-of-life date"
 
   depends_on "protobuf-c" => :build

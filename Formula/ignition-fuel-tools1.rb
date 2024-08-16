@@ -13,6 +13,7 @@ class IgnitionFuelTools1 < Formula
     sha256 catalina: "8c56876ee6b0fd4f69a82e7c28e1c8b672ce228433128bf8630c4a2eb706fec9"
   end
 
+  disable! date: "2024-08-31", because: "is past end-of-life date"
   deprecate! date: "2023-01-25", because: "is past end-of-life date"
 
   depends_on "cmake"

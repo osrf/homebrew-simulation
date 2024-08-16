@@ -8,6 +8,8 @@ class Ogre < Formula
 
   option "with-cg"
 
+  deprecate! date: "2024-08-31", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
 
   depends_on "boost"

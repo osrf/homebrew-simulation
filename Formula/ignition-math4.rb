@@ -17,6 +17,7 @@ class IgnitionMath4 < Formula
     sha256 cellar: :any, el_capitan:  "e7c3f313b025c4733bd79cb3a27f54846e910e11c34e12d78e1c054eb06bbd48"
   end
 
+  disable! date: "2024-08-31", because: "is past end-of-life date"
   deprecate! date: "2023-01-25", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

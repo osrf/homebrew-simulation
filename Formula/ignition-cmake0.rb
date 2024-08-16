@@ -14,6 +14,7 @@ class IgnitionCmake0 < Formula
     sha256 cellar: :any_skip_relocation, sierra:   "051534970fe3657c173e89d566b134a7e0185cc13afdac722817949594757691"
   end
 
+  disable! date: "2024-08-31", because: "is past end-of-life date"
   deprecate! date: "2023-01-25", because: "is past end-of-life date"
 
   depends_on "cmake"
