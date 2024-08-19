@@ -8,6 +8,7 @@ class GzUtils3 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "gz-cmake4"
+  depends_on "spdlog"
 
   def install
     cmake_args = std_cmake_args
