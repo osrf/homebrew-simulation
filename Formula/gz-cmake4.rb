@@ -1,7 +1,7 @@
 class GzCmake4 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-cmake.git", branch: "main"
+  url "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake4"
   version "3.999.999-0-20231006"
   license "Apache-2.0"
 
@@ -23,7 +23,7 @@ class GzCmake4 < Formula
 
   test do
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       project(gz-test VERSION 0.1.0)
       find_package(gz-cmake4 REQUIRED)
       gz_configure_project()
