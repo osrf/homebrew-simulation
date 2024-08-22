@@ -1,7 +1,7 @@
 class GzUtils3 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://github.com/gazebosim/gz-utils.git", branch: "main"
+  url "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils3"
   version "2.999.999-0-20231011"
   license "Apache-2.0"
 
@@ -39,7 +39,7 @@ class GzUtils3 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-utils3 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-utils3::gz-utils3)
