@@ -8,6 +8,12 @@ class GzCmake4 < Formula
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake4"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any_skip_relocation, ventura:  "733000e450c4d2d7e792e123e9cc22ce00084f86aa8c000959cb37ce81256af4"
+    sha256 cellar: :any_skip_relocation, monterey: "a97eb561263676c96771d982f9d41d345f5612fe50846a72d0626ba0c8ece1de"
+  end
+
   depends_on "cmake"
   depends_on "pkg-config"
 
