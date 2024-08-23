@@ -1,11 +1,11 @@
 class GzRendering9 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-rendering.git", branch: "main"
+  url "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
   version "8.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-rendering.git", branch: "main"
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -64,7 +64,7 @@ class GzRendering9 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-rendering9 REQUIRED COMPONENTS ogre ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-rendering9::gz-rendering9)
