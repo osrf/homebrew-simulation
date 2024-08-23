@@ -1,7 +1,7 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-math.git", branch: "main"
+  url "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
   version "7.999.999-0-20231006"
   license "Apache-2.0"
 
@@ -48,7 +48,7 @@ class GzMath8 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-math8 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-math8::gz-math8)
