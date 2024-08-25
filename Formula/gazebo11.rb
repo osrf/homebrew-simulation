@@ -4,7 +4,7 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.14.0.tar.bz2"
   sha256 "7e9842c046c9e0755355b274c240a8abbf4e962be7ce7b7f59194e5f4b584f45"
   license "Apache-2.0"
-  revision 27
+  revision 28
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
@@ -54,6 +54,13 @@ class Gazebo11 < Formula
     # Remove this patch with the next release
     url "https://github.com/gazebosim/gazebo-classic/commit/e4b4d0fb752c7e43e34ab97d0e01a2a3eaca1ed4.patch?full_index=1"
     sha256 "c00fdff58d8e65945d480cb58006ff28bf2c22043373d709705420dc59b70f62"
+  end
+
+  patch do
+    # Fix build with boost 1.86.0
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gazebo-classic/commit/15cc7addd1ede775b713a59414477460a0b34a70.patch?full_index=1"
+    sha256 "34dc182226c2ec7a3ae0289eb2089ca7bddc940869b5bff3a0572fc47fdbf0b0"
   end
 
   patch do
