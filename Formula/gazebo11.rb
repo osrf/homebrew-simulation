@@ -10,8 +10,8 @@ class Gazebo11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "1cf9936789fb9fc0f667aba80239a85c61c4431c4d6aa3aceffa836be57c335c"
-    sha256 monterey: "106d27e0f38c7b7ba853d643f931bf2c5c0b02b7df4619240411f94ecf13e744"
+    sha256 ventura:  "f69ff17d852c02b9793a18de7eccb4d245d3d1029cb45ce9403ace275de00bb2"
+    sha256 monterey: "467894462dc1ce5cff1135848a96c3c6df4e3be3b4425ee5a32f9fefbf8fed17"
   end
 
   depends_on "cmake" => :build
