@@ -1,11 +1,11 @@
 class GzSensors9 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://github.com/gazebosim/gz-sensors.git", branch: "main"
+  url "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors9"
   version "8.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
+  head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors9"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -45,7 +45,7 @@ class GzSensors9 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-sensors9 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-sensors9::gz-sensors9)
