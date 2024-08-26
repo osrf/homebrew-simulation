@@ -1,11 +1,11 @@
 class GzMsgs11 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-msgs.git", branch: "main"
+  url "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
   version "10.999.999-0-20231013"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-msgs.git", branch: "main"
+  head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
   depends_on "abseil"
   depends_on "cmake"
@@ -47,7 +47,7 @@ class GzMsgs11 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-msgs11 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-msgs11::gz-msgs11)
