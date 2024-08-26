@@ -1,11 +1,11 @@
 class Sdformat15 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/gazebosim/sdformat.git", branch: "main"
+  url "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
   version "14.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/sdformat.git", branch: "main"
+  head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
@@ -59,7 +59,7 @@ class Sdformat15 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(sdformat15 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ${SDFormat_LIBRARIES})
