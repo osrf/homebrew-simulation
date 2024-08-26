@@ -1,11 +1,11 @@
 class GzTransport14 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-transport.git", branch: "main"
+  url "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
   version "13.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-transport.git", branch: "main"
+  head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
@@ -65,7 +65,7 @@ class GzTransport14 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-transport14 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-transport14::gz-transport14)
