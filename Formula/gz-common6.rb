@@ -1,7 +1,7 @@
 class GzCommon6 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-common.git", branch: "main"
+  url "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
   version "5.999.999-0-20231009"
   license "Apache-2.0"
 
@@ -44,7 +44,7 @@ class GzCommon6 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-common6 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-common6::gz-common6)
