@@ -1,7 +1,7 @@
 class GzFuelTools10 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
+  url "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools10"
   version "9.999.999-0-20231011"
   license "Apache-2.0"
 
@@ -42,7 +42,7 @@ class GzFuelTools10 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-fuel_tools10 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-fuel_tools10::gz-fuel_tools10)
