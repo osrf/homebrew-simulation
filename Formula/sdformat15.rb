@@ -1,8 +1,9 @@
 class Sdformat15 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
-  version "14.999.999-0-20231016"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-15.0.0~pre1.tar.bz2"
+  version "15.0.0-pre1"
+  sha256 "6f4410b142f1066a32b7c5db249fea0c7f7a1a937d7f4a85afdd00ecb7cb1745"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
