@@ -1,11 +1,11 @@
 class GzPlugin3 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://github.com/gazebosim/gz-plugin.git", branch: "main"
+  url "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin3"
   version "2.999.999-0-20231006"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-plugin.git", branch: "main"
+  head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin3"
 
   depends_on "cmake"
   depends_on "gz-cmake4"
@@ -42,7 +42,7 @@ class GzPlugin3 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-plugin3 QUIET REQUIRED COMPONENTS loader)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-plugin3::loader)
