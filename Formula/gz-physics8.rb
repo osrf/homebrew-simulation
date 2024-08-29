@@ -1,11 +1,11 @@
 class GzPhysics8 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://github.com/gazebosim/gz-physics.git", branch: "main"
+  url "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics8"
   version "7.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-physics.git", branch: "main"
+  head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics8"
 
   depends_on "cmake" => [:build, :test]
 
@@ -73,7 +73,7 @@ class GzPhysics8 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-physics8 REQUIRED)
       find_package(gz-plugin3 REQUIRED COMPONENTS all)
       add_executable(test_cmake test.cpp)

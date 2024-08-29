@@ -1,11 +1,11 @@
 class GzLaunch8 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://github.com/gazebosim/gz-launch.git", branch: "main"
+  url "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
   version "7.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-launch.git", branch: "main"
+  head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
