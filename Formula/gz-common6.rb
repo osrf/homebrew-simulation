@@ -53,10 +53,10 @@ class GzCommon6 < Formula
     EOS
     system "pkg-config", "gz-common6"
     cflags = `pkg-config --cflags gz-common6`.split
+    ldflags = `pkg-config --libs gz-common6`.split
     system ENV.cc, "test.cpp",
                    *cflags,
-                   "-L#{lib}",
-                   "-lgz-common6",
+                   *ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
