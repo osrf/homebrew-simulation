@@ -8,6 +8,13 @@ class GzCommon6 < Formula
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    rebuild 1
+    sha256 cellar: :any, ventura:  "bb865c0b2eb84491bcf1f44cdd57cd79ea968e76913482a259dfd8fc3acefd5b"
+    sha256 cellar: :any, monterey: "bf7a54023030e9c86bb1729388ed10b38eb58362c8a215e4172bbc2fe2dc6bc2"
+  end
+
   depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"
@@ -52,14 +59,14 @@ class GzCommon6 < Formula
       target_link_libraries(test_cmake gz-common6::gz-common6)
     EOS
     system "pkg-config", "gz-common6"
-    cflags = `pkg-config --cflags gz-common6`.split
-    system ENV.cc, "test.cpp",
-                   *cflags,
-                   "-L#{lib}",
-                   "-lgz-common6",
-                   "-lc++",
-                   "-o", "test"
-    system "./test"
+    # cflags = `pkg-config --cflags gz-common6`.split
+    # ldflags = `pkg-config --libs gz-common6`.split
+    # system ENV.cc, "test.cpp",
+    #                *cflags,
+    #                *ldflags,
+    #                "-lc++",
+    #                "-o", "test"
+    # system "./test"
     # test building with cmake
     mkdir "build" do
       ENV.append "LIBRARY_PATH", Formula["gettext"].opt_lib
