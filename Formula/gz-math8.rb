@@ -1,11 +1,18 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
-  version "7.999.999-0-20231006"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.0.0~pre1.tar.bz2"
+  version "8.0.0-pre1"
+  sha256 "a0bbb0a5eaf8ee754db65ab3ac73b92ee35e5b2e655aafca31932125912d4491"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, ventura:  "ff757c2861fb8b4e64e21a2e4d3564fd667614568f5e2fd0f4c5e62f2a26da91"
+    sha256 cellar: :any, monterey: "9efcad2afece87a47b5df6b89ddb479fa91d7739aa36b1323b2c5a591ae5896b"
+  end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
