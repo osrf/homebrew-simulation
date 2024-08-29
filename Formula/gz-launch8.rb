@@ -1,8 +1,9 @@
 class GzLaunch8 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
-  version "7.999.999-0-20231016"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.0~pre1.tar.bz2"
+  version "8.0.0-pre1"
+  sha256 "ff03e09388400fc962d4d2db1679e48f174fc62006c2cb5855d23a7cf60ca350"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
