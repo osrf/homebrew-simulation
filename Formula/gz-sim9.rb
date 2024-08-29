@@ -1,11 +1,11 @@
 class GzSim9 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://github.com/gazebosim/gz-sim.git", branch: "main"
+  url "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
   version "8.999.999-0-20231016"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-sim.git", branch: "main"
+  head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -121,7 +121,7 @@ class GzSim9 < Formula
     }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
       find_package(gz-sim9 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-sim9::core)
