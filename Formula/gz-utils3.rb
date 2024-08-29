@@ -1,8 +1,9 @@
 class GzUtils3 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils3"
-  version "2.999.999-0-20231011"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-3.0.0~pre3.tar.bz2"
+  version "3.0.0-pre3"
+  sha256 "2abf8313b3977bcc2c989f1d6786863a0edc44a19872a87ad966ea2f9420bbe2"
   license "Apache-2.0"
 
   depends_on "cmake" => [:build, :test]
