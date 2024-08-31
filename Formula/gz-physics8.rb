@@ -5,6 +5,7 @@ class GzPhysics8 < Formula
   version "8.0.0-pre1"
   sha256 "5492ee2817c4d4d914aeb02940205b9cd43a8a17c3694329901679b6cf47204a"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics8"
 
