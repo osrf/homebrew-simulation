@@ -5,6 +5,7 @@ class GzRendering9 < Formula
   version "9.0.0-pre2"
   sha256 "6e41d96f6b9716cadc904eb2dd0d3c8f202425a2c842dc24ff761e8249bc037a"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
 
