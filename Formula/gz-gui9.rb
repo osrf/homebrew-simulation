@@ -5,7 +5,7 @@ class GzGui9 < Formula
   version "9.0.0-pre1"
   sha256 "4cac0025d97bf99be5a8d6ac8b7ebbb5068c3a0944d0a197fed764a21eabf962"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
 
