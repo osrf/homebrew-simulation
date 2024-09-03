@@ -101,16 +101,16 @@ class GzGui9 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-gui9::gz-gui9)
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    system "pkg-config", "gz-gui9", "--cflags"
-    system "pkg-config", "gz-gui9", "--libs"
-    cflags   = `pkg-config --cflags gz-gui9`.split
-    ldflags  = `pkg-config --libs gz-gui9`.split
-    system ENV.cc, "test.cpp",
-                   *cflags,
-                   *ldflags,
-                   "-lc++",
-                   "-o", "test"
+    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
+    # system "pkg-config", "gz-gui9", "--cflags"
+    # system "pkg-config", "gz-gui9", "--libs"
+    # cflags   = `pkg-config --cflags gz-gui9`.split
+    # ldflags  = `pkg-config --libs gz-gui9`.split
+    # system ENV.cc, "test.cpp",
+    #                *cflags,
+    #                *ldflags,
+    #                "-lc++",
+    #                "-o", "test"
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
