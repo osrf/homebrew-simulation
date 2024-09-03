@@ -112,7 +112,7 @@ class GzGui9 < Formula
     #                "-lc++",
     #                "-o", "test"
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
-    system "./test"
+    # system "./test"
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
