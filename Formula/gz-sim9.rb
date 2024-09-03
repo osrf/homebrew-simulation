@@ -5,7 +5,7 @@ class GzSim9 < Formula
   version "9.0.0-pre1"
   sha256 "3a166af7a15062e10a886df345204bb0cda1d14bda627aaafda128ca57d2d7ab"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
