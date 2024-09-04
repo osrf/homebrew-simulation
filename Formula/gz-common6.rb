@@ -51,14 +51,14 @@ class GzCommon6 < Formula
       target_link_libraries(test_cmake gz-common6::gz-common6)
     EOS
     system "pkg-config", "gz-common6"
-    # cflags = `pkg-config --cflags gz-common6`.split
-    # ldflags = `pkg-config --libs gz-common6`.split
-    # system ENV.cc, "test.cpp",
-    #                *cflags,
-    #                *ldflags,
-    #                "-lc++",
-    #                "-o", "test"
-    # system "./test"
+    cflags = `pkg-config --cflags gz-common6`.split
+    ldflags = `pkg-config --libs gz-common6`.split
+    system ENV.cc, "test.cpp",
+                   *cflags,
+                   *ldflags,
+                   "-lc++",
+                   "-o", "test"
+    system "./test"
     # test building with cmake
     mkdir "build" do
       ENV.append "LIBRARY_PATH", Formula["gettext"].opt_lib
