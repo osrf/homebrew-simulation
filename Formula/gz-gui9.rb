@@ -5,15 +5,9 @@ class GzGui9 < Formula
   version "9.0.0-pre1"
   sha256 "4cac0025d97bf99be5a8d6ac8b7ebbb5068c3a0944d0a197fed764a21eabf962"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "a13f919798c98abb22d8132eba471204a81a07eb609c740401766e314b9e7ec8"
-    sha256 monterey: "35d9d4e9438fc19362142601d4c9cd007abaff8b747b110513b64a1664815a10"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
