@@ -5,7 +5,7 @@ class GzTransport14 < Formula
   version "14.0.0-pre1"
   sha256 "756c13d7fd69630a7e329b1a8e4443f9840524bd4b637697f1a334e53046b18e"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
