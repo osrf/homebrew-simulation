@@ -5,7 +5,7 @@ class GzMsgs11 < Formula
   version "11.0.0-pre1"
   sha256 "6f96ae7e09b84d890383157f5e8b0509a0ccdf5abe8216fae7a1c7bc1aa80654"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
