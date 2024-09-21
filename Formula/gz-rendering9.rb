@@ -11,6 +11,7 @@ class GzRendering9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:   "f6dbf952e5bf4b5c0122452f2680081a30d8ea451f73ed65020f8a9fc9e43d2d"
     sha256 ventura:  "a22b5f1bf2474a7567b6128e6c2b5e9ad148500919d0fead02f04cebdc3fa69d"
     sha256 monterey: "9bb8bb630d65bcd990b16c0bcc2e0c602facef987e36e6a93f01cf52fb13d352"
   end
