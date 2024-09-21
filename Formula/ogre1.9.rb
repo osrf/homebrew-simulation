@@ -11,6 +11,7 @@ class Ogre19 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256               sonoma:   "19b9f88b2ccaf1f80e715f8c409aaddc15c30b225e0c81f60f285e5598e9f5b3"
     sha256 cellar: :any, ventura:  "228302c760e8e34edcc209a8439e6462a9c45c4f5ce3018e523a22ab622f45ab"
     sha256 cellar: :any, monterey: "c5fd218d8cfcacea10eabc54837570c4b2fc76024cbf8326e2a716e49096eefe"
     sha256               big_sur:  "d9d4bc2177fda4189a1633a50766e727cfc3a13abbc64a913d08e92657b6ba49"
@@ -103,11 +104,11 @@ class Ogre19 < Formula
   def install
     cmake_args = [
       "-DCMAKE_CXX_STANDARD='14'",
-      "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
-      "-DOGRE_FULL_RPATH:BOOL=FALSE",
       "-DOGRE_BUILD_DOCS:BOOL=FALSE",
-      "-DOGRE_INSTALL_DOCS:BOOL=FALSE",
+      "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_BUILD_SAMPLES:BOOL=FALSE",
+      "-DOGRE_FULL_RPATH:BOOL=FALSE",
+      "-DOGRE_INSTALL_DOCS:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES_SOURCE:BOOL=FALSE",
     ]
