@@ -31,6 +31,7 @@ class GzIonic < Formula
   depends_on "sdformat15"
 
   def install
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"

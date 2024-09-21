@@ -34,7 +34,7 @@ class GzMath8 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     cmake_args << python_cmake_arg
 
-    # Use build folder
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
