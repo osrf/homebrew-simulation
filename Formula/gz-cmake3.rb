@@ -35,6 +35,7 @@ class GzCmake3 < Formula
       gz_configure_project()
       gz_configure_build(QUIT_IF_BUILD_ERRORS)
     EOS
+    # Create necessary cmake files
     %w[doc include src test].each do |dir|
       mkdir dir do
         touch "CMakeLists.txt"

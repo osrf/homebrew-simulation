@@ -51,6 +51,7 @@ class GzUtils2 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-utils2::gz-utils2)
     EOS
+    # test building with pkg-config
     system "pkg-config", "gz-utils2"
     cflags = `pkg-config --cflags gz-utils2`.split
     ldflags = `pkg-config --libs gz-utils2`.split
