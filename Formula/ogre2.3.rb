@@ -18,6 +18,7 @@ class Ogre23 < Formula
   depends_on "cmake" => :build
   depends_on "gz-plugin2" => :test
   depends_on "pkg-config" => :test
+
   depends_on "doxygen"
   depends_on "freeimage"
   depends_on "freetype"
