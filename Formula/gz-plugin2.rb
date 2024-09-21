@@ -9,6 +9,7 @@ class GzPlugin2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:   "feb89201d285238c72e68291ea9da024c47c7bb36ca493ff4de0270b96e562e1"
     sha256 cellar: :any, ventura:  "639e07042fa87ee6ce1e59be3efa121c07b8617b2d436ca6a67bbeddd1ff85b9"
     sha256 cellar: :any, monterey: "d626ae1bcd4bbfc727d1afe9cfa4a9230b632169ba1bbf317cb9154dd08966df"
   end
