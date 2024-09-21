@@ -9,6 +9,7 @@ class GzUtils2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:   "8b6049fdfffc16a2d793c8601e00fc8543170b027e5a908ee6cdc4819d46c9dc"
     sha256 cellar: :any, ventura:  "434704186995b15e49035f74c68034bdcbfef772d0cf697113dfcfc0392d2716"
     sha256 cellar: :any, monterey: "a2313fadab80f5867eaac4d8a6d0b7e1c8fb96218b78444d7a2c22fe32e6ab65"
   end
@@ -51,6 +52,7 @@ class GzUtils2 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-utils2::gz-utils2)
     EOS
+    # test building with pkg-config
     system "pkg-config", "gz-utils2"
     cflags = `pkg-config --cflags gz-utils2`.split
     ldflags = `pkg-config --libs gz-utils2`.split

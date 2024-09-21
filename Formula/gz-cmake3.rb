@@ -9,6 +9,7 @@ class GzCmake3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any_skip_relocation, sonoma:   "dc6871972cc849aa0b264c6c1622283c97b20b4c7364e2bbb98adea9b88f2e3a"
     sha256 cellar: :any_skip_relocation, ventura:  "03c21765a213c43f0fb4576073d31c520df1676bf63ad73b704a8c661cbf2aa6"
     sha256 cellar: :any_skip_relocation, monterey: "2c4b2a1254aab708cf5de016d662efde660b1c2257ba6bddb384478c52494bed"
   end
@@ -35,6 +36,7 @@ class GzCmake3 < Formula
       gz_configure_project()
       gz_configure_build(QUIT_IF_BUILD_ERRORS)
     EOS
+    # Create necessary cmake files
     %w[doc include src test].each do |dir|
       mkdir dir do
         touch "CMakeLists.txt"
