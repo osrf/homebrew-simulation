@@ -9,11 +9,6 @@ class GzSim9 < Formula
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma: "26226baa7abcbc525d1197fd79c98d35acb12b346dbf673a008a433248d0e24d"
-  end
-
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "abseil"
@@ -58,7 +53,6 @@ class GzSim9 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
     cmake_args << python_cmake_arg
 
-    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"

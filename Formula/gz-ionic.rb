@@ -10,11 +10,6 @@ class GzIonic < Formula
 
   head "https://github.com/gazebosim/gz-ionic.git", branch: "main"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, sonoma: "48611c9cdc277be53c8bb0026b3c92b2ea258e81b72fa23bd101411a4cf0da28"
-  end
-
   depends_on "cmake" => :build
 
   depends_on "gz-cmake4"
@@ -36,7 +31,6 @@ class GzIonic < Formula
   depends_on "sdformat15"
 
   def install
-    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"

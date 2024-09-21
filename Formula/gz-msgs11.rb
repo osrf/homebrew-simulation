@@ -9,11 +9,6 @@ class GzMsgs11 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma: "95c2ad6d80e0cf8de75517237f5e235f561aa0704033f7a071533f6584b57b5d"
-  end
-
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake4"
@@ -36,7 +31,6 @@ class GzMsgs11 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     cmake_args << python_cmake_arg
 
-    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
