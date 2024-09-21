@@ -8,6 +8,7 @@ class GzUtils3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:   "9d37c6062359e2e563dd1947a8708013f9dcd6cf07121878e1e963018d09abcd"
     sha256 cellar: :any, ventura:  "d0e14175573736f668c7239475e88325135d04054cf0f0ea08286f80f1489a13"
     sha256 cellar: :any, monterey: "1765307a56d3c3f90e00b5636dd5de78403fe0c92f175120644968793fb40707"
   end
@@ -22,7 +23,7 @@ class GzUtils3 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
-    # Use build folder
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
