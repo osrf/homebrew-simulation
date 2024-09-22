@@ -64,6 +64,7 @@ class Ogre21 < Formula
     # cmake_args << "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF" if MacOS::Xcode.version >= "10"
     cmake_args.concat std_cmake_args
 
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"

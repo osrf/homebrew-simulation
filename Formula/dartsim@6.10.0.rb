@@ -60,6 +60,7 @@ class DartsimAT6100 < Formula
       args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
     end
 
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "make", "install"
