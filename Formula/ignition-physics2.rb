@@ -10,6 +10,7 @@ class IgnitionPhysics2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:   "abc7291bed2274882eb0622567e9d7fd54d3834aa6504efa9bf8c2e3ac0e4146"
     sha256 cellar: :any, ventura:  "cbd8b95f2a1a6c28398783a22ff0631454fdd9979cf4156b50e72dd58d743084"
     sha256 cellar: :any, monterey: "fdcd6a292848a1da7398cd5dfb5bf97a98846dc316ccd2b78dc0bb877c92fcf3"
   end
@@ -36,6 +37,7 @@ class IgnitionPhysics2 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"

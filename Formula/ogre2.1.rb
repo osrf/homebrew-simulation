@@ -12,6 +12,7 @@ class Ogre21 < Formula
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     rebuild 1
+    sha256 cellar: :any, sonoma:   "16b189f2303d56df9f81feadc27e815fc4d6b6a9bbf5e44d3eef711d54313edb"
     sha256 cellar: :any, ventura:  "165c40d5f7aad925113c8c84549037b5bd285138a6160252aa8d8c6fe78c7a00"
     sha256 cellar: :any, monterey: "84b8e64c2a4b28afadb0ac267a84fcc341bdb34ead89c41a67e7a173e4c004fa"
     sha256 cellar: :any, big_sur:  "7049b87b9bbd4406dd9d37c97e0fa15aa8c8752c54e67ba620b485a38c69e262"
@@ -64,6 +65,7 @@ class Ogre21 < Formula
     # cmake_args << "-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF" if MacOS::Xcode.version >= "10"
     cmake_args.concat std_cmake_args
 
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
