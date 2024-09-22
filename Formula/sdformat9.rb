@@ -10,6 +10,7 @@ class Sdformat9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:   "b7a50cebce58dc261605949c8b796739036876f3c185e2d225309d60c9c7acf8"
     sha256 ventura:  "ac0f11dbdb6bfd75df7aa11b13d014bb2624febd625de524625f250198baa0b4"
     sha256 monterey: "0d72b95fa548878ccb2272c1bf793e65a274af39ce0de5fb41c4b8a5a647b50d"
   end

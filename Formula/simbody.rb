@@ -9,6 +9,7 @@ class Simbody < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:      "e8c8bab971357305f977cab2ca8e0f7c8ca7c6c1a140de723ec7fa3d2047519d"
     sha256 ventura:     "580a4b24af28f9231e699023882be6c73cec56b561c44e918502aab1cfba870c"
     sha256 monterey:    "4550130d4b54cfdd6c6f3bef8c376c0cf4c86f4cb5a1d07332a4200766a39ba5"
     sha256 big_sur:     "e78642e3e328773da2dca9faf741fd7b620501213046017eab1d117b890a373d"
