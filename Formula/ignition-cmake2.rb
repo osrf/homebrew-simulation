@@ -20,7 +20,7 @@ class IgnitionCmake2 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
 
-    # Use build folder
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
