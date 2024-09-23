@@ -10,6 +10,7 @@ class GzPhysics6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:   "65d7517ad92e0f7c079ecbff555175000138acb9432b1ec0917505b4ee9a06c4"
     sha256 ventura:  "022503835075db6fa87c3c99adb03a1b29feaf8f78183531df2b076e38c3243e"
     sha256 monterey: "250f9b761daa4b3f2b0759da687caa68b9360007da5e822669210447dd7e4566"
   end
@@ -40,7 +41,7 @@ class GzPhysics6 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
-    # Use build folder
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"

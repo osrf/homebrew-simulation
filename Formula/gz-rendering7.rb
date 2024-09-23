@@ -10,6 +10,7 @@ class GzRendering7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:   "d88c5d96ae4832ff25cd3f01913ace3dd642346205b1ded9d79c0b7daa621a13"
     sha256 ventura:  "8f748dcc57e30d6f9ee340fe134d6e330ced424b97009d8457f2968ceebad2ee"
     sha256 monterey: "7b352e82f58ae87ecfe427369e79aca436e44febac731a63743a05837dff1ba5"
   end
@@ -36,6 +37,7 @@ class GzRendering7 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
