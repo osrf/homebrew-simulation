@@ -10,6 +10,7 @@ class IgnitionRendering6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:   "c0a5a54143f62fb0de4f5dfcef5addf82e3cd505562c27f4aefaef0a465eccd6"
     sha256 ventura:  "5a6ff6b6fffff2f9c0d6e0172635773be2ae0719a760794e3399f627e43a1fd7"
     sha256 monterey: "5310bfb54a38af9210c3f1d6c44bca6fe68b664bc89112242ad223a0e518a746"
   end
@@ -37,6 +38,7 @@ class IgnitionRendering6 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
