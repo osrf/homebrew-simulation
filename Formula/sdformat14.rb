@@ -10,6 +10,7 @@ class Sdformat14 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:   "a86f783aae1361e4646bbfe3c9704efdfbf3a432175d1110787c26b26a848b4f"
     sha256 ventura:  "356dd92e2367af5ddebce7d1708ac7c8982e80855d2dd5ef4cdea35f9386129c"
     sha256 monterey: "6c4252571144290e9561d79393699940e5a1363a4cd4ee83d9607fd5b5c5c270"
   end
@@ -38,6 +39,7 @@ class Sdformat14 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     cmake_args << python_cmake_arg
 
+    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
