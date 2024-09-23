@@ -4,14 +4,14 @@ class IgnitionRendering3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-rendering/releases/ignition-rendering3-3.7.2.tar.bz2"
   sha256 "531a153dc2353ee98c2fdcaf25f9550d7008f9dd93be5b53c7b95b780cb13fe1"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura:  "afb260e2afa5efde7772f78cc9cd7180a832bff0ff942eb9d52c4e89edcd4b6f"
-    sha256 monterey: "628f79e7fa05f722af90b575fba08116c04ed18f8dc80e9610f3255f3cec1503"
+    sha256 sonoma:  "37887c604a102743e602893bdeae1fd130a0cdbb183ef68d2f2a5b40f8214816"
+    sha256 ventura: "361c9bbf4b60ce05e6b1ef1b2b8caaead714bdc2d8318ffbed167267ee5c5859"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -29,9 +29,13 @@ class IgnitionRendering3 < Formula
   depends_on "ogre2.1"
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-rendering-3/engine-plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
@@ -40,9 +44,7 @@ class IgnitionRendering3 < Formula
   end
 
   test do
-    azure = ENV["HOMEBREW_AZURE_PIPELINES"].present?
     github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-    travis = ENV["HOMEBREW_TRAVIS_CI"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <ignition/rendering/RenderEngine.hh>
       #include <ignition/rendering/RenderingIface.hh>
@@ -68,12 +70,12 @@ class IgnitionRendering3 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" if !(azure || github_actions) && !travis
+    system "./test" unless github_actions
     # test building with cmake
     mkdir "build" do
       system "cmake", ".."
       system "make"
-      system "./test_cmake" if !(azure || github_actions) && !travis
+      system "./test_cmake" unless github_actions
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
