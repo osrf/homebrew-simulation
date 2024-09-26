@@ -1,9 +1,8 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.0.0~pre1.tar.bz2"
-  version "8.0.0-pre1"
-  sha256 "a0bbb0a5eaf8ee754db65ab3ac73b92ee35e5b2e655aafca31932125912d4491"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.0.0.tar.bz2"
+  sha256 "dfc15a78aa52f5e200da991e92ebcbd0bd6f9529326dbe3a1a365ad6d7da9669"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
