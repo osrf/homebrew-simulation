@@ -7,6 +7,12 @@ class GzMsgs11 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "12bc13eef90093c1968152167e73ace921c74e2847684c8d0a85ab4a7a0f1d22"
+    sha256 ventura: "285008dd5ee46b3d439971f4c1af1eca81411276560c2845852a52e5503279de"
+  end
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake4"
