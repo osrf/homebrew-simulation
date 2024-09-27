@@ -1,11 +1,9 @@
 class GzSim9 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.0.0~pre1.tar.bz2"
-  version "9.0.0-pre1"
-  sha256 "3a166af7a15062e10a886df345204bb0cda1d14bda627aaafda128ca57d2d7ab"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.0.0.tar.bz2"
+  sha256 "62effba56ffbfdb2db67b6ccca17527df0ede7fa83469df72c2f043f6cc96ea8"
   license "Apache-2.0"
-  revision 5
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
