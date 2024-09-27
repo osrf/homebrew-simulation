@@ -3,9 +3,8 @@ class GzIonic < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/gazebosim/gz-ionic"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-ionic/releases/gz-ionic-1.0.0~pre1.tar.bz2"
-  version "1.0.0-pre1"
-  sha256 "2a76db792f8ead9055f8ddc4e21a8278a85429fa9efdcde3c0b826eb4194271f"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-ionic/releases/gz-ionic-1.0.0.tar.bz2"
+  sha256 "f132a37125a959db2afda4c727bc98a89dc99db89fe5176183130dc50e4dbb99"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-ionic.git", branch: "main"
