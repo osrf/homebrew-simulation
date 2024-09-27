@@ -1,13 +1,17 @@
 class GzGui9 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.0.0~pre1.tar.bz2"
-  version "9.0.0-pre1"
-  sha256 "4cac0025d97bf99be5a8d6ac8b7ebbb5068c3a0944d0a197fed764a21eabf962"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.0.0.tar.bz2"
+  sha256 "2534cc688197c973029a43723de50c12a560320106d6b70a27aa4173c0a2d832"
   license "Apache-2.0"
-  revision 5
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "b0c3be4d3ea04ea746633aa1afc25b09c38d433850a34d045c3e93d4c16029ed"
+    sha256 ventura: "df720a58e26d99b8a2fff253e3df686ec2ba8789b7b2c28f67c88b4fd1e20a82"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
