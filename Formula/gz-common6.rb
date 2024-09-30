@@ -1,19 +1,16 @@
 class GzCommon6 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.0.0~pre2.tar.bz2"
-  version "6.0.0-pre2"
-  sha256 "aa2a79796bba8fef916c2ec7293cb63132177f34b841fcacf8f3ce525adaa6a0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.0.0.tar.bz2"
+  sha256 "55ea0e8b51e8c7ba9eb7e0f9a516f0d54b6d48d8d29a961a838e7bdc2531c517"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    rebuild 1
-    sha256 cellar: :any, sonoma:   "b3731ab9b9d84e62cdb9c7305ca180a540b1ad00ab1820ca2413309dd01916c6"
-    sha256 cellar: :any, ventura:  "bb865c0b2eb84491bcf1f44cdd57cd79ea968e76913482a259dfd8fc3acefd5b"
-    sha256 cellar: :any, monterey: "bf7a54023030e9c86bb1729388ed10b38eb58362c8a215e4172bbc2fe2dc6bc2"
+    sha256 cellar: :any, sonoma:  "e5404d5540e5197e73d1d8872f78489be760ede6be0d5cb0708f7b025ab3a921"
+    sha256 cellar: :any, ventura: "22474f372e26ad68717267aec993946430c9335906fa769f875ccefd4b02ef4b"
   end
 
   depends_on "assimp"

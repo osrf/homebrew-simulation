@@ -4,9 +4,14 @@ class IgnitionGui3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.12.0.tar.bz2"
   sha256 "f53ee05d844449b900ecb30d5e1f812fd3f7e9e28630d309b7d8d11add3c3b1c"
   license "Apache-2.0"
-  revision 41
+  revision 42
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui3"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 ventura: "993b84a5274b00518aa80a09f2cc88a11c44940cd6795e0727cdb0c96d5699a9"
+  end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
