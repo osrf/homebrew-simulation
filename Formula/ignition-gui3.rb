@@ -4,13 +4,14 @@ class IgnitionGui3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.12.0.tar.bz2"
   sha256 "f53ee05d844449b900ecb30d5e1f812fd3f7e9e28630d309b7d8d11add3c3b1c"
   license "Apache-2.0"
-  revision 42
+  revision 43
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura: "993b84a5274b00518aa80a09f2cc88a11c44940cd6795e0727cdb0c96d5699a9"
+    sha256 sonoma:  "92575e686cba681f3b5929853ca8624e127b8861680cbe293842be429cf3932a"
+    sha256 ventura: "63e80b7951c25fad3e698168c50977a8bf1ad554c6f6dd04692a04b545eda083"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -36,9 +37,13 @@ class IgnitionGui3 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: lib/"ign-gui-3/plugins", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
       system "cmake", "..", *cmake_args
