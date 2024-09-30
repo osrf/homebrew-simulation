@@ -10,7 +10,8 @@ class IgnitionGui3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 ventura: "993b84a5274b00518aa80a09f2cc88a11c44940cd6795e0727cdb0c96d5699a9"
+    sha256 sonoma:  "92575e686cba681f3b5929853ca8624e127b8861680cbe293842be429cf3932a"
+    sha256 ventura: "63e80b7951c25fad3e698168c50977a8bf1ad554c6f6dd04692a04b545eda083"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
