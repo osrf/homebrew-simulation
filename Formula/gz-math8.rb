@@ -1,46 +1,54 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.0.0.tar.bz2"
-  sha256 "dfc15a78aa52f5e200da991e92ebcbd0bd6f9529326dbe3a1a365ad6d7da9669"
+  url "https://github.com/gazebosim/gz-math.git", branch: "scpeters/build_python_bindings_separately"
+  version "8.0.0~pre1"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "d8579d9bf3c0daf39405ef8b7d5695988e5cadd12af596a887b12f7c1ca3e426"
-    sha256 cellar: :any, ventura: "abd335fc1d7e07926aa272efdf4158bf369f4b47b7f86312a71653e39373c177"
-  end
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "pkg-config" => :test
   depends_on "eigen"
   depends_on "gz-cmake4"
   depends_on "gz-utils3"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "ruby"
 
-  def python_cmake_arg
-    "-DPython3_EXECUTABLE=#{which("python3")}"
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.match?(/^python@3\.\d+$/) }
+  end
+
+  def python_cmake_arg(python = "python@3.13".to_formula)
+    "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    cmake_args << python_cmake_arg
 
-    # Use a build folder
+    # first build without python bindings
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "..", *cmake_args, "-DSKIP_PYBIND11=ON"
       system "make", "install"
     end
 
-    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
-    rmdir prefix/"lib/python"
+    # now build only the python bindings
+    pythons.each do |python|
+      # remove @ from formula name
+      python_name = python.name.tr("@", "")
+      mkdir "build_#{python_name}" do
+        system "cmake", "../src/python_pybind11", *cmake_args, python_cmake_arg(python)
+        system "make", "install"
+        (lib/"#{python_name}/site-packages").install Dir[lib/"python/*"]
+        rmdir prefix/"lib/python"
+      end
+    end
   end
 
   test do
@@ -78,6 +86,8 @@ class GzMath8 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import gz.math8"
+    pythons.each do |python|
+      system python.opt_libexec/"bin/python", "-c", "import gz.math8"
+    end
   end
 end
