@@ -30,14 +30,14 @@ class GzMath7 < Formula
     # Support building python bindings against external gz-math library (1)
     # Remove this patch with the next release
     url "https://github.com/gazebosim/gz-math/commit/97ad436a0d561c77422de83cebb600379cc9c94a.patch?full_index=1"
-    sha256 ""
+    sha256 "6d2ed400c7067ac123c80d762f796d2b75e3b4ab479ee71b019e253ca41724e8"
   end
 
   patch do
     # Support building python bindings against external gz-math library (2)
     # Remove this patch with the next release
     url "https://github.com/gazebosim/gz-math/commit/a48b8937eadd4010a69b9f9613ca07aaa1f87d63.patch?full_index=1"
-    sha256 ""
+    sha256 "fbd10f7b886511586ab84c7c03771a43da2fbb5c9445037a6534bbdbd2d05062"
   end
 
   def pythons
