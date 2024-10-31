@@ -17,30 +17,59 @@ class GzMath7 < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build
+  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
+  depends_on "pkg-config" => :test
   depends_on "eigen"
   depends_on "gz-cmake3"
   depends_on "gz-utils2"
-  depends_on "python@3.12"
   depends_on "ruby"
 
-  def python_cmake_arg
-    "-DPython3_EXECUTABLE=#{which("python3")}"
+  patch do
+    # Support building python bindings against external gz-math library (1)
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gz-math/commit/97ad436a0d561c77422de83cebb600379cc9c94a.patch?full_index=1"
+    sha256 ""
+  end
+
+  patch do
+    # Support building python bindings against external gz-math library (2)
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gz-math/commit/a48b8937eadd4010a69b9f9613ca07aaa1f87d63.patch?full_index=1"
+    sha256 ""
+  end
+
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.match?(/^python@3\.\d+$/) }
+  end
+
+  def python_cmake_arg(python = "python@3.13".to_formula)
+    "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    cmake_args << python_cmake_arg
 
-    # Use a build folder
+    # first build without python bindings
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "..", *cmake_args, "-DSKIP_PYBIND11=ON"
       system "make", "install"
     end
 
-    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
-    rmdir prefix/"lib/python"
+    # now build only the python bindings
+    pythons.each do |python|
+      # remove @ from formula name
+      python_name = python.name.tr("@", "")
+      mkdir "build_#{python_name}" do
+        system "cmake", "../src/python_pybind11", *cmake_args, python_cmake_arg(python)
+        system "make", "install"
+        (lib/"#{python_name}/site-packages").install Dir[lib/"python/*"]
+        rmdir prefix/"lib/python"
+      end
+    end
   end
 
   test do
@@ -59,12 +88,12 @@ class GzMath7 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-math7::gz-math7)
     EOS
-    # test building with manual compiler flags
+    system "pkg-config", "gz-math7"
+    cflags = `pkg-config --cflags gz-math7`.split
+    ldflags = `pkg-config --libs gz-math7`.split
     system ENV.cc, "test.cpp",
-                   "--std=c++14",
-                   "-I#{include}/gz/math7",
-                   "-L#{lib}",
-                   "-lgz-math7",
+                   *cflags,
+                   *ldflags,
                    "-lc++",
                    "-o", "test"
     system "./test"
@@ -78,6 +107,8 @@ class GzMath7 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_bin/"python3", "-c", "import gz.math7"
+    pythons.each do |python|
+      system python.opt_libexec/"bin/python", "-c", "import gz.math7"
+    end
   end
 end
