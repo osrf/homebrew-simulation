@@ -73,6 +73,6 @@ class GzMsgs10 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_bin/"python3", "-c", "import gz.msgs10"
+    system Formula["python@3.12"].opt_libexec/"bin/python", "-c", "import gz.msgs10"
   end
 end
