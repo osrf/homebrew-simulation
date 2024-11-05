@@ -28,12 +28,19 @@ class Sdformat15 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
+  patch do
+    # Support building python bindings against external sdformat library
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/sdformat/commit/3dcdd55ee7a3ab0ac77b5cce56ba9629b79a70ac.patch?full_index=1"
+    sha256 "0e7dacc3c576d1188985c3508ed217c50b910f5f9290826703b6411958d28657"
+  end
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = "python@3.13".to_formula)
+  def python_cmake_arg(python = Formula["python@3.13"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
