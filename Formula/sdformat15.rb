@@ -30,7 +30,14 @@ class Sdformat15 < Formula
   depends_on "urdfdom"
 
   patch do
-    # Support building python bindings against external sdformat library
+    # Support building python bindings against external sdformat library part 1
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/sdformat/commit/22684cbe9144f9cf15e2df7dfa55457266caca44.patch?full_index=1"
+    sha256 "3ce3f059b4e549e105ef555479979cb849b75d0ff58d1cb479b3a5cde519ff3f"
+  end
+
+  patch do
+    # Support building python bindings against external sdformat library part 2
     # Remove this patch with the next release
     url "https://github.com/gazebosim/sdformat/commit/3dcdd55ee7a3ab0ac77b5cce56ba9629b79a70ac.patch?full_index=1"
     sha256 "0e7dacc3c576d1188985c3508ed217c50b910f5f9290826703b6411958d28657"
