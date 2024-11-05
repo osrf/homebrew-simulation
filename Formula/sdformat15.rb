@@ -10,8 +10,8 @@ class Sdformat15 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "30f1dd8393161bebe0bb8f3bd3e5cc90462e09e3d04294ea1ed0b6928df19159"
-    sha256 ventura: "212c79cc2989ba711db1a1cbef8dc86b3ed804c61b1278443767a3e475f33473"
+    sha256 sonoma:  "7316ff9816a4c9b4f3d5ad729b0df09ddf1c484e8788aaa9421830151f07e784"
+    sha256 ventura: "f9758b06947efe481981dcd0420391c8341a9d3faa58481117f297e504e2ef8f"
   end
 
   depends_on "cmake" => [:build, :test]
