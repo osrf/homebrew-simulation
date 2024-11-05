@@ -4,14 +4,9 @@ class GzSim9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.0.0.tar.bz2"
   sha256 "62effba56ffbfdb2db67b6ccca17527df0ede7fa83469df72c2f043f6cc96ea8"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "eb18aa65232f7e215c4dcd23c509b8a92db54aca16b5e01b9837dcae9ae43dc8"
-    sha256 ventura: "d9a71e36f71479c445ef24464bdd5536a6ee7cf2432ded35eee620ec2aaf68f1"
-  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -153,6 +148,6 @@ class GzSim9 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import gz.sim9"
+    system Formula["python@3.12"].opt_libexec/"bin/python", "-c", "import gz.sim9"
   end
 end

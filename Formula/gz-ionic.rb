@@ -6,14 +6,9 @@ class GzIonic < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-ionic/releases/gz-ionic-1.0.0.tar.bz2"
   sha256 "f132a37125a959db2afda4c727bc98a89dc99db89fe5176183130dc50e4dbb99"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-ionic.git", branch: "main"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, sonoma:  "573cde80a58f84ff16be572e1db84eb11cb00f61f7d1e657b780ad4b9123f0d6"
-    sha256 cellar: :any_skip_relocation, ventura: "c7393c9cb5c9458f6deafdc78b29419930e6465abfa60dac9ff5219e4b7ccdac"
-  end
 
   depends_on "cmake" => :build
 

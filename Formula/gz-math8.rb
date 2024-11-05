@@ -1,11 +1,18 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-math.git", branch: "scpeters/build_python_bindings_separately"
-  version "8.0.0~pre1"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.0.0.tar.bz2"
+  sha256 "dfc15a78aa52f5e200da991e92ebcbd0bd6f9529326dbe3a1a365ad6d7da9669"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:  "29a96837fce649d976b595f52a33aa017699255bb9670d36fc2f2c3ec7ad0a6e"
+    sha256 cellar: :any, ventura: "44c40f86186d7750ba293edbce14cae8a4a04b25a6419889cbd316761644baa8"
+  end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
@@ -17,6 +24,13 @@ class GzMath8 < Formula
   depends_on "gz-cmake4"
   depends_on "gz-utils3"
   depends_on "ruby"
+
+  patch do
+    # Support building python bindings against external gz-math library
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gz-math/commit/17deea2ba86948c3a92aeed7cb541d05c9492c56.patch?full_index=1"
+    sha256 "604b266155d5715f6be2bac5c4e11e474c409a5497ea67009da49637b76acd6b"
+  end
 
   def pythons
     deps.map(&:to_formula)

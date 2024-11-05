@@ -1,11 +1,17 @@
 class Sdformat15 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/gazebosim/sdformat.git", branch: "scpeters/build_python_bindings_separately"
-  version "15.0.0~pre1"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-15.0.0.tar.bz2"
+  sha256 "c6c65ac60c502143afc2e4e258d66b92d12c4ab37cf91b5852a50eab4d0f3b1f"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "30f1dd8393161bebe0bb8f3bd3e5cc90462e09e3d04294ea1ed0b6928df19159"
+    sha256 ventura: "212c79cc2989ba711db1a1cbef8dc86b3ed804c61b1278443767a3e475f33473"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
