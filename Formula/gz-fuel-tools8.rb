@@ -1,10 +1,9 @@
 class GzFuelTools8 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-8.1.0.tar.bz2"
-  sha256 "18a25e2bc31e61539c890bdd377068b5192646a6647267e76d9b0bb0d0349545"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-8.2.0.tar.bz2"
+  sha256 "ce224a4de6c63b573514d2fa3c96f0063d5d427b7b8ea05561d19a876afccea2"
   license "Apache-2.0"
-  revision 37
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"
 
