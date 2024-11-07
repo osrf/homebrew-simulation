@@ -4,7 +4,7 @@ class Sdformat14 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.5.0.tar.bz2"
   sha256 "4b0a99a51378a73e0e3bc209c244eff127ded55a3724d614b8cf051e7d905273"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
