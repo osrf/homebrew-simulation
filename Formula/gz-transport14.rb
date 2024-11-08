@@ -1,8 +1,8 @@
 class GzTransport14 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-transport.git", branch: "scpeters/build_python_bindings_separately"
-  version "14.0.0~pre1"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.0.0.tar.bz2"
+  sha256 "88cbcef69f16ea5124ff41766cc59c0277bfc3ae57c405f3fbae1dbee874a1c0"
   license "Apache-2.0"
   revision 1
 
@@ -28,6 +28,13 @@ class GzTransport14 < Formula
   depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
+
+  patch do
+    # Support building python bindings against external gz-transport library
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gz-transport/commit/250e95f0757af410adfaab213b3077c0a501252e.patch?full_index=1"
+    sha256 "b7184cc5a1e505ff31a43eacb5b5aa6ac217a07b4eec81e1585f14db6806abb0"
+  end
 
   def pythons
     deps.map(&:to_formula)
