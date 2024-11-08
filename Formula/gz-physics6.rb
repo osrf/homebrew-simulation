@@ -4,7 +4,7 @@ class GzPhysics6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-6.6.0.tar.bz2"
   sha256 "de870ef09753188a8c4a7b0ed449eb2357bd537e0b90f8a474f334e3e7a95a0f"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics6"
 
