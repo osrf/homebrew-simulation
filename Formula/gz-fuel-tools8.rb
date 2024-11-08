@@ -4,14 +4,9 @@ class GzFuelTools8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-8.2.0.tar.bz2"
   sha256 "ce224a4de6c63b573514d2fa3c96f0063d5d427b7b8ea05561d19a876afccea2"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "0c747ea5022a8aa664a38f2de229ea15b39a5d4153725893028f48149e9ac4be"
-    sha256 cellar: :any, ventura: "bef63a636bb0cd19b17b63a57584dba1b11c04a584bb41a97cac2d74ccedf2ff"
-  end
 
   depends_on "abseil"
   depends_on "cmake"
