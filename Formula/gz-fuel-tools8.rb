@@ -4,7 +4,7 @@ class GzFuelTools8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-8.2.0.tar.bz2"
   sha256 "ce224a4de6c63b573514d2fa3c96f0063d5d427b7b8ea05561d19a876afccea2"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools8"
 
