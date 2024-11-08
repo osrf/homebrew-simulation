@@ -4,9 +4,15 @@ class GzSim7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-7.9.0.tar.bz2"
   sha256 "b8a506112d1287efce144b5a1264ab5754cacc436370fe2f1035b35cdd0d29a4"
   license "Apache-2.0"
-  revision 5
+  revision 7
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim7"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "99a76a7478f66f68dc328047af379dd545957d7426d588c7cdd788317478a408"
+    sha256 ventura: "154f23ac5d7f0c18dc7ca1f80add3bc683756421e41cfd79ac6116b80290bb25"
+  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -30,14 +36,14 @@ class GzSim7 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat13"
   depends_on "tinyxml2"
 
   def python_cmake_arg
-    "-DPython3_EXECUTABLE=#{which("python3")}"
+    "-DPython3_EXECUTABLE=#{Formula["python@3.13"].opt_libexec}/bin/python}"
   end
 
   def install
@@ -57,7 +63,7 @@ class GzSim7 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.13/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -148,6 +154,6 @@ class GzSim7 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_libexec/"bin/python", "-c", "import gz.sim7"
+    system Formula["python@3.13"].opt_libexec/"bin/python", "-c", "import gz.sim7"
   end
 end
