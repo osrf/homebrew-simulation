@@ -30,14 +30,14 @@ class GzSim7 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat13"
   depends_on "tinyxml2"
 
   def python_cmake_arg
-    "-DPython3_EXECUTABLE=#{which("python3")}"
+    "-DPython3_EXECUTABLE=#{Formula["python@3.13"].opt_libexec}/bin/python}"
   end
 
   def install
@@ -57,7 +57,7 @@ class GzSim7 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.13/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -148,6 +148,6 @@ class GzSim7 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_libexec/"bin/python", "-c", "import gz.sim7"
+    system Formula["python@3.13"].opt_libexec/"bin/python", "-c", "import gz.sim7"
   end
 end
