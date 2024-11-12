@@ -7,6 +7,12 @@ class GzPhysics7 < Formula
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics7"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "d8cef6529713c6942ca1aa772ccbfe122caacd1624278119099a808aadc47601"
+    sha256 ventura: "40615815bccee34e1e54e98f622ad85252289b22060858d2a0d5b82843959a51"
+  end
+
   depends_on "cmake" => [:build, :test]
 
   depends_on "bullet"
