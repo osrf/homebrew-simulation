@@ -4,12 +4,14 @@ class GzTransport13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.4.0.tar.bz2"
   sha256 "bec7a13e2f40df963afcf8dc87a9c2e34369daec80f36636965c92d4c8bf5a46"
   license "Apache-2.0"
-  revision 9
+  revision 10
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
+  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
 
   depends_on "abseil"
   depends_on "cmake"
@@ -23,13 +25,24 @@ class GzTransport13 < Formula
   depends_on "ossp-uuid"
   depends_on "pkg-config"
   depends_on "protobuf"
-  depends_on "python@3.12"
   depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
 
-  def python_cmake_arg
-    "-DPython3_EXECUTABLE=#{which("python3")}"
+  patch do
+    # Support building python bindings against external gz-transport library
+    # Remove this patch with the next release
+    url "https://github.com/gazebosim/gz-transport/commit/307c095a62b6ce1ae89aa5361d3e45164120fbb8.patch?full_index=1"
+    sha256 "f3631a52d311f1f632b67ba346e1c7fc1b54283bc28a3462cf899898f3d778df"
+  end
+
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.match?(/^python@3\.\d+$/) }
+  end
+
+  def python_cmake_arg(python = Formula["python@3.13"])
+    "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
   def install
@@ -40,16 +53,24 @@ class GzTransport13 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
-    cmake_args << python_cmake_arg
 
-    # Use build folder
+    # first build without python bindings
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "..", *cmake_args, "-DSKIP_PYBIND11=ON"
       system "make", "install"
     end
 
-    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
-    rmdir prefix/"lib/python"
+    # now build only the python bindings
+    pythons.each do |python|
+      # remove @ from formula name
+      python_name = python.name.tr("@", "")
+      mkdir "build_#{python_name}" do
+        system "cmake", "../python", *cmake_args, python_cmake_arg(python)
+        system "make", "install"
+        (lib/"#{python_name}/site-packages").install Dir[lib/"python/*"]
+        rmdir prefix/"lib/python"
+      end
+    end
   end
 
   test do
@@ -90,6 +111,8 @@ class GzTransport13 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_libexec/"bin/python", "-c", "import gz.transport13"
+    pythons.each do |python|
+      system python.opt_libexec/"bin/python", "-c", "import gz.transport13"
+    end
   end
 end
