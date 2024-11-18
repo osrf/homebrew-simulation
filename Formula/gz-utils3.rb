@@ -4,7 +4,7 @@ class GzUtils3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-3.1.0.tar.bz2"
   sha256 "3089407a57af7462b82566110341cc48232d4312c492ff7b9fa1099a9014a10a"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
