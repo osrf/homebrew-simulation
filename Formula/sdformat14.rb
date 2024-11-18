@@ -28,20 +28,6 @@ class Sdformat14 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
-  patch do
-    # Support building python bindings against external sdformat library part 1
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/sdformat/commit/dcd3cd61402a2278db3ac021442a6e7458fa79b9.patch?full_index=1"
-    sha256 "2f92c942ccb4e474d086e57cf7089e5aac3b26217a2b2304c7aadc5c34a354f5"
-  end
-
-  patch do
-    # Support building python bindings against external sdformat library part 2
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/sdformat/commit/91d9029b867a35349b3be85dbe9333feeb2b503c.patch?full_index=1"
-    sha256 "6ee0532d398b67de5004c321bdbe9a6d0f7d232c9cabfaf4a8468f2e967d7b77"
-  end
-
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
