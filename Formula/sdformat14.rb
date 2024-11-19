@@ -1,17 +1,16 @@
 class Sdformat14 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.5.0.tar.bz2"
-  sha256 "4b0a99a51378a73e0e3bc209c244eff127ded55a3724d614b8cf051e7d905273"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.6.0.tar.bz2"
+  sha256 "bb5fc3ab50a54fff2aaa2499f0914d37139db5ed8cc0e816bf3571a071938739"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "3c4e3786e5fbd1017b300fcebf8c092f84216a052f27c9e0228ecd81281384d0"
-    sha256 ventura: "cc4c31cf4369892f763f39d995d287c88731aeb1416d13e2acfc0e0e197445d8"
+    sha256 sonoma:  "00790f19ce7c49e3b9cee491e5452d5033b482268b7cb25c4bc7c6729b644285"
+    sha256 ventura: "a20b03e1808f5f6d778fbaf91db5b83f7a27f0fbbf1a647442c02567554963d3"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -28,20 +27,6 @@ class Sdformat14 < Formula
   depends_on macos: :mojave # c++17
   depends_on "tinyxml2"
   depends_on "urdfdom"
-
-  patch do
-    # Support building python bindings against external sdformat library part 1
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/sdformat/commit/dcd3cd61402a2278db3ac021442a6e7458fa79b9.patch?full_index=1"
-    sha256 "2f92c942ccb4e474d086e57cf7089e5aac3b26217a2b2304c7aadc5c34a354f5"
-  end
-
-  patch do
-    # Support building python bindings against external sdformat library part 2
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/sdformat/commit/91d9029b867a35349b3be85dbe9333feeb2b503c.patch?full_index=1"
-    sha256 "6ee0532d398b67de5004c321bdbe9a6d0f7d232c9cabfaf4a8468f2e967d7b77"
-  end
 
   def pythons
     deps.map(&:to_formula)
