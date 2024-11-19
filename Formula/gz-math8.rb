@@ -4,14 +4,14 @@ class GzMath8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.0.0.tar.bz2"
   sha256 "dfc15a78aa52f5e200da991e92ebcbd0bd6f9529326dbe3a1a365ad6d7da9669"
   license "Apache-2.0"
-  revision 1
+  revision 3
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "29a96837fce649d976b595f52a33aa017699255bb9670d36fc2f2c3ec7ad0a6e"
-    sha256 cellar: :any, ventura: "44c40f86186d7750ba293edbce14cae8a4a04b25a6419889cbd316761644baa8"
+    sha256 cellar: :any, sonoma:  "9d383cedd7c20499e7e150e75da3292869497f5bae078e332fdee355f808db81"
+    sha256 cellar: :any, ventura: "e5fa26ad927d2aecfe7b9a8d006910a7395848e0b7180e24ba6cd2437aed2d9f"
   end
 
   depends_on "cmake" => :build
