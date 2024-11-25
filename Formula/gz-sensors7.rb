@@ -13,6 +13,8 @@ class GzSensors7 < Formula
     sha256 cellar: :any, ventura: "c421f3cd369babcddb1c64949ce7a34e7ce2892db42965b36dc61271b93773b1"
   end
 
+  deprecate! date: "2024-09-30", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
 
