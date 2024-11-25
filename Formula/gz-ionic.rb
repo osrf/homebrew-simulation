@@ -27,7 +27,7 @@ class GzIonic < Formula
   depends_on "gz-tools2"
   depends_on "gz-transport14"
   depends_on "gz-utils3"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "sdformat15"
 
   def install

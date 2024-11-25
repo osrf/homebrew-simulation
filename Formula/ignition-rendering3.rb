@@ -17,7 +17,7 @@ class IgnitionRendering3 < Formula
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "freeimage"
   depends_on "ignition-cmake2"

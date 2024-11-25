@@ -18,7 +18,7 @@ class DartsimAT6100 < Formula
   keg_only "open robotics fork of dart HEAD + custom changes"
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "assimp"
   depends_on "boost"
   depends_on "bullet"

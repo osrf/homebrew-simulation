@@ -15,7 +15,7 @@ class IgnitionGui6 < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "gz-plugin2" => :test
 

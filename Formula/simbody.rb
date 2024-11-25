@@ -20,7 +20,7 @@ class Simbody < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   def install
     # Don't use 10.11 SDK frameworks on 10.10 with xcode7

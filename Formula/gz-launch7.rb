@@ -9,7 +9,7 @@ class GzLaunch7 < Formula
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch7"
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "abseil"
   depends_on "ffmpeg"

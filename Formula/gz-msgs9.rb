@@ -22,7 +22,7 @@ class GzMsgs9 < Formula
   depends_on "gz-tools2"
   depends_on "gz-utils2"
   depends_on macos: :high_sierra # c++17
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "tinyxml2"
 

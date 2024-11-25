@@ -17,7 +17,7 @@ class IgnitionCommon1 < Formula
   depends_on "gts"
   depends_on "ignition-math4"
   depends_on "ossp-uuid"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "tinyxml2"
 
   def install

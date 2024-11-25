@@ -15,7 +15,7 @@ class GzCmake3 < Formula
   end
 
   depends_on "cmake"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   def install
     cmake_args = std_cmake_args

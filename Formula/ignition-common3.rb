@@ -23,7 +23,7 @@ class IgnitionCommon3 < Formula
   depends_on "ignition-math6"
   depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "tinyxml2"
 
   def install

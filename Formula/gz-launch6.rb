@@ -16,7 +16,7 @@ class GzLaunch6 < Formula
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "abseil"
   depends_on "ffmpeg"
