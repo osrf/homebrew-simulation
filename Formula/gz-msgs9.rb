@@ -13,6 +13,8 @@ class GzMsgs9 < Formula
     sha256 cellar: :any, ventura: "2c8a987c7d140488a1fef2c297b0a27cb3ad9eac1a92db8cb0cea6fb45a15232"
   end
 
+  deprecate! date: "2024-09-30", because: "is past end-of-life date"
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"

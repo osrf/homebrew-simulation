@@ -13,6 +13,8 @@ class GzTransport12 < Formula
     sha256 ventura: "96145f5048dab0477d02b41324bfa316cef5b4c04769bd43e91ca1f6a44a52cc"
   end
 
+  deprecate! date: "2024-09-30", because: "is past end-of-life date"
+
   depends_on "doxygen" => [:build, :optional]
 
   depends_on "abseil"
