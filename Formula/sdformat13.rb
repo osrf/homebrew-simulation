@@ -13,6 +13,8 @@ class Sdformat13 < Formula
     sha256 ventura: "92a3fc6ae885eef48b068cd60e8e91a11ea017385f36d4d94e6cf0f2e0f31031"
   end
 
+  deprecate! date: "2024-09-30", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkg-config" => [:build, :test]
   depends_on "pybind11" => :build

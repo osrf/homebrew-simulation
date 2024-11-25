@@ -10,6 +10,8 @@ class GzGarden < Formula
 
   head "https://github.com/gazebosim/gz-garden.git", branch: "main"
 
+  deprecate! date: "2024-09-30", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
 
   depends_on "gz-cmake3"
