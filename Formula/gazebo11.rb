@@ -49,34 +49,6 @@ class Gazebo11 < Formula
   conflicts_with "gz-tools2", because: "both install bin/gz"
 
   patch do
-    # Fix build with boost 1.85.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/e4b4d0fb752c7e43e34ab97d0e01a2a3eaca1ed4.patch?full_index=1"
-    sha256 "c00fdff58d8e65945d480cb58006ff28bf2c22043373d709705420dc59b70f62"
-  end
-
-  patch do
-    # Fix build with boost 1.86.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/15cc7addd1ede775b713a59414477460a0b34a70.patch?full_index=1"
-    sha256 "34dc182226c2ec7a3ae0289eb2089ca7bddc940869b5bff3a0572fc47fdbf0b0"
-  end
-
-  patch do
-    # Fix build with ffmpeg 7.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/d04e1e0e9473e3bbbc0ae6e3f62dcad682bf9fd9.patch?full_index=1"
-    sha256 "b777204f2d5d4cb5c0f565947dd5b290b256eb1724d2498abae9e2bef7c5fe33"
-  end
-
-  patch do
-    # Fix build with graphviz 10.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/3a9efee7ccdf552cbf22188131782f242f6c0542.patch?full_index=1"
-    sha256 "4c957a715263b11c91ceb9f1aed701257e8b67457abc00539a615b0b5b1c7ea2"
-  end
-
-  patch do
     # Fix build when homebrew python is installed
     # keep this patch
     url "https://gist.githubusercontent.com/scpeters/9199370/raw/afe595587e38737c537124a3652db99de026c272/brew_python_fix.patch"
