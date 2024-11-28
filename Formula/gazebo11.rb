@@ -1,17 +1,16 @@
 class Gazebo11 < Formula
   desc "Gazebo robot simulator"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.14.0.tar.bz2"
-  sha256 "7e9842c046c9e0755355b274c240a8abbf4e962be7ce7b7f59194e5f4b584f45"
+  url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.15.0.tar.bz2"
+  sha256 "8998ef927b424ac24ae6eaea4e69b0d0640877059cba8680d20cd526e6333262"
   license "Apache-2.0"
-  revision 38
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "424b6759817e2abf3c498e9504d556a110601f339bf7482fc1e8a65be315a596"
-    sha256 ventura: "e62f34ef57acce00086e508c85c8179ec534c7ce5a3be2f6484cbc5b7737f89a"
+    sha256 sonoma:  "aee8d71a1c7355e11cae2543c8501623aaacb093aab47f05a24186fb74e03fa1"
+    sha256 ventura: "88b82cc1d6038fcf8cf7bd33dc39e6441c06ac601eb7c9a3d9a8a119026df1eb"
   end
 
   depends_on "cmake" => :build
@@ -48,34 +47,6 @@ class Gazebo11 < Formula
 
   conflicts_with "gazebo9", because: "differing version of the same formula"
   conflicts_with "gz-tools2", because: "both install bin/gz"
-
-  patch do
-    # Fix build with boost 1.85.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/e4b4d0fb752c7e43e34ab97d0e01a2a3eaca1ed4.patch?full_index=1"
-    sha256 "c00fdff58d8e65945d480cb58006ff28bf2c22043373d709705420dc59b70f62"
-  end
-
-  patch do
-    # Fix build with boost 1.86.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/15cc7addd1ede775b713a59414477460a0b34a70.patch?full_index=1"
-    sha256 "34dc182226c2ec7a3ae0289eb2089ca7bddc940869b5bff3a0572fc47fdbf0b0"
-  end
-
-  patch do
-    # Fix build with ffmpeg 7.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/d04e1e0e9473e3bbbc0ae6e3f62dcad682bf9fd9.patch?full_index=1"
-    sha256 "b777204f2d5d4cb5c0f565947dd5b290b256eb1724d2498abae9e2bef7c5fe33"
-  end
-
-  patch do
-    # Fix build with graphviz 10.0
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gazebo-classic/commit/3a9efee7ccdf552cbf22188131782f242f6c0542.patch?full_index=1"
-    sha256 "4c957a715263b11c91ceb9f1aed701257e8b67457abc00539a615b0b5b1c7ea2"
-  end
 
   patch do
     # Fix build when homebrew python is installed
