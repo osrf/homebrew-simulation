@@ -16,7 +16,7 @@ class IgnitionMsgs1 < Formula
   depends_on "cmake"
   depends_on "ignition-cmake0"
   depends_on "ignition-math4"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "ignition-tools" => :recommended
 

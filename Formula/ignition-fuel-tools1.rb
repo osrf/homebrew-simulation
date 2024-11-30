@@ -22,7 +22,7 @@ class IgnitionFuelTools1 < Formula
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   def install
     cmake_args = std_cmake_args

@@ -29,7 +29,7 @@ class GzTransport13 < Formula
   depends_on "gz-utils2"
   depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "sqlite"
   depends_on "tinyxml2"

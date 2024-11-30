@@ -28,7 +28,7 @@ class GzSim9 < Formula
   depends_on "gz-transport14"
   depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "python@3.12"
   depends_on "qt@5"

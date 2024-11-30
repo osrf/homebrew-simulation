@@ -27,7 +27,7 @@ class IgnitionPhysics2 < Formula
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on macos: :mojave # c++17
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "sdformat9"
   depends_on "tinyxml2"
   depends_on "urdfdom"

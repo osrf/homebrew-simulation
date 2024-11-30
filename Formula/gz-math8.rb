@@ -19,7 +19,7 @@ class GzMath8 < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
-  depends_on "pkg-config" => :test
+  depends_on "pkgconf" => :test
   depends_on "eigen"
   depends_on "gz-cmake4"
   depends_on "gz-utils3"

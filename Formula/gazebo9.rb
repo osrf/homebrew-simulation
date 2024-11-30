@@ -12,7 +12,7 @@ class Gazebo9 < Formula
   deprecate! date: "2023-01-25", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "boost"
   depends_on "bullet"

@@ -15,7 +15,7 @@ class GzGui8 < Formula
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
   depends_on "gz-cmake3"
   depends_on "gz-common5"

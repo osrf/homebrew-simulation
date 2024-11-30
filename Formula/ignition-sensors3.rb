@@ -17,7 +17,7 @@ class IgnitionSensors3 < Formula
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
-  depends_on "pkg-config" => [:build, :test]
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"

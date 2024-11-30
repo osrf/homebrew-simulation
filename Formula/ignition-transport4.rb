@@ -19,7 +19,7 @@ class IgnitionTransport4 < Formula
   depends_on "ignition-msgs1"
   depends_on "ignition-tools"
   depends_on "ossp-uuid"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "zeromq"
 
