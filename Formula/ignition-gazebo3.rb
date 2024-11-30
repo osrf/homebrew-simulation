@@ -8,6 +8,12 @@ class IgnitionGazebo3 < Formula
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo3"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "c7ffc74d4f859463f984e96a3633db891b04ae1c3371e59c8a2264efaae0bbb8"
+    sha256 ventura: "d8bd5ea42f5c19266e5c9db3a4637fa13662b8b08e4058843a8ae2a7440c67af"
+  end
+
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
