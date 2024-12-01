@@ -4,9 +4,15 @@ class IgnitionGazebo3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gazebo/releases/ignition-gazebo3-3.15.1.tar.bz2"
   sha256 "c801d4205f8f88fca813cbf699cf6a077536d430e6c312a85520d6f50a7052bd"
   license "Apache-2.0"
-  revision 27
+  revision 28
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo3"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "c7ffc74d4f859463f984e96a3633db891b04ae1c3371e59c8a2264efaae0bbb8"
+    sha256 ventura: "d8bd5ea42f5c19266e5c9db3a4637fa13662b8b08e4058843a8ae2a7440c67af"
+  end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
