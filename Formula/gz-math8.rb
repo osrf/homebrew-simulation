@@ -37,7 +37,7 @@ class GzMath8 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = "python@3.13".to_formula)
+  def python_cmake_arg(python = Formula["python@3.13"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
