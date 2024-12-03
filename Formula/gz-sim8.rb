@@ -4,11 +4,19 @@ class GzSim8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.7.0.tar.bz2"
   sha256 "4375643526a0009723b67ee74127432f94f730f67d6098d548e7e731d1e2e7e6"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "2d33be802bc6d7e89e253ce9b265c3acaccc24fa23c3b0baa88f0c632dfd8cc1"
+    sha256 ventura: "5ee8765c088e3519e9dba37137a8b2a3844a9b3e2a185793107540c6fe599cba"
+  end
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
+  depends_on "python@3.13" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
@@ -29,14 +37,18 @@ class GzSim8 < Formula
   depends_on macos: :mojave # c++17
   depends_on "pkgconf"
   depends_on "protobuf"
-  depends_on "python@3.12"
   depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat14"
   depends_on "tinyxml2"
 
-  def python_cmake_arg
-    "-DPython3_EXECUTABLE=#{which("python3")}"
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.match?(/^python@3\.\d+$/) }
+  end
+
+  def python_cmake_arg(python = Formula["python@3.13"])
+    "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
   def install
@@ -56,7 +68,11 @@ class GzSim8 < Formula
       system "make", "install"
     end
 
-    (lib/"python3.12/site-packages").install Dir[lib/"python/*"]
+    # install to site-packages of first python version in dependency list
+    python = pythons.first
+    # remove @ from formula name
+    python_name = python.name.tr("@", "")
+    (lib/"#{python_name}/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
   end
 
@@ -147,6 +163,8 @@ class GzSim8 < Formula
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
     # check python import
-    system Formula["python@3.12"].opt_libexec/"bin/python", "-c", "import gz.sim8"
+    pythons.each do |python|
+      system python.opt_libexec/"bin/python", "-c", "import gz.sim8"
+    end
   end
 end
