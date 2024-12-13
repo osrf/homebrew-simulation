@@ -1,17 +1,16 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.0.0.tar.bz2"
-  sha256 "dfc15a78aa52f5e200da991e92ebcbd0bd6f9529326dbe3a1a365ad6d7da9669"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.1.0.tar.bz2"
+  sha256 "18adf52528124fab46ffb0db92053e4b40ad673321d490b2ae6e971551712c22"
   license "Apache-2.0"
-  revision 3
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "9d383cedd7c20499e7e150e75da3292869497f5bae078e332fdee355f808db81"
-    sha256 cellar: :any, ventura: "e5fa26ad927d2aecfe7b9a8d006910a7395848e0b7180e24ba6cd2437aed2d9f"
+    sha256 cellar: :any, sonoma:  "e7dea9e7ff117d64ed2958ed91b7787cef1c19ef0f5eee1f3bc600c600c11b9e"
+    sha256 cellar: :any, ventura: "a6786e08826984a1fa9a1362ea1d389226dd2b5352ff3bf270df7beecf5028b6"
   end
 
   depends_on "cmake" => :build
@@ -24,13 +23,6 @@ class GzMath8 < Formula
   depends_on "gz-cmake4"
   depends_on "gz-utils3"
   depends_on "ruby"
-
-  patch do
-    # Support building python bindings against external gz-math library
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gz-math/commit/17deea2ba86948c3a92aeed7cb541d05c9492c56.patch?full_index=1"
-    sha256 "604b266155d5715f6be2bac5c4e11e474c409a5497ea67009da49637b76acd6b"
-  end
 
   def pythons
     deps.map(&:to_formula)
