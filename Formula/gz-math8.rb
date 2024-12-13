@@ -24,13 +24,6 @@ class GzMath8 < Formula
   depends_on "gz-utils3"
   depends_on "ruby"
 
-  patch do
-    # Support building python bindings against external gz-math library
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gz-math/commit/17deea2ba86948c3a92aeed7cb541d05c9492c56.patch?full_index=1"
-    sha256 "604b266155d5715f6be2bac5c4e11e474c409a5497ea67009da49637b76acd6b"
-  end
-
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
