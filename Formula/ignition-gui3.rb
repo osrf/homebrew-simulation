@@ -1,17 +1,16 @@
 class IgnitionGui3 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui3-3.12.0.tar.bz2"
-  sha256 "f53ee05d844449b900ecb30d5e1f812fd3f7e9e28630d309b7d8d11add3c3b1c"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/ignition-gui-3.12.1.tar.bz2"
+  sha256 "47221dba126197f1c40bb4b32e82833db6a46637ede89e84c7849116a9c87aff"
   license "Apache-2.0"
-  revision 49
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "c6a886ba8964284626b86f35cce534fa85c44418310a137bcb178ae919daa158"
-    sha256 ventura: "a52531a8f4c71481de9a1e84b68e6d7d2b478a8e50ce8a375d885ce6b5719f7c"
+    sha256 sonoma:  "2cbeaff05d4de31bb86f4636f461e532b7a0a526978e2944d07d5f678ba45f05"
+    sha256 ventura: "0b8b27ac257f200043cb96042d62e11cfbb0ad6f2d87baefde2f4d65a2599ceb"
   end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
@@ -29,12 +28,6 @@ class IgnitionGui3 < Formula
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-gui/commit/f65395f734df81b22dcd10d68d2802b61d6b72bc.patch?full_index=1"
-    sha256 "50c63503ca4dc48c677e254b3a50a9cffd3ffbee9b6d85a60b36c78a3eb3ba05"
-  end
 
   def install
     rpaths = [
