@@ -4,15 +4,9 @@ class IgnitionLaunch2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch2-2.3.1.tar.bz2"
   sha256 "984e2a5df03ca220960470b6b59728edf3cd570314fbad6435b67cb26c9b7e4e"
   license "Apache-2.0"
-  revision 30
+  revision 31
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch2"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "be96be92995becc8b41f451105767246ab620ae584161903f8b45b824a83497c"
-    sha256 ventura: "adb56f633fe642139531e95f560237fd63d34fee22feb0f204a31781bd740f9a"
-  end
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
