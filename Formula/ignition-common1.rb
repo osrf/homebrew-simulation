@@ -8,8 +8,8 @@ class IgnitionCommon1 < Formula
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common1"
 
-  disable! date: "2024-08-31", because: "is past end-of-life date"
   deprecate! date: "2023-01-25", because: "is past end-of-life date"
+  disable! date: "2024-08-31", because: "is past end-of-life date"
 
   depends_on "cmake"
   depends_on "ffmpeg@4"

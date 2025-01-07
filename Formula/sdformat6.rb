@@ -14,8 +14,8 @@ class Sdformat6 < Formula
     sha256 catalina: "06b6bf07eca09d4fdfff48e006747adc6d9f7f50d075f551322ead27513c6e9b"
   end
 
-  disable! date: "2024-08-31", because: "is past end-of-life date"
   deprecate! date: "2023-01-25", because: "is past end-of-life date"
+  disable! date: "2024-08-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
 
