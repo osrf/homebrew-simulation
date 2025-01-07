@@ -4,14 +4,14 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.11.0.tar.bz2"
   sha256 "59a03770c27b4cdb6d0b0f3de9f10f1c748a47b45376a297e1f30900edb893fd"
   license "Apache-2.0"
-  revision 44
+  revision 46
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "27f832858d6ef865aa1db5c470878eddecb6fb23545734ec6b93e92d55ccef8e"
-    sha256 cellar: :any, ventura: "2df3a74702a300574b261845592d8c91a6e8c95ca03f7a6d52b7ffb97d8b073c"
+    sha256 cellar: :any, sonoma:  "094d7a9cec44e88f510ec87a171c7622b7127f9b8c1c36e521624053d31da971"
+    sha256 cellar: :any, ventura: "b9ba8c0459059bfd7d1be8a62000794fcf385105f3f0cb93c1a154fbc4dc4e07"
   end
 
   depends_on "cmake"
