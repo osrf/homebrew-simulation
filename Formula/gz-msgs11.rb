@@ -2,7 +2,7 @@ class GzMsgs11 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-msgs.git", branch: "scpeters/extras_only_find_python_if_needed"
-  sha256 "4154cea1cf4e8c2b9b40962e44d6ab46b4f767ffab3809e4b6b4022904524fcb"
+  version "11.0"
   license "Apache-2.0"
   revision 10
 
