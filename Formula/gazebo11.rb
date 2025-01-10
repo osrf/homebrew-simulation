@@ -4,14 +4,14 @@ class Gazebo11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gazebo/releases/gazebo-11.15.0.tar.bz2"
   sha256 "8998ef927b424ac24ae6eaea4e69b0d0640877059cba8680d20cd526e6333262"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/osrf/gazebo.git", branch: "gazebo11"
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "boost"
+  depends_on "boost@1.85.0"
   depends_on "bullet"
   depends_on "dartsim"
   depends_on "doxygen"
@@ -25,7 +25,7 @@ class Gazebo11 < Formula
   depends_on "ignition-msgs5"
   depends_on "ignition-transport8"
   depends_on "libtar"
-  depends_on "ogre1.9"
+  depends_on "ogre1.9-with-boost1.85"
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "qwt-qt5"
@@ -95,6 +95,7 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["boost@1.85.0"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
