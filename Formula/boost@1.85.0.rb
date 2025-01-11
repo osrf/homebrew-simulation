@@ -5,6 +5,12 @@ class BoostAT1850 < Formula
   sha256 "09f0628bded81d20b0145b30925d7d7492fd99583671586525d5d66d4c28266a"
   license "BSL-1.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:  "fb79af23638d60be500f32f88cf179626a1284c30b1a6b1c802fe3c8c7faf7dd"
+    sha256 cellar: :any, ventura: "d30d0028956faa275279b6f83e36844d8f6cea128c75114bd204ea162ce4acae"
+  end
+
   keg_only :versioned_formula
 
   depends_on "icu4c@76"

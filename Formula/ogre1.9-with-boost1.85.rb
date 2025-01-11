@@ -8,6 +8,12 @@ class Ogre19WithBoost185 < Formula
 
   head "https://github.com/OGRECave/ogre.git", branch: "master"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "9a27d938d945cb9a8cf9ff1f47f4b6fa6cdfadee5200f36d4d12124a5e11fec7"
+    sha256 ventura: "d25af9f42bb8745756cbf14a05e860c2f0e86bd6b7ba7c81ebabeffaad1e71d7"
+  end
+
   keg_only "it conflicts with ogre1.9"
 
   option "with-cg"
