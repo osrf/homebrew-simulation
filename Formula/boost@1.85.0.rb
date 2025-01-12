@@ -7,8 +7,8 @@ class BoostAT1850 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "fb79af23638d60be500f32f88cf179626a1284c30b1a6b1c802fe3c8c7faf7dd"
-    sha256 cellar: :any, ventura: "d30d0028956faa275279b6f83e36844d8f6cea128c75114bd204ea162ce4acae"
+    sha256 cellar: :any, sonoma:  "5a624e8d2320a4c44eb1f85ad45c5578e1eb9753d546ad3a40b6d74074955cb6"
+    sha256 cellar: :any, ventura: "720375f0e2aca06242502973008cf8145088ed036fd46308f6b0ecc4c0f22023"
   end
 
   keg_only :versioned_formula

@@ -10,8 +10,8 @@ class Ogre19WithBoost185 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "9a27d938d945cb9a8cf9ff1f47f4b6fa6cdfadee5200f36d4d12124a5e11fec7"
-    sha256 ventura: "d25af9f42bb8745756cbf14a05e860c2f0e86bd6b7ba7c81ebabeffaad1e71d7"
+    sha256 sonoma:  "9768c5821e9f23faa57d6b36a23615ae499f8968cc8699f90f04a75ae256191e"
+    sha256 ventura: "7b9651c2799df5159b6f571e66f42c011f01814c783976b27d02b22b30c6e59e"
   end
 
   keg_only "it conflicts with ogre1.9"
