@@ -96,6 +96,8 @@ class Gazebo11 < Formula
     #                "-o", "test"
     # system "./test"
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["boost@1.85.0"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["ogre1.9-with-boost1.85"].opt_prefix
+    ENV.append_path "PKG_CONFIG_PATH", Formula["ogre1.9-with-boost1.85"].opt_lib/"pkgconfig"
     mkdir "build" do
       system "cmake", ".."
       system "make"
