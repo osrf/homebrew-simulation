@@ -2,7 +2,7 @@ class GzLaunch9 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
   url "https://github.com/gazebosim/gz-launch.git", branch: "main"
-  version "8.999.999-0-20250116"
+  version "8.999.999-0-20250117"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
@@ -34,7 +34,7 @@ class GzLaunch9 < Formula
     rpaths = [
       rpath,
       rpath(source: lib/"gz/launch9", target: lib),
-      rpath(source: lib/"gz-launch-8/plugins", target: lib),
+      rpath(source: lib/"gz-launch-9/plugins", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -53,7 +53,7 @@ class GzLaunch9 < Formula
     system lib/"gz/launch9/gz-launch"
     # test plugins in subfolders
     %w[joytotwist sim-factory sim simgui].each do |plugin|
-      p = lib/"gz-launch-8/plugins/libgz-launch-#{plugin}.dylib"
+      p = lib/"gz-launch-9/plugins/libgz-launch-#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
