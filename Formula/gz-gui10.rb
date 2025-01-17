@@ -2,7 +2,7 @@ class GzGui10 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
   url "https://github.com/gazebosim/gz-gui.git", branch: "main"
-  version "9.999.999-0-20250116"
+  version "9.999.999-0-20250117"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
@@ -26,7 +26,7 @@ class GzGui10 < Formula
   def install
     rpaths = [
       rpath,
-      rpath(source: lib/"gz-gui-9/plugins", target: lib),
+      rpath(source: lib/"gz-gui-10/plugins", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
@@ -43,7 +43,7 @@ class GzGui10 < Formula
     extend SystemCommand::Mixin
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
-      p = lib/"gz-gui-9/plugins/lib#{plugin}.dylib"
+      p = lib/"gz-gui-10/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
