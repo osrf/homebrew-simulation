@@ -1,13 +1,13 @@
-class GzIonic < Formula
+class GzJetty < Formula
   include Language::Python::Virtualenv
 
   desc "Collection of gazebo simulation software"
-  homepage "https://github.com/gazebosim/gz-ionic"
+  homepage "https://github.com/gazebosim/gz-jetty"
   url "https://github.com/gazebosim/gz-jetty.git", branch: "main"
-  version "0.999.999-0-20250116"
+  version "0.999.999-0-20250117"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-ionic.git", branch: "main"
+  head "https://github.com/gazebosim/gz-jetty.git", branch: "main"
 
   depends_on "cmake" => :build
 
@@ -37,6 +37,6 @@ class GzIonic < Formula
   end
 
   test do
-    assert_predicate share/"gz/gz-ionic/release_notes.md", :exist?
+    assert_predicate share/"gz/gz-jetty/release_notes.md", :exist?
   end
 end
