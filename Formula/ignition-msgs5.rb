@@ -22,12 +22,6 @@ class IgnitionMsgs5 < Formula
   depends_on "protobuf"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-msgs/commit/0c0926c37042ac8f5aeb49ac36101acd3e084c6b.patch?full_index=1"
-    sha256 "02dd3ee467dcdd1b5b1c7c26d56ebea34276fea7ff3611fb53bf27b99e7ba4bc"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
