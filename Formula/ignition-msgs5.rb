@@ -9,8 +9,8 @@ class IgnitionMsgs5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "d8685df936423c0da027d21b9e648bcb0e95d6df1124cb3bd41d962e1fcbb15a"
-    sha256 cellar: :any, ventura: "3cbc0c3387bb24d8331dfcd49f996b7643f48ddea15e7a92ec906131be4e7024"
+    sha256 cellar: :any, sonoma:  "342cb6c8d95a79aeafa3096247d536fe8bfb9d727c6e33cbd3f3fbd0fc247ddc"
+    sha256 cellar: :any, ventura: "498d2488303d8eb67484d9c7c15203601fe3d1ce5828f3bcfec7bb8ee57e46b9"
   end
 
   depends_on "cmake"
