@@ -13,6 +13,8 @@ class IgnitionFuelTools4 < Formula
     sha256 cellar: :any, ventura: "794c8a174891712656c7ee4bbcf0c2ceee97a02dd2cce3453e23e9bb365e0b78"
   end
 
+  deprecate! date: "2025-01-31", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common3"

@@ -15,6 +15,8 @@ class Sdformat9 < Formula
     sha256 monterey: "0d72b95fa548878ccb2272c1bf793e65a274af39ce0de5fb41c4b8a5a647b50d"
   end
 
+  deprecate! date: "2025-01-31", because: "is past end-of-life date"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 

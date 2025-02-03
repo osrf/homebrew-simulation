@@ -14,6 +14,8 @@ class Gazebo11 < Formula
     sha256 ventura: "d4376884717e4f5e49e453f00ff13b1e10c3322ed9a94e5dde5de008567538ef"
   end
 
+  deprecate! date: "2025-01-31", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
