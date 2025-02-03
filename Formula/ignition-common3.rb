@@ -13,6 +13,8 @@ class IgnitionCommon3 < Formula
     sha256 cellar: :any, ventura: "6169fb10e477aa4252d1934f64d6a7c605f74f6d1cc1cc0caeb08841a44f15cf"
   end
 
+  deprecate! date: "2025-01-31", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"

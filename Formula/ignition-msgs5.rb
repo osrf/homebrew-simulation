@@ -13,6 +13,8 @@ class IgnitionMsgs5 < Formula
     sha256 cellar: :any, ventura: "498d2488303d8eb67484d9c7c15203601fe3d1ce5828f3bcfec7bb8ee57e46b9"
   end
 
+  deprecate! date: "2025-01-31", because: "is past end-of-life date"
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
