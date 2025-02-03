@@ -1,17 +1,16 @@
 class IgnitionMsgs5 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/gazebosim/gz-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs5-5.11.0.tar.bz2"
-  sha256 "59a03770c27b4cdb6d0b0f3de9f10f1c748a47b45376a297e1f30900edb893fd"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-5.11.1.tar.bz2"
+  sha256 "48fb5cd7859203fdcf31ca0aa6405c58893aefd59025b9380d8fae6627cc41ec"
   license "Apache-2.0"
-  revision 48
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "d8685df936423c0da027d21b9e648bcb0e95d6df1124cb3bd41d962e1fcbb15a"
-    sha256 cellar: :any, ventura: "3cbc0c3387bb24d8331dfcd49f996b7643f48ddea15e7a92ec906131be4e7024"
+    sha256 cellar: :any, sonoma:  "342cb6c8d95a79aeafa3096247d536fe8bfb9d727c6e33cbd3f3fbd0fc247ddc"
+    sha256 cellar: :any, ventura: "498d2488303d8eb67484d9c7c15203601fe3d1ce5828f3bcfec7bb8ee57e46b9"
   end
 
   depends_on "cmake"
@@ -22,12 +21,6 @@ class IgnitionMsgs5 < Formula
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-msgs/commit/0c0926c37042ac8f5aeb49ac36101acd3e084c6b.patch?full_index=1"
-    sha256 "02dd3ee467dcdd1b5b1c7c26d56ebea34276fea7ff3611fb53bf27b99e7ba4bc"
-  end
 
   def install
     cmake_args = std_cmake_args
