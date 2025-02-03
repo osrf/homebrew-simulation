@@ -34,10 +34,6 @@ gz-utils      | [![gz-utils1](https://build.osrfoundation.org/buildStatus/icon?j
 sdformat      | [![sdformat12](https://build.osrfoundation.org/buildStatus/icon?job=sdformat12-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-fortress/job/sdformat12-install_bottle-homebrew-amd64/)             | [![sdformat14](https://build.osrfoundation.org/buildStatus/icon?job=sdformat14-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-harmonic/job/sdformat14-install_bottle-homebrew-amd64/)             | [![sdformat15](https://build.osrfoundation.org/buildStatus/icon?job=sdformat15-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-ionic/job/sdformat15-install_bottle-homebrew-amd64/)
 collection    | [![gz-fortress](https://build.osrfoundation.org/buildStatus/icon?job=gz_fortress-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-fortress/job/gz_fortress-install_bottle-homebrew-amd64/)          | [![gz-harmonic](https://build.osrfoundation.org/buildStatus/icon?job=gz_harmonic-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-harmonic/job/gz_harmonic-install_bottle-homebrew-amd64/)          | [![gz-ionic](https://build.osrfoundation.org/buildStatus/icon?job=gz_ionic-install_bottle-homebrew-amd64)](https://build.osrfoundation.org/view/gz-ionic/job/gz_ionic-install_bottle-homebrew-amd64/)
 
-### Gazebo Classic
-
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=gazebo-install-one_liner-homebrew-amd64)](https://build.osrfoundation.org/job/gazebo-install-one_liner-homebrew-amd64/)         [gazebo-classic11](https://build.osrfoundation.org/job/gazebo-install-one_liner-homebrew-amd64/)
-
 ## To build bottles
 
 The https://build.osrfoundation.org jenkins instance is used for building bottles with the following job
