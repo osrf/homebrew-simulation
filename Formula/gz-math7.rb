@@ -1,17 +1,16 @@
 class GzMath7 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.5.1.tar.bz2"
-  sha256 "cb1fc3436fd57ff9663613576fc208018ed6c11776972e555400d1b8bb7d2426"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.5.2.tar.bz2"
+  sha256 "2451435f601f1adc8fdb3580e3b55bba951822dd85dcddcc8bae4fe132587803"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "fc68e0969e29460070b13ce4cbb49e53c9802821267ef6aad64e55bffca068ec"
-    sha256 cellar: :any, ventura: "1d95728e7a681a67aa0ac9899e9bcc1e7ca0f03835ba4c79f3e17eaa0b26d0a7"
+    sha256 cellar: :any, sonoma:  "0fa6e82a5357dc759b6a04f945ef33131cc1362570fc852d3de50292dac50877"
+    sha256 cellar: :any, ventura: "627e2fd4005571a016896ad36953613006b8f00c96bb16254e97a0123c9f88bc"
   end
 
   depends_on "cmake" => :build
@@ -24,20 +23,6 @@ class GzMath7 < Formula
   depends_on "gz-cmake3"
   depends_on "gz-utils2"
   depends_on "ruby"
-
-  patch do
-    # Support building python bindings against external gz-math library (1)
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gz-math/commit/97ad436a0d561c77422de83cebb600379cc9c94a.patch?full_index=1"
-    sha256 "6d2ed400c7067ac123c80d762f796d2b75e3b4ab479ee71b019e253ca41724e8"
-  end
-
-  patch do
-    # Support building python bindings against external gz-math library (2)
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gz-math/commit/a48b8937eadd4010a69b9f9613ca07aaa1f87d63.patch?full_index=1"
-    sha256 "fbd10f7b886511586ab84c7c03771a43da2fbb5c9445037a6534bbdbd2d05062"
-  end
 
   def pythons
     deps.map(&:to_formula)
