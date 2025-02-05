@@ -1,17 +1,16 @@
 class GzUtils2 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-2.2.0.tar.bz2"
-  sha256 "e53474ef1f8100415848bdad3c3bd17024643696605a584ce40b4df7740ab4fc"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-2.2.1.tar.bz2"
+  sha256 "4c6361ac7a82739837c36385f24e9f643f36e2ef336e3c7b2b5ff7b36d47a052"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:   "8b6049fdfffc16a2d793c8601e00fc8543170b027e5a908ee6cdc4819d46c9dc"
-    sha256 cellar: :any, ventura:  "434704186995b15e49035f74c68034bdcbfef772d0cf697113dfcfc0392d2716"
-    sha256 cellar: :any, monterey: "a2313fadab80f5867eaac4d8a6d0b7e1c8fb96218b78444d7a2c22fe32e6ab65"
+    sha256 cellar: :any, sonoma:  "37307bd20762efddc9d00ef1ccde0650729347a57bc9db1bbb95d1809df84e17"
+    sha256 cellar: :any, ventura: "375a3b78b5a4c970654962959078732b015d0fc9b7bbdd804d1b980af7eafb0e"
   end
 
   depends_on "cmake" => [:build, :test]
