@@ -10,8 +10,8 @@ class GzCmake4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, sonoma:  "9815364927e8c55b44071ea2db5b7b858ee7a9f758879a7ebbde2361d389a0dc"
-    sha256 cellar: :any_skip_relocation, ventura: "d65216df29ada0798a8fb7e819ba8c34f942a54927c9b9dd018189bae4f38680"
+    sha256 cellar: :any_skip_relocation, sonoma:  "870db74643bd0f54814bf78d1c00ca6fe0d9f9a961843280b1b3630c207ad430"
+    sha256 cellar: :any_skip_relocation, ventura: "9f2e15f3f099db273ad946fbfc1e03f938f07478a93e5d9c8b0a18ee66a0aa0d"
   end
 
   depends_on "cmake"
