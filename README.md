@@ -82,7 +82,7 @@ is ongoing. Until this issue is resolved, if you trigger multiple builds at
 once, merging any of them before all have completed may cause one of them to
 fail. Valid strategies for avoiding build failures due to this issue include:
 
-* Building bottles for one pull request at a time and waiting until that pull
+* Build bottles for one pull request at a time and wait until that pull
   request is merged before starting another build. If merging the pull requests
   is not urgent and you receive GitHub notifications for pull requests to this
   repository, you can use the following procedure:
@@ -93,17 +93,17 @@ fail. Valid strategies for avoiding build failures due to this issue include:
     * Pick a remaining pull request, update its branch with the latest changes
       from the base branch and comment `build bottle`. The order is important;
       if you start a bottle building job before updating the branch with the
-      latest changes, just let the build finish.
+      latest changes, just let the build finish without updating the branch.
     * When you see a notifications for a commit with message "update bottle"
       in this pull request, start this process from the beginning.
 
-* Commenting `build bottle` on any open pull requests and waiting until all
+* Comment `build bottle` on any open pull requests and wait until all
   builds have completed before merging any pull requests. Please consider
   waiting to apply additional `build bottle` comments to new pull requests
   that are opened to avoid extending the wait time.
 
-* Cherry-picking the changes from multiple pull requests into a single pull
-  request will allow the bottle updates to be built at once. This is also
+* Cherry-pick the changes from multiple pull requests into a single pull
+  request to allow the bottle updates to be built at once. This is also
   more efficient for formulae in the same dependency chain as it eliminates
   redundant checking in separate bottle building jobs. See
   [#2949](https://github.com/osrf/homebrew-simulation/pull/2949) and
