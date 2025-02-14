@@ -34,13 +34,6 @@ class GzTransport14 < Formula
   depends_on "tinyxml2"
   depends_on "zeromq"
 
-  patch do
-    # Support building python bindings against external gz-transport library
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gz-transport/commit/250e95f0757af410adfaab213b3077c0a501252e.patch?full_index=1"
-    sha256 "b7184cc5a1e505ff31a43eacb5b5aa6ac217a07b4eec81e1585f14db6806abb0"
-  end
-
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
