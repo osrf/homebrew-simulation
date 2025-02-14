@@ -89,7 +89,8 @@ fail. Valid strategies for avoiding build failures due to this issue include:
     * Check if any open pull requests have ongoing bottle builds. If so,
       come back later.
     * If there are no ongoing bottle builds, check if any pull requests have
-      finished building bottles that are ready to be merged and merge them.
+      finished building bottles by looking for a commit with message
+      "update bottle" and merge them.
     * Pick a remaining pull request, update its branch with the latest changes
       from the base branch and comment `build bottle`. The order is important;
       if you start a bottle building job before updating the branch with the
