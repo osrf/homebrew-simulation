@@ -1,17 +1,16 @@
 class GzTransport14 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.0.0.tar.bz2"
-  sha256 "88cbcef69f16ea5124ff41766cc59c0277bfc3ae57c405f3fbae1dbee874a1c0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.0.1.tar.bz2"
+  sha256 "74f6f082be147c12a327abd3480fd8b423d6af6867e75fdf596452a03ad9350b"
   license "Apache-2.0"
-  revision 12
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "db55737c33186e6a5cd49ea4d7c6a0fbb9f8a401020a73593ea5b5367dcb4f4a"
-    sha256 ventura: "d801bf32cb2508fb1b56fedc8e76b8f764ef8730a6640f8d20f7341ae636e016"
+    sha256 sonoma:  "d153ab95ff6c9d12a3ad01ea0ec8776f6b71c6e9fe27f8d68607043a0694ff25"
+    sha256 ventura: "4812bdb90e327e865af726c8ba0a8bef98a6b93b00141e6e3ceda6bba895f2c4"
   end
 
   depends_on "doxygen" => [:build, :optional]
@@ -34,13 +33,6 @@ class GzTransport14 < Formula
   depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
-
-  patch do
-    # Support building python bindings against external gz-transport library
-    # Remove this patch with the next release
-    url "https://github.com/gazebosim/gz-transport/commit/250e95f0757af410adfaab213b3077c0a501252e.patch?full_index=1"
-    sha256 "b7184cc5a1e505ff31a43eacb5b5aa6ac217a07b4eec81e1585f14db6806abb0"
-  end
 
   def pythons
     deps.map(&:to_formula)
