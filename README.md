@@ -67,6 +67,50 @@ Bottle builds are not triggered automatically for every pull request for several
       which will upload bottles directly to GitHub Packages, but the SHA hash associated with these bottles will not be
       easily available unless the pull request is merged by a homebrew maintainer.
 
+## Reasons to prefer building bottles in one pull request at a time
+
+When releasing multiple packages in a short period of time, there may be
+multiple pull requests open at the same time. While it may feel proactive to
+apply the `build bottle` comment to multiple pull requests at once, please
+keep the following issues in mind before doing so:
+
+### Issue [#1990](https://github.com/osrf/homebrew-simulation/issues/1990): bottle build may fail if target branch receives commits
+
+As documented in [#1990](https://github.com/osrf/homebrew-simulation/issues/1990),
+bottle builds may fail if a pull request is merged while another bottle build
+is ongoing. Until this issue is resolved, if you trigger multiple builds at
+once, merging any of them before all have completed may cause one of them to
+fail. Valid strategies for avoiding build failures due to this issue include:
+
+* Build bottles for one pull request at a time and wait until that pull
+  request is merged before starting another build. If merging the pull requests
+  is not urgent and you receive GitHub notifications for pull requests to this
+  repository, you can use the following procedure:
+    * Check if any open pull requests have ongoing bottle builds. If so,
+      come back later.
+    * If there are no ongoing bottle builds, check if any pull requests have
+      finished building bottles by looking for a commit with message
+      "update bottle" and merge them.
+    * Pick a remaining pull request, update its branch with the latest changes
+      from the base branch and comment `build bottle`. The order is important;
+      if you start a bottle building job before updating the branch with the
+      latest changes, just let the build finish without updating the branch.
+    * When you see a notifications for a commit with message "update bottle"
+      in this pull request, start this process from the beginning.
+
+* Comment `build bottle` on any open pull requests and wait until all
+  builds have completed before merging any pull requests. Please consider
+  waiting to apply additional `build bottle` comments to new pull requests
+  that are opened to avoid extending the wait time.
+
+* Cherry-pick the changes from multiple pull requests into a single pull
+  request to allow the bottle updates to be built at once. This is also
+  more efficient for formulae in the same dependency chain as it eliminates
+  redundant checking in separate bottle building jobs. See
+  [#2949](https://github.com/osrf/homebrew-simulation/pull/2949) and
+  [#2957](https://github.com/osrf/homebrew-simulation/pull/2957) for examples
+  of this approach.
+
 ## To disable broken bottles
 
 When a new major or minor version of a formula is merged to homebrew-core that is a dependency of formulae

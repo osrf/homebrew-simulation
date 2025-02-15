@@ -1,16 +1,16 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.1.0.tar.bz2"
-  sha256 "18adf52528124fab46ffb0db92053e4b40ad673321d490b2ae6e971551712c22"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.1.1.tar.bz2"
+  sha256 "918c4fe8eefdad94fdf5efe5a30417ba7ab2d3ff604a64777323a135d76126f7"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "e7dea9e7ff117d64ed2958ed91b7787cef1c19ef0f5eee1f3bc600c600c11b9e"
-    sha256 cellar: :any, ventura: "a6786e08826984a1fa9a1362ea1d389226dd2b5352ff3bf270df7beecf5028b6"
+    sha256 cellar: :any, sonoma:  "1aeb6ae3eddadd0010fd4b7515e7b54dd24e3bd23a53c744a672841ad5f8a8e2"
+    sha256 cellar: :any, ventura: "252c171113ea982ca722ef4eb76d91f0c7b9095a45d381194c749faabb044ce7"
   end
 
   depends_on "cmake" => :build
