@@ -1,17 +1,16 @@
 class GzPlugin3 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-3.0.0.tar.bz2"
-  sha256 "5f69afaec39cb26224bbfb7d84f80dc814221e3606181ed0753a5d5ef7a15ee0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-3.0.1.tar.bz2"
+  sha256 "13ef38f6feb4f9877f578aefadb0cdc330495bf21634714fa84fe004c6070228"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "6713481376e3bae627adb7dc2ba3d0a93f1249398067c3898483b836db134ace"
-    sha256 cellar: :any, ventura: "a67448047c3e85d7ead0e4de54551a54947f799f831738823e5fe5275622fa60"
+    sha256 cellar: :any, sonoma:  "5038d101899f30c46fe4fc616b601decd0ebd0b1799bc3e5553383be0a0176cf"
+    sha256 cellar: :any, ventura: "68522ecc219ca8970bfaad2bd5005b12f9809ef381fdd6d6647491a8f467b77e"
   end
 
   depends_on "cmake"
