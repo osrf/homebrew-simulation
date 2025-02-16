@@ -1,17 +1,16 @@
 class GzSim9 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.0.0.tar.bz2"
-  sha256 "62effba56ffbfdb2db67b6ccca17527df0ede7fa83469df72c2f043f6cc96ea8"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.1.0.tar.bz2"
+  sha256 "7866afccfae26d345d696f22d9b9952f821d2e9f7418be2616b2bcc99bbfdea9"
   license "Apache-2.0"
-  revision 8
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "e962efd3a22c023c90f791f38012a1e0a6dce24d11af36abf9b718e089282366"
-    sha256 ventura: "a4dff5008bee1dd12dd88b42fa0b727dec2f9f6ee88a223cbf76d88836c39383"
+    sha256 sonoma:  "01b8d6aaaea3bd8228f96186bd7bfe08227981c4f51bca09c32e44b607687047"
+    sha256 ventura: "a0a84df7ed32018aa32c77ccc13367d47d32f755d655e69efaa27e6dfb2bc82a"
   end
 
   depends_on "cmake" => :build
