@@ -34,6 +34,7 @@ class GzSim10 < Formula
   depends_on "ruby"
   depends_on "sdformat15"
   depends_on "tinyxml2"
+  depends_on "libwebsockets"
 
   def pythons
     deps.map(&:to_formula)
