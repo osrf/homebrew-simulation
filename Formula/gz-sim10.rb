@@ -27,6 +27,7 @@ class GzSim10 < Formula
   depends_on "gz-tools2"
   depends_on "gz-transport14"
   depends_on "gz-utils3"
+  depends_on "libwebsockets"
   depends_on macos: :mojave # c++17
   depends_on "pkgconf"
   depends_on "protobuf"
@@ -34,7 +35,6 @@ class GzSim10 < Formula
   depends_on "ruby"
   depends_on "sdformat15"
   depends_on "tinyxml2"
-  depends_on "libwebsockets"
 
   def pythons
     deps.map(&:to_formula)
