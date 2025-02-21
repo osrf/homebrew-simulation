@@ -38,6 +38,6 @@ class GzHarmonic < Formula
   end
 
   test do
-    assert_predicate share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml", :exist?
+    assert_path_exists share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml"
   end
 end

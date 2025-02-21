@@ -41,6 +41,6 @@ class GzGarden < Formula
   end
 
   test do
-    assert_predicate share/"gz/gz-garden/gazebodistro/collection-garden.yaml", :exist?
+    assert_path_exists share/"gz/gz-garden/gazebodistro/collection-garden.yaml"
   end
 end
