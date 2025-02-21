@@ -37,6 +37,6 @@ class GzJetty < Formula
   end
 
   test do
-    assert_predicate share/"gz/gz-jetty/release_notes.md", :exist?
+    assert_path_exists share/"gz/gz-jetty/release_notes.md"
   end
 end
