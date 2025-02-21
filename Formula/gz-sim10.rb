@@ -27,6 +27,7 @@ class GzSim10 < Formula
   depends_on "gz-tools2"
   depends_on "gz-transport14"
   depends_on "gz-utils3"
+  depends_on "libwebsockets"
   depends_on macos: :mojave # c++17
   depends_on "pkgconf"
   depends_on "protobuf"
