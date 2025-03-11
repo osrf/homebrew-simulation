@@ -4,7 +4,7 @@ class Sdformat15 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-15.2.0.tar.bz2"
   sha256 "7242c58349ac1f1607722a6b6f25b692d37f0fe9b4c3f2e197db4fa90c096d76"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
 
