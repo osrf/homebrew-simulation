@@ -8,6 +8,12 @@ class GzLaunch8 < Formula
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "61f0a8c4039bb8e01bd8e017a6971061481f982663bd508a1784cf694a3cc9b6"
+    sha256 ventura: "9bf7bb1eba827112282871242b7ef2fdea24af46f0a209c56075bcffb7f6dd6c"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 
