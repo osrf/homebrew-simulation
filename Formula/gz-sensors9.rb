@@ -4,7 +4,7 @@ class GzSensors9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-9.1.0.tar.bz2"
   sha256 "3d1aaf20fd987efc1fc29f343cc42c96e07f57e060849c779b22bb32724ded35"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors9"
 
