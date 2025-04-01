@@ -4,7 +4,7 @@ class GzTransport14 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.0.1.tar.bz2"
   sha256 "74f6f082be147c12a327abd3480fd8b423d6af6867e75fdf596452a03ad9350b"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
