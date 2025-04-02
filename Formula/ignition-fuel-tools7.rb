@@ -4,9 +4,15 @@ class IgnitionFuelTools7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/ignition-fuel_tools-7.3.1.tar.bz2"
   sha256 "b8224c574406147ae008ed9a0ac459f1e2582f6aaef7ba44e1fd1c5ac97b6de8"
   license "Apache-2.0"
-  revision 17
+  revision 18
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools7"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:  "8fd55538a8a2e4d840a59ddf4fbb78f8fd88343e76583f8b38d19b0f7e7d05f1"
+    sha256 cellar: :any, ventura: "2e9e9fb741186205ea0f892bf0b13cba37722483c58a29915801b075ee6b2571"
+  end
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
@@ -40,7 +46,7 @@ class IgnitionFuelTools7 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(ignition-fuel_tools7 QUIET REQUIRED)
       include_directories(${IGNITION-FUEL_TOOLS_INCLUDE_DIRS})
       link_directories(${IGNITION-FUEL_TOOLS_LIBRARY_DIRS})
