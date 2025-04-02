@@ -4,9 +4,15 @@ class GzFuelTools9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-9.1.1.tar.bz2"
   sha256 "3189166d4b0078c0b9d98de178e5496a1cc28b88fbd1124603376181b5a053f5"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:  "3c4807e0ede06d8f47ad15b508d8b029ad59e283ce79b0daf09ec8fa69d7b795"
+    sha256 cellar: :any, ventura: "f413c3a2dc8f2df64ff41c8dc86299e53c722e4593ea92385143664e76dc5e33"
+  end
 
   depends_on "abseil"
   depends_on "cmake"
@@ -43,7 +49,7 @@ class GzFuelTools9 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(gz-fuel_tools9 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-fuel_tools9::gz-fuel_tools9)
