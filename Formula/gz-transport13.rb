@@ -8,6 +8,12 @@ class GzTransport13 < Formula
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "a9f3e2c901323db9ee281c1621cd13a012fe177d7b7cc558759d29ba8d6d4abd"
+    sha256 ventura: "7ea11323807628c6fb6529a23fbb507b5824549c45f4f36b0845962fbec91c4b"
+  end
+
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
