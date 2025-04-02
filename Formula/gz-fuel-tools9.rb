@@ -43,7 +43,7 @@ class GzFuelTools9 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(gz-fuel_tools9 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-fuel_tools9::gz-fuel_tools9)
