@@ -40,7 +40,7 @@ class IgnitionFuelTools7 < Formula
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
       find_package(ignition-fuel_tools7 QUIET REQUIRED)
       include_directories(${IGNITION-FUEL_TOOLS_INCLUDE_DIRS})
       link_directories(${IGNITION-FUEL_TOOLS_LIBRARY_DIRS})
