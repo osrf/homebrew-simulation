@@ -12,11 +12,13 @@ class GzTransport15 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "cppzmq"
   depends_on "eclipse-zenoh/homebrew-zenoh/libzenohc"
   depends_on "eclipse-zenoh/homebrew-zenoh/libzenohcpp"
   depends_on "gz-cmake4"
+  depends_on "gz-math8"
   depends_on "gz-msgs11"
   depends_on "gz-tools2"
   depends_on "gz-utils3"
@@ -25,6 +27,7 @@ class GzTransport15 < Formula
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "sqlite"
+  depends_on "tinyxml2"
   depends_on "zeromq"
 
   def pythons
