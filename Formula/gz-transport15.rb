@@ -15,6 +15,8 @@ class GzTransport15 < Formula
   depends_on "abseil"
   depends_on "cmake"
   depends_on "cppzmq"
+  depends_on "eclipse-zenoh/homebrew-zenoh/libzenohc"
+  depends_on "eclipse-zenoh/homebrew-zenoh/libzenohcpp"
   depends_on "gz-cmake4"
   depends_on "gz-math8"
   depends_on "gz-msgs11"
@@ -27,8 +29,6 @@ class GzTransport15 < Formula
   depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
-  depends_on "eclipse-zenoh/homebrew-zenoh/libzenohcpp"
-  depends_on "eclipse-zenoh/homebrew-zenoh/libzenohc"
 
   def pythons
     deps.map(&:to_formula)
