@@ -82,16 +82,16 @@ class GzTransport15 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
-      find_package(gz-transport15 QUIET REQUIRED)
+      find_package(gz-transport QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake gz-transport15::gz-transport15)
+      target_link_libraries(test_cmake gz-transport::gz-transport)
     EOS
-    system "pkg-config", "gz-transport15"
-    cflags = `pkg-config --cflags gz-transport15`.split
+    system "pkg-config", "gz-transport"
+    cflags = `pkg-config --cflags gz-transport`.split
     system ENV.cc, "test.cpp",
                    *cflags,
                    "-L#{lib}",
-                   "-lgz-transport15",
+                   "-lgz-transport",
                    "-lc++",
                    "-o", "test"
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
@@ -106,7 +106,7 @@ class GzTransport15 < Formula
     system cmd_not_grep_xcode
     # check python import
     pythons.each do |python|
-      system python.opt_libexec/"bin/python", "-c", "import gz.transport15"
+      system python.opt_libexec/"bin/python", "-c", "import gz.transport"
     end
   end
 end
