@@ -96,15 +96,15 @@ class GzGui10 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
-      find_package(gz-gui10 QUIET REQUIRED)
+      find_package(gz-gui QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake gz-gui10::gz-gui10)
+      target_link_libraries(test_cmake gz-gui::gz-gui)
     EOS
     # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    # system "pkg-config", "gz-gui10", "--cflags"
-    # system "pkg-config", "gz-gui10", "--libs"
-    # cflags   = `pkg-config --cflags gz-gui10`.split
-    # ldflags  = `pkg-config --libs gz-gui10`.split
+    # system "pkg-config", "gz-gui", "--cflags"
+    # system "pkg-config", "gz-gui", "--libs"
+    # cflags   = `pkg-config --cflags gz-gui`.split
+    # ldflags  = `pkg-config --libs gz-gui`.split
     # system ENV.cc, "test.cpp",
     #                *cflags,
     #                *ldflags,
