@@ -32,6 +32,7 @@ class GzSim10 < Formula
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "qt@5"
+  depends_on "qt@6"
   depends_on "ruby"
   depends_on "sdformat15"
   depends_on "tinyxml2"
