@@ -5,7 +5,7 @@ class Ogre19 < Formula
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
   license "MIT"
-  revision 10
+  revision 11
 
   head "https://github.com/OGRECave/ogre.git", branch: "master"
 
@@ -104,6 +104,7 @@ class Ogre19 < Formula
   def install
     cmake_args = [
       "-DCMAKE_CXX_STANDARD='14'",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
       "-DOGRE_BUILD_DOCS:BOOL=FALSE",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_BUILD_SAMPLES:BOOL=FALSE",
