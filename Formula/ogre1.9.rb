@@ -9,15 +9,6 @@ class Ogre19 < Formula
 
   head "https://github.com/OGRECave/ogre.git", branch: "master"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               sonoma:   "19b9f88b2ccaf1f80e715f8c409aaddc15c30b225e0c81f60f285e5598e9f5b3"
-    sha256 cellar: :any, ventura:  "228302c760e8e34edcc209a8439e6462a9c45c4f5ce3018e523a22ab622f45ab"
-    sha256 cellar: :any, monterey: "c5fd218d8cfcacea10eabc54837570c4b2fc76024cbf8326e2a716e49096eefe"
-    sha256               big_sur:  "d9d4bc2177fda4189a1633a50766e727cfc3a13abbc64a913d08e92657b6ba49"
-    sha256               catalina: "c1e5e0bb08263e3acbf91d1350d02c8f1a9e0c8e124719bd885963b3f1b0a824"
-  end
-
   option "with-cg"
 
   depends_on "cmake" => :build
@@ -102,10 +93,7 @@ class Ogre19 < Formula
   end
 
   # fix for cmake 4.0 (bump required cmake version to 3.13)
-  patch do
-    url "https://github.com/OGRECave/ogre/commit/720bb846f4a6490e21f10f2992c8a6670184653a.patch?full_index=1"
-    sha256 "c9ffef1ebcc13bbb4e3a9e0b0e030bb3d2460325bf09bbdb1b13bc5f260c820d"
-  end
+  patch :DATA
 
   def install
     cmake_args = [
@@ -176,3 +164,17 @@ class Ogre19 < Formula
     system cmd_not_grep_xcode
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8413428..0d14a45 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,7 +14,7 @@
+ # and provide build configuration options.
+ ######################################################################
+ 
+-cmake_minimum_required(VERSION 2.6.2)
++cmake_minimum_required(VERSION 3.11)
+ set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
+ cmake_policy(SET CMP0003 NEW)
