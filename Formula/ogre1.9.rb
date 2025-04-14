@@ -5,7 +5,7 @@ class Ogre19 < Formula
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
   license "MIT"
-  revision 10
+  revision 11
 
   head "https://github.com/OGRECave/ogre.git", branch: "master"
 
@@ -99,6 +99,12 @@ class Ogre19 < Formula
   patch do
     url "https://github.com/scpeters/ogre/commit/c39b6df49618773357da0b54437f351b57168d12.patch?full_index=1"
     sha256 "fa8dc20d5978d1ff1402a4df890a6fa0ca1fec6ec73f00154f7484820516b071"
+  end
+
+  # fix for cmake 4.0 (bump required cmake version to 3.13)
+  patch do
+    url "https://github.com/OGRECave/ogre/commit/720bb846f4a6490e21f10f2992c8a6670184653a.patch?full_index=1"
+    sha256 "c9ffef1ebcc13bbb4e3a9e0b0e030bb3d2460325bf09bbdb1b13bc5f260c820d"
   end
 
   def install
