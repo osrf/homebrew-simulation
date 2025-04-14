@@ -21,7 +21,6 @@ class GzGui10 < Formula
   depends_on macos: :mojave # c++17
   depends_on "protobuf"
   depends_on "qt@5"
-  depends_on "qt@6"
   depends_on "tinyxml2"
 
   def install
