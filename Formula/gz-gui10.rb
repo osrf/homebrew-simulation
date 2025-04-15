@@ -2,7 +2,7 @@ class GzGui10 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
   url "https://github.com/gazebosim/gz-gui.git", branch: "main"
-  version "9.999.999-0-20250117"
+  version "9.999.999-0-20250412"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
@@ -16,12 +16,11 @@ class GzGui10 < Formula
   depends_on "gz-msgs11"
   depends_on "gz-plugin3"
   depends_on "gz-rendering9"
-  depends_on "gz-transport14"
+  depends_on "gz-transport15"
   depends_on "gz-utils3"
   depends_on macos: :mojave # c++17
   depends_on "protobuf"
   depends_on "qt@5"
-  depends_on "qt@6"
   depends_on "tinyxml2"
 
   def install
