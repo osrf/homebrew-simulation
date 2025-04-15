@@ -2,7 +2,7 @@ class GzSim10 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
   url "https://github.com/gazebosim/gz-sim.git", branch: "main"
-  version "9.999.999-0-20250117"
+  version "9.999.999-0-20250415"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
@@ -23,9 +23,9 @@ class GzSim10 < Formula
   depends_on "gz-physics8"
   depends_on "gz-plugin3"
   depends_on "gz-rendering9"
-  depends_on "gz-sensors9"
+  depends_on "gz-sensors10"
   depends_on "gz-tools2"
-  depends_on "gz-transport14"
+  depends_on "gz-transport15"
   depends_on "gz-utils3"
   depends_on "libwebsockets"
   depends_on macos: :mojave # c++17
