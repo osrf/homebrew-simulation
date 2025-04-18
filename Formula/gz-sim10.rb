@@ -2,7 +2,7 @@ class GzSim10 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
   url "https://github.com/gazebosim/gz-sim.git", branch: "main"
-  version "9.999.999-0-20250117"
+  version "9.999.999-0-20250415"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
@@ -23,9 +23,9 @@ class GzSim10 < Formula
   depends_on "gz-physics8"
   depends_on "gz-plugin3"
   depends_on "gz-rendering9"
-  depends_on "gz-sensors9"
+  depends_on "gz-sensors10"
   depends_on "gz-tools2"
-  depends_on "gz-transport14"
+  depends_on "gz-transport15"
   depends_on "gz-utils3"
   depends_on "libwebsockets"
   depends_on macos: :mojave # c++17
@@ -131,14 +131,14 @@ class GzSim10 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
-      find_package(gz-sim10 QUIET REQUIRED)
+      find_package(gz-sim QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
-      target_link_libraries(test_cmake gz-sim10::core)
+      target_link_libraries(test_cmake gz-sim::core)
     EOS
     # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
-    # system "pkg-config", "--cflags", "gz-sim10"
-    # cflags   = `pkg-config --cflags gz-sim10`.split
-    # ldflags  = `pkg-config --libs gz-sim10`.split
+    # system "pkg-config", "--cflags", "gz-sim"
+    # cflags   = `pkg-config --cflags gz-sim`.split
+    # ldflags  = `pkg-config --libs gz-sim`.split
     # system ENV.cc, "test.cpp",
     #                *cflags,
     #                *ldflags,
@@ -157,7 +157,7 @@ class GzSim10 < Formula
     system cmd_not_grep_xcode
     # check python import
     pythons.each do |python|
-      system python.opt_libexec/"bin/python", "-c", "import gz.sim10"
+      system python.opt_libexec/"bin/python", "-c", "import gz.sim"
     end
   end
 end

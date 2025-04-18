@@ -2,7 +2,7 @@ class GzLaunch9 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
   url "https://github.com/gazebosim/gz-launch.git", branch: "main"
-  version "8.999.999-0-20250117"
+  version "8.999.999-0-20250415"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
@@ -23,7 +23,7 @@ class GzLaunch9 < Formula
   depends_on "gz-rendering9"
   depends_on "gz-sim10"
   depends_on "gz-tools2"
-  depends_on "gz-transport14"
+  depends_on "gz-transport15"
   depends_on "gz-utils3"
   depends_on "protobuf"
   depends_on "qt@5"
