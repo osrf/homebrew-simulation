@@ -28,6 +28,12 @@ class Ogre23 < Formula
   depends_on "rapidjson"
   depends_on "tbb"
 
+  patch do
+    # Fix for compatibility with XCode 16.3
+    url "https://github.com/scpeters/ogre-next/commit/b7439ae047489aa104a6775a99a9e93294c3d5b5.patch?full_index=1"
+    sha256 "d56016cd237c9a98e7c4389c57a455ea5d660d538d0cb1d5082bb2f9ed4e00b8"
+  end
+
   def install
     rpaths = [
       rpath,
