@@ -5,7 +5,7 @@ class Sdformat16 < Formula
   version "15.999.999-0-20250428"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
+  head "https://github.com/gazebosim/sdformat.git", branch: "sdf16"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
