@@ -101,6 +101,12 @@ class Ogre19 < Formula
     sha256 "fa8dc20d5978d1ff1402a4df890a6fa0ca1fec6ec73f00154f7484820516b071"
   end
 
+  # fix for OgreUTFString.h on newer clang
+  patch do
+    url "https://gist.githubusercontent.com/mrpollo/70a1fa1413d52227d0f9b5b2aa934442/raw/974f144e4c17d623f4bf90258876b38a90ef6018/ogre1.9-macos15-utfstring-fix.patch"
+    sha256 "01c35413f9b544cc67282709614065af5826a9a450d039a3027ff3819aaaab8c"
+  end
+
   def install
     cmake_args = [
       "-DCMAKE_CXX_STANDARD='14'",
@@ -111,6 +117,8 @@ class Ogre19 < Formula
       "-DOGRE_INSTALL_DOCS:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES_SOURCE:BOOL=FALSE",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DOGRE_STRING_USE_UTF16=OFF",
     ]
     cmake_args << "-DOGRE_BUILD_PLUGIN_CG=OFF" if build.without? "cg"
     cmake_args.concat(std_cmake_args)
