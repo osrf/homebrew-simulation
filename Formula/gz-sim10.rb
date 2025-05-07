@@ -51,6 +51,7 @@ class GzSim10 < Formula
       rpath(source: lib/"gz-sim-10/plugins", target: lib),
       rpath(source: lib/"gz-sim-10/plugins/gui", target: lib),
       rpath(source: lib/"gz-sim-10/plugins/gui/GzSim", target: lib),
+      rpath(source: libexec/"gz/sim10", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -90,6 +91,9 @@ class GzSim10 < Formula
     ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
       plugin_info.call lib/"gz-sim-10/plugins/gui/#{p}.dylib"
     end
+    # test gz-sim-main CLI tool
+    system libexec/"gz/sim10/gz-sim-main",
+           "-s", "--iterations", "5", "-r", "-v", "4"
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
     system Formula["gz-tools2"].opt_bin/"gz",
