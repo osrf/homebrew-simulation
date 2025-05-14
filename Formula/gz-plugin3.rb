@@ -9,8 +9,8 @@ class GzPlugin3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "5038d101899f30c46fe4fc616b601decd0ebd0b1799bc3e5553383be0a0176cf"
-    sha256 cellar: :any, ventura: "68522ecc219ca8970bfaad2bd5005b12f9809ef381fdd6d6647491a8f467b77e"
+    sha256 cellar: :any, sonoma:  "77aaab2f0bff2ac77e8a5707d61aa32e12da0163895d6291bd3ad6804ffb9479"
+    sha256 cellar: :any, ventura: "2d749e8dbc3f59c44eb4b0e0eb58036da4de18ec2598725638da973293116bf5"
   end
 
   depends_on "cmake"
