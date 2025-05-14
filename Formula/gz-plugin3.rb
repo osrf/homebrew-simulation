@@ -1,8 +1,8 @@
 class GzPlugin3 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-3.0.1.tar.bz2"
-  sha256 "13ef38f6feb4f9877f578aefadb0cdc330495bf21634714fa84fe004c6070228"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-3.1.0.tar.bz2"
+  sha256 "ec469900bda63b62367211c93d3baf6dd01629363003e70b1e67f6a714c446db"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin3"
