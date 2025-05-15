@@ -1,21 +1,18 @@
 class Ogre19 < Formula
   desc "Scene-oriented 3D engine written in c++"
-  homepage "https://www.ogre3d.org/"
+  homepage "https://ogrecave.github.io/ogre/"
   url "https://osrf-distributions.s3.amazonaws.com/ogre/releases/sinbad-ogre-108ab0bcc696.tar.bz2"
   version "1.9-20160714-108ab0bcc69603dba32c0ffd4bbbc39051f421c9"
   sha256 "3ca667b959905b290d782d7f0808e35d075c85db809d3239018e4e10e89b1721"
   license "MIT"
-  revision 10
+  revision 11
 
   head "https://github.com/OGRECave/ogre.git", branch: "master"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               sonoma:   "19b9f88b2ccaf1f80e715f8c409aaddc15c30b225e0c81f60f285e5598e9f5b3"
-    sha256 cellar: :any, ventura:  "228302c760e8e34edcc209a8439e6462a9c45c4f5ce3018e523a22ab622f45ab"
-    sha256 cellar: :any, monterey: "c5fd218d8cfcacea10eabc54837570c4b2fc76024cbf8326e2a716e49096eefe"
-    sha256               big_sur:  "d9d4bc2177fda4189a1633a50766e727cfc3a13abbc64a913d08e92657b6ba49"
-    sha256               catalina: "c1e5e0bb08263e3acbf91d1350d02c8f1a9e0c8e124719bd885963b3f1b0a824"
+    sha256 cellar: :any, sonoma:  "8eb999e92b356251d6a5676089a0656a8556cf9c92e817c5d95f7bb9185e1696"
+    sha256 cellar: :any, ventura: "87c237e4b2428721d62b74e74273942d037646015851ff3e5dd7c671102eeeac"
   end
 
   option "with-cg"
@@ -101,6 +98,12 @@ class Ogre19 < Formula
     sha256 "fa8dc20d5978d1ff1402a4df890a6fa0ca1fec6ec73f00154f7484820516b071"
   end
 
+  # fix for OgreUTFString.h on newer clang
+  patch do
+    url "https://gist.githubusercontent.com/mrpollo/70a1fa1413d52227d0f9b5b2aa934442/raw/974f144e4c17d623f4bf90258876b38a90ef6018/ogre1.9-macos15-utfstring-fix.patch"
+    sha256 "01c35413f9b544cc67282709614065af5826a9a450d039a3027ff3819aaaab8c"
+  end
+
   def install
     cmake_args = [
       "-DCMAKE_CXX_STANDARD='14'",
@@ -111,6 +114,10 @@ class Ogre19 < Formula
       "-DOGRE_INSTALL_DOCS:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES:BOOL=FALSE",
       "-DOGRE_INSTALL_SAMPLES_SOURCE:BOOL=FALSE",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DOGRE_STRING_USE_UTF16=OFF",
+      "-DCMAKE_MACOSX_RPATH=ON",
+      "-DCMAKE_INSTALL_RPATH=#{lib}",
     ]
     cmake_args << "-DOGRE_BUILD_PLUGIN_CG=OFF" if build.without? "cg"
     cmake_args.concat(std_cmake_args)
