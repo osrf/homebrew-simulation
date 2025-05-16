@@ -2,7 +2,7 @@ class GzSensors10 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
   url "https://github.com/gazebosim/gz-sensors.git", branch: "main"
-  version "9.999.999-0-20250412"
+  version "9.999.999-0-20250516"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors10"
@@ -11,15 +11,15 @@ class GzSensors10 < Formula
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "abseil"
-  depends_on "gz-cmake4"
-  depends_on "gz-common6"
-  depends_on "gz-math8"
-  depends_on "gz-msgs11"
-  depends_on "gz-rendering9"
+  depends_on "gz-cmake5"
+  depends_on "gz-common7"
+  depends_on "gz-math9"
+  depends_on "gz-msgs12"
+  depends_on "gz-rendering10"
   depends_on "gz-transport15"
-  depends_on "gz-utils3"
+  depends_on "gz-utils4"
   depends_on "protobuf"
-  depends_on "sdformat15"
+  depends_on "sdformat16"
   depends_on "tinyxml2"
 
   def install
