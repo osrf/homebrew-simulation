@@ -2,7 +2,7 @@ class GzSim10 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
   url "https://github.com/gazebosim/gz-sim.git", branch: "main"
-  version "9.999.999-0-20250415"
+  version "9.999.999-0-20250516"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
@@ -14,26 +14,26 @@ class GzSim10 < Formula
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
-  depends_on "gz-cmake4"
-  depends_on "gz-common6"
-  depends_on "gz-fuel-tools10"
+  depends_on "gz-cmake5"
+  depends_on "gz-common7"
+  depends_on "gz-fuel-tools11"
   depends_on "gz-gui10"
-  depends_on "gz-math8"
-  depends_on "gz-msgs11"
-  depends_on "gz-physics8"
-  depends_on "gz-plugin3"
-  depends_on "gz-rendering9"
+  depends_on "gz-math9"
+  depends_on "gz-msgs12"
+  depends_on "gz-physics9"
+  depends_on "gz-plugin4"
+  depends_on "gz-rendering10"
   depends_on "gz-sensors10"
   depends_on "gz-tools2"
   depends_on "gz-transport15"
-  depends_on "gz-utils3"
+  depends_on "gz-utils4"
   depends_on "libwebsockets"
   depends_on macos: :mojave # c++17
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "qt@6"
   depends_on "ruby"
-  depends_on "sdformat15"
+  depends_on "sdformat16"
   depends_on "tinyxml2"
 
   def pythons
@@ -76,7 +76,7 @@ class GzSim10 < Formula
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
+      cmd = Formula["gz-plugin4"].opt_libexec/"gz/plugin4/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
