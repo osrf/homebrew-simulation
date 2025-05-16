@@ -2,7 +2,7 @@ class GzLaunch9 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
   url "https://github.com/gazebosim/gz-launch.git", branch: "main"
-  version "8.999.999-0-20250415"
+  version "8.999.999-0-20250516"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
@@ -12,22 +12,22 @@ class GzLaunch9 < Formula
 
   depends_on "abseil"
   depends_on "ffmpeg"
-  depends_on "gz-cmake4"
-  depends_on "gz-common6"
-  depends_on "gz-fuel-tools10"
+  depends_on "gz-cmake5"
+  depends_on "gz-common7"
+  depends_on "gz-fuel-tools11"
   depends_on "gz-gui10"
-  depends_on "gz-math8"
-  depends_on "gz-msgs11"
-  depends_on "gz-physics8"
-  depends_on "gz-plugin3"
-  depends_on "gz-rendering9"
+  depends_on "gz-math9"
+  depends_on "gz-msgs12"
+  depends_on "gz-physics9"
+  depends_on "gz-plugin4"
+  depends_on "gz-rendering10"
   depends_on "gz-sim10"
   depends_on "gz-tools2"
   depends_on "gz-transport15"
-  depends_on "gz-utils3"
+  depends_on "gz-utils4"
   depends_on "protobuf"
   depends_on "qt@6"
-  depends_on "sdformat15"
+  depends_on "sdformat16"
   depends_on "tinyxml2"
 
   def install
@@ -55,7 +55,7 @@ class GzLaunch9 < Formula
     %w[joytotwist sim-factory sim simgui].each do |plugin|
       p = lib/"gz-launch-9/plugins/libgz-launch-#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
+      cmd = Formula["gz-plugin4"].opt_libexec/"gz/plugin4/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
