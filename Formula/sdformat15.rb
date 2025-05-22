@@ -38,9 +38,13 @@ class Sdformat15 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/sdformat15", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # first build without python bindings
     mkdir "build" do
@@ -62,6 +66,7 @@ class Sdformat15 < Formula
   end
 
   test do
+    system libexec/"gz/sdformat15/gz-sdformat-sdf"
     (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include "sdf/sdf.hh"
