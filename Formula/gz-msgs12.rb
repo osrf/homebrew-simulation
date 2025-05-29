@@ -32,7 +32,7 @@ class GzMsgs12 < Formula
   def install
     rpaths = [
       rpath,
-      rpath(source: libexec/"gz/msgs12", target: lib),
+      rpath(source: libexec/"gz/msgs", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
@@ -56,7 +56,7 @@ class GzMsgs12 < Formula
   end
 
   test do
-    system libexec/"gz/msgs12/gz-msgs"
+    system libexec/"gz/msgs/gz-msgs"
     (testpath/"test.cpp").write <<-EOS
       #include <gz/msgs.hh>
       int main() {
