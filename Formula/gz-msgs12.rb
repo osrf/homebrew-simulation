@@ -2,7 +2,7 @@ class GzMsgs12 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-msgs.git", branch: "main"
-  version "11.999.999-0-20250430"
+  version "11.999.999-0-20250528"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs12"
@@ -30,9 +30,13 @@ class GzMsgs12 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/msgs12", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
     cmake_args << python_cmake_arg
 
     mkdir "build" do
@@ -52,6 +56,7 @@ class GzMsgs12 < Formula
   end
 
   test do
+    system libexec/"gz/msgs12/gz-msgs"
     (testpath/"test.cpp").write <<-EOS
       #include <gz/msgs.hh>
       int main() {
@@ -88,5 +93,8 @@ class GzMsgs12 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.msgs"
     end
+    # check gz msg command
+    ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
+    system Formula["gz-tools2"].opt_bin/"gz", "msg"
   end
 end
