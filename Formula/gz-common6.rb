@@ -1,10 +1,9 @@
 class GzCommon6 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.0.2.tar.bz2"
-  sha256 "d87f805c5b79b06d610c50f4ed3123afcc6018d2e12759a18ca4131f7d4a6921"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.1.0.tar.bz2"
+  sha256 "e79eacbce58f6d0bc5d34f58ed363c44cf89f61562b0a7d4ea1b586441e10b65"
   license "Apache-2.0"
-  revision 6
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
 
