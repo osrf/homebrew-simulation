@@ -34,7 +34,7 @@ class Sdformat16 < Formula
   def install
     rpaths = [
       rpath,
-      rpath(source: libexec/"gz/sdformat16", target: lib),
+      rpath(source: libexec/"gz/sdformat", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
@@ -60,7 +60,9 @@ class Sdformat16 < Formula
   end
 
   test do
-    system libexec/"gz/sdformat16/gz-sdformat-sdf"
+    # Test standalone executable
+    system libexec/"gz/sdformat/gz-sdformat-sdf"
+    # Test compiling against API
     (testpath/"test.cpp").write <<-EOS
       #include <iostream>
       #include "sdf/sdf.hh"
