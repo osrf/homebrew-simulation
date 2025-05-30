@@ -49,6 +49,7 @@ class Gazebo11 < Formula
   # depends on "player"
 
   conflicts_with "gz-tools2", because: "both install bin/gz"
+  conflicts_with "gz-tools3", because: "both install bin/gz"
 
   patch do
     # Fix build when homebrew python is installed
