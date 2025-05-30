@@ -4,6 +4,7 @@ class GzMsgs11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.1.0.tar.bz2"
   sha256 "2343f0975d00fb21dd87de15603161981c920e0e4b33e735863a259f488f36d0"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
@@ -36,9 +37,13 @@ class GzMsgs11 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/msgs11", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
     cmake_args << python_cmake_arg
 
     mkdir "build" do
@@ -58,6 +63,7 @@ class GzMsgs11 < Formula
   end
 
   test do
+    system libexec/"gz/msgs11/gz-msgs"
     (testpath/"test.cpp").write <<-EOS
       #include <gz/msgs.hh>
       int main() {
