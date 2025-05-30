@@ -13,6 +13,7 @@ class GzTools3 < Formula
   depends_on "gz-cmake5"
 
   conflicts_with "gazebo11", because: "both install bin/gz"
+  conflicts_with "gz-tools2", because: "both install bin/gz"
 
   def install
     inreplace "src/gz.in" do |s|
