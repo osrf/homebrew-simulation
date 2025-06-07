@@ -1,25 +1,19 @@
-class GzTools2 < Formula
+class GzTools3 < Formula
   desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.2.tar.bz2"
-  sha256 "82147f328c601ec2a88fa1fbdd42f89c7558b6943315d5599434fd4a189c39d7"
+  url "https://github.com/gazebosim/gz-tools.git", branch: "main"
+  version "2.999.999-0-20250530"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "6eab67f804cc9881a492eaa605d03de81c89b8dcb1c97363767610614c33d6dd"
-    sha256 cellar: :any, ventura: "e606d064f2808df0c288387da842166d2cc0a85066094c9111d20c9c3faaa3dc"
-  end
+  head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools3"
 
   depends_on "cmake" => :build
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
-  depends_on "gz-cmake3"
+  depends_on "gz-cmake5"
 
   conflicts_with "gazebo11", because: "both install bin/gz"
-  conflicts_with "gz-tools3", because: "both install bin/gz"
+  conflicts_with "gz-tools2", because: "both install bin/gz"
 
   def install
     inreplace "src/gz.in" do |s|
