@@ -4,13 +4,14 @@ class GzMsgs11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.1.0.tar.bz2"
   sha256 "2343f0975d00fb21dd87de15603161981c920e0e4b33e735863a259f488f36d0"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "5feba297a63e2123a4bcf6db57b3888df6e552c82f46995dffdcf89672b0f3c6"
-    sha256 ventura: "140c7d6265187e3c74dd5d8009c1b542069906abc48abd24f5fce53be95138c6"
+    sha256 sonoma:  "828e0981c1a3ce8a8f4dbe9950963f4b438f6f89aaa2159884144b76484132bb"
+    sha256 ventura: "1d5cd76380c43227445afdbb3e125a877dc51d6e22bffadff8d416d18c1a1243"
   end
 
   depends_on "python@3.12" => [:build, :test]
@@ -36,9 +37,13 @@ class GzMsgs11 < Formula
   end
 
   def install
+    rpaths = [
+      rpath,
+      rpath(source: libexec/"gz/msgs11", target: lib),
+    ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
     cmake_args << python_cmake_arg
 
     mkdir "build" do
@@ -58,6 +63,7 @@ class GzMsgs11 < Formula
   end
 
   test do
+    system libexec/"gz/msgs11/gz-msgs"
     (testpath/"test.cpp").write <<-EOS
       #include <gz/msgs.hh>
       int main() {
