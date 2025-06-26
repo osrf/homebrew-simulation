@@ -100,5 +100,8 @@ class GzMsgs11 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.msgs11"
     end
+    # check gz msg command
+    ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
+    system Formula["gz-tools2"].opt_bin/"gz", "msg"
   end
 end
