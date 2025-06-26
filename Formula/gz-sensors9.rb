@@ -1,10 +1,9 @@
 class GzSensors9 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-9.1.0.tar.bz2"
-  sha256 "3d1aaf20fd987efc1fc29f343cc42c96e07f57e060849c779b22bb32724ded35"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-9.2.0.tar.bz2"
+  sha256 "130b84209578525b4cefbaf70b3bfa3a06465a2fd69f5179ef0d659a43402830"
   license "Apache-2.0"
-  revision 7
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors9"
 
