@@ -1,12 +1,17 @@
 class GzSensors9 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-9.1.0.tar.bz2"
-  sha256 "3d1aaf20fd987efc1fc29f343cc42c96e07f57e060849c779b22bb32724ded35"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-9.2.0.tar.bz2"
+  sha256 "af2ec9a453a830338e80e94954160030e81b3ff8f60853e7c5730cdd2950be85"
   license "Apache-2.0"
-  revision 7
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:  "2634c5f9cf86fe34d9a248d22dbcc5bbc816c6aab3ce4d099cb63e40912de04a"
+    sha256 cellar: :any, ventura: "60b7147f0e312b60bb96999057be2edd49f2122d98229afb253446092ca80f7d"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
