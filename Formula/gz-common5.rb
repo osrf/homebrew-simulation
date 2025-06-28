@@ -8,6 +8,12 @@ class GzCommon5 < Formula
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, sonoma:  "4764b8025492a411f82344f5ea390742fa8eb9015fe9a0f33a5f4ee97f826129"
+    sha256 cellar: :any, ventura: "7cebff2b0a1ab203c481c1d87265568ebd25094dd43d5a0d825c37dc3c461c8c"
+  end
+
   depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"
