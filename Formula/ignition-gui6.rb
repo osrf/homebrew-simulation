@@ -8,6 +8,12 @@ class IgnitionGui6 < Formula
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 sonoma:  "a99438a4b16a2a392f7c175873fc95844604a137ddc7290625529f0fd897c03f"
+    sha256 ventura: "81fd156b469f519da603d8ba293757a101056cbbb656c13dd0f8ea8c71a95f39"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
