@@ -5,7 +5,7 @@ on:
   pull_request:
 jobs:
   test-bot:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     env:
       HOMEBREW_FORCE_VENDOR_RUBY: 1
     steps:
