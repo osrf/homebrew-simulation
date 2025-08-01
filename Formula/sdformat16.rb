@@ -106,7 +106,8 @@ class Sdformat16 < Formula
     system cmd_not_grep_xcode
     # check python import
     pythons.each do |python|
-      system python.opt_libexec/"bin/python", "-c", "import sdformat"
+      system python.opt_libexec/"bin/python", "-c",
+        "import sdformat; sdformat.Box().size()"
     end
   end
 end

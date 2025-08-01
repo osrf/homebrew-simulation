@@ -41,8 +41,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [cmake-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake3-install_bottle-homebrew-amd64
 [cmake-ionic]: https://build.osrfoundation.org/job/gz_cmake4-install_bottle-homebrew-amd64
 [cmake-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake4-install_bottle-homebrew-amd64
-[cmake-jetty]: https://build.osrfoundation.org/job/gz_cmake4-install_bottle-homebrew-amd64
-[cmake-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake4-install_bottle-homebrew-amd64
+[cmake-jetty]: https://build.osrfoundation.org/job/gz_cmake5-install_bottle-homebrew-amd64
+[cmake-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake5-install_bottle-homebrew-amd64
 
 [common-repo]: https://github.com/gazebosim/gz-common
 [common-fortress]: https://build.osrfoundation.org/job/gz_common4-install_bottle-homebrew-amd64
@@ -51,8 +51,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [common-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common5-install_bottle-homebrew-amd64
 [common-ionic]: https://build.osrfoundation.org/job/gz_common6-install_bottle-homebrew-amd64
 [common-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common6-install_bottle-homebrew-amd64
-[common-jetty]: https://build.osrfoundation.org/job/gz_common6-install_bottle-homebrew-amd64
-[common-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common6-install_bottle-homebrew-amd64
+[common-jetty]: https://build.osrfoundation.org/job/gz_common7-install_bottle-homebrew-amd64
+[common-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common7-install_bottle-homebrew-amd64
 
 [fuel_tools-repo]: https://github.com/gazebosim/gz-fuel-tools
 [fuel_tools-fortress]: https://build.osrfoundation.org/job/gz_fuel_tools7-install_bottle-homebrew-amd64
@@ -61,8 +61,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [fuel_tools-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools9-install_bottle-homebrew-amd64
 [fuel_tools-ionic]: https://build.osrfoundation.org/job/gz_fuel_tools10-install_bottle-homebrew-amd64
 [fuel_tools-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools10-install_bottle-homebrew-amd64
-[fuel_tools-jetty]: https://build.osrfoundation.org/job/gz_fuel_tools10-install_bottle-homebrew-amd64
-[fuel_tools-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools10-install_bottle-homebrew-amd64
+[fuel_tools-jetty]: https://build.osrfoundation.org/job/gz_fuel_tools11-install_bottle-homebrew-amd64
+[fuel_tools-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools11-install_bottle-homebrew-amd64
 
 [gui-repo]: https://github.com/gazebosim/gz-gui
 [gui-fortress]: https://build.osrfoundation.org/job/gz_gui6-install_bottle-homebrew-amd64
@@ -91,8 +91,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [math-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math7-install_bottle-homebrew-amd64
 [math-ionic]: https://build.osrfoundation.org/job/gz_math8-install_bottle-homebrew-amd64
 [math-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math8-install_bottle-homebrew-amd64
-[math-jetty]: https://build.osrfoundation.org/job/gz_math8-install_bottle-homebrew-amd64
-[math-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math8-install_bottle-homebrew-amd64
+[math-jetty]: https://build.osrfoundation.org/job/gz_math9-install_bottle-homebrew-amd64
+[math-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math9-install_bottle-homebrew-amd64
 
 [msgs-repo]: https://github.com/gazebosim/gz-msgs
 [msgs-fortress]: https://build.osrfoundation.org/job/gz_msgs8-install_bottle-homebrew-amd64
@@ -101,8 +101,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [msgs-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs10-install_bottle-homebrew-amd64
 [msgs-ionic]: https://build.osrfoundation.org/job/gz_msgs11-install_bottle-homebrew-amd64
 [msgs-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs11-install_bottle-homebrew-amd64
-[msgs-jetty]: https://build.osrfoundation.org/job/gz_msgs11-install_bottle-homebrew-amd64
-[msgs-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs11-install_bottle-homebrew-amd64
+[msgs-jetty]: https://build.osrfoundation.org/job/gz_msgs12-install_bottle-homebrew-amd64
+[msgs-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs12-install_bottle-homebrew-amd64
 
 [physics-repo]: https://github.com/gazebosim/gz-physics
 [physics-fortress]: https://build.osrfoundation.org/job/gz_physics5-install_bottle-homebrew-amd64
@@ -111,8 +111,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [physics-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics7-install_bottle-homebrew-amd64
 [physics-ionic]: https://build.osrfoundation.org/job/gz_physics8-install_bottle-homebrew-amd64
 [physics-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics8-install_bottle-homebrew-amd64
-[physics-jetty]: https://build.osrfoundation.org/job/gz_physics8-install_bottle-homebrew-amd64
-[physics-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics8-install_bottle-homebrew-amd64
+[physics-jetty]: https://build.osrfoundation.org/job/gz_physics9-install_bottle-homebrew-amd64
+[physics-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics9-install_bottle-homebrew-amd64
 
 [plugin-repo]: https://github.com/gazebosim/gz-plugin
 [plugin-fortress]: https://build.osrfoundation.org/job/gz_plugin1-install_bottle-homebrew-amd64
@@ -121,8 +121,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [plugin-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin2-install_bottle-homebrew-amd64
 [plugin-ionic]: https://build.osrfoundation.org/job/gz_plugin3-install_bottle-homebrew-amd64
 [plugin-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin3-install_bottle-homebrew-amd64
-[plugin-jetty]: https://build.osrfoundation.org/job/gz_plugin3-install_bottle-homebrew-amd64
-[plugin-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin3-install_bottle-homebrew-amd64
+[plugin-jetty]: https://build.osrfoundation.org/job/gz_plugin4-install_bottle-homebrew-amd64
+[plugin-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin4-install_bottle-homebrew-amd64
 
 [rendering-repo]: https://github.com/gazebosim/gz-rendering
 [rendering-fortress]: https://build.osrfoundation.org/job/gz_rendering6-install_bottle-homebrew-amd64
@@ -131,8 +131,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [rendering-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering8-install_bottle-homebrew-amd64
 [rendering-ionic]: https://build.osrfoundation.org/job/gz_rendering9-install_bottle-homebrew-amd64
 [rendering-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering9-install_bottle-homebrew-amd64
-[rendering-jetty]: https://build.osrfoundation.org/job/gz_rendering9-install_bottle-homebrew-amd64
-[rendering-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering9-install_bottle-homebrew-amd64
+[rendering-jetty]: https://build.osrfoundation.org/job/gz_rendering10-install_bottle-homebrew-amd64
+[rendering-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering10-install_bottle-homebrew-amd64
 
 [sensors-repo]: https://github.com/gazebosim/gz-sensors
 [sensors-fortress]: https://build.osrfoundation.org/job/gz_sensors6-install_bottle-homebrew-amd64
@@ -141,8 +141,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [sensors-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors8-install_bottle-homebrew-amd64
 [sensors-ionic]: https://build.osrfoundation.org/job/gz_sensors9-install_bottle-homebrew-amd64
 [sensors-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors9-install_bottle-homebrew-amd64
-[sensors-jetty]: https://build.osrfoundation.org/job/gz_sensors9-install_bottle-homebrew-amd64
-[sensors-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors9-install_bottle-homebrew-amd64
+[sensors-jetty]: https://build.osrfoundation.org/job/gz_sensors10-install_bottle-homebrew-amd64
+[sensors-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors10-install_bottle-homebrew-amd64
 
 [sim-repo]: https://github.com/gazebosim/gz-sim
 [sim-fortress]: https://build.osrfoundation.org/job/gz_sim6-install_bottle-homebrew-amd64
@@ -171,8 +171,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [transport-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport13-install_bottle-homebrew-amd64
 [transport-ionic]: https://build.osrfoundation.org/job/gz_transport14-install_bottle-homebrew-amd64
 [transport-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport14-install_bottle-homebrew-amd64
-[transport-jetty]: https://build.osrfoundation.org/job/gz_transport14-install_bottle-homebrew-amd64
-[transport-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport14-install_bottle-homebrew-amd64
+[transport-jetty]: https://build.osrfoundation.org/job/gz_transport15-install_bottle-homebrew-amd64
+[transport-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport15-install_bottle-homebrew-amd64
 
 [utils-repo]: https://github.com/gazebosim/gz-utils
 [utils-fortress]: https://build.osrfoundation.org/job/gz_utils1-install_bottle-homebrew-amd64
@@ -181,8 +181,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [utils-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils2-install_bottle-homebrew-amd64
 [utils-ionic]: https://build.osrfoundation.org/job/gz_utils3-install_bottle-homebrew-amd64
 [utils-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils3-install_bottle-homebrew-amd64
-[utils-jetty]: https://build.osrfoundation.org/job/gz_utils3-install_bottle-homebrew-amd64
-[utils-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils3-install_bottle-homebrew-amd64
+[utils-jetty]: https://build.osrfoundation.org/job/gz_utils4-install_bottle-homebrew-amd64
+[utils-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils4-install_bottle-homebrew-amd64
 
 [sdformat-repo]: https://github.com/gazebosim/gz-sdformat
 [sdformat-fortress]: https://build.osrfoundation.org/job/sdformat12-install_bottle-homebrew-amd64
@@ -191,8 +191,8 @@ collection                       | [![Build Status][collection-fortress-badge]][
 [sdformat-harmonic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat14-install_bottle-homebrew-amd64
 [sdformat-ionic]: https://build.osrfoundation.org/job/sdformat15-install_bottle-homebrew-amd64
 [sdformat-ionic-badge]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat15-install_bottle-homebrew-amd64
-[sdformat-jetty]: https://build.osrfoundation.org/job/sdformat15-install_bottle-homebrew-amd64
-[sdformat-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat15-install_bottle-homebrew-amd64
+[sdformat-jetty]: https://build.osrfoundation.org/job/sdformat16-install_bottle-homebrew-amd64
+[sdformat-jetty-badge]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat16-install_bottle-homebrew-amd64
 
 [collection-fortress]: https://build.osrfoundation.org/job/gz_fortress-install_bottle-homebrew-amd64
 [collection-fortress-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fortress-install_bottle-homebrew-amd64

@@ -4,15 +4,9 @@ class Sdformat15 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-15.3.0.tar.bz2"
   sha256 "4855c95dcc53652e564f1c71d47d7e7ee73218efd8a99f2fa98207d175ee7c61"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "642eb6ea1a7eb99e705169366cacac94d8ca80c4876b9779589728808bebfefd"
-    sha256 ventura: "c81e9d2f4a39bc187b85efe9bec0e9abd16079166247829bc47d4e3c3da4b75c"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -111,7 +105,8 @@ class Sdformat15 < Formula
     system cmd_not_grep_xcode
     # check python import
     pythons.each do |python|
-      system python.opt_libexec/"bin/python", "-c", "import sdformat15"
+      system python.opt_libexec/"bin/python", "-c",
+        "import sdformat15; sdformat15.Box().size()"
     end
   end
 end

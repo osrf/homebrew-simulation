@@ -4,14 +4,14 @@ class IgnitionCommon4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.7.0.tar.bz2"
   sha256 "ec9bb68be9f6323f3a3a12b23259c567f9a2478951719573e1b7c906bd7e68cb"
   license "Apache-2.0"
-  revision 8
+  revision 10
 
   head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "0e8ee7b8b781fd62795753a51e8f666fb0707f72f4c754d120ac30743c89f4a8"
-    sha256 cellar: :any, ventura: "a72eee5a293829bcd52adc6f40254e88e1ae602bad14131abd0edd9a8dc6cbbc"
+    sha256 cellar: :any, sonoma:  "1405621987670d0afdbfa29e3b4a9c1365c3b1c8d44fcc7df02b8bf8ece8882a"
+    sha256 cellar: :any, ventura: "7b58b4037b23834604fdbd013f9bc8139f3c37ad88f54a575e73c4783e7b182f"
   end
 
   depends_on "cmake"
