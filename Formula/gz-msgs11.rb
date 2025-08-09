@@ -10,8 +10,8 @@ class GzMsgs11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "c862c0174c5442b00824da0d602011ff76001f5e1036c2aeaf897e853ce61efb"
-    sha256 ventura: "ee9735abb5e1a52229ac64d617c1449559640b2b64dd0abd08bc229ba185b590"
+    sha256 sonoma:  "ac7e91e4e580070b912a89e9285e8c28e25a829843a56bba5898b57abc1c11d1"
+    sha256 ventura: "0299b471f2d03262551690f8bb91352ec50054ef7dc23a95a3a4521683f58c7a"
   end
 
   depends_on "python@3.12" => [:build, :test]

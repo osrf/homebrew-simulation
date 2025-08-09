@@ -10,8 +10,8 @@ class GzGui9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "d158a26e97f8b72ddc2c2c74cc6a18a2492181bc7ee023edf8655d85b047a7fd"
-    sha256 ventura: "2be8f408abd86245717102b151010726fb7225041c44f95fa517832f514b3a86"
+    sha256 sonoma:  "dd41fc5c92a2ab3fb7443ab5446267d387380093612686e796c62b272fbbc43f"
+    sha256 ventura: "762bc11ce8fb677c4ecfc21eb12d46796aca3cdc11f932568189afbd649c7de1"
   end
 
   depends_on "cmake" => [:build, :test]
