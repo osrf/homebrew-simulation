@@ -1,18 +1,12 @@
 class GzRendering9 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-9.2.0.tar.bz2"
-  sha256 "3f2f28ea5188aa2c7794cd0d3726ebbcf9e443faad7003886a92f862eb51b3da"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-9.3.0.tar.bz2"
+  sha256 "0d5ddd8d79fd5dbdd53978f21fb0e6fbd3f8d3d0ea98427538c91d4eb19568c7"
   license "Apache-2.0"
-  revision 4
+  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "b8e1a35e6f689924c01d982845f4df8ed17fa1cdd98399af0dcb8da91c38b361"
-    sha256 ventura: "92dee019fb306d79026d5d85a026a00fe77fabc06bdea88cf95f193001d78dea"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
