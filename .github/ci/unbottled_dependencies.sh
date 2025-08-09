@@ -18,18 +18,28 @@
 # tap of a specified formula.
 #
 # Usage:
-# $ ./unbottled_dependencies.sh <formula>
+# $ ./unbottled_dependencies.sh <formula> [<bottle_tag>]
 #
 # For example, to print the unbottled dependencies of gz-harmonic from the
-# osrf/simulation tap:
+# osrf/simulation tap for the current OS and CPU architecture:
 #
 # ./unbottled_dependencies.sh gz-harmonic
+#
+# To check for unbottled dependencies of a specific OS and CPU combination,
+# pass a bottle tag as an additional parameter, for example:
+#
+# ./unbottled_dependencies.sh gz-harmonic arm64_sonoma
 
 FORMULA=${1}
+BOTTLE_TAG=${2}
 
-if [ $# -ne 1 ]; then
-  echo "unbottled_dependencies.sh <formula>"
+if [ $# -ne 1 ] && [ $# -ne 2 ]; then
+  echo "unbottled_dependencies.sh <formula> [<bottle_tag>]"
   exit 1
+fi
+
+if [ -n "${BOTTLE_TAG}" ]; then
+  BOTTLE_FLAG="--tag"
 fi
 
 for f in $(brew deps ${FORMULA} --full-name | grep ^osrf/simulation/)
@@ -38,7 +48,7 @@ do
   # but has different output for formulae that are "ready to bottle" or
   # that have "unbottled deps". So just echo the name of any formula for which
   # `brew unbottled` doesn't print "already bottled"
-  if ! brew unbottled $f | grep --quiet "already bottled"; then
+  if ! brew unbottled $f ${BOTTLE_FLAG} ${BOTTLE_TAG} | grep --quiet "already bottled"; then
     echo $f
   fi
 done
