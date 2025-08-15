@@ -4,14 +4,9 @@ class IgnitionMsgs5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-5.11.1.tar.bz2"
   sha256 "48fb5cd7859203fdcf31ca0aa6405c58893aefd59025b9380d8fae6627cc41ec"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs5"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "342cb6c8d95a79aeafa3096247d536fe8bfb9d727c6e33cbd3f3fbd0fc247ddc"
-    sha256 cellar: :any, ventura: "498d2488303d8eb67484d9c7c15203601fe3d1ce5828f3bcfec7bb8ee57e46b9"
-  end
 
   deprecate! date: "2025-01-31", because: "is past end-of-life date"
 
