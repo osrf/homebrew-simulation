@@ -4,7 +4,7 @@ class GzLaunch8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.1.tar.bz2"
   sha256 "ce89cfe1554bf64ea63bbbcd7ce9624dd488a72a688cd620f97cabab776245a7"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
@@ -30,6 +30,12 @@ class GzLaunch8 < Formula
   depends_on "qt@5"
   depends_on "sdformat15"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-launch/commit/ae0a1cd4b7e1f086280f40db88a4bb7152b99b46.patch?full_index=1"
+    sha256 "a8caa916a19df2881f4e5b956a6fffe651906832151c5d775cb4b88c62f732c6"
+  end
 
   def install
     rpaths = [
