@@ -4,7 +4,7 @@ class GzGui8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.4.0.tar.bz2"
   sha256 "1731b01a134afb11b1b3e049fc65e74fa7b5c50532406d3d68366d54016d5498"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
@@ -23,6 +23,12 @@ class GzGui8 < Formula
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-gui/commit/64031d88132c45c25f66d2bdd8e902c1a2520f0d.patch?full_index=1"
+    sha256 "b2eb3706209a8c52c3e77fcaecd5008830e209ab3915e446252dc7c7dd33415a"
+  end
 
   def install
     rpaths = [

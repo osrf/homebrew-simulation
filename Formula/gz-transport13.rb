@@ -4,7 +4,7 @@ class GzTransport13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.4.1.tar.bz2"
   sha256 "1e7051de16c8e0cadf5b357d32193ffdb3eb33775126d1f89bef29bfd02e11b8"
   license "Apache-2.0"
-  revision 7
+  revision 8
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
@@ -36,6 +36,12 @@ class GzTransport13 < Formula
 
   def python_cmake_arg(python = Formula["python@3.13"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
+  end
+
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-transport/commit/eb7a232bb205051af9a29b2277a23503d38a0fbb.patch?full_index=1"
+    sha256 "8290b87c5d462b55faaa102bfe98f36c5ed17b11155f0d218519348a881317c0"
   end
 
   def install
