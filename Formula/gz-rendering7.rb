@@ -13,6 +13,7 @@ class GzRendering7 < Formula
     sha256 ventura: "c96af0f852846c9e04e3f1f03eefb61b8c22c0d3a44f725ce26e06800c9bcf3c"
   end
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]

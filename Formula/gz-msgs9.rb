@@ -8,6 +8,7 @@ class GzMsgs9 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs9"
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
   depends_on "abseil"

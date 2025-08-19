@@ -14,6 +14,7 @@ class GzFuelTools8 < Formula
     sha256 cellar: :any, ventura: "4ffeff348c03815791216b3f8fcfd78a33a5d53a6793079a9a9b2f73185314ad"
   end
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
   depends_on "abseil"

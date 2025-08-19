@@ -14,6 +14,7 @@ class IgnitionRendering3 < Formula
     sha256 ventura: "361c9bbf4b60ce05e6b1ef1b2b8caaead714bdc2d8318ffbed167267ee5c5859"
   end
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]

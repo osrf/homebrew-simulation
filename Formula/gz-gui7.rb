@@ -14,6 +14,7 @@ class GzGui7 < Formula
     sha256 ventura: "5eb0be518dcddc659c2694bc8209eb39f2ecd831c757dc0126df1d7571a73799"
   end
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]

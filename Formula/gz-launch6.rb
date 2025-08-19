@@ -13,6 +13,7 @@ class GzLaunch6 < Formula
     sha256 ventura: "b9f73b7c071d47c9891a4dc14f2acaaba0f675d96b4f34aa9be09ed0df0e9454"
   end
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

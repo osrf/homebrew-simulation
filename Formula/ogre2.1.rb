@@ -20,6 +20,7 @@ class Ogre21 < Formula
     sha256 cellar: :any, mojave:   "f0b505985d282e7dd8b1aecc7daf51ff15c8fbb58b4b30c556fbc139ec878075"
   end
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => :build

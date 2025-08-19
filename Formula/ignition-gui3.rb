@@ -14,6 +14,7 @@ class IgnitionGui3 < Formula
     sha256 ventura: "b9d9f6bbb1d966e5e8488d51493b726a51b2ee11d40ba22edfe2ef1379e85089"
   end
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
