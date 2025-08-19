@@ -10,6 +10,8 @@ class GzMsgs9 < Formula
 
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"

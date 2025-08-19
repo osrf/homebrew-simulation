@@ -10,6 +10,8 @@ class IgnitionPhysics2 < Formula
 
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
+
   depends_on "cmake" => :build
 
   depends_on "bullet"

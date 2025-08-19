@@ -15,6 +15,8 @@ class GzTransport12 < Formula
 
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
 
+  disable! date: "2025-09-01", because: "is past end-of-life date"
+
   depends_on "doxygen" => [:build, :optional]
 
   depends_on "abseil"
