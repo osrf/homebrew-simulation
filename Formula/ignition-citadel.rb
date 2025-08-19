@@ -11,8 +11,9 @@ class IgnitionCitadel < Formula
 
   head "https://github.com/gazebosim/gz-citadel.git", branch: "main"
 
-  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
+
+  disable! date: "2025-09-01", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
 

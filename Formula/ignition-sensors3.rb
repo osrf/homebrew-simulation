@@ -14,8 +14,9 @@ class IgnitionSensors3 < Formula
     sha256 ventura: "4fd88226d7a46373efe4a9abedbf80e37e5783e9e73e7814dd10bab4d1949ab6"
   end
 
-  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-12-31", because: "is past end-of-life date"
+
+  disable! date: "2025-09-01", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]

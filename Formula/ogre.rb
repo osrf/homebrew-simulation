@@ -8,8 +8,9 @@ class Ogre < Formula
 
   option "with-cg"
 
-  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-08-31", because: "is past end-of-life date"
+
+  disable! date: "2025-09-01", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
 

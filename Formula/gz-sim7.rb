@@ -14,8 +14,9 @@ class GzSim7 < Formula
     sha256 ventura: "154f23ac5d7f0c18dc7ca1f80add3bc683756421e41cfd79ac6116b80290bb25"
   end
 
-  disable! date: "2025-09-01", because: "is past end-of-life date"
   deprecate! date: "2024-09-30", because: "is past end-of-life date"
+
+  disable! date: "2025-09-01", because: "is past end-of-life date"
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
