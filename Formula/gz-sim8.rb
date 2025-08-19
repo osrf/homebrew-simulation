@@ -45,6 +45,12 @@ class GzSim8 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-sim/commit/e727b18373de158bd67e0ba89d57c8458d6c33a8.patch?full_index=1"
+    sha256 "d05b5b8d96f997596520381ef1d54c3fd3077e1f541c459c033b37a8328b5c0b"
+  end
+
   def install
     rpaths = [
       rpath,
