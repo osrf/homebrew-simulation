@@ -23,6 +23,12 @@ class IgnitionMsgs8 < Formula
     sha256 "02dd3ee467dcdd1b5b1c7c26d56ebea34276fea7ff3611fb53bf27b99e7ba4bc"
   end
 
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-msgs/commit/01f6ee53c20e1d5a5dece1b60e98c78cdbc1ea6c.patch?full_index=1"
+    sha256 "4aab8b47f83757014c56f1aac3f3da147d828dc6a935c09618e673424778084e"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
