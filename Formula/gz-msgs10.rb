@@ -6,7 +6,7 @@ class GzMsgs10 < Formula
   license "Apache-2.0"
   revision 9
 
-  head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
+  # head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
