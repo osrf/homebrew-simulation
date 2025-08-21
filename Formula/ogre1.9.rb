@@ -7,7 +7,7 @@ class Ogre19 < Formula
   license "MIT"
   revision 11
 
-  head "https://github.com/OGRECave/ogre.git", branch: "master"
+  # head "https://github.com/OGRECave/ogre.git", branch: "master"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
