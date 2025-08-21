@@ -25,7 +25,7 @@
 #
 # ./unbottled_dependencies.sh gz-harmonic
 #
-# To check for unbottled dependencies of a specific OS and CPU combination,
+# To check for unbottled dependencies for a specific OS and CPU combination,
 # pass a bottle tag as an additional parameter, for example:
 #
 # ./unbottled_dependencies.sh gz-harmonic arm64_sonoma
