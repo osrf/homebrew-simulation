@@ -1,11 +1,19 @@
 class GzCmake5 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
-  version "4.999.999-0-20250424"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.0.0~pre1.tar.bz2"
+  version "5.0.0-pre1"
+  sha256 "41ec9868474ade300fc2a56543a8cbe1b7d220c55bfe959b369214827e3ed89e"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9c8bcb0ba42aaefdf44badcefe5b7b9a802acb13f22e507b2d0d0c6e800b9821"
+    sha256 cellar: :any_skip_relocation, sonoma:       "65cc1bacd528d84e72702a9ea96b682b6d3d07075e906550456d214461454941"
+    sha256 cellar: :any_skip_relocation, ventura:      "58d1a7d82cbd191cd309f79c0983ee173ebb873f5a6c7e7ac42fbe077428760b"
+  end
+
+  # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
 
   depends_on "cmake"
   depends_on "pkgconf"
