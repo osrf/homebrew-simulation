@@ -6,7 +6,7 @@ class GzCmake5 < Formula
   sha256 "41ec9868474ade300fc2a56543a8cbe1b7d220c55bfe959b369214827e3ed89e"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
+  # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
 
   depends_on "cmake"
   depends_on "pkgconf"
