@@ -361,13 +361,14 @@ The `sha256` will be printed to the console, which can then be used to update th
 ## Jenkins implementation details
 
 The [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
-jenkins job currently builds bottles for macOS 10.15 `catalina` and 10.16 `big_sur`
+jenkins job currently builds bottles for macOS 13 `ventura` and 14 `sonoma` / `arm64_sonoma`
 using the following job configurations and the
 [homebrew\_bottle\_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
 script:
 
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_catalina)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_catalina/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_catalina
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_bigsur)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_bigsur/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_bigsur
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_ventura)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_ventura/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_ventura
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_arm64_sonoma)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sonoma/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sonoma
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_sonoma)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_sonoma/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_sonoma
 
 If the bottle building job finishes without errors for each build configuration,
 it will trigger a subsequent [repository\_uploader\_packages](https://build.osrfoundation.org/job/repository_uploader_packages/)
