@@ -5,7 +5,7 @@ class GzTools2 < Formula
   sha256 "82147f328c601ec2a88fa1fbdd42f89c7558b6943315d5599434fd4a189c39d7"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
+  # head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

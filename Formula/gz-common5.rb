@@ -6,7 +6,7 @@ class GzCommon5 < Formula
   license "Apache-2.0"
   revision 10
 
-  head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
+  # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

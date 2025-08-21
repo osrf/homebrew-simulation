@@ -5,7 +5,7 @@ class GzPlugin2 < Formula
   sha256 "5c4471d77930cf53b47014d1082702a433f18fdcd7796cad6c23c52595ebec19"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
+  # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
