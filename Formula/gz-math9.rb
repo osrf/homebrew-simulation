@@ -1,8 +1,9 @@
 class GzMath9 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
-  version "8.999.999-0-20250425"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-9.0.0~pre1.tar.bz2"
+  version "9.0.0-pre1"
+  sha256 "4e53b164bf3a1676b8b4a92fb9de38ced2813d155a03522b53311950b5bf6cb3"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
