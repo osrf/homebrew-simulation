@@ -6,7 +6,7 @@ class IgnitionRendering6 < Formula
   license "Apache-2.0"
   revision 5
 
-  head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
+  # head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

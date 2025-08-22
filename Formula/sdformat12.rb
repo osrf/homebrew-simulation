@@ -6,7 +6,7 @@ class Sdformat12 < Formula
   license "Apache-2.0"
   revision 7
 
-  head "https://github.com/gazebosim/sdformat.git", branch: "sdf12"
+  # head "https://github.com/gazebosim/sdformat.git", branch: "sdf12"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

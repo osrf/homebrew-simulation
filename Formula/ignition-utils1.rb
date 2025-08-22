@@ -5,7 +5,7 @@ class IgnitionUtils1 < Formula
   sha256 "0a34a05d0acee29d6571437c60bb7ca9012fc5f4ed9c445dfa65765702468bdb"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
+  # head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

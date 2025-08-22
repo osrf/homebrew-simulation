@@ -6,7 +6,7 @@ class IgnitionCommon4 < Formula
   license "Apache-2.0"
   revision 10
 
-  head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
+  # head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

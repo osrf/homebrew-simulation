@@ -6,7 +6,7 @@ class IgnitionPhysics5 < Formula
   license "Apache-2.0"
   revision 24
 
-  head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
+  # head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

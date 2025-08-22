@@ -5,7 +5,7 @@ class IgnitionMath6 < Formula
   sha256 "a9e96a4e28d7d92d4d054cdae7cef28f1d8397b72433398bfc68855956531170"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
+  # head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
