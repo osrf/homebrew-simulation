@@ -1,7 +1,7 @@
 class GzUtils4 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://github.com/gazebosim/gz-utils.git", branch: "main"
+  url "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils4"
   version "3.999.999-0-20250425"
   license "Apache-2.0"
 
