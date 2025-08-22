@@ -9,11 +9,12 @@ class IgnitionPlugin1 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:   "f5b2ad4b8721da99877710d5122cea321b6426bf25c0d27a27eafee5643ad384"
-    sha256 cellar: :any, ventura:  "2c9887d57d32fb9c58d9497d38c12889039a554290b49bcd9d229a577cbb99eb"
-    sha256 cellar: :any, monterey: "c6e836c62b75fcfee2bdf7a1b7bdd232b351591efaceef0e05b37c483cbbef83"
-    sha256 cellar: :any, big_sur:  "712f0971c2fa85a07b4e5971d4801ad7f324cd644cd170a603e850c57c4a30cd"
-    sha256 cellar: :any, catalina: "fe41a0a740d6c61fc5dc145c89e43c9fc3476588c56b606786d7de122c3276f1"
+    sha256 cellar: :any, arm64_sonoma: "8a33c0a7ff05a05c07c8fcc3c3e35c9bd65fabf0abfa1b55f8ac71c5bd0f0b87"
+    sha256 cellar: :any, sonoma:       "f5b2ad4b8721da99877710d5122cea321b6426bf25c0d27a27eafee5643ad384"
+    sha256 cellar: :any, ventura:      "2c9887d57d32fb9c58d9497d38c12889039a554290b49bcd9d229a577cbb99eb"
+    sha256 cellar: :any, monterey:     "c6e836c62b75fcfee2bdf7a1b7bdd232b351591efaceef0e05b37c483cbbef83"
+    sha256 cellar: :any, big_sur:      "712f0971c2fa85a07b4e5971d4801ad7f324cd644cd170a603e850c57c4a30cd"
+    sha256 cellar: :any, catalina:     "fe41a0a740d6c61fc5dc145c89e43c9fc3476588c56b606786d7de122c3276f1"
   end
 
   depends_on "cmake"
