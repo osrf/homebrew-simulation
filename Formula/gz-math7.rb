@@ -6,12 +6,13 @@ class GzMath7 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
+  # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "99e604672f50796e7fd63a490a7c46afcc18e3c3f605da20d275749912e3c8de"
-    sha256 cellar: :any, ventura: "1475598d5d7e72eeee07a39b092b56561e2a03ebd453a5910a885550f3438f84"
+    sha256 cellar: :any, arm64_sonoma: "11ddff8d00f115477f88e6f44c1bbf2d0228ab37a389d8f11366e407f0ae11d2"
+    sha256 cellar: :any, sonoma:       "99e604672f50796e7fd63a490a7c46afcc18e3c3f605da20d275749912e3c8de"
+    sha256 cellar: :any, ventura:      "1475598d5d7e72eeee07a39b092b56561e2a03ebd453a5910a885550f3438f84"
   end
 
   depends_on "cmake" => :build
