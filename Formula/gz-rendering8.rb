@@ -6,7 +6,7 @@ class GzRendering8 < Formula
   license "Apache-2.0"
   revision 7
 
-  head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
+  # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
