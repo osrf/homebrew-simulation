@@ -6,7 +6,7 @@ class GzMath8 < Formula
   license "Apache-2.0"
   revision 2
 
-  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
+  # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
