@@ -1,7 +1,7 @@
 class GzMsgs12 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-msgs.git", branch: "main"
+  url "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs12"
   version "11.999.999-0-20250528"
   license "Apache-2.0"
 
