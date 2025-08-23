@@ -1,8 +1,9 @@
 class GzCommon7 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
-  version "6.999.999-0-20250430"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-7.0.0~pre1.tar.bz2"
+  version "7.0.0-pre1"
+  sha256 "6fdc5f4644022d4b5e9680fe68b46e66af6d99d86d9330b3f1ca4712e5a067c3"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
