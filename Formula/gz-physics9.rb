@@ -1,7 +1,7 @@
 class GzPhysics9 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://github.com/gazebosim/gz-physics.git", branch: "main"
+  url "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics9"
   version "8.999.999-0-20250501"
   license "Apache-2.0"
 
