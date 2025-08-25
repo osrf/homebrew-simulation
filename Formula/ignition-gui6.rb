@@ -4,7 +4,7 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.8.0.tar.bz2"
   sha256 "dd4f26100f4d1343f068ba36f2b8394a0cddb337efde7b4a21c1b0f66ce496c9"
   license "Apache-2.0"
-  revision 59
+  revision 60
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
@@ -28,6 +28,12 @@ class IgnitionGui6 < Formula
     # Fix for compatibility with protobuf 23.2
     url "https://github.com/gazebosim/gz-gui/commit/f65395f734df81b22dcd10d68d2802b61d6b72bc.patch?full_index=1"
     sha256 "50c63503ca4dc48c677e254b3a50a9cffd3ffbee9b6d85a60b36c78a3eb3ba05"
+  end
+
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-gui/commit/c1c115519dab226f4332be6b3ff3054b687e2124.patch?full_index=1"
+    sha256 "71ef1a763546712312bed3685156d572b57a42bd89d642fea156862efcb41b2b"
   end
 
   def install
