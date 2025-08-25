@@ -32,6 +32,12 @@ class IgnitionLaunch5 < Formula
     sha256 "eeb5a263154c9a946c9021eb847e0a01f9788daf3c1c31522c5115973c46710f"
   end
 
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-launch/commit/b2ad7b5210271dbb2388b91d5610d6086a912e0f.patch?full_index=1"
+    sha256 "4d2e12dd78d6c44840304d16031df505c7a58d61fd2630e7b4c471b8081a15cf"
+  end
+
   def install
     rpaths = [
       rpath,
