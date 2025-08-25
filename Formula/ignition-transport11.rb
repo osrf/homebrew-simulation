@@ -4,7 +4,7 @@ class IgnitionTransport11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.4.1.tar.bz2"
   sha256 "f18501cbd5c78b584b3db1960a3049d6ae416bab7f0289af64eadda13d1c5da5"
   license "Apache-2.0"
-  revision 47
+  revision 48
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport11"
@@ -23,6 +23,18 @@ class IgnitionTransport11 < Formula
   depends_on "protobuf"
   depends_on "tinyxml2"
   depends_on "zeromq"
+
+  patch do
+    # Fix for compatibility with protobuf 28
+    url "https://github.com/gazebosim/gz-transport/commit/9ea158bf31c62c1bbd9330aec281b4debc12938f.patch?full_index=1"
+    sha256 "60864aaa2876c80f16afe6d93a906b417ceb18a4c3d535d5d780c275853e4a83"
+  end
+
+  patch do
+    # Fix for compatibility with protobuf 30
+    url "https://github.com/gazebosim/gz-transport/commit/dec5411d7032478ac86c1c902ebecb6c2d8cd1a8.patch?full_index=1"
+    sha256 "43e448c9bd51c5bd1bbbdf9cce615d803ddb59f8420095f15a5d78124daeaf51"
+  end
 
   def install
     rpaths = [
