@@ -1,17 +1,17 @@
 class GzTools2 < Formula
   desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.2.tar.bz2"
-  sha256 "82147f328c601ec2a88fa1fbdd42f89c7558b6943315d5599434fd4a189c39d7"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.3.tar.bz2"
+  sha256 "86ea83e1628ad904b456297531f1469f4c3a4df569a6c40e8f8c77f0e3e46156"
   license "Apache-2.0"
 
   # head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sonoma: "f52c0a3cc13c4e8152297d0d1b1a6898b2c01e4065f4ed5e8149850dc62d07cb"
-    sha256 cellar: :any, sonoma:       "6eab67f804cc9881a492eaa605d03de81c89b8dcb1c97363767610614c33d6dd"
-    sha256 cellar: :any, ventura:      "e606d064f2808df0c288387da842166d2cc0a85066094c9111d20c9c3faaa3dc"
+    sha256 cellar: :any, arm64_sonoma: "2c8a576087df170bb575a92b9a679430c5c583b1672a9f1d34e4a57a4f2c8102"
+    sha256 cellar: :any, sonoma:       "d18bf41adcee1a222f1fa88b176de06837af97f41afdb8fb8deb7d1ee2e1ec72"
+    sha256 cellar: :any, ventura:      "abe1874c7f6612299211f14d8a46b8b08135d3fc8553afe54ccb7895cfc837c9"
   end
 
   depends_on "cmake" => :build
