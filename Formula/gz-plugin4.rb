@@ -1,7 +1,7 @@
 class GzPlugin4 < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://github.com/gazebosim/gz-plugin.git", branch: "main"
+  url "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin4"
   version "3.999.999-0-20250428"
   license "Apache-2.0"
 
