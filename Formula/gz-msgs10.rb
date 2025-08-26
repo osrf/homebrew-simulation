@@ -6,6 +6,13 @@ class GzMsgs10 < Formula
   license "Apache-2.0"
   revision 11
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sonoma: "eefa9ee1df2210fc3504d0148f011de92e8168edb0aad9f3bd3674bd94e61c20"
+    sha256 sonoma:       "3772767a737c89395aad8c72c6f2b9c3087b895454a50b743ffb0c44c04bee1e"
+    sha256 ventura:      "eee940e084c4bb0691b2d725f41ca8807b6e6e9ddbeceea6756e7ae2a5a196bf"
+  end
+
   # head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
 
   depends_on "python@3.12" => [:build, :test]
