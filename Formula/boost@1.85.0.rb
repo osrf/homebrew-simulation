@@ -13,6 +13,8 @@ class BoostAT1850 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2025-09-30", because: "not used by supported package"
+
   depends_on "icu4c@76"
   depends_on "xz"
   depends_on "zstd"
