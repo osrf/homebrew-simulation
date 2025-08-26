@@ -1,7 +1,7 @@
 class GzFuelTools11 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
+  url "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools11"
   version "10.999.999-0-20250502"
   license "Apache-2.0"
 
