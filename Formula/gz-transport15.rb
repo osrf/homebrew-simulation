@@ -1,11 +1,11 @@
 class GzTransport15 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-transport.git", branch: "main"
+  url "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport15"
   version "14.999.999-0-20250515"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-transport.git", branch: "main"
+  head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport15"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
