@@ -4,7 +4,7 @@ class IgnitionCommon4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-common/releases/ignition-common4-4.7.0.tar.bz2"
   sha256 "ec9bb68be9f6323f3a3a12b23259c567f9a2478951719573e1b7c906bd7e68cb"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
@@ -19,6 +19,18 @@ class IgnitionCommon4 < Formula
   depends_on "ossp-uuid"
   depends_on "pkgconf"
   depends_on "tinyxml2"
+
+  patch do
+    # Fix for compatibility with ffmpeg 8, part 1
+    url "https://github.com/gazebosim/gz-common/commit/e1a21e064ed799c830389a8c139a297215c9715f.patch?full_index=1"
+    sha256 "3b4fbb850016a911a00ede06da6b1d2d48b91ab06adf91912884467a668dc4f0"
+  end
+
+  patch do
+    # Fix for compatibility with ffmpeg 8, part 2
+    url "https://github.com/gazebosim/gz-common/commit/ac3fd976334ce3712f773179dd6c820ba286b652.patch?full_index=1"
+    sha256 "85422d4b7579a9b8612c101f6af28818031c27a6a4cc36b756d146166ae4e800"
+  end
 
   def install
     cmake_args = std_cmake_args
