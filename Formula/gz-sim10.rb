@@ -1,7 +1,7 @@
 class GzSim10 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://github.com/gazebosim/gz-sim.git", branch: "main"
+  url "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
   version "9.999.999-0-20250516"
   license "Apache-2.0"
 
