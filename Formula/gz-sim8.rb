@@ -8,6 +8,13 @@ class GzSim8 < Formula
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sonoma: "adf1dbe7ddfaf9b6a0e3699ecd7962ddd77ca3bf1b989bf75553f3afba7f3547"
+    sha256 sonoma:       "6c2bae2adfced0562a906a47f418bf41703a59ec4577dd44ebaa3d1bad3f0030"
+    sha256 ventura:      "78fe749d16a8e2618c79f0f2a939979ca6ef537e63658897b57ee0c00d033af9"
+  end
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "python@3.13" => [:build, :test]
