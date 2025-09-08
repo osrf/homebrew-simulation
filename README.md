@@ -383,14 +383,14 @@ When we add support for a new version of macOS, we need to build bottles for tha
 while ideally keeping the existing bottles. This can be done by using the `--keep-old`
 parameter with `brew test-bot` and `brew bottle`.
 Since [gazebo-tooling/release-tools#556](https://github.com/gazebo-tooling/release-tools/pull/556),
-bottle builds can be triggered for a specific macOS / architecture combination using `--keep-old`
+bottle builds can be triggered for a specific macOS / architecture combination
 by adding special tags to the `build bottle` comment in a homebrew-simulation pull request.
 Use `brew-bot-tag:` along with `build-for-new-distro-{distro}` in the comment,
 where `{distro}` is the version string used in homebrew bottle blocks
 (such as `ventura` or `arm64_sonoma`). See [this comment](https://github.com/osrf/homebrew-simulation/pull/3109#issuecomment-3211703894)
 in [osrf/homebrew-simulation#3109](https://github.com/osrf/homebrew-simulation/pull/3109)
 as an example that triggered a bottle build for `arm64_sonoma` only.
-Note that the `--keep-old` flag only works if the pull request does not change the
+Note that this approach only works if the pull request does not change the
 formula version. Adding a comment to a formula (as in
 [osrf/homebrew-simulation#1694](https://github.com/osrf/homebrew-simulation/pull/1694))
 is sufficient.
