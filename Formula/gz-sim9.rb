@@ -7,9 +7,9 @@ class GzSim9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sonoma: "28a464b246c4011c7168604cdfa97310465fe9f498a0a957e8ab2a977109db0a"
-    sha256 sonoma:       "5e286c92b7a5c6f42a1660057d97fcfa0b266f4c8f43deadd7e2aeb2558a211d"
-    sha256 ventura:      "b3895e2f4a2a4bcc40b85d230bd8f5ce9ed321e51322998bb2f70bd561f09167"
+    sha256 arm64_sonoma: "e154c43bcf12327a836988f581b95a61e94ca250f3d0b20590d4e0e2284d9733"
+    sha256 sonoma:       "c48b35506085b1506eed289e99010b0f3a47082af445005120bdcb3e787e30b4"
+    sha256 ventura:      "90b610b43d3a76067aec5a66e36bcf65c466c823bc6f0540af4ffe21b342bfff"
   end
 
   # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
