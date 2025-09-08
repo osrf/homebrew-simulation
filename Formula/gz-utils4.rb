@@ -1,9 +1,17 @@
 class GzUtils4 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://github.com/gazebosim/gz-utils.git", branch: "main"
-  version "3.999.999-0-20250425"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-4.0.0~pre1.tar.bz2"
+  version "4.0.0-pre1"
+  sha256 "4070d0756ac2a555a8c2f4f559b100f2e85ec701efe6fbea3aab9f5cb61589cd"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sonoma: "f4464eaaa50af0c4691b197e2b7d11672316717642a8f606762d5d9ce4a613f3"
+    sha256 cellar: :any, sonoma:       "e5c93a09e9bb33700ef862616ad58d0521e37392e12d7c4f8ffb2bcf1d36fa98"
+    sha256 cellar: :any, ventura:      "059b98331dfd901b69a47086d6a186a5283a13c65a92dae36870b4d9cef6de59"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]

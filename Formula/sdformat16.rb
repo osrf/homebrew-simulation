@@ -1,7 +1,7 @@
 class Sdformat16 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/gazebosim/sdformat.git", branch: "main"
+  url "https://github.com/gazebosim/sdformat.git", branch: "sdf16"
   version "15.999.999-0-20250428"
   license "Apache-2.0"
 

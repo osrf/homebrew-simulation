@@ -1,7 +1,7 @@
 class GzMath9 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-math.git", branch: "main"
+  url "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
   version "8.999.999-0-20250425"
   license "Apache-2.0"
 

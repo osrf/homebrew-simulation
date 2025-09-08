@@ -4,15 +4,16 @@ class GzCommon6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.1.0.tar.bz2"
   sha256 "e79eacbce58f6d0bc5d34f58ed363c44cf89f61562b0a7d4ea1b586441e10b65"
   license "Apache-2.0"
-  revision 4
-
-  head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
+  revision 6
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:  "a4a8abf5a7d372e77ee7ef4f6a548b794d89dbd1f81cbd00596a7197a845596e"
-    sha256 cellar: :any, ventura: "465892ba5e27f13d10bfef486a1a6d72786fff853943aad733b083a19da8721b"
+    sha256 cellar: :any, arm64_sonoma: "aeb3c3050a55797b34a6a21760b223e86374669cff052e7f74c0b5085a5ef6aa"
+    sha256 cellar: :any, sonoma:       "3205b56c2c0ee9b7b365309dd99dc800faca4b5c7eb0d1192b0fd6b66b4c740d"
+    sha256 cellar: :any, ventura:      "adc7d9c41b69f646992fca88dbc0d51155aed7f81179ddf5192824329542e8a8"
   end
+
+  # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
 
   depends_on "assimp"
   depends_on "cmake"

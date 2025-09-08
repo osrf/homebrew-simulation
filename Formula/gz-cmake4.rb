@@ -5,12 +5,13 @@ class GzCmake4 < Formula
   sha256 "669ac0fbcb3d811db2c394ecdfc1faf48325dd533a11e8ade5fd643ac17c1698"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake4"
+  # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake4"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, sonoma:  "eb9861dd42a5137c9d4cc58777b1521c84e12d01e92e7df685ff918937c1ebe2"
-    sha256 cellar: :any_skip_relocation, ventura: "70891eec4fdbab5366f1a3a160a282fe6abcfc86c0c570f141470165e414d751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9a5f35d977bed3779f9d073a29609d3e2122c6618800ef1d0d3dcd11cc801524"
+    sha256 cellar: :any_skip_relocation, sonoma:       "eb9861dd42a5137c9d4cc58777b1521c84e12d01e92e7df685ff918937c1ebe2"
+    sha256 cellar: :any_skip_relocation, ventura:      "70891eec4fdbab5366f1a3a160a282fe6abcfc86c0c570f141470165e414d751"
   end
 
   depends_on "cmake"

@@ -7,14 +7,15 @@ class Ogre22 < Formula
   license "MIT"
   revision 2
 
-  head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
+  # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, sonoma:   "69e1b4dcd9ab083f9328a82930e544621b19afffa4101f4447ac2fc7da1ac2df"
-    sha256 cellar: :any, ventura:  "39ee442113fbe0e76dd71f6cd9b90fb3cbb16de3a771c32d6fe12a0a4679dbdc"
-    sha256 cellar: :any, monterey: "0bd7b3f41e27834ff7ac6ae7c0711e18cb64bb0d1795903e98335e8618e3eb22"
-    sha256 cellar: :any, big_sur:  "7d348ad79b4dc945b7305523d0826bb42d42747c921433fe792f4fe68d2e5191"
+    sha256 cellar: :any, arm64_sonoma: "e4aff5408f38e2ddbdda3b582f3d445de431e8723640c688574a4fe692e7f7c3"
+    sha256 cellar: :any, sonoma:       "69e1b4dcd9ab083f9328a82930e544621b19afffa4101f4447ac2fc7da1ac2df"
+    sha256 cellar: :any, ventura:      "39ee442113fbe0e76dd71f6cd9b90fb3cbb16de3a771c32d6fe12a0a4679dbdc"
+    sha256 cellar: :any, monterey:     "0bd7b3f41e27834ff7ac6ae7c0711e18cb64bb0d1795903e98335e8618e3eb22"
+    sha256 cellar: :any, big_sur:      "7d348ad79b4dc945b7305523d0826bb42d42747c921433fe792f4fe68d2e5191"
   end
 
   depends_on "cmake" => :build

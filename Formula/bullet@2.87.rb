@@ -14,6 +14,8 @@ class BulletAT287 < Formula
   deprecated_option "build-demo" => "with-demo"
   deprecated_option "double-precision" => "with-double-precision"
 
+  deprecate! date: "2025-09-30", because: "not used by supported package"
+
   depends_on "cmake" => :build
 
   def install

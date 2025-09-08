@@ -18,24 +18,34 @@
 # tap of a specified formula.
 #
 # Usage:
-# $ ./bottled_dependents.sh <formula>
+# $ ./bottled_dependents.sh <formula> [<bottle_tag>]
 #
 # For example, to print the bottled dependents of gz-msgs10 from the
-# osrf/simulation tap:
+# osrf/simulation tap for the current OS and CPU architecture:
 #
 # ./bottled_dependents.sh gz-msgs10
+#
+# To print the bottled dependents for a specific OS and CPU combination,
+# pass a bottle tag as an additional parameter, for example:
+#
+# ./bottled_dependents.sh gz-msgs10 arm64_sonoma
 
 FORMULA=${1}
+BOTTLE_TAG=${2}
 
-if [ $# -ne 1 ]; then
-  echo "bottled_dependents.sh <formula>"
+if [ $# -ne 1 ] && [ $# -ne 2 ]; then
+  echo "bottled_dependents.sh <formula> [<bottle_tag>]"
   exit 1
+fi
+
+if [ -n "${BOTTLE_TAG}" ]; then
+  BOTTLE_FLAG="--tag"
 fi
 
 for f in $(brew uses ${FORMULA} --formulae --eval-all | grep ^osrf/simulation/)
 do
   # brew unbottled prints "already bottled" for bottled formulae
-  if brew unbottled $f | grep --quiet "already bottled"; then
+  if brew unbottled $f ${BOTTLE_FLAG} ${BOTTLE_TAG} | grep --quiet "already bottled"; then
     echo $f
   fi
 done

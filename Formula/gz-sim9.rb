@@ -1,18 +1,18 @@
 class GzSim9 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.3.0.tar.bz2"
-  sha256 "9edd898fa2ee6b6c0223529b4b0d594bdb576d3ed7e86ef70d7b3869dad59f36"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.4.0.tar.bz2"
+  sha256 "993dedc5951d8f04279a1a01caaad68d4fa337dc34436bbd3fa24f5ee7c9aa45"
   license "Apache-2.0"
-  revision 3
-
-  head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 sonoma:  "7c544a02fa26f9da009c482de2cc733666c2efe743aee3430c11c7c284fa972e"
-    sha256 ventura: "ff7515c7a8560e3c774ece332f3ee2fa09b6e8f47c4521055833eea57d598602"
+    sha256 arm64_sonoma: "e154c43bcf12327a836988f581b95a61e94ca250f3d0b20590d4e0e2284d9733"
+    sha256 sonoma:       "c48b35506085b1506eed289e99010b0f3a47082af445005120bdcb3e787e30b4"
+    sha256 ventura:      "90b610b43d3a76067aec5a66e36bcf65c466c823bc6f0540af4ffe21b342bfff"
   end
+
+  # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
