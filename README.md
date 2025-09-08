@@ -1,6 +1,6 @@
 Build | Status
 -- | --
-brew test-bot GitHub action | ![brew test-bot](https://github.com/osrf/homebrew-simulation/workflows/brew%20test-bot/badge.svg?branch=master&event=push)
+brew test-bot GitHub action | [![brew test-bot](https://github.com/osrf/homebrew-simulation/actions/workflows/main.yml/badge.svg)](https://github.com/osrf/homebrew-simulation/actions/workflows/main.yml)
 
 homebrew-simulation
 ===================
