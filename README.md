@@ -361,13 +361,14 @@ The `sha256` will be printed to the console, which can then be used to update th
 ## Jenkins implementation details
 
 The [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
-jenkins job currently builds bottles for macOS 10.15 `catalina` and 10.16 `big_sur`
+jenkins job currently builds bottles for macOS 13 `ventura` and 14 `sonoma` / `arm64_sonoma`
 using the following job configurations and the
 [homebrew\_bottle\_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
 script:
 
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_catalina)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_catalina/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_catalina
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_bigsur)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_bigsur/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_bigsur
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_ventura)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_ventura/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_ventura
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_arm64_sonoma)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sonoma/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sonoma
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_sonoma)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_sonoma/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_sonoma
 
 If the bottle building job finishes without errors for each build configuration,
 it will trigger a subsequent [repository\_uploader\_packages](https://build.osrfoundation.org/job/repository_uploader_packages/)
@@ -381,15 +382,15 @@ using [this script](https://github.com/ignition-tooling/release-tools/blob/maste
 When we add support for a new version of macOS, we need to build bottles for that formula,
 while ideally keeping the existing bottles. This can be done by using the `--keep-old`
 parameter with `brew test-bot` and `brew bottle`.
-Since [ignition-tooling/release-tools#556](https://github.com/ignition-tooling/release-tools/pull/556),
-bottle builds can be triggered for a specified version of macOS using `--keep-old`
+Since [gazebo-tooling/release-tools#556](https://github.com/gazebo-tooling/release-tools/pull/556),
+bottle builds can be triggered for a specific macOS / architecture combination
 by adding special tags to the `build bottle` comment in a homebrew-simulation pull request.
 Use `brew-bot-tag:` along with `build-for-new-distro-{distro}` in the comment,
 where `{distro}` is the version string used in homebrew bottle blocks
-(such as `catalina` or `big_sur`). See [this comment](https://github.com/osrf/homebrew-simulation/pull/1694#issuecomment-978507608)
-in [osrf/homebrew-simulation#1694](https://github.com/osrf/homebrew-simulation/pull/1694)
-as an example that triggered a bottle build for `big_sur` only.
-Note that the `--keep-old` flag only works if the pull request does not change the
+(such as `ventura` or `arm64_sonoma`). See [this comment](https://github.com/osrf/homebrew-simulation/pull/3109#issuecomment-3211703894)
+in [osrf/homebrew-simulation#3109](https://github.com/osrf/homebrew-simulation/pull/3109)
+as an example that triggered a bottle build for `arm64_sonoma` only.
+Note that this approach only works if the pull request does not change the
 formula version. Adding a comment to a formula (as in
 [osrf/homebrew-simulation#1694](https://github.com/osrf/homebrew-simulation/pull/1694))
 is sufficient.
