@@ -1,8 +1,9 @@
 class GzTransport15 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport15"
-  version "14.999.999-0-20250515"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-15.0.0~pre2.tar.bz2"
+  version "15.0.0-pre2"
+  sha256 "4c15efe1b78cc97e12715293550785cb40073a3bcc0cccc897951fc44faf5e94"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport15"
