@@ -1,8 +1,9 @@
 class Sdformat16 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://github.com/gazebosim/sdformat.git", branch: "sdf16"
-  version "15.999.999-0-20250428"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-16.0.0~pre2.tar.bz2"
+  version "16.0.0-pre2"
+  sha256 "538850c8fa9e2a801b83164e2fd184b145c9e5b1c44f9f790c20aee8a5c83c3f"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf16"
