@@ -16,7 +16,6 @@ class GzRendering10 < Formula
   depends_on "gz-math9"
   depends_on "gz-plugin4"
   depends_on "gz-utils4"
-  depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.3"
 

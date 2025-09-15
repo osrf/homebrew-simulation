@@ -20,7 +20,6 @@ class GzTransport15 < Formula
   depends_on "gz-msgs12"
   depends_on "gz-tools2"
   depends_on "gz-utils4"
-  depends_on macos: :mojave # c++17
   depends_on "ossp-uuid"
   depends_on "pkgconf"
   depends_on "protobuf"

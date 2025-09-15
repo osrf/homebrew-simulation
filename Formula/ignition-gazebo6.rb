@@ -27,7 +27,6 @@ class IgnitionGazebo6 < Formula
   depends_on "ignition-tools"
   depends_on "ignition-transport11"
   depends_on "ignition-utils1"
-  depends_on macos: :mojave # c++17
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "python@3.11"

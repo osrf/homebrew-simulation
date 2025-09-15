@@ -12,7 +12,6 @@ class IgnitionMsgs8 < Formula
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"
   depends_on "ignition-tools"
-  depends_on macos: :high_sierra # c++17
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "tinyxml2"
