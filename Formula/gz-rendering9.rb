@@ -23,7 +23,6 @@ class GzRendering9 < Formula
   depends_on "gz-math8"
   depends_on "gz-plugin3"
   depends_on "gz-utils3"
-  depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.3"
 

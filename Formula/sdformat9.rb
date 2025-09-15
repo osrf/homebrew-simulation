@@ -23,7 +23,6 @@ class Sdformat9 < Formula
   depends_on "doxygen"
   depends_on "ignition-math6"
   depends_on "ignition-tools"
-  depends_on macos: :mojave # c++17
   depends_on "tinyxml1"
   depends_on "urdfdom"
 

@@ -15,7 +15,6 @@ class GzCommon7 < Formula
   depends_on "gz-cmake5"
   depends_on "gz-math9"
   depends_on "gz-utils4"
-  depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkgconf"
   depends_on "spdlog"

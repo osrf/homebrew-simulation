@@ -17,7 +17,6 @@ class GzPhysics9 < Formula
   depends_on "gz-math9"
   depends_on "gz-plugin4"
   depends_on "gz-utils4"
-  depends_on macos: :mojave # c++17
   depends_on "pkgconf"
   depends_on "sdformat16"
   depends_on "tinyxml2"

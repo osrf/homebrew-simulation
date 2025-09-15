@@ -25,7 +25,6 @@ class IgnitionRendering6 < Formula
   depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
-  depends_on macos: :mojave # c++17
   depends_on "ogre1.9"
   depends_on "ogre2.2"
 

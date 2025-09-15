@@ -24,7 +24,6 @@ class GzCommon5 < Formula
   depends_on "gz-cmake3"
   depends_on "gz-math7"
   depends_on "gz-utils2"
-  depends_on macos: :high_sierra # c++17
   depends_on "ossp-uuid"
   depends_on "pkgconf"
   depends_on "tinyxml2"

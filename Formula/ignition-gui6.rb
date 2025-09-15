@@ -19,7 +19,6 @@ class IgnitionGui6 < Formula
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering6"
   depends_on "ignition-transport11"
-  depends_on macos: :mojave # c++17
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"

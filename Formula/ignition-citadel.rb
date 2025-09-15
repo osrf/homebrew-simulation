@@ -31,7 +31,6 @@ class IgnitionCitadel < Formula
   depends_on "ignition-sensors3"
   depends_on "ignition-tools"
   depends_on "ignition-transport8"
-  depends_on macos: :mojave # c++17
   depends_on "pkgconf"
   depends_on "python@3.11"
   depends_on "sdformat9"
