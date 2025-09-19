@@ -1,8 +1,9 @@
 class GzRendering10 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering10"
-  version "9.999.999-0-20250501"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-10.0.0~pre2.tar.bz2"
+  version "10.0.0-pre2"
+  sha256 "e547524786064a78053c70d1099b16258ddcaa8a292fb196283f8e307f7518fa"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering10"
