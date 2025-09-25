@@ -9,9 +9,10 @@ class GzTools2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sonoma: "2c8a576087df170bb575a92b9a679430c5c583b1672a9f1d34e4a57a4f2c8102"
-    sha256 cellar: :any, sonoma:       "d18bf41adcee1a222f1fa88b176de06837af97f41afdb8fb8deb7d1ee2e1ec72"
-    sha256 cellar: :any, ventura:      "abe1874c7f6612299211f14d8a46b8b08135d3fc8553afe54ccb7895cfc837c9"
+    sha256 cellar: :any, arm64_sequoia: "140517b9db6b06a0f2f5d1a881df3f0b2a611db5a4585c54cabd3ac719b8b7bc"
+    sha256 cellar: :any, arm64_sonoma:  "2c8a576087df170bb575a92b9a679430c5c583b1672a9f1d34e4a57a4f2c8102"
+    sha256 cellar: :any, sonoma:        "d18bf41adcee1a222f1fa88b176de06837af97f41afdb8fb8deb7d1ee2e1ec72"
+    sha256 cellar: :any, ventura:       "abe1874c7f6612299211f14d8a46b8b08135d3fc8553afe54ccb7895cfc837c9"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,6 @@ class GzTools2 < Formula
       s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
     end
 
-    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"

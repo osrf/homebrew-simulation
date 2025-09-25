@@ -9,9 +9,10 @@ class GzPlugin2 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sonoma: "f9d56d92fa62327d54d8bd5fa38841aba268b8a0084e8808c82d497fb9b5b4c6"
-    sha256 cellar: :any, sonoma:       "92833e720822a18291ddce53b0b24d159d544f48e988ecf4560fa33f11a52c05"
-    sha256 cellar: :any, ventura:      "b4ff9bce1e706cd433da44f40ae739a27ab2f75fe91a6f93885f291cabd7ee93"
+    sha256 cellar: :any, arm64_sequoia: "175ec51fd26aa1d978d54ddd74bedc68d679fbcd582c941936943bde8244e61c"
+    sha256 cellar: :any, arm64_sonoma:  "f9d56d92fa62327d54d8bd5fa38841aba268b8a0084e8808c82d497fb9b5b4c6"
+    sha256 cellar: :any, sonoma:        "92833e720822a18291ddce53b0b24d159d544f48e988ecf4560fa33f11a52c05"
+    sha256 cellar: :any, ventura:       "b4ff9bce1e706cd433da44f40ae739a27ab2f75fe91a6f93885f291cabd7ee93"
   end
 
   depends_on "cmake"
@@ -26,7 +27,6 @@ class GzPlugin2 < Formula
       rpath(source: libexec/"gz/plugin2", target: lib),
     ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use a build folder

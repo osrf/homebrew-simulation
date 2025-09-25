@@ -10,9 +10,10 @@ class GzPhysics7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sonoma: "dad86135e1291b830b77da836f5a9809f4ee3f3565e399d8ec7bf787e209dd9a"
-    sha256 sonoma:       "d19317fa4669164815b83e8119ef0149f57f17cd9607213f3c4c1c3ecd6878c1"
-    sha256 ventura:      "df7b9259ab08a55ed0d5b1b2885c5c35347675f2fdc5a1afb4965be944a14f66"
+    sha256 arm64_sequoia: "04a779c6f2c6a1aac9b0e4ec96d4be0c765290f119c9ff3fd83bb6020c0a300d"
+    sha256 arm64_sonoma:  "dad86135e1291b830b77da836f5a9809f4ee3f3565e399d8ec7bf787e209dd9a"
+    sha256 sonoma:        "d19317fa4669164815b83e8119ef0149f57f17cd9607213f3c4c1c3ecd6878c1"
+    sha256 ventura:       "df7b9259ab08a55ed0d5b1b2885c5c35347675f2fdc5a1afb4965be944a14f66"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -37,7 +38,6 @@ class GzPhysics7 < Formula
       rpath(source: lib/"gz-physics-7/engine-plugins", target: lib),
     ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use a build folder
