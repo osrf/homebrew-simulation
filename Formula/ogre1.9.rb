@@ -134,7 +134,7 @@ class Ogre19 < Formula
     rmdir prefix/"CMake"
 
     # This is necessary because earlier versions of Ogre seem to have created
-    # the plugins with "lib" prefix and software like "rviz" now has Mac
+    # plugins with "lib" prefix and software like "rviz" now has Mac
     # specific code that looks for the plugins with "lib" prefix. Hence we add
     # symlinks with the "lib" prefix manually, but their use is deprecated.
     Dir.glob(lib/"OGRE/*.dylib") do |path|

@@ -127,7 +127,7 @@ class Ogre23 < Formula
       error_string = "Error while loading the library"
       assert stderr.exclude?(error_string), error_string
     end
-    # build against API
+    # test building against API
     (testpath/"test.cpp").write <<-EOS
       #include <Ogre.h>
       int main()
