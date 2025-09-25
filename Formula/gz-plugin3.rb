@@ -26,7 +26,6 @@ class GzPlugin3 < Formula
       rpath(source: libexec/"gz/plugin3", target: lib),
     ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use a build folder

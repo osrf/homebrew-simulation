@@ -44,7 +44,6 @@ class Sdformat15 < Formula
       rpath(source: libexec/"gz/sdformat15", target: lib),
     ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # first build without python bindings
