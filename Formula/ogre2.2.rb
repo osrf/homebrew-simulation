@@ -11,11 +11,12 @@ class Ogre22 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sonoma: "e4aff5408f38e2ddbdda3b582f3d445de431e8723640c688574a4fe692e7f7c3"
-    sha256 cellar: :any, sonoma:       "69e1b4dcd9ab083f9328a82930e544621b19afffa4101f4447ac2fc7da1ac2df"
-    sha256 cellar: :any, ventura:      "39ee442113fbe0e76dd71f6cd9b90fb3cbb16de3a771c32d6fe12a0a4679dbdc"
-    sha256 cellar: :any, monterey:     "0bd7b3f41e27834ff7ac6ae7c0711e18cb64bb0d1795903e98335e8618e3eb22"
-    sha256 cellar: :any, big_sur:      "7d348ad79b4dc945b7305523d0826bb42d42747c921433fe792f4fe68d2e5191"
+    sha256 cellar: :any, arm64_sequoia: "2b5e3a71c96ceb7cfb5c1e51ef92789b63899f27ed573cf35e693b365c2082ee"
+    sha256 cellar: :any, arm64_sonoma:  "e4aff5408f38e2ddbdda3b582f3d445de431e8723640c688574a4fe692e7f7c3"
+    sha256 cellar: :any, sonoma:        "69e1b4dcd9ab083f9328a82930e544621b19afffa4101f4447ac2fc7da1ac2df"
+    sha256 cellar: :any, ventura:       "39ee442113fbe0e76dd71f6cd9b90fb3cbb16de3a771c32d6fe12a0a4679dbdc"
+    sha256 cellar: :any, monterey:      "0bd7b3f41e27834ff7ac6ae7c0711e18cb64bb0d1795903e98335e8618e3eb22"
+    sha256 cellar: :any, big_sur:       "7d348ad79b4dc945b7305523d0826bb42d42747c921433fe792f4fe68d2e5191"
   end
 
   depends_on "cmake" => :build
@@ -40,12 +41,6 @@ class Ogre22 < Formula
     url "https://github.com/OGRECave/ogre-next/commit/b7187a55a9ad5ba65ed24d1c212d1749833923ac.patch?full_index=1"
     sha256 "38975001bfa903194565ed0bf411cf29857cd5b2f0f71a651d64543f610c4ff6"
   end
-
-  # fix GL3+ compilation with Xcode 10
-  # patch do
-  #  url "https://github.com/OGRECave/ogre-next/commit/b00a880a4aea5492615ce8e3363e81631a53bb5c.patch?full_index=1"
-  #  sha256 "8fe5beab9e50dfe1f0164e8dbffd20a79f5e9afe79802ab0ce29d8d83e4e0fe8"
-  # end
 
   patch do
     # fix for m1 arch -- adapted from OGRECave/ogre-next@ff01338

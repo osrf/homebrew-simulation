@@ -10,11 +10,12 @@ class Ogre23 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sonoma: "be121e86ff8d7def125d8579583fbf32b9bcd475f2b2eee7f20948aa4afc6aee"
-    sha256 cellar: :any, sonoma:       "00e8a7721f3a33eb5f5df26c70a597e71ee06328949cecae7e85c79badf8a34f"
-    sha256 cellar: :any, ventura:      "a99ca4c5adc6c3455d9df29aa00c944f3dddb2ff64c176cb37efc759b8bc1498"
-    sha256 cellar: :any, monterey:     "58e4f7a6d4e1ae1a70b2f449801b4335deb378dc982f38f2bc3cfc6393a5e0b0"
-    sha256 cellar: :any, big_sur:      "2cd52cc99ea96660c7a83e2c5458c900f0abd4af3fdd7b69117ad87b407d0a2a"
+    sha256 cellar: :any, arm64_sequoia: "9e3d6499d30d18d1fb74fc6d4267dd6448ce34d3bb567f5a7b19471bf235cd8c"
+    sha256 cellar: :any, arm64_sonoma:  "be121e86ff8d7def125d8579583fbf32b9bcd475f2b2eee7f20948aa4afc6aee"
+    sha256 cellar: :any, sonoma:        "00e8a7721f3a33eb5f5df26c70a597e71ee06328949cecae7e85c79badf8a34f"
+    sha256 cellar: :any, ventura:       "a99ca4c5adc6c3455d9df29aa00c944f3dddb2ff64c176cb37efc759b8bc1498"
+    sha256 cellar: :any, monterey:      "58e4f7a6d4e1ae1a70b2f449801b4335deb378dc982f38f2bc3cfc6393a5e0b0"
+    sha256 cellar: :any, big_sur:       "2cd52cc99ea96660c7a83e2c5458c900f0abd4af3fdd7b69117ad87b407d0a2a"
   end
 
   depends_on "cmake" => :build
@@ -127,7 +128,7 @@ class Ogre23 < Formula
       error_string = "Error while loading the library"
       assert stderr.exclude?(error_string), error_string
     end
-    # build against API
+    # test building against API
     (testpath/"test.cpp").write <<-EOS
       #include <Ogre.h>
       int main()
