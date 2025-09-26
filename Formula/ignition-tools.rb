@@ -27,7 +27,6 @@ class IgnitionTools < Formula
       s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
     end
 
-    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args, "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       system "make", "install"
