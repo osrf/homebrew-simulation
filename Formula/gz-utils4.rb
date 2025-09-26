@@ -1,9 +1,8 @@
 class GzUtils4 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-4.0.0~pre1.tar.bz2"
-  version "4.0.0-pre1"
-  sha256 "4070d0756ac2a555a8c2f4f559b100f2e85ec701efe6fbea3aab9f5cb61589cd"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-4.0.0.tar.bz2"
+  sha256 "665560f066c634add7bbe3e9a26e71fa2855b0a81cc41de6f8fbcbe260f490fb"
   license "Apache-2.0"
 
   bottle do
