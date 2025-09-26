@@ -9,10 +9,11 @@ class IgnitionMath6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sonoma: "fd390641bb5cfc7d3f0072e0cd17a5a37bb0b9f4dfdc8c554e16c16289255db8"
-    sha256 cellar: :any, sonoma:       "9c765e4736151e3b9f7bbd0e81939b9405329ee1f227c99b94b6717e96e1f8d0"
-    sha256 cellar: :any, ventura:      "f04b2a2952cbc588a80d3b809c851410f89cb39ad24134be92662d4751bf3f0a"
-    sha256 cellar: :any, monterey:     "a34fdd037896e72df9f0c4c20dc2dc4d953ffad9977ab14b7f6b1667bad1493e"
+    sha256 cellar: :any, arm64_sequoia: "8d960e470b4cf9a4978b3fa298e6a10958a6a1fd2c521554b5ea4ee9172a8016"
+    sha256 cellar: :any, arm64_sonoma:  "fd390641bb5cfc7d3f0072e0cd17a5a37bb0b9f4dfdc8c554e16c16289255db8"
+    sha256 cellar: :any, sonoma:        "9c765e4736151e3b9f7bbd0e81939b9405329ee1f227c99b94b6717e96e1f8d0"
+    sha256 cellar: :any, ventura:       "f04b2a2952cbc588a80d3b809c851410f89cb39ad24134be92662d4751bf3f0a"
+    sha256 cellar: :any, monterey:      "a34fdd037896e72df9f0c4c20dc2dc4d953ffad9977ab14b7f6b1667bad1493e"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +26,6 @@ class IgnitionMath6 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     # Use a build folder

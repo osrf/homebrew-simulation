@@ -10,9 +10,10 @@ class IgnitionRendering6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sonoma: "674680c4623d3decfe44af92289d408f81bbfc78b217d9e4a547b1c31e1d5908"
-    sha256 sonoma:       "f5c88bd479aac1264076643fae69e29318d79acb393c727cd7179bb8f624b48a"
-    sha256 ventura:      "738a6667ce4fa4cd8f52aea8842d99a4f286063dc756b2023be5956b2e00ffcc"
+    sha256 arm64_sequoia: "7b4bc3533cd3586eb8f131327d603b53bc063cf467882048bc6049ae5f58c60a"
+    sha256 arm64_sonoma:  "674680c4623d3decfe44af92289d408f81bbfc78b217d9e4a547b1c31e1d5908"
+    sha256 sonoma:        "f5c88bd479aac1264076643fae69e29318d79acb393c727cd7179bb8f624b48a"
+    sha256 ventura:       "738a6667ce4fa4cd8f52aea8842d99a4f286063dc756b2023be5956b2e00ffcc"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -34,7 +35,6 @@ class IgnitionRendering6 < Formula
       rpath(source: lib/"ign-rendering-6/engine-plugins", target: lib),
     ]
     cmake_args = std_cmake_args
-    cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     # Use a build folder
