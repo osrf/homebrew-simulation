@@ -7,9 +7,9 @@ class GzCmake5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9c8bcb0ba42aaefdf44badcefe5b7b9a802acb13f22e507b2d0d0c6e800b9821"
-    sha256 cellar: :any_skip_relocation, sonoma:       "65cc1bacd528d84e72702a9ea96b682b6d3d07075e906550456d214461454941"
-    sha256 cellar: :any_skip_relocation, ventura:      "58d1a7d82cbd191cd309f79c0983ee173ebb873f5a6c7e7ac42fbe077428760b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33330dfe511bc5383c999f7327ac13e71b6b95ee6f54cad1f36ed41838cd1974"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "111394f97e1f216e611df2b6ef0b8f2b630e65c7fef1ef97a7778976cdd08ab2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3bffa838e3126237ab4d6f25dcdfe793f5122db03a5c0a26f7305263aa970b3"
   end
 
   # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
