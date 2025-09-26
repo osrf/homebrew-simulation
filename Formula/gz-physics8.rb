@@ -10,9 +10,10 @@ class GzPhysics8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sonoma: "c61057979cbef83a81dba6b519691a739f97af27442fab146782a00025451741"
-    sha256 sonoma:       "3b1dc2900b5230d37c81a06e5701be5ce90b7b3a4ff5b10130c3c04c12cf4a01"
-    sha256 ventura:      "ec3f0596edbb5ad62de9cd74025cb44d64eff06e75434864f02a5f69d7d94839"
+    sha256 arm64_sequoia: "5503960bee60cd184b395b97104a3405399f0f064d99efac1b1b1dbc3bae0e7a"
+    sha256 arm64_sonoma:  "c61057979cbef83a81dba6b519691a739f97af27442fab146782a00025451741"
+    sha256 sonoma:        "3b1dc2900b5230d37c81a06e5701be5ce90b7b3a4ff5b10130c3c04c12cf4a01"
+    sha256 ventura:       "ec3f0596edbb5ad62de9cd74025cb44d64eff06e75434864f02a5f69d7d94839"
   end
 
   depends_on "cmake" => [:build, :test]
