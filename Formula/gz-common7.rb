@@ -1,11 +1,18 @@
 class GzCommon7 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
-  version "6.999.999-0-20250430"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-7.0.0.tar.bz2"
+  sha256 "592f17171730925a384918008851541cd7eb278c76226485926cd609120094f5"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "a640c082dc732ee812b3f9f8eb07729f34f0a5267524fc672d79a3cfe839baac"
+    sha256 cellar: :any, arm64_sonoma:  "5e194887d1f1d8c9b02c2857ccbe956b8ca43c3553afe9ba03064e734f75b1eb"
+    sha256 cellar: :any, sonoma:        "2363a701dde04914834e8032232e8633c70a15c8f7320605dc11bb6aec3019fb"
+  end
 
   depends_on "assimp"
   depends_on "cmake"
