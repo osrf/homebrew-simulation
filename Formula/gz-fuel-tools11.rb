@@ -1,11 +1,18 @@
 class GzFuelTools11 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools11"
-  version "10.999.999-0-20250502"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-11.0.0.tar.bz2"
+  sha256 "4b4dee9b5a2e8cf04f1000e568187a65dd379bf54f8acf16d4e31a29240b30f0"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools11"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "74e9c33bd65d9481a68564a07dc408b100e37a5cb0ffe36e0ab59b099147f1cc"
+    sha256 cellar: :any, arm64_sonoma:  "bd813a69151c50d9ac25e44b2d88cf2eec823f1d73e75b83872ed55e1aff9bb9"
+    sha256 cellar: :any, sonoma:        "ed2a787f9845b0fc21f0d2c5825253999ce7f8cf54fb5581c47adda7b2fb14b8"
+  end
 
   depends_on "abseil"
   depends_on "cmake"
