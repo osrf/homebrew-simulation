@@ -1,8 +1,8 @@
 class GzLaunch9 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
-  version "8.999.999-0-20250516"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-9.0.0.tar.bz2"
+  sha256 "7d8452a98aaf3d9f6f8d417178e52347b8c3505edca38d4525ab1ceb314c25a6"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
