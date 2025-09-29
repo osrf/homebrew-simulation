@@ -3,8 +3,8 @@ class GzJetty < Formula
 
   desc "Collection of gazebo simulation software"
   homepage "https://github.com/gazebosim/gz-jetty"
-  url "https://github.com/gazebosim/gz-jetty.git", branch: "main"
-  version "0.999.999-0-20250516"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-jetty/releases/gz-jetty-1.0.0.tar.bz2"
+  sha256 "d20c6d5d1ed8f5c1e7d13dac71a184d8bc3889dfb19e5f691344d3d3885de838"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-jetty.git", branch: "main"
