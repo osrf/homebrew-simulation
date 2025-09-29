@@ -1,8 +1,8 @@
 class GzSensors10 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors10"
-  version "9.999.999-0-20250516"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-10.0.0.tar.bz2"
+  sha256 "6638e7655b8eaeeab41859e8e861062fd2ba2bc20d42b8a2fa6b9ccbcc588421"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors10"
