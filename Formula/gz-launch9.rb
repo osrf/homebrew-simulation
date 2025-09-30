@@ -1,11 +1,18 @@
 class GzLaunch9 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
-  version "8.999.999-0-20250516"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-9.0.0.tar.bz2"
+  sha256 "7d8452a98aaf3d9f6f8d417178e52347b8c3505edca38d4525ab1ceb314c25a6"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "ab05393e553ea5d4a8f28ede9057af4a868097cfa86cafecc19be888cb2e30ad"
+    sha256 arm64_sonoma:  "b4044a7d4f8545bf225f4cdbfcd37206a40b79356507e9d1490a5db561e7c503"
+    sha256 sonoma:        "864dae8e4120cfa5def48af078b8eb009be149cdf3aa3c7822c578b420a84159"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
