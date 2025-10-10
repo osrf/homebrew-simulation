@@ -31,12 +31,6 @@ class GzLaunch8 < Formula
   depends_on "sdformat15"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-launch/commit/ae0a1cd4b7e1f086280f40db88a4bb7152b99b46.patch?full_index=1"
-    sha256 "a8caa916a19df2881f4e5b956a6fffe651906832151c5d775cb4b88c62f732c6"
-  end
-
   def install
     rpaths = [
       rpath,
