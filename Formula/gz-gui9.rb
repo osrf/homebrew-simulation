@@ -23,12 +23,6 @@ class GzGui9 < Formula
   depends_on "qt@5"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-gui/commit/e1eb227411f605577c4eb6de2f4df627d72d1ade.patch?full_index=1"
-    sha256 "6134cf08e128909430e2a0ed1e09c1092fe13b9ec9a345d2a24fed7eeee00e52"
-  end
-
   def install
     rpaths = [
       rpath,
