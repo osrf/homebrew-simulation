@@ -4,13 +4,7 @@ class GzUtils4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-4.0.0.tar.bz2"
   sha256 "665560f066c634add7bbe3e9a26e71fa2855b0a81cc41de6f8fbcbe260f490fb"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "6d480a8590d5aed5634421215321b10c5821d227047debca2f669cf77dbf82c1"
-    sha256 cellar: :any, arm64_sonoma:  "6230dc4807b0054f6ac886d68dd97658f497f8bb2fef00cb4553f524287c90cd"
-    sha256 cellar: :any, sonoma:        "b5f092b2aebf35e325503fbecd6da1943ab48f4d24bf39f13330fc26a792baa7"
-  end
+  revision 1
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
