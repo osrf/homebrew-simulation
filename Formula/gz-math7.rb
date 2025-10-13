@@ -4,7 +4,7 @@ class GzMath7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.5.2.tar.bz2"
   sha256 "2451435f601f1adc8fdb3580e3b55bba951822dd85dcddcc8bae4fe132587803"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
@@ -21,6 +21,7 @@ class GzMath7 < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "pkgconf" => :test
   depends_on "eigen"
   depends_on "gz-cmake3"
@@ -97,5 +98,6 @@ class GzMath7 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.math7"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.math7"
   end
 end

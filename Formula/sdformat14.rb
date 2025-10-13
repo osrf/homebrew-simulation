@@ -4,7 +4,7 @@ class Sdformat14 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.8.0.tar.bz2"
   sha256 "47272ae4fba00b094da1f5eed32a3adb7417da14dfeaf9b1af758e52829ad75b"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
@@ -21,6 +21,7 @@ class Sdformat14 < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   depends_on "doxygen"
   depends_on "gz-cmake3"
@@ -109,5 +110,7 @@ class Sdformat14 < Formula
       system python.opt_libexec/"bin/python", "-c",
         "import sdformat14; sdformat14.Box().size()"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c",
+      "import sdformat14; sdformat14.Box().size()"
   end
 end

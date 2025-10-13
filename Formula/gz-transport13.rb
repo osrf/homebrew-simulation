@@ -4,7 +4,7 @@ class GzTransport13 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.4.1.tar.bz2"
   sha256 "1e7051de16c8e0cadf5b357d32193ffdb3eb33775126d1f89bef29bfd02e11b8"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
@@ -19,6 +19,7 @@ class GzTransport13 < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   depends_on "abseil"
   depends_on "cmake"
@@ -119,5 +120,6 @@ class GzTransport13 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.transport13"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.transport13"
   end
 end

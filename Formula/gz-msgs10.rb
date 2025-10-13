@@ -4,7 +4,7 @@ class GzMsgs10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.3.2.tar.bz2"
   sha256 "0dd9c19dee7aec7fc0f7bdd03ee2ae44ab1068dac2fc1ae8cc3ecc1b6df8472a"
   license "Apache-2.0"
-  revision 13
+  revision 14
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -17,6 +17,7 @@ class GzMsgs10 < Formula
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"
@@ -101,5 +102,6 @@ class GzMsgs10 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.msgs10"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.msgs10"
   end
 end
