@@ -4,15 +4,9 @@ class Sdformat16 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-16.0.0.tar.bz2"
   sha256 "647e0a613ae788389a066fa60d9327c4d44db9c79f80bac9da2705deaf1e9ff0"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf16"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "c23c2eb64e61a990cad167d3dd5dcdcc6cdb55da25fb5087190ee982db2af5c2"
-    sha256 arm64_sonoma:  "bc44efca88de457d39f9750688480f86e590ec2579ac47081c7e378289871953"
-    sha256 sonoma:        "cf5d023c0ac3d6efe709707d45d47cbf5a9074d3e85638d579bedb3e5654b12e"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
