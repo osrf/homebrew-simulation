@@ -10,6 +10,7 @@ class GzMsgs11 < Formula
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake4"
@@ -93,5 +94,6 @@ class GzMsgs11 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.msgs11"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.msgs11"
   end
 end
