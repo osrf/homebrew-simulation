@@ -13,6 +13,7 @@ class GzMath9 < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "pkgconf" => :test
   depends_on "eigen"
   depends_on "gz-cmake5"
@@ -90,5 +91,6 @@ class GzMath9 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.math"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.math"
   end
 end

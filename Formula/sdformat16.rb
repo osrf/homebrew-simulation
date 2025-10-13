@@ -13,6 +13,7 @@ class Sdformat16 < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   depends_on "doxygen"
   depends_on "gz-cmake5"
@@ -109,5 +110,7 @@ class Sdformat16 < Formula
       system python.opt_libexec/"bin/python", "-c",
         "import sdformat; sdformat.Box().size()"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c",
+      "import sdformat; sdformat.Box().size()"
   end
 end
