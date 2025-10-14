@@ -4,7 +4,7 @@ class GzPhysics8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-8.3.0.tar.bz2"
   sha256 "ca274cca45c2d6808f4aa09ad01ba6ce17b50a28f71d83dbd8c38b6621c61ef2"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics8"
 
