@@ -28,8 +28,6 @@ class Ogre19 < Formula
   depends_on "libzzip"
   depends_on "tbb"
 
-  conflicts_with "ogre", because: "differing version of the same formula"
-
   patch do
     url "https://gist.githubusercontent.com/marvinosswald/0e981e918aeee4403e9a0790c6f32cdd/raw/5d295499255867064ace8c4c41b2f31fd48d4576/gistfile1.txt"
     sha256 "62d33adbb3d46f9354ba9486226ee88649d7d7af0e26354f69c5cc777dd2ef86"
