@@ -10,6 +10,7 @@ class GzMsgs12 < Formula
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake5"
@@ -93,6 +94,7 @@ class GzMsgs12 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.msgs"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.msgs"
     # check gz msg command
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
     system Formula["gz-tools2"].opt_bin/"gz", "msg"
