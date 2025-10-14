@@ -18,6 +18,7 @@ class GzSim8 < Formula
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
