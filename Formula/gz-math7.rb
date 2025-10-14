@@ -4,16 +4,15 @@ class GzMath7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-7.5.2.tar.bz2"
   sha256 "2451435f601f1adc8fdb3580e3b55bba951822dd85dcddcc8bae4fe132587803"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "09f4c01a95528cce105072bcca431deca4e94f4d8f003756d98f7872306e3e99"
-    sha256 cellar: :any, arm64_sonoma:  "11ddff8d00f115477f88e6f44c1bbf2d0228ab37a389d8f11366e407f0ae11d2"
-    sha256 cellar: :any, sonoma:        "99e604672f50796e7fd63a490a7c46afcc18e3c3f605da20d275749912e3c8de"
-    sha256 cellar: :any, ventura:       "1475598d5d7e72eeee07a39b092b56561e2a03ebd453a5910a885550f3438f84"
+    sha256 cellar: :any, arm64_sequoia: "83a054d71d59df5fd9f28c640fe0592a0a20293339c42afe6553bb2766360c89"
+    sha256 cellar: :any, arm64_sonoma:  "1552823985773290fef9dabad1bb0f757143ba4f2c2e83cc5956d6d5a12417a0"
+    sha256 cellar: :any, sonoma:        "8b2987d011538d06e2a5de1db590b14644fb93de9b209b9cf88e8feece616a44"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +20,7 @@ class GzMath7 < Formula
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "pkgconf" => :test
   depends_on "eigen"
   depends_on "gz-cmake3"
@@ -97,5 +97,6 @@ class GzMath7 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.math7"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.math7"
   end
 end
