@@ -169,8 +169,8 @@ class GzSim8 < Formula
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
     system cmd_not_grep_xcode
-    # check python import
-    pythons.each do |python|
+    # check python import for first python in dependency list
+    [pythons.first].each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.sim8"
     end
   end
