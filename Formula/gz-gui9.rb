@@ -8,6 +8,13 @@ class GzGui9 < Formula
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "a5cf5955765888dbe2dc239cd876a9cb4a0e3fc4917bb99b6d3bcbd3ba0e144a"
+    sha256 arm64_sonoma:  "1934a82992e41e2d5ffa6c1d3ef2b1a48cb960aa0daf8ccc7fb3d9c92dfcda78"
+    sha256 sonoma:        "8eafaa3c3bd24376a15214c4ae6026a31573f2e77d2ba569f73040516ae79f7d"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
