@@ -4,7 +4,7 @@ class IgnitionLaunch5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.3.0.tar.bz2"
   sha256 "84d356b9c85609da1bb7feda2f90ae6d1a1fd2d6713b284799d5605de42e2613"
   license "Apache-2.0"
-  revision 63
+  revision 64
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch5"
 
