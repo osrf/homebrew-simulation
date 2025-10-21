@@ -44,12 +44,6 @@ class GzTransport13 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-transport/commit/d47da383dcbc194c0f2b1268497942831d8a18a9.patch?full_index=1"
-    sha256 "35ef3eb17fc06240dfc0355a5089e3097d2a874a19d0c6b0d9886e71e29e8f47"
-  end
-
   def install
     rpaths = [
       rpath,
