@@ -4,17 +4,9 @@ class GzRendering8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.2.2.tar.bz2"
   sha256 "5029db79e098ca23b95bf186c046f8996a7b0f4490e2f9e95da7aaa8eb37d130"
   license "Apache-2.0"
-  revision 7
+  revision 8
 
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "4c853a9d525e3804a386b9a5e644fbd5d0a0099fb8b1d6c4bd8099d1543782d9"
-    sha256 arm64_sonoma:  "ee795920543d894d407db56123d60fdc9f9b437f0bc288b0f5225f0613dedca9"
-    sha256 sonoma:        "aa9756a1636337da1be330abe25d7bc5c5cbad9b1690ac79fb9be7d6e8e9659b"
-    sha256 ventura:       "4a8a1bb2c89ed5f1fa2cf45553e25cce8f2a41484ef086b88d222a895bd79d75"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
