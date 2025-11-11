@@ -7,16 +7,8 @@ class GzSim8 < Formula
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "18b495fe6ef5f4169d2b983bf2c8e33fc8abe0a9b4a5865a53c5b5241ffcfd9f"
-    sha256 arm64_sonoma:  "a6decb0cf47b340c9b8fea78cea74d0bb0dd87bcac8c1bb2475524dd54e64f38"
-    sha256 sonoma:        "71f00ce3086a96b78761d115c4901f1bdaec209d6e4c24a21b48ba793f722a2b"
-  end
-
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
@@ -47,7 +39,7 @@ class GzSim8 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.14"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
@@ -172,5 +164,6 @@ class GzSim8 < Formula
     [pythons.first].each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.sim8"
     end
+    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.sim8"
   end
 end
