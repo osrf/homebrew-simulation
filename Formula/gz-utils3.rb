@@ -4,7 +4,7 @@ class GzUtils3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-3.1.1.tar.bz2"
   sha256 "161942a2d00c820683cf88e41c48545e8da4c959aad77ca2229021e5f961201d"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   # head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils3"
 
