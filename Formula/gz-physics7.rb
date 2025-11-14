@@ -6,6 +6,13 @@ class GzPhysics7 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "edd8ab0d028e2eb697759d00325055c27733006cad30a6de6a8c901b8854203a"
+    sha256 arm64_sonoma:  "f9bbb923c265811fea5479b24866c6effaca1d5ba4130ee46ecb5eb8f5f5af1a"
+    sha256 sonoma:        "72ff07be1974cab6b1a03dea34c4a88eef978eb367dce67473729054321de834"
+  end
+
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics7"
 
   depends_on "cmake" => [:build, :test]
