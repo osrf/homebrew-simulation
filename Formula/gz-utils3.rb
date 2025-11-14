@@ -6,6 +6,13 @@ class GzUtils3 < Formula
   license "Apache-2.0"
   revision 4
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "319278597fa175ff2873a9e8611e29ea703afd48d8119563ba2df686bc0f3c14"
+    sha256 cellar: :any, arm64_sonoma:  "18674419a1008ce81f7787b8563aaad3530a9e80968ee8555a3e52aeb5c475e4"
+    sha256 cellar: :any, sonoma:        "f4d00528ecc1e3fa456f6c8e8bb3c3d354937d56e7227cc9bc21f3f60bb535ee"
+  end
+
   # head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils3"
 
   depends_on "cmake" => [:build, :test]
