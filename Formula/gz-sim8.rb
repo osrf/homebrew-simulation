@@ -1,12 +1,18 @@
 class GzSim8 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.9.0.tar.bz2"
-  sha256 "c55aa45a4f12ddad7115455722afd2fe9bb7fef7cc3fa119a2a24ea77e58dedf"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.10.0.tar.bz2"
+  sha256 "42951750ca9f77abde245ba9f86f02aa1693f072b3294d371224371ac8afcfc7"
   license "Apache-2.0"
-  revision 20
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "d19bb29b39dbfad7b8d6e7b54943bc6068a3b61983400229ba08138ae88c9f81"
+    sha256 arm64_sonoma:  "561ea99057f04aec5a20ec9f1c62061e9606af0ac112426971aebecfe84b037b"
+    sha256 sonoma:        "1c309b614223c2bdad9602ddae946a652fdb56b9cc6c50c25fb274791829353a"
+  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -42,12 +48,6 @@ class GzSim8 < Formula
 
   def python_cmake_arg(python = Formula["python@3.14"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
-  end
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-sim/commit/e727b18373de158bd67e0ba89d57c8458d6c33a8.patch?full_index=1"
-    sha256 "d05b5b8d96f997596520381ef1d54c3fd3077e1f541c459c033b37a8328b5c0b"
   end
 
   def install
