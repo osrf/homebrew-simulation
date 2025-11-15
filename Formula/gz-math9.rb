@@ -4,7 +4,7 @@ class GzMath9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-9.0.0.tar.bz2"
   sha256 "3d7c5a25634e63ac669e7625fd91536b010610e41568b01aaa4b0096c35d935b"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
 
