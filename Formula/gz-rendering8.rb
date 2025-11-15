@@ -9,10 +9,9 @@ class GzRendering8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "4c853a9d525e3804a386b9a5e644fbd5d0a0099fb8b1d6c4bd8099d1543782d9"
-    sha256 arm64_sonoma:  "ee795920543d894d407db56123d60fdc9f9b437f0bc288b0f5225f0613dedca9"
-    sha256 sonoma:        "aa9756a1636337da1be330abe25d7bc5c5cbad9b1690ac79fb9be7d6e8e9659b"
-    sha256 ventura:       "4a8a1bb2c89ed5f1fa2cf45553e25cce8f2a41484ef086b88d222a895bd79d75"
+    sha256 arm64_sequoia: "faef5e5d19d5a96da41c30991df8ccf95e4a7996aaa50605fd337dbd31339a3e"
+    sha256 arm64_sonoma:  "18a2d4ee9c8d10730ec825f46f92bacbcc0da434e0276e05bf516142e42fbe77"
+    sha256 sonoma:        "6cb84393089c01506981337c2236bfed1c35340713044ddaaa1db7fe1140a99e"
   end
 
   depends_on "cmake" => [:build, :test]
