@@ -4,7 +4,7 @@ class IgnitionMsgs8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.7.0.tar.bz2"
   sha256 "b17a8e16fe56a84891bd0654a2ac09427e9a567b9cd2255bb2cfa830f8e1af45"
   license "Apache-2.0"
-  revision 60
+  revision 61
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs8"
 
