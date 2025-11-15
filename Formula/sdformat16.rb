@@ -4,7 +4,7 @@ class Sdformat16 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-16.0.0.tar.bz2"
   sha256 "647e0a613ae788389a066fa60d9327c4d44db9c79f80bac9da2705deaf1e9ff0"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/sdformat.git", branch: "sdf16"
 
