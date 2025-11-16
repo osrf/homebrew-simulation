@@ -4,9 +4,16 @@ class GzLaunch9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-9.0.0.tar.bz2"
   sha256 "7d8452a98aaf3d9f6f8d417178e52347b8c3505edca38d4525ab1ceb314c25a6"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "519240e07edf42e76a1dcc94b1426c8eb36db66d5d5ab2dfaf0078115b51c714"
+    sha256 arm64_sonoma:  "9e88b176269b470353acde39afb437a3289e0079e0bcd2079eb09c1c462e72c6"
+    sha256 sonoma:        "4acb1e28936521f2a05e4afe0c77daaf2ca93609455b7d130e23bed761ba9049"
+  end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
