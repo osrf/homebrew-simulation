@@ -4,7 +4,14 @@ class GzMsgs10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.3.2.tar.bz2"
   sha256 "0dd9c19dee7aec7fc0f7bdd03ee2ae44ab1068dac2fc1ae8cc3ecc1b6df8472a"
   license "Apache-2.0"
-  revision 17
+  revision 18
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "5fb9cd87704112eda4fb91b59a44a885504190d1b478a5a6ca74110a0d7046ae"
+    sha256 arm64_sonoma:  "670bcc5eb5b04c43ec5a7c3c745df23603bc479976cce8acc88df68c12b17a84"
+    sha256 sonoma:        "817e48cb2181071696936e9eea022dfa56a6356eca67d81a4b901a31e8565784"
+  end
 
   # head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
 
