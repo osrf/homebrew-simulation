@@ -8,6 +8,13 @@ class GzFuelTools11 < Formula
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools11"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "a6e6258007a655c9ce01b732977504f31407a8d115d9880881f78318abb35160"
+    sha256 cellar: :any, arm64_sonoma:  "744c07ac2210716a90ffae7826e1dafef3a86707295fd6dcc715481cb2c545c8"
+    sha256 cellar: :any, sonoma:        "2e02372f44a24985234abbc44acee586ee854d19f15d90ec024f5d0468583393"
+  end
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake5"
