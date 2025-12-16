@@ -4,7 +4,7 @@ class GzLaunch8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.2.tar.bz2"
   sha256 "e0ccbd1bc83bc5f178a7a0dc76d1f40e788d5bcad1aeb488c2364ea46466f24e"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   # head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
