@@ -4,9 +4,16 @@ class IgnitionFuelTools7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/ignition-fuel_tools-7.3.1.tar.bz2"
   sha256 "b8224c574406147ae008ed9a0ac459f1e2582f6aaef7ba44e1fd1c5ac97b6de8"
   license "Apache-2.0"
-  revision 31
+  revision 32
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools7"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "ef9dcc7c5c2c760dcf41f5923986b8fd7bc06860ccd101bd79d206dae18df49a"
+    sha256 cellar: :any, arm64_sonoma:  "05d1613af4711c6793c3b5ed5223653c38d64d9f00c0f4806e83a4f367319b44"
+    sha256 cellar: :any, sonoma:        "38324871082ce204dc28889d1e190d4dffb60c04aee8aa757cb7b03e09df0041"
+  end
 
   depends_on "cmake"
   depends_on "ignition-cmake2"
