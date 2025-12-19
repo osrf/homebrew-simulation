@@ -5,8 +5,6 @@ class GzScaffoldCmake < Formula
   version "5.999.999-0-20251219"
   license "Apache-2.0"
 
-  # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
-
   depends_on "cmake"
   depends_on "pkgconf"
 
