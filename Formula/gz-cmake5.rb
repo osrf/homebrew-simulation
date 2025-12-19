@@ -17,6 +17,8 @@ class GzCmake5 < Formula
   depends_on "cmake"
   depends_on "pkgconf"
 
+  conflicts_with "gz-scaffold-cmake", because: "both install gz-cmake"
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
