@@ -59,7 +59,7 @@ def main():
         os.makedirs(alias_dir)
     
     # Construct the alias name based on the library name
-    alias_basename = f'{library_name}{new_version}.rb'
+    alias_basename = f'{library_name}{new_version}'
     alias_path = os.path.join(alias_dir, alias_basename)
 
     if os.path.exists(alias_path) or os.path.islink(alias_path):
