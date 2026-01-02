@@ -57,6 +57,7 @@ class GzLaunch8 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test CLI executable
     system lib/"gz/launch8/gz-launch"
     # test plugins in subfolders

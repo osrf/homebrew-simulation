@@ -46,6 +46,7 @@ class GzRendering10 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
       p = lib/"gz-rendering-10/engine-plugins/libgz-rendering-#{engine}.dylib"
