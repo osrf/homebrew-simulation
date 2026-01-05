@@ -4,16 +4,9 @@ class GzMsgs12 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-12.0.0.tar.bz2"
   sha256 "399c2bd18a0fb4aa41acfcb313590b9717c64aa47c6088db5c0d09b98269e422"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs12"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "1501aba1b7442b4030b9e8bf6c429ae95ebc4e9014b06fcb50fd07e64f49028e"
-    sha256 arm64_sonoma:  "59f4a89f51ac2fbc7ef7b5f8fc09c5e257d16b1c6b832fb8e35d4206c52900ae"
-    sha256 sonoma:        "0197760c5ba850e79ddedc1881f81b149d24f10f5d43b0dcf3e357beae95e2a7"
-  end
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]

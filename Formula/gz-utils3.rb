@@ -4,14 +4,7 @@ class GzUtils3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-3.1.1.tar.bz2"
   sha256 "161942a2d00c820683cf88e41c48545e8da4c959aad77ca2229021e5f961201d"
   license "Apache-2.0"
-  revision 4
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "319278597fa175ff2873a9e8611e29ea703afd48d8119563ba2df686bc0f3c14"
-    sha256 cellar: :any, arm64_sonoma:  "18674419a1008ce81f7787b8563aaad3530a9e80968ee8555a3e52aeb5c475e4"
-    sha256 cellar: :any, sonoma:        "f4d00528ecc1e3fa456f6c8e8bb3c3d354937d56e7227cc9bc21f3f60bb535ee"
-  end
+  revision 5
 
   # head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils3"
 
