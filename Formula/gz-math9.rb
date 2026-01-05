@@ -4,16 +4,9 @@ class GzMath9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-9.0.0.tar.bz2"
   sha256 "3d7c5a25634e63ac669e7625fd91536b010610e41568b01aaa4b0096c35d935b"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "a05f360d27ccaf47e7622389d7d13012052ba3426a1271eaa949e0726a45448e"
-    sha256 cellar: :any, arm64_sonoma:  "62a56961873cdb5105b58fac34e68715bf723dd60c883dfe27931ef745af390c"
-    sha256 cellar: :any, sonoma:        "55e6b938e4aabdb4218f37cf1d09c101781990239c6337b342499c34b45d266e"
-  end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
