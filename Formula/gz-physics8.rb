@@ -48,6 +48,7 @@ class GzPhysics8 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test plugins in subfolders
     %w[bullet-featherstone bullet dartsim tpe].each do |engine|
       p = lib/"gz-physics-8/engine-plugins/libgz-physics-#{engine}-plugin.dylib"

@@ -48,6 +48,7 @@ class GzGui9 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-9/plugins/lib#{plugin}.dylib"
