@@ -4,7 +4,7 @@ class GzPlugin4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-4.0.0.tar.bz2"
   sha256 "f33b784fd26ab856f976425f8aafcf3d8c76c694444f219b73b7a95882cc123a"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin4"
 
