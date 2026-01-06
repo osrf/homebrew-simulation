@@ -6,6 +6,13 @@ class GzPlugin3 < Formula
   license "Apache-2.0"
   revision 6
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "1b46c91fae2e8953457c5b667ce390b849dfaf6c12c1cb229c42f6e7ce578828"
+    sha256 cellar: :any, arm64_sonoma:  "8f10c3a0296bb10dae964dd511989c57834f26509514f9653d7658586e239c6a"
+    sha256 cellar: :any, sonoma:        "93ca4d302736398b72d3ef71274f62f8464bf5a041846c833b6f1d580728a443"
+  end
+
   # head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin3"
 
   depends_on "cmake"
