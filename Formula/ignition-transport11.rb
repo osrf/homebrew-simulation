@@ -4,17 +4,10 @@ class IgnitionTransport11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-transport/releases/ignition-transport11-11.4.1.tar.bz2"
   sha256 "f18501cbd5c78b584b3db1960a3049d6ae416bab7f0289af64eadda13d1c5da5"
   license "Apache-2.0"
-  revision 57
+  revision 58
   version_scheme 1
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport11"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "e72bfeca3edc10f73406746dbf16267b847ec004e6423d5a7bfef6cfd3e2af3a"
-    sha256 arm64_sonoma:  "5a3e9bf6701aaeca119fbff558facfa2f237638e55c6ac37676c727dcd97ebd5"
-    sha256 sonoma:        "329b5d3e19bd2363dc8685057ade6ed901530afe70fe9836061c98a2b1171813"
-  end
 
   depends_on "doxygen" => [:build, :optional]
 
