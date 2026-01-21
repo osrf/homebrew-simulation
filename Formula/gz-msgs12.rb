@@ -1,12 +1,18 @@
 class GzMsgs12 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-12.0.0.tar.bz2"
-  sha256 "399c2bd18a0fb4aa41acfcb313590b9717c64aa47c6088db5c0d09b98269e422"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-12.0.1.tar.bz2"
+  sha256 "f43316821204c37836a23640fdfe161241ec7eafd683b1e721a8ed879301ce75"
   license "Apache-2.0"
-  revision 11
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs12"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "b269c34b2b9cc2c888fc7a2ed60638db249a35296f1089baeece41e6ad41316d"
+    sha256 arm64_sonoma:  "71d98e06609fe117339508a4fab57daaa96b1706f3b29bd25658cc9ae74b909b"
+    sha256 sonoma:        "5e2d74804cb9c99571fbd9a5ffa1b14edd4ee27b75766d192b0892b21266c0c4"
+  end
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]

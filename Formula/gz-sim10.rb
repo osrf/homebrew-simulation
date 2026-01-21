@@ -10,9 +10,9 @@ class GzSim10 < Formula
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "gz-cmake5"
@@ -29,11 +29,16 @@ class GzSim10 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "libwebsockets"
+  depends_on "openssl@3"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "python@3.14"
   depends_on "qt@6"
+  depends_on "qtbase"
+  depends_on "qtdeclarative"
   depends_on "ruby"
   depends_on "sdformat16"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def pythons
