@@ -1,18 +1,17 @@
 class GzSensors10 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-10.0.0.tar.bz2"
-  sha256 "7712bfe969b726f54c26d9aedccb6c04c6616e5e20dd4a379f48e77a89b73dc7"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-10.0.1.tar.bz2"
+  sha256 "6f16c4c125d283536f49642109f62b2cdccfc7a421d4b33a1350d46ab7e831a3"
   license "Apache-2.0"
-  revision 14
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               arm64_sequoia: "c1368616af172c25bffc6b64a68c95530e153625f59057cc04835255f045e574"
-    sha256               arm64_sonoma:  "a3bb902e5c81c4bbfa5c2e486b5b83c8fd8a83b2b7af59dafc3b523eb1bff291"
-    sha256 cellar: :any, sonoma:        "dd95432462dbd28c21dba00b03313403463ec1cc224b4b47a3e48e704c292999"
+    sha256               arm64_sequoia: "6957a8b940c2578643c6f423f34d14d35356aaab8d70d0bdb11d8ee960f2d991"
+    sha256               arm64_sonoma:  "980d731ef61863162e0b42c16dcd7897c593dcbfe05efa854824d1d5d4455a84"
+    sha256 cellar: :any, sonoma:        "77bf066e69ee3f8df7ab4255376cfee2ed8733e49b01d69694cb63cf56406cf6"
   end
 
   depends_on "cmake" => [:build, :test]
