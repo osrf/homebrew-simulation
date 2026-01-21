@@ -12,6 +12,7 @@ class GzSensors10 < Formula
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "abseil"
+  depends_on "fmt"
   depends_on "gz-cmake5"
   depends_on "gz-common7"
   depends_on "gz-math9"
@@ -21,6 +22,7 @@ class GzSensors10 < Formula
   depends_on "gz-utils4"
   depends_on "protobuf"
   depends_on "sdformat16"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install

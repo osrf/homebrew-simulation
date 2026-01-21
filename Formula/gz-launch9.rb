@@ -13,6 +13,7 @@ class GzLaunch9 < Formula
 
   depends_on "abseil"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "gz-cmake5"
   depends_on "gz-common7"
   depends_on "gz-fuel-tools11"
@@ -28,7 +29,10 @@ class GzLaunch9 < Formula
   depends_on "gz-utils4"
   depends_on "protobuf"
   depends_on "qt@6"
+  depends_on "qtbase"
+  depends_on "qtdeclarative"
   depends_on "sdformat16"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install
