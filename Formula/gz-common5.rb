@@ -13,6 +13,8 @@ class GzCommon5 < Formula
   depends_on "ffmpeg"
   depends_on "freeimage"
   depends_on "gdal"
+  depends_on "gettext"
+  depends_on "glib"
   depends_on "gts"
   depends_on "gz-cmake3"
   depends_on "gz-math7"
