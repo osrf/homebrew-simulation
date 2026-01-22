@@ -13,6 +13,7 @@ class GzLaunch8 < Formula
 
   depends_on "abseil"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-fuel-tools10"
@@ -29,6 +30,7 @@ class GzLaunch8 < Formula
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "sdformat15"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install

@@ -10,9 +10,9 @@ class GzSim9 < Formula
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "gz-cmake4"
@@ -30,9 +30,11 @@ class GzSim9 < Formula
   depends_on "gz-utils3"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "python@3.14"
   depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat15"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def pythons
@@ -50,6 +52,7 @@ class GzSim9 < Formula
       rpath(source: lib/"gz-sim-9/plugins", target: lib),
       rpath(source: lib/"gz-sim-9/plugins/gui", target: lib),
       rpath(source: lib/"gz-sim-9/plugins/gui/GzSim", target: lib),
+      rpath(source: libexec/"gz/sim9", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
