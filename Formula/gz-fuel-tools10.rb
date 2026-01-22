@@ -10,6 +10,7 @@ class GzFuelTools10 < Formula
 
   depends_on "abseil"
   depends_on "cmake"
+  depends_on "fmt"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
@@ -20,6 +21,7 @@ class GzFuelTools10 < Formula
   depends_on "libzip"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install
