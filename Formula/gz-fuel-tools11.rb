@@ -4,12 +4,20 @@ class GzFuelTools11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-11.0.0.tar.bz2"
   sha256 "4b4dee9b5a2e8cf04f1000e568187a65dd379bf54f8acf16d4e31a29240b30f0"
   license "Apache-2.0"
-  revision 13
+  revision 14
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools11"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "e01a33e6535b1285d77d850277043d08894c8d3816091a3a8f6fa8f9eebcb887"
+    sha256 cellar: :any, arm64_sonoma:  "67177ee6ee16790871b1c5e462e3418fe8a40e9f3fb56738fda3cd19b564a4d9"
+    sha256 cellar: :any, sonoma:        "e9825d1823106461a9ee0fe150a4bf5a3336fc8e683bac9ac0676b95595ea7e8"
+  end
+
   depends_on "abseil"
   depends_on "cmake"
+  depends_on "fmt"
   depends_on "gz-cmake5"
   depends_on "gz-common7"
   depends_on "gz-math9"
@@ -20,6 +28,7 @@ class GzFuelTools11 < Formula
   depends_on "libzip"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install
