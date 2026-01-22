@@ -17,8 +17,10 @@ class GzPhysics7 < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  depends_on "assimp"
   depends_on "bullet"
   depends_on "dartsim"
+  depends_on "fcl"
   depends_on "fmt"
   depends_on "google-benchmark"
   depends_on "gz-cmake3"
@@ -26,6 +28,9 @@ class GzPhysics7 < Formula
   depends_on "gz-math7"
   depends_on "gz-plugin2"
   depends_on "gz-utils2"
+  depends_on "libccd"
+  depends_on "octomap"
+  depends_on "ode"
   depends_on "pkgconf"
   depends_on "sdformat14"
   depends_on "tinyxml2"
