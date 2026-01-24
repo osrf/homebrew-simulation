@@ -11,12 +11,14 @@ class IgnitionSensors6 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
+  depends_on "abseil"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-msgs8"
   depends_on "ignition-rendering6"
   depends_on "ignition-transport11"
+  depends_on "ignition-utils1"
   depends_on "protobuf"
   depends_on "sdformat12"
   depends_on "tinyxml2"
