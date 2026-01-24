@@ -17,16 +17,23 @@ class GzPhysics8 < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  depends_on "assimp"
   depends_on "bullet"
   depends_on "dartsim"
+  depends_on "fcl"
+  depends_on "fmt"
   depends_on "google-benchmark"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
   depends_on "gz-plugin3"
   depends_on "gz-utils3"
+  depends_on "libccd"
+  depends_on "octomap"
+  depends_on "ode"
   depends_on "pkgconf"
   depends_on "sdformat15"
+  depends_on "spdlog"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 

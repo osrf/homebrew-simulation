@@ -19,8 +19,10 @@ class IgnitionPhysics5 < Formula
 
   depends_on "gz-plugin2" => :test
 
+  depends_on "assimp"
   depends_on "bullet"
   depends_on "dartsim"
+  depends_on "fcl"
   depends_on "fmt"
   depends_on "google-benchmark"
   depends_on "ignition-cmake2"
@@ -28,6 +30,9 @@ class IgnitionPhysics5 < Formula
   depends_on "ignition-math6"
   depends_on "ignition-plugin1"
   depends_on "ignition-utils1"
+  depends_on "libccd"
+  depends_on "octomap"
+  depends_on "ode"
   depends_on "pkgconf"
   depends_on "sdformat12"
   depends_on "tinyxml2"

@@ -13,12 +13,15 @@ class IgnitionGui6 < Formula
 
   depends_on "gz-plugin2" => :test
 
+  depends_on "abseil"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
+  depends_on "ignition-math6"
   depends_on "ignition-msgs8"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering6"
   depends_on "ignition-transport11"
+  depends_on "ignition-utils1"
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"

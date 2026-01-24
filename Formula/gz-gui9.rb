@@ -4,13 +4,21 @@ class GzGui9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.0.2.tar.bz2"
   sha256 "0db7bdbaf32c3e9faba301c6d04e8cbf2daabdf639c45aedc10ec48356ea3d16"
   license "Apache-2.0"
-  revision 16
+  revision 17
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "0c1b3011472e88390f7c7111f30bc80851d50452b36dd1571c808da3cfb9dd63"
+    sha256 arm64_sonoma:  "2933afeb6fb16d92f4cef99ada444e9570f623e49e6ece46e123c71b6fdbcc5e"
+    sha256 sonoma:        "a990590d15c50b3bf033518c7d2b4bc93663d1cbd6a90676c5bdf6f0eb84b0d1"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
+  depends_on "fmt"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
@@ -21,6 +29,7 @@ class GzGui9 < Formula
   depends_on "gz-utils3"
   depends_on "protobuf"
   depends_on "qt@5"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install

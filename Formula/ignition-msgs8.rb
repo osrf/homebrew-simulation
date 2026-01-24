@@ -8,6 +8,7 @@ class IgnitionMsgs8 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs8"
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-math6"

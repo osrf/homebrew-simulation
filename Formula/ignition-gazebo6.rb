@@ -11,6 +11,7 @@ class IgnitionGazebo6 < Formula
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "gz-plugin2" => :test
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -30,6 +31,7 @@ class IgnitionGazebo6 < Formula
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "python@3.11"
+  depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat12"
   depends_on "tinyxml2"

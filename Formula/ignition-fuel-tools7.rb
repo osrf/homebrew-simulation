@@ -8,9 +8,11 @@ class IgnitionFuelTools7 < Formula
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "ign-fuel-tools7"
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
+  depends_on "ignition-math6"
   depends_on "ignition-msgs8"
   depends_on "jsoncpp"
   depends_on "libyaml"

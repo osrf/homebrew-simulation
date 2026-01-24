@@ -11,15 +11,18 @@ class IgnitionTransport11 < Formula
 
   depends_on "doxygen" => [:build, :optional]
 
+  depends_on "abseil"
   depends_on "cmake"
   depends_on "cppzmq"
   depends_on "ignition-cmake2"
+  depends_on "ignition-math6"
   depends_on "ignition-msgs8"
   depends_on "ignition-tools"
   depends_on "ignition-utils1"
   depends_on "ossp-uuid"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
 
