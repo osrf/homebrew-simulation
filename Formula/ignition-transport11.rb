@@ -32,18 +32,6 @@ class IgnitionTransport11 < Formula
   depends_on "tinyxml2"
   depends_on "zeromq"
 
-  patch do
-    # Fix for compatibility with protobuf 28
-    url "https://github.com/gazebosim/gz-transport/commit/9ea158bf31c62c1bbd9330aec281b4debc12938f.patch?full_index=1"
-    sha256 "60864aaa2876c80f16afe6d93a906b417ceb18a4c3d535d5d780c275853e4a83"
-  end
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-transport/commit/dec5411d7032478ac86c1c902ebecb6c2d8cd1a8.patch?full_index=1"
-    sha256 "43e448c9bd51c5bd1bbbdf9cce615d803ddb59f8420095f15a5d78124daeaf51"
-  end
-
   def install
     rpaths = [
       rpath,
