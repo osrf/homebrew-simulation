@@ -1,10 +1,9 @@
 class Sdformat12 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.8.0.tar.bz2"
-  sha256 "5c0d6579738ff14f849f8d6e101468a8f0abc43000b2b8040170fe082a630489"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.9.0.tar.bz2"
+  sha256 "4c546c106265fecc5600de56ce1e979c73e1068d3d89022de1672084db2d5a22"
   license "Apache-2.0"
-  revision 7
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "sdf12"
 
