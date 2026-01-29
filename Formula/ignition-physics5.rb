@@ -37,12 +37,6 @@ class IgnitionPhysics5 < Formula
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
-  patch do
-    # Fix for unregistering dartsim collision detector
-    url "https://github.com/gazebosim/gz-physics/commit/2c238fe87b7c5ebd3d1ba37784db39ce93a6f143.patch?full_index=1"
-    sha256 "396557d48ae665c9a99ea0d9f60308a9ebb08198098df88a7f8497619ffb15d2"
-  end
-
   def install
     rpaths = [
       rpath,
