@@ -1,10 +1,9 @@
 class IgnitionPhysics5 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-physics/releases/ignition-physics5-5.3.2.tar.bz2"
-  sha256 "4262512fbb6952712234c5cbeed69cdabca338931bb6c587a1ef7d487a5f262b"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/ignition-physics-5.4.0.tar.bz2"
+  sha256 "0675bf9a0db8cc67ade5e71ff7ccbca57e6ff7d2f7c400ef10787f501a87ae56"
   license "Apache-2.0"
-  revision 26
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
