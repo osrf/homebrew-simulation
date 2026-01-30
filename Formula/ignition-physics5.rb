@@ -7,9 +7,9 @@ class IgnitionPhysics5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               arm64_sequoia: "49eaa5748f6c9226582f55701bbee03c62ff5396971622c547cd1bbeff700215"
-    sha256               arm64_sonoma:  "af7036b4113c49ecf0fa0f50f592c7d90662c6818e6d0885c8b8fe4bc0d31e3a"
-    sha256 cellar: :any, sonoma:        "bee31b2a227cc07b27973178a9615208d5598d41475c8c7fcf37b28ef73b016f"
+    sha256               arm64_sequoia: "3d0595ccef7b1b308554b05aeb4d237dc7b56f3f950c81c0df752de65f0657c5"
+    sha256               arm64_sonoma:  "4eeb76de740275df03b3f5b7661b84745f3def2545b0c21190bc8d8c96e35973"
+    sha256 cellar: :any, sonoma:        "4a699adfa0e24848b8036294092be17f1568fbdf83e7972b4a0d465600e86392"
   end
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
