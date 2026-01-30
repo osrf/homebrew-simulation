@@ -7,9 +7,9 @@ class Sdformat15 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "14052c491dd301b0cb7611994d440f3f5a31de4638770ed604bbaf8fa5ffffe4"
-    sha256 arm64_sonoma:  "ff2bcb50f7244c6574f55e24f7d2f73bfd1a49f75301e27bc8fd5a6390b386c7"
-    sha256 sonoma:        "20c11dc6b8b86dfc5e3ccbbfafe79126365ff558416d26e4ca2b638701968a35"
+    sha256 arm64_sequoia: "0670973ded06d4cc6972d2cebc58e49f3fe75182efb532a63be6b25cc487a27b"
+    sha256 arm64_sonoma:  "5d602eea83e819bea8f15b8c6a2b64092096d29e08d306c72a7c8df7fe34b944"
+    sha256 sonoma:        "bfd3ccc89c124fe5df63da3cb39daaae4af65ca80f842fbd207a41400fb457d1"
   end
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
