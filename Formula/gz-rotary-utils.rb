@@ -1,4 +1,4 @@
-class GzScaffoldUtils < Formula
+class GzRotaryUtils < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
   url "https://github.com/gazebosim/gz-utils.git", branch: "main"
@@ -8,7 +8,7 @@ class GzScaffoldUtils < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "cli11"
-  depends_on "gz-scaffold-cmake"
+  depends_on "gz-rotary-cmake"
   depends_on "spdlog"
 
   conflicts_with "gz-jetty-utils", because: "both install gz-utils"

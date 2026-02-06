@@ -20,7 +20,7 @@ class GzUtils4 < Formula
   depends_on "gz-cmake5"
   depends_on "spdlog"
 
-  conflicts_with "gz-scaffold-utils", because: "both install gz-utils"
+  conflicts_with "gz-rotary-utils", because: "both install gz-utils"
 
   def install
     cmake_args = std_cmake_args

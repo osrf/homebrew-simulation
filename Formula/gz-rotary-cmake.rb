@@ -1,4 +1,4 @@
-class GzScaffoldCmake < Formula
+class GzRotaryCmake < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
   url "https://github.com/gazebosim/gz-cmake.git", branch: "main"
