@@ -10,7 +10,7 @@ class GzTools3 < Formula
   depends_on "cmake" => :build
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
-  depends_on "gz-cmake5"
+  depends_on "gz-jetty-cmake"
 
   conflicts_with "gazebo11", because: "both install bin/gz"
   conflicts_with "gz-tools2", because: "both install bin/gz"
