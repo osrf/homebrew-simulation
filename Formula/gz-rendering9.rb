@@ -4,13 +4,13 @@ class GzRendering9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-9.5.0.tar.bz2"
   sha256 "cb915b9333e0a9730f05d396efdcdbbb93002c3902181f82f1b4c88a76c47440"
   license "Apache-2.0"
-  revision 2
+  revision 4
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "016fff9ed8772b307d2460d3b17049f2e7fdfde0c7948fbb801001d32b30a8c6"
-    sha256 arm64_sonoma:  "e54e7e3d0f065e1e885a7e58e7ac68fcfdd94a5afd124eff78815b09ffd45709"
-    sha256 sonoma:        "b3a157a42b9bc02900525b7290b89ab09d4e31e44cb0ad41464d4e224e737ab4"
+    sha256 arm64_sequoia: "d70134157efc1e3d73043c2b0ed3c9acaf1a2e1657a515e4efd298d84a248416"
+    sha256 arm64_sonoma:  "aa71d118679a1d5f29286f018489bed878a0e3232af860e9865a8ed4457c8a1a"
+    sha256 sonoma:        "9c255c7d5a76c9325e7f9c66e086baee9bcca9b1be07a1e72b4eef911abb9b6c"
   end
 
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
@@ -18,6 +18,7 @@ class GzRendering9 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
+  depends_on "fmt"
   depends_on "freeimage"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
@@ -26,6 +27,7 @@ class GzRendering9 < Formula
   depends_on "gz-utils3"
   depends_on "ogre1.9"
   depends_on "ogre2.3"
+  depends_on "spdlog"
 
   def install
     rpaths = [
@@ -45,6 +47,7 @@ class GzRendering9 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
       p = lib/"gz-rendering-9/engine-plugins/libgz-rendering-#{engine}.dylib"

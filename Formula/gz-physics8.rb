@@ -4,29 +4,36 @@ class GzPhysics8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-8.3.0.tar.bz2"
   sha256 "ca274cca45c2d6808f4aa09ad01ba6ce17b50a28f71d83dbd8c38b6621c61ef2"
   license "Apache-2.0"
-  revision 7
+  revision 9
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "6c6a73e3bb47a9dabcfb065c4dfb563b5d29d5c8b18e7cbb3e894719ab20ad3f"
-    sha256 arm64_sonoma:  "46880cf7310af66a424685250a4cbbecd563ca101235e00e30d66fc9cd1d319e"
-    sha256 sonoma:        "bfd3175b6cec7c9e541266dfdf971b664a9c5d1abb1b77e59cb6a92e25b3b58f"
+    sha256 arm64_sequoia: "a289efc7587c6f61eb13a609b54312d9f80335b50146738a95ebc626d4162e8a"
+    sha256 arm64_sonoma:  "ef0fcf986c2fe4a64e2c38c49765f500e34395ca331ebe61c3cff00ac36f8394"
+    sha256 sonoma:        "e1ea6e9656b4feaa76e3e51b18b88baf1dc5d567537b68a286ef2f2a2db276ce"
   end
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics8"
 
   depends_on "cmake" => [:build, :test]
 
+  depends_on "assimp"
   depends_on "bullet"
   depends_on "dartsim"
+  depends_on "fcl"
+  depends_on "fmt"
   depends_on "google-benchmark"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
   depends_on "gz-plugin3"
   depends_on "gz-utils3"
+  depends_on "libccd"
+  depends_on "octomap"
+  depends_on "ode"
   depends_on "pkgconf"
   depends_on "sdformat15"
+  depends_on "spdlog"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
@@ -48,6 +55,7 @@ class GzPhysics8 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test plugins in subfolders
     %w[bullet-featherstone bullet dartsim tpe].each do |engine|
       p = lib/"gz-physics-8/engine-plugins/libgz-physics-#{engine}-plugin.dylib"

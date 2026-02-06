@@ -1,32 +1,38 @@
 class GzPhysics9 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-9.0.0.tar.bz2"
-  sha256 "3fbd1f3fcc8ace5a459c2dffa2482eb709efda284eb6d860bfddafdd2a8ae0e8"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-9.1.0.tar.bz2"
+  sha256 "32b9dd10e23a4b4ce9e38f3a8750e5ff20c8ad22f3b375832c5333ded145af6d"
   license "Apache-2.0"
-  revision 6
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "8289698d9be59ff2353dd694e1fc604b8af23bbe0ab71b0ed1136307e6b97357"
-    sha256 arm64_sonoma:  "99fddbedcb0f97eaecfc8eb298476e1a509927c442c98b2d16c6fb9525b2f309"
-    sha256 sonoma:        "4756fd628f6876051d1d13f6f71835104b789ec38f2162a25dd0f88a0f3413c6"
+    sha256 arm64_sequoia: "5ec6b0d3b8fa193899979705a511c6bbc1f47b91565f212439548333e3200fa6"
+    sha256 arm64_sonoma:  "240c0e25dd5afbdd7d657c47571ecbe89722bb01fb5eb8c246a90e0084bc77d1"
+    sha256 sonoma:        "0affa9baa5777b0ca243ea51a5a3d85909cb51092b6c2db3a0b4f512f8f49706"
   end
 
   depends_on "cmake" => [:build, :test]
 
+  depends_on "assimp"
   depends_on "bullet"
   depends_on "dartsim"
+  depends_on "fcl"
+  depends_on "fmt"
   depends_on "google-benchmark"
   depends_on "gz-cmake5"
   depends_on "gz-common7"
   depends_on "gz-math9"
   depends_on "gz-plugin4"
   depends_on "gz-utils4"
+  depends_on "libccd"
+  depends_on "octomap"
+  depends_on "ode"
   depends_on "pkgconf"
   depends_on "sdformat16"
+  depends_on "spdlog"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
@@ -49,6 +55,7 @@ class GzPhysics9 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test plugins in subfolders
     %w[bullet-featherstone bullet dartsim tpe].each do |engine|
       p = lib/"gz-physics-9/engine-plugins/libgz-physics-#{engine}-plugin.dylib"

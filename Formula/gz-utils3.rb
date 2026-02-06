@@ -4,13 +4,13 @@ class GzUtils3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-3.1.1.tar.bz2"
   sha256 "161942a2d00c820683cf88e41c48545e8da4c959aad77ca2229021e5f961201d"
   license "Apache-2.0"
-  revision 4
+  revision 6
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "319278597fa175ff2873a9e8611e29ea703afd48d8119563ba2df686bc0f3c14"
-    sha256 cellar: :any, arm64_sonoma:  "18674419a1008ce81f7787b8563aaad3530a9e80968ee8555a3e52aeb5c475e4"
-    sha256 cellar: :any, sonoma:        "f4d00528ecc1e3fa456f6c8e8bb3c3d354937d56e7227cc9bc21f3f60bb535ee"
+    sha256 cellar: :any, arm64_sequoia: "bcac4cdd77ebd706fd314551136a2f8d31e11a6831f8040c2c39d98b2ddd2b55"
+    sha256 cellar: :any, arm64_sonoma:  "4b43ea96d59ca07b369c22f0ca150b7e465acc153a770048b15ac30330e19ded"
+    sha256 cellar: :any, sonoma:        "b89e45ad797d1cafae9ccfc14502a849cfe2d998d4c2829ecca7fba6c04e6823"
   end
 
   # head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils3"
@@ -18,6 +18,7 @@ class GzUtils3 < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "cli11"
+  depends_on "fmt"
   depends_on "gz-cmake4"
   depends_on "spdlog"
 

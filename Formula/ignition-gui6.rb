@@ -4,21 +4,31 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.8.0.tar.bz2"
   sha256 "dd4f26100f4d1343f068ba36f2b8394a0cddb337efde7b4a21c1b0f66ce496c9"
   license "Apache-2.0"
-  revision 68
+  revision 71
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "6be65e6a76622a1e79eb17f29803b47c810d9ee8bd1038f0c2de544335aafba2"
+    sha256 arm64_sonoma:  "a05110cba9a595bd43a40436475b4be05dc20d1a651bb6b6afdfeec7254e3198"
+    sha256 sonoma:        "aa002ff6e2d00b555c2b52b938468a1682e5115969da2b8b1c48fd0e1e004077"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "gz-plugin2" => :test
 
+  depends_on "abseil"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
+  depends_on "ignition-math6"
   depends_on "ignition-msgs8"
   depends_on "ignition-plugin1"
   depends_on "ignition-rendering6"
   depends_on "ignition-transport11"
+  depends_on "ignition-utils1"
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
@@ -53,6 +63,7 @@ class IgnitionGui6 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"ign-gui-6/plugins/lib#{plugin}.dylib"

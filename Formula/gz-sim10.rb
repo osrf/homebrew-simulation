@@ -1,25 +1,24 @@
 class GzSim10 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.0.0.tar.bz2"
-  sha256 "d0bb60a902b8d311dbd25e8fc47e0e4bc984ef1b2ed582f62dfa742d879a4c56"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.1.1.tar.bz2"
+  sha256 "8e0dc6d216bf12f90b922b01a82211af966a8444c2b16893ed1c21f915b96f54"
   license "Apache-2.0"
-  revision 9
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "da6daf60a99e45d4713196c791ed24802826974b9aab3ad61db1d29bc661222b"
-    sha256 arm64_sonoma:  "bcf5d804ec137153da838b871d6de22e1ab38fcc12a98bdf0cca92e3846a8925"
-    sha256 sonoma:        "1af128056ddf67becafbe680f6b37e145ecee5b256b8ba4f74121d89266aeb43"
+    sha256 arm64_sequoia: "c8da17b5b920f730068289837203de0d0299e6e077845c6ad33e5f8a50aafbba"
+    sha256 arm64_sonoma:  "bf48110b62c59dcb56b3a825e0d994b3abbf0d91d4b396f9c872e87d8720e1f8"
+    sha256 sonoma:        "a38fa7148733882f5781ee58e4062b5095101e3d599ca51b10176df481e274c8"
   end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "gz-cmake5"
@@ -36,11 +35,16 @@ class GzSim10 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "libwebsockets"
+  depends_on "openssl@3"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "python@3.14"
   depends_on "qt@6"
+  depends_on "qtbase"
+  depends_on "qtdeclarative"
   depends_on "ruby"
   depends_on "sdformat16"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def pythons
@@ -80,6 +84,7 @@ class GzSim10 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking

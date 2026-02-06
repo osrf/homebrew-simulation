@@ -4,22 +4,22 @@ class GzSim9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.5.0.tar.bz2"
   sha256 "2dfb720a6945765c7ead5f474b2dffb645773fd55d43d432abcbdfedb1b32dfe"
   license "Apache-2.0"
-  revision 6
+  revision 10
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "925f993f3acc2aef986d6119e54e1ef6b4137f806c99742d5d8cf90b7578764b"
-    sha256 arm64_sonoma:  "8fe3a043b4b27fc5d646f572dc49591416e771ba854cd29da1f3e08009f0c1a5"
-    sha256 sonoma:        "1619de3736bf1304b088bf60ee31c3e73054baa56c9b18f0582657eb6bc6f9fe"
+    sha256 arm64_sequoia: "0efa94d8cfc005b17a7bb53b6f1dbf1dd5f867a5fa81b6eb688184c3de5d4329"
+    sha256 arm64_sonoma:  "947c05b4c520c3f790897988c75ebcc459ad13745fcf6597ef1299cc7ce1e441"
+    sha256 sonoma:        "334663af402a7354a470af22b57a0d9d5355e750573856afb42ac04edacfa859"
   end
 
   # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "gflags"
   depends_on "google-benchmark"
   depends_on "gz-cmake4"
@@ -37,9 +37,11 @@ class GzSim9 < Formula
   depends_on "gz-utils3"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "python@3.14"
   depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat15"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def pythons
@@ -57,6 +59,7 @@ class GzSim9 < Formula
       rpath(source: lib/"gz-sim-9/plugins", target: lib),
       rpath(source: lib/"gz-sim-9/plugins/gui", target: lib),
       rpath(source: lib/"gz-sim-9/plugins/gui/GzSim", target: lib),
+      rpath(source: libexec/"gz/sim9", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -79,6 +82,7 @@ class GzSim9 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking

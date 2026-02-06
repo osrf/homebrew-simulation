@@ -4,13 +4,13 @@ class GzPlugin3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-3.1.0.tar.bz2"
   sha256 "ec469900bda63b62367211c93d3baf6dd01629363003e70b1e67f6a714c446db"
   license "Apache-2.0"
-  revision 4
+  revision 6
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "2a96acd778a7fe0e0b0012b4b4e3cbf1236736b7b9ea57435038915c3209e6f5"
-    sha256 cellar: :any, arm64_sonoma:  "8857e7e0879ad6f8d1a130acd79bfbc63b7ed5f1c839d897bd91fbda7358c6eb"
-    sha256 cellar: :any, sonoma:        "8635c5bbdff8a285910f3c35533a7ea9e29efa56cc8c3585e0004908c6fb8bb5"
+    sha256 cellar: :any, arm64_sequoia: "1b46c91fae2e8953457c5b667ce390b849dfaf6c12c1cb229c42f6e7ce578828"
+    sha256 cellar: :any, arm64_sonoma:  "8f10c3a0296bb10dae964dd511989c57834f26509514f9653d7658586e239c6a"
+    sha256 cellar: :any, sonoma:        "93ca4d302736398b72d3ef71274f62f8464bf5a041846c833b6f1d580728a443"
   end
 
   # head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin3"

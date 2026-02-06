@@ -4,21 +4,22 @@ class GzSensors9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-9.2.0.tar.bz2"
   sha256 "af2ec9a453a830338e80e94954160030e81b3ff8f60853e7c5730cdd2950be85"
   license "Apache-2.0"
-  revision 22
+  revision 26
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               arm64_sequoia: "ded62948e43d7170455ef19dca4a6d62449d80cc187b6f9a5cb8b0fe3fcd6152"
-    sha256               arm64_sonoma:  "a91c7678b9f47811d1142ef3496928215e3d6be09ec3d736fe1dba54fc5d0d29"
-    sha256 cellar: :any, sonoma:        "521c9b313ff770627e602060067b9c0d8ce2c3f814412b1dc916daa10695edb7"
+    sha256               arm64_sequoia: "0eae059b122fce108ae2ba8faa1db618057eef1c1cd9d33d456cccea2ef7fa60"
+    sha256               arm64_sonoma:  "dc3e6b7e0b7d2e460cb9e9ff7ecdc76096f8f988c9be8a32e0f04296e364ed11"
+    sha256 cellar: :any, sonoma:        "5a03b29857830bf8106d7b0eb4bd1729311c077d2f777ada4b67affe296ff05b"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "abseil"
+  depends_on "fmt"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-math8"
@@ -28,6 +29,7 @@ class GzSensors9 < Formula
   depends_on "gz-utils3"
   depends_on "protobuf"
   depends_on "sdformat15"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install

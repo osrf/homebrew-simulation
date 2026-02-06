@@ -4,9 +4,16 @@ class GzGui8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.4.0.tar.bz2"
   sha256 "1731b01a134afb11b1b3e049fc65e74fa7b5c50532406d3d68366d54016d5498"
   license "Apache-2.0"
-  revision 20
+  revision 23
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "14f8ea40d30d87f30b00c2256095e4c7f97de0b062da90542f79ae6f86c23a54"
+    sha256 arm64_sonoma:  "28b6b1fa284b2f0d14e0924e8c6fb4f47b9d6b5aa9879d585102a01d6945a906"
+    sha256 sonoma:        "45967692f3c149aacb5951b947076f780e8836871f5ba90195bd87cf7426f861"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -47,6 +54,7 @@ class GzGui8 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-8/plugins/lib#{plugin}.dylib"
