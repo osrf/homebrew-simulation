@@ -17,7 +17,7 @@ class GzUtils4 < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "cli11"
   depends_on "fmt"
-  depends_on "gz-cmake5"
+  depends_on "gz-jetty-cmake"
   depends_on "spdlog"
 
   def install
