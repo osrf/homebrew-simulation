@@ -108,7 +108,7 @@ class GzSim10 < Formula
            "-s", "--iterations", "5", "-r", "-v", "4"
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-tools2"].opt_bin/"gz",
+    system Formula["gz-jetty-tools"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS

@@ -103,6 +103,6 @@ class GzMsgs12 < Formula
     system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.msgs"
     # check gz msg command
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-tools2"].opt_bin/"gz", "msg"
+    system Formula["gz-jetty-tools"].opt_bin/"gz", "msg"
   end
 end
