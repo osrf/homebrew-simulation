@@ -4,13 +4,7 @@ class IgnitionPhysics5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/ignition-physics-5.4.0.tar.bz2"
   sha256 "0675bf9a0db8cc67ade5e71ff7ccbca57e6ff7d2f7c400ef10787f501a87ae56"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               arm64_sequoia: "3d0595ccef7b1b308554b05aeb4d237dc7b56f3f950c81c0df752de65f0657c5"
-    sha256               arm64_sonoma:  "4eeb76de740275df03b3f5b7661b84745f3def2545b0c21190bc8d8c96e35973"
-    sha256 cellar: :any, sonoma:        "4a699adfa0e24848b8036294092be17f1568fbdf83e7972b4a0d465600e86392"
-  end
+  revision 1
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
 
