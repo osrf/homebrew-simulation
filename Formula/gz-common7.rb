@@ -4,6 +4,7 @@ class GzCommon7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-7.1.0.tar.bz2"
   sha256 "3d5e8e7f40ccea371b2f554607a540719e0f5b33d20a930398da800810a2e07d"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
 
