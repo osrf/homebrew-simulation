@@ -4,7 +4,14 @@ class Sdformat12 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-12.9.0.tar.bz2"
   sha256 "4c546c106265fecc5600de56ce1e979c73e1068d3d89022de1672084db2d5a22"
   license "Apache-2.0"
-  revision 1
+  revision 2
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "264febc7c88b2281d1b2e9e69375faa9e7127b3929e8acec5584a3583c18c0f4"
+    sha256 arm64_sonoma:  "5e722a31aa2d514acf9f55648101083338503639c7965ec69c11e97c2970afe6"
+    sha256 sonoma:        "60628c8224329a93b0cabf96ff445291eb5f3c0fdb636f44b8d7ab0b8d30f7a8"
+  end
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "sdf12"
 
