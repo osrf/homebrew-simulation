@@ -19,10 +19,10 @@ class GzMsgs12 < Formula
   depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
-  depends_on "gz-cmake5"
-  depends_on "gz-math9"
-  depends_on "gz-tools2"
-  depends_on "gz-utils4"
+  depends_on "gz-jetty-cmake"
+  depends_on "gz-jetty-math"
+  depends_on "gz-jetty-tools"
+  depends_on "gz-jetty-utils"
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "tinyxml2"
@@ -103,6 +103,6 @@ class GzMsgs12 < Formula
     system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.msgs"
     # check gz msg command
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-tools2"].opt_bin/"gz", "msg"
+    system Formula["gz-jetty-tools"].opt_bin/"gz", "msg"
   end
 end

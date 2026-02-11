@@ -23,10 +23,10 @@ class Sdformat16 < Formula
   depends_on "python@3.14" => [:build, :test]
 
   depends_on "doxygen"
-  depends_on "gz-cmake5"
-  depends_on "gz-math9"
-  depends_on "gz-tools2"
-  depends_on "gz-utils4"
+  depends_on "gz-jetty-cmake"
+  depends_on "gz-jetty-math"
+  depends_on "gz-jetty-tools"
+  depends_on "gz-jetty-utils"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 

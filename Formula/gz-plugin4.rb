@@ -16,9 +16,9 @@ class GzPlugin4 < Formula
   end
 
   depends_on "cmake"
-  depends_on "gz-cmake5"
-  depends_on "gz-tools2"
-  depends_on "gz-utils4"
+  depends_on "gz-jetty-cmake"
+  depends_on "gz-jetty-tools"
+  depends_on "gz-jetty-utils"
   depends_on "pkgconf"
 
   def install
