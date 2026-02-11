@@ -4,13 +4,13 @@ class GzLaunch8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.2.tar.bz2"
   sha256 "e0ccbd1bc83bc5f178a7a0dc76d1f40e788d5bcad1aeb488c2364ea46466f24e"
   license "Apache-2.0"
-  revision 7
+  revision 13
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "4ca8480e488970c61e21c87fb621e65b52015528f85e12f6262dc287e86a668f"
-    sha256 arm64_sonoma:  "a88d14e10309ffc5a6a6e72d02a2f6f152299984979c383017159bb4879ccbd7"
-    sha256 sonoma:        "f6b15557336e5ce5f9facec355844134aa8f8807451a9ec94d62a0fb0ee8f902"
+    sha256 arm64_sequoia: "5a781151ee9ecb7a8faad274d2d97743923dacc749c2aca17f0e498f71a07b3b"
+    sha256 arm64_sonoma:  "b69038b7ce273d83a5de335a57d5ae0c730298a026cbfff42c22c92e365119d8"
+    sha256 sonoma:        "1931ca4ddbe8a041c7980fce7eb4d79349d37e940506e1ae8d2db671de36fbd0"
   end
 
   # head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
@@ -20,6 +20,7 @@ class GzLaunch8 < Formula
 
   depends_on "abseil"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "gz-cmake4"
   depends_on "gz-common6"
   depends_on "gz-fuel-tools10"
@@ -36,6 +37,7 @@ class GzLaunch8 < Formula
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "sdformat15"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install
@@ -57,6 +59,7 @@ class GzLaunch8 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test CLI executable
     system lib/"gz/launch8/gz-launch"
     # test plugins in subfolders

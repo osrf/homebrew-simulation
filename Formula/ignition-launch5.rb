@@ -4,15 +4,15 @@ class IgnitionLaunch5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/ign-launch/releases/ignition-launch5-5.3.0.tar.bz2"
   sha256 "84d356b9c85609da1bb7feda2f90ae6d1a1fd2d6713b284799d5605de42e2613"
   license "Apache-2.0"
-  revision 68
+  revision 72
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "ce429055fdafbd6cde31d4814f51d4210adb70833e5f6448cf062c70b3191b9c"
-    sha256 arm64_sonoma:  "3352db37f5738c19c1cf19ee1a58c0cd5a3b51de3a4555b8a995debc028fbf00"
-    sha256 sonoma:        "d2e88170d7690d5e96af48ee04783f0a4f8a876f4a1e5aaba20b411cd62715c7"
+    sha256 arm64_sequoia: "5ac6c4282127b511e49359a255ceeb717ec3b8741989061689757b0ae48ede42"
+    sha256 arm64_sonoma:  "ee49a1f36934b797f3304dabbb59bd055772dade0453cb2782b5dba81751bf77"
+    sha256 sonoma:        "768da1f7bbfc2f32b85ba052716c2a29505aecc58d40a47033b5266d9f5ff7dc"
   end
 
   depends_on "cmake" => :build
@@ -20,17 +20,24 @@ class IgnitionLaunch5 < Formula
 
   depends_on "gz-plugin2" => :test
 
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
+  depends_on "ignition-fuel-tools7"
   depends_on "ignition-gazebo6"
   depends_on "ignition-gui6"
+  depends_on "ignition-math6"
   depends_on "ignition-msgs8"
+  depends_on "ignition-physics5"
   depends_on "ignition-plugin1"
+  depends_on "ignition-rendering6"
   depends_on "ignition-tools"
   depends_on "ignition-transport11"
+  depends_on "ignition-utils1"
   depends_on "protobuf"
   depends_on "qt@5"
+  depends_on "sdformat12"
   depends_on "tinyxml2"
 
   patch do
@@ -64,6 +71,7 @@ class IgnitionLaunch5 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test CLI executable
     system lib/"ignition/launch5/ign-launch"
     # test plugins in subfolders

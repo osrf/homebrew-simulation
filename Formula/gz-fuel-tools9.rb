@@ -4,15 +4,15 @@ class GzFuelTools9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-9.1.1.tar.bz2"
   sha256 "3189166d4b0078c0b9d98de178e5496a1cc28b88fbd1124603376181b5a053f5"
   license "Apache-2.0"
-  revision 20
+  revision 22
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "2eadaa9ea10b5ca1cc7eaa51c0ab64d333637e240928493b5e6ef4bcae3eb281"
-    sha256 cellar: :any, arm64_sonoma:  "d030b477ad5fa13242c5e00e9ac1456ec4e48fa74f9f8e58c311daa2b797672d"
-    sha256 cellar: :any, sonoma:        "4034cc9e199ec27a8147a3358aaa2518a556532d1ce8e41a3fd6ab4565745432"
+    sha256 cellar: :any, arm64_sequoia: "93b3355e9a4529d9d12f6fdc4c935a6023cb875cf01a575c03f20fb5c962fba6"
+    sha256 cellar: :any, arm64_sonoma:  "464e95c9d44a26a5d371e7541364094b0b116f45a7f21689ee2f4ba949e7f083"
+    sha256 cellar: :any, sonoma:        "6cfcb9079bb2a9534ca9634f29a47f99c35bca325c5cadc92f3727af2ac1ea39"
   end
 
   depends_on "abseil"

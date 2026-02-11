@@ -4,18 +4,19 @@ class GzUtils4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-4.0.0.tar.bz2"
   sha256 "665560f066c634add7bbe3e9a26e71fa2855b0a81cc41de6f8fbcbe260f490fb"
   license "Apache-2.0"
-  revision 4
+  revision 6
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "705af31502a12ac5e1f8c9f4f0cc086a3294adc94ecad171c9bf014add9f42aa"
-    sha256 cellar: :any, arm64_sonoma:  "9c41da87d48eeedbf6fbe54f0f56fc6b35ee4202922df897fa476e55c0c44121"
-    sha256 cellar: :any, sonoma:        "f9e267700d3465a1c19655583291de2253b05c7afbe7f9b026c462045eea7c26"
+    sha256 cellar: :any, arm64_sequoia: "adbc01e0b9c92f40a1d6fea0a90bb8d9fe0b752644a3087193834da0fe2ec1d2"
+    sha256 cellar: :any, arm64_sonoma:  "357ab3a6e5377ae91df8db43b3c97dd30a1d6d5ce8a0647da303f3ac2d7f5b65"
+    sha256 cellar: :any, sonoma:        "366af92c63811abb1dbfd9aebe7698b4ead764a7e878d18c3e256dfc6518c350"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "cli11"
+  depends_on "fmt"
   depends_on "gz-cmake5"
   depends_on "spdlog"
 

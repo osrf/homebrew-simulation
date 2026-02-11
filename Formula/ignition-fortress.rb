@@ -28,6 +28,7 @@ class IgnitionFortress < Formula
   depends_on "ignition-sensors6"
   depends_on "ignition-tools"
   depends_on "ignition-transport11"
+  depends_on "libyaml"
   depends_on "pkgconf"
   depends_on "sdformat12"
 

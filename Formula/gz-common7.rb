@@ -1,23 +1,23 @@
 class GzCommon7 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-7.0.0.tar.bz2"
-  sha256 "592f17171730925a384918008851541cd7eb278c76226485926cd609120094f5"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-7.1.0.tar.bz2"
+  sha256 "3d5e8e7f40ccea371b2f554607a540719e0f5b33d20a930398da800810a2e07d"
   license "Apache-2.0"
-  revision 6
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "84b17d168f5a427901dc3fa492d12eeece8805678a07285b96b56bd3975dd269"
-    sha256 cellar: :any, arm64_sonoma:  "254c47ff16b83bf90454e42fe2840d0a18b1b174c9bcfb151f9991ce1f68d586"
-    sha256 cellar: :any, sonoma:        "081575a50cc3e66e833dd134ad2b976eeef5f8d5f78f749cad2e7b067c2c12ca"
+    sha256 cellar: :any, arm64_sequoia: "5898896821548e9618bb856ff1a0168de7703177d2f99b21640f715275781f26"
+    sha256 cellar: :any, arm64_sonoma:  "49277dd1db58cb33feb385bcd1b067ddef39ad42ac6cdc0ea49ca0fa04f9e666"
+    sha256 cellar: :any, sonoma:        "4df45d1241383cb2bb6fc31f6927b806e38db75cfc034fb21aa51a3d9607bc31"
   end
 
   depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"
+  depends_on "fmt"
   depends_on "freeimage"
   depends_on "gdal"
   depends_on "gz-cmake5"

@@ -4,20 +4,21 @@ class IgnitionGazebo6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/ignition-gazebo-6.17.0.tar.bz2"
   sha256 "3a51ba77e5cbbc3d0b6b3dd44d66bfd3076bed228c8c9face9678f1bd7a51ced"
   license "Apache-2.0"
-  revision 20
+  revision 24
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "31295874c0bb02c41947742efa5db98f6434f3e6e20e8179056d0d6401d914d9"
-    sha256 arm64_sonoma:  "6cccb8279dfc41868992bb5f658db5102dde13ae622e04d0c51f53de36a5fbcf"
-    sha256 sonoma:        "7dba2d05ff7942c0fea1048f87bd1c76b4cdbd775ee0a3d19f8889618958f81d"
+    sha256 arm64_sequoia: "7ea3914b571b7b9b92479d0266936b61af2a6d3498501d970b285ef0f305a128"
+    sha256 arm64_sonoma:  "456ade31fde852c0ceb90d4d485cb115f94df4d009ca394ee69788411f8012a7"
+    sha256 sonoma:        "974cfb02a3f26812a6ab24c764768b886c4cb1ba252dc66db5e6a7d892c129b3"
   end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "gz-plugin2" => :test
+  depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
   depends_on "google-benchmark"
@@ -37,6 +38,7 @@ class IgnitionGazebo6 < Formula
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "python@3.11"
+  depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat12"
   depends_on "tinyxml2"
@@ -67,6 +69,7 @@ class IgnitionGazebo6 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking

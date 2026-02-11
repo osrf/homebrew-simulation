@@ -4,20 +4,19 @@ class GzSim8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.10.0.tar.bz2"
   sha256 "42951750ca9f77abde245ba9f86f02aa1693f072b3294d371224371ac8afcfc7"
   license "Apache-2.0"
-  revision 4
+  revision 8
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "2d753ab7616b927fa266a225942f00266403adbd831e825eb1902b21f7c678da"
-    sha256 arm64_sonoma:  "1eeb6055dd70b4a9c3d54a05ca813b5884a86a1af0caccf44b9880ed32799c43"
-    sha256 sonoma:        "dc5bc049571e47742541ca9a029c0eb89b31a48960be01e29bcdb1f7aee133c8"
+    sha256 arm64_sequoia: "06d85dd7549018576f087b69ef5e106a4d770e69dd1421b288f861da5090d89c"
+    sha256 arm64_sonoma:  "81950e03ceef862116bc1f3e176187032a76430961cd8ae13bacc18171fa3f1c"
+    sha256 sonoma:        "171b783d8d7ef4c26c8971c3686535387ec2e86e8115f8157bc888d21b961fbc"
   end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "ffmpeg"
   depends_on "gflags"
@@ -37,6 +36,7 @@ class GzSim8 < Formula
   depends_on "gz-utils2"
   depends_on "pkgconf"
   depends_on "protobuf"
+  depends_on "python@3.14"
   depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat14"
@@ -79,6 +79,7 @@ class GzSim8 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking

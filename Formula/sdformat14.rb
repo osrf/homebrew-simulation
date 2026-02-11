@@ -1,19 +1,19 @@
 class Sdformat14 < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.8.0.tar.bz2"
-  sha256 "47272ae4fba00b094da1f5eed32a3adb7417da14dfeaf9b1af758e52829ad75b"
+  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.9.0.tar.bz2"
+  sha256 "7b9c49bcb9f10ba7e84b575497f64f63e7fddf32f573c3644c55575604fecd0f"
   license "Apache-2.0"
-  revision 3
-
-  # head "https://github.com/gazebosim/sdformat.git", branch: "main"
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "c358bc8a7cdf859f5bd15fdfe41b13bc8f781502b008181754c36b4a167561eb"
-    sha256 arm64_sonoma:  "64a5aebbb499735241eb05b617efcc4655a3476863195c13e37703e56ffbfb9f"
-    sha256 sonoma:        "895c1b564e08ee34ec317797d706f6740f278baf3e53c4d6c6fdb7500396376b"
+    sha256 arm64_sequoia: "06b4f47752dcae94f4fdbe442ce5512bc7d7a606a94d50a1560f2bfd2174e243"
+    sha256 arm64_sonoma:  "01874630d42196d405eac19d54cd6aa26bab79a1d928dbf88ec66f2a1e577934"
+    sha256 sonoma:        "3fb3e7311266f7a68940d7e560af5abcf54f8d95d0fe1b9dc000d828dbed53bf"
   end
+
+  # head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]

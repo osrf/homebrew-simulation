@@ -4,20 +4,21 @@ class GzGui10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-10.0.0.tar.bz2"
   sha256 "2ab6facb9473fdafe788efb867fb2f6153e278c9b02d7fe9a84412429bb74ee6"
   license "Apache-2.0"
-  revision 10
+  revision 14
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "aad11df853a8ca5b718a11a2109bf8081ba0a9ccbf7e8d9436b7ce03b11d5f78"
-    sha256 arm64_sonoma:  "9e3ea19e578331522b54810b5a53f6484895989e23af4f5d6d1727147286c574"
-    sha256 sonoma:        "d3bb18de8d07c038400af4929781181e3ef6ebbc144a850ea62551712d54c7fe"
+    sha256 arm64_sequoia: "69202f1f98e54ee976c5501e9fc6cc62792ea0535aa9820e4c0bd6cb20bad47c"
+    sha256 arm64_sonoma:  "67c24f996509dbd609151043530f045ce76137ce07ee3baaeef439139331c908"
+    sha256 sonoma:        "2c538a6d314c374e3416790699320d0e264ad69a4b0b209820ca0e22279ffb7d"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
+  depends_on "fmt"
   depends_on "gz-cmake5"
   depends_on "gz-common7"
   depends_on "gz-math9"
@@ -28,6 +29,9 @@ class GzGui10 < Formula
   depends_on "gz-utils4"
   depends_on "protobuf"
   depends_on "qt@6"
+  depends_on "qtbase"
+  depends_on "qtdeclarative"
+  depends_on "spdlog"
   depends_on "tinyxml2"
 
   def install
@@ -48,6 +52,7 @@ class GzGui10 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-10/plugins/lib#{plugin}.dylib"

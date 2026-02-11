@@ -4,6 +4,20 @@ about: Report a broken bottle
 labels: broken-bottle
 ---
 
+### Checklist
+
+- [ ] Identify change in homebrew-core that broke the bottle
+    - [ ]
+    - [ ] Previous similar issue
+- [ ] Identify list of affected formulae
+    - [ ] gz-*
+- [ ] Remove broken bottles: [generic-release-homebrew_remove_dependent_bottles](https://build.osrfoundation.org/job/generic-release-homebrew_remove_dependent_bottles)
+    - [ ] 
+- [ ] Rebuild broken bottles: [generic-release-homebrew_bump_unbottled_dependencies](https://build.osrfoundation.org/job/generic-release-homebrew_bump_unbottled_dependencies)
+    - [ ] 
+
+### Optional
+
 Please supply your brew configuration:
 
 ### Brew configuration
@@ -25,11 +39,3 @@ block below with the name of the broken bottle and paste the output of
 $ brew linkage --test gz-common5
 
 ~~~
-
-### Checklist
-
-- [ ] Identify change in homebrew-core that broke the bottle
-- [ ] Identify list of affected formulae
-    - [ ] gz-*
-- [ ] Remove broken bottles: for each affected formula, run `brew bump-revision --remove-bottle-block`
-- [ ] Rebuild broken bottles

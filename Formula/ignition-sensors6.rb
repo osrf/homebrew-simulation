@@ -1,29 +1,31 @@
 class IgnitionSensors6 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/ignition-sensors-6.8.1.tar.bz2"
-  sha256 "abc96be3bd018cae94c83981d173af0f67ce2980ef7a1374b34bd5b63f9a7235"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/ignition-sensors-6.9.0.tar.bz2"
+  sha256 "20cc51bf730bfb3f9eba6fec0a8fc6c917b2841aa0b0543e183f60200e57ae4c"
   license "Apache-2.0"
-  revision 28
+  revision 2
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               arm64_sequoia: "d0896b745a50a34f1940962462c2fa3439346e75b56fa29e4949b15074e5f38c"
-    sha256               arm64_sonoma:  "3d61988259a370fd1bfefb21b026410fd273822eedf52c43aae6bdbf2e873d1c"
-    sha256 cellar: :any, sonoma:        "d3de36a94398ac1bf21e9c42d9aae654028d3a4792eea57522f2fc668188bc45"
+    sha256               arm64_sequoia: "80a1ad2abe2bfbdf363f9c944d24da93cdb16be4ff778adb8977fac55a1b9812"
+    sha256               arm64_sonoma:  "399b0b26c2cf59e8fc28b070fbb6c720c945f6e1638f82c1e9091c3e00091bde"
+    sha256 cellar: :any, sonoma:        "733e9bca9a3b8eac002fd8742245690774b813e27a1a51f09c9e91c874a756fd"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
+  depends_on "abseil"
   depends_on "ignition-cmake2"
   depends_on "ignition-common4"
   depends_on "ignition-math6"
   depends_on "ignition-msgs8"
   depends_on "ignition-rendering6"
   depends_on "ignition-transport11"
+  depends_on "ignition-utils1"
   depends_on "protobuf"
   depends_on "sdformat12"
   depends_on "tinyxml2"
