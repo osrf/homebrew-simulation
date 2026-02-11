@@ -11,7 +11,7 @@ labels: broken-bottle
     - [ ] Previous similar issue
 - [ ] Identify list of affected formulae
     - [ ] gz-*
-- [ ] Remove broken bottles: [generic-release-homebrew_remove_dependent_bottles]([url](https://build.osrfoundation.org/job/generic-release-homebrew_remove_dependent_bottles))
+- [ ] Remove broken bottles: [generic-release-homebrew_remove_dependent_bottles](https://build.osrfoundation.org/job/generic-release-homebrew_remove_dependent_bottles)
     - [ ] 
 - [ ] Rebuild broken bottles: [generic-release-homebrew_bump_unbottled_dependencies](https://build.osrfoundation.org/job/generic-release-homebrew_bump_unbottled_dependencies)
     - [ ] 

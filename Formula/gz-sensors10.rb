@@ -4,14 +4,15 @@ class GzSensors10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-10.0.1.tar.bz2"
   sha256 "6f16c4c125d283536f49642109f62b2cdccfc7a421d4b33a1350d46ab7e831a3"
   license "Apache-2.0"
+  revision 2
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               arm64_sequoia: "6957a8b940c2578643c6f423f34d14d35356aaab8d70d0bdb11d8ee960f2d991"
-    sha256               arm64_sonoma:  "980d731ef61863162e0b42c16dcd7897c593dcbfe05efa854824d1d5d4455a84"
-    sha256 cellar: :any, sonoma:        "77bf066e69ee3f8df7ab4255376cfee2ed8733e49b01d69694cb63cf56406cf6"
+    sha256               arm64_sequoia: "b986cfc1883a02f0ef246c0f93b6f45b44a919d0a64312b063e6feb888129c62"
+    sha256               arm64_sonoma:  "eda807fefafec85112148d957749b4a1675c05e6cb8f04f6af1b88d81d3b01c7"
+    sha256 cellar: :any, sonoma:        "c848e4b0c5af0fe41ba39c4aabb1e26034f8b50335a9a1dc69c8e5ce5d44ccdd"
   end
 
   depends_on "cmake" => [:build, :test]
