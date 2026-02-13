@@ -42,12 +42,6 @@ class IgnitionGazebo6 < Formula
   depends_on "sdformat12"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-sim/commit/3f8d77ba050b29b5cf4bc4a35da6009178812eaf.patch?full_index=1"
-    sha256 "1a1f09011abdd66e9a5670f1781ee16b3e18cd97b5128a0933d302701f5e9aee"
-  end
-
   def install
     rpaths = [
       rpath,
