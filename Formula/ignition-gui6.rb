@@ -32,18 +32,6 @@ class IgnitionGui6 < Formula
   depends_on "qt@5"
   depends_on "tinyxml2"
 
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-gui/commit/f65395f734df81b22dcd10d68d2802b61d6b72bc.patch?full_index=1"
-    sha256 "50c63503ca4dc48c677e254b3a50a9cffd3ffbee9b6d85a60b36c78a3eb3ba05"
-  end
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-gui/commit/c1c115519dab226f4332be6b3ff3054b687e2124.patch?full_index=1"
-    sha256 "71ef1a763546712312bed3685156d572b57a42bd89d642fea156862efcb41b2b"
-  end
-
   def install
     rpaths = [
       rpath,
