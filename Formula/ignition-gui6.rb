@@ -9,9 +9,9 @@ class IgnitionGui6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "6be65e6a76622a1e79eb17f29803b47c810d9ee8bd1038f0c2de544335aafba2"
-    sha256 arm64_sonoma:  "a05110cba9a595bd43a40436475b4be05dc20d1a651bb6b6afdfeec7254e3198"
-    sha256 sonoma:        "aa002ff6e2d00b555c2b52b938468a1682e5115969da2b8b1c48fd0e1e004077"
+    sha256 arm64_sequoia: "9a3b6615c8b7817db838faf953528c887a93b287de1bbe40b55e711dadd20608"
+    sha256 arm64_sonoma:  "215069dd97329a0c15aa1f7ec53c5bb607c72a52f032adf996fb18e2b12328bb"
+    sha256 sonoma:        "4a393c853b4a0ffa454435b479c3ab3d022c23616337f4f7c2d058680e5be62d"
   end
 
   depends_on "cmake" => [:build, :test]
