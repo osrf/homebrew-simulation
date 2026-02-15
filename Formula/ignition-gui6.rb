@@ -1,18 +1,17 @@
 class IgnitionGui6 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-gui/releases/ignition-gui6-6.8.0.tar.bz2"
-  sha256 "dd4f26100f4d1343f068ba36f2b8394a0cddb337efde7b4a21c1b0f66ce496c9"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/ignition-gui-6.9.0.tar.bz2"
+  sha256 "905f740430ae51579d40927f38683d075558c3694ce069f669fb50f7db9a94b5"
   license "Apache-2.0"
-  revision 71
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "6be65e6a76622a1e79eb17f29803b47c810d9ee8bd1038f0c2de544335aafba2"
-    sha256 arm64_sonoma:  "a05110cba9a595bd43a40436475b4be05dc20d1a651bb6b6afdfeec7254e3198"
-    sha256 sonoma:        "aa002ff6e2d00b555c2b52b938468a1682e5115969da2b8b1c48fd0e1e004077"
+    sha256 arm64_sequoia: "9a3b6615c8b7817db838faf953528c887a93b287de1bbe40b55e711dadd20608"
+    sha256 arm64_sonoma:  "215069dd97329a0c15aa1f7ec53c5bb607c72a52f032adf996fb18e2b12328bb"
+    sha256 sonoma:        "4a393c853b4a0ffa454435b479c3ab3d022c23616337f4f7c2d058680e5be62d"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -32,18 +31,6 @@ class IgnitionGui6 < Formula
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-gui/commit/f65395f734df81b22dcd10d68d2802b61d6b72bc.patch?full_index=1"
-    sha256 "50c63503ca4dc48c677e254b3a50a9cffd3ffbee9b6d85a60b36c78a3eb3ba05"
-  end
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-gui/commit/c1c115519dab226f4332be6b3ff3054b687e2124.patch?full_index=1"
-    sha256 "71ef1a763546712312bed3685156d572b57a42bd89d642fea156862efcb41b2b"
-  end
 
   def install
     rpaths = [
