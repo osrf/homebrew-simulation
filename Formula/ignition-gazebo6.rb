@@ -1,18 +1,17 @@
 class IgnitionGazebo6 < Formula
   desc "Ignition Gazebo robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/ignition-gazebo-6.17.0.tar.bz2"
-  sha256 "3a51ba77e5cbbc3d0b6b3dd44d66bfd3076bed228c8c9face9678f1bd7a51ced"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/ignition-gazebo-6.17.1.tar.bz2"
+  sha256 "30001eff50b175565e5d10df5a6ad3dab8638f3c2ea53e365ac264bc33f6b04d"
   license "Apache-2.0"
-  revision 24
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "7ea3914b571b7b9b92479d0266936b61af2a6d3498501d970b285ef0f305a128"
-    sha256 arm64_sonoma:  "456ade31fde852c0ceb90d4d485cb115f94df4d009ca394ee69788411f8012a7"
-    sha256 sonoma:        "974cfb02a3f26812a6ab24c764768b886c4cb1ba252dc66db5e6a7d892c129b3"
+    sha256 arm64_sequoia: "ea2613f84f14b5d7c57550393b38e2f1988d1e8a7c3f0a6eecbc64ef57e3a279"
+    sha256 arm64_sonoma:  "f9d054bc44ccd9638013ffaba8f8a6ab080e7c4dd2c60e447053d714362bb9d0"
+    sha256 sonoma:        "f02496348ad3b67f7208b9b2abb83e1512c3dda5f5d9888ccf4661b4c3687008"
   end
 
   depends_on "cmake" => :build
@@ -42,12 +41,6 @@ class IgnitionGazebo6 < Formula
   depends_on "ruby"
   depends_on "sdformat12"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-sim/commit/3f8d77ba050b29b5cf4bc4a35da6009178812eaf.patch?full_index=1"
-    sha256 "1a1f09011abdd66e9a5670f1781ee16b3e18cd97b5128a0933d302701f5e9aee"
-  end
 
   def install
     rpaths = [
