@@ -144,7 +144,18 @@ def cmd_collection_aliases(args: argparse.Namespace) -> int:
     for dep in deps:
         short = dep_to_short_name(dep)
         alias_name = f"gz-{collection}-{short}"
-        target = f"../Formula/{dep}.rb"
+        formula_path = FORMULA_DIR / f"{dep}.rb"
+        alias_target_path = ALIAS_DIR / dep
+
+        if formula_path.exists():
+            target = f"../Formula/{dep}.rb"
+        elif alias_target_path.is_symlink():
+            target = f"../Aliases/{dep}"
+        else:
+            print(f"  {alias_name}: ERROR — no Formula or Alias found for '{dep}'",
+                  file=sys.stderr)
+            return 1
+
         create_symlink(ALIAS_DIR / alias_name, target, dry_run=args.dry_run)
 
     return 0
