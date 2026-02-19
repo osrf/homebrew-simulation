@@ -9,9 +9,9 @@ class IgnitionMsgs8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "0fbfc93ce35e5dd71602c98a4dabf98eb4b3ffed097a82b1aad105386e5189e2"
-    sha256 cellar: :any, arm64_sonoma:  "217fd7652915962c7e3c936f4f647d762921946130d96654194254e688c6a8b1"
-    sha256 cellar: :any, sonoma:        "af79c8fc3faef170587e11de47cacbe880bd3c2009c4db68d9158dbe8df394ac"
+    sha256 cellar: :any, arm64_sequoia: "e936c4577982f838cd956236c0823d4d2c4e9a378011d4151846ad42294f7c1a"
+    sha256 cellar: :any, arm64_sonoma:  "5287018abc8a7eb49b67149b1b452af251af961b4018c3a1c8de9dcbf9859954"
+    sha256 cellar: :any, sonoma:        "8bfe2ee56977b8cc64879245ce85502b408eca71c0e2d30aa0fd3b7787bddd9d"
   end
 
   depends_on "abseil"
