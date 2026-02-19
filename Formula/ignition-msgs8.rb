@@ -1,18 +1,17 @@
 class IgnitionMsgs8 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/gazebosim/gz-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-msgs/releases/ignition-msgs8-8.7.0.tar.bz2"
-  sha256 "b17a8e16fe56a84891bd0654a2ac09427e9a567b9cd2255bb2cfa830f8e1af45"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-8.7.1.tar.bz2"
+  sha256 "5de8edbcf971ea223756310129b2a25c0b5cba2657d736fd8f556eeec331bff0"
   license "Apache-2.0"
-  revision 65
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "0fbfc93ce35e5dd71602c98a4dabf98eb4b3ffed097a82b1aad105386e5189e2"
-    sha256 cellar: :any, arm64_sonoma:  "217fd7652915962c7e3c936f4f647d762921946130d96654194254e688c6a8b1"
-    sha256 cellar: :any, sonoma:        "af79c8fc3faef170587e11de47cacbe880bd3c2009c4db68d9158dbe8df394ac"
+    sha256 cellar: :any, arm64_sequoia: "e936c4577982f838cd956236c0823d4d2c4e9a378011d4151846ad42294f7c1a"
+    sha256 cellar: :any, arm64_sonoma:  "5287018abc8a7eb49b67149b1b452af251af961b4018c3a1c8de9dcbf9859954"
+    sha256 cellar: :any, sonoma:        "8bfe2ee56977b8cc64879245ce85502b408eca71c0e2d30aa0fd3b7787bddd9d"
   end
 
   depends_on "abseil"
@@ -23,18 +22,6 @@ class IgnitionMsgs8 < Formula
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for compatibility with protobuf 23.2
-    url "https://github.com/gazebosim/gz-msgs/commit/0c0926c37042ac8f5aeb49ac36101acd3e084c6b.patch?full_index=1"
-    sha256 "02dd3ee467dcdd1b5b1c7c26d56ebea34276fea7ff3611fb53bf27b99e7ba4bc"
-  end
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-msgs/commit/01f6ee53c20e1d5a5dece1b60e98c78cdbc1ea6c.patch?full_index=1"
-    sha256 "4aab8b47f83757014c56f1aac3f3da147d828dc6a935c09618e673424778084e"
-  end
 
   def install
     cmake_args = std_cmake_args
