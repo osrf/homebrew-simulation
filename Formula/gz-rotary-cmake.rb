@@ -1,9 +1,9 @@
 class GzRotaryCmake < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-cmake.git", branch: "main"
-  version "0.1.0"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-cmake.git", branch: "main"
 
   depends_on "cmake"
   depends_on "pkgconf"

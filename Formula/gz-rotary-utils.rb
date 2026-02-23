@@ -1,9 +1,9 @@
 class GzRotaryUtils < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://github.com/gazebosim/gz-utils.git", branch: "main"
-  version "0.1.0"
   license "Apache-2.0"
+
+  head "https://github.com/gazebosim/gz-utils.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
