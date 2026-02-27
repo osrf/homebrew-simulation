@@ -25,6 +25,12 @@ class GzRotaryUtils < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
+  end
+
   test do
     (testpath/"test.cpp").write <<-EOS
       #include <gz/utils/ImplPtr.hh>
