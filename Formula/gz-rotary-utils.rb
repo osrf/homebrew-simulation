@@ -8,6 +8,7 @@ class GzRotaryUtils < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "cli11"
+  depends_on "fmt"
   depends_on "gz-rotary-cmake"
   depends_on "spdlog"
 
