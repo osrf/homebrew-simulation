@@ -23,6 +23,8 @@ class GzTools2 < Formula
   conflicts_with "gazebo11", because: "both install bin/gz"
   conflicts_with "gz-rotary-tools", because: "both install bin/gz"
 
+  conflicts_with "gz-rotary-tools", because: "both install gz-tools"
+
   def install
     inreplace "src/gz.in" do |s|
       s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
