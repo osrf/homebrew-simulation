@@ -1,31 +1,28 @@
-class GzSensors10 < Formula
+class GzRotarySensors < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-10.0.1.tar.bz2"
-  sha256 "6f16c4c125d283536f49642109f62b2cdccfc7a421d4b33a1350d46ab7e831a3"
   license "Apache-2.0"
-  revision 5
 
-  head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors10"
+  head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "abseil"
   depends_on "fmt"
-  depends_on "gz-cmake5"
-  depends_on "gz-common7"
-  depends_on "gz-math9"
-  depends_on "gz-msgs12"
-  depends_on "gz-rendering10"
-  depends_on "gz-transport15"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-common"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-msgs"
+  depends_on "gz-rotary-rendering"
+  depends_on "gz-rotary-sdformat"
+  depends_on "gz-rotary-transport"
+  depends_on "gz-rotary-utils"
   depends_on "protobuf"
-  depends_on "sdformat16"
   depends_on "spdlog"
   depends_on "tinyxml2"
 
-  conflicts_with "gz-rotary-sensors", because: "both install gz-sensors"
+  conflicts_with "gz-jetty-sensors", because: "both install gz-sensors"
 
   def install
     cmake_args = std_cmake_args
@@ -36,6 +33,12 @@ class GzSensors10 < Formula
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+  end
+
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
   end
 
   test do

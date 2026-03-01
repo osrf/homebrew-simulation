@@ -1,21 +1,18 @@
-class GzFuelTools11 < Formula
+class GzRotaryFuelTools < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-11.0.0.tar.bz2"
-  sha256 "4b4dee9b5a2e8cf04f1000e568187a65dd379bf54f8acf16d4e31a29240b30f0"
   license "Apache-2.0"
-  revision 17
 
-  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools11"
+  head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "main"
 
   depends_on "abseil"
   depends_on "cmake"
   depends_on "fmt"
-  depends_on "gz-cmake5"
-  depends_on "gz-common7"
-  depends_on "gz-math9"
-  depends_on "gz-msgs12"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-common"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-msgs"
+  depends_on "gz-rotary-utils"
   depends_on "jsoncpp"
   depends_on "libyaml"
   depends_on "libzip"
@@ -24,7 +21,7 @@ class GzFuelTools11 < Formula
   depends_on "spdlog"
   depends_on "tinyxml2"
 
-  conflicts_with "gz-rotary-fuel-tools", because: "both install gz-fuel-tools"
+  conflicts_with "gz-jetty-fuel-tools", because: "both install gz-fuel-tools"
 
   def install
     cmake_args = std_cmake_args
@@ -35,6 +32,12 @@ class GzFuelTools11 < Formula
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+  end
+
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
   end
 
   test do

@@ -1,12 +1,9 @@
-class GzSim10 < Formula
+class GzRotarySim < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.1.1.tar.bz2"
-  sha256 "8e0dc6d216bf12f90b922b01a82211af966a8444c2b16893ed1c21f915b96f54"
   license "Apache-2.0"
-  revision 6
 
-  head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
+  head "https://github.com/gazebosim/gz-sim.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -15,19 +12,20 @@ class GzSim10 < Formula
   depends_on "fmt"
   depends_on "gflags"
   depends_on "google-benchmark"
-  depends_on "gz-cmake5"
-  depends_on "gz-common7"
-  depends_on "gz-fuel-tools11"
-  depends_on "gz-gui10"
-  depends_on "gz-math9"
-  depends_on "gz-msgs12"
-  depends_on "gz-physics9"
-  depends_on "gz-plugin4"
-  depends_on "gz-rendering10"
-  depends_on "gz-sensors10"
-  depends_on "gz-tools2"
-  depends_on "gz-transport15"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-common"
+  depends_on "gz-rotary-fuel-tools"
+  depends_on "gz-rotary-gui"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-msgs"
+  depends_on "gz-rotary-physics"
+  depends_on "gz-rotary-plugin"
+  depends_on "gz-rotary-rendering"
+  depends_on "gz-rotary-sdformat"
+  depends_on "gz-rotary-sensors"
+  depends_on "gz-rotary-tools"
+  depends_on "gz-rotary-transport"
+  depends_on "gz-rotary-utils"
   depends_on "libwebsockets"
   depends_on "openssl@3"
   depends_on "pkgconf"
@@ -39,7 +37,6 @@ class GzSim10 < Formula
   depends_on "qtdeclarative"
   depends_on "qtsvg"
   depends_on "ruby"
-  depends_on "sdformat16"
   depends_on "spdlog"
   depends_on "tinyxml2"
 
@@ -52,15 +49,15 @@ class GzSim10 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
-  conflicts_with "gz-rotary-sim", because: "both install gz-sim"
+  conflicts_with "gz-jetty-sim", because: "both install gz-sim"
 
   def install
     rpaths = [
       rpath,
-      rpath(source: lib/"gz-sim-10/plugins", target: lib),
-      rpath(source: lib/"gz-sim-10/plugins/gui", target: lib),
-      rpath(source: lib/"gz-sim-10/plugins/gui/GzSim", target: lib),
-      rpath(source: libexec/"gz/sim10", target: lib),
+      rpath(source: lib/"gz-sim/plugins", target: lib),
+      rpath(source: lib/"gz-sim/plugins/gui", target: lib),
+      rpath(source: lib/"gz-sim/plugins/gui/GzSim", target: lib),
+      rpath(source: libexec/"gz/sim", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -79,6 +76,12 @@ class GzSim10 < Formula
     rmdir prefix/"lib/python"
   end
 
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
+  end
+
   test do
     require "system_command"
     extend SystemCommand::Mixin
@@ -86,7 +89,7 @@ class GzSim10 < Formula
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin4"].opt_libexec/"gz/plugin4/gz-plugin"
+      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -96,17 +99,17 @@ class GzSim10 < Formula
       assert stderr.exclude?(error_string), error_string
     }
     %w[altimeter log physics sensors].each do |system|
-      plugin_info.call lib/"gz-sim-10/plugins/libgz-sim-#{system}-system.dylib"
+      plugin_info.call lib/"gz-sim/plugins/libgz-sim-#{system}-system.dylib"
     end
     ["libAlignTool", "libEntityContextMenuPlugin", "libGzSceneManager", "GzSim/libEntityContextMenu"].each do |p|
-      plugin_info.call lib/"gz-sim-10/plugins/gui/#{p}.dylib"
+      plugin_info.call lib/"gz-sim/plugins/gui/#{p}.dylib"
     end
     # test gz-sim-main CLI tool
-    system libexec/"gz/sim10/gz-sim-main",
+    system libexec/"gz/sim/gz-sim-main",
            "-s", "--iterations", "5", "-r", "-v", "4"
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-tools2"].opt_bin/"gz",
+    system Formula["gz-rotary-tools"].opt_bin/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS
