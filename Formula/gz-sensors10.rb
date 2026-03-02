@@ -20,7 +20,7 @@ class GzSensors10 < Formula
   depends_on "gz-rendering10"
   depends_on "gz-transport15"
   depends_on "gz-utils4"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "sdformat16"
   depends_on "spdlog"
   depends_on "tinyxml2"

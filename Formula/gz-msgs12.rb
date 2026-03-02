@@ -18,7 +18,7 @@ class GzMsgs12 < Formula
   depends_on "gz-tools2"
   depends_on "gz-utils4"
   depends_on "pkgconf"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "tinyxml2"
 
   def pythons

@@ -20,7 +20,7 @@ class GzFuelTools11 < Formula
   depends_on "libyaml"
   depends_on "libzip"
   depends_on "pkgconf"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "spdlog"
   depends_on "tinyxml2"
 

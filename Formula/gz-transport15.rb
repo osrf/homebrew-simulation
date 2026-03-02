@@ -24,7 +24,7 @@ class GzTransport15 < Formula
   depends_on "gz-utils4"
   depends_on "ossp-uuid"
   depends_on "pkgconf"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
