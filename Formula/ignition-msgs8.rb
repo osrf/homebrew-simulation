@@ -4,15 +4,9 @@ class IgnitionMsgs8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-8.7.1.tar.bz2"
   sha256 "5de8edbcf971ea223756310129b2a25c0b5cba2657d736fd8f556eeec331bff0"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs8"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "e936c4577982f838cd956236c0823d4d2c4e9a378011d4151846ad42294f7c1a"
-    sha256 cellar: :any, arm64_sonoma:  "5287018abc8a7eb49b67149b1b452af251af961b4018c3a1c8de9dcbf9859954"
-    sha256 cellar: :any, sonoma:        "8bfe2ee56977b8cc64879245ce85502b408eca71c0e2d30aa0fd3b7787bddd9d"
-  end
 
   depends_on "abseil"
   depends_on "cmake"
