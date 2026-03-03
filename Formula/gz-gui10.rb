@@ -104,7 +104,6 @@ class GzGui10 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-gui::gz-gui)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "gz-gui", "--cflags"
     # system "pkg-config", "gz-gui", "--libs"
     # cflags   = `pkg-config --cflags gz-gui`.split
@@ -117,7 +116,6 @@ class GzGui10 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
