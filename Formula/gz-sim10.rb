@@ -145,7 +145,6 @@ class GzSim10 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-sim::core)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "--cflags", "gz-sim"
     # cflags   = `pkg-config --cflags gz-sim`.split
     # ldflags  = `pkg-config --libs gz-sim`.split
@@ -156,7 +155,6 @@ class GzSim10 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
