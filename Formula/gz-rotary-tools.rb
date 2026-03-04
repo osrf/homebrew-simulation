@@ -1,30 +1,33 @@
-class GzTools3 < Formula
+class GzRotaryTools < Formula
   desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
-  url "https://github.com/gazebosim/gz-tools.git", branch: "main"
-  version "2.999.999-0-20250530"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools3"
+  head "https://github.com/gazebosim/gz-tools.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
-  depends_on "gz-cmake5"
+  depends_on "gz-rotary-cmake"
 
   conflicts_with "gazebo11", because: "both install bin/gz"
-  conflicts_with "gz-tools2", because: "both install bin/gz"
+  conflicts_with "gz-jetty-tools", because: "both install bin/gz"
 
   def install
     inreplace "src/gz.in" do |s|
       s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
     end
 
-    # Use a build folder
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
+  end
+
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
   end
 
   test do
