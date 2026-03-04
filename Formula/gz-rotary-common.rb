@@ -9,7 +9,6 @@ class GzRotaryCommon < Formula
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "fmt"
-  depends_on "freeimage"
   depends_on "gdal"
   depends_on "gz-rotary-cmake"
   depends_on "gz-rotary-math"
