@@ -1,34 +1,24 @@
-class GzCommon7 < Formula
+class GzRotaryCommon < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-7.1.1.tar.bz2"
-  sha256 "9ba0e4c7eec67421fd284ccaab07a790df0aa76559589b6c8b86103e96579da4"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "eadb290b2c645585f8be4b3c8e5fa9b9714cab1baed89995b3c9f1a87a66fe02"
-    sha256 cellar: :any, arm64_sonoma:  "7273f31ff3908e5736407aa19ad2535202812547563e59790abf3ebdfe986b71"
-    sha256 cellar: :any, sonoma:        "93bc8b355cf1c92fe3cab06ef820e42431f54b184f093a44b4bf6e53db1dbb1b"
-  end
+  head "https://github.com/gazebosim/gz-common.git", branch: "main"
 
   depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "fmt"
-  depends_on "freeimage"
   depends_on "gdal"
-  depends_on "gz-cmake5"
-  depends_on "gz-math9"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-utils"
   depends_on "ossp-uuid"
   depends_on "pkgconf"
   depends_on "spdlog"
   depends_on "tinyxml2"
 
-  conflicts_with "gz-rotary-common", because: "both install gz-common"
+  conflicts_with "gz-jetty-common", because: "both install gz-common"
 
   def install
     cmake_args = std_cmake_args
@@ -40,6 +30,12 @@ class GzCommon7 < Formula
       system "cmake", "..", *cmake_args
       system "make", "install"
     end
+  end
+
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
   end
 
   test do
