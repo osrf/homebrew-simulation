@@ -25,6 +25,7 @@ class GzGui10 < Formula
   depends_on "qtbase"
   depends_on "qtcharts"
   depends_on "qtdeclarative"
+  depends_on "qtlocation"
   depends_on "qtpositioning"
   depends_on "qtsvg"
   depends_on "spdlog"
