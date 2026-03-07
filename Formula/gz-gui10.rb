@@ -4,7 +4,7 @@ class GzGui10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-10.0.0.tar.bz2"
   sha256 "2ab6facb9473fdafe788efb867fb2f6153e278c9b02d7fe9a84412429bb74ee6"
   license "Apache-2.0"
-  revision 15
+  revision 16
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
 
@@ -21,9 +21,13 @@ class GzGui10 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "protobuf"
-  depends_on "qt@6"
+  depends_on "qt5compat"
   depends_on "qtbase"
+  depends_on "qtcharts"
   depends_on "qtdeclarative"
+  depends_on "qtlocation"
+  depends_on "qtpositioning"
+  depends_on "qtsvg"
   depends_on "spdlog"
   depends_on "tinyxml2"
 

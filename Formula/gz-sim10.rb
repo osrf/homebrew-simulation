@@ -4,7 +4,7 @@ class GzSim10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.1.1.tar.bz2"
   sha256 "8e0dc6d216bf12f90b922b01a82211af966a8444c2b16893ed1c21f915b96f54"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
 
@@ -33,9 +33,11 @@ class GzSim10 < Formula
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "python@3.14"
-  depends_on "qt@6"
+  depends_on "qt5compat"
   depends_on "qtbase"
+  depends_on "qtcharts"
   depends_on "qtdeclarative"
+  depends_on "qtsvg"
   depends_on "ruby"
   depends_on "sdformat16"
   depends_on "spdlog"
