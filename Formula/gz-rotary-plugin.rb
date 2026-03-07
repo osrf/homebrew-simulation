@@ -1,32 +1,22 @@
-class GzPlugin4 < Formula
+class GzRotaryPlugin < Formula
   desc "Plugin libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-plugin"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-plugin/releases/gz-plugin-4.0.0.tar.bz2"
-  sha256 "f33b784fd26ab856f976425f8aafcf3d8c76c694444f219b73b7a95882cc123a"
   license "Apache-2.0"
-  revision 6
 
-  head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin4"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "ec78a2746df21ea90531f623711f2dcb4d389f98ed6e331076d5dd00b391607b"
-    sha256 cellar: :any, arm64_sonoma:  "4bf407ef568a0401e99f1af52a819fffc1dc5e103ea1ac998084b05f8a88ae6c"
-    sha256 cellar: :any, sonoma:        "e56af85ca12bcafff45e7bf216e979044a79ddd78591e5a6a60c7223ae033dd2"
-  end
+  head "https://github.com/gazebosim/gz-plugin.git", branch: "main"
 
   depends_on "cmake"
-  depends_on "gz-cmake5"
-  depends_on "gz-tools2"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-tools"
+  depends_on "gz-rotary-utils"
   depends_on "pkgconf"
 
-  conflicts_with "gz-rotary-plugin", because: "both install gz-plugin"
+  conflicts_with "gz-jetty-plugin", because: "both install gz-plugin"
 
   def install
     rpaths = [
       rpath,
-      rpath(source: libexec/"gz/plugin4", target: lib),
+      rpath(source: libexec/"gz/plugin", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -39,9 +29,15 @@ class GzPlugin4 < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
+  end
+
   test do
     # test CLI executable
-    system libexec/"gz/plugin4/gz-plugin"
+    system libexec/"gz/plugin/gz-plugin"
     # build against API
     (testpath/"test.cpp").write <<-EOS
       #include <gz/plugin/Loader.hh>

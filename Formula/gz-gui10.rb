@@ -4,7 +4,7 @@ class GzGui10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-10.0.0.tar.bz2"
   sha256 "2ab6facb9473fdafe788efb867fb2f6153e278c9b02d7fe9a84412429bb74ee6"
   license "Apache-2.0"
-  revision 16
+  revision 17
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
 
@@ -21,9 +21,13 @@ class GzGui10 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "protobuf@33"
-  depends_on "qt@6"
+  depends_on "qt5compat"
   depends_on "qtbase"
+  depends_on "qtcharts"
   depends_on "qtdeclarative"
+  depends_on "qtlocation"
+  depends_on "qtpositioning"
+  depends_on "qtsvg"
   depends_on "spdlog"
   depends_on "tinyxml2"
 
@@ -104,7 +108,6 @@ class GzGui10 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-gui::gz-gui)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     # system "pkg-config", "gz-gui", "--cflags"
     # system "pkg-config", "gz-gui", "--libs"
     # cflags   = `pkg-config --cflags gz-gui`.split
@@ -117,7 +120,6 @@ class GzGui10 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
