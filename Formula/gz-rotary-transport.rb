@@ -1,12 +1,9 @@
-class GzTransport15 < Formula
+class GzRotaryTransport < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-15.0.2.tar.bz2"
-  sha256 "86569a868c58683f8e3e26b2305566e1a6c3398d596f026d5bb56ca7e9743ff1"
   license "Apache-2.0"
-  revision 1
 
-  head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport15"
+  head "https://github.com/gazebosim/gz-transport.git", branch: "main"
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
@@ -17,11 +14,11 @@ class GzTransport15 < Formula
   depends_on "abseil"
   depends_on "cmake"
   depends_on "cppzmq"
-  depends_on "gz-cmake5"
-  depends_on "gz-math9"
-  depends_on "gz-msgs12"
-  depends_on "gz-tools2"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-msgs"
+  depends_on "gz-rotary-tools"
+  depends_on "gz-rotary-utils"
   depends_on "ossp-uuid"
   depends_on "pkgconf"
   depends_on "protobuf"
@@ -38,7 +35,7 @@ class GzTransport15 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
-  conflicts_with "gz-rotary-transport", because: "both install gz-transport"
+  conflicts_with "gz-jetty-transport", because: "both install gz-transport"
 
   def install
     rpaths = [
@@ -66,6 +63,12 @@ class GzTransport15 < Formula
         rmdir prefix/"lib/python"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
   end
 
   test do

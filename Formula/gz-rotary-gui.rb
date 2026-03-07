@@ -1,37 +1,30 @@
-class GzGui10 < Formula
+class GzRotaryGui < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-10.0.0.tar.bz2"
-  sha256 "2ab6facb9473fdafe788efb867fb2f6153e278c9b02d7fe9a84412429bb74ee6"
   license "Apache-2.0"
-  revision 16
 
-  head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
+  head "https://github.com/gazebosim/gz-gui.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
   depends_on "fmt"
-  depends_on "gz-cmake5"
-  depends_on "gz-common7"
-  depends_on "gz-math9"
-  depends_on "gz-msgs12"
-  depends_on "gz-plugin4"
-  depends_on "gz-rendering10"
-  depends_on "gz-transport15"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-common"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-msgs"
+  depends_on "gz-rotary-plugin"
+  depends_on "gz-rotary-rendering"
+  depends_on "gz-rotary-transport"
+  depends_on "gz-rotary-utils"
   depends_on "protobuf"
-  depends_on "qt5compat"
+  depends_on "qt@6"
   depends_on "qtbase"
-  depends_on "qtcharts"
   depends_on "qtdeclarative"
-  depends_on "qtlocation"
-  depends_on "qtpositioning"
-  depends_on "qtsvg"
   depends_on "spdlog"
   depends_on "tinyxml2"
 
-  conflicts_with "gz-rotary-gui", because: "both install gz-gui"
+  conflicts_with "gz-jetty-gui", because: "both install gz-gui"
 
   def install
     rpaths = [
@@ -48,6 +41,12 @@ class GzGui10 < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
+  end
+
   test do
     require "system_command"
     extend SystemCommand::Mixin
@@ -56,7 +55,7 @@ class GzGui10 < Formula
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-10/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin4"].opt_libexec/"gz/plugin4/gz-plugin"
+      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args

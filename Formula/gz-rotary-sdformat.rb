@@ -1,19 +1,9 @@
-class Sdformat16 < Formula
+class GzRotarySdformat < Formula
   desc "Simulation Description Format"
   homepage "http://sdformat.org"
-  url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-16.0.1.tar.bz2"
-  sha256 "e39b8228f93b660344d532e5b4cf3b6b3b7f58bfafd86d174b4c632c000575ab"
   license "Apache-2.0"
-  revision 2
 
-  head "https://github.com/gazebosim/sdformat.git", branch: "sdf16"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "2a1c4626fe406349a2d618032fd482997607ae6204e05482b18cac2addc05275"
-    sha256 arm64_sonoma:  "1da316a7d49598594bbbb34358eb153d6a3794786228734da2b06f21d7893afb"
-    sha256 sonoma:        "579c01b7e2597b7dac4df349466e50d17ed5162dc048210c8615cc77523af0f4"
-  end
+  head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -23,10 +13,10 @@ class Sdformat16 < Formula
   depends_on "python@3.14" => [:build, :test]
 
   depends_on "doxygen"
-  depends_on "gz-cmake5"
-  depends_on "gz-math9"
-  depends_on "gz-tools2"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-tools"
+  depends_on "gz-rotary-utils"
   depends_on "tinyxml2"
   depends_on "urdfdom"
 
@@ -39,7 +29,7 @@ class Sdformat16 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
-  conflicts_with "gz-rotary-sdformat", because: "both install gz-sdformat"
+  conflicts_with "gz-jetty-sdformat", because: "both install gz-sdformat"
 
   def install
     rpaths = [
@@ -67,6 +57,12 @@ class Sdformat16 < Formula
         rmdir prefix/"lib/python"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
   end
 
   test do
