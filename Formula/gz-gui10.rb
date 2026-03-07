@@ -120,6 +120,7 @@ class GzGui10 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     # system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

@@ -157,6 +157,7 @@ class GzSim10 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
