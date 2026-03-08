@@ -4,7 +4,7 @@ class GzLaunch8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.2.tar.bz2"
   sha256 "e0ccbd1bc83bc5f178a7a0dc76d1f40e788d5bcad1aeb488c2364ea46466f24e"
   license "Apache-2.0"
-  revision 14
+  revision 15
 
   # head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
@@ -27,7 +27,7 @@ class GzLaunch8 < Formula
   depends_on "gz-tools2"
   depends_on "gz-transport14"
   depends_on "gz-utils3"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "qt@5"
   depends_on "sdformat15"
   depends_on "spdlog"

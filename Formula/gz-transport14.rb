@@ -4,7 +4,7 @@ class GzTransport14 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.2.0.tar.bz2"
   sha256 "b0723f1958754086bb9bb9e9f7e80e17e6ac365021fa6945d2c2ab56d64fa014"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
@@ -24,7 +24,7 @@ class GzTransport14 < Formula
   depends_on "gz-utils3"
   depends_on "ossp-uuid"
   depends_on "pkgconf"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
@@ -85,6 +85,7 @@ class GzTransport14 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-transport14::gz-transport14)
     EOS
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-transport14"
     cflags = `pkg-config --cflags gz-transport14`.split
     system ENV.cc, "test.cpp",
@@ -95,6 +96,8 @@ class GzTransport14 < Formula
                    "-o", "test"
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
+    # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

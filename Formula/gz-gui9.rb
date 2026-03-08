@@ -4,7 +4,7 @@ class GzGui9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.0.2.tar.bz2"
   sha256 "0db7bdbaf32c3e9faba301c6d04e8cbf2daabdf639c45aedc10ec48356ea3d16"
   license "Apache-2.0"
-  revision 18
+  revision 19
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
 
@@ -20,7 +20,7 @@ class GzGui9 < Formula
   depends_on "gz-rendering9"
   depends_on "gz-transport14"
   depends_on "gz-utils3"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "qt@5"
   depends_on "spdlog"
   depends_on "tinyxml2"
@@ -116,6 +116,7 @@ class GzGui9 < Formula
     # system "./test"
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

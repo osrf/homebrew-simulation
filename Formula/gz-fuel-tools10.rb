@@ -4,7 +4,7 @@ class GzFuelTools10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-10.1.0.tar.bz2"
   sha256 "37ae351be9a9b281d078e36068422dd096f59f46c72c4ef490800dfeb7653e1d"
   license "Apache-2.0"
-  revision 29
+  revision 30
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools10"
 
@@ -20,7 +20,7 @@ class GzFuelTools10 < Formula
   depends_on "libyaml"
   depends_on "libzip"
   depends_on "pkgconf"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "spdlog"
   depends_on "tinyxml2"
 
@@ -50,6 +50,7 @@ class GzFuelTools10 < Formula
       target_link_libraries(test_cmake gz-fuel_tools10::gz-fuel_tools10)
     EOS
     # test building with pkg-config
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-fuel_tools10"
     cflags = `pkg-config --cflags gz-fuel_tools10`.split
     system ENV.cc, "test.cpp",
@@ -60,6 +61,7 @@ class GzFuelTools10 < Formula
                    "-o", "test"
     system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
