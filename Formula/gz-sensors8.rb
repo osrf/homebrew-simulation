@@ -4,7 +4,7 @@ class GzSensors8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-8.2.2.tar.bz2"
   sha256 "9ddc16d5cab0a86f27771732f5cfcfde1efe7611f27da61176ea122273806c42"
   license "Apache-2.0"
-  revision 25
+  revision 26
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors8"
 
@@ -19,7 +19,7 @@ class GzSensors8 < Formula
   depends_on "gz-rendering8"
   depends_on "gz-transport13"
   depends_on "gz-utils2"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "sdformat14"
   depends_on "tinyxml2"
 
@@ -52,6 +52,7 @@ class GzSensors8 < Formula
       target_link_libraries(test_cmake gz-sensors8::gz-sensors8)
     EOS
     # test building with pkg-config
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-sensors8"
     cflags   = `pkg-config --cflags gz-sensors8`.split
     ldflags  = `pkg-config --libs gz-sensors8`.split
@@ -62,6 +63,7 @@ class GzSensors8 < Formula
                    "-o", "test"
     system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
