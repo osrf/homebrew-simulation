@@ -4,7 +4,7 @@ class GzSim9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.5.0.tar.bz2"
   sha256 "2dfb720a6945765c7ead5f474b2dffb645773fd55d43d432abcbdfedb1b32dfe"
   license "Apache-2.0"
-  revision 13
+  revision 14
 
   # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
@@ -29,7 +29,7 @@ class GzSim9 < Formula
   depends_on "gz-transport14"
   depends_on "gz-utils3"
   depends_on "pkgconf"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "python@3.14"
   depends_on "qt@5"
   depends_on "ruby"
@@ -151,6 +151,7 @@ class GzSim9 < Formula
     # system "./test"
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

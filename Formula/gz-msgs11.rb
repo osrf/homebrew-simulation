@@ -4,7 +4,7 @@ class GzMsgs11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.1.0.tar.bz2"
   sha256 "2343f0975d00fb21dd87de15603161981c920e0e4b33e735863a259f488f36d0"
   license "Apache-2.0"
-  revision 26
+  revision 27
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
@@ -18,7 +18,7 @@ class GzMsgs11 < Formula
   depends_on "gz-tools2"
   depends_on "gz-utils3"
   depends_on "pkgconf"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "tinyxml2"
 
   def pythons
@@ -72,6 +72,7 @@ class GzMsgs11 < Formula
       target_link_libraries(test_cmake gz-msgs11::gz-msgs11)
     EOS
     # test building with pkg-config
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-msgs11"
     cflags = `pkg-config --cflags gz-msgs11`.split
     system ENV.cc, "test.cpp",
@@ -82,6 +83,7 @@ class GzMsgs11 < Formula
                    "-o", "test"
     system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
