@@ -4,7 +4,7 @@ class GzGui8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.4.0.tar.bz2"
   sha256 "1731b01a134afb11b1b3e049fc65e74fa7b5c50532406d3d68366d54016d5498"
   license "Apache-2.0"
-  revision 24
+  revision 25
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
@@ -19,7 +19,7 @@ class GzGui8 < Formula
   depends_on "gz-rendering8"
   depends_on "gz-transport13"
   depends_on "gz-utils2"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "qt@5"
   depends_on "tinyxml2"
 
@@ -118,6 +118,7 @@ class GzGui8 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
     mkdir "build" do
       system "cmake", ".."

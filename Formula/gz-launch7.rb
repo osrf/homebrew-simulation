@@ -4,7 +4,7 @@ class GzLaunch7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-7.1.1.tar.bz2"
   sha256 "e29f8b4663474cfed1364c45afa3aee8b44d816ffe1679c26c699f7c805cdffd"
   license "Apache-2.0"
-  revision 27
+  revision 28
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch7"
 
@@ -26,7 +26,7 @@ class GzLaunch7 < Formula
   depends_on "gz-tools2"
   depends_on "gz-transport13"
   depends_on "gz-utils2"
-  depends_on "protobuf"
+  depends_on "protobuf@33"
   depends_on "qt@5"
   depends_on "sdformat14"
   depends_on "tinyxml2"
