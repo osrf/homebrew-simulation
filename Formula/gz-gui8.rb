@@ -106,6 +106,7 @@ class GzGui8 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-gui8::gz-gui8)
     EOS
+    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-gui8"
     cflags   = `pkg-config --cflags gz-gui8`.split
