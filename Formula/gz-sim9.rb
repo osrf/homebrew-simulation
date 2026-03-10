@@ -29,7 +29,7 @@ class GzSim9 < Formula
   depends_on "gz-transport14"
   depends_on "gz-utils3"
   depends_on "pkgconf"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "python@3.14"
   depends_on "qt@5"
   depends_on "ruby"
@@ -151,7 +151,6 @@ class GzSim9 < Formula
     # system "./test"
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

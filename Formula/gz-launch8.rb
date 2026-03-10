@@ -27,7 +27,7 @@ class GzLaunch8 < Formula
   depends_on "gz-tools2"
   depends_on "gz-transport14"
   depends_on "gz-utils3"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "qt@5"
   depends_on "sdformat15"
   depends_on "spdlog"
