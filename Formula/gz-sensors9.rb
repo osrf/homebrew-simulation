@@ -20,7 +20,7 @@ class GzSensors9 < Formula
   depends_on "gz-rendering9"
   depends_on "gz-transport14"
   depends_on "gz-utils3"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "sdformat15"
   depends_on "spdlog"
   depends_on "tinyxml2"
@@ -54,7 +54,6 @@ class GzSensors9 < Formula
       target_link_libraries(test_cmake gz-sensors9::gz-sensors9)
     EOS
     # test building with pkg-config
-    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-sensors9"
     cflags   = `pkg-config --cflags gz-sensors9`.split
     ldflags  = `pkg-config --libs gz-sensors9`.split
@@ -65,7 +64,6 @@ class GzSensors9 < Formula
                    "-o", "test"
     system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
