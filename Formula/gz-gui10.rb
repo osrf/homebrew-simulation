@@ -4,16 +4,9 @@ class GzGui10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-10.0.0.tar.bz2"
   sha256 "2ab6facb9473fdafe788efb867fb2f6153e278c9b02d7fe9a84412429bb74ee6"
   license "Apache-2.0"
-  revision 17
+  revision 18
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "29fe1063644d8e0983cf0529a454a73c0558f1369956364667cbb8c65a3276d9"
-    sha256 arm64_sonoma:  "447fdaddd1d7e3c22064e895436c8a33f0c01704b4e5d0ae16e5c6db2ac3fbbb"
-    sha256 sonoma:        "a1043383e042923ca373228d84a7da35f2fbf6e124359460f45c47aa7988c226"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -27,7 +20,7 @@ class GzGui10 < Formula
   depends_on "gz-rendering10"
   depends_on "gz-transport15"
   depends_on "gz-utils4"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "qt5compat"
   depends_on "qtbase"
   depends_on "qtcharts"
@@ -127,7 +120,6 @@ class GzGui10 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

@@ -4,16 +4,9 @@ class GzLaunch9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-9.0.0.tar.bz2"
   sha256 "7d8452a98aaf3d9f6f8d417178e52347b8c3505edca38d4525ab1ceb314c25a6"
   license "Apache-2.0"
-  revision 17
+  revision 18
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "cdfb9ff4837fa84ae228b2b361eab2051891c1810d9c787def0989d375d2cfd7"
-    sha256 arm64_sonoma:  "ee3389b008c65a4fb6e5d4e2f7522adef10a6c95450bdf4b4bdb2638e5be4443"
-    sha256 sonoma:        "8535dd0301f7b32f4f5d3af54b24de59873918dce0dd819b6803fa3830967f71"
-  end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
@@ -35,7 +28,7 @@ class GzLaunch9 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "libwebsockets"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "qtbase"
   depends_on "qtdeclarative"
   depends_on "sdformat16"
