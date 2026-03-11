@@ -20,7 +20,7 @@ class GzFuelTools11 < Formula
   depends_on "libyaml"
   depends_on "libzip"
   depends_on "pkgconf"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "spdlog"
   depends_on "tinyxml2"
 
@@ -50,7 +50,6 @@ class GzFuelTools11 < Formula
       target_link_libraries(test_cmake gz-fuel_tools::gz-fuel_tools)
     EOS
     # test building with pkg-config
-    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-fuel_tools"
     cflags = `pkg-config --cflags gz-fuel_tools`.split
     system ENV.cc, "test.cpp",
@@ -61,7 +60,6 @@ class GzFuelTools11 < Formula
                    "-o", "test"
     system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

@@ -31,7 +31,7 @@ class GzSim10 < Formula
   depends_on "libwebsockets"
   depends_on "openssl@3"
   depends_on "pkgconf"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "python@3.14"
   depends_on "qt5compat"
   depends_on "qtbase"
@@ -157,7 +157,6 @@ class GzSim10 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

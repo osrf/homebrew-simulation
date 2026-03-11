@@ -24,7 +24,7 @@ class GzTransport15 < Formula
   depends_on "gz-utils4"
   depends_on "ossp-uuid"
   depends_on "pkgconf"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "sqlite"
   depends_on "tinyxml2"
   depends_on "zeromq"
@@ -85,7 +85,6 @@ class GzTransport15 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-transport::gz-transport)
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", Formula["protobuf@33"].opt_lib/"pkgconfig"
     system "pkg-config", "gz-transport"
     cflags = `pkg-config --cflags gz-transport`.split
     system ENV.cc, "test.cpp",
@@ -97,7 +96,6 @@ class GzTransport15 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"

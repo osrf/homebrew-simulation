@@ -28,7 +28,7 @@ class GzLaunch9 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "libwebsockets"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "qtbase"
   depends_on "qtdeclarative"
   depends_on "sdformat16"

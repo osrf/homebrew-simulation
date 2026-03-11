@@ -20,7 +20,7 @@ class GzGui10 < Formula
   depends_on "gz-rendering10"
   depends_on "gz-transport15"
   depends_on "gz-utils4"
-  depends_on "protobuf@33"
+  depends_on "protobuf"
   depends_on "qt5compat"
   depends_on "qtbase"
   depends_on "qtcharts"
@@ -120,7 +120,6 @@ class GzGui10 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["protobuf@33"].opt_prefix
     mkdir "build" do
       system "cmake", ".."
       system "make"
