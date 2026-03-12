@@ -1,39 +1,29 @@
-class GzRendering10 < Formula
+class GzRotaryRendering < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-10.0.1.tar.bz2"
-  sha256 "fde5284b1c462cf1046736bae88d169455ab8e8397f7569a3e5e369cec05d302"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering10"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "e5c59644c055378ea66394fe1a64f534d6cd7a6c855297a3097c259624f78e05"
-    sha256 arm64_sonoma:  "a90260fb6ed776236f254b60de4a242d4b702faf680638344c5006c9cc7c119e"
-    sha256 sonoma:        "d9181c599991315d053f1a44ffe439d69f15417d3867abed913dbeedb2b1d006"
-  end
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "main"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "fmt"
-  depends_on "freeimage"
-  depends_on "gz-cmake5"
-  depends_on "gz-common7"
-  depends_on "gz-math9"
-  depends_on "gz-plugin4"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-common"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-plugin"
+  depends_on "gz-rotary-utils"
   depends_on "ogre1.9"
   depends_on "ogre2.3"
   depends_on "spdlog"
 
-  conflicts_with "gz-rotary-rendering", because: "both install gz-rendering"
+  conflicts_with "gz-jetty-rendering", because: "both install gz-rendering"
 
   def install
     rpaths = [
       rpath,
-      rpath(source: lib/"gz-rendering-10/engine-plugins", target: lib),
+      rpath(source: lib/"gz-rendering/engine-plugins", target: lib),
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
@@ -46,15 +36,21 @@ class GzRendering10 < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
+  end
+
   test do
     require "system_command"
     extend SystemCommand::Mixin
 
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
-      p = lib/"gz-rendering-10/engine-plugins/libgz-rendering-#{engine}.dylib"
+      p = lib/"gz-rendering/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin4"].opt_libexec/"gz/plugin4/gz-plugin"
+      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args

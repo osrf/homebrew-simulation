@@ -1,22 +1,19 @@
-class GzMsgs12 < Formula
+class GzRotaryMsgs < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-12.0.1.tar.bz2"
-  sha256 "f43316821204c37836a23640fdfe161241ec7eafd683b1e721a8ed879301ce75"
   license "Apache-2.0"
-  revision 4
 
-  head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs12"
+  head "https://github.com/gazebosim/gz-msgs.git", branch: "main"
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
-  depends_on "gz-cmake5"
-  depends_on "gz-math9"
-  depends_on "gz-tools2"
-  depends_on "gz-utils4"
+  depends_on "gz-rotary-cmake"
+  depends_on "gz-rotary-math"
+  depends_on "gz-rotary-tools"
+  depends_on "gz-rotary-utils"
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "tinyxml2"
@@ -30,7 +27,7 @@ class GzMsgs12 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
-  conflicts_with "gz-rotary-msgs", because: "both install gz-msgs"
+  conflicts_with "gz-jetty-msgs", because: "both install gz-msgs"
 
   def install
     rpaths = [
@@ -56,6 +53,12 @@ class GzMsgs12 < Formula
       # brew link errors if there is a pre-existing __pycache__ folder
       (lib/"#{python_name}/site-packages/gz/msgs").install_symlink Dir[lib/"python/gz/msgs/*"]
     end
+  end
+
+  def caveats
+    <<~EOS
+      This is an unstable, development version of Gazebo built from source.
+    EOS
   end
 
   test do
@@ -99,6 +102,6 @@ class GzMsgs12 < Formula
     system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.msgs"
     # check gz msg command
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-tools2"].opt_bin/"gz", "msg"
+    system Formula["gz-rotary-tools"].opt_bin/"gz", "msg"
   end
 end
