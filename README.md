@@ -65,9 +65,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [cmake-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake4-install_bottle-homebrew-amd64
 [cmake-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake4-install_bottle-homebrew-arm64
 [cmake-jetty-amd64]: https://build.osrfoundation.org/job/gz_cmake5-install_bottle-homebrew-amd64
+[cmake-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_cmake-install_bottle-homebrew-amd64
 [cmake-jetty-arm64]: https://build.osrfoundation.org/job/gz_cmake5-install_bottle-homebrew-arm64
+[cmake-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_cmake-install_bottle-homebrew-arm64
 [cmake-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake5-install_bottle-homebrew-amd64
+[cmake-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_cmake-install_bottle-homebrew-amd64
 [cmake-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_cmake5-install_bottle-homebrew-arm64
+[cmake-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_cmake-install_bottle-homebrew-arm64
 
 [common-repo]: https://github.com/gazebosim/gz-common
 [common-fortress-amd64]: https://build.osrfoundation.org/job/gz_common4-install_bottle-homebrew-amd64
@@ -83,9 +87,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [common-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common6-install_bottle-homebrew-amd64
 [common-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common6-install_bottle-homebrew-arm64
 [common-jetty-amd64]: https://build.osrfoundation.org/job/gz_common7-install_bottle-homebrew-amd64
+[common-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_common-install_bottle-homebrew-amd64
 [common-jetty-arm64]: https://build.osrfoundation.org/job/gz_common7-install_bottle-homebrew-arm64
+[common-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_common-install_bottle-homebrew-arm64
 [common-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common7-install_bottle-homebrew-amd64
+[common-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_common-install_bottle-homebrew-amd64
 [common-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_common7-install_bottle-homebrew-arm64
+[common-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_common-install_bottle-homebrew-arm64
 
 [fuel_tools-repo]: https://github.com/gazebosim/gz-fuel-tools
 [fuel_tools-fortress-amd64]: https://build.osrfoundation.org/job/gz_fuel_tools7-install_bottle-homebrew-amd64
@@ -101,9 +109,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [fuel_tools-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools10-install_bottle-homebrew-amd64
 [fuel_tools-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools10-install_bottle-homebrew-arm64
 [fuel_tools-jetty-amd64]: https://build.osrfoundation.org/job/gz_fuel_tools11-install_bottle-homebrew-amd64
+[fuel_tools-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_fuel_tools11-install_bottle-homebrew-amd64
 [fuel_tools-jetty-arm64]: https://build.osrfoundation.org/job/gz_fuel_tools11-install_bottle-homebrew-arm64
+[fuel_tools-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_fuel_tools11-install_bottle-homebrew-arm64
 [fuel_tools-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools11-install_bottle-homebrew-amd64
+[fuel_tools-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_fuel_tools11-install_bottle-homebrew-amd64
 [fuel_tools-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_fuel_tools11-install_bottle-homebrew-arm64
+[fuel_tools-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_fuel_tools11-install_bottle-homebrew-arm64
 
 [gui-repo]: https://github.com/gazebosim/gz-gui
 [gui-fortress-amd64]: https://build.osrfoundation.org/job/gz_gui6-install_bottle-homebrew-amd64
@@ -119,9 +131,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [gui-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_gui9-install_bottle-homebrew-amd64
 [gui-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_gui9-install_bottle-homebrew-arm64
 [gui-jetty-amd64]: https://build.osrfoundation.org/job/gz_gui10-install_bottle-homebrew-amd64
+[gui-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_gui-install_bottle-homebrew-amd64
 [gui-jetty-arm64]: https://build.osrfoundation.org/job/gz_gui10-install_bottle-homebrew-arm64
+[gui-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_gui-install_bottle-homebrew-arm64
 [gui-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_gui10-install_bottle-homebrew-amd64
+[gui-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_gui-install_bottle-homebrew-amd64
 [gui-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_gui10-install_bottle-homebrew-arm64
+[gui-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_gui-install_bottle-homebrew-arm64
 
 [launch-repo]: https://github.com/gazebosim/gz-launch
 [launch-fortress-amd64]: https://build.osrfoundation.org/job/gz_launch5-install_bottle-homebrew-amd64
@@ -137,9 +153,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [launch-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_launch8-install_bottle-homebrew-amd64
 [launch-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_launch8-install_bottle-homebrew-arm64
 [launch-jetty-amd64]: https://build.osrfoundation.org/job/gz_launch9-install_bottle-homebrew-amd64
+[launch-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_launch-install_bottle-homebrew-amd64
 [launch-jetty-arm64]: https://build.osrfoundation.org/job/gz_launch9-install_bottle-homebrew-arm64
+[launch-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_launch-install_bottle-homebrew-arm64
 [launch-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_launch9-install_bottle-homebrew-amd64
+[launch-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_launch-install_bottle-homebrew-amd64
 [launch-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_launch9-install_bottle-homebrew-arm64
+[launch-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_launch-install_bottle-homebrew-arm64
 
 [math-repo]: https://github.com/gazebosim/gz-math
 [math-fortress-amd64]: https://build.osrfoundation.org/job/gz_math6-install_bottle-homebrew-amd64
@@ -155,9 +175,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [math-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math8-install_bottle-homebrew-amd64
 [math-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math8-install_bottle-homebrew-arm64
 [math-jetty-amd64]: https://build.osrfoundation.org/job/gz_math9-install_bottle-homebrew-amd64
+[math-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_math-install_bottle-homebrew-amd64
 [math-jetty-arm64]: https://build.osrfoundation.org/job/gz_math9-install_bottle-homebrew-arm64
+[math-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_math-install_bottle-homebrew-arm64
 [math-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math9-install_bottle-homebrew-amd64
+[math-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_math-install_bottle-homebrew-amd64
 [math-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_math9-install_bottle-homebrew-arm64
+[math-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_math-install_bottle-homebrew-arm64
 
 [msgs-repo]: https://github.com/gazebosim/gz-msgs
 [msgs-fortress-amd64]: https://build.osrfoundation.org/job/gz_msgs8-install_bottle-homebrew-amd64
@@ -173,9 +197,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [msgs-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs11-install_bottle-homebrew-amd64
 [msgs-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs11-install_bottle-homebrew-arm64
 [msgs-jetty-amd64]: https://build.osrfoundation.org/job/gz_msgs12-install_bottle-homebrew-amd64
+[msgs-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_msgs-install_bottle-homebrew-amd64
 [msgs-jetty-arm64]: https://build.osrfoundation.org/job/gz_msgs12-install_bottle-homebrew-arm64
+[msgs-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_msgs-install_bottle-homebrew-arm64
 [msgs-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs12-install_bottle-homebrew-amd64
+[msgs-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_msgs-install_bottle-homebrew-amd64
 [msgs-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_msgs12-install_bottle-homebrew-arm64
+[msgs-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_msgs-install_bottle-homebrew-arm64
 
 [physics-repo]: https://github.com/gazebosim/gz-physics
 [physics-fortress-amd64]: https://build.osrfoundation.org/job/gz_physics5-install_bottle-homebrew-amd64
@@ -191,9 +219,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [physics-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics8-install_bottle-homebrew-amd64
 [physics-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics8-install_bottle-homebrew-arm64
 [physics-jetty-amd64]: https://build.osrfoundation.org/job/gz_physics9-install_bottle-homebrew-amd64
+[physics-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_physics-install_bottle-homebrew-amd64
 [physics-jetty-arm64]: https://build.osrfoundation.org/job/gz_physics9-install_bottle-homebrew-arm64
+[physics-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_physics-install_bottle-homebrew-arm64
 [physics-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics9-install_bottle-homebrew-amd64
+[physics-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_physics-install_bottle-homebrew-amd64
 [physics-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_physics9-install_bottle-homebrew-arm64
+[physics-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_physics-install_bottle-homebrew-arm64
 
 [plugin-repo]: https://github.com/gazebosim/gz-plugin
 [plugin-fortress-amd64]: https://build.osrfoundation.org/job/gz_plugin1-install_bottle-homebrew-amd64
@@ -209,9 +241,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [plugin-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin3-install_bottle-homebrew-amd64
 [plugin-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin3-install_bottle-homebrew-arm64
 [plugin-jetty-amd64]: https://build.osrfoundation.org/job/gz_plugin4-install_bottle-homebrew-amd64
+[plugin-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_plugin-install_bottle-homebrew-amd64
 [plugin-jetty-arm64]: https://build.osrfoundation.org/job/gz_plugin4-install_bottle-homebrew-arm64
+[plugin-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_plugin-install_bottle-homebrew-arm64
 [plugin-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin4-install_bottle-homebrew-amd64
+[plugin-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_plugin-install_bottle-homebrew-amd64
 [plugin-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_plugin4-install_bottle-homebrew-arm64
+[plugin-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_plugin-install_bottle-homebrew-arm64
 
 [rendering-repo]: https://github.com/gazebosim/gz-rendering
 [rendering-fortress-amd64]: https://build.osrfoundation.org/job/gz_rendering6-install_bottle-homebrew-amd64
@@ -227,9 +263,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [rendering-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering9-install_bottle-homebrew-amd64
 [rendering-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering9-install_bottle-homebrew-arm64
 [rendering-jetty-amd64]: https://build.osrfoundation.org/job/gz_rendering10-install_bottle-homebrew-amd64
+[rendering-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_rendering-install_bottle-homebrew-amd64
 [rendering-jetty-arm64]: https://build.osrfoundation.org/job/gz_rendering10-install_bottle-homebrew-arm64
+[rendering-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_rendering-install_bottle-homebrew-arm64
 [rendering-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering10-install_bottle-homebrew-amd64
+[rendering-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_rendering-install_bottle-homebrew-amd64
 [rendering-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rendering10-install_bottle-homebrew-arm64
+[rendering-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_rendering-install_bottle-homebrew-arm64
 
 [sensors-repo]: https://github.com/gazebosim/gz-sensors
 [sensors-fortress-amd64]: https://build.osrfoundation.org/job/gz_sensors6-install_bottle-homebrew-amd64
@@ -245,9 +285,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [sensors-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors9-install_bottle-homebrew-amd64
 [sensors-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors9-install_bottle-homebrew-arm64
 [sensors-jetty-amd64]: https://build.osrfoundation.org/job/gz_sensors10-install_bottle-homebrew-amd64
+[sensors-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_sensors-install_bottle-homebrew-amd64
 [sensors-jetty-arm64]: https://build.osrfoundation.org/job/gz_sensors10-install_bottle-homebrew-arm64
+[sensors-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_sensors-install_bottle-homebrew-arm64
 [sensors-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors10-install_bottle-homebrew-amd64
+[sensors-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_sensors-install_bottle-homebrew-amd64
 [sensors-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sensors10-install_bottle-homebrew-arm64
+[sensors-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_sensors-install_bottle-homebrew-arm64
 
 [sim-repo]: https://github.com/gazebosim/gz-sim
 [sim-fortress-amd64]: https://build.osrfoundation.org/job/gz_sim6-install_bottle-homebrew-amd64
@@ -263,9 +307,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [sim-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sim9-install_bottle-homebrew-amd64
 [sim-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sim9-install_bottle-homebrew-arm64
 [sim-jetty-amd64]: https://build.osrfoundation.org/job/gz_sim10-install_bottle-homebrew-amd64
+[sim-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_sim-install_bottle-homebrew-amd64
 [sim-jetty-arm64]: https://build.osrfoundation.org/job/gz_sim10-install_bottle-homebrew-arm64
+[sim-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_sim-install_bottle-homebrew-arm64
 [sim-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sim10-install_bottle-homebrew-amd64
+[sim-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_sim-install_bottle-homebrew-amd64
 [sim-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_sim10-install_bottle-homebrew-arm64
+[sim-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_sim-install_bottle-homebrew-arm64
 
 [tools-repo]: https://github.com/gazebosim/gz-tools
 [tools-fortress-amd64]: https://build.osrfoundation.org/job/gz_tools1-install_bottle-homebrew-amd64
@@ -281,9 +329,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [tools-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_tools2-install_bottle-homebrew-amd64
 [tools-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_tools2-install_bottle-homebrew-arm64
 [tools-jetty-amd64]: https://build.osrfoundation.org/job/gz_tools2-install_bottle-homebrew-amd64
+[tools-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_tools-install_bottle-homebrew-amd64
 [tools-jetty-arm64]: https://build.osrfoundation.org/job/gz_tools2-install_bottle-homebrew-arm64
+[tools-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_tools-install_bottle-homebrew-arm64
 [tools-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_tools2-install_bottle-homebrew-amd64
+[tools-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_tools-install_bottle-homebrew-amd64
 [tools-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_tools2-install_bottle-homebrew-arm64
+[tools-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_tools-install_bottle-homebrew-arm64
 
 [transport-repo]: https://github.com/gazebosim/gz-transport
 [transport-fortress-amd64]: https://build.osrfoundation.org/job/gz_transport11-install_bottle-homebrew-amd64
@@ -299,9 +351,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [transport-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport14-install_bottle-homebrew-amd64
 [transport-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport14-install_bottle-homebrew-arm64
 [transport-jetty-amd64]: https://build.osrfoundation.org/job/gz_transport15-install_bottle-homebrew-amd64
+[transport-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_transport-install_bottle-homebrew-amd64
 [transport-jetty-arm64]: https://build.osrfoundation.org/job/gz_transport15-install_bottle-homebrew-arm64
+[transport-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_transport-install_bottle-homebrew-arm64
 [transport-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport15-install_bottle-homebrew-amd64
+[transport-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_transport-install_bottle-homebrew-amd64
 [transport-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_transport15-install_bottle-homebrew-arm64
+[transport-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_transport-install_bottle-homebrew-arm64
 
 [utils-repo]: https://github.com/gazebosim/gz-utils
 [utils-fortress-amd64]: https://build.osrfoundation.org/job/gz_utils1-install_bottle-homebrew-amd64
@@ -317,9 +373,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [utils-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils3-install_bottle-homebrew-amd64
 [utils-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils3-install_bottle-homebrew-arm64
 [utils-jetty-amd64]: https://build.osrfoundation.org/job/gz_utils4-install_bottle-homebrew-amd64
+[utils-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_utils-install_bottle-homebrew-amd64
 [utils-jetty-arm64]: https://build.osrfoundation.org/job/gz_utils4-install_bottle-homebrew-arm64
+[utils-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_utils-install_bottle-homebrew-arm64
 [utils-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils4-install_bottle-homebrew-amd64
+[utils-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_utils-install_bottle-homebrew-amd64
 [utils-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_utils4-install_bottle-homebrew-arm64
+[utils-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_utils-install_bottle-homebrew-arm64
 
 [sdformat-repo]: https://github.com/gazebosim/gz-sdformat
 [sdformat-fortress-amd64]: https://build.osrfoundation.org/job/sdformat12-install_bottle-homebrew-amd64
@@ -335,9 +395,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [sdformat-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat15-install_bottle-homebrew-amd64
 [sdformat-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat15-install_bottle-homebrew-arm64
 [sdformat-jetty-amd64]: https://build.osrfoundation.org/job/sdformat16-install_bottle-homebrew-amd64
+[sdformat-rotary-amd64]: https://build.osrfoundation.org/job/sdformat16-install_bottle-homebrew-amd64
 [sdformat-jetty-arm64]: https://build.osrfoundation.org/job/sdformat16-install_bottle-homebrew-arm64
+[sdformat-rotary-arm64]: https://build.osrfoundation.org/job/sdformat16-install_bottle-homebrew-arm64
 [sdformat-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat16-install_bottle-homebrew-amd64
+[sdformat-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat16-install_bottle-homebrew-amd64
 [sdformat-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat16-install_bottle-homebrew-arm64
+[sdformat-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=sdformat16-install_bottle-homebrew-arm64
 
 [collection-fortress-amd64]: https://build.osrfoundation.org/job/gz_fortress-install_bottle-homebrew-amd64
 [collection-fortress-arm64]: https://build.osrfoundation.org/job/gz_fortress-install_bottle-homebrew-arm64
@@ -352,9 +416,13 @@ collection                       | arm64 | [![Build Status][collection-fortress-
 [collection-ionic-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_ionic-install_bottle-homebrew-amd64
 [collection-ionic-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_ionic-install_bottle-homebrew-arm64
 [collection-jetty-amd64]: https://build.osrfoundation.org/job/gz_jetty-install_bottle-homebrew-amd64
+[collection-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary_rotary-install_bottle-homebrew-amd64
 [collection-jetty-arm64]: https://build.osrfoundation.org/job/gz_jetty-install_bottle-homebrew-arm64
+[collection-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary_rotary-install_bottle-homebrew-arm64
 [collection-jetty-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_jetty-install_bottle-homebrew-amd64
+[collection-rotary-badge-amd64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_rotary-install_bottle-homebrew-amd64
 [collection-jetty-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_jetty-install_bottle-homebrew-arm64
+[collection-rotary-badge-arm64]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary_rotary-install_bottle-homebrew-arm64
 
 ## To build bottles
 
