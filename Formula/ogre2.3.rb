@@ -100,7 +100,8 @@ class Ogre23 < Formula
     inreplace (lib/"pkgconfig/OGRE-2.3-Overlay.pc"), "-I${includedir}/OGRE/", "-I${includedir}/"
 
     # Move versioned libraries (*.2.2.6.dylib) to standard location and remove symlinks
-    lib.install Dir[lib/"OGRE-2.3/lib*.2.3.1.dylib"]
+    p = version.patch.to_s
+    lib.install Dir[lib/"OGRE-2.3/lib*.2.3.#{p}.dylib"]
     rm Dir[lib/"OGRE-2.3/lib*"]
 
     # Move plugins to subfolder
@@ -108,7 +109,7 @@ class Ogre23 < Formula
 
     # Restore lib symlinks
     Dir[lib/"lib*"].each do |l|
-      (lib/"OGRE-2.3").install_symlink l => File.basename(l.sub(".2.3.1", ""))
+      (lib/"OGRE-2.3").install_symlink l => File.basename(l.sub(".2.3.#{p}", ""))
     end
   end
 
