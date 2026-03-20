@@ -1,41 +1,54 @@
-class Ogre23 < Formula
+class GzRotaryOgre23Vendor < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
-  url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
+  url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
+  sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
-  revision 2
-
-  # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "9e3d6499d30d18d1fb74fc6d4267dd6448ce34d3bb567f5a7b19471bf235cd8c"
-    sha256 cellar: :any, arm64_sonoma:  "be121e86ff8d7def125d8579583fbf32b9bcd475f2b2eee7f20948aa4afc6aee"
-    sha256 cellar: :any, sonoma:        "00e8a7721f3a33eb5f5df26c70a597e71ee06328949cecae7e85c79badf8a34f"
-    sha256 cellar: :any, ventura:       "a99ca4c5adc6c3455d9df29aa00c944f3dddb2ff64c176cb37efc759b8bc1498"
-    sha256 cellar: :any, monterey:      "58e4f7a6d4e1ae1a70b2f449801b4335deb378dc982f38f2bc3cfc6393a5e0b0"
-    sha256 cellar: :any, big_sur:       "2cd52cc99ea96660c7a83e2c5458c900f0abd4af3fdd7b69117ad87b407d0a2a"
+    sha256 cellar: :any, arm64_sequoia: "a893e2d96bf9b5ce816fa9067da17849987748c1138e3aac7610072b1bc229b8"
+    sha256 cellar: :any, arm64_sonoma:  "b8457eff9870f6722c600f37a81bf6b98066177904d49fe0ec9d79e17954da9b"
+    sha256 cellar: :any, sonoma:        "c96f0177e523d97ba5c3a78419652c3a53c7720713e2e63aae7da7b2915d085a"
   end
 
+  # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
+
   depends_on "cmake" => :build
-  depends_on "gz-plugin2" => :test
+  depends_on "gz-rotary-plugin" => :test
   depends_on "pkgconf" => :test
 
   depends_on "doxygen"
-  depends_on "freeimage"
   depends_on "freetype"
   depends_on "libx11"
   depends_on "libzzip"
   depends_on "rapidjson"
   depends_on "tbb"
 
-  conflicts_with "gz-rotary-ogre2.3-vendor", because: "both install ogre2.3"
+  conflicts_with "ogre2.3", because: "both install ogre2.3"
 
   patch do
     # Fix for compatibility with XCode 16.3
     url "https://github.com/scpeters/ogre-next/commit/b7439ae047489aa104a6775a99a9e93294c3d5b5.patch?full_index=1"
     sha256 "d56016cd237c9a98e7c4389c57a455ea5d660d538d0cb1d5082bb2f9ed4e00b8"
+  end
+
+  patch do
+    # Add simple implementation for STBIImageCodec::magicNumberToFileExt()
+    url "https://github.com/OGRECave/ogre-next/commit/98c9095c6e288fceb59ccb3504d9127d88eb1b51.patch?full_index=1"
+    sha256 "46a059f2c54641c1954f8c05c336fec71e711d1b80ff05fd9efa64feda8bccf2"
+  end
+
+  patch do
+    # Fix loading of images in STBICodec
+    url "https://github.com/OGRECave/ogre-next/commit/37d4876eb71c70b9eb3464e5b72c6e6d6be03232.patch?full_index=1"
+    sha256 "9dcae0cc3a7d9d74c9724380340414399db9db974c77b6dc59c8302e0117488a"
+  end
+
+  patch do
+    # Handle row padding correctly for 1, 2 and 4-channel images in STBICodec
+    url "https://github.com/OGRECave/ogre-next/commit/96a3bb016b2c9b4f9cca9df1a65d619220e21d78.patch?full_index=1"
+    sha256 "bcc23d665d530b678e87db628cfb759d141903cd91fe41edffef83a88914130e"
   end
 
   def install
@@ -56,6 +69,7 @@ class Ogre23 < Formula
       "-DOGRE_BUILD_COMPONENT_HLMS_UNLIT:BOOL=ON",
       "-DOGRE_BUILD_COMPONENT_OVERLAY:BOOL=ON",
       "-DOGRE_BUILD_COMPONENT_PLANAR_REFLECTIONS:BOOL=ON",
+      "-DOGRE_CONFIG_ENABLE_STBI:BOOL=ON",
       "-DOGRE_LIB_DIRECTORY=lib/OGRE-2.3",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       "-DOGRE_FULL_RPATH:BOOL=FALSE",
@@ -123,7 +137,7 @@ class Ogre23 < Formula
     ["libOgreMain", "libOgreOverlay", "libOgrePlanarReflections", "OGRE/RenderSystem_Metal"].each do |plugin|
       p = lib/"OGRE-2.3/#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
