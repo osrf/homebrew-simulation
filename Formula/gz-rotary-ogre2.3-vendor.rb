@@ -15,7 +15,7 @@ class GzRotaryOgre23Vendor < Formula
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
   depends_on "cmake" => :build
-  depends_on "gz-plugin2" => :test
+  depends_on "gz-rotary-plugin" => :test
   depends_on "pkgconf" => :test
 
   depends_on "doxygen"
@@ -137,7 +137,7 @@ class GzRotaryOgre23Vendor < Formula
     ["libOgreMain", "libOgreOverlay", "libOgrePlanarReflections", "OGRE/RenderSystem_Metal"].each do |plugin|
       p = lib/"OGRE-2.3/#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
