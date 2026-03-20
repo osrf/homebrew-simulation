@@ -30,6 +30,8 @@ class Ogre23 < Formula
   depends_on "rapidjson"
   depends_on "tbb"
 
+  conflicts_with "gz-rotary-ogre2.3-vendor", because: "both install ogre2.3"
+
   patch do
     # Fix for compatibility with XCode 16.3
     url "https://github.com/scpeters/ogre-next/commit/b7439ae047489aa104a6775a99a9e93294c3d5b5.patch?full_index=1"
