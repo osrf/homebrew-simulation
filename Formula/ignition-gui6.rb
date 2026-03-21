@@ -4,7 +4,7 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/ignition-gui-6.9.0.tar.bz2"
   sha256 "905f740430ae51579d40927f38683d075558c3694ce069f669fb50f7db9a94b5"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
 
