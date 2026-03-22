@@ -6,6 +6,13 @@ class GzLaunch8 < Formula
   license "Apache-2.0"
   revision 18
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "b4f7ded490bf7a4339f4538c4c3767099a17c4c6a0b042610b945eb92945e380"
+    sha256 arm64_sonoma:  "09bb8afceb30bac213a4b8bb0a2c493bde543b002b581e898a091b74342c9002"
+    sha256 sonoma:        "8f24ac8e99b422b481125b460388dff4d0aeb5a4c164d09c16ec76c737aa4165"
+  end
+
   # head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
   depends_on "cmake" => :build
