@@ -24,8 +24,6 @@ class GzRotary < Formula
   depends_on "gz-rotary-utils"
   depends_on "pkgconf"
 
-  conflicts_with "gz-jetty", because: "both install a gazebo collection metapackage"
-
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
