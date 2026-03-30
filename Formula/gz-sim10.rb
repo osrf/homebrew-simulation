@@ -74,6 +74,20 @@ class GzSim10 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
     cmake_args << python_cmake_arg
 
+    # Install default server.config enabling world plugin loading
+    # This enables /world/<name>/create services for programmatic entity spawning
+    server_config_dir = HOMEBREW_PREFIX/"share/gz/gz-sim10"
+    server_config_dir.mkpath
+    (server_config_dir/"server.config").write <<~EOS
+      <server_config>
+        <plugins>
+          <plugin entity_name="*" entity_type="world" filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+          <plugin entity_name="*" entity_type="world" filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+          <plugin entity_name="*" entity_type="world" filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+        </plugins>
+      </server_config>
+    EOS
+
     mkdir "build" do
       system "cmake", "..", *cmake_args
       system "make", "install"
