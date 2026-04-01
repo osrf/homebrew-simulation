@@ -22,7 +22,6 @@ class GzRotary < Formula
   depends_on "gz-rotary-tools"
   depends_on "gz-rotary-transport"
   depends_on "gz-rotary-utils"
-  depends_on "pkgconf"
 
   def install
     mkdir "build" do
