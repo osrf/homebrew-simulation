@@ -1,7 +1,9 @@
 #!/bin/bash
 
-tool_dir=$(dirname ${0})
-generated_jobs="${tool_dir}/../dsl/logs/generated_jobs.txt"
+RELEASE_TOOLS_REPO="https://github.com/gazebo-tooling/release-tools"
+generated_jobs="${TMPDIR}/generated_jobs.txt"
+curl --location "${RELEASE_TOOLS_REPO}/raw/master/jenkins-scripts/dsl/logs/generated_jobs.txt" \
+  --output "${generated_jobs}"
 
 JOB_URL='https://build.osrfoundation.org/job/'
 BADGE_URL='https://build.osrfoundation.org/buildStatus/icon?job='
