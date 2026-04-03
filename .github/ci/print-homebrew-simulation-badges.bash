@@ -80,12 +80,8 @@ do
   echo -n "collection | $(echo ${arch} | sed -e 's@amd64@intel@')"
   for c in ${collections[@]};
   do
-    if [ "$c" = "rotary" ]; then
-      echo -n " |"
-    else
       #         | [![Build Status][cmake-fortress-amd64-badge]][cmake-fortress-amd64]
       echo -n " | [![Build Status][collection-$c-$arch-badge]][collection-$c-$arch]"
-    fi
   done
   # print blank line at end of row for each arch
   echo
