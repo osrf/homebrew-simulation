@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RELEASE_TOOLS_REPO="https://github.com/gazebo-tooling/release-tools"
-generated_jobs="${TMPDIR}/generated_jobs.txt"
+generated_jobs="$(mktemp -d)/generated_jobs.txt"
 curl --location "${RELEASE_TOOLS_REPO}/raw/master/jenkins-scripts/dsl/logs/generated_jobs.txt" \
   --output "${generated_jobs}"
 
