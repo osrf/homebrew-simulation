@@ -48,8 +48,8 @@ Status        | Arch | Fortress | Harmonic | Ionic | Jetty | Rotary
 [gz-utils][utils-repo] | arm64 | [![Build Status][utils-fortress-arm64-badge]][utils-fortress-arm64] | [![Build Status][utils-harmonic-arm64-badge]][utils-harmonic-arm64] | [![Build Status][utils-ionic-arm64-badge]][utils-ionic-arm64] | [![Build Status][utils-jetty-arm64-badge]][utils-jetty-arm64] | [![Build Status][utils-rotary-arm64-badge]][utils-rotary-arm64]
 [sdformat][sdformat-repo] | intel | [![Build Status][sdformat-fortress-amd64-badge]][sdformat-fortress-amd64] | [![Build Status][sdformat-harmonic-amd64-badge]][sdformat-harmonic-amd64] | [![Build Status][sdformat-ionic-amd64-badge]][sdformat-ionic-amd64] | [![Build Status][sdformat-jetty-amd64-badge]][sdformat-jetty-amd64] | [![Build Status][sdformat-rotary-amd64-badge]][sdformat-rotary-amd64]
 [sdformat][sdformat-repo] | arm64 | [![Build Status][sdformat-fortress-arm64-badge]][sdformat-fortress-arm64] | [![Build Status][sdformat-harmonic-arm64-badge]][sdformat-harmonic-arm64] | [![Build Status][sdformat-ionic-arm64-badge]][sdformat-ionic-arm64] | [![Build Status][sdformat-jetty-arm64-badge]][sdformat-jetty-arm64] | [![Build Status][sdformat-rotary-arm64-badge]][sdformat-rotary-arm64]
-collection | intel | [![Build Status][collection-fortress-amd64-badge]][collection-fortress-amd64] | [![Build Status][collection-harmonic-amd64-badge]][collection-harmonic-amd64] | [![Build Status][collection-ionic-amd64-badge]][collection-ionic-amd64] | [![Build Status][collection-jetty-amd64-badge]][collection-jetty-amd64] |
-collection | arm64 | [![Build Status][collection-fortress-arm64-badge]][collection-fortress-arm64] | [![Build Status][collection-harmonic-arm64-badge]][collection-harmonic-arm64] | [![Build Status][collection-ionic-arm64-badge]][collection-ionic-arm64] | [![Build Status][collection-jetty-arm64-badge]][collection-jetty-arm64] |
+collection | intel | [![Build Status][collection-fortress-amd64-badge]][collection-fortress-amd64] | [![Build Status][collection-harmonic-amd64-badge]][collection-harmonic-amd64] | [![Build Status][collection-ionic-amd64-badge]][collection-ionic-amd64] | [![Build Status][collection-jetty-amd64-badge]][collection-jetty-amd64] | [![Build Status][collection-rotary-amd64-badge]][collection-rotary-amd64]
+collection | arm64 | [![Build Status][collection-fortress-arm64-badge]][collection-fortress-arm64] | [![Build Status][collection-harmonic-arm64-badge]][collection-harmonic-arm64] | [![Build Status][collection-ionic-arm64-badge]][collection-ionic-arm64] | [![Build Status][collection-jetty-arm64-badge]][collection-jetty-arm64] | [![Build Status][collection-rotary-arm64-badge]][collection-rotary-arm64]
 
 [cmake-repo]: https://github.com/gazebosim/gz-cmake
 [cmake-fortress-amd64]: https://build.osrfoundation.org/job/gz_cmake2-install_bottle-homebrew-amd64
@@ -479,6 +479,10 @@ collection | arm64 | [![Build Status][collection-fortress-arm64-badge]][collecti
 [collection-jetty-amd64-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_jetty-install_bottle-homebrew-amd64
 [collection-jetty-arm64]: https://build.osrfoundation.org/job/gz_jetty-install_bottle-homebrew-arm64
 [collection-jetty-arm64-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_jetty-install_bottle-homebrew-arm64
+[collection-rotary-amd64]: https://build.osrfoundation.org/job/gz_rotary-install_formula-homebrew-amd64
+[collection-rotary-amd64-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary-install_formula-homebrew-amd64
+[collection-rotary-arm64]: https://build.osrfoundation.org/job/gz_rotary-install_formula-homebrew-arm64
+[collection-rotary-arm64-badge]: https://build.osrfoundation.org/buildStatus/icon?job=gz_rotary-install_formula-homebrew-arm64
 
 ## To build bottles
 
