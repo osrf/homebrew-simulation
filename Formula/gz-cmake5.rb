@@ -1,8 +1,8 @@
 class GzCmake5 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.0.2.tar.bz2"
-  sha256 "dc1e79a3f98b29e4f032d590627bc991e477922bacbaf734f6d9003dbc6613f9"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.1.0.tar.bz2"
+  sha256 "8f46e2b0fc65fee18cbcabf8511485c73692a2a801987104542e03d8c432e8be"
   license "Apache-2.0"
 
   bottle do
