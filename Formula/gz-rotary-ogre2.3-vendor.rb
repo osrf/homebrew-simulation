@@ -4,6 +4,7 @@ class GzRotaryOgre23Vendor < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -49,6 +50,12 @@ class GzRotaryOgre23Vendor < Formula
     # Handle row padding correctly for 1, 2 and 4-channel images in STBICodec
     url "https://github.com/OGRECave/ogre-next/commit/96a3bb016b2c9b4f9cca9df1a65d619220e21d78.patch?full_index=1"
     sha256 "bcc23d665d530b678e87db628cfb759d141903cd91fe41edffef83a88914130e"
+  end
+
+  patch do
+    # Fix RGB channel swap in STBICodec RGB-to-RGBA conversion (v2-3)
+    url "https://github.com/OGRECave/ogre-next/commit/960aabcda2f0ba5d2281d742506aab3e3e91b396.patch?full_index=1"
+    sha256 "b73d5619a66473b6ca3dacecc6cfc458cf6ce3192f6e19b43f6513b149d3c882"
   end
 
   def install
