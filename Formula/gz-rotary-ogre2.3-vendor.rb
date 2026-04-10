@@ -4,18 +4,19 @@ class GzRotaryOgre23Vendor < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "a893e2d96bf9b5ce816fa9067da17849987748c1138e3aac7610072b1bc229b8"
-    sha256 cellar: :any, arm64_sonoma:  "b8457eff9870f6722c600f37a81bf6b98066177904d49fe0ec9d79e17954da9b"
-    sha256 cellar: :any, sonoma:        "c96f0177e523d97ba5c3a78419652c3a53c7720713e2e63aae7da7b2915d085a"
+    sha256 cellar: :any, arm64_sequoia: "25a83c0c2ed6e282bd9d43c9c74ae99c63e53a012bbb8763edaf19e79a9a1c61"
+    sha256 cellar: :any, arm64_sonoma:  "3e66e5da176d5a61c7aa71b4a38bc8fc8d7ec1688a43dc5c1a8e06d270f19d29"
+    sha256 cellar: :any, sonoma:        "bcdb02c47144902cc39d4c692b619b4615190003e388010bda53704ecc103858"
   end
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
   depends_on "cmake" => :build
-  depends_on "gz-rotary-plugin" => :test
+  depends_on "gz-jetty-plugin" => :test
   depends_on "pkgconf" => :test
 
   depends_on "doxygen"
@@ -49,6 +50,12 @@ class GzRotaryOgre23Vendor < Formula
     # Handle row padding correctly for 1, 2 and 4-channel images in STBICodec
     url "https://github.com/OGRECave/ogre-next/commit/96a3bb016b2c9b4f9cca9df1a65d619220e21d78.patch?full_index=1"
     sha256 "bcc23d665d530b678e87db628cfb759d141903cd91fe41edffef83a88914130e"
+  end
+
+  patch do
+    # Fix RGB channel swap in STBICodec RGB-to-RGBA conversion (v2-3)
+    url "https://github.com/OGRECave/ogre-next/commit/960aabcda2f0ba5d2281d742506aab3e3e91b396.patch?full_index=1"
+    sha256 "b73d5619a66473b6ca3dacecc6cfc458cf6ce3192f6e19b43f6513b149d3c882"
   end
 
   def install
@@ -137,7 +144,7 @@ class GzRotaryOgre23Vendor < Formula
     ["libOgreMain", "libOgreOverlay", "libOgrePlanarReflections", "OGRE/RenderSystem_Metal"].each do |plugin|
       p = lib/"OGRE-2.3/#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
+      cmd = Formula["gz-jetty-plugin"].opt_libexec/"gz/plugin4/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
