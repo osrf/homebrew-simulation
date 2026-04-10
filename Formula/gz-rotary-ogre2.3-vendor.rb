@@ -8,9 +8,9 @@ class GzRotaryOgre23Vendor < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "a893e2d96bf9b5ce816fa9067da17849987748c1138e3aac7610072b1bc229b8"
-    sha256 cellar: :any, arm64_sonoma:  "b8457eff9870f6722c600f37a81bf6b98066177904d49fe0ec9d79e17954da9b"
-    sha256 cellar: :any, sonoma:        "c96f0177e523d97ba5c3a78419652c3a53c7720713e2e63aae7da7b2915d085a"
+    sha256 cellar: :any, arm64_sequoia: "25a83c0c2ed6e282bd9d43c9c74ae99c63e53a012bbb8763edaf19e79a9a1c61"
+    sha256 cellar: :any, arm64_sonoma:  "3e66e5da176d5a61c7aa71b4a38bc8fc8d7ec1688a43dc5c1a8e06d270f19d29"
+    sha256 cellar: :any, sonoma:        "bcdb02c47144902cc39d4c692b619b4615190003e388010bda53704ecc103858"
   end
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
