@@ -12,10 +12,9 @@ class GzRotaryRendering < Formula
   depends_on "gz-rotary-cmake"
   depends_on "gz-rotary-common"
   depends_on "gz-rotary-math"
+  depends_on "gz-rotary-ogre2.3-vendor"
   depends_on "gz-rotary-plugin"
   depends_on "gz-rotary-utils"
-  depends_on "ogre1.9"
-  depends_on "ogre2.3"
   depends_on "spdlog"
 
   conflicts_with "gz-jetty-rendering", because: "both install gz-rendering"
@@ -47,7 +46,7 @@ class GzRotaryRendering < Formula
     extend SystemCommand::Mixin
 
     # test plugins in subfolders
-    ["ogre", "ogre2"].each do |engine|
+    ["ogre2"].each do |engine|
       p = lib/"gz-rendering/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
@@ -67,13 +66,13 @@ class GzRotaryRendering < Formula
       int main(int _argc, char** _argv)
       {
         gz::rendering::RenderEngine *engine =
-            gz::rendering::engine("ogre");
+            gz::rendering::engine("ogre2");
         return engine == nullptr;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
-      find_package(gz-rendering REQUIRED COMPONENTS ogre ogre2)
+      find_package(gz-rendering REQUIRED COMPONENTS ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-rendering::gz-rendering)
     EOS
