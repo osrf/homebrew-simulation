@@ -26,7 +26,10 @@ class GzRotary < Formula
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
+      # this won't install anything, but test that it doesn't fail
       system "make", "install"
+      # manually install README so brew doesn't complain about empty installation
+      (share/"gz/gz-rotary").install "../README.md"
     end
   end
 
@@ -37,6 +40,7 @@ class GzRotary < Formula
   end
 
   test do
+    assert_path_exists share/"gz/gz-rotary/README.md"
     system "gz", "sim", "--versions"
   end
 end
