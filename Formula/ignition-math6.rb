@@ -1,19 +1,17 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.15.1.tar.bz2"
-  sha256 "a9e96a4e28d7d92d4d054cdae7cef28f1d8397b72433398bfc68855956531170"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/ignition-math-6.16.0.tar.bz2"
+  sha256 "831a153253044bcb505dc9cf50b7f1e8c4ccd9213dd5bdb1d6d13719f775c991"
   license "Apache-2.0"
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "8d960e470b4cf9a4978b3fa298e6a10958a6a1fd2c521554b5ea4ee9172a8016"
-    sha256 cellar: :any, arm64_sonoma:  "fd390641bb5cfc7d3f0072e0cd17a5a37bb0b9f4dfdc8c554e16c16289255db8"
-    sha256 cellar: :any, sonoma:        "9c765e4736151e3b9f7bbd0e81939b9405329ee1f227c99b94b6717e96e1f8d0"
-    sha256 cellar: :any, ventura:       "f04b2a2952cbc588a80d3b809c851410f89cb39ad24134be92662d4751bf3f0a"
-    sha256 cellar: :any, monterey:      "a34fdd037896e72df9f0c4c20dc2dc4d953ffad9977ab14b7f6b1667bad1493e"
+    sha256 cellar: :any, arm64_sequoia: "a724ae64a4966bb40cd4c749e334fefd49c390c8e15fcafbfad280b71d36e319"
+    sha256 cellar: :any, arm64_sonoma:  "bee3f50977496d5b9ea07482f5b635622dd614533b0eb3fe9ce925620289b532"
+    sha256 cellar: :any, sonoma:        "8056ed61f271e8af69f5720a42d8fc951672ea09c8fe9b1163ad8fe874d5a108"
   end
 
   depends_on "cmake" => :build
