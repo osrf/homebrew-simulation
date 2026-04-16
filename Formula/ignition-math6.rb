@@ -1,8 +1,8 @@
 class IgnitionMath6 < Formula
   desc "Math API for robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/ign-math/releases/ignition-math6-6.15.1.tar.bz2"
-  sha256 "a9e96a4e28d7d92d4d054cdae7cef28f1d8397b72433398bfc68855956531170"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/ignition-math-6.16.0.tar.bz2"
+  sha256 "831a153253044bcb505dc9cf50b7f1e8c4ccd9213dd5bdb1d6d13719f775c991"
   license "Apache-2.0"
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
