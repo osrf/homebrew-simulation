@@ -642,12 +642,12 @@ The `sha256` will be printed to the console, which can then be used to update th
 ## Jenkins implementation details
 
 The [generic-release-homebrew\_triggered\_bottle\_builder](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder)
-jenkins job currently builds bottles for macOS 13 `ventura` and 14 `sonoma` / `arm64_sonoma`
+jenkins job currently builds bottles for macOS 15 `arm64_sequoia` and 14 `sonoma` / `arm64_sonoma`
 using the following job configurations and the
 [homebrew\_bottle\_creation.bash](https://github.com/ignition-tooling/release-tools/blob/master/jenkins-scripts/lib/homebrew_bottle_creation.bash)
 script:
 
-* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_ventura)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_ventura/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_ventura
+* [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_arm64_sequoia)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sequoia/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sequoia
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_arm64_sonoma)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sonoma/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_arm64_sonoma
 * [![Build Status](https://build.osrfoundation.org/buildStatus/icon?job=generic-release-homebrew_triggered_bottle_builder%2Flabel%3Dosx_sonoma)](https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_sonoma/) https://build.osrfoundation.org/job/generic-release-homebrew_triggered_bottle_builder/label=osx_sonoma
 
@@ -668,7 +668,7 @@ bottle builds can be triggered for a specific macOS / architecture combination
 by adding special tags to the `build bottle` comment in a homebrew-simulation pull request.
 Use `brew-bot-tag:` along with `build-for-new-distro-{distro}` in the comment,
 where `{distro}` is the version string used in homebrew bottle blocks
-(such as `ventura` or `arm64_sonoma`). See [this comment](https://github.com/osrf/homebrew-simulation/pull/3109#issuecomment-3211703894)
+(such as `sonoma` or `arm64_sonoma`). See [this comment](https://github.com/osrf/homebrew-simulation/pull/3109#issuecomment-3211703894)
 in [osrf/homebrew-simulation#3109](https://github.com/osrf/homebrew-simulation/pull/3109)
 as an example that triggered a bottle build for `arm64_sonoma` only.
 Note that this approach only works if the pull request does not change the
