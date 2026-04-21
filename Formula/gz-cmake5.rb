@@ -4,6 +4,7 @@ class GzCmake5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.1.0.tar.bz2"
   sha256 "8f46e2b0fc65fee18cbcabf8511485c73692a2a801987104542e03d8c432e8be"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
