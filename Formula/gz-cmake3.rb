@@ -4,6 +4,7 @@ class GzCmake3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.5.6.tar.bz2"
   sha256 "47a9104aa447ca2a307c81b3cc88314fa40db005c0a5881417412ff7e98368e8"
   license "Apache-2.0"
+  revision 1
 
   # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
 
