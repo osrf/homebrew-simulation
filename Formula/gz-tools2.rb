@@ -4,6 +4,7 @@ class GzTools2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.3.tar.bz2"
   sha256 "86ea83e1628ad904b456297531f1469f4c3a4df569a6c40e8f8c77f0e3e46156"
   license "Apache-2.0"
+  revision 1
 
   # head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
 
