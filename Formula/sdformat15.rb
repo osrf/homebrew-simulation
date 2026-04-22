@@ -6,6 +6,13 @@ class Sdformat15 < Formula
   license "Apache-2.0"
   revision 4
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "ecc92fc5360968d3b7c7869ec13645c5a62274726f943730a0ae2216829c2c02"
+    sha256 arm64_sonoma:  "687ef217556778f80721d9fc1742880e36d96caa8219acac069428c4526fd60a"
+    sha256 sonoma:        "880238ca71552cb3557180f1327d474841197a183833b9973ffd2c159091c85d"
+  end
+
   # head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
 
   depends_on "cmake" => [:build, :test]
