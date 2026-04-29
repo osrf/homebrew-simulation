@@ -19,7 +19,6 @@ class GzCommon7 < Formula
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "fmt"
-  depends_on "freeimage"
   depends_on "gdal"
   depends_on "gz-cmake5"
   depends_on "gz-math9"
