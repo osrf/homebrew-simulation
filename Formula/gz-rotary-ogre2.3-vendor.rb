@@ -4,7 +4,7 @@ class GzRotaryOgre23Vendor < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
@@ -24,7 +24,6 @@ class GzRotaryOgre23Vendor < Formula
   depends_on "libx11"
   depends_on "libzzip"
   depends_on "rapidjson"
-  depends_on "tbb"
 
   conflicts_with "ogre2.3", because: "both install ogre2.3"
 
