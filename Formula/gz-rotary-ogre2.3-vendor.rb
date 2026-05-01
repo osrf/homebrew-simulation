@@ -4,13 +4,13 @@ class GzRotaryOgre23Vendor < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "25a83c0c2ed6e282bd9d43c9c74ae99c63e53a012bbb8763edaf19e79a9a1c61"
-    sha256 cellar: :any, arm64_sonoma:  "3e66e5da176d5a61c7aa71b4a38bc8fc8d7ec1688a43dc5c1a8e06d270f19d29"
-    sha256 cellar: :any, sonoma:        "bcdb02c47144902cc39d4c692b619b4615190003e388010bda53704ecc103858"
+    sha256 cellar: :any, arm64_sequoia: "7422b54fc3933ff8b932cc201ea31832ef8e3ed36bc2eadc71de349a497fd04d"
+    sha256 cellar: :any, arm64_sonoma:  "a2fd5cba4837216844a81098b33dd88c6b531b30d272a36e185f561041023022"
+    sha256 cellar: :any, sonoma:        "ac5564e0a67bb68bc3357a67fb052464fbac8bc22565e107e54eae2c4f67a609"
   end
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
@@ -24,7 +24,6 @@ class GzRotaryOgre23Vendor < Formula
   depends_on "libx11"
   depends_on "libzzip"
   depends_on "rapidjson"
-  depends_on "tbb"
 
   conflicts_with "ogre2.3", because: "both install ogre2.3"
 
