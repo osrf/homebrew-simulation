@@ -4,7 +4,7 @@ class GzPhysics9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-9.2.0.tar.bz2"
   sha256 "e568e882edba926066f63f27123fc6ec42af246af529af3da50e95b19cf2437f"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics9"
 
