@@ -1,15 +1,15 @@
 class GzCmake5 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.1.0.tar.bz2"
-  sha256 "8f46e2b0fc65fee18cbcabf8511485c73692a2a801987104542e03d8c432e8be"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.1.1.tar.bz2"
+  sha256 "d1ca0245cdcbb050ebd8ccfa67d0837b88d2a0ab7d9ceadbe4478c1f9d533006"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6c3b7a96ad574385967ccb1f1e2c2d12a522bb1d470373fd492e7b204d6efc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "624b1e974068eac1ed2fbdef8b99971ad73bc76102ccf84c97263167f1f248a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca2128b45f1009434574b20a6a2366f1c598c78341dfc564e68bb26a768ff482"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7b036ae727f63dc798ceb6356e0237d06170f305a05110ffe5415dd09abd335"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e9dedb7fde345c9f7f2f3e681eef823098ef3db697591108e3b933c9a21d2ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b1d813068a9b02ff68fd47cb24c7c5370d3107d983b71ea17b334561376ec66"
   end
 
   # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
