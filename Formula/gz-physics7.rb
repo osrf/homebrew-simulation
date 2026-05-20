@@ -1,16 +1,15 @@
 class GzPhysics7 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-7.6.0.tar.bz2"
-  sha256 "4b930f61cb02e2cb322f347399b072aa0302d03d88e1788cc38ac719798073fc"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-7.7.0.tar.bz2"
+  sha256 "a863955588570a66a628fd128d71599e461b0821ff6d1b26b03c847722ba2124"
   license "Apache-2.0"
-  revision 10
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "dfe79b6ec3f66678ddbb2942281c1b41cc790846f719f67e02c12b5a0e8b7996"
-    sha256 arm64_sonoma:  "9524f2265208dccddfeb001a490d71607256af51abf8f7ac9f696712e3d9cb63"
-    sha256 sonoma:        "c920ea87d5c7e086debfabbb8a2748bfd5c932b75db79857607e57a26c2dca3f"
+    sha256 arm64_sequoia: "28dbef4b6f036639ba13b3b282789a550f3e1b07affd9672c796e4633f73d958"
+    sha256 arm64_sonoma:  "1aa15b0ffc2549564023354e417ff1a1efffdd668ee69ff9faf80819f8216a39"
+    sha256 sonoma:        "7074792a2466e590cb20fba3518dd2bce3ae2abaf7590378c962f98644595024"
   end
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics7"
