@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       HOMEBREW_FORCE_VENDOR_RUBY: 1
+      # mitigation for "Warning: Bubblewrap is required to use the Linux sandbox but was not found."
+      # remove when `brew doctor` can succeed without it
+      HOMEBREW_NO_SANDBOX_LINUX: 1
     steps:
       - name: Activate Homebrew
         if: runner.os == 'Linux'
