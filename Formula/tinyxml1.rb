@@ -16,8 +16,6 @@ class Tinyxml1 < Formula
 
   depends_on "cmake" => :build
 
-  conflicts_with "tinyxml", because: "differing version of same formula"
-
   # The first two patches are taken from the debian packaging of tinyxml.
   #   The first patch enforces use of stl strings, rather than a custom string type.
   #   The second patch is a fix for incorrect encoding of elements with special characters
