@@ -3,7 +3,7 @@ class GzRotarySensors < Formula
   homepage "https://github.com/gazebosim/gz-sensors"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-sensors.git", branch: "main"
+  head "https://github.com/kamal2730/gz-sensors.git", branch: "impl_ptr_migration"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
