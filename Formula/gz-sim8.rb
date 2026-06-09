@@ -1,12 +1,18 @@
 class GzSim8 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.12.0.tar.bz2"
-  sha256 "9331f24a77938266b80031db97939b6f30bb1b3e2f8c21371d7994f301671d4b"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.13.0.tar.bz2"
+  sha256 "005a35b51c8a912c8815520512e0ac1f2e62808ae57b91ad5aead14cb78821ac"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "69006956e98709b1193879996d59f5ee07bed02fb5ff993601c248dcf8630446"
+    sha256 arm64_sonoma:  "d87297477c92f595ee2ab1d4563597b99aa6809e8099f85868a20ad9bcddd3f6"
+    sha256 sonoma:        "f0195443d609fd5d23d845ca679810fdd936573ea1f1f6c60c8dc5b03f68f319"
+  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
