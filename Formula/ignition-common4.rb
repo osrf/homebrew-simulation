@@ -1,15 +1,15 @@
 class IgnitionCommon4 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-common"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/ignition-common-4.8.0.tar.bz2"
-  sha256 "3eeb5aa540c9cc39e0608a84e0e3206a4c46a68cd2333e9d0d2b74a508c638df"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/ignition-common-4.8.1.tar.bz2"
+  sha256 "fc6263b819cc320c6ce8c6956aa2713e62330aeca63e4c0c352c852c9af55ad4"
   license "Apache-2.0"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "c84bfe385392506569bae9691b7b069068b177a136c5bcc22b91a86fd9ce84de"
-    sha256 cellar: :any, arm64_sonoma:  "5fa9fb97b490f65c4c275fad09ee2acd9e0b3ae3b7a6859245b3f93071dac77c"
-    sha256 cellar: :any, sonoma:        "7c1781749c7831214be26a7eec08dadd420e7fa0a57485747c896590098835d3"
+    sha256 cellar: :any, arm64_sequoia: "ad5cadb0891d8245c6581804ef973f963fd18560d1c0046bdc4b9e1a98822f77"
+    sha256 cellar: :any, arm64_sonoma:  "aae66c0f8ef293a055ccfd84a337fc5f3a732c0ad22aa8dd85df2bd2919b7b61"
+    sha256 cellar: :any, sonoma:        "55dac20f851b84c24b8132f438f3868e85be996bb9a1f72aa89ccc443016cb91"
   end
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
