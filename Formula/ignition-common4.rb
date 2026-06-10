@@ -7,9 +7,9 @@ class IgnitionCommon4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "c84bfe385392506569bae9691b7b069068b177a136c5bcc22b91a86fd9ce84de"
-    sha256 cellar: :any, arm64_sonoma:  "5fa9fb97b490f65c4c275fad09ee2acd9e0b3ae3b7a6859245b3f93071dac77c"
-    sha256 cellar: :any, sonoma:        "7c1781749c7831214be26a7eec08dadd420e7fa0a57485747c896590098835d3"
+    sha256 cellar: :any, arm64_sequoia: "ad5cadb0891d8245c6581804ef973f963fd18560d1c0046bdc4b9e1a98822f77"
+    sha256 cellar: :any, arm64_sonoma:  "aae66c0f8ef293a055ccfd84a337fc5f3a732c0ad22aa8dd85df2bd2919b7b61"
+    sha256 cellar: :any, sonoma:        "55dac20f851b84c24b8132f438f3868e85be996bb9a1f72aa89ccc443016cb91"
   end
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
