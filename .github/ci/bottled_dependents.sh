@@ -15,7 +15,8 @@
 #
 
 # The script will print the bottled dependents from the osrf/simulation
-# tap of a specified formula.
+# tap of a specified formula that are not currently installed. It is
+# intended to be used in a CI context with no formulae installed.
 #
 # Usage:
 # $ ./bottled_dependents.sh <formula> [<bottle_tag>]
@@ -42,7 +43,7 @@ if [ -n "${BOTTLE_TAG}" ]; then
   BOTTLE_FLAG="--tag"
 fi
 
-for f in $(brew uses ${FORMULA} --formulae --eval-all | grep ^osrf/simulation/)
+for f in $(brew uses ${FORMULA} --formulae --missing | grep ^osrf/simulation/)
 do
   # brew unbottled prints "already bottled" for bottled formulae
   if brew unbottled $f ${BOTTLE_FLAG} ${BOTTLE_TAG} | grep --quiet "already bottled"; then
