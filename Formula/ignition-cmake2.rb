@@ -1,17 +1,17 @@
 class IgnitionCmake2 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://ignitionrobotics.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/ignition-cmake-2.18.0.tar.bz2"
-  sha256 "d404567bbb59b61bd676f0c8571b7eac420f6ddd7b8e2a5f96fcaee349560dd8"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/ignition-cmake-2.19.0.tar.bz2"
+  sha256 "032f4172919474c36c209dc6f28513d9ac68cc5a801eb86123bfc03c7e88ae75"
   license "Apache-2.0"
 
   # head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a1cf71c683c9a92f211ec620c172ab1458185392fce41cf88fc2550e54fdc93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68558e278c1ea762409edd638368515143f4021bf3a4f66a120174c752beb5de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "304d34804ccc19aff414e88eb0f5585f777a7a2b490672181c169d33ad96885a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8917b183cb6300174e4f8e7f38fce04bf4129ca2ae717e4e15fe120d3c13958"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bab45ec5d5fd4ebd9589ee2ffba5d571bd10b149ceb2de358d17fd01da97835"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd0f87fe3b33fa28e1f048720ee54be2ca34060268087bb4e48502ab11053f09"
   end
 
   depends_on "cmake"
