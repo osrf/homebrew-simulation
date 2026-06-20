@@ -4,7 +4,7 @@ class GzSim10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.4.0.tar.bz2"
   sha256 "208514aac65ab7cdc3dacac8775a9bb35d793be4b72805e39f741afca86ff8b6"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
 
