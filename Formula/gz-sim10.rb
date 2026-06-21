@@ -4,9 +4,16 @@ class GzSim10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.4.0.tar.bz2"
   sha256 "208514aac65ab7cdc3dacac8775a9bb35d793be4b72805e39f741afca86ff8b6"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "6c875ebe62bb167b4dbb53da91ad0d7cce35d8efa9e6b944d7091a6be85500fc"
+    sha256 arm64_sonoma:  "9d2842c3aa734f62e56493971dc5f3dfd7a28aba022cf5764bc0c7ce010c6344"
+    sha256 sonoma:        "7871686ac524d46a9ec7b72e94bd5715dd0be15fe5c68057a423b0d142455dc9"
+  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
