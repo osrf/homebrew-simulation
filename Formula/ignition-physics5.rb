@@ -61,7 +61,7 @@ class IgnitionPhysics5 < Formula
     %w[bullet dartsim tpe].each do |engine|
       p = lib/"ign-physics-5/engine-plugins/libignition-physics-#{engine}-plugin.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin2")/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args

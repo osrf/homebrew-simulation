@@ -96,6 +96,6 @@ class GzMath8 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.math8"
     end
-    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.math8"
+    system formula_opt_libexec("python3")/"bin/python", "-c", "import gz.math8"
   end
 end

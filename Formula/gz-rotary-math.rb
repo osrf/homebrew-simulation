@@ -96,6 +96,6 @@ class GzRotaryMath < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.math"
     end
-    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.math"
+    system formula_opt_libexec("python3")/"bin/python", "-c", "import gz.math"
   end
 end

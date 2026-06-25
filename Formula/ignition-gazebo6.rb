@@ -67,7 +67,7 @@ class IgnitionGazebo6 < Formula
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin2")/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -83,7 +83,7 @@ class IgnitionGazebo6 < Formula
       plugin_info.call lib/"ign-gazebo-6/plugins/gui/#{p}.dylib"
     end
     ENV["IGN_CONFIG_PATH"] = "#{opt_share}/ignition"
-    system Formula["ignition-tools"].opt_bin/"ign",
+    system formula_opt_bin("ignition-tools")/"ign",
            "gazebo", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS
@@ -126,7 +126,7 @@ class IgnitionGazebo6 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gazebo6::core)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
+    # ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("qt@5")/"pkgconfig"
     # system "pkg-config", "--cflags", "ignition-gazebo6"
     # cflags   = `pkg-config --cflags ignition-gazebo6`.split
     # ldflags  = `pkg-config --libs ignition-gazebo6`.split
@@ -137,7 +137,7 @@ class IgnitionGazebo6 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("qt@5")
     mkdir "build" do
       system "cmake", ".."
       system "make"

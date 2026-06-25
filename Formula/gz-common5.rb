@@ -69,7 +69,7 @@ class GzCommon5 < Formula
     system "./test"
     # test building with cmake
     mkdir "build" do
-      ENV.append "LIBRARY_PATH", Formula["gettext"].opt_lib
+      ENV.append "LIBRARY_PATH", formula_opt_lib("gettext")
       system "cmake", ".."
       system "make"
       system "./test_cmake"

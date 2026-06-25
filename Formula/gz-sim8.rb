@@ -83,7 +83,7 @@ class GzSim8 < Formula
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin2")/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -100,7 +100,7 @@ class GzSim8 < Formula
     end
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-tools2"].opt_bin/"gz",
+    system formula_opt_bin("gz-tools2")/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS
@@ -143,7 +143,7 @@ class GzSim8 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-sim8::core)
     EOS
-    # ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
+    # ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("qt@5")/"pkgconfig"
     # system "pkg-config", "--cflags", "gz-sim8"
     # cflags   = `pkg-config --cflags gz-sim8`.split
     # ldflags  = `pkg-config --libs gz-sim8`.split
@@ -154,7 +154,7 @@ class GzSim8 < Formula
     #                "-o", "test"
     # system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("qt@5")
     mkdir "build" do
       system "cmake", ".."
       system "make"
@@ -167,6 +167,6 @@ class GzSim8 < Formula
     [pythons.first].each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.sim8"
     end
-    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.sim8"
+    system formula_opt_libexec("python3")/"bin/python", "-c", "import gz.sim8"
   end
 end

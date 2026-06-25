@@ -49,7 +49,7 @@ class GzRotaryRendering < Formula
     ["ogre2"].each do |engine|
       p = lib/"gz-rendering/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
+      cmd = formula_opt_libexec("gz-rotary-plugin")/"gz/plugin/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args

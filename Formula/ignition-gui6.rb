@@ -56,7 +56,7 @@ class IgnitionGui6 < Formula
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"ign-gui-6/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin2")/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -110,7 +110,7 @@ class IgnitionGui6 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gui6::ignition-gui6)
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("qt@5")/"pkgconfig"
     system "pkg-config", "ignition-gui6"
     cflags   = `pkg-config --cflags ignition-gui6`.split
     ldflags  = `pkg-config --libs ignition-gui6`.split
@@ -122,7 +122,7 @@ class IgnitionGui6 < Formula
     ENV["IGN_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("qt@5")
     mkdir "build" do
       system "cmake", ".."
       system "make"

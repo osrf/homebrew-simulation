@@ -64,7 +64,7 @@ class GzLaunch7 < Formula
     %w[joytotwist sim-factory sim simgui].each do |plugin|
       p = lib/"gz-launch-7/plugins/libgz-launch-#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin2")/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
