@@ -4,9 +4,16 @@ class IgnitionGazebo6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/ignition-gazebo-6.18.0.tar.bz2"
   sha256 "9d3bbadc1a9c780b179890f4ac5978195d98a7a12f4cc23614d895276774fc99"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "de7aa2187f9b32c61f7a799439f30652e8df11f49f68f1ab3a760deaa0a8e3d5"
+    sha256 arm64_sonoma:  "16215c51dd71eb6b32d8bbc169e558ab8ef65a73722031fabcc9c3dbe9272f95"
+    sha256 sonoma:        "dbb02d21899b7bf5c8b58aae37c695c6877fd66cd0fa740adf719f05ee54bfb5"
+  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
