@@ -60,8 +60,8 @@ class Gazebo11 < Formula
 
   def install
     cmake_args = std_cmake_args
-    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework/Headers"
-    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{Formula["qwt-qt5"].opt_lib}/qwt.framework"
+    cmake_args << "-DQWT_WIN_INCLUDE_DIR=#{formula_opt_lib("qwt-qt5")}/qwt.framework/Headers"
+    cmake_args << "-DQWT_WIN_LIBRARY_DIR=#{formula_opt_lib("qwt-qt5")}/qwt.framework"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     # use build folder
@@ -103,9 +103,9 @@ class Gazebo11 < Formula
     #                "-lc++",
     #                "-o", "test"
     # system "./test"
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["boost@1.85.0"].opt_prefix
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["ogre1.9-with-boost1.85"].opt_prefix
-    ENV.append_path "PKG_CONFIG_PATH", Formula["ogre1.9-with-boost1.85"].opt_lib/"pkgconfig"
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("boost@1.85.0")
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("ogre1.9-with-boost1.85")
+    ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("ogre1.9-with-boost1.85")/"pkgconfig"
     mkdir "build" do
       system "cmake", ".."
       system "make"

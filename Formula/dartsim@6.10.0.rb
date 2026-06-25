@@ -82,12 +82,12 @@ class DartsimAT6100 < Formula
     EOS
     system ENV.cxx, "test.cpp", "-I#{Formula["eigen"].include}/eigen3",
                     "-I#{include}", "-L#{lib}", "-ldart",
-                    "-L#{Formula["assimp"].opt_lib}", "-lassimp",
-                    "-L#{Formula["boost"].opt_lib}", "-lboost_system",
+                    "-L#{formula_opt_lib("assimp")}", "-lassimp",
+                    "-L#{formula_opt_lib("boost")}", "-lboost_system",
                     "-std=c++14", "-o", "test"
-    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["dartsim@6.10.0"].opt_lib
-    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["assimp"].opt_lib
-    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", Formula["octomap"].opt_lib
+    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", formula_opt_lib("dartsim@6.10.0")
+    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", formula_opt_lib("assimp")
+    ENV.append_path "DYLD_FALLBACK_LIBRARY_PATH", formula_opt_lib("octomap")
     system "./test"
   end
 end

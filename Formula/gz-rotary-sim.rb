@@ -89,7 +89,7 @@ class GzRotarySim < Formula
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-rotary-plugin"].opt_libexec/"gz/plugin/gz-plugin"
+      cmd = formula_opt_libexec("gz-rotary-plugin")/"gz/plugin/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -109,7 +109,7 @@ class GzRotarySim < Formula
            "-s", "--iterations", "5", "-r", "-v", "4"
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-rotary-tools"].opt_bin/"gz",
+    system formula_opt_bin("gz-rotary-tools")/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS
@@ -174,6 +174,6 @@ class GzRotarySim < Formula
     [pythons.first].each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.sim"
     end
-    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.sim"
+    system formula_opt_libexec("python3")/"bin/python", "-c", "import gz.sim"
   end
 end

@@ -59,7 +59,7 @@ class GzGui8 < Formula
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-8/plugins/lib#{plugin}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin2"].opt_libexec/"gz/plugin2/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin2")/"gz/plugin2/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -113,7 +113,7 @@ class GzGui8 < Formula
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-gui8::gz-gui8)
     EOS
-    ENV.append_path "PKG_CONFIG_PATH", Formula["qt@5"].opt_lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("qt@5")/"pkgconfig"
     system "pkg-config", "gz-gui8"
     cflags   = `pkg-config --cflags gz-gui8`.split
     ldflags  = `pkg-config --libs gz-gui8`.split
@@ -125,7 +125,7 @@ class GzGui8 < Formula
     ENV["GZ_PARTITION"] = rand((1 << 32) - 1).to_s
     system "./test"
     # test building with cmake
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].opt_prefix
+    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("qt@5")
     mkdir "build" do
       system "cmake", ".."
       system "make"

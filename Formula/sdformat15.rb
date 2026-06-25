@@ -114,7 +114,7 @@ class Sdformat15 < Formula
       system python.opt_libexec/"bin/python", "-c",
         "import sdformat15; sdformat15.Box().size()"
     end
-    system Formula["python3"].opt_libexec/"bin/python", "-c",
+    system formula_opt_libexec("python3")/"bin/python", "-c",
       "import sdformat15; sdformat15.Box().size()"
   end
 end

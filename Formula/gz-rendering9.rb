@@ -52,7 +52,7 @@ class GzRendering9 < Formula
     ["ogre", "ogre2"].each do |engine|
       p = lib/"gz-rendering-9/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin3"].opt_libexec/"gz/plugin3/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin3")/"gz/plugin3/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args

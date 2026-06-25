@@ -115,6 +115,6 @@ class GzTransport13 < Formula
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.transport13"
     end
-    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.transport13"
+    system formula_opt_libexec("python3")/"bin/python", "-c", "import gz.transport13"
   end
 end

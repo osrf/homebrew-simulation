@@ -86,7 +86,7 @@ class GzSim10 < Formula
     # test some plugins in subfolders
     plugin_info = lambda { |p|
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin4"].opt_libexec/"gz/plugin4/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin4")/"gz/plugin4/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
@@ -106,7 +106,7 @@ class GzSim10 < Formula
            "-s", "--iterations", "5", "-r", "-v", "4"
     # test gz sim CLI tool
     ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
-    system Formula["gz-tools2"].opt_bin/"gz",
+    system formula_opt_bin("gz-tools2")/"gz",
            "sim", "-s", "--iterations", "5", "-r", "-v", "4"
     # build against API
     (testpath/"test.cpp").write <<-EOS
@@ -171,6 +171,6 @@ class GzSim10 < Formula
     [pythons.first].each do |python|
       system python.opt_libexec/"bin/python", "-c", "import gz.sim"
     end
-    system Formula["python3"].opt_libexec/"bin/python", "-c", "import gz.sim"
+    system formula_opt_libexec("python3")/"bin/python", "-c", "import gz.sim"
   end
 end

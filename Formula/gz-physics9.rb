@@ -56,7 +56,7 @@ class GzPhysics9 < Formula
     %w[bullet-featherstone bullet dartsim tpe].each do |engine|
       p = lib/"gz-physics-9/engine-plugins/libgz-physics-#{engine}-plugin.dylib"
       # Use gz-plugin --info command to check plugin linking
-      cmd = Formula["gz-plugin4"].opt_libexec/"gz/plugin4/gz-plugin"
+      cmd = formula_opt_libexec("gz-plugin4")/"gz/plugin4/gz-plugin"
       args = ["--info", "--plugin"] << p
       # print command and check return code
       system cmd, *args
