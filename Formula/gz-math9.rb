@@ -1,17 +1,17 @@
 class GzMath9 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-9.1.0.tar.bz2"
-  sha256 "9dbaa530e0b5b506dd438bd054bb7bcee416b0d991ff2630da526ae46df82374"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-9.2.0.tar.bz2"
+  sha256 "0fd6d0b992c16b60ab9c4dae29f10abb389557ec7ccd3b9450b5f4a66ee52140"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "8d5b267d335dd05a2b5e6a7560a397fc7e829d390c5761ae597625edcf0f7232"
-    sha256 cellar: :any, arm64_sonoma:  "12e6cc4ad3894bae4e6ab73d9df99d7d94f6ecfef61769f11d1892c725be7425"
-    sha256 cellar: :any, sonoma:        "f4c72fe64bc51955a71c62833015a29094ecda304c20fe1fbd64e8a84dc20383"
+    sha256 cellar: :any, arm64_sequoia: "0b5403aa8ef442871788b268054c3643611e69f804ae33e00c8badf1045e2ad9"
+    sha256 cellar: :any, arm64_sonoma:  "9515055d884c46117219fb74a2b6e7cc570edbb0c67a7a50552e981c886cd552"
+    sha256 cellar: :any, sonoma:        "fa07636996fa5aadbf030f78823e262e2901331f8fc50e1a48ac57671422981c"
   end
 
   depends_on "cmake" => :build
