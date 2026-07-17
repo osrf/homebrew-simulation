@@ -4,6 +4,7 @@ class IgnitionCmake2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/ignition-cmake-2.19.0.tar.bz2"
   sha256 "032f4172919474c36c209dc6f28513d9ac68cc5a801eb86123bfc03c7e88ae75"
   license "Apache-2.0"
+  revision 1
 
   # head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
 
@@ -16,6 +17,12 @@ class IgnitionCmake2 < Formula
 
   depends_on "cmake"
   depends_on "pkgconf"
+
+  patch do
+    # Fix for warnings with cmake 4.4.0
+    url "https://github.com/gazebosim/gz-cmake/commit/317d056ec2bb3c454fdcaf2ca6063c3cf88c7cc9.patch?full_index=1"
+    sha256 "4ef376c321959b92fae467d66995148020e4fa5825134c2595b8ff8efde5e79c"
+  end
 
   def install
     cmake_args = std_cmake_args
