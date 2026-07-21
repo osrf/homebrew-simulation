@@ -1,18 +1,17 @@
 class GzRendering10 < Formula
   desc "Rendering library for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-10.0.1.tar.bz2"
-  sha256 "fde5284b1c462cf1046736bae88d169455ab8e8397f7569a3e5e369cec05d302"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-10.0.2.tar.bz2"
+  sha256 "6a4b71dad22a758494570b6e76344744106934ba56f5e58ad3f6bb9e7efb60e2"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "13757a4ba1c4e479bc79eab6ba4892bb0f94016e1d55a4448ba98722027c2664"
-    sha256 arm64_sonoma:  "f053646e0965a29c7d33cdc5161a27741e0372f528ca25f4f569f16b36a5360c"
-    sha256 sonoma:        "64e560226980807643a92f4a32e288cb1881c70c0340953e1d1a65a0d60dd23e"
+    sha256 arm64_sequoia: "2bbce7da56001c626b463f66d2934465949e4721093655ee384c717c63122186"
+    sha256 arm64_sonoma:  "67f8ee64e75b9899e7c0b2100cae147f17860ddf414fecb56f12417f3cb2d18c"
+    sha256 sonoma:        "adbb4f4bfc52569a80cd89992d907fba2ca670d25ac4380451fcd7e8ab515036"
   end
 
   depends_on "cmake" => [:build, :test]
