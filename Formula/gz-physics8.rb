@@ -1,10 +1,9 @@
 class GzPhysics8 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-8.3.0.tar.bz2"
-  sha256 "ca274cca45c2d6808f4aa09ad01ba6ce17b50a28f71d83dbd8c38b6621c61ef2"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-8.4.0.tar.bz2"
+  sha256 "9524f081dffac27f9d75888bfa58e8549eeaa50391d9502c0692dabed96837ef"
   license "Apache-2.0"
-  revision 19
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
