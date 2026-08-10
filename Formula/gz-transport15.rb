@@ -4,15 +4,9 @@ class GzTransport15 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-15.1.0.tar.bz2"
   sha256 "4518c85f5cf564137d8a8e9001b0b8099b435f6406e99ce28fc3a2f10020954e"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport15"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "cae8eec31119166ac9e97d569af49906f0a7fdfba2b0fb5757d468b4489bdfee"
-    sha256 arm64_sonoma:  "a9a187caca74e0abb7f3c74aca888e1905dd137dfd587b4d8b64561638842af8"
-    sha256 sonoma:        "015541ebf2eee0ffc44914fdc532e163a81ea3c802568a5aee4969c71fb9a3db"
-  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
