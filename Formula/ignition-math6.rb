@@ -4,15 +4,9 @@ class IgnitionMath6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/ignition-math-6.16.0.tar.bz2"
   sha256 "831a153253044bcb505dc9cf50b7f1e8c4ccd9213dd5bdb1d6d13719f775c991"
   license "Apache-2.0"
+  revision 1
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "a724ae64a4966bb40cd4c749e334fefd49c390c8e15fcafbfad280b71d36e319"
-    sha256 cellar: :any, arm64_sonoma:  "bee3f50977496d5b9ea07482f5b635622dd614533b0eb3fe9ce925620289b532"
-    sha256 cellar: :any, sonoma:        "8056ed61f271e8af69f5720a42d8fc951672ea09c8fe9b1163ad8fe874d5a108"
-  end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
