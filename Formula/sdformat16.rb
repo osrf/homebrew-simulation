@@ -116,9 +116,11 @@ class Sdformat16 < Formula
     # check python import
     pythons.each do |python|
       system python.opt_libexec/"bin/python", "-c",
-        "import sdformat; sdformat.Box().size()"
+        "import gz.math; import sdformat;" \
+        "sdformat.Atmosphere.set_temperature(gz.math.Temperature())"
     end
     system formula_opt_libexec("python3")/"bin/python", "-c",
-      "import sdformat; sdformat.Box().size()"
+      "import gz.math; import sdformat;" \
+      "sdformat.Atmosphere.set_temperature(gz.math.Temperature())"
   end
 end
