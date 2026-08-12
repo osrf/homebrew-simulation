@@ -1,10 +1,16 @@
 class GzMsgs10 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.3.2.tar.bz2"
-  sha256 "0dd9c19dee7aec7fc0f7bdd03ee2ae44ab1068dac2fc1ae8cc3ecc1b6df8472a"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.4.0.tar.bz2"
+  sha256 "27eaee86f39765f979e5b010775d79c28ea74f9ded3c698aa7d6ced3606394be"
   license "Apache-2.0"
-  revision 32
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "f8d81470618f99463c8d4e4daf1232bcf5f20dc55b4f6770619b5f51fca8eb13"
+    sha256 arm64_sonoma:  "8a638a64a091244cbf170c304695cafd2f0d81c3ab7d52f07c738fbf4e0d8f67"
+    sha256 sonoma:        "2bf56591b94609ec5311cef5974309a1af1c6226c42f4cc02171503da00967c9"
+  end
 
   # head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
 
@@ -28,12 +34,6 @@ class GzMsgs10 < Formula
 
   def python_cmake_arg(python = Formula["python@3.13"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
-  end
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-msgs/commit/ebdd05f6d51c990876085bcc9db9f79df59d375a.patch?full_index=1"
-    sha256 "050137fb0900b7d7cab36b612cc3bc319c3f093aba9c958d13c66ce44a6199b2"
   end
 
   def install
