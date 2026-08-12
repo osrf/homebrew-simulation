@@ -8,9 +8,9 @@ class GzMath7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "6e94107df0a521a77289633581bda0713e4b0e8760edfa28eb40fc5552219fed"
-    sha256 cellar: :any, arm64_sonoma:  "49a4a7bf95ba63ad20a5adbea8abbfbc5352ece7c3234c25e0ab0e9fb585f95d"
-    sha256 cellar: :any, sonoma:        "2c27301cf71414ff75ba0f4e3fa38692c50e524e9a7778a85cfbd4b4452a32e3"
+    sha256 cellar: :any, arm64_sequoia: "e9a86726bede53f29cccc7ad22e73d3e734c780593c71453b0dd268aab976aa5"
+    sha256 cellar: :any, arm64_sonoma:  "fae85e73656ab632275f45270d8af4b33adc60cc36bb0a38a83b5a5b89681a36"
+    sha256 cellar: :any, sonoma:        "af4ca8efdab7209b460f176761a60ee031f249e5fcb928aaac5bbeea7b90f024"
   end
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
