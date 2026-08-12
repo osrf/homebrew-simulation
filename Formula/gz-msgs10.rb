@@ -29,12 +29,6 @@ class GzMsgs10 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-msgs/commit/ebdd05f6d51c990876085bcc9db9f79df59d375a.patch?full_index=1"
-    sha256 "050137fb0900b7d7cab36b612cc3bc319c3f093aba9c958d13c66ce44a6199b2"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
