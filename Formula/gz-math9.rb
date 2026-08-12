@@ -8,6 +8,13 @@ class GzMath9 < Formula
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "5b22d8f52cacb31f0a511d3e21ea575aebe77a56c3e12c48364dcd645883d2bc"
+    sha256 cellar: :any, arm64_sonoma:  "f697a6127e49d049fc877468f8129126d427bac17464dbe575648698ed0f1318"
+    sha256 cellar: :any, sonoma:        "4b398176e1970a07bb7b90dd5d31d833837587834cd1e11760c31990eed7762a"
+  end
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build
