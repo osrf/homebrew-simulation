@@ -4,7 +4,14 @@ class GzSim9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.5.0.tar.bz2"
   sha256 "2dfb720a6945765c7ead5f474b2dffb645773fd55d43d432abcbdfedb1b32dfe"
   license "Apache-2.0"
-  revision 30
+  revision 31
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "315bcda7eb66911aa584ebacda9f2114c0b1b743f003bdc835b0a28a04e4cb5c"
+    sha256 arm64_sonoma:  "4a9d98c356a39e4b6225de88458b12a688dfd43ae5f51cbec008d29b0e5f8523"
+    sha256 sonoma:        "73e1af0aec6966086306adf422c92fa766a7588022cc7018b13ff4fc3015ad18"
+  end
 
   # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
