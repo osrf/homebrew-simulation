@@ -4,7 +4,7 @@ class IgnitionCommon4 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/ignition-common-4.8.1.tar.bz2"
   sha256 "fc6263b819cc320c6ce8c6956aa2713e62330aeca63e4c0c352c852c9af55ad4"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
