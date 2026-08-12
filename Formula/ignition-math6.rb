@@ -4,7 +4,7 @@ class IgnitionMath6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/ignition-math-6.16.0.tar.bz2"
   sha256 "831a153253044bcb505dc9cf50b7f1e8c4ccd9213dd5bdb1d6d13719f775c991"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
 
