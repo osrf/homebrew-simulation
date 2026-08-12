@@ -4,15 +4,9 @@ class GzCommon7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-7.3.0.tar.bz2"
   sha256 "b3b4eb54652798a9cebf1a960f6119414a25ac9f848342f3fd84dcd8db064a63"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/gazebosim/gz-common.git", branch: "gz-common7"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "6c0abe73b977627211f574d9579248710b11a00e3beb24f6e791d75053a996c8"
-    sha256 cellar: :any, arm64_sonoma:  "1d870b7db8ddec3acb45900d23cea813847ed6168bbd24999b7f6057705e24d5"
-    sha256 cellar: :any, sonoma:        "04c003cb2c1239417323d21d24bed00b2036f8dfa2885ed0319ebcf35553c3f2"
-  end
 
   depends_on "assimp"
   depends_on "cmake"
