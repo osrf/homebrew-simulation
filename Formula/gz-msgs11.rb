@@ -101,5 +101,8 @@ class GzMsgs11 < Formula
       system python.opt_libexec/"bin/python", "-c", "import gz.msgs11"
     end
     system formula_opt_libexec("python3")/"bin/python", "-c", "import gz.msgs11"
+    # check gz msg command
+    ENV["GZ_CONFIG_PATH"] = "#{opt_share}/gz"
+    system formula_opt_bin("gz-tools2")/"gz", "msg"
   end
 end
