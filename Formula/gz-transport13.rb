@@ -1,18 +1,17 @@
 class GzTransport13 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.5.0.tar.bz2"
-  sha256 "63d2646256a3821dc86b387216f299923bed2ff1e113474bce8ae263f0c29190"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.6.0.tar.bz2"
+  sha256 "ffba88d54d2fb4988371672e3e36d9d52896beacf23accaa1f345b47ce7f25d3"
   license "Apache-2.0"
-  revision 17
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "aff2a9ba530564bdb509760d909818dfe6d41871e9f5b148580135e5da1ff14f"
-    sha256 arm64_sonoma:  "e898bda87ecb343908a46ffb29a678d6ad9f6c77aa32e6270b8a6a026a027b57"
-    sha256 sonoma:        "aa0f55dfb546870a07a4dcb278c30328c3c599e3aceebbe88b5272934e7f81fd"
+    sha256 arm64_sequoia: "509b6ae85acadb475652171dfbf8dad214321394660e1360d5aa6e7697be779a"
+    sha256 arm64_sonoma:  "0f567ce9f18203f4d9c9928e0628755d980b6b80566041eeaad397749204d10b"
+    sha256 sonoma:        "446f02af83b877ac7c979cb66da72c7988f02f2c913feb3eb18830758f7fcd4e"
   end
 
   depends_on "doxygen" => [:build, :optional]
