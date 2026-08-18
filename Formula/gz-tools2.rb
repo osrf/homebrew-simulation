@@ -1,8 +1,8 @@
 class GzTools2 < Formula
   desc "Entry point for Gazebo command-line tools"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.3.tar.bz2"
-  sha256 "86ea83e1628ad904b456297531f1469f4c3a4df569a6c40e8f8c77f0e3e46156"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.4.tar.bz2"
+  sha256 "e4ee9cbe45528249268dc9c97c24199cf5479fd4c0f304e946051035867f121d"
   license "Apache-2.0"
 
   # head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
