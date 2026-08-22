@@ -4,7 +4,7 @@ class GzMsgs10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.4.0.tar.bz2"
   sha256 "27eaee86f39765f979e5b010775d79c28ea74f9ded3c698aa7d6ced3606394be"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   # head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
 
