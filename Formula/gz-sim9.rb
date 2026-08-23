@@ -6,6 +6,13 @@ class GzSim9 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "fee6c0ce764cd0a707b896128815ec2105d0a0ee51a896c38e5be313a5e00c9e"
+    sha256 arm64_sonoma:  "852c147acbda0eb489cc0cbd4c6f86253e177105ccd82d0399bf18c6a599593b"
+    sha256 sonoma:        "8c1d3bf14a97e7e09558498f840ba291a75089180e9681f13647fa897192d45b"
+  end
+
   # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
   depends_on "cmake" => :build
