@@ -7,9 +7,9 @@ class GzCommon5 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "df9107ff480d3d4ae35a1b1ebd8b1cc11b60242ed3875e39176ab44cfaf26acb"
-    sha256 cellar: :any, arm64_sonoma:  "543ee76c573814ba9c4d4cf3f2d80de5cfd614716d1c42e9a75cdcd8867cf4b9"
-    sha256 cellar: :any, sonoma:        "1289977e7b9933519c3defb6230a834fbef4130adb456bf69a26cda4487ff1dc"
+    sha256 cellar: :any, arm64_sequoia: "4aecd38dbcaf52f9aa43aaf91ebc242db911398ea719ccfde12d4ff97807bac4"
+    sha256 cellar: :any, arm64_sonoma:  "bc9ab310ba33483156282cfc5c4ed4e02e8672e2cf6e5e7579d9f72d72ac2534"
+    sha256 cellar: :any, sonoma:        "8858dcf91ab1c2755fc831e66e82c2a8ce41595bc30a54e8786b4f895768390b"
   end
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
