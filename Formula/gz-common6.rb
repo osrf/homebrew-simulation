@@ -1,10 +1,9 @@
 class GzCommon6 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.3.0.tar.bz2"
-  sha256 "e70e8916f3a82cf6dd7b42e18a68acbc12cd8e9ac433759db4427f8356dc366d"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.4.0.tar.bz2"
+  sha256 "b4822f94a8753938fb4a584775b8a7f48c779041fdff40cf99962543f0e92921"
   license "Apache-2.0"
-  revision 4
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
