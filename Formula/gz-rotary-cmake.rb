@@ -3,7 +3,7 @@ class GzRotaryCmake < Formula
   homepage "https://gazebosim.org"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-cmake.git", branch: "main"
+  head "https://github.com/gazebosim/gz-cmake.git", branch: "scpeters/appleclang"
 
   depends_on "cmake"
   depends_on "pkgconf"
