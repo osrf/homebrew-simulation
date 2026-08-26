@@ -9,9 +9,9 @@ class GzMath9 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "5b22d8f52cacb31f0a511d3e21ea575aebe77a56c3e12c48364dcd645883d2bc"
-    sha256 cellar: :any, arm64_sonoma:  "f697a6127e49d049fc877468f8129126d427bac17464dbe575648698ed0f1318"
-    sha256 cellar: :any, sonoma:        "4b398176e1970a07bb7b90dd5d31d833837587834cd1e11760c31990eed7762a"
+    sha256 cellar: :any, arm64_sequoia: "567aae09f9ca1feef7f3f9fe06ca22008cbe41a6d0ac7acf34b394039f4d633d"
+    sha256 cellar: :any, arm64_sonoma:  "db11d7651f1ee3973f12277c3f498e74be09e3a7f5524263295b9562cee848b4"
+    sha256 cellar: :any, sonoma:        "2f148da56b5c61bc0d8ecbdae6d60459d97708d40e8ed251ad2d42559646352c"
   end
 
   depends_on "cmake" => :build
