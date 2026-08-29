@@ -25,7 +25,7 @@ class GzRotary < Formula
 
   def install
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *std_cmake_args
       # this won't install anything, but test that it doesn't fail
       system "make", "install"
       # manually install README so brew doesn't complain about empty installation

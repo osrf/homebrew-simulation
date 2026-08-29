@@ -64,7 +64,7 @@ class GzSim8 < Formula
     cmake_args << python_cmake_arg
 
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
 
@@ -156,7 +156,7 @@ class GzSim8 < Formula
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("qt@5")
     mkdir "build" do
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
       system "make"
       system "./test_cmake"
     end

@@ -75,7 +75,7 @@ class GzSim10 < Formula
     cmake_args << python_cmake_arg
 
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
 
@@ -167,7 +167,7 @@ class GzSim10 < Formula
     # system "./test"
     # test building with cmake
     mkdir "build" do
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
       system "make"
       system "./test_cmake"
     end

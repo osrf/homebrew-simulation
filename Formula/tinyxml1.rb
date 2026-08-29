@@ -38,7 +38,7 @@ class Tinyxml1 < Formula
   end
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
     system "make", "install"
     (lib/"pkgconfig/tinyxml.pc").write pc_file
   end

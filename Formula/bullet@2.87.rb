@@ -46,12 +46,12 @@ class BulletAT287 < Formula
       end
 
     mkdir "build" do
-      system "cmake", "..", *args_shared
+      system "cmake", "-S", "..", "-B", ".", *args_shared
       system "make", "install"
 
       system "make", "clean"
 
-      system "cmake", "..", *args_static
+      system "cmake", "-S", "..", "-B", ".", *args_static
       system "make", "install"
 
       if build.with? "demo"

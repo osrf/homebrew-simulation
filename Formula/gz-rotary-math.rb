@@ -35,7 +35,7 @@ class GzRotaryMath < Formula
 
     # first build without python bindings
     mkdir "build" do
-      system "cmake", "..", *cmake_args, "-DSKIP_PYBIND11=ON"
+      system "cmake", "-S", "..", "-B", ".", *cmake_args, "-DSKIP_PYBIND11=ON"
       system "make", "install"
     end
 
@@ -44,7 +44,7 @@ class GzRotaryMath < Formula
       # remove @ from formula name
       python_name = python.name.tr("@", "")
       mkdir "build_#{python_name}" do
-        system "cmake", "../src/python_pybind11", *cmake_args, python_cmake_arg(python)
+        system "cmake", "-S", "../src/python_pybind11", "-B", ".", *cmake_args, python_cmake_arg(python)
         system "make", "install"
         (lib/"#{python_name}/site-packages").install Dir[lib/"python/*"]
         rmdir prefix/"lib/python"
@@ -85,7 +85,7 @@ class GzRotaryMath < Formula
     system "./test"
     # test building with cmake
     mkdir "build" do
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
       system "make"
       system "./test_cmake"
     end

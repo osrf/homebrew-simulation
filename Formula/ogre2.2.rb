@@ -78,7 +78,7 @@ class Ogre22 < Formula
 
     # Use a build folder
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
 
