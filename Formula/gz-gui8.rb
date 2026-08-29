@@ -46,7 +46,7 @@ class GzGui8 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
   end
@@ -127,7 +127,7 @@ class GzGui8 < Formula
     # test building with cmake
     ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("qt@5")
     mkdir "build" do
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
       system "make"
       system "./test_cmake"
     end

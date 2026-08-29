@@ -19,7 +19,7 @@ class Player < Formula
     cmake_args << "-DBUILD_RUBY_BINDINGS=0"
     cmake_args << "-DBUILD_PYTHONC_BINDINGS=0"
 
-    system "cmake", ".", *cmake_args
+    system "cmake", "-S", ".", "-B", ".", *cmake_args
     system "make", "install"
   end
 end

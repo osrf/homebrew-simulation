@@ -34,7 +34,7 @@ class IgnitionFuelTools7 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
   end
@@ -67,7 +67,7 @@ class IgnitionFuelTools7 < Formula
     system "./test"
     # test building with cmake
     mkdir "build" do
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
       system "make"
       system "./test_cmake"
     end

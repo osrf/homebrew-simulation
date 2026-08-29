@@ -33,7 +33,7 @@ class IgnitionCommon4 < Formula
 
     # Use a build folder
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
   end
@@ -75,7 +75,7 @@ class IgnitionCommon4 < Formula
     # test building with cmake
     mkdir "build" do
       ENV.append "LIBRARY_PATH", formula_opt_lib("gettext")
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
       system "make"
       system "./test_cmake"
     end

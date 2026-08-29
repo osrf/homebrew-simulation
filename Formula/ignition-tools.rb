@@ -29,7 +29,7 @@ class IgnitionTools < Formula
     end
 
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      system "cmake", "-S", "..", "-B", ".", *std_cmake_args, "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       system "make", "install"
     end
   end

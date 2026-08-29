@@ -19,8 +19,8 @@ class Sofa < Formula
 
   def install
     # For some reason, cmake must be invoked twice
-    system "cmake", ".", *std_cmake_args
-    system "cmake", ".", *std_cmake_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
     system "make", "install"
   end
 end
