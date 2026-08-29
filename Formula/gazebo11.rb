@@ -66,7 +66,7 @@ class Gazebo11 < Formula
 
     # use build folder
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
   end
@@ -107,7 +107,7 @@ class Gazebo11 < Formula
     ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("ogre1.9-with-boost1.85")
     ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("ogre1.9-with-boost1.85")/"pkgconfig"
     mkdir "build" do
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
       system "make"
       system "./test_cmake"
     end

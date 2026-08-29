@@ -56,7 +56,7 @@ class DartsimAT6100 < Formula
 
     # Use a build folder
     mkdir "build" do
-      system "cmake", "..", *args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+      system "cmake", "-S", "..", "-B", ".", *args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "make", "install"
     end
 

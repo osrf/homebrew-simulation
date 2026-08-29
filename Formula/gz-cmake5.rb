@@ -32,7 +32,7 @@ class GzCmake5 < Formula
 
     # Use a build folder
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
   end
@@ -51,7 +51,7 @@ class GzCmake5 < Formula
       end
     end
     mkdir "build" do
-      system "cmake", ".."
+      system "cmake", "-S", "..", "-B", "."
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"

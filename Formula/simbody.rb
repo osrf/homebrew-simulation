@@ -29,7 +29,7 @@ class Simbody < Formula
 
     # use a build folder
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+      system "cmake", "-S", "..", "-B", ".", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "make", "doxygen"
       system "make", "install"
     end

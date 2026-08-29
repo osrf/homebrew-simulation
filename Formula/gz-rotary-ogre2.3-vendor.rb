@@ -89,7 +89,7 @@ class GzRotaryOgre23Vendor < Formula
     cmake_args.concat std_cmake_args
 
     mkdir "build" do
-      system "cmake", "..", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
 
