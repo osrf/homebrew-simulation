@@ -8,7 +8,6 @@ curl --location "${RELEASE_TOOLS_REPO}/raw/master/jenkins-scripts/dsl/logs/gener
 JOB_URL='https://build.osrfoundation.org/job/'
 BADGE_URL='https://build.osrfoundation.org/buildStatus/icon?job='
 arches=( \
-  amd64 \
   arm64 \
 )
 collections=( \
@@ -66,7 +65,7 @@ do
       if [ "$c" = "rotary" ] && [ "$designation" = "launch" ]; then
         echo -n " |"
       else
-        #         | [![Build Status][cmake-fortress-amd64-badge]][cmake-fortress-amd64]
+        #         | [![Build Status][cmake-fortress-arm64-badge]][cmake-fortress-amd64]
         echo -n " | [![Build Status][$designation-$c-$arch-badge]][$designation-$c-$arch]"
       fi
     done
@@ -80,7 +79,7 @@ do
   echo -n "collection | $(echo ${arch} | sed -e 's@amd64@intel@')"
   for c in ${collections[@]};
   do
-      #         | [![Build Status][collection-fortress-amd64-badge]][collection-fortress-amd64]
+      #         | [![Build Status][collection-fortress-arm64-badge]][collection-fortress-amd64]
       echo -n " | [![Build Status][collection-$c-$arch-badge]][collection-$c-$arch]"
   done
   # print blank line at end of row for each arch
