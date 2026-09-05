@@ -4,7 +4,13 @@ class GzLaunch8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.3.tar.bz2"
   sha256 "faf72b89d32d796f767893898ffb7c4ad49b52715b64bc51398a939ab23fa6ce"
   license "Apache-2.0"
-  revision 7
+  revision 8
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "f663fc8997ef89ab8ad6a5e9e81d8a8ff65ddad17a939a4349e312363e443d81"
+    sha256 arm64_sonoma:  "f450620bbdda0167dd954292b0d70917b97b79d02dd7e29a5f2c37ba29127573"
+  end
 
   # head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
