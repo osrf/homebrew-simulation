@@ -8,6 +8,12 @@ class GzMsgs12 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs12"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "f1525b31ae87adde02c60498277c4c3e28810003d5aed514773ecf16bdeaa3c3"
+    sha256 arm64_sonoma:  "70fc181d7ed36f38651cae1aa25e1f02cff9f7d59302d7983148f62135d95555"
+  end
+
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
