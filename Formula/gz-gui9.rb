@@ -4,9 +4,15 @@ class GzGui9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.0.2.tar.bz2"
   sha256 "0db7bdbaf32c3e9faba301c6d04e8cbf2daabdf639c45aedc10ec48356ea3d16"
   license "Apache-2.0"
-  revision 33
+  revision 34
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "7b461549014fa883a7f8a92d96afd83041c57adcc75c109f90261e3e8fd9baf8"
+    sha256 arm64_sonoma:  "91e7121d53ed7ed90f0ca0d86237cd92eac9436f6e38928cf12bce109a2d25dd"
+  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
