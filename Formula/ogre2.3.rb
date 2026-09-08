@@ -1,10 +1,9 @@
-class GzRotaryOgre23Vendor < Formula
+class Ogre23 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
-  revision 3
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
