@@ -19,7 +19,7 @@ class GzRendering9 < Formula
   depends_on "gz-plugin3"
   depends_on "gz-utils3"
   depends_on "ogre1.9"
-  depends_on "ogre2.3"
+  depends_on "ogre2.3-with-freeimage"
   depends_on "spdlog"
 
   def install

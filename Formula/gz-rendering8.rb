@@ -18,7 +18,7 @@ class GzRendering8 < Formula
   depends_on "gz-plugin2"
   depends_on "gz-utils2"
   depends_on "ogre1.9"
-  depends_on "ogre2.3"
+  depends_on "ogre2.3-with-freeimage"
 
   def install
     rpaths = [

@@ -19,7 +19,7 @@ class GzRendering10 < Formula
   depends_on "gz-plugin4"
   depends_on "gz-utils4"
   depends_on "ogre1.9"
-  depends_on "ogre2.3"
+  depends_on "ogre2.3-with-freeimage"
   depends_on "spdlog"
 
   conflicts_with "gz-rotary-rendering", because: "both install gz-rendering"
