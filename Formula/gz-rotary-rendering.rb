@@ -12,9 +12,9 @@ class GzRotaryRendering < Formula
   depends_on "gz-rotary-cmake"
   depends_on "gz-rotary-common"
   depends_on "gz-rotary-math"
-  depends_on "gz-rotary-ogre2.3-vendor"
   depends_on "gz-rotary-plugin"
   depends_on "gz-rotary-utils"
+  depends_on "ogre2.3"
   depends_on "spdlog"
 
   conflicts_with "gz-jetty-rendering", because: "both install gz-rendering"
