@@ -19,7 +19,7 @@ class Ogre23WithFreeimage < Formula
   depends_on "rapidjson"
   depends_on "tbb"
 
-  conflicts_with "gz-rotary-ogre2.3-vendor", because: "both install ogre2.3"
+  conflicts_with "ogre2.3", because: "both install ogre2.3"
 
   patch do
     # Fix for compatibility with XCode 16.3
