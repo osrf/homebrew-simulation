@@ -4,6 +4,13 @@ class Ogre23 < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "4bd5e591f13730205c3b63cfc2328e0e6a4e33438e29f72dd26fb6a51fcacb78"
+    sha256 cellar: :any, arm64_sonoma:  "db3541dd1d318f0dcf37ddc5821cbfce69c29c6c80667aecc2310d9def5d4cb6"
+  end
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 

@@ -12,14 +12,13 @@ class GzRendering10 < Formula
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "fmt"
-  depends_on "freeimage"
   depends_on "gz-cmake5"
   depends_on "gz-common7"
   depends_on "gz-math9"
   depends_on "gz-plugin4"
   depends_on "gz-utils4"
   depends_on "ogre1.9"
-  depends_on "ogre2.3-with-freeimage"
+  depends_on "ogre2.3"
   depends_on "spdlog"
 
   conflicts_with "gz-rotary-rendering", because: "both install gz-rendering"
