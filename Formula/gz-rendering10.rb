@@ -4,7 +4,7 @@ class GzRendering10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-10.0.2.tar.bz2"
   sha256 "6a4b71dad22a758494570b6e76344744106934ba56f5e58ad3f6bb9e7efb60e2"
   license "Apache-2.0"
-  revision 2
+  revision 1
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering10"
 
