@@ -46,6 +46,10 @@ class GzRendering8 < Formula
     require "system_command"
     extend SystemCommand::Mixin
 
+    ENV["GZ_ENGINE_HEADLESS"] = "1"
+    ENV["IGN_ENGINE_HEADLESS"] = "1"
+    ENV["QT_QPA_PLATFORM"] = "offscreen"
+
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
       p = lib/"gz-rendering-8/engine-plugins/libgz-rendering-#{engine}.dylib"
@@ -60,7 +64,6 @@ class GzRendering8 < Formula
       assert stderr.exclude?(error_string), error_string
     end
     # build against API
-    github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
       #include <gz/rendering/RenderEngine.hh>
       #include <gz/rendering/RenderingIface.hh>
@@ -86,12 +89,12 @@ class GzRendering8 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" unless github_actions
+    system "./test"
     # test building with cmake
     mkdir "build" do
       system "cmake", "-S", "..", "-B", "."
       system "make"
-      system "./test_cmake" unless github_actions
+      system "./test_cmake"
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
