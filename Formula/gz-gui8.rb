@@ -54,10 +54,6 @@ class GzGui8 < Formula
     require "system_command"
     extend SystemCommand::Mixin
 
-    ENV["GZ_ENGINE_HEADLESS"] = "1"
-    ENV["IGN_ENGINE_HEADLESS"] = "1"
-    ENV["QT_QPA_PLATFORM"] = "offscreen"
-
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|
       p = lib/"gz-gui-8/plugins/lib#{plugin}.dylib"
