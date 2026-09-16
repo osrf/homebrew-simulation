@@ -70,9 +70,9 @@ class IgnitionRendering6 < Formula
       #include <ignition/rendering/RenderingIface.hh>
       int main(int _argc, char** _argv)
       {
-        ignition::rendering::RenderEngine *engine =
-            ignition::rendering::engine("ogre");
-        return engine == nullptr;
+        ignition::rendering::RenderEngineManager *mgr =
+            ignition::rendering::RenderEngineManager::Instance();
+        return mgr == nullptr;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS

@@ -73,9 +73,9 @@ class GzRendering10 < Formula
       #include <gz/rendering/RenderingIface.hh>
       int main(int _argc, char** _argv)
       {
-        gz::rendering::RenderEngine *engine =
-            gz::rendering::engine("ogre");
-        return engine == nullptr;
+        gz::rendering::RenderEngineManager *mgr =
+            gz::rendering::RenderEngineManager::Instance();
+        return mgr == nullptr;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
