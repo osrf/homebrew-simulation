@@ -66,8 +66,7 @@ class IgnitionRendering6 < Formula
     end
     # build against API
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/rendering/RenderEngine.hh>
-      #include <ignition/rendering/RenderingIface.hh>
+      #include <ignition/rendering/RenderEngineManager.hh>
       int main(int _argc, char** _argv)
       {
         ignition::rendering::RenderEngineManager *mgr =

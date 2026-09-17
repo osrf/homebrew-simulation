@@ -65,8 +65,7 @@ class GzRendering8 < Formula
     end
     # build against API
     (testpath/"test.cpp").write <<-EOS
-      #include <gz/rendering/RenderEngine.hh>
-      #include <gz/rendering/RenderingIface.hh>
+      #include <gz/rendering/RenderEngineManager.hh>
       int main(int _argc, char** _argv)
       {
         gz::rendering::RenderEngineManager *mgr =
