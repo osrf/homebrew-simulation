@@ -25,7 +25,7 @@ class GzRotaryOgre23Vendor < Formula
   depends_on "libzzip"
   depends_on "rapidjson"
 
-  conflicts_with "ogre2.3", because: "both install ogre2.3"
+  conflicts_with "ogre2.3-with-freeimage", because: "both install ogre2.3"
 
   patch do
     # Fix for compatibility with XCode 16.3
