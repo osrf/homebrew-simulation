@@ -21,6 +21,10 @@ class GzRotaryCmake < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILDSYSTEM_TESTING=True"]
+  end
+
   def caveats
     <<~EOS
       This is an unstable, development version of Gazebo built from source.

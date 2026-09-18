@@ -39,6 +39,10 @@ class Sdformat14 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
+  def ci_pip_packages
+    ["psutil"]
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
