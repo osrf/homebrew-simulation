@@ -34,6 +34,10 @@ class GzCmake4 < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILDSYSTEM_TESTING=True"]
+  end
+
   test do
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)

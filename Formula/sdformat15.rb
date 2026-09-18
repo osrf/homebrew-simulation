@@ -39,6 +39,10 @@ class Sdformat15 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
+  def ci_pip_packages
+    ["psutil"]
+  end
+
   def install
     rpaths = [
       rpath,

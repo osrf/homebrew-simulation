@@ -39,6 +39,10 @@ class Sdformat16 < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
+  def ci_pip_packages
+    ["psutil"]
+  end
+
   conflicts_with "gz-rotary-sdformat", because: "both install gz-sdformat"
 
   def install
