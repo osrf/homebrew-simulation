@@ -4,15 +4,9 @@ class IgnitionGui6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/ignition-gui-6.9.0.tar.bz2"
   sha256 "905f740430ae51579d40927f38683d075558c3694ce069f669fb50f7db9a94b5"
   license "Apache-2.0"
-  revision 14
+  revision 15
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "ign-gui6"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "f7db5bff94a341fe628e456d0e6596e52915f63056bdafd45d6530af058158a8"
-    sha256 arm64_sonoma:  "db767329ad6cc9242cf71c25cc9bb9b989fb919eb42ad3b0fd6b01399ccf9f93"
-  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -50,6 +44,10 @@ class IgnitionGui6 < Formula
   test do
     require "system_command"
     extend SystemCommand::Mixin
+
+    ENV["GZ_ENGINE_HEADLESS"] = "1"
+    ENV["IGN_ENGINE_HEADLESS"] = "1"
+    ENV["QT_QPA_PLATFORM"] = "offscreen"
 
     # test some plugins in subfolders
     %w[CameraFps Publisher TopicViewer WorldStats].each do |plugin|

@@ -47,6 +47,10 @@ class IgnitionRendering6 < Formula
     require "system_command"
     extend SystemCommand::Mixin
 
+    ENV["GZ_ENGINE_HEADLESS"] = "1"
+    ENV["IGN_ENGINE_HEADLESS"] = "1"
+    ENV["QT_QPA_PLATFORM"] = "offscreen"
+
     # test plugins in subfolders
     ["ogre", "ogre2"].each do |engine|
       p = lib/"ign-rendering-6/engine-plugins/libignition-rendering-#{engine}.dylib"
@@ -61,15 +65,13 @@ class IgnitionRendering6 < Formula
       assert stderr.exclude?(error_string), error_string
     end
     # build against API
-    github_actions = ENV["HOMEBREW_GITHUB_ACTIONS"].present?
     (testpath/"test.cpp").write <<-EOS
-      #include <ignition/rendering/RenderEngine.hh>
-      #include <ignition/rendering/RenderingIface.hh>
+      #include <ignition/rendering/RenderEngineManager.hh>
       int main(int _argc, char** _argv)
       {
-        ignition::rendering::RenderEngine *engine =
-            ignition::rendering::engine("ogre");
-        return engine == nullptr;
+        ignition::rendering::RenderEngineManager *mgr =
+            ignition::rendering::RenderEngineManager::Instance();
+        return mgr == nullptr;
       }
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
@@ -87,12 +89,12 @@ class IgnitionRendering6 < Formula
                    *ldflags,
                    "-lc++",
                    "-o", "test"
-    system "./test" unless github_actions
+    system "./test"
     # test building with cmake
     mkdir "build" do
       system "cmake", "-S", "..", "-B", "."
       system "make"
-      system "./test_cmake" unless github_actions
+      system "./test_cmake"
     end
     # check for Xcode frameworks in bottle
     cmd_not_grep_xcode = "! grep -rnI 'Applications[/]Xcode' #{prefix}"
