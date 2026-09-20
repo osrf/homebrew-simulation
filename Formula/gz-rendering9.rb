@@ -6,6 +6,11 @@ class GzRendering9 < Formula
   license "Apache-2.0"
   revision 8
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_sequoia: "0186000cbd46325e8b5fa3ced60b1ce954b0b9a56da1aadeea71906ecd2d9317"
+  end
+
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
 
   depends_on "cmake" => [:build, :test]
