@@ -4,6 +4,12 @@ class Ogre23WithFreeimage < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "38dd0d5ba5759ee47c71552c5dacf44dad5fe61868025dcbd5ea6a6bdb6bc8e4"
   license "MIT"
+  revision 1
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "af75600ba68cd7aff2511d3a57c5c473ed9e13ab3aebb9f59e26c17518fed15d"
+  end
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
