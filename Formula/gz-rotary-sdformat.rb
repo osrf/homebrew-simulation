@@ -29,6 +29,10 @@ class GzRotarySdformat < Formula
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
+  def ci_pip_packages
+    ["psutil"]
+  end
+
   conflicts_with "gz-jetty-sdformat", because: "both install gz-sdformat"
 
   def install
