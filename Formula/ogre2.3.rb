@@ -1,17 +1,9 @@
-class GzRotaryOgre23Vendor < Formula
+class Ogre23 < Formula
   desc "Scene-oriented 3D engine written in c++"
   homepage "https://www.ogre3d.org/"
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
-  revision 2
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "7422b54fc3933ff8b932cc201ea31832ef8e3ed36bc2eadc71de349a497fd04d"
-    sha256 cellar: :any, arm64_sonoma:  "a2fd5cba4837216844a81098b33dd88c6b531b30d272a36e185f561041023022"
-    sha256 cellar: :any, sonoma:        "ac5564e0a67bb68bc3357a67fb052464fbac8bc22565e107e54eae2c4f67a609"
-  end
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
