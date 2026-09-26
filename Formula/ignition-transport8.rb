@@ -9,6 +9,7 @@ class IgnitionTransport8 < Formula
   head "https://github.com/gazebosim/gz-transport.git", branch: "ign-transport8"
 
   deprecate! date: "2025-01-31", because: "is past end-of-life date"
+  disable! date: "2026-10-26", because: "is past end-of-life date"
 
   depends_on "doxygen" => [:build, :optional]
 

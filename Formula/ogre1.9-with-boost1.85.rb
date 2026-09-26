@@ -19,6 +19,7 @@ class Ogre19WithBoost185 < Formula
   option "with-cg"
 
   deprecate! date: "2025-09-30", because: "not used by supported package"
+  disable! date: "2026-10-26", because: "not used by supported package"
 
   depends_on "cmake" => :build
   depends_on "boost@1.85.0"

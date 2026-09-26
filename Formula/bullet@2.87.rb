@@ -15,6 +15,7 @@ class BulletAT287 < Formula
   deprecated_option "double-precision" => "with-double-precision"
 
   deprecate! date: "2025-09-30", because: "not used by supported package"
+  disable! date: "2026-10-26", because: "not used by supported package"
 
   depends_on "cmake" => :build
 
