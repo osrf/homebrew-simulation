@@ -15,6 +15,8 @@ class GzPlugin3 < Formula
 
   # head "https://github.com/gazebosim/gz-plugin.git", branch: "gz-plugin3"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake"
   depends_on "gz-cmake4"
   depends_on "gz-tools2"

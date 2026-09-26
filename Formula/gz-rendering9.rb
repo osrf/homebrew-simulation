@@ -13,6 +13,8 @@ class GzRendering9 < Formula
 
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 

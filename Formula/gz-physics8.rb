@@ -14,6 +14,8 @@ class GzPhysics8 < Formula
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics8"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake" => [:build, :test]
 
   depends_on "assimp"
