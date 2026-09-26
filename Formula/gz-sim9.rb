@@ -13,6 +13,8 @@ class GzSim9 < Formula
 
   # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "abseil"

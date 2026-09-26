@@ -14,6 +14,8 @@ class GzMath8 < Formula
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build
