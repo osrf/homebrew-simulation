@@ -37,30 +37,22 @@ def main():
         # REGEX PATTERN DOCUMENTATION
         # =========================================================================
         # Pattern:
-        #   r'^(?P<indent>[ \t]*)(?P<deprecate>deprecate!\s+date:\s*"(?P<date>\d{4}-\d{2}-\d{2})",\s*(?P<because>because:\s*"[^"]*"))\n(?:\s*\n)?'
+        #   r'^(?P<indent>[ \t]*)(?P<deprecate>deprecate!\s+date:\s*"(?P<date>\d{4}-\d{2}-\d{2})",\s*(?P<because>because:\s*.*))\n(?:\s*\n)?'
         #
         # Component Breakdown:
-        #   ^                             : Anchor - matches start of a line (re.MULTILINE)
-        #   (?P<indent>[ \t]*)            : Group 'indent' - matches leading spaces/tabs (excludes \n)
+        #   ^                             : Anchor - matches start of line (re.MULTILINE)
+        #   (?P<indent>[ \t]*)            : Group 'indent' - captures leading spaces/tabs
         #   (?P<deprecate>                : Group 'deprecate' - captures full deprecate! call:
         #     deprecate!\s+date:\s*"      : Matches 'deprecate!', spaces, 'date:' & opening quote '"'
         #     (?P<date>\d{4}-\d{2}-\d{2}) : Group 'date' - captures ISO date YYYY-MM-DD
         #     ",\s*                       : Matches closing quote '"', comma ',', and spaces
-        #     (?P<because>because:\s*"[^"]*") : Group 'because' - captures 'because: "..."' argument
+        #     (?P<because>because:\s*.*)  : Group 'because' - captures 'because:' and everything to end of line
         #   )                             : End group 'deprecate'
         #   \n                            : End of the deprecate! line
         #   (?:\s*\n)?                    : Non-capturing group - matches optional blank line following deprecate!
-        #
-        # Example match:
-        #   "  deprecate! date: \"2025-01-31\", because: \"is past end-of-life date\"\n\n"
-        # Captures:
-        #   - group("indent")   => "  "
-        #   - group("deprecate"): "deprecate! date: \"2025-01-31\", because: \"is past end-of-life date\""
-        #   - group("date")     => "2025-01-31"
-        #   - group("because")  => "because: \"is past end-of-life date\""
         # =========================================================================
         pattern = re.compile(
-            r'^(?P<indent>[ \t]*)(?P<deprecate>deprecate!\s+date:\s*"(?P<date>\d{4}-\d{2}-\d{2})",\s*(?P<because>because:\s*"[^"]*"))\n(?:\s*\n)?',
+            r'^(?P<indent>[ \t]*)(?P<deprecate>deprecate!\s+date:\s*"(?P<date>\d{4}-\d{2}-\d{2})",\s*(?P<because>because:\s*.*))\n(?:\s*\n)?',
             re.MULTILINE
         )
 
