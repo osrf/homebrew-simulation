@@ -6,6 +6,11 @@ class Ogre23 < Formula
   license "MIT"
   revision 1
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_sequoia: "ccf561925bf1cef8b31afbb0d9a1adefb9d21cff28d245c75bc27f90908d87ea"
+  end
+
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
   depends_on "cmake" => :build
