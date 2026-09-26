@@ -4,7 +4,7 @@ class GzRendering10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-10.0.2.tar.bz2"
   sha256 "6a4b71dad22a758494570b6e76344744106934ba56f5e58ad3f6bb9e7efb60e2"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering10"
 
@@ -17,14 +17,12 @@ class GzRendering10 < Formula
   depends_on "pkgconf" => [:build, :test]
 
   depends_on "fmt"
-  depends_on "freeimage"
   depends_on "gz-cmake5"
   depends_on "gz-common7"
   depends_on "gz-math9"
   depends_on "gz-plugin4"
   depends_on "gz-utils4"
-  depends_on "ogre1.9"
-  depends_on "ogre2.3-with-freeimage"
+  depends_on "ogre2.3"
   depends_on "spdlog"
 
   conflicts_with "gz-rotary-rendering", because: "both install gz-rendering"
@@ -54,7 +52,7 @@ class GzRendering10 < Formula
     ENV["QT_QPA_PLATFORM"] = "offscreen"
 
     # test plugins in subfolders
-    ["ogre", "ogre2"].each do |engine|
+    ["ogre2"].each do |engine|
       p = lib/"gz-rendering-10/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = formula_opt_libexec("gz-plugin4")/"gz/plugin4/gz-plugin"
@@ -78,7 +76,7 @@ class GzRendering10 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
-      find_package(gz-rendering REQUIRED COMPONENTS ogre ogre2)
+      find_package(gz-rendering REQUIRED COMPONENTS ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-rendering::gz-rendering)
     EOS
