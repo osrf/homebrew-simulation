@@ -14,6 +14,8 @@ class GzCommon6 < Formula
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"

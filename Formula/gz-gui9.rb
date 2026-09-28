@@ -13,6 +13,8 @@ class GzGui9 < Formula
     sha256 arm64_sequoia: "a6daf9ea9d91540d707f0d90abd8245453e485f6a7efeadb1210eadf2a868079"
   end
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"
