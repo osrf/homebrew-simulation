@@ -15,6 +15,8 @@ class GzCmake4 < Formula
     sha256 cellar: :any_skip_relocation, sonoma:        "2d846242fa829e27c190c346f990ea12837ca9b44bb38cdc4d9175f5da57bb9c"
   end
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake"
   depends_on "pkgconf"
 

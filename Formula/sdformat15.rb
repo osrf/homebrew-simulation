@@ -15,6 +15,8 @@ class Sdformat15 < Formula
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "pybind11" => :build
