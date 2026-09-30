@@ -2,6 +2,7 @@
 import argparse
 import datetime
 import glob
+import os
 import re
 import sys
 
@@ -23,7 +24,8 @@ def main():
     print(f"Current date: {today}")
     print(f"Target disable date ({args.days} days from today): {target_date}")
 
-    formula_files = sorted(glob.glob("Formula/*.rb"))
+    formula_pattern = os.path.join(os.path.dirname(__file__), "../../Formula/*.rb")
+    formula_files = sorted(glob.glob(formula_pattern))
     updated_files = []
 
     for filepath in formula_files:
