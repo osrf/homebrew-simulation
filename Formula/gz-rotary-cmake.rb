@@ -3,7 +3,7 @@ class GzRotaryCmake < Formula
   homepage "https://gazebosim.org"
   license "Apache-2.0"
 
-  head "https://github.com/gazebosim/gz-cmake.git", branch: "main"
+  head "https://github.com/gazebosim/gz-cmake.git", branch: "scpeters/no_warn_when_optinal_components_not_found"
 
   depends_on "cmake"
   depends_on "pkgconf"
