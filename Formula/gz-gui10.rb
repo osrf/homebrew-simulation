@@ -9,7 +9,7 @@ class GzGui10 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "248e32b23f2633ecc5786e7b455fd04b7a8513f6e6a67fcb60576c6d008b23f6"
+    sha256 arm64_sequoia: "0444baee5d9bf14e51b7775f7f10910e13ab57143c43362427d748ce86a7e70e"
   end
 
   depends_on "cmake" => [:build, :test]
