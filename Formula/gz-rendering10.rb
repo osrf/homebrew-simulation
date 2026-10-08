@@ -9,7 +9,7 @@ class GzRendering10 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "79ec53830ddfccb169aa6f808710f6c7ee8177c23c624615afc70aeed1a4f259"
+    sha256 arm64_sequoia: "fcca4a4079c9c8f9450d88055d6fe4daa039af8b275dbea469b252ba53b418ee"
   end
 
   depends_on "cmake" => [:build, :test]
