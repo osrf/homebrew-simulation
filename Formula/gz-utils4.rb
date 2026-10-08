@@ -6,6 +6,8 @@ class GzUtils4 < Formula
   license "Apache-2.0"
   revision 6
 
+  head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils4"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, arm64_sequoia: "adbc01e0b9c92f40a1d6fea0a90bb8d9fe0b752644a3087193834da0fe2ec1d2"
