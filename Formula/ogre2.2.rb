@@ -5,7 +5,7 @@ class Ogre22 < Formula
   version "2.2.6+20211021~312bf40"
   sha256 "b9dbd84ef0c1731d0d1abc55499532358b9a9e5f0b3dc2b8e02ba76db0a112fd"
   license "MIT"
-  revision 2
+  revision 3
 
   # head "https://github.com/OGRECave/ogre-next.git", branch: "v2-2"
 
@@ -52,6 +52,12 @@ class Ogre22 < Formula
   patch do
     url "https://github.com/OGRECave/ogre-next/commit/23d82616a785f6aa26f58d5bf38a7114e2c00f88.patch?full_index=1"
     sha256 "ade27e55e7be5510f5eeb95f17c9ba90e61575ad610cc35f24179d061b1756a1"
+  end
+
+  patch do
+    # Fix for compatibility with XCode 16.3
+    url "https://github.com/scpeters/ogre-next/commit/b7439ae047489aa104a6775a99a9e93294c3d5b5.patch?full_index=1"
+    sha256 "d56016cd237c9a98e7c4389c57a455ea5d660d538d0cb1d5082bb2f9ed4e00b8"
   end
 
   def install
