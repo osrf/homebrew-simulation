@@ -13,6 +13,7 @@ class Tinyxml1 < Formula
   end
 
   deprecate! date: "2025-09-30", because: "not used by supported package"
+  disable! date: "2026-10-26", because: "not used by supported package"
 
   depends_on "cmake" => :build
 
