@@ -6,7 +6,7 @@ class GzCmake3 < Formula
   license "Apache-2.0"
   revision 1
 
-  # head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
+  head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
