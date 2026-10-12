@@ -32,7 +32,7 @@ class GzSim10 < Formula
   depends_on "openssl@3"
   depends_on "pkgconf"
   depends_on "protobuf"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "qt5compat"
   depends_on "qtbase"
   depends_on "qtcharts"
@@ -48,7 +48,7 @@ class GzSim10 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.14"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
