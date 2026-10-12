@@ -4,14 +4,7 @@ class Sdformat14 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-14.9.0.tar.bz2"
   sha256 "7b9c49bcb9f10ba7e84b575497f64f63e7fddf32f573c3644c55575604fecd0f"
   license "Apache-2.0"
-  revision 6
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "a41fcccdf0b5b9eb89fcc1a34daaa7d33e9d2d4f95afaba0d60630ccfce027cb"
-    sha256 arm64_sonoma:  "5480255e4eaf04bc960952f3a3fc2a2f6e5d62d67725c7f3747bae63d21e0557"
-    sha256 sonoma:        "54187345ce7432fba5716fde74a3b836cce448d2bf2dd8187fd496ca0e561491"
-  end
+  revision 7
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
@@ -21,6 +14,7 @@ class Sdformat14 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
 
   depends_on "doxygen"
   depends_on "gz-cmake3"
@@ -35,7 +29,7 @@ class Sdformat14 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
