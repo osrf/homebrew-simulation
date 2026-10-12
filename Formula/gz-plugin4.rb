@@ -52,6 +52,7 @@ class GzPlugin4 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+      project(TestProject)
       find_package(gz-plugin QUIET REQUIRED COMPONENTS loader)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-plugin::loader)
