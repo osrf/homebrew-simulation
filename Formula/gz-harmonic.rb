@@ -10,6 +10,8 @@ class GzHarmonic < Formula
 
   head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => :build
 
   depends_on "gz-cmake3"

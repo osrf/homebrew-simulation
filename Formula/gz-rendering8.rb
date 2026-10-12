@@ -12,6 +12,8 @@ class GzRendering8 < Formula
 
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 

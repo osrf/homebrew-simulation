@@ -13,6 +13,8 @@ class GzFuelTools9 < Formula
     sha256 cellar: :any, arm64_sequoia: "58041a045b0af38d9b8c9fd544ba3f9b9e76e46c1ca249b396ffc024e2e0d997"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"

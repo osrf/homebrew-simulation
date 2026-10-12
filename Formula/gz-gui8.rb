@@ -13,6 +13,8 @@ class GzGui8 < Formula
     sha256 arm64_sequoia: "1fb4d1b28b6b4187ef9e51ea7b85e334dfff868531abf18903168f6376e0e0ff"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "abseil"

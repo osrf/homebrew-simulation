@@ -13,6 +13,8 @@ class GzSensors8 < Formula
     sha256 cellar: :any, arm64_sequoia: "47168ed3e5581a441bce90acb88f9fdda1335425c821910ff5708798dee23db4"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 

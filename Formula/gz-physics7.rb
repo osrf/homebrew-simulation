@@ -8,6 +8,8 @@ class GzPhysics7 < Formula
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics7"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
 
   depends_on "assimp"
