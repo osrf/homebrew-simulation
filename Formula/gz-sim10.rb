@@ -4,14 +4,9 @@ class GzSim10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.5.0.tar.bz2"
   sha256 "2f609f8130ee3e9ce9de0e8e94aa9aa92f0eb433ac256c84f38932f988edd4f0"
   license "Apache-2.0"
-  revision 14
+  revision 15
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "46471130968165628e81be4b2cce52d7365353c4a92d203f23c197f87da8fd2e"
-  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -34,10 +29,10 @@ class GzSim10 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "libwebsockets"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pkgconf"
   depends_on "protobuf"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "qt5compat"
   depends_on "qtbase"
   depends_on "qtcharts"
@@ -53,7 +48,7 @@ class GzSim10 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.14"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
