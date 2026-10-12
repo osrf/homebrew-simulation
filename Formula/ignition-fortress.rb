@@ -11,6 +11,8 @@ class IgnitionFortress < Formula
 
   head "https://github.com/gazebosim/gz-fortress.git", branch: "main"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => :build
 
   depends_on "ignition-cmake2"

@@ -14,6 +14,8 @@ class IgnitionTransport11 < Formula
     sha256 arm64_sequoia: "14b72d957691bb504ed043a32962a8991eebd2d9367b95bb1ce6c0ce6e9dcc56"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "doxygen" => [:build, :optional]
 
   depends_on "abseil"
