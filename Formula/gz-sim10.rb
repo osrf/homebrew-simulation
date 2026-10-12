@@ -29,7 +29,7 @@ class GzSim10 < Formula
   depends_on "gz-transport15"
   depends_on "gz-utils4"
   depends_on "libwebsockets"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pkgconf"
   depends_on "protobuf"
   depends_on "python@3.15"
