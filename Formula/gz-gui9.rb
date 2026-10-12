@@ -4,14 +4,9 @@ class GzGui9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.0.2.tar.bz2"
   sha256 "0db7bdbaf32c3e9faba301c6d04e8cbf2daabdf639c45aedc10ec48356ea3d16"
   license "Apache-2.0"
-  revision 36
+  revision 37
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "a6daf9ea9d91540d707f0d90abd8245453e485f6a7efeadb1210eadf2a868079"
-  end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
 
