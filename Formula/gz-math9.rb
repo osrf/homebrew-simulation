@@ -4,14 +4,14 @@ class GzMath9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-9.3.0.tar.bz2"
   sha256 "d17aaa2d7bf010b20984a70007550d96b088abf543ae403091300661e8ffdb44"
   license "Apache-2.0"
+  revision 2
 
   head "https://github.com/gazebosim/gz-math.git", branch: "gz-math9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "567aae09f9ca1feef7f3f9fe06ca22008cbe41a6d0ac7acf34b394039f4d633d"
-    sha256 cellar: :any, arm64_sonoma:  "db11d7651f1ee3973f12277c3f498e74be09e3a7f5524263295b9562cee848b4"
-    sha256 cellar: :any, sonoma:        "2f148da56b5c61bc0d8ecbdae6d60459d97708d40e8ed251ad2d42559646352c"
+    sha256 cellar: :any, arm64_tahoe:   "b6f45d93e52140da8539bdd81b655ad4c89bfb7beca78a76930fbb3a479d69c0"
+    sha256 cellar: :any, arm64_sequoia: "c297077dba51ee6316a78710de38b5253cb97981c315d29b3026a1b0087779cb"
   end
 
   depends_on "cmake" => :build
@@ -20,6 +20,7 @@ class GzMath9 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "pkgconf" => :test
   depends_on "eigen"
   depends_on "gz-cmake5"
@@ -31,7 +32,7 @@ class GzMath9 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 

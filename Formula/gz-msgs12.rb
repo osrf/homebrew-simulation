@@ -4,18 +4,14 @@ class GzMsgs12 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-12.0.2.tar.bz2"
   sha256 "cca452d55937998330801fbef97e3cfdb6298e6807bb53b64fbd826266950bb6"
   license "Apache-2.0"
-  revision 10
+  revision 11
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs12"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "31d1a07ac8f58df0d1c3b521271fc11877afabcb4579a6e66ad9dd8d12ee3152"
-  end
 
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake5"
@@ -31,7 +27,7 @@ class GzMsgs12 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 

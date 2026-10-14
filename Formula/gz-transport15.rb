@@ -4,20 +4,16 @@ class GzTransport15 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-15.1.0.tar.bz2"
   sha256 "4518c85f5cf564137d8a8e9001b0b8099b435f6406e99ce28fc3a2f10020954e"
   license "Apache-2.0"
-  revision 12
+  revision 13
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport15"
-
-  bottle do
-    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "860737c286e027c6a68519eb5a51b6962ef4596a141eb8f351f7fe1a934a3b53"
-  end
 
   depends_on "doxygen" => [:build, :optional]
   depends_on "pybind11" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
 
   depends_on "abseil"
   depends_on "cmake"
@@ -39,7 +35,7 @@ class GzTransport15 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
