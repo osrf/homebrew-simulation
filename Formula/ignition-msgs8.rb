@@ -13,6 +13,8 @@ class IgnitionMsgs8 < Formula
     sha256 cellar: :any, arm64_sequoia: "8fc3d799595a3979df6ca71243fdcf6ea33eb9e7d91f051f88523a6341877826"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "ignition-cmake2"

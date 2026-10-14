@@ -14,6 +14,8 @@ class IgnitionMath6 < Formula
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build

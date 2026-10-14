@@ -13,6 +13,8 @@ class IgnitionFuelTools7 < Formula
     sha256 cellar: :any, arm64_sequoia: "909126e722b4beb5726e3fbbb6021081c7ff390b67e3bee1f48a77d5e3c7d8df"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "ignition-cmake2"

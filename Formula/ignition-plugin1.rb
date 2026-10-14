@@ -18,6 +18,8 @@ class IgnitionPlugin1 < Formula
     sha256 cellar: :any, catalina:      "fe41a0a740d6c61fc5dc145c89e43c9fc3476588c56b606786d7de122c3276f1"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake"
   depends_on "ignition-cmake2"
   depends_on "ignition-tools"
