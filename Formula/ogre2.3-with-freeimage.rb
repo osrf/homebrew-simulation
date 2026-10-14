@@ -10,6 +10,7 @@ class Ogre23WithFreeimage < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "a4a190155cfc005664f49a57dd6f595559e8c678014392f7a1efbe50a71be0ef"
     sha256 cellar: :any, arm64_sequoia: "af75600ba68cd7aff2511d3a57c5c473ed9e13ab3aebb9f59e26c17518fed15d"
   end
 
