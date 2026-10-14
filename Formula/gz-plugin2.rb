@@ -16,6 +16,8 @@ class GzPlugin2 < Formula
     sha256 cellar: :any, ventura:       "b4ff9bce1e706cd433da44f40ae739a27ab2f75fe91a6f93885f291cabd7ee93"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake"
   depends_on "gz-cmake3"
   depends_on "gz-tools2"

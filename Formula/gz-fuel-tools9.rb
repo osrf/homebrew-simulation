@@ -8,6 +8,8 @@ class GzFuelTools9 < Formula
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"

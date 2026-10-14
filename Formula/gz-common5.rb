@@ -14,6 +14,8 @@ class GzCommon5 < Formula
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common5"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "assimp"
   depends_on "cmake"
   depends_on "ffmpeg"

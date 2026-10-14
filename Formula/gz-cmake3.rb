@@ -16,6 +16,8 @@ class GzCmake3 < Formula
     sha256 cellar: :any_skip_relocation, sonoma:        "94f7e39e3cd5a08144a65e141005212e6b9afa6b1e50099800ad9d0019720494"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake"
   depends_on "pkgconf"
 

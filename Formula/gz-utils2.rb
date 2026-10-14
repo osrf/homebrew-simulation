@@ -16,6 +16,8 @@ class GzUtils2 < Formula
     sha256 cellar: :any, ventura:       "375a3b78b5a4c970654962959078732b015d0fc9b7bbdd804d1b980af7eafb0e"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "gz-cmake3"

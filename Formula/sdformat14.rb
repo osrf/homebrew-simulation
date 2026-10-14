@@ -14,6 +14,8 @@ class Sdformat14 < Formula
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "main"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "pybind11" => :build
