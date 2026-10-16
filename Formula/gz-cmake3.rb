@@ -30,6 +30,10 @@ class GzCmake3 < Formula
   def install
     cmake_args = std_cmake_args
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     # Use build folder
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
