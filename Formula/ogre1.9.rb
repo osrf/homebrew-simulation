@@ -50,11 +50,11 @@ class Ogre19 < Formula
     sha256 "7ad630740217ccb9f48898507e9c6713dcd37a677a9669cdc16ef39afbf68826"
   end
 
-  patch do
-    # link against AGL framework
-    url "https://gist.githubusercontent.com/iche033/b73766fac9ab3d628a79b5ed986677cd/raw/878d0902704c7fb51511163052c95294361f1dbe/ogre-1.9-agl.patch"
-    sha256 "8122c7eb52faae0fdedb70278d24e2581c88d1181de4d6e94d27bc1b3e596181"
-  end
+  # On macOS 26+ (Tahoe), Apple removed legacy Carbon and AGL frameworks from the SDK.
+  # AGL was used only for Carbon-based contexts and PBuffers, which are 32-bit only.
+  # Guard Carbon/AGL with #ifndef __LP64__, remove Carbon link flag, ensure Cocoa is
+  # default on 64-bit, and ensure current OpenGL context on background rendering threads.
+  patch :DATA
 
   patch do
     # backport cocoa window fix to support contents scaling factor (for retina displays)
@@ -177,3 +177,410 @@ class Ogre19 < Formula
     system cmd_not_grep_xcode
   end
 end
+
+__END__
+diff --git a/RenderSystems/GL/CMakeLists.txt b/RenderSystems/GL/CMakeLists.txt
+index d1afd2b..431dc3b 100644
+--- a/RenderSystems/GL/CMakeLists.txt
++++ b/RenderSystems/GL/CMakeLists.txt
+@@ -109,7 +109,7 @@ endif ()
+ 
+ if (APPLE)
+     set_target_properties(RenderSystem_GL PROPERTIES
+-        LINK_FLAGS "-framework Cocoa -framework Carbon -framework OpenGL")
++        LINK_FLAGS "-framework Cocoa -framework OpenGL")
+ endif ()
+ 
+ ogre_config_framework(RenderSystem_GL)
+diff --git a/RenderSystems/GL/include/OSX/OgreOSXCarbonContext.h b/RenderSystems/GL/include/OSX/OgreOSXCarbonContext.h
+index 05b6642..00de4e1 100644
+--- a/RenderSystems/GL/include/OSX/OgreOSXCarbonContext.h
++++ b/RenderSystems/GL/include/OSX/OgreOSXCarbonContext.h
+@@ -28,6 +28,9 @@ THE SOFTWARE.
+ #ifndef __OgreOSXCarbonContext_H__
+ #define __OgreOSXCarbonContext_H__
+ 
++// 64-bit Mac OS X doesn't support Carbon UI API
++#ifndef __LP64__
++
+ #include "OgreOSXContext.h"
+ #include <AGL/agl.h>
+ #include <OpenGL/OpenGL.h>
+@@ -68,3 +71,5 @@ namespace Ogre {
+ }
+ 
+ #endif
++
++#endif
+diff --git a/RenderSystems/GL/include/OSX/OgreOSXRenderTexture.h b/RenderSystems/GL/include/OSX/OgreOSXRenderTexture.h
+index 4677038..5be6c28 100644
+--- a/RenderSystems/GL/include/OSX/OgreOSXRenderTexture.h
++++ b/RenderSystems/GL/include/OSX/OgreOSXRenderTexture.h
+@@ -28,6 +28,9 @@ THE SOFTWARE.
+ #ifndef __OSXRenderTexture_H__
+ #define __OSXRenderTexture_H__
+ 
++// 64-bit Mac OS X doesn't support Carbon / AGL
++#ifndef __LP64__
++
+ #include "OgrePrerequisites.h"
+ 
+ #include "OgreGLPBuffer.h"
+@@ -53,5 +56,8 @@ namespace Ogre
+ 		OSXCarbonContext* mContext;
+     };
+ }
++
++#endif
++
+ #endif
+ 
+diff --git a/RenderSystems/GL/include/OgreGLPrerequisites.h b/RenderSystems/GL/include/OgreGLPrerequisites.h
+index 405dc34..86b43f8 100644
+--- a/RenderSystems/GL/include/OgreGLPrerequisites.h
++++ b/RenderSystems/GL/include/OgreGLPrerequisites.h
+@@ -70,6 +70,7 @@ namespace Ogre {
+ #   define GL_GLEXT_PROTOTYPES
+ #elif OGRE_PLATFORM == OGRE_PLATFORM_APPLE
+ #   include <GL/glew.h>
++#   include <OpenGL/OpenGL.h>
+ #   include <OpenGL/glu.h>
+ #endif
+ 
+diff --git a/RenderSystems/GL/include/OgreGLRenderSystem.h b/RenderSystems/GL/include/OgreGLRenderSystem.h
+index d1eb64f..023851e 100644
+--- a/RenderSystems/GL/include/OgreGLRenderSystem.h
++++ b/RenderSystems/GL/include/OgreGLRenderSystem.h
+@@ -529,6 +529,7 @@ namespace Ogre {
+         void _unregisterContext(GLContext *context);
+ 		/** Returns the main context */
+ 		GLContext* _getMainContext() {return mMainContext;} 
++		void _ensureContextCurrent();
+ 
+ 		/// @copydoc RenderSystem::getDisplayMonitorCount
+ 		unsigned int getDisplayMonitorCount() const;
+diff --git a/RenderSystems/GL/src/OSX/OgreOSXCarbonContext.cpp b/RenderSystems/GL/src/OSX/OgreOSXCarbonContext.cpp
+index 3620471..96fc203 100644
+--- a/RenderSystems/GL/src/OSX/OgreOSXCarbonContext.cpp
++++ b/RenderSystems/GL/src/OSX/OgreOSXCarbonContext.cpp
+@@ -26,6 +26,9 @@ THE SOFTWARE.
+ -----------------------------------------------------------------------------
+ */
+ 
++// 64-bit Mac OS X doesn't support Carbon UI API
++#ifndef __LP64__
++
+ #include "OgreOSXCarbonContext.h"
+ #include "OgreLogManager.h"
+ 
+@@ -69,3 +72,5 @@ namespace Ogre
+ 	}
+ 
+ }
++
++#endif
+diff --git a/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm b/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
+index 974d279..abbef43 100644
+--- a/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
++++ b/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
+@@ -325,6 +325,7 @@ namespace Ogre {
+ 
+         [mGLContext flushBuffer];
+         CGLUnlockContext((CGLContextObj)[mGLContext CGLContextObj]);
++        [NSOpenGLContext clearCurrentContext];
+ 
+         [pool drain];
+ 
+diff --git a/RenderSystems/GL/src/OSX/OgreOSXGLSupport.mm b/RenderSystems/GL/src/OSX/OgreOSXGLSupport.mm
+index a9d2b11..7e148d0 100644
+--- a/RenderSystems/GL/src/OSX/OgreOSXGLSupport.mm
++++ b/RenderSystems/GL/src/OSX/OgreOSXGLSupport.mm
+@@ -393,8 +393,13 @@ RenderWindow* OSXGLSupport::newWindow( const String &name, unsigned int width, u
+ 	bool fullScreen, const NameValuePairList *miscParams )
+ {
+ 	// Does the user want Cocoa or Carbon, default to Carbon...
++#ifndef __LP64__
+ 	mAPI = "carbon";
+ 	mContextType = "CGL";
++#else
++	mAPI = "cocoa";
++	mContextType = "NSOpenGL";
++#endif
+ 	
+ 	if(miscParams)
+ 	{
+@@ -473,7 +478,11 @@ void* OSXGLSupport::getProcAddress( const String& procname )
+ 
+ bool OSXGLSupport::supportsPBuffers()
+ {
++#ifndef __LP64__
+ 	return true;
++#else
++	return false;
++#endif
+ }
+ 
+ GLPBuffer* OSXGLSupport::createPBuffer(PixelComponentType format, uint32 width, uint32 height)
+@@ -483,7 +492,11 @@ GLPBuffer* OSXGLSupport::createPBuffer(PixelComponentType format, uint32 width,
+ //	if(mContextType == "CGL")
+ //		return OGRE_NEW OSXCGLPBuffer(format, width, height);
+ //	else
++#ifndef __LP64__
+ 		return OGRE_NEW OSXPBuffer(format, width, height);
++#else
++		return NULL;
++#endif
+ }
+ 
+ #if defined(MAC_OS_X_VERSION_10_6) && MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
+diff --git a/RenderSystems/GL/src/OSX/OgreOSXRenderTexture.cpp b/RenderSystems/GL/src/OSX/OgreOSXRenderTexture.cpp
+index 37434e6..ac3c662 100644
+--- a/RenderSystems/GL/src/OSX/OgreOSXRenderTexture.cpp
++++ b/RenderSystems/GL/src/OSX/OgreOSXRenderTexture.cpp
+@@ -25,6 +25,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+ -----------------------------------------------------------------------------
+ */
++// 64-bit Mac OS X doesn't support Carbon / AGL
++#ifndef __LP64__
++
+ #include "OgreStableHeaders.h"
+ 
+ #include "OgreException.h"
+@@ -89,3 +92,5 @@ namespace Ogre
+ 	}
+ }
+ 
++#endif
++
+diff --git a/RenderSystems/GL/src/OgreGLFrameBufferObject.cpp b/RenderSystems/GL/src/OgreGLFrameBufferObject.cpp
+index 3e29740..79561ec 100755
+--- a/RenderSystems/GL/src/OgreGLFrameBufferObject.cpp
++++ b/RenderSystems/GL/src/OgreGLFrameBufferObject.cpp
+@@ -31,6 +31,7 @@ THE SOFTWARE.
+ #include "OgreLogManager.h"
+ #include "OgreStringConverter.h"
+ #include "OgreRoot.h"
++#include "OgreGLRenderSystem.h"
+ #include "OgreGLHardwarePixelBuffer.h"
+ #include "OgreGLFBORenderTexture.h"
+ #include "OgreGLDepthBuffer.h"
+@@ -41,6 +42,11 @@ namespace Ogre {
+     GLFrameBufferObject::GLFrameBufferObject(GLFBOManager *manager, uint fsaa):
+         mManager(manager), mNumSamples(fsaa)
+     {
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++        GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++        if (rs)
++            rs->_ensureContextCurrent();
++#endif
+         // Generate framebuffer object
+         glGenFramebuffersEXT(1, &mFB);
+ 		// check multisampling
+diff --git a/RenderSystems/GL/src/OgreGLHardwareIndexBuffer.cpp b/RenderSystems/GL/src/OgreGLHardwareIndexBuffer.cpp
+index a4db506..2c5adeb 100644
+--- a/RenderSystems/GL/src/OgreGLHardwareIndexBuffer.cpp
++++ b/RenderSystems/GL/src/OgreGLHardwareIndexBuffer.cpp
+@@ -29,6 +29,8 @@ THE SOFTWARE.
+ #include "OgreGLHardwareBufferManager.h"
+ #include "OgreException.h"
+ #include "OgreGLStateCacheManager.h"
++#include "OgreGLRenderSystem.h"
++#include "OgreRoot.h"
+ 
+ namespace Ogre {
+ 
+@@ -37,6 +39,11 @@ namespace Ogre {
+         size_t numIndexes, HardwareBuffer::Usage usage, bool useShadowBuffer)
+         : HardwareIndexBuffer(mgr, idxType, numIndexes, usage, false, useShadowBuffer)
+     {
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++        GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++        if (rs)
++            rs->_ensureContextCurrent();
++#endif
+         glGenBuffersARB( 1, &mBufferId );
+ 
+         if (!mBufferId)
+diff --git a/RenderSystems/GL/src/OgreGLHardwareOcclusionQuery.cpp b/RenderSystems/GL/src/OgreGLHardwareOcclusionQuery.cpp
+index e5746ad..60d1f75 100644
+--- a/RenderSystems/GL/src/OgreGLHardwareOcclusionQuery.cpp
++++ b/RenderSystems/GL/src/OgreGLHardwareOcclusionQuery.cpp
+@@ -28,6 +28,8 @@ THE SOFTWARE.
+ 
+ #include "OgreGLHardwareOcclusionQuery.h"
+ #include "OgreException.h"
++#include "OgreRoot.h"
++#include "OgreGLRenderSystem.h"
+ 
+ namespace Ogre {
+ 
+@@ -48,6 +50,11 @@ namespace Ogre {
+   */
+ GLHardwareOcclusionQuery::GLHardwareOcclusionQuery() 
+ { 
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++    GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++    if (rs)
++        rs->_ensureContextCurrent();
++#endif
+ 	// Check for hardware occlusion support
+     if(GLEW_VERSION_1_5 || GLEW_ARB_occlusion_query)
+ 	{
+diff --git a/RenderSystems/GL/src/OgreGLHardwarePixelBuffer.cpp b/RenderSystems/GL/src/OgreGLHardwarePixelBuffer.cpp
+index 96a36a1..71e232d 100644
+--- a/RenderSystems/GL/src/OgreGLHardwarePixelBuffer.cpp
++++ b/RenderSystems/GL/src/OgreGLHardwarePixelBuffer.cpp
+@@ -35,6 +35,7 @@ THE SOFTWARE.
+ #include "OgreBitwise.h"
+ #include "OgreGLFBORenderTexture.h"
+ #include "OgreRoot.h"
++#include "OgreGLRenderSystem.h"
+ #include "OgreGLStateCacheManager.h"
+ 
+ namespace Ogre {
+@@ -667,6 +668,11 @@ void GLTextureBuffer::blitFromTexture(GLTextureBuffer *src, const Image::Box &sr
+     GLint oldfb;
+     glGetIntegerv(GL_FRAMEBUFFER_BINDING_EXT, &oldfb);
+     
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++    GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++    if (rs)
++        rs->_ensureContextCurrent();
++#endif
+     /// Set up temporary FBO
+     glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, fboMan->getTemporaryFBO());
+     
+@@ -876,6 +882,11 @@ GLRenderBuffer::GLRenderBuffer(GLenum format, uint32 width, uint32 height, GLsiz
+     GLHardwarePixelBuffer(width, height, 1, GLPixelUtil::getClosestOGREFormat(format),HBU_WRITE_ONLY),
+     mRenderbufferID(0)
+ {
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++    GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++    if (rs)
++        rs->_ensureContextCurrent();
++#endif
+     mGLInternalFormat = format;
+     /// Generate renderbuffer
+     glGenRenderbuffersEXT(1, &mRenderbufferID);
+diff --git a/RenderSystems/GL/src/OgreGLHardwareVertexBuffer.cpp b/RenderSystems/GL/src/OgreGLHardwareVertexBuffer.cpp
+index ecf44f1..c43d5b8 100644
+--- a/RenderSystems/GL/src/OgreGLHardwareVertexBuffer.cpp
++++ b/RenderSystems/GL/src/OgreGLHardwareVertexBuffer.cpp
+@@ -30,6 +30,8 @@ THE SOFTWARE.
+ #include "OgreException.h"
+ #include "OgreLogManager.h"
+ #include "OgreGLStateCacheManager.h"
++#include "OgreGLRenderSystem.h"
++#include "OgreRoot.h"
+ 
+ namespace Ogre {
+ 
+@@ -38,6 +40,11 @@ namespace Ogre {
+         size_t numVertices, HardwareBuffer::Usage usage, bool useShadowBuffer)
+         : HardwareVertexBuffer(mgr, vertexSize, numVertices, usage, false, useShadowBuffer)
+     {
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++        GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++        if (rs)
++            rs->_ensureContextCurrent();
++#endif
+         glGenBuffersARB( 1, &mBufferId );
+ 
+         if (!mBufferId)
+@@ -123,6 +130,11 @@ namespace Ogre {
+                     static_cast<GLHardwareBufferManagerBase*>(mMgr)->getStateCacheManager()->deleteGLBuffer(GL_ARRAY_BUFFER_ARB, mBufferId);
+                     mBufferId = 0;
+                     
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++                    GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++                    if (rs)
++                        rs->_ensureContextCurrent();
++#endif
+                     glGenBuffersARB( 1, &mBufferId );
+                     
+                     static_cast<GLHardwareBufferManagerBase*>(mMgr)->getStateCacheManager()->bindGLBuffer(GL_ARRAY_BUFFER_ARB, mBufferId);
+diff --git a/RenderSystems/GL/src/OgreGLRenderSystem.cpp b/RenderSystems/GL/src/OgreGLRenderSystem.cpp
+index 4a56da8..8fd0f66 100644
+--- a/RenderSystems/GL/src/OgreGLRenderSystem.cpp
++++ b/RenderSystems/GL/src/OgreGLRenderSystem.cpp
+@@ -3516,6 +3516,19 @@ GL_RGB_SCALE : GL_ALPHA_SCALE, 1);
+ 		mStateCacheManager->setStencilMask(mStencilWriteMask);
+ 
+ 	}
++	//---------------------------------------------------------------------
++	void GLRenderSystem::_ensureContextCurrent()
++	{
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++		if (CGLGetCurrentContext() == NULL)
++		{
++			GLContext* ctx = mCurrentContext ? mCurrentContext : mMainContext;
++			if (ctx)
++				ctx->setCurrent();
++		}
++#endif
++	}
++
+ 	//---------------------------------------------------------------------
+ 	void GLRenderSystem::_setRenderTarget(RenderTarget *target)
+ 	{
+@@ -3529,7 +3542,11 @@ GL_RGB_SCALE : GL_ALPHA_SCALE, 1);
+ 			// Switch context if different from current one
+ 			GLContext *newContext = 0;
+ 			target->getCustomAttribute(GLRenderTexture::CustomAttributeString_GLCONTEXT, &newContext);
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++			if(newContext && (mCurrentContext != newContext || CGLGetCurrentContext() == NULL))
++#else
+ 			if(newContext && mCurrentContext != newContext) 
++#endif
+ 			{
+ 				_switchContext(newContext);
+ 			}
+diff --git a/RenderSystems/GL/src/OgreGLRenderToVertexBuffer.cpp b/RenderSystems/GL/src/OgreGLRenderToVertexBuffer.cpp
+index 64bd6da..322701a 100644
+--- a/RenderSystems/GL/src/OgreGLRenderToVertexBuffer.cpp
++++ b/RenderSystems/GL/src/OgreGLRenderToVertexBuffer.cpp
+@@ -33,6 +33,7 @@ THE SOFTWARE.
+ #include "OgreSceneManager.h"
+ #include "OgreRoot.h"
+ #include "OgreRenderSystem.h"
++#include "OgreGLRenderSystem.h"
+ #include "OgreGLSLLinkProgramManager.h"
+ #include "OgreStringConverter.h"
+ 
+@@ -111,6 +112,11 @@ namespace Ogre {
+ 		mVertexBuffers[1].setNull();
+ 
+ 		 // create query objects
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++		GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++		if (rs)
++			rs->_ensureContextCurrent();
++#endif
+ 		glGenQueries(1, &mPrimitivesDrawnQuery);
+ 	}
+ //-----------------------------------------------------------------------------
+diff --git a/RenderSystems/GL/src/OgreGLTexture.cpp b/RenderSystems/GL/src/OgreGLTexture.cpp
+index fde05c8..9d7e511 100644
+--- a/RenderSystems/GL/src/OgreGLTexture.cpp
++++ b/RenderSystems/GL/src/OgreGLTexture.cpp
+@@ -37,6 +37,7 @@ THE SOFTWARE.
+ #include "OgreCamera.h"
+ #include "OgreException.h"
+ #include "OgreRoot.h"
++#include "OgreGLRenderSystem.h"
+ #include "OgreCodec.h"
+ #include "OgreImageCodec.h"
+ #include "OgreStringConverter.h"
+@@ -103,6 +104,11 @@ namespace Ogre {
+ 	//* Creation / loading methods ********************************************
+ 	void GLTexture::createInternalResourcesImpl(void)
+     {
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++        GLRenderSystem* rs = static_cast<GLRenderSystem*>(Root::getSingleton().getRenderSystem());
++        if (rs)
++            rs->_ensureContextCurrent();
++#endif
+ 		if (!GLEW_VERSION_1_2 && mTextureType == TEX_TYPE_3D)
+ 			OGRE_EXCEPT(Exception::ERR_NOT_IMPLEMENTED, 
+ 				"3D Textures not supported before OpenGL 1.2", 
