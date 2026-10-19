@@ -4,7 +4,7 @@ class GzCmake3 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.6.0.tar.bz2"
   sha256 "ec6c50bb30f89cfd07aff8450104ad31b2971d2ec1025eb7b042a74199a328bc"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
 
@@ -25,6 +25,12 @@ class GzCmake3 < Formula
     # Fix for warnings with cmake 4.4.0
     url "https://github.com/gazebosim/gz-cmake/commit/eb85f5f20d9358c65a0ec1afa0c391b3254a8e26.patch?full_index=1"
     sha256 "908c1f411deaec48ccf24545b8bfaa0671891d55531ffc345855edabebd39ccb"
+  end
+
+  patch do
+    # Fix for BUILD_DOCS=OFF
+    url "https://github.com/gazebosim/gz-cmake/commit/a11766eec8093df23be53a003e26362874a73914.patch?full_index=1"
+    sha256 "bc7596bfb61a0bc5e9e0a9ede9da2bd7a9500982d1bea32bc1bc6ecf60d7d0e0"
   end
 
   def install
