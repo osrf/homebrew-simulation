@@ -28,8 +28,14 @@ class GzTools2 < Formula
       s.gsub! "@CMAKE_INSTALL_PREFIX@", HOMEBREW_PREFIX
     end
 
+    cmake_args = std_cmake_args
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     mkdir "build" do
-      system "cmake", "-S", "..", "-B", ".", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
   end
