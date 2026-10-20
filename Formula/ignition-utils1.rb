@@ -17,6 +17,8 @@ class IgnitionUtils1 < Formula
     sha256 cellar: :any, big_sur:       "dfbfdd2ad1aa2b2915d80104a89eaf23f05efc6317b70a53896ba1aa2f46a579"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
   depends_on "ignition-cmake2"

@@ -14,6 +14,8 @@ class IgnitionCommon4 < Formula
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"

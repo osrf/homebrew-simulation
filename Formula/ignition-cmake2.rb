@@ -15,6 +15,8 @@ class IgnitionCmake2 < Formula
     sha256 cellar: :any_skip_relocation, sonoma:        "2421641f7a3bb4c3325fc489617d5d1e1f629f026c9e35994492b639f34e11ee"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake"
   depends_on "pkgconf"
 

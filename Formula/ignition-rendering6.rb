@@ -12,6 +12,8 @@ class IgnitionRendering6 < Formula
     sha256 arm64_sequoia: "45a69be22dd3a12444eddfeff5ea5b59d5ef51c6452b5b75c09a154dabb4bdae"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 

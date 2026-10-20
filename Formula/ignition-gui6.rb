@@ -13,6 +13,8 @@ class IgnitionGui6 < Formula
     sha256 arm64_sequoia: "d6ed2dfe053a50aafe685165a56ab9560d31c6c288c7ffd25569f49a08d3f6db"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
