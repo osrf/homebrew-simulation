@@ -283,11 +283,10 @@ diff --git a/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm b/RenderSystems/GL/s
 index 974d279..abbef43 100644
 --- a/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
 +++ b/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
-@@ -325,6 +325,7 @@ namespace Ogre {
+@@ -325,6 +325,6 @@ namespace Ogre {
  
          [mGLContext flushBuffer];
          CGLUnlockContext((CGLContextObj)[mGLContext CGLContextObj]);
-+        [NSOpenGLContext clearCurrentContext];
  
          [pool drain];
  
@@ -536,6 +535,12 @@ index 4a56da8..8fd0f66 100644
  			{
  				_switchContext(newContext);
  			}
++#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
++			else
++			{
++				_ensureContextCurrent();
++			}
++#endif
 diff --git a/RenderSystems/GL/src/OgreGLRenderToVertexBuffer.cpp b/RenderSystems/GL/src/OgreGLRenderToVertexBuffer.cpp
 index 64bd6da..322701a 100644
 --- a/RenderSystems/GL/src/OgreGLRenderToVertexBuffer.cpp
