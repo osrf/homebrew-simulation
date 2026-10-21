@@ -30,6 +30,10 @@ class Sdformat12 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     # Use a build folder
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
