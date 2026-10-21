@@ -4,16 +4,15 @@ class IgnitionCmake2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/ignition-cmake-2.19.0.tar.bz2"
   sha256 "032f4172919474c36c209dc6f28513d9ac68cc5a801eb86123bfc03c7e88ae75"
   license "Apache-2.0"
-  revision 1
-
-  # head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75942e91db8426becce21cb6cd23e2c16765e062fb3e5496bef6f2fc7707934a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1e56c95b37c0c5837e5e31e4606dc94752d8a6601a62b49888ea8b05493b34d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2421641f7a3bb4c3325fc489617d5d1e1f629f026c9e35994492b639f34e11ee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37f614228d1fa1faa8e7bc247eaeb3914b1f157d980601e5a92bd8220e2faeef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f382219522be990241e795513a32855d19e115f01c695853dfd60a2b32feb86"
   end
+
+  # head "https://github.com/gazebosim/gz-cmake.git", branch: "ign-cmake2"
 
   depends_on "cmake"
   depends_on "pkgconf"
@@ -24,8 +23,18 @@ class IgnitionCmake2 < Formula
     sha256 "4ef376c321959b92fae467d66995148020e4fa5825134c2595b8ff8efde5e79c"
   end
 
+  patch do
+    # Fix for BUILD_DOCS=OFF
+    url "https://github.com/gazebosim/gz-cmake/commit/3a8158798c2a51ccc9f6f023184513a6a2884e4d.patch?full_index=1"
+    sha256 "8ef060357e0285b809e8210f4080a1132ddf413e00d6fe44ed9f4e06a6fddf94"
+  end
+
   def install
     cmake_args = std_cmake_args
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     # Use a build folder
     mkdir "build" do
