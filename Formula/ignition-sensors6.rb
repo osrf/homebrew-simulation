@@ -1,10 +1,9 @@
 class IgnitionSensors6 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/ignition-sensors-6.9.0.tar.bz2"
-  sha256 "20cc51bf730bfb3f9eba6fec0a8fc6c917b2841aa0b0543e183f60200e57ae4c"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/ignition-sensors-6.10.0.tar.bz2"
+  sha256 "d23a255912495a0ab6dc29e6a5abc18731040e1c09d817965fc60dd11bfc68a1"
   license "Apache-2.0"
-  revision 20
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors6"
 
