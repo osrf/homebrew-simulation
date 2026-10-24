@@ -121,10 +121,9 @@ class Ogre19 < Formula
     ]
     cmake_args << "-DOGRE_BUILD_PLUGIN_CG=OFF" if build.without? "cg"
     cmake_args.concat(std_cmake_args)
-    cmake_args << ".."
 
     mkdir "build" do
-      system "cmake", *cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
 
