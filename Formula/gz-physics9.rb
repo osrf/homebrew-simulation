@@ -7,6 +7,12 @@ class GzPhysics9 < Formula
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics9"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "95167e498d30c504050256cbe97a43d8fde29704b20aa1fc05e9f006e01e2097"
+    sha256 arm64_sequoia: "25a3dd68a1f4494fa73210a2d9c3dfcd511a62d9ad189f2bfe0d9b25ad199b8b"
+  end
+
   depends_on "cmake" => [:build, :test]
 
   depends_on "assimp"
