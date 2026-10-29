@@ -9,7 +9,7 @@ class IgnitionSensors6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "ad2bd76765732632e38659d2ccf6825f120307ccac7b95908a010c455730e7f6"
+    sha256 cellar: :any, arm64_sequoia: "ab9a1172f49e5fc9b5380c8260df75daaf17af1b524f1be5a051cdec09762d3c"
   end
 
   depends_on "cmake" => [:build, :test]
