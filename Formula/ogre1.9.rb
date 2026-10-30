@@ -271,17 +271,6 @@ index 3620471..96fc203 100644
  }
 +
 +#endif
-diff --git a/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm b/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
-index 974d279..abbef43 100644
---- a/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
-+++ b/RenderSystems/GL/src/OSX/OgreOSXCocoaWindow.mm
-@@ -325,6 +325,6 @@ namespace Ogre {
- 
-         [mGLContext flushBuffer];
-         CGLUnlockContext((CGLContextObj)[mGLContext CGLContextObj]);
- 
-         [pool drain];
- 
 diff --git a/RenderSystems/GL/src/OSX/OgreOSXGLSupport.mm b/RenderSystems/GL/src/OSX/OgreOSXGLSupport.mm
 index a9d2b11..7e148d0 100644
 --- a/RenderSystems/GL/src/OSX/OgreOSXGLSupport.mm
