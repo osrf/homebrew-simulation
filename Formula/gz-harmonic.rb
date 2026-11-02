@@ -45,6 +45,10 @@ class GzHarmonic < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
+  end
+
   test do
     assert_path_exists share/"gz/gz-harmonic/gazebodistro/collection-harmonic.yaml"
   end

@@ -41,6 +41,10 @@ class GzRendering8 < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
+  end
+
   test do
     require "system_command"
     extend SystemCommand::Mixin
