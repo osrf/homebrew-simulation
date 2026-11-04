@@ -37,6 +37,10 @@ class GzUtils2 < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
+  end
+
   test do
     (testpath/"test.cpp").write <<-EOS
       #include <gz/utils/ImplPtr.hh>
