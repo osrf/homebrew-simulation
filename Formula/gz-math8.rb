@@ -4,7 +4,13 @@ class GzMath8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.4.0.tar.bz2"
   sha256 "62445bab9663627f7631aa0ff34bead82525d9352a404d3f6e82fcef4d36194a"
   license "Apache-2.0"
-  revision 1
+  revision 2
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "ccac5dbfcb72f38f58f111db7a2808d64647782dcd995360371b8a6247bc2fdf"
+    sha256 cellar: :any, arm64_sequoia: "5e76e507aaacb3f9fad67384bb5a862a259a8eb4c3cf9f2c34835d6299e606b8"
+  end
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 

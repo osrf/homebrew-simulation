@@ -73,6 +73,10 @@ class GzTransport13 < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
+  end
+
   test do
     # test CLI executables
     system libexec/"gz/transport13/gz-transport-service"
