@@ -7,6 +7,12 @@ class Ogre19 < Formula
   license "MIT"
   revision 12
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "b939307a8327a423cbc2d8090380a0dc4e815a63e63f97c8f782752ad774c990"
+    sha256 cellar: :any, arm64_sequoia: "63f8f353f25073f916b7e65f125b31a98db7101b5c3527d3d2103913a364f108"
+  end
+
   # head "https://github.com/OGRECave/ogre.git", branch: "master"
 
   option "with-cg"
