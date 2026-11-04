@@ -7,6 +7,12 @@ class GzSensors9 < Formula
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors9"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "403eac3caf70af1048ca08fb083f80ca618ea5cad9a446d4d3fb91afa1dab91d"
+    sha256 cellar: :any, arm64_sequoia: "ac5728073d367e53c4ed00eae2751d31bb0829a877a949a4517d06de371784b8"
+  end
+
   deprecate! date: "2026-12-15", because: :deprecated_upstream
 
   depends_on "cmake" => [:build, :test]
