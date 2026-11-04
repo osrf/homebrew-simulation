@@ -4,7 +4,13 @@ class GzRendering8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.3.0.tar.bz2"
   sha256 "efed1634bd0998311b7b01b489c646d99bfda14cb86cccc2f53b493c9a721dc8"
   license "Apache-2.0"
-  revision 1
+  revision 2
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "7ab6852bc0a8e5c69c50a4dce3b6dc6fcfaf038b0bd5ec7db9b2bea3152a4ef2"
+    sha256 arm64_sequoia: "191351258dcd25c49e54198ef9b17c1d570d3b7e40105833e3d0f8cb17183466"
+  end
 
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
 
@@ -39,6 +45,10 @@ class GzRendering8 < Formula
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do
