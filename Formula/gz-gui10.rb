@@ -4,7 +4,7 @@ class GzGui10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-10.1.1.tar.bz2"
   sha256 "411daf0c4479d92578dda8d0a794a58d3583fc5276d00a6798ff346e5540edec"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui10"
 
