@@ -46,7 +46,7 @@ class GzCmake3 < Formula
   end
 
   def ci_cmake_args
-    ["-DBUILDSYSTEM_TESTING=True"]
+    ["-DBUILDSYSTEM_TESTING=True", "-DBUILD_DOCS=OFF"]
   end
 
   test do

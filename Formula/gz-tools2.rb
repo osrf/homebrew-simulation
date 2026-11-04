@@ -40,6 +40,10 @@ class GzTools2 < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
+  end
+
   test do
     mkdir testpath/"config"
     (testpath/"config/test.yaml").write <<~EOS
