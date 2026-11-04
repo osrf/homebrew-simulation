@@ -1,12 +1,17 @@
 class GzSim10 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.5.0.tar.bz2"
-  sha256 "2f609f8130ee3e9ce9de0e8e94aa9aa92f0eb433ac256c84f38932f988edd4f0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.6.0.tar.bz2"
+  sha256 "36cb9e9eeec912cefc1dfb639138692cc09d99655aa2c27e8bdcdaac9a111d7d"
   license "Apache-2.0"
-  revision 15
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "14bc70b3e6f9cb6845637b8a3668a5ac4858324959d6645bc421d7bad8ec5fac"
+    sha256 arm64_sequoia: "50a07457ef54901b7ba4cd28d42000e4f17b464bf0c59e9ecb693d2cf852e7a0"
+  end
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
