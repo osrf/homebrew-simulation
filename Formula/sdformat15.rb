@@ -6,6 +6,12 @@ class Sdformat15 < Formula
   license "Apache-2.0"
   revision 8
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "9ebe6c0ce3f763651217b3a04240319c1d554608fffaa6a91fc9782183d8902d"
+    sha256 arm64_sequoia: "81a361e252d20ee30554c3d526c358e5337c6e4ee62a38189cfd5d6b333edf35"
+  end
+
   # head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream

@@ -6,6 +6,12 @@ class GzCommon6 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "709861efd46de6f9e11b6ed927cb3d2c9eb149546d4987ecb72fd303c7ff511e"
+    sha256 cellar: :any, arm64_sequoia: "38e30c59ec67ba385f87311ce298de8018908e7fb24fe09d72850cb4f80350f7"
+  end
+
   # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream

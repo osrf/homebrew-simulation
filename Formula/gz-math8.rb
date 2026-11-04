@@ -6,6 +6,12 @@ class GzMath8 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "ccac5dbfcb72f38f58f111db7a2808d64647782dcd995360371b8a6247bc2fdf"
+    sha256 cellar: :any, arm64_sequoia: "5e76e507aaacb3f9fad67384bb5a862a259a8eb4c3cf9f2c34835d6299e606b8"
+  end
+
   # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
