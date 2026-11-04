@@ -8,6 +8,12 @@ class GzMsgs11 < Formula
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "5db57148b772129742e2dcd1d91d77be1150a19963872eccba6723dbe3252d04"
+    sha256 arm64_sequoia: "d82c7e69709aeb6793e940a1b50148f9a50f2f3741c4f687ac9b43f775de966e"
+  end
+
   deprecate! date: "2026-12-15", because: :deprecated_upstream
 
   depends_on "python@3.12" => [:build, :test]

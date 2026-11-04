@@ -8,6 +8,12 @@ class GzTransport14 < Formula
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "b9da2c587fdc55d2af29d85a678fa875a866838f0d44e89608e467554f7711f0"
+    sha256 arm64_sequoia: "af9a06cc726299f6998e98988649b90be42a0ec56efcaded35127cd841710999"
+  end
+
   deprecate! date: "2026-12-15", because: :deprecated_upstream
 
   depends_on "doxygen" => [:build, :optional]

@@ -6,6 +6,12 @@ class GzRendering9 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "72bc93f5f9428ac32756fad11a80067966d1df2c1a9d9412abc864c26ecabae7"
+    sha256 arm64_sequoia: "8dc8721818fccaaded9bc25e9a702d3c1bea4a635716eeecf8169506185b7ea8"
+  end
+
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering9"
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
