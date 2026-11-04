@@ -6,6 +6,12 @@ class GzRendering8 < Formula
   license "Apache-2.0"
   revision 2
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "7ab6852bc0a8e5c69c50a4dce3b6dc6fcfaf038b0bd5ec7db9b2bea3152a4ef2"
+    sha256 arm64_sequoia: "191351258dcd25c49e54198ef9b17c1d570d3b7e40105833e3d0f8cb17183466"
+  end
+
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"

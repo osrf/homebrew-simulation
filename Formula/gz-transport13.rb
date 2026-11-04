@@ -8,6 +8,12 @@ class GzTransport13 < Formula
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "f2b97436f78524a9422977c877f67df96bd26825c7fb26afa0a3333319c7a23f"
+    sha256 arm64_sequoia: "98b0575aa485abfeb5fa5949913890d62d0564abab3e438debc1bcaf2aa210b4"
+  end
+
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "doxygen" => [:build, :optional]
