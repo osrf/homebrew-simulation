@@ -5,6 +5,12 @@ class GzPhysics8 < Formula
   sha256 "5098100a5f1c76f409428992485fbe6f718efbc2ca37ed58ee3ff50152626d15"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "873253b4796c2c5e81f2cc4838a70a3b47d7849f6e2b59e124e640ed32461e33"
+    sha256 arm64_sequoia: "a99d9c57cb9f548dd7b9ed243e64bebf66514f3c6ab7099908abb1fac058bb98"
+  end
+
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics8"
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
