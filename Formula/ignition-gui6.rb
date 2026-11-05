@@ -10,6 +10,7 @@ class IgnitionGui6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "a1ad78068afa5042913e67214dff70ca6167218abd4b6e82250a37373ae70d67"
     sha256 arm64_sequoia: "d6ed2dfe053a50aafe685165a56ab9560d31c6c288c7ffd25569f49a08d3f6db"
   end
 

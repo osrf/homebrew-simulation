@@ -10,6 +10,7 @@ class IgnitionFuelTools7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "566113fcb95a4911073c968911595830028f63543db7466aaa3a06bfba673385"
     sha256 cellar: :any, arm64_sequoia: "909126e722b4beb5726e3fbbb6021081c7ff390b67e3bee1f48a77d5e3c7d8df"
   end
 
