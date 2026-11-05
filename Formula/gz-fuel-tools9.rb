@@ -4,9 +4,15 @@ class GzFuelTools9 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-9.1.1.tar.bz2"
   sha256 "3189166d4b0078c0b9d98de178e5496a1cc28b88fbd1124603376181b5a053f5"
   license "Apache-2.0"
-  revision 44
+  revision 45
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "63d8b3ca4b1afb99d11341d7268409523b9104a7edc0204880749abb922637b6"
+    sha256 cellar: :any, arm64_sequoia: "a775030734503330894c5eeeab232f90862752ca185367d1119d9fa48a57808b"
+  end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
@@ -37,6 +43,10 @@ class GzFuelTools9 < Formula
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do

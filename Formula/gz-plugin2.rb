@@ -43,6 +43,10 @@ class GzPlugin2 < Formula
     end
   end
 
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
+  end
+
   test do
     # test CLI executable
     system libexec/"gz/plugin2/gz-plugin"

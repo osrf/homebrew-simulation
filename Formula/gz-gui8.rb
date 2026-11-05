@@ -4,9 +4,15 @@ class GzGui8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.4.0.tar.bz2"
   sha256 "1731b01a134afb11b1b3e049fc65e74fa7b5c50532406d3d68366d54016d5498"
   license "Apache-2.0"
-  revision 43
+  revision 44
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "9122324fee60f706fa057afa43a7171734134e7bee90cde576ba334eca154aa3"
+    sha256 arm64_sequoia: "d750fb7d268a130fb4c34e1d682f3693a8c9b203f98d6467b656156dd3c4ee5a"
+  end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
@@ -48,6 +54,10 @@ class GzGui8 < Formula
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do
