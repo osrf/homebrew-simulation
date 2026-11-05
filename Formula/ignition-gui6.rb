@@ -112,6 +112,7 @@ class IgnitionGui6 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      project(TestProject)
       find_package(ignition-gui6 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gui6::ignition-gui6)
