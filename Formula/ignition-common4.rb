@@ -9,6 +9,7 @@ class IgnitionCommon4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "ff98e5a6d7f3ab179437006c1b3dcc47b28074232d76decc3e19b76d7da629c9"
     sha256 cellar: :any, arm64_sequoia: "3e82db80bbb0d6a533f08cb90b8a6c04b4553f7c99d9c16aaadeeaa16986ff76"
     sha256 cellar: :any, arm64_sonoma:  "f654672009dc1b8be05642cbf5003c7730c4d821d8f776f932ec49fde9b33bb6"
     sha256 cellar: :any, sonoma:        "70978f8b151f0240d1ec50750a4295ecb224c02f8b1258bd56a6ffbd6cc24370"
