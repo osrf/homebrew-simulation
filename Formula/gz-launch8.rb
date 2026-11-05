@@ -6,6 +6,12 @@ class GzLaunch8 < Formula
   license "Apache-2.0"
   revision 12
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "68f4f34aa2c791f386f88e026a774d97964ff57b8612e8dd1b31f47af41e79fa"
+    sha256 arm64_sequoia: "1e577ef4a5332e892b83c7bdbd0ba094a6ae969e0c45019cdf51e637be55e7fd"
+  end
+
   # head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream

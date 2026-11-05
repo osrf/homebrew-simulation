@@ -8,6 +8,12 @@ class GzGui9 < Formula
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "3bf3184a9937d0d8ff69217b7c629db7d950a7cfae2a4ec06bfa440f985256e1"
+    sha256 arm64_sequoia: "e03e1e6327523f284793855b5ab7e237f5bdb0ba349e34d14e28f9b267cbe565"
+  end
+
   deprecate! date: "2026-12-15", because: :deprecated_upstream
 
   depends_on "cmake" => [:build, :test]
