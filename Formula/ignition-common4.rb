@@ -5,14 +5,14 @@ class IgnitionCommon4 < Formula
   sha256 "2028ae185171afd86c5a38442fc3f0a9b13297e47f0ac1578a01b6b16cad0b92"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, arm64_sequoia: "3e82db80bbb0d6a533f08cb90b8a6c04b4553f7c99d9c16aaadeeaa16986ff76"
     sha256 cellar: :any, arm64_sonoma:  "f654672009dc1b8be05642cbf5003c7730c4d821d8f776f932ec49fde9b33bb6"
     sha256 cellar: :any, sonoma:        "70978f8b151f0240d1ec50750a4295ecb224c02f8b1258bd56a6ffbd6cc24370"
   end
-
-  # head "https://github.com/gazebosim/gz-common.git", branch: "ign-common4"
 
   depends_on "cmake"
   depends_on "ffmpeg"

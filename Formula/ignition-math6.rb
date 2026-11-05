@@ -5,14 +5,14 @@ class IgnitionMath6 < Formula
   sha256 "5bf79417b1fccad2ea11fcd7eefd8ff0439836bad13302a9cc18171fafb5c6e3"
   license "Apache-2.0"
 
+  head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
     sha256 cellar: :any, arm64_sequoia: "0cd88554baa89866acdab7689ce3198795706e35501bc00be9654f2203d6e338"
     sha256 cellar: :any, arm64_sonoma:  "10429b73327f58b7541ffe14dc96924d812c56e6462b5903dbd31ebdf2835540"
     sha256 cellar: :any, sonoma:        "fa0dda065a10c3f240a6646e17ba3d7b2dec6b769b1c1b6a74699efb1d8131e3"
   end
-
-  # head "https://github.com/gazebosim/gz-math.git", branch: "ign-math6"
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
