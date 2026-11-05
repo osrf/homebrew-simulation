@@ -7,6 +7,12 @@ class GzSensors8 < Formula
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors8"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "6f4ef721dfc5a1db62c1fc39c2009c6b7736753c25a52182b163cd5eaf535bb2"
+    sha256 cellar: :any, arm64_sequoia: "b350067fe53108a7796231754114be2b573b24798c5a9934fa41cb5c5b8d7d21"
+  end
+
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
