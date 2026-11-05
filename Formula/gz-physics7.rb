@@ -1,19 +1,19 @@
 class GzPhysics7 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-7.8.0.tar.bz2"
-  sha256 "120b7ea6e1dd9c34515948de3c69ab5e27ab098e56379a3ef61a414c6e606927"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-7.9.0.tar.bz2"
+  sha256 "dbe0ece116d5cf5c331c9b98d840e0b5fb5a20c696117dcea743f0e31a8ad812"
   license "Apache-2.0"
-  revision 4
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "87949c1972997b3d3f930b6667030e672a6ea88a58dc9ee850ec62603c3dc4f6"
-    sha256 arm64_sonoma:  "5f7b744aabea54e591783a6f319b16201fd6535e25188750e1200a2c2496d04d"
-    sha256 sonoma:        "a7cb9ca435c1b70ba3c12eecdf46f4ef3708800ad8504ebc22f12b4357dbaca0"
+    sha256 arm64_tahoe:   "e0e41efc3aaa0db73bf5c1e0888dd5a28dcd49a2cff1fd3d0d9a53b01dec1bbb"
+    sha256 arm64_sequoia: "883a6732056fa3ea31bdc234e5a7dee47938bf2b37fee05db40cd38cc0fedc93"
   end
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics7"
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
 
@@ -44,11 +44,19 @@ class GzPhysics7 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     # Use a build folder
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do

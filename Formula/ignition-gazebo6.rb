@@ -4,14 +4,17 @@ class IgnitionGazebo6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/ignition-gazebo-6.18.0.tar.bz2"
   sha256 "9d3bbadc1a9c780b179890f4ac5978195d98a7a12f4cc23614d895276774fc99"
   license "Apache-2.0"
-  revision 10
+  revision 12
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "ign-gazebo6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "14a7d02337be34bb84b1f6c53aeda4651e956c7e169bfa8283611a38d2a95c18"
+    sha256 arm64_tahoe:   "84ecced85aa1688bf787cfffc0db4061c149ccb337957ddfe45402ac4e0551f9"
+    sha256 arm64_sequoia: "d6ebc8e2d9c6584da9f58ac41180cb017218afb23ddfca8f8687ce76bb476d7f"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -51,6 +54,10 @@ class IgnitionGazebo6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args

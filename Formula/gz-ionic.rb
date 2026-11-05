@@ -10,6 +10,8 @@ class GzIonic < Formula
 
   head "https://github.com/gazebosim/gz-ionic.git", branch: "main"
 
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
+
   depends_on "cmake" => :build
 
   depends_on "gz-cmake4"

@@ -4,15 +4,17 @@ class GzCommon6 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.4.0.tar.bz2"
   sha256 "b4822f94a8753938fb4a584775b8a7f48c779041fdff40cf99962543f0e92921"
   license "Apache-2.0"
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "fa104c19c24e82a4fb75ff6e4899d7d2069ea48ceaa5d615094d725c3915fc14"
-    sha256 cellar: :any, arm64_sonoma:  "114bd9ab6afcec424bd696397ac6e530cfcfd5be795ff4b5d01343b7b68a95bb"
-    sha256 cellar: :any, sonoma:        "234a33267ddbac675049f7d0e00b247cbd3872aa6a9ff7d5b4fa59c8b8e43ad9"
+    sha256 cellar: :any, arm64_tahoe:   "709861efd46de6f9e11b6ed927cb3d2c9eb149546d4987ecb72fd303c7ff511e"
+    sha256 cellar: :any, arm64_sequoia: "38e30c59ec67ba385f87311ce298de8018908e7fb24fe09d72850cb4f80350f7"
   end
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
+
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
 
   depends_on "assimp"
   depends_on "cmake"

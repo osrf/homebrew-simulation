@@ -10,8 +10,11 @@ class IgnitionFuelTools7 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "566113fcb95a4911073c968911595830028f63543db7466aaa3a06bfba673385"
     sha256 cellar: :any, arm64_sequoia: "909126e722b4beb5726e3fbbb6021081c7ff390b67e3bee1f48a77d5e3c7d8df"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "abseil"
   depends_on "cmake"
@@ -31,6 +34,10 @@ class IgnitionFuelTools7 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
@@ -47,6 +54,7 @@ class IgnitionFuelTools7 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      project(TestProject)
       find_package(ignition-fuel_tools7 QUIET REQUIRED)
       include_directories(${IGNITION-FUEL_TOOLS_INCLUDE_DIRS})
       link_directories(${IGNITION-FUEL_TOOLS_LIBRARY_DIRS})

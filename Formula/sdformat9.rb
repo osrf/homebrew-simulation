@@ -16,6 +16,7 @@ class Sdformat9 < Formula
   end
 
   deprecate! date: "2025-01-31", because: "is past end-of-life date"
+  disable! date: "2026-10-26", because: "is past end-of-life date"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]

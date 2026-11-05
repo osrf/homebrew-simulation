@@ -4,15 +4,17 @@ class GzMath8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.4.0.tar.bz2"
   sha256 "62445bab9663627f7631aa0ff34bead82525d9352a404d3f6e82fcef4d36194a"
   license "Apache-2.0"
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "5edeac32da9be328a5928d05adca140012dda131b71d6ec9dbaf966233d039ae"
-    sha256 cellar: :any, arm64_sonoma:  "c13848ee72789d45f258b93a59cee5532850801c258b672fa1f4c9e82aa2044a"
-    sha256 cellar: :any, sonoma:        "7bd2c65ed02c002a7b85a264fdc679672737a1bcca3b84814a47ee4766430f83"
+    sha256 cellar: :any, arm64_tahoe:   "ccac5dbfcb72f38f58f111db7a2808d64647782dcd995360371b8a6247bc2fdf"
+    sha256 cellar: :any, arm64_sequoia: "5e76e507aaacb3f9fad67384bb5a862a259a8eb4c3cf9f2c34835d6299e606b8"
   end
 
   # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math8"
+
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
@@ -20,6 +22,7 @@ class GzMath8 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "pkgconf" => :test
   depends_on "eigen"
   depends_on "gz-cmake4"
@@ -31,7 +34,7 @@ class GzMath8 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 

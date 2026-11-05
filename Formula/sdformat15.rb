@@ -4,16 +4,17 @@ class Sdformat15 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/sdformat/releases/sdformat-15.4.0.tar.bz2"
   sha256 "22b9825201bfd7c0c7ecc60995efca90bf05aeaddcc308ae5180746a08cd0b90"
   license "Apache-2.0"
-  revision 6
+  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "e6c645d7bb4e5f84e46788a8303dd8ba9ebf9699e4c942e2ed2820ff0c2200ab"
-    sha256 arm64_sonoma:  "3d9190220eda6749684971770b7698124306946f63c1c782fe36075fdf749440"
-    sha256 sonoma:        "0a7cd42180d736369bf98844b2bbc570c97970b4e3507d9e13d3d6f015175c0f"
+    sha256 arm64_tahoe:   "9ebe6c0ce3f763651217b3a04240319c1d554608fffaa6a91fc9782183d8902d"
+    sha256 arm64_sequoia: "81a361e252d20ee30554c3d526c358e5337c6e4ee62a38189cfd5d6b333edf35"
   end
 
   # head "https://github.com/gazebosim/sdformat.git", branch: "sdf15"
+
+  deprecate! date: "2026-12-15", because: :deprecated_upstream
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -21,6 +22,7 @@ class Sdformat15 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
 
   depends_on "doxygen"
   depends_on "gz-cmake4"
@@ -35,7 +37,7 @@ class Sdformat15 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 

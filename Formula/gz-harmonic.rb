@@ -10,6 +10,8 @@ class GzHarmonic < Formula
 
   head "https://github.com/gazebosim/gz-harmonic.git", branch: "main"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => :build
 
   depends_on "gz-cmake3"
@@ -31,10 +33,20 @@ class GzHarmonic < Formula
   depends_on "sdformat14"
 
   def install
+    cmake_args = std_cmake_args
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     mkdir "build" do
-      system "cmake", "-S", "..", "-B", ".", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do

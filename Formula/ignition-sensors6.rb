@@ -1,17 +1,19 @@
 class IgnitionSensors6 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/ignition-sensors-6.9.0.tar.bz2"
-  sha256 "20cc51bf730bfb3f9eba6fec0a8fc6c917b2841aa0b0543e183f60200e57ae4c"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/ignition-sensors-6.10.0.tar.bz2"
+  sha256 "d23a255912495a0ab6dc29e6a5abc18731040e1c09d817965fc60dd11bfc68a1"
   license "Apache-2.0"
-  revision 20
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "ign-sensors6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "ad2bd76765732632e38659d2ccf6825f120307ccac7b95908a010c455730e7f6"
+    sha256 cellar: :any, arm64_tahoe:   "54f3f1edf3d3e39c3d784cc435b0fef9a540e999dfd915d5dae59c1c2f81666a"
+    sha256 cellar: :any, arm64_sequoia: "84c2e30064b96b439fd674791f38347299cff9356467909d93a5ea7326be461b"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -32,6 +34,10 @@ class IgnitionSensors6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args

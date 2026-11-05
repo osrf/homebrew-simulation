@@ -1,19 +1,19 @@
 class IgnitionPhysics5 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/ignition-physics-5.4.0.tar.bz2"
-  sha256 "0675bf9a0db8cc67ade5e71ff7ccbca57e6ff7d2f7c400ef10787f501a87ae56"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/ignition-physics-5.4.1.tar.bz2"
+  sha256 "8cb21cdc7cee1872701c8d6750c27ca484cb778e2b5049ee46de9b1972e54eee"
   license "Apache-2.0"
-  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256               arm64_sequoia: "1f690e3eb12f88741f2085a447ae472e30903216e48fb1ab9faccfa1e237fb82"
-    sha256               arm64_sonoma:  "719b6f5781e7f7326e359ab7065cd26bcb3da3ba75ec209018f34d543ac4ba25"
-    sha256 cellar: :any, sonoma:        "ac7d600c88947a47e42d692f1742f84b1759581b427af0a8b63e3557eae8aec7"
+    sha256 cellar: :any, arm64_tahoe:   "20a4fdd21e6acc9230145caaa549685c7ea54d69148b94454f624fc2bc56d812"
+    sha256 cellar: :any, arm64_sequoia: "a72a444a490b10aec0e41def0f90192dd0e280444cd4f02bf9d3fb15b06c9e66"
   end
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => :build
 
@@ -45,6 +45,10 @@ class IgnitionPhysics5 < Formula
     ]
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     # Use a build folder
     mkdir "build" do

@@ -4,14 +4,17 @@ class IgnitionLaunch5 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/ignition-launch-5.3.1.tar.bz2"
   sha256 "abb724f65e820b04c056ee2e9329bc749dffcd6fc8e481eb9e4f83a719fb5492"
   license "Apache-2.0"
-  revision 10
+  revision 12
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "ign-launch5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "ad017901fa9c10e3594008e88f5867157a153009a8e3765d02f2d73227d03880"
+    sha256 arm64_tahoe:   "0d037c87688bb805e067d21b90a0e6e667d3fef623c0989ff8c6cb283a68dadb"
+    sha256 arm64_sequoia: "75af23a7c2e6488d0b987a882b907a59b9183d9424c272d5a64e42297ad10640"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
@@ -47,6 +50,10 @@ class IgnitionLaunch5 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args

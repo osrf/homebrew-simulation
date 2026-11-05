@@ -10,6 +10,7 @@ class GzPlugin4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "9b423525f0a817e7671b36c496f4e171d49360821173210c413427c0e687b6fa"
     sha256 cellar: :any, arm64_sequoia: "ec78a2746df21ea90531f623711f2dcb4d389f98ed6e331076d5dd00b391607b"
     sha256 cellar: :any, arm64_sonoma:  "4bf407ef568a0401e99f1af52a819fffc1dc5e103ea1ac998084b05f8a88ae6c"
     sha256 cellar: :any, sonoma:        "e56af85ca12bcafff45e7bf216e979044a79ddd78591e5a6a60c7223ae033dd2"
@@ -52,6 +53,7 @@ class GzPlugin4 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+      project(TestProject)
       find_package(gz-plugin QUIET REQUIRED COMPONENTS loader)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-plugin::loader)

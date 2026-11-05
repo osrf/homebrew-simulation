@@ -4,18 +4,22 @@ class GzMsgs10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-10.4.0.tar.bz2"
   sha256 "27eaee86f39765f979e5b010775d79c28ea74f9ded3c698aa7d6ced3606394be"
   license "Apache-2.0"
-  revision 6
+  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "4cb5d124837414a924c5a504e403e240d6590f3a14bc14e614a7860a818a4380"
+    sha256 arm64_tahoe:   "21d3f64eefe72b49637e3080fce3d41eed7a4779aa95bc4dc4e88d519724466f"
+    sha256 arm64_sequoia: "6b90d8c804fbcb86588d1dbf9f7c29d41b7acd331b7c53365e53ec7608bdf657"
   end
 
   # head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs10"
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake3"
@@ -31,7 +35,7 @@ class GzMsgs10 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
@@ -40,6 +44,10 @@ class GzMsgs10 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     cmake_args << python_cmake_arg
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
@@ -55,6 +63,10 @@ class GzMsgs10 < Formula
       # brew link errors if there is a pre-existing __pycache__ folder
       (lib/"#{python_name}/site-packages/gz/msgs10").install_symlink Dir[lib/"python/gz/msgs10/*"]
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do
