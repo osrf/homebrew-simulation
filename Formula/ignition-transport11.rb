@@ -65,6 +65,7 @@ class IgnitionTransport11 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      project(TestProject)
       find_package(ignition-transport11 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-transport11::ignition-transport11)

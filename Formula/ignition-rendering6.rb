@@ -5,7 +5,7 @@ class IgnitionRendering6 < Formula
   sha256 "d3ebc2c56cde7decd8633c4c42a70c16b39b1eb59b10b1ba43de79c470648a8a"
   license "Apache-2.0"
 
-  # head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
+  head "https://github.com/gazebosim/gz-rendering.git", branch: "ign-rendering6"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"

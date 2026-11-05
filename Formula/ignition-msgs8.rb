@@ -47,6 +47,7 @@ class IgnitionMsgs8 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      project(TestProject)
       find_package(ignition-msgs8 QUIET REQUIRED)
       set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IGNITION-MSGS_CXX_FLAGS}")
       include_directories(${IGNITION-MSGS_INCLUDE_DIRS})
