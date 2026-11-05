@@ -15,6 +15,8 @@ class IgnitionCommon4 < Formula
     sha256 cellar: :any, sonoma:        "70978f8b151f0240d1ec50750a4295ecb224c02f8b1258bd56a6ffbd6cc24370"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake"
   depends_on "ffmpeg"
   depends_on "freeimage"

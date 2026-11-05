@@ -13,6 +13,8 @@ class IgnitionSensors6 < Formula
     sha256 cellar: :any, arm64_sequoia: "84c2e30064b96b439fd674791f38347299cff9356467909d93a5ea7326be461b"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 

@@ -14,6 +14,8 @@ class IgnitionLaunch5 < Formula
     sha256 arm64_sequoia: "75af23a7c2e6488d0b987a882b907a59b9183d9424c272d5a64e42297ad10640"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 

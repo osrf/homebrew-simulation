@@ -14,6 +14,8 @@ class IgnitionGazebo6 < Formula
     sha256 arm64_sequoia: "d6ebc8e2d9c6584da9f58ac41180cb017218afb23ddfca8f8687ce76bb476d7f"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "gz-plugin2" => :test

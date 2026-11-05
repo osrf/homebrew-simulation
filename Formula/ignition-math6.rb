@@ -15,6 +15,8 @@ class IgnitionMath6 < Formula
     sha256 cellar: :any, sonoma:        "fa0dda065a10c3f240a6646e17ba3d7b2dec6b769b1c1b6a74699efb1d8131e3"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pybind11" => :build

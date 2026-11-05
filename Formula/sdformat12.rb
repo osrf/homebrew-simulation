@@ -16,6 +16,8 @@ class Sdformat12 < Formula
     sha256 sonoma:        "356b4a97c012a62d99fb4bcf77f95de20069b1a39644b3166f2c705c08a1cde9"
   end
 
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
 
