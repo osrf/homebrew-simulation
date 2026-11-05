@@ -8,6 +8,12 @@ class GzFuelTools9 < Formula
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools9"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "63d8b3ca4b1afb99d11341d7268409523b9104a7edc0204880749abb922637b6"
+    sha256 cellar: :any, arm64_sequoia: "a775030734503330894c5eeeab232f90862752ca185367d1119d9fa48a57808b"
+  end
+
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "abseil"

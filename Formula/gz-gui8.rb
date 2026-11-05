@@ -8,6 +8,12 @@ class GzGui8 < Formula
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "9122324fee60f706fa057afa43a7171734134e7bee90cde576ba334eca154aa3"
+    sha256 arm64_sequoia: "d750fb7d268a130fb4c34e1d682f3693a8c9b203f98d6467b656156dd3c4ee5a"
+  end
+
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
