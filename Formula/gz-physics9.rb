@@ -1,16 +1,16 @@
 class GzPhysics9 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-9.6.0.tar.bz2"
-  sha256 "d22abf0234058afa8c5803cda77bad4b5c584c7f611c31c281bea6e434f54923"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/gz-physics-9.6.1.tar.bz2"
+  sha256 "f602d695a19ed113cb152b330fd09ae346d01b96012316dad6d11e93d5b3e04f"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-physics.git", branch: "gz-physics9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "95167e498d30c504050256cbe97a43d8fde29704b20aa1fc05e9f006e01e2097"
-    sha256 arm64_sequoia: "25a3dd68a1f4494fa73210a2d9c3dfcd511a62d9ad189f2bfe0d9b25ad199b8b"
+    sha256 arm64_tahoe:   "02480bb823df43be00e3ba1b8a1fecd491a1616db8e111eb6c9b47ac7664c013"
+    sha256 arm64_sequoia: "9ecc3a8889cf882a11c9e30322012e65cf05ce67da42a763480a6f351cd2d08a"
   end
 
   depends_on "cmake" => [:build, :test]
