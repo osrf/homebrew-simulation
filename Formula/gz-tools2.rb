@@ -4,6 +4,7 @@ class GzTools2 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-tools/releases/gz-tools-2.0.4.tar.bz2"
   sha256 "e4ee9cbe45528249268dc9c97c24199cf5479fd4c0f304e946051035867f121d"
   license "Apache-2.0"
+  revision 1
 
   # head "https://github.com/gazebosim/gz-tools.git", branch: "gz-tools2"
 
@@ -17,7 +18,7 @@ class GzTools2 < Formula
   depends_on "cmake" => :build
   depends_on "libyaml" => :test
   depends_on "ruby" => :test
-  depends_on "gz-cmake3"
+  depends_on "gz-cmake5"
 
   conflicts_with "gazebo11", because: "both install bin/gz"
   conflicts_with "gz-rotary-tools", because: "both install bin/gz"
