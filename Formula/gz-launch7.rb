@@ -4,9 +4,15 @@ class GzLaunch7 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-7.1.2.tar.bz2"
   sha256 "d47e393e50b8da244562f7b75c8dc4f9882c966d0331c53bec107f6bf7d95a0f"
   license "Apache-2.0"
-  revision 11
+  revision 12
 
   head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch7"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "5eae097a12513628c83149c35bd2b5b9e1d5f688003d4eb0ac2178e0760cbb25"
+    sha256 arm64_sequoia: "0b6f411dfed12a23f6d731459961537d0288f52c0fd4ee14a8a865b4460bad91"
+  end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
