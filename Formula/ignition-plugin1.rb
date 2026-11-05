@@ -5,17 +5,18 @@ class IgnitionPlugin1 < Formula
   sha256 "72c4ad15c24c628cd0410f7f605eff762e864df19f6716de44e9b57ca8808743"
   license "Apache-2.0"
 
-  # head "https://github.com/gazebosim/gz-plugin.git", branch: "ign-plugin1"
+  head "https://github.com/gazebosim/gz-plugin.git", branch: "ign-plugin1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "b20207e9c1abb549a51051f343890291d4449da99e70e8da0f1dbf2029dc9bf4"
-    sha256 cellar: :any, arm64_sonoma:  "8a33c0a7ff05a05c07c8fcc3c3e35c9bd65fabf0abfa1b55f8ac71c5bd0f0b87"
-    sha256 cellar: :any, sonoma:        "f5b2ad4b8721da99877710d5122cea321b6426bf25c0d27a27eafee5643ad384"
-    sha256 cellar: :any, ventura:       "2c9887d57d32fb9c58d9497d38c12889039a554290b49bcd9d229a577cbb99eb"
-    sha256 cellar: :any, monterey:      "c6e836c62b75fcfee2bdf7a1b7bdd232b351591efaceef0e05b37c483cbbef83"
-    sha256 cellar: :any, big_sur:       "712f0971c2fa85a07b4e5971d4801ad7f324cd644cd170a603e850c57c4a30cd"
-    sha256 cellar: :any, catalina:      "fe41a0a740d6c61fc5dc145c89e43c9fc3476588c56b606786d7de122c3276f1"
+    sha256 cellar: :any, arm64_tahoe:     "4f98092b987841b5a5fd9e624f3bc3857f10a217b7266a58d2bd0595b624cc1f"
+    sha256 cellar: :any, arm64_sequoia:   "b20207e9c1abb549a51051f343890291d4449da99e70e8da0f1dbf2029dc9bf4"
+    sha256 cellar: :any, arm64_sonoma:    "8a33c0a7ff05a05c07c8fcc3c3e35c9bd65fabf0abfa1b55f8ac71c5bd0f0b87"
+    sha256 cellar: :any, sonoma:          "f5b2ad4b8721da99877710d5122cea321b6426bf25c0d27a27eafee5643ad384"
+    sha256 cellar: :any, ventura:         "2c9887d57d32fb9c58d9497d38c12889039a554290b49bcd9d229a577cbb99eb"
+    sha256 cellar: :any, monterey:        "c6e836c62b75fcfee2bdf7a1b7bdd232b351591efaceef0e05b37c483cbbef83"
+    sha256 cellar: :any, big_sur:         "712f0971c2fa85a07b4e5971d4801ad7f324cd644cd170a603e850c57c4a30cd"
+    sha256 cellar: :any, x86_64_catalina: "fe41a0a740d6c61fc5dc145c89e43c9fc3476588c56b606786d7de122c3276f1"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
@@ -28,6 +29,10 @@ class IgnitionPlugin1 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     # Use a build folder
     mkdir "build" do

@@ -4,13 +4,17 @@ class GzRendering8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-8.3.0.tar.bz2"
   sha256 "efed1634bd0998311b7b01b489c646d99bfda14cb86cccc2f53b493c9a721dc8"
   license "Apache-2.0"
+  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "c47ee305844b41d487314ec8b235d1ce8aed1fc6758516cb6789579f736c737b"
+    sha256 arm64_tahoe:   "7ab6852bc0a8e5c69c50a4dce3b6dc6fcfaf038b0bd5ec7db9b2bea3152a4ef2"
+    sha256 arm64_sequoia: "191351258dcd25c49e54198ef9b17c1d570d3b7e40105833e3d0f8cb17183466"
   end
 
   # head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering8"
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -32,11 +36,19 @@ class GzRendering8 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     # Use a build folder
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do

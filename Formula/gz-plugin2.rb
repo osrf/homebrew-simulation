@@ -5,15 +5,18 @@ class GzPlugin2 < Formula
   sha256 "5c4471d77930cf53b47014d1082702a433f18fdcd7796cad6c23c52595ebec19"
   license "Apache-2.0"
 
-  # head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
+  head "https://github.com/gazebosim/gz-math.git", branch: "gz-math7"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "8449eefce5146753f6b12dd47891a3a04ee5ec743dfd93cd614a91c7aff93976"
     sha256 cellar: :any, arm64_sequoia: "175ec51fd26aa1d978d54ddd74bedc68d679fbcd582c941936943bde8244e61c"
     sha256 cellar: :any, arm64_sonoma:  "f9d56d92fa62327d54d8bd5fa38841aba268b8a0084e8808c82d497fb9b5b4c6"
     sha256 cellar: :any, sonoma:        "92833e720822a18291ddce53b0b24d159d544f48e988ecf4560fa33f11a52c05"
     sha256 cellar: :any, ventura:       "b4ff9bce1e706cd433da44f40ae739a27ab2f75fe91a6f93885f291cabd7ee93"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake"
   depends_on "gz-cmake3"
@@ -29,11 +32,19 @@ class GzPlugin2 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     # Use a build folder
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do

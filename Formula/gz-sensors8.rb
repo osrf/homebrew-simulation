@@ -1,17 +1,19 @@
 class GzSensors8 < Formula
   desc "Sensors library for robotics applications"
   homepage "https://github.com/gazebosim/gz-sensors"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-8.2.2.tar.bz2"
-  sha256 "9ddc16d5cab0a86f27771732f5cfcfde1efe7611f27da61176ea122273806c42"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sensors/releases/gz-sensors-8.3.0.tar.bz2"
+  sha256 "a5d62442c6728a273d1f44899e34d374aeea5e121170597e456e9960bab8c49c"
   license "Apache-2.0"
-  revision 45
 
   head "https://github.com/gazebosim/gz-sensors.git", branch: "gz-sensors8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_sequoia: "47168ed3e5581a441bce90acb88f9fdda1335425c821910ff5708798dee23db4"
+    sha256 cellar: :any, arm64_tahoe:   "6f4ef721dfc5a1db62c1fc39c2009c6b7736753c25a52182b163cd5eaf535bb2"
+    sha256 cellar: :any, arm64_sequoia: "b350067fe53108a7796231754114be2b573b24798c5a9934fa41cb5c5b8d7d21"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -33,10 +35,18 @@ class GzSensors8 < Formula
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do

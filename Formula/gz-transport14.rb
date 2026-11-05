@@ -4,13 +4,14 @@ class GzTransport14 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.3.0.tar.bz2"
   sha256 "22003585f3c3a85c185f0c2c643c5bc08ce63a8250bbf971ad2c515ac96b8a0f"
   license "Apache-2.0"
-  revision 6
+  revision 8
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "38f5fa6a74470910052e9d8da6c1c2109e2ef568ba319ee8845bd81baff6344c"
+    sha256 arm64_tahoe:   "b9da2c587fdc55d2af29d85a678fa875a866838f0d44e89608e467554f7711f0"
+    sha256 arm64_sequoia: "af9a06cc726299f6998e98988649b90be42a0ec56efcaded35127cd841710999"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
@@ -20,6 +21,7 @@ class GzTransport14 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
 
   depends_on "abseil"
   depends_on "cmake"
@@ -41,7 +43,7 @@ class GzTransport14 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 

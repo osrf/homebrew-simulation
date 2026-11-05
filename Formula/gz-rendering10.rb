@@ -4,12 +4,14 @@ class GzRendering10 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-rendering/releases/gz-rendering-10.1.0.tar.bz2"
   sha256 "694b4bbc8665647c4aaba3147a9ecda19064e0fd59284ec15711c563a774fe07"
   license "Apache-2.0"
+  revision 2
 
   head "https://github.com/gazebosim/gz-rendering.git", branch: "gz-rendering10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "fcca4a4079c9c8f9450d88055d6fe4daa039af8b275dbea469b252ba53b418ee"
+    sha256 arm64_tahoe:   "508461474ced0c476ea2a007e155499a9fba6e9d45a2a4c96359d500d63f097f"
+    sha256 arm64_sequoia: "7f58d35118530ab43bebb85844a46b8159c106dfe99a58b41c6f9f6484613d88"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -5,10 +5,11 @@ class IgnitionUtils1 < Formula
   sha256 "0a34a05d0acee29d6571437c60bb7ca9012fc5f4ed9c445dfa65765702468bdb"
   license "Apache-2.0"
 
-  # head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
+  head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "88803f996998a087fc702aa837be97f6d0006a8d3a3a758911210aaa9d1cff0d"
     sha256 cellar: :any, arm64_sequoia: "eec475fb893889e43cf58ff64a13f3ae40acc217868ff641b785f933ab92a6d9"
     sha256 cellar: :any, arm64_sonoma:  "7ef019343fc009d1fd8f37f4231a23802ceb271732212e1ecadb55e82be6c3cd"
     sha256 cellar: :any, sonoma:        "e628cbc936ba2a1a51675774f8a220fe7743d35cf8f5456da91989b6c71408b5"
@@ -26,6 +27,10 @@ class IgnitionUtils1 < Formula
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     # Use a build folder
     mkdir "build" do

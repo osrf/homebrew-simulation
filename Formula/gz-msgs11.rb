@@ -4,13 +4,14 @@ class GzMsgs11 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.2.0.tar.bz2"
   sha256 "105711dbfa7172d10f7ebc9657bc7deadc88736f9268c118bf158608aeed8eda"
   license "Apache-2.0"
-  revision 6
+  revision 8
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "684cefb4a56a662a2d2de67dfd9c9eb7dc9d9afafe86a1b52546370698ee55f8"
+    sha256 arm64_tahoe:   "5db57148b772129742e2dcd1d91d77be1150a19963872eccba6723dbe3252d04"
+    sha256 arm64_sequoia: "d82c7e69709aeb6793e940a1b50148f9a50f2f3741c4f687ac9b43f775de966e"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
@@ -18,6 +19,7 @@ class GzMsgs11 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "abseil"
   depends_on "cmake"
   depends_on "gz-cmake4"
@@ -33,7 +35,7 @@ class GzMsgs11 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.13"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 

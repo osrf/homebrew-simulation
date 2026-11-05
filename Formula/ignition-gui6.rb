@@ -10,6 +10,7 @@ class IgnitionGui6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "a1ad78068afa5042913e67214dff70ca6167218abd4b6e82250a37373ae70d67"
     sha256 arm64_sequoia: "d6ed2dfe053a50aafe685165a56ab9560d31c6c288c7ffd25569f49a08d3f6db"
   end
 
@@ -41,6 +42,10 @@ class IgnitionGui6 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
+
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
@@ -110,6 +115,7 @@ class IgnitionGui6 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+      project(TestProject)
       find_package(ignition-gui6 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-gui6::ignition-gui6)

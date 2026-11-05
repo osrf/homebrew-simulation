@@ -4,14 +4,17 @@ class GzGui8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.4.0.tar.bz2"
   sha256 "1731b01a134afb11b1b3e049fc65e74fa7b5c50532406d3d68366d54016d5498"
   license "Apache-2.0"
-  revision 42
+  revision 44
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_sequoia: "1fb4d1b28b6b4187ef9e51ea7b85e334dfff868531abf18903168f6376e0e0ff"
+    sha256 arm64_tahoe:   "9122324fee60f706fa057afa43a7171734134e7bee90cde576ba334eca154aa3"
+    sha256 arm64_sequoia: "d750fb7d268a130fb4c34e1d682f3693a8c9b203f98d6467b656156dd3c4ee5a"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]
@@ -43,10 +46,18 @@ class GzGui8 < Formula
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
     end
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do

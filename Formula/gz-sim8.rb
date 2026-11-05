@@ -4,9 +4,17 @@ class GzSim8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.15.0.tar.bz2"
   sha256 "f457478cc8b319be148aa1e7a3bc14042c333c8881c1f92ea6d498344fea891d"
   license "Apache-2.0"
-  revision 7
+  revision 8
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "e1b6883169a33d0329be680a39e28722822ee3bbc43de4a8afd315b721980024"
+    sha256 arm64_sequoia: "14692363f6ab5c1d3d8212683155e13db05dcdc6e6e5363cb52f88a7791f5858"
+  end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
@@ -29,7 +37,7 @@ class GzSim8 < Formula
   depends_on "gz-utils2"
   depends_on "pkgconf"
   depends_on "protobuf"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "qt@5"
   depends_on "ruby"
   depends_on "sdformat14"
@@ -40,7 +48,7 @@ class GzSim8 < Formula
         .select { |f| f.name.match?(/^python@3\.\d+$/) }
   end
 
-  def python_cmake_arg(python = Formula["python@3.14"])
+  def python_cmake_arg(python = Formula["python@3.15"])
     "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
   end
 
@@ -56,6 +64,10 @@ class GzSim8 < Formula
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
     cmake_args << python_cmake_arg
 
+    # Disable doc target due to bug in doxygen 1.18
+    # see https://github.com/osrf/homebrew-simulation/issues/3616
+    cmake_args << "-DBUILD_DOCS=OFF"
+
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
       system "make", "install"
@@ -67,6 +79,10 @@ class GzSim8 < Formula
     python_name = python.name.tr("@", "")
     (lib/"#{python_name}/site-packages").install Dir[lib/"python/*"]
     rmdir prefix/"lib/python"
+  end
+
+  def ci_cmake_args
+    ["-DBUILD_DOCS=OFF"]
   end
 
   test do
