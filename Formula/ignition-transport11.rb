@@ -11,8 +11,11 @@ class IgnitionTransport11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "ac3b7d9b307b98e4104fbe9068578a90da276318e7d1388e1c4b563a48b0b008"
     sha256 arm64_sequoia: "14b72d957691bb504ed043a32962a8991eebd2d9367b95bb1ce6c0ce6e9dcc56"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "doxygen" => [:build, :optional]
 
@@ -65,6 +68,7 @@ class IgnitionTransport11 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      project(TestProject)
       find_package(ignition-transport11 QUIET REQUIRED)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake ignition-transport11::ignition-transport11)

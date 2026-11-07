@@ -4,9 +4,15 @@ class GzSim8 < Formula
   url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-8.15.0.tar.bz2"
   sha256 "f457478cc8b319be148aa1e7a3bc14042c333c8881c1f92ea6d498344fea891d"
   license "Apache-2.0"
-  revision 7
+  revision 8
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim8"
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "e1b6883169a33d0329be680a39e28722822ee3bbc43de4a8afd315b721980024"
+    sha256 arm64_sequoia: "14692363f6ab5c1d3d8212683155e13db05dcdc6e6e5363cb52f88a7791f5858"
+  end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 

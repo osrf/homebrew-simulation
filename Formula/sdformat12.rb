@@ -6,14 +6,17 @@ class Sdformat12 < Formula
   license "Apache-2.0"
   revision 4
 
+  head "https://github.com/gazebosim/sdformat.git", branch: "sdf12"
+
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 arm64_tahoe:   "b66d28b42b8c51cc61c39fdaf0892df44a81111dc145a6442afc2ab0f7a04c77"
     sha256 arm64_sequoia: "3ed3eef8d2555e1cf0ded0b0deec4c055747e1619a224c3a545fe027096e4d6b"
     sha256 arm64_sonoma:  "6465480686af4da60d018c56d415b540798d9082fbc90aeed1155f1e2f9160de"
     sha256 sonoma:        "356b4a97c012a62d99fb4bcf77f95de20069b1a39644b3166f2c705c08a1cde9"
   end
 
-  # head "https://github.com/gazebosim/sdformat.git", branch: "sdf12"
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]

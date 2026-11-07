@@ -5,10 +5,11 @@ class IgnitionUtils1 < Formula
   sha256 "0a34a05d0acee29d6571437c60bb7ca9012fc5f4ed9c445dfa65765702468bdb"
   license "Apache-2.0"
 
-  # head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
+  head "https://github.com/gazebosim/gz-utils.git", branch: "ign-utils1"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "88803f996998a087fc702aa837be97f6d0006a8d3a3a758911210aaa9d1cff0d"
     sha256 cellar: :any, arm64_sequoia: "eec475fb893889e43cf58ff64a13f3ae40acc217868ff641b785f933ab92a6d9"
     sha256 cellar: :any, arm64_sonoma:  "7ef019343fc009d1fd8f37f4231a23802ceb271732212e1ecadb55e82be6c3cd"
     sha256 cellar: :any, sonoma:        "e628cbc936ba2a1a51675774f8a220fe7743d35cf8f5456da91989b6c71408b5"
@@ -16,6 +17,8 @@ class IgnitionUtils1 < Formula
     sha256 cellar: :any, monterey:      "f7a68cade6eef655b58433c502758c7361221cadf1df46af611f094db817ef10"
     sha256 cellar: :any, big_sur:       "dfbfdd2ad1aa2b2915d80104a89eaf23f05efc6317b70a53896ba1aa2f46a579"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => [:build, :test]

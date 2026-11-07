@@ -1,12 +1,19 @@
 class IgnitionPhysics5 < Formula
   desc "Physics library for robotics applications"
   homepage "https://github.com/gazebosim/gz-physics"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/ignition-physics-5.4.0.tar.bz2"
-  sha256 "0675bf9a0db8cc67ade5e71ff7ccbca57e6ff7d2f7c400ef10787f501a87ae56"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-physics/releases/ignition-physics-5.4.1.tar.bz2"
+  sha256 "8cb21cdc7cee1872701c8d6750c27ca484cb778e2b5049ee46de9b1972e54eee"
   license "Apache-2.0"
-  revision 9
+
+  bottle do
+    root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "20a4fdd21e6acc9230145caaa549685c7ea54d69148b94454f624fc2bc56d812"
+    sha256 cellar: :any, arm64_sequoia: "a72a444a490b10aec0e41def0f90192dd0e280444cd4f02bf9d3fb15b06c9e66"
+  end
 
   # head "https://github.com/gazebosim/gz-physics.git", branch: "ign-physics5"
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake" => :build
 

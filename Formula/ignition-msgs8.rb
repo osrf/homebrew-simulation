@@ -10,8 +10,11 @@ class IgnitionMsgs8 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
+    sha256 cellar: :any, arm64_tahoe:   "9eff506fa86750648f2c168624f57fceb8151d259e53e0f289987748bc174628"
     sha256 cellar: :any, arm64_sequoia: "8fc3d799595a3979df6ca71243fdcf6ea33eb9e7d91f051f88523a6341877826"
   end
+
+  deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "abseil"
   depends_on "cmake"
@@ -47,6 +50,7 @@ class IgnitionMsgs8 < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+      project(TestProject)
       find_package(ignition-msgs8 QUIET REQUIRED)
       set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IGNITION-MSGS_CXX_FLAGS}")
       include_directories(${IGNITION-MSGS_INCLUDE_DIRS})
