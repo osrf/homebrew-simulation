@@ -10,7 +10,6 @@ class GzRotaryTools < Formula
   depends_on "ruby" => :test
   depends_on "gz-rotary-cmake"
 
-  conflicts_with "gazebo11", because: "both install bin/gz"
   conflicts_with "gz-jetty-tools", because: "both install bin/gz"
 
   def install

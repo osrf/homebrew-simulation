@@ -20,7 +20,6 @@ class GzTools2 < Formula
   depends_on "ruby" => :test
   depends_on "gz-cmake3"
 
-  conflicts_with "gazebo11", because: "both install bin/gz"
   conflicts_with "gz-rotary-tools", because: "both install bin/gz"
 
   def install
