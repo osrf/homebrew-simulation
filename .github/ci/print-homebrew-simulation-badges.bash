@@ -24,7 +24,6 @@ arches=( \
 collections=( \
   fortress \
   harmonic \
-  ionic \
   jetty \
   rotary \
 )
