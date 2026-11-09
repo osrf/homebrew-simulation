@@ -1,8 +1,19 @@
 #!/bin/bash
 
+RELEASE_TOOLS_BRANCH=${1}
+
+if [ $# -ne 0 ] && [ $# -ne 1 ]; then
+  echo "$0 [<release_tools_branch>]"
+  exit 1
+fi
+
+if [ -z "${RELEASE_TOOLS_BRANCH}" ]; then
+  RELEASE_TOOLS_BRANCH="master"
+fi
+
 RELEASE_TOOLS_REPO="https://github.com/gazebo-tooling/release-tools"
 generated_jobs="$(mktemp -d)/generated_jobs.txt"
-curl --location "${RELEASE_TOOLS_REPO}/raw/master/jenkins-scripts/dsl/logs/generated_jobs.txt" \
+curl --location "${RELEASE_TOOLS_REPO}/raw/${RELEASE_TOOLS_BRANCH}/jenkins-scripts/dsl/logs/generated_jobs.txt" \
   --output "${generated_jobs}"
 
 JOB_URL='https://build.osrfoundation.org/job/'

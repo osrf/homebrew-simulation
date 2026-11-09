@@ -146,14 +146,19 @@ The output can be redirected or copied directly into the tap's main `README.md`.
 #### Usage
 
 ```bash
-./.github/ci/print-homebrew-simulation-badges.bash
+./.github/ci/print-homebrew-simulation-badges.bash [<release_tools_branch>]
 ```
 
 #### Examples
 
-Print the Markdown table and link reference definitions to stdout:
+Print to stdout the Markdown table and link reference definitions for current Jenkins jobs:
 ```bash
 ./.github/ci/print-homebrew-simulation-badges.bash
+```
+
+Print to stdout the Markdown table and link reference definitions for Jenkins jobs configured on `my_branch` of release-tools:
+```bash
+./.github/ci/print-homebrew-simulation-badges.bash my_branch
 ```
 
 Update or inspect generated badge output:
