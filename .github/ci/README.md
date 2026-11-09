@@ -6,12 +6,12 @@ This directory contains maintenance and helper scripts used in continuous integr
 
 ## Table of Contents
 
-- [add_deprecate.py](#add_deprecatepy)
-- [bottled_dependents.sh](#bottled_dependentssh)
-- [create_rotary_formulae.sh](#create_rotary_formulaesh)
-- [disable_deprecated_formulae_in_days.py](#disable_deprecated_formulae_in_dayspy)
+- [add\_deprecate.py](#add_deprecatepy)
+- [bottled\_dependents.sh](#bottled_dependentssh)
+- [create\_rotary\_formulae.sh](#create_rotary_formulaesh)
+- [disable\_deprecated\_formulae\_in\_days.py](#disable_deprecated_formulae_in_dayspy)
 - [print-homebrew-simulation-badges.bash](#print-homebrew-simulation-badgesbash)
-- [unbottled_dependencies.sh](#unbottled_dependenciessh)
+- [unbottled\_dependencies.sh](#unbottled_dependenciessh)
 
 ---
 
@@ -38,21 +38,24 @@ Deprecate a single formula:
 ./.github/ci/add_deprecate.py 2026-12-15 Formula/gz-math7.rb
 ```
 
-Deprecate multiple formulas with a custom reason:
+Deprecate multiple formulae with a custom reason:
 ```bash
 ./.github/ci/add_deprecate.py 2026-12-15 Formula/gz-sim8.rb Formula/gz-gui8.rb --because ':version_eol'
 ```
 
-Deprecate a set of formulas using a glob pattern:
+Deprecate formulae that directly depend on `gz-cmake4` (used for the Ionic end-of-life deprecation):
 ```bash
-./.github/ci/add_deprecate.py 2026-12-15 Formula/gz-ionic*.rb
+./.github/ci/add_deprecate.py 2026-12-15 $(grep -rlI 'depends_on "gz-cmake4"')
 ```
 
 ---
 
 ### `bottled_dependents.sh`
 
-Finds and prints bottled dependents of a given formula from the `osrf/simulation` tap that are not currently installed. This is designed for CI environments without pre-installed formulas to determine which reverse dependencies have bottles.
+Finds and prints bottled dependents of a given formula from the `osrf/simulation` tap that are not currently installed.
+This is designed for CI environments without pre-installed formulae to determine which reverse dependencies have bottles.
+The script is used by the [generic-release-homebrew\_remove\_dependent\_bottles](https://build.osrfoundation.org/job/generic-release-homebrew_remove_dependent_bottles/)
+CI job, which is useful for recursively removing broken bottles.
 
 #### Usage
 
@@ -63,18 +66,18 @@ Finds and prints bottled dependents of a given formula from the `osrf/simulation
 #### Arguments
 
 - `<formula>`: Name of the formula to inspect.
-- `[<bottle_tag>]` *(optional)*: Bottle platform/architecture tag (e.g., `arm64_sonoma`, `sonoma`). If omitted, checks against the current host system.
+- `[<bottle_tag>]` *(optional)*: Bottle platform/architecture tag (e.g., `arm64_tahoe`). If omitted, checks against the current host system.
 
 #### Examples
 
 Check bottled dependents for the host architecture:
 ```bash
-./.github/ci/bottled_dependents.sh gz-msgs10
+./.github/ci/bottled_dependents.sh gz-jetty-msgs
 ```
 
 Check bottled dependents for a specific macOS architecture/version:
 ```bash
-./.github/ci/bottled_dependents.sh gz-msgs10 arm64_sonoma
+./.github/ci/bottled_dependents.sh gz-jetty-msgs arm64_sequoia
 ```
 
 ---
@@ -85,12 +88,12 @@ Generates development/HEAD (`rotary`) formula variants from existing Gazebo `jet
 
 Specifically, it:
 1. Iterates over `Aliases/gz-jetty-*`.
-2. Creates unversioned development formulas in `Formula/gz-rotary-*.rb` targeting the `main` branch.
+2. Creates unversioned development formulae in `Formula/gz-rotary-*.rb` targeting the `main` branch.
 3. Rewrites class names and dependencies to reference `gz-rotary-*`.
 4. Removes existing bottle blocks, checksums, and release URLs.
-5. Adds appropriate `conflicts_with` statements between jetty and rotary formulas.
+5. Adds appropriate `conflicts_with` statements between jetty and rotary formulae.
 6. Creates symlinks in `Aliases/` for the next version number pointing to the rotary formula.
-7. Runs `brew style --fix` on generated rotary formulas.
+7. Runs `brew style --fix` on generated rotary formulae.
 
 #### Usage
 
@@ -103,7 +106,10 @@ Specifically, it:
 
 ### `disable_deprecated_formulae_in_days.py`
 
-Scans all formulas in `Formula/*.rb` for `deprecate!` statements whose deprecation date has already passed. For each matching formula that does not already have a `disable!` statement, it inserts a `disable!` statement scheduled for a specified number of days in the future, preserving the original deprecation reason.
+Scans all formulae in `Formula/*.rb` for `deprecate!` statements whose deprecation date has already passed.
+For each matching formula that does not already have a `disable!` statement,
+it inserts a `disable!` statement scheduled for a specified number of days in the future,
+preserving the original deprecation reason.
 
 #### Usage
 
@@ -117,7 +123,7 @@ Scans all formulas in `Formula/*.rb` for `deprecate!` statements whose deprecati
 
 #### Examples
 
-Disable formulas whose deprecation date has passed in 30 days:
+Disable formulae whose deprecation date has passed in 30 days:
 ```bash
 ./.github/ci/disable_deprecated_formulae_in_days.py
 ```
@@ -131,7 +137,9 @@ Set the disable date to 60 days from today:
 
 ### `print-homebrew-simulation-badges.bash`
 
-Fetches generated CI job definitions from `gazebo-tooling/release-tools` and generates a Markdown badge table showing the build/install status for Gazebo collections across supported architectures (e.g. `arm64`).
+Fetches generated CI job definitions from `gazebo-tooling/release-tools` and
+generates a Markdown badge table showing the build/install status for Gazebo
+collections across supported architectures (e.g. `arm64`).
 
 The output can be redirected or copied directly into the tap's main `README.md`.
 
@@ -157,7 +165,11 @@ Update or inspect generated badge output:
 
 ### `unbottled_dependencies.sh`
 
-Inspects dependencies of a specified formula from the `osrf/simulation` tap and prints any that do not currently have bottles available. Useful in CI build pipelines to verify whether dependencies need to be built before a formula can be bottled.
+Inspects dependencies of a specified formula from the `osrf/simulation` tap and
+prints any that do not currently have bottles available.
+The script is used by the [generic-release-homebrew\_bump\_unbottled\_dependencies](https://build.osrfoundation.org/job/generic-release-homebrew_bump_unbottled_dependencies/)
+CI job, which is used to open a pull request with incremented formula revisions
+so that the missing bottles can be built.
 
 #### Usage
 
@@ -168,16 +180,16 @@ Inspects dependencies of a specified formula from the `osrf/simulation` tap and 
 #### Arguments
 
 - `<formula>`: Formula name to check.
-- `[<bottle_tag>]` *(optional)*: Bottle platform/architecture tag (e.g., `arm64_sonoma`). If omitted, checks the current host system.
+- `[<bottle_tag>]` *(optional)*: Bottle platform/architecture tag (e.g., `arm64_tahoe`). If omitted, checks the current host system.
 
 #### Examples
 
 Check unbottled dependencies for the host architecture:
 ```bash
-./.github/ci/unbottled_dependencies.sh gz-harmonic
+./.github/ci/unbottled_dependencies.sh gz-jetty
 ```
 
 Check unbottled dependencies for a specific platform tag:
 ```bash
-./.github/ci/unbottled_dependencies.sh gz-harmonic arm64_sonoma
+./.github/ci/unbottled_dependencies.sh gz-jetty arm64_tahoe
 ```

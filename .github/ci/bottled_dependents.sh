@@ -24,12 +24,12 @@
 # For example, to print the bottled dependents of gz-msgs10 from the
 # osrf/simulation tap for the current OS and CPU architecture:
 #
-# ./bottled_dependents.sh gz-msgs10
+# ./bottled_dependents.sh gz-jetty-msgs
 #
 # To print the bottled dependents for a specific OS and CPU combination,
 # pass a bottle tag as an additional parameter, for example:
 #
-# ./bottled_dependents.sh gz-msgs10 arm64_sonoma
+# ./bottled_dependents.sh gz-jetty-msgs arm64_tahoe
 
 FORMULA=${1}
 BOTTLE_TAG=${2}
