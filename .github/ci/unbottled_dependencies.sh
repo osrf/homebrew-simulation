@@ -20,15 +20,15 @@
 # Usage:
 # $ ./unbottled_dependencies.sh <formula> [<bottle_tag>]
 #
-# For example, to print the unbottled dependencies of gz-harmonic from the
+# For example, to print the unbottled dependencies of gz-jetty from the
 # osrf/simulation tap for the current OS and CPU architecture:
 #
-# ./unbottled_dependencies.sh gz-harmonic
+# ./unbottled_dependencies.sh gz-jetty
 #
 # To check for unbottled dependencies for a specific OS and CPU combination,
 # pass a bottle tag as an additional parameter, for example:
 #
-# ./unbottled_dependencies.sh gz-harmonic arm64_sonoma
+# ./unbottled_dependencies.sh gz-jetty arm64_tahoe
 
 FORMULA=${1}
 BOTTLE_TAG=${2}
