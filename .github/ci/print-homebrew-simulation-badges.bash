@@ -54,7 +54,8 @@ packages=( \
 echo -n "Status        | Arch"
 for c in ${collections[@]};
 do
-  echo -n " | $c"
+  C=$(echo $c | awk '{print toupper(substr($0,1,1)) substr($0,2)}')
+  echo -n " | $C"
 done
 echo
 # ------------- | ---- | -------- | -------- | ----- | -------
