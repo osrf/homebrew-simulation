@@ -28,6 +28,12 @@ class Ogre112 < Formula
       "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.arch}",
       # Use the dependencies from Homebrew instead of downloading them
       "-DOGRE_BUILD_DEPENDENCIES=OFF",
+      # SDL2 and Qt5 are only used by the samples and Bites, which are not
+      # built. Homebrew's SDL2Config.cmake (sdl2-compat) also fails to load in
+      # OGRE's configure: it calls set_package_properties without including
+      # FeatureSummary.
+      "-DCMAKE_DISABLE_FIND_PACKAGE_SDL2=ON",
+      "-DCMAKE_DISABLE_FIND_PACKAGE_Qt5=ON",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       # Render systems and components used by gz-rendering
       "-DOGRE_BUILD_RENDERSYSTEM_GL=ON",
