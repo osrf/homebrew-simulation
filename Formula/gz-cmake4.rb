@@ -9,10 +9,8 @@ class GzCmake4 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6f347401ecad564a02564fac41854d3eae39627f45116a1984cfcf070adc2d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2454bc11c4646c35f5b74060f7868a64076f69da40758ef04e0b6f075d63659"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a78338f1f236c06e145faacb1563ac5770f5426cc79897b1e66ed2715b730bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d846242fa829e27c190c346f990ea12837ca9b44bb38cdc4d9175f5da57bb9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "292e6533bf3c6731d67c796bd436924c24f1f3559360dc0107cae59587cdb256"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48f2dfa995dd6367fdddbff1d69ae83ec46f0d404fc325e74ceea4df030ae499"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
