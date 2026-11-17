@@ -14,6 +14,7 @@ class GzRotaryRendering < Formula
   depends_on "gz-rotary-math"
   depends_on "gz-rotary-plugin"
   depends_on "gz-rotary-utils"
+  depends_on "ogre1.12"
   depends_on "ogre2.3"
   depends_on "spdlog"
 
@@ -50,7 +51,7 @@ class GzRotaryRendering < Formula
     ENV["QT_QPA_PLATFORM"] = "offscreen"
 
     # test plugins in subfolders
-    ["ogre2"].each do |engine|
+    ["ogre", "ogre2"].each do |engine|
       p = lib/"gz-rendering/engine-plugins/libgz-rendering-#{engine}.dylib"
       # Use gz-plugin --info command to check plugin linking
       cmd = formula_opt_libexec("gz-rotary-plugin")/"gz/plugin/gz-plugin"
@@ -74,7 +75,7 @@ class GzRotaryRendering < Formula
     EOS
     (testpath/"CMakeLists.txt").write <<-EOS
       cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
-      find_package(gz-rendering REQUIRED COMPONENTS ogre2)
+      find_package(gz-rendering REQUIRED COMPONENTS ogre ogre2)
       add_executable(test_cmake test.cpp)
       target_link_libraries(test_cmake gz-rendering::gz-rendering)
     EOS
