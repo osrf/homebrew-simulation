@@ -20,12 +20,6 @@ class GzCmake4 < Formula
   depends_on "cmake"
   depends_on "pkgconf"
 
-  patch do
-    # Fix for warnings with cmake 4.4.0
-    url "https://github.com/gazebosim/gz-cmake/commit/6c84857c8225a16f2b7af7540b30e5ebb85b505e.patch?full_index=1"
-    sha256 "2aad36e1cfdcdfde4668468d21c23fab00d5b361fd6a5723ec9639421c017424"
-  end
-
   def install
     cmake_args = std_cmake_args
 
