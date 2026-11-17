@@ -1,10 +1,9 @@
 class GzMsgs11 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.2.0.tar.bz2"
-  sha256 "105711dbfa7172d10f7ebc9657bc7deadc88736f9268c118bf158608aeed8eda"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.2.1.tar.bz2"
+  sha256 "99c4734f82ce3571eca8a1cf2d6ef7c2c012478ccd5ca21bf7d4d46a4bc04e69"
   license "Apache-2.0"
-  revision 8
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
