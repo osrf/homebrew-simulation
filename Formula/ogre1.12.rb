@@ -24,6 +24,8 @@ class Ogre112 < Formula
       "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
       # OGRE 1.12 requires CMake 3.3, CMake 4 removed compatibility with < 3.5
       "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      # OGRE 1.12 defaults CMAKE_OSX_ARCHITECTURES to x86_64 when it is empty
+      "-DCMAKE_OSX_ARCHITECTURES=#{Hardware::CPU.arch}",
       # Use the dependencies from Homebrew instead of downloading them
       "-DOGRE_BUILD_DEPENDENCIES=OFF",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
