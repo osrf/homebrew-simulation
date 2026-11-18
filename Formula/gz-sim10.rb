@@ -1,16 +1,16 @@
 class GzSim10 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.6.0.tar.bz2"
-  sha256 "36cb9e9eeec912cefc1dfb639138692cc09d99655aa2c27e8bdcdaac9a111d7d"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-10.7.0.tar.bz2"
+  sha256 "b864d91aa703ae5ca6163a70b9fcc87b15d285f98ea800378f0414ac048f5ef6"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "14bc70b3e6f9cb6845637b8a3668a5ac4858324959d6645bc421d7bad8ec5fac"
-    sha256 arm64_sequoia: "50a07457ef54901b7ba4cd28d42000e4f17b464bf0c59e9ecb693d2cf852e7a0"
+    sha256 arm64_tahoe:   "22c6185e60f5880363312ad0d2442e07e5f3e8337da0398f414467dce696b9c7"
+    sha256 arm64_sequoia: "564c2c48f7e1d5ed3c3d72642012e5e4e5483da02737d1f97319d04a6b244b33"
   end
 
   depends_on "cmake" => :build
