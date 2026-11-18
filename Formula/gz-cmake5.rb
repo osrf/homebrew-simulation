@@ -20,12 +20,6 @@ class GzCmake5 < Formula
 
   conflicts_with "gz-rotary-cmake", because: "both install gz-cmake"
 
-  patch do
-    # Fix for warnings with cmake 4.4.0
-    url "https://github.com/gazebosim/gz-cmake/commit/2302ac12989d3a464247224a4b9465a28526c638.patch?full_index=1"
-    sha256 "e6fc0b7f4e7869b2a64e91eabd292207e2a4c9086962d8e013f501a2b699b89e"
-  end
-
   def install
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
