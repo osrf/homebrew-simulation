@@ -1,16 +1,16 @@
 class GzTransport14 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.4.0.tar.bz2"
-  sha256 "17829e7f10edbec44b66020470d08afe9503ff173b9bf21583ca4f06bdb91efe"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.4.1.tar.bz2"
+  sha256 "17c6362b3efaafd0ac2056971f8de8d0fd8497579df3723142b42588cda33699"
   license "Apache-2.0"
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "0a21efbf044e05b6d93876c4f21ad5d86c1cc87c2d1ef6fcae0bc49ff4a558a9"
-    sha256 arm64_sequoia: "abeba3235212eb3b26388350c2a39315bfbb5a9ecc61f2713cf70e3501d0de37"
+    sha256 arm64_tahoe:   "ed0356822eb68c8076c65fc92dda1cde1e87467db363ee93be9cbf111d153ce7"
+    sha256 arm64_sequoia: "b3eb02227346d20d831eebefe4924f1d22df2b628d49ffd78efc68b9b26de7ee"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
