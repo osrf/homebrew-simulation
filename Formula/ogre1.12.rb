@@ -66,6 +66,12 @@ class Ogre112 < Formula
       "-DOGRE_INSTALL_DOCS=OFF",
       "-DOGRE_INSTALL_SAMPLES=OFF",
     ]
+    if OS.mac?
+      # FindOpenGL looks for "OpenGL" and "GL" in library dirs before frameworks
+      # and can pick a libGL.dylib (e.g. XQuartz), which has no CGL symbols.
+      # RenderSystem_GL needs the system OpenGL framework.
+      cmake_args << "-DOPENGL_gl_LIBRARY=#{MacOS.sdk_path}/System/Library/Frameworks/OpenGL.framework"
+    end
     cmake_args.concat std_cmake_args
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args
