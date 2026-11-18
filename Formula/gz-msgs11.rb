@@ -9,8 +9,8 @@ class GzMsgs11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "5db57148b772129742e2dcd1d91d77be1150a19963872eccba6723dbe3252d04"
-    sha256 arm64_sequoia: "d82c7e69709aeb6793e940a1b50148f9a50f2f3741c4f687ac9b43f775de966e"
+    sha256 arm64_tahoe:   "d4903675929af24793ea7c6645fc91fb2035a535d7b1d5c08937a8d240aa486e"
+    sha256 arm64_sequoia: "7c06de1177db7a8cf01d96631bc7ce44275d520c2b8f8704032ce2d505dcd06b"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
