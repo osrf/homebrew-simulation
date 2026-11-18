@@ -62,7 +62,7 @@ class GzSim8 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
-    cmake_args << python_cmake_arg
+    cmake_args << "-DPython3_EXECUTABLE=#{formula_opt_libexec("python@3.15")}/bin/python"
 
     # Disable doc target due to bug in doxygen 1.18
     # see https://github.com/osrf/homebrew-simulation/issues/3616

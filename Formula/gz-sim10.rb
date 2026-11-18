@@ -70,7 +70,7 @@ class GzSim10 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
-    cmake_args << python_cmake_arg
+    cmake_args << "-DPython3_EXECUTABLE=#{formula_opt_libexec("python@3.15")}/bin/python"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args

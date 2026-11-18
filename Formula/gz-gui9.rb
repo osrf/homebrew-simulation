@@ -1,17 +1,16 @@
 class GzGui9 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.0.2.tar.bz2"
-  sha256 "0db7bdbaf32c3e9faba301c6d04e8cbf2daabdf639c45aedc10ec48356ea3d16"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-9.1.0.tar.bz2"
+  sha256 "2a4841b26cc3b22ebeb3520aae6b0b8614a6dff831ba7271975cba019e5242e3"
   license "Apache-2.0"
-  revision 38
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui9"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "3bf3184a9937d0d8ff69217b7c629db7d950a7cfae2a4ec06bfa440f985256e1"
-    sha256 arm64_sequoia: "e03e1e6327523f284793855b5ab7e237f5bdb0ba349e34d14e28f9b267cbe565"
+    sha256 arm64_tahoe:   "862fcc30e5ae576af13e2915686b4b456a56d8bf7b5fe9541e90959db14cb931"
+    sha256 arm64_sequoia: "8cbcae368cbb22e6c1b2a28fc83e07388272ca79daf3a8590d4943c5aa0f52d0"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
