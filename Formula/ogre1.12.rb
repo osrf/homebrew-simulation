@@ -34,6 +34,9 @@ class Ogre112 < Formula
       # FeatureSummary.
       "-DCMAKE_DISABLE_FIND_PACKAGE_SDL2=ON",
       "-DCMAKE_DISABLE_FIND_PACKAGE_Qt5=ON",
+      # The C++ precompiled header is also used for the Objective-C++ files
+      # (macUtils.mm), which clang rejects
+      "-DOGRE_ENABLE_PRECOMPILED_HEADERS=OFF",
       "-DOGRE_BUILD_LIBS_AS_FRAMEWORKS=OFF",
       # Render systems and components used by gz-rendering
       "-DOGRE_BUILD_RENDERSYSTEM_GL=ON",
