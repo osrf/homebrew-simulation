@@ -10,8 +10,8 @@ class IgnitionTransport11 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "ac3b7d9b307b98e4104fbe9068578a90da276318e7d1388e1c4b563a48b0b008"
-    sha256 arm64_sequoia: "14b72d957691bb504ed043a32962a8991eebd2d9367b95bb1ce6c0ce6e9dcc56"
+    sha256 arm64_tahoe:   "2de834b3372c7f0392718b4ec78699298fc54f9fa0d9eeecc67830a659e6461c"
+    sha256 arm64_sequoia: "af626d92232a7907aca0c45fc24d13e1cf11c694c4daf39c0a2ae9a9b35dcf81"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
