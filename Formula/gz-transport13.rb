@@ -9,8 +9,8 @@ class GzTransport13 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "f2b97436f78524a9422977c877f67df96bd26825c7fb26afa0a3333319c7a23f"
-    sha256 arm64_sequoia: "98b0575aa485abfeb5fa5949913890d62d0564abab3e438debc1bcaf2aa210b4"
+    sha256 arm64_tahoe:   "5d447877b1fb4b2782f5f9792a2bd5c87e45759ff3d580bee9691760681bdc66"
+    sha256 arm64_sequoia: "a43efa18cf2f8f0ed7107c556790aa40a105d9e521dd087ea1881c225ab6296d"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
