@@ -1,17 +1,16 @@
 class IgnitionMsgs8 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/gazebosim/gz-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-8.7.1.tar.bz2"
-  sha256 "5de8edbcf971ea223756310129b2a25c0b5cba2657d736fd8f556eeec331bff0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-8.7.2.tar.bz2"
+  sha256 "9e5c435843bfdf97d938ccd7e6de6e57200c03bc92e94d43fa9c07a314c4570f"
   license "Apache-2.0"
-  revision 16
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_tahoe:   "9eff506fa86750648f2c168624f57fceb8151d259e53e0f289987748bc174628"
-    sha256 cellar: :any, arm64_sequoia: "8fc3d799595a3979df6ca71243fdcf6ea33eb9e7d91f051f88523a6341877826"
+    sha256 cellar: :any, arm64_tahoe:   "c45bff3cc641732a65abdb0269a8a11ce885f5c3e8c01e50259fb59e33a67c59"
+    sha256 cellar: :any, arm64_sequoia: "0c7d982502e0b0853bfba8790012cfb2f2cb196901dce67e28b5b9eae5c9da95"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
