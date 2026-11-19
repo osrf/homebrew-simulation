@@ -9,8 +9,8 @@ class GzCmake3 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8690448a49e7b7ff59e371c5a9bfed7b5c886a673250aee8cb10620d9e777c28"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ed1677120001d6a3511cf91500cb90933d39c0b5e9a7c3fc60064fb4158ccc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9565fb98fc48c17b26d7ec5f9a5ab93070e1d83903b964b875e9164af9d8f09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd61d401a49ff69b0d9991eb3d312132183a700401f483252eed3e76e25a47eb"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
