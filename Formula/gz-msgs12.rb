@@ -9,8 +9,8 @@ class GzMsgs12 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "c7207ad2a546c04d1fdc34448bad2e302242b8177b795bc5d3dfedac2e4f4451"
-    sha256 arm64_sequoia: "9858ebdb754d6b855e76ad074e7ffbea7146794341d95d532000e652478ac87c"
+    sha256 arm64_tahoe:   "213a9a4c0d9cdb32d500875e5129a9f8c4aa04252f3ecb89a864b5034a819b6d"
+    sha256 arm64_sequoia: "ec5eb0e463c7dcebe04fcd2063f73c694350e8335bb0aaa59044e7fcb95070b9"
   end
 
   depends_on "python@3.12" => [:build, :test]
