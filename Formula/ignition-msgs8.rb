@@ -1,10 +1,9 @@
 class IgnitionMsgs8 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://github.com/gazebosim/gz-msgs"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-8.7.1.tar.bz2"
-  sha256 "5de8edbcf971ea223756310129b2a25c0b5cba2657d736fd8f556eeec331bff0"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/ignition-msgs-8.7.2.tar.bz2"
+  sha256 "9e5c435843bfdf97d938ccd7e6de6e57200c03bc92e94d43fa9c07a314c4570f"
   license "Apache-2.0"
-  revision 16
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "ign-msgs8"
 
