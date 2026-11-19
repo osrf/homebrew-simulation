@@ -1,17 +1,16 @@
 class GzTransport13 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.6.0.tar.bz2"
-  sha256 "ffba88d54d2fb4988371672e3e36d9d52896beacf23accaa1f345b47ce7f25d3"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-13.7.0.tar.bz2"
+  sha256 "d9ff23f1e940b3db826c959edc422d898f7f141b3823de4b2315257395136843"
   license "Apache-2.0"
-  revision 8
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport13"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "f2b97436f78524a9422977c877f67df96bd26825c7fb26afa0a3333319c7a23f"
-    sha256 arm64_sequoia: "98b0575aa485abfeb5fa5949913890d62d0564abab3e438debc1bcaf2aa210b4"
+    sha256 arm64_tahoe:   "5d447877b1fb4b2782f5f9792a2bd5c87e45759ff3d580bee9691760681bdc66"
+    sha256 arm64_sequoia: "a43efa18cf2f8f0ed7107c556790aa40a105d9e521dd087ea1881c225ab6296d"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"

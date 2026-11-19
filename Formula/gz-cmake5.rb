@@ -1,31 +1,22 @@
 class GzCmake5 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.1.1.tar.bz2"
-  sha256 "d1ca0245cdcbb050ebd8ccfa67d0837b88d2a0ab7d9ceadbe4478c1f9d533006"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-5.2.0.tar.bz2"
+  sha256 "38206aaf5dcf733f4a5bb081eb3fc027c1620def755aa046ebc8efb158c65291"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake5"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d68dedd6b292398d53f0cfb023ea964cc13fe37dad7b67868784a16ff211b09"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1246138465bff451f4ffe515bde28c3a7f0b9eb5c957a0d35912227c6a1611a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f422c17515ab57f0b98940192a0ba74c05019b17c79182df827560792cacfd06"
-    sha256 cellar: :any_skip_relocation, sonoma:        "db4286b7329b2f1c494a17fe2d8c1ecd169e1b849dd5e4bd4c1a3e3e71378cbb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a036e20ff0165e602abb738421259412fda55ccc30e7a5928a25c54b7d220fbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abd1c185b463778ffb3c5eb151a8a72e95d1e39fe57c0d145a3adaad1bd36b5e"
   end
 
   depends_on "cmake"
   depends_on "pkgconf"
 
   conflicts_with "gz-rotary-cmake", because: "both install gz-cmake"
-
-  patch do
-    # Fix for warnings with cmake 4.4.0
-    url "https://github.com/gazebosim/gz-cmake/commit/2302ac12989d3a464247224a4b9465a28526c638.patch?full_index=1"
-    sha256 "e6fc0b7f4e7869b2a64e91eabd292207e2a4c9086962d8e013f501a2b699b89e"
-  end
 
   def install
     cmake_args = std_cmake_args

@@ -1,15 +1,14 @@
 class GzLaunch8 < Formula
   desc "Launch libraries for robotics applications"
   homepage "https://github.com/gazebosim/gz-launch"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.3.tar.bz2"
-  sha256 "faf72b89d32d796f767893898ffb7c4ad49b52715b64bc51398a939ab23fa6ce"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-launch/releases/gz-launch-8.0.4.tar.bz2"
+  sha256 "064b7e4445a6f4f26d2405c3fe320202d714ab2bbe1e06cd19520e5e25360c96"
   license "Apache-2.0"
-  revision 12
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "68f4f34aa2c791f386f88e026a774d97964ff57b8612e8dd1b31f47af41e79fa"
-    sha256 arm64_sequoia: "1e577ef4a5332e892b83c7bdbd0ba094a6ae969e0c45019cdf51e637be55e7fd"
+    sha256 arm64_tahoe:   "478629e6da63d23191be3cf5970035753e518fc89859d709c13fe28c7330a2b4"
+    sha256 arm64_sequoia: "b4e2d412ac147b46021d9552fbc48d4534b5cc72c1f04d3d56604b805aa1ac0e"
   end
 
   # head "https://github.com/gazebosim/gz-launch.git", branch: "gz-launch8"
