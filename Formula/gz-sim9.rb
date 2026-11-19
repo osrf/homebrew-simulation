@@ -1,15 +1,14 @@
 class GzSim9 < Formula
   desc "Gazebo Sim robot simulator"
   homepage "https://github.com/gazebosim/gz-sim"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.6.0.tar.bz2"
-  sha256 "62733d759a8da115c05120af1f560b05c92e9863bd382a4dada813513c5c8cc4"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-sim/releases/gz-sim-9.7.0.tar.bz2"
+  sha256 "c485e7efc014f6cab89e2f6689bc716653d946a3bbdc9ac911917814c68e9bd5"
   license "Apache-2.0"
-  revision 8
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "d2e27f9dd2d0bb73b632b07dcea398ce62daa92d06d87af604a37feca88d5e9f"
-    sha256 arm64_sequoia: "8cc130799c477724dce04b471c50d9ceaaa05a226d6dab587f74a844889e3063"
+    sha256 arm64_tahoe:   "22ee40a9cf0241c9f03ef0dc22a950c3ba2448ff3acfc3a9413e64e3fd59378f"
+    sha256 arm64_sequoia: "54ec4cce1a65d8858adc2a4e27d686b8276cad30a9c3c876483987e686f953b3"
   end
 
   # head "https://github.com/gazebosim/gz-sim.git", branch: "gz-sim9"
@@ -65,7 +64,7 @@ class GzSim9 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=OFF"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
-    cmake_args << python_cmake_arg
+    cmake_args << "-DPython3_EXECUTABLE=#{formula_opt_libexec("python@3.15")}/bin/python"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args

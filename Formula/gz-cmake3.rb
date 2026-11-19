@@ -1,35 +1,22 @@
 class GzCmake3 < Formula
   desc "CMake helper functions for building robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.6.0.tar.bz2"
-  sha256 "ec6c50bb30f89cfd07aff8450104ad31b2971d2ec1025eb7b042a74199a328bc"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-cmake/releases/gz-cmake-3.7.0.tar.bz2"
+  sha256 "12fc3ada2b137606aaf39e663872f06a864faa29ac00cc77f127c3ded462c442"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/gazebosim/gz-cmake.git", branch: "gz-cmake3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8690448a49e7b7ff59e371c5a9bfed7b5c886a673250aee8cb10620d9e777c28"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ed1677120001d6a3511cf91500cb90933d39c0b5e9a7c3fc60064fb4158ccc1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9565fb98fc48c17b26d7ec5f9a5ab93070e1d83903b964b875e9164af9d8f09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd61d401a49ff69b0d9991eb3d312132183a700401f483252eed3e76e25a47eb"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
 
   depends_on "cmake"
   depends_on "pkgconf"
-
-  patch do
-    # Fix for warnings with cmake 4.4.0
-    url "https://github.com/gazebosim/gz-cmake/commit/eb85f5f20d9358c65a0ec1afa0c391b3254a8e26.patch?full_index=1"
-    sha256 "908c1f411deaec48ccf24545b8bfaa0671891d55531ffc345855edabebd39ccb"
-  end
-
-  patch do
-    # Fix for BUILD_DOCS=OFF
-    url "https://github.com/gazebosim/gz-cmake/commit/a11766eec8093df23be53a003e26362874a73914.patch?full_index=1"
-    sha256 "bc7596bfb61a0bc5e9e0a9ede9da2bd7a9500982d1bea32bc1bc6ecf60d7d0e0"
-  end
 
   def install
     cmake_args = std_cmake_args

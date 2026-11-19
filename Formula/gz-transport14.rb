@@ -1,17 +1,16 @@
 class GzTransport14 < Formula
   desc "Transport middleware for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.3.0.tar.bz2"
-  sha256 "22003585f3c3a85c185f0c2c643c5bc08ce63a8250bbf971ad2c515ac96b8a0f"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-transport/releases/gz-transport-14.4.1.tar.bz2"
+  sha256 "17c6362b3efaafd0ac2056971f8de8d0fd8497579df3723142b42588cda33699"
   license "Apache-2.0"
-  revision 8
 
   head "https://github.com/gazebosim/gz-transport.git", branch: "gz-transport14"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "b9da2c587fdc55d2af29d85a678fa875a866838f0d44e89608e467554f7711f0"
-    sha256 arm64_sequoia: "af9a06cc726299f6998e98988649b90be42a0ec56efcaded35127cd841710999"
+    sha256 arm64_tahoe:   "ed0356822eb68c8076c65fc92dda1cde1e87467db363ee93be9cbf111d153ce7"
+    sha256 arm64_sequoia: "b3eb02227346d20d831eebefe4924f1d22df2b628d49ffd78efc68b9b26de7ee"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
@@ -67,7 +66,8 @@ class GzTransport14 < Formula
       # remove @ from formula name
       python_name = python.name.tr("@", "")
       mkdir "build_#{python_name}" do
-        system "cmake", "-S", "../python", "-B", ".", *cmake_args, python_cmake_arg(python)
+        pyarg = "-DPython3_EXECUTABLE=#{python.opt_libexec}/bin/python"
+        system "cmake", "-S", "../python", "-B", ".", *cmake_args, pyarg
         system "make", "install"
         (lib/"#{python_name}/site-packages").install Dir[lib/"python/*"]
         rmdir prefix/"lib/python"

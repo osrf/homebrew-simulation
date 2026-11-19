@@ -1,17 +1,16 @@
 class GzMsgs11 < Formula
   desc "Middleware protobuf messages for robotics"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.2.0.tar.bz2"
-  sha256 "105711dbfa7172d10f7ebc9657bc7deadc88736f9268c118bf158608aeed8eda"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-msgs/releases/gz-msgs-11.2.1.tar.bz2"
+  sha256 "99c4734f82ce3571eca8a1cf2d6ef7c2c012478ccd5ca21bf7d4d46a4bc04e69"
   license "Apache-2.0"
-  revision 8
 
   head "https://github.com/gazebosim/gz-msgs.git", branch: "gz-msgs11"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "5db57148b772129742e2dcd1d91d77be1150a19963872eccba6723dbe3252d04"
-    sha256 arm64_sequoia: "d82c7e69709aeb6793e940a1b50148f9a50f2f3741c4f687ac9b43f775de966e"
+    sha256 arm64_tahoe:   "d4903675929af24793ea7c6645fc91fb2035a535d7b1d5c08937a8d240aa486e"
+    sha256 arm64_sequoia: "7c06de1177db7a8cf01d96631bc7ce44275d520c2b8f8704032ce2d505dcd06b"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
@@ -47,7 +46,7 @@ class GzMsgs11 < Formula
     cmake_args = std_cmake_args
     cmake_args << "-DBUILD_TESTING=Off"
     cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"
-    cmake_args << python_cmake_arg
+    cmake_args << "-DPython3_EXECUTABLE=#{formula_opt_libexec("python@3.15")}/bin/python"
 
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *cmake_args
