@@ -1,19 +1,16 @@
 class GzUtils3 < Formula
   desc "General purpose classes and functions designed for robotic applications"
   homepage "https://github.com/gazebosim/gz-utils"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-3.1.1.tar.bz2"
-  sha256 "161942a2d00c820683cf88e41c48545e8da4c959aad77ca2229021e5f961201d"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-utils/releases/gz-utils-3.2.0.tar.bz2"
+  sha256 "a0c72074162959a68bff9318d67247b3f789c49959ac41eed687e008c83c0ebd"
   license "Apache-2.0"
-  revision 6
 
   head "https://github.com/gazebosim/gz-utils.git", branch: "gz-utils3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_tahoe:   "7af380113ebe5a19f46c9b81b7c5869de8e42aac55ffc97cd889195e45e04ed5"
-    sha256 cellar: :any, arm64_sequoia: "bcac4cdd77ebd706fd314551136a2f8d31e11a6831f8040c2c39d98b2ddd2b55"
-    sha256 cellar: :any, arm64_sonoma:  "4b43ea96d59ca07b369c22f0ca150b7e465acc153a770048b15ac30330e19ded"
-    sha256 cellar: :any, sonoma:        "b89e45ad797d1cafae9ccfc14502a849cfe2d998d4c2829ecca7fba6c04e6823"
+    sha256 cellar: :any, arm64_tahoe:   "b1786a95acfc67e1535615c6b3618f651efe03dd53a1847260ba1a320aa46c23"
+    sha256 cellar: :any, arm64_sequoia: "9210a56fdad2e2c10bb7151a991d750bfc466524fc90d7e76016fa5066ad68cc"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
