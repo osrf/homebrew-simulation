@@ -4,14 +4,14 @@ class Ogre23 < Formula
   url "https://github.com/OGRECave/ogre-next/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "92ce7765d892d6424df3d8d4a56a8fc0b2f4f91c216b1b1d5b231caa9abaaa38"
   license "MIT"
-  revision 1
+  revision 2
 
   head "https://github.com/OGRECave/ogre-next.git", branch: "v2-3"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_tahoe:   "1fc8a49562d7a48ff4b35a30af3fd8165ef13ea830791a8d51b3a037b38e10a7"
-    sha256 cellar: :any, arm64_sequoia: "ccf561925bf1cef8b31afbb0d9a1adefb9d21cff28d245c75bc27f90908d87ea"
+    sha256 cellar: :any, arm64_tahoe:   "1fe62b7dd544bcde887b3215a4b7a8b42034ff4fc421a698195a0b91b6efbc8a"
+    sha256 cellar: :any, arm64_sequoia: "557d8d1065620c17e6fa1a9c22f5d6cea426cdc919d0dff1ed0c310094b59d88"
   end
 
   depends_on "cmake" => :build
@@ -54,6 +54,13 @@ class Ogre23 < Formula
     # Fix RGB channel swap in STBICodec RGB-to-RGBA conversion (v2-3)
     url "https://github.com/OGRECave/ogre-next/commit/960aabcda2f0ba5d2281d742506aab3e3e91b396.patch?full_index=1"
     sha256 "b73d5619a66473b6ca3dacecc6cfc458cf6ce3192f6e19b43f6513b149d3c882"
+  end
+
+  patch do
+    # Fix GpuProgramParameters compile error with Clang in C++20 mode (v2-3)
+    # https://github.com/OGRECave/ogre-next/pull/596
+    url "https://github.com/caguero/ogre-next/commit/6168a0400d22b22a97e97e5f3751d339f2c52542.patch?full_index=1"
+    sha256 "a4ab6a35d4f5e4bd2795d25995182d12231d9d978eacb56c5716ec7d20a71980"
   end
 
   def install
