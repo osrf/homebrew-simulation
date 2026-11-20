@@ -1,15 +1,14 @@
 class GzCommon6 < Formula
   desc "Common libraries for robotics applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.4.0.tar.bz2"
-  sha256 "b4822f94a8753938fb4a584775b8a7f48c779041fdff40cf99962543f0e92921"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-common/releases/gz-common-6.4.1.tar.bz2"
+  sha256 "c058c077cc03798b674b470b738801ae7b27faa8cdfd7ef6f29a8beadc829233"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_tahoe:   "709861efd46de6f9e11b6ed927cb3d2c9eb149546d4987ecb72fd303c7ff511e"
-    sha256 cellar: :any, arm64_sequoia: "38e30c59ec67ba385f87311ce298de8018908e7fb24fe09d72850cb4f80350f7"
+    sha256 cellar: :any, arm64_tahoe:   "6fa269c21a7b4ae72f126f5ffc700a12be3ed21d091686b0c5267211cd9b15b9"
+    sha256 cellar: :any, arm64_sequoia: "f7a9bf44d38fc579b28e382737f8776383764a0d8b880af7ac6ecfee3a6557d4"
   end
 
   # head "https://github.com/gazebosim/gz-common.git", branch: "gz-common6"
