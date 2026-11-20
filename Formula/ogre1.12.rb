@@ -5,8 +5,6 @@ class Ogre112 < Formula
   sha256 "b01ec30e7866b3140fc487eb828d92968d6aadc86254ad761a6bcac0f8b8a27f"
   license "MIT"
 
-  keg_only "it installs the same headers and pkg-config files as ogre1.9"
-
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
@@ -14,6 +12,8 @@ class Ogre112 < Formula
   depends_on "libzzip"
 
   uses_from_macos "zlib"
+
+  conflicts_with "ogre1.9", because: "both install ogre1.x"
 
   def install
     rpaths = [
