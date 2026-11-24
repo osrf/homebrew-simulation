@@ -1,10 +1,9 @@
 class GzMath8 < Formula
   desc "Math API for robotic applications"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.4.0.tar.bz2"
-  sha256 "62445bab9663627f7631aa0ff34bead82525d9352a404d3f6e82fcef4d36194a"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-math/releases/gz-math-8.5.0.tar.bz2"
+  sha256 "c1e488e8f885dbf0ae7866a7841f073ab0903798edd70877671f38625dfe7ce2"
   license "Apache-2.0"
-  revision 2
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
