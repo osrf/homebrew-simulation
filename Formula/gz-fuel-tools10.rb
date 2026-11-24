@@ -9,8 +9,8 @@ class GzFuelTools10 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_tahoe:   "b2b52a6cf6e7ce0835afc09737806ddc8b6dc06cf8bd94b49f592fdfcc7247d8"
-    sha256 cellar: :any, arm64_sequoia: "52f70a40f4a1c133ee2db435d0d6e57a1128e5f5f3dedf0c10892944eb80f44a"
+    sha256 cellar: :any, arm64_tahoe:   "2bd1465c03ea6151e0b3848465ed4ded7e169ea65a7485899a01ab7f8fbf1593"
+    sha256 cellar: :any, arm64_sequoia: "b95fceab234f33b6c4737b8a2d8a5cc0007ab7ffe6b08cc8b503051e6bb6fd6e"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
