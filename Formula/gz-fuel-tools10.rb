@@ -1,17 +1,16 @@
 class GzFuelTools10 < Formula
   desc "Tools for using Fuel API to download robot models"
   homepage "https://gazebosim.org"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-10.1.0.tar.bz2"
-  sha256 "37ae351be9a9b281d078e36068422dd096f59f46c72c4ef490800dfeb7653e1d"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-fuel-tools/releases/gz-fuel_tools-10.1.1.tar.bz2"
+  sha256 "8867a578f32271776cf635c9360a00fabb9a0e8250c03e992f757ab643c049d3"
   license "Apache-2.0"
-  revision 51
 
   head "https://github.com/gazebosim/gz-fuel-tools.git", branch: "gz-fuel-tools10"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 cellar: :any, arm64_tahoe:   "b2b52a6cf6e7ce0835afc09737806ddc8b6dc06cf8bd94b49f592fdfcc7247d8"
-    sha256 cellar: :any, arm64_sequoia: "52f70a40f4a1c133ee2db435d0d6e57a1128e5f5f3dedf0c10892944eb80f44a"
+    sha256 cellar: :any, arm64_tahoe:   "2bd1465c03ea6151e0b3848465ed4ded7e169ea65a7485899a01ab7f8fbf1593"
+    sha256 cellar: :any, arm64_sequoia: "b95fceab234f33b6c4737b8a2d8a5cc0007ab7ffe6b08cc8b503051e6bb6fd6e"
   end
 
   deprecate! date: "2026-12-15", because: :deprecated_upstream
