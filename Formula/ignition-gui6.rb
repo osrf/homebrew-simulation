@@ -9,8 +9,8 @@ class IgnitionGui6 < Formula
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "a1ad78068afa5042913e67214dff70ca6167218abd4b6e82250a37373ae70d67"
-    sha256 arm64_sequoia: "d6ed2dfe053a50aafe685165a56ab9560d31c6c288c7ffd25569f49a08d3f6db"
+    sha256 arm64_tahoe:   "02cd8d8f88c22805f43078466e4c895d0b1b9c48f4fc30ce7ee587f216c4285b"
+    sha256 arm64_sequoia: "eb403f0cfc6e453ac45f59163fefffc50c6bc5655706d6c5402e4177f6b2eaa3"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
