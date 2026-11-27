@@ -1,17 +1,16 @@
 class GzGui8 < Formula
   desc "Common libraries for robotics applications. GUI Library"
   homepage "https://github.com/gazebosim/gz-gui"
-  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.4.0.tar.bz2"
-  sha256 "1731b01a134afb11b1b3e049fc65e74fa7b5c50532406d3d68366d54016d5498"
+  url "https://osrf-distributions.s3.amazonaws.com/gz-gui/releases/gz-gui-8.5.0.tar.bz2"
+  sha256 "a83b92da8fe6f76900705d1523e622828cf9d9ccfef28a434b213b4170c77ca5"
   license "Apache-2.0"
-  revision 44
 
   head "https://github.com/gazebosim/gz-gui.git", branch: "gz-gui8"
 
   bottle do
     root_url "https://osrf-distributions.s3.amazonaws.com/bottles-simulation"
-    sha256 arm64_tahoe:   "9122324fee60f706fa057afa43a7171734134e7bee90cde576ba334eca154aa3"
-    sha256 arm64_sequoia: "d750fb7d268a130fb4c34e1d682f3693a8c9b203f98d6467b656156dd3c4ee5a"
+    sha256 arm64_tahoe:   "cedf4e67c3002724b0f49f176194d1e315a2851d2023960684b1c1db735a6d69"
+    sha256 arm64_sequoia: "9bae0ec13424eecbaeb2c1d24fcb195f639093b6107fec5a9dbc68ccce4c8e7d"
   end
 
   deprecate! date: "2027-01-10", because: "freeimage is disabled"
@@ -30,12 +29,6 @@ class GzGui8 < Formula
   depends_on "protobuf"
   depends_on "qt@5"
   depends_on "tinyxml2"
-
-  patch do
-    # Fix for compatibility with protobuf 30
-    url "https://github.com/gazebosim/gz-gui/commit/64031d88132c45c25f66d2bdd8e902c1a2520f0d.patch?full_index=1"
-    sha256 "b2eb3706209a8c52c3e77fcaecd5008830e209ab3915e446252dc7c7dd33415a"
-  end
 
   def install
     rpaths = [
